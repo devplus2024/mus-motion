@@ -39,6 +39,17 @@ import { Medal } from "lucide-react";
 import { Eye } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuIndicator,
