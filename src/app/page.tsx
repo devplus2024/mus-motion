@@ -88,7 +88,7 @@ export default function Home() {
       <div className="w-full backdrop-blur px-[2rem] blur-0 border bg-[#00000099] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
         <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
           <Link
-            href="/home"
+            href="/"
             className="text-white text-[1.5rem] duration-300 transition-colors ease-out"
           >
             /:\
