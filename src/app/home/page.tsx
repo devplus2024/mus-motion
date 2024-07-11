@@ -391,14 +391,14 @@ export default function Home() {
                   <div className="text-xl font-bold pl-[2rem]">Discover</div>
                   <Tabs defaultValue="listennow" className="flex gap-[1rem]">
                     <TabsList className="flex flex-col pl-[1rem] text-md gap-[1rem]">
-                      <TabsTrigger
+                      <Button
                         value="listennow"
-                        variant="secondary"
+                        variant={"ghost"}
                         className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
                       >
                         <CirclePlay className="w-4 h-4" />
                         <p>Listen Now</p>
-                      </TabsTrigger>
+                      </Button>
                       <Button
                         variant="ghost"
                         className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
@@ -415,7 +415,6 @@ export default function Home() {
                       </Button>
                     </TabsList>
                     <TabsContent value="listennow"></TabsContent>
-                    <TabsContent></TabsContent>
                   </Tabs>
                 </div>
                 <div className="flex pl-[2rem] flex-col gap-[1rem]">
