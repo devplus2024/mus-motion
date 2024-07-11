@@ -9,11 +9,14 @@ import { House, Podcast, UserRound } from "lucide-react";
 import { Library } from "lucide-react";
 import { CirclePlus } from "lucide-react";
 import { Search } from "lucide-react";
+import { CalendarPlus } from "lucide-react";
 import { Mic } from "lucide-react";
 import { CirclePlay } from "lucide-react";
 import { LayoutGrid } from "lucide-react";
 import { Radio } from "lucide-react";
 import { ListMusic } from "lucide-react";
+import { Clock } from "lucide-react";
+import { Guitar } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { PanelGroup, Panel } from "react-resizable-panels";
 import { Music2 } from "lucide-react";
@@ -85,7 +88,7 @@ import {
 export default function Home() {
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="w-full backdrop-blur px-[2rem] blur-0 border bg-[#00000099] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
+      <div className="w-full  px-[2rem]  border bg-[#000000] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
         <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
           <Link
             href="/"
@@ -97,150 +100,191 @@ export default function Home() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Feature</NavigationMenuTrigger>
-                <NavigationMenuContent className="w-[30rem] bg-black   py-[1rem] px-[1rem] flex  gap-[2.5rem]">
+                <NavigationMenuContent className="w-[30rem]    py-[1rem] px-[1rem] flex  gap-[2.5rem]">
                   <div className="flex flex-col gap-[2rem]">
-                    <Button
-                      variant={"ghost"}
-                      className="flex items-center py-[1.5rem] gap-[0.5rem]"
-                    >
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                       <div>
-                        <Lightbulb />
+                        <Lightbulb className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                       </div>
                       <div className="flex justify-start items-start flex-col">
-                        <NavigationMenuLink className="text-nowrap text-md font-bold">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
                           Smart Recommendations
                         </NavigationMenuLink>
-                        <p className="text-sm text-nowrap">
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                           Discover music curated just for you.
                         </p>
                       </div>
-                    </Button>
-                    <Button
-                      variant={"ghost"}
-                      className="flex items-center py-[1.5rem] gap-[0.5rem]"
-                    >
+                    </div>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                       <div>
-                        <WifiOff />
+                        <WifiOff className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                       </div>
                       <div className="flex justify-start items-start flex-col">
-                        <NavigationMenuLink className="text-nowrap text-md font-bold">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
                           Offline Mode
                         </NavigationMenuLink>
-                        <p className="text-sm text-nowrap">
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                           Download songs and listen offline.
                         </p>
                       </div>
-                    </Button>
-                    <Button
-                      variant={"ghost"}
-                      className="flex items-center py-[1.5rem] gap-[0.5rem]"
-                    >
+                    </div>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                       <div>
-                        <Podcast />
+                        <Podcast className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                       </div>
                       <div className="flex justify-start items-start flex-col">
-                        <NavigationMenuLink className="text-nowrap text-md font-bold">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
                           Podcasts
                         </NavigationMenuLink>
-                        <p className="text-sm text-nowrap">
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                           Access a wide range of podcasts.
                         </p>
                       </div>
-                    </Button>
+                    </div>
                   </div>
                   <div className="flex flex-col items-start justify-between">
-                    <Button
-                      variant={"ghost"}
-                      className="flex items-center py-[1.5rem] gap-[0.5rem]"
-                    >
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                       <div>
-                        <NotebookText />
+                        <NotebookText className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                       </div>
                       <div className="flex justify-start items-start flex-col">
-                        <NavigationMenuLink className="text-nowrap text-md font-bold">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
                           Lyrics Display
                         </NavigationMenuLink>
-                        <p className="text-sm text-nowrap">
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                           Sing along with on-screen lyrics.
                         </p>
                       </div>
-                    </Button>
-                    <Button
-                      variant={"ghost"}
-                      className="flex items-center py-[1.5rem] gap-[0.5rem]"
-                    >
+                    </div>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                       <div>
-                        <Medal />
+                        <Medal className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                       </div>
                       <div className="flex justify-start items-start flex-col">
-                        <NavigationMenuLink className="text-nowrap text-md font-bold">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
                           High-Quality Audio
                         </NavigationMenuLink>
-                        <p className="text-sm text-nowrap">
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                           Enjoy lossless audio streaming.
                         </p>
                       </div>
-                    </Button>
-                    <Button
-                      variant={"ghost"}
-                      className="flex items-center py-[1.5rem] gap-[0.5rem]"
-                    >
+                    </div>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                       <div>
-                        <Share2 />
+                        <Share2 className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                       </div>
                       <div className="flex justify-start items-start flex-col">
-                        <NavigationMenuLink className="text-nowrap text-md font-bold">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
                           Social Sharing
                         </NavigationMenuLink>
-                        <p className="text-sm text-nowrap">
-                          Create and share your own playlists.
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          Share your favorite tracks on social media.
                         </p>
                       </div>
-                    </Button>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Library</NavigationMenuTrigger>
-                <NavigationMenuContent className="w-[30rem] py-[1rem] px-[1rem] flex  gap-[1rem]">
-                  <div className="flex flex-col gap-[0.8rem]">
-                    <div>
-                      <NavigationMenuLink className="text-nowrap text-md font-bold">
-                        Smart Recommendations
-                      </NavigationMenuLink>
-                      <p className="text-sm text-nowrap">
-                        Discover music curated just for you.
-                      </p>
+                <NavigationMenuTrigger>Libary</NavigationMenuTrigger>
+                <NavigationMenuContent className="w-[30rem]    py-[1rem] px-[1rem] flex  gap-[2.5rem]">
+                  <div className="flex flex-col gap-[2rem]">
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
+                      <div>
+                        <ListMusic className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                      </div>
+                      <div className="flex justify-start items-start flex-col">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          Playlists
+                        </NavigationMenuLink>
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          Manage and create your own playlists.
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <NavigationMenuLink className="text-nowrap text-md font-bold">
-                        Offline Mode
-                      </NavigationMenuLink>
-                      <p className="text-sm text-nowrap">
-                        Download songs and listen offline.
-                      </p>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
+                      <div>
+                        <Music2 className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                      </div>
+                      <div className="flex justify-start items-start flex-col">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          Music
+                        </NavigationMenuLink>
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          Browse and organize all your songs.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
+                      <div>
+                        <Library className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                      </div>
+                      <div className="flex justify-start items-start flex-col">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          Albums
+                        </NavigationMenuLink>
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          View and manage your album collection.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex flex-col justify-between">
-                    <div>
-                      <NavigationMenuLink className="text-nowrap text-md font-bold">
-                        Lyrics Display
-                      </NavigationMenuLink>
-                      <p className="text-sm text-nowrap">
-                        Sing along with on-screen lyrics.
-                      </p>
+                  <div className="flex flex-col items-start justify-between">
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          className=" text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm"
+                        >
+                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path>
+                          <circle cx="17" cy="7" r="5"></circle>
+                        </svg>
+                      </div>
+                      <div className="flex justify-start items-start flex-col">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          Artists
+                        </NavigationMenuLink>
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          Follow and explore your favorite artists.
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <NavigationMenuLink className="text-nowrap text-md font-bold">
-                        High-Quality Audio
-                      </NavigationMenuLink>
-                      <p className="text-sm text-nowrap">
-                        Enjoy lossless audio streaming.
-                      </p>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
+                      <div>
+                        <Guitar className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                      </div>
+                      <div className="flex justify-start items-start flex-col">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          Genres
+                        </NavigationMenuLink>
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          Discover music by different genres.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
+                      <div>
+                        <Clock className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                      </div>
+                      <div className="flex justify-start items-start flex-col">
+                        <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          Recently Added
+                        </NavigationMenuLink>
+                        <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          Find the most recently added songs and albums.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <Link href="/docs" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>

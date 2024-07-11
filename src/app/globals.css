@@ -49,11 +49,12 @@
     --radius: 0.5rem;
   }
   .dark_black {
-    --background: black;
+    --background: 0, 0%, 0%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0, 0%, 0%;
+    --popover-blur: 0, 0%, 0%, 0.6;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -69,6 +70,7 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
+    --blur: 45px;
   }
 }
 
