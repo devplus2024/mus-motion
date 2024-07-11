@@ -273,7 +273,7 @@ export default function Home() {
           </NavigationMenu>
         </div>
         <div className="flex gap-[2rem]">
-          <Button variant={"outline"}>Try It</Button>
+          <Button variant={"outline"}>Play Now</Button>
           <Button>Download</Button>
         </div>
       </div>
