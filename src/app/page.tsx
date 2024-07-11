@@ -85,10 +85,10 @@ import {
 export default function Home() {
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="w-fit backdrop-blur px-[2rem] blur-0 border bg-[#00000099] border-[#202020] sticky top-[1rem] items-center rounded-md flex justify-between gap-[2rem] z-[3]">
+      <div className="w-full backdrop-blur px-[2rem] blur-0 border bg-[#00000099] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
         <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
           <Link
-            href="/"
+            href="/home"
             className="text-white text-[1.5rem] duration-300 transition-colors ease-out"
           >
             /:\
@@ -272,7 +272,8 @@ export default function Home() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div>
+        <div className="flex gap-[2rem]">
+          <Button variant={"outline"}>Try It</Button>
           <Button>Download</Button>
         </div>
       </div>
@@ -388,15 +389,16 @@ export default function Home() {
               <div className="border-r w-[300px] py-[1.5rem] flex flex-col items-start   gap-[2rem]  border-r-[#202020]">
                 <div className="flex  flex-col gap-[1rem]">
                   <div className="text-xl font-bold pl-[2rem]">Discover</div>
-                  <div className="flex gap-[1rem]">
-                    <div className="flex flex-col pl-[1rem] text-md gap-[1rem]">
-                      <Button
+                  <Tabs defaultValue="listennow" className="flex gap-[1rem]">
+                    <TabsList className="flex flex-col pl-[1rem] text-md gap-[1rem]">
+                      <TabsTrigger
+                        value="listennow"
                         variant="secondary"
                         className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
                       >
                         <CirclePlay className="w-4 h-4" />
                         <p>Listen Now</p>
-                      </Button>
+                      </TabsTrigger>
                       <Button
                         variant="ghost"
                         className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
@@ -411,8 +413,10 @@ export default function Home() {
                         <Radio className="w-4 h-4" />
                         <p>Radio</p>
                       </Button>
-                    </div>
-                  </div>
+                    </TabsList>
+                    <TabsContent value="listennow"></TabsContent>
+                    <TabsContent></TabsContent>
+                  </Tabs>
                 </div>
                 <div className="flex pl-[2rem] flex-col gap-[1rem]">
                   <div className="text-xl font-bold">Library</div>
@@ -547,316 +551,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full flex-col">
-                <div className="flex mt-[1rem] mx-[2rem] justify-between">
-                  <div className="">
-                    <Tabs defaultValue="music" className="w-[400px]">
-                      <TabsList>
-                        <TabsTrigger value="music">Music</TabsTrigger>
-                        <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
-                        <TabsTrigger value="live">Live</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="music">
-                        <div className="mt-[2rem]">
-                          <div className="">
-                            <h1 className="font-bold text-2xl">Listen Now</h1>
-                            <p className="text-sm text-[#a1a1a1]">
-                              Top picks for you. Updated daily.
-                            </p>
-                          </div>
-                          <div>
-                            <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
-                              <div className="flex gap-[3rem]">
-                                <div>
-                                  <Image
-                                    src="/kelly-sikkema-_-TwILDnZSU-unsplash.jpg"
-                                    alt="Picture of the author"
-                                    width={1300}
-                                    height={1200}
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    React Rendezvous
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Ethan Byte
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Async Awakenings
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Nina Netcode
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/daniel-angele-2gu4hKuFhi0-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    The Art of Reusability
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Stateful Symphony
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                              </div>
-                              <ScrollBar orientation="horizontal" />
-                            </ScrollArea>
-                          </div>
-                        </div>
-                        <div className="mt-[2rem]">
-                          <div className="">
-                            <h1 className="font-bold text-2xl">Make for You</h1>
-                            <p className="text-sm text-[#a1a1a1]">
-                              Your personal playlists. Updated daily.
-                            </p>
-                          </div>
-                          <div>
-                            <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
-                              <div className="flex gap-[1.8rem]">
-                                <div>
-                                  <Image
-                                    src="/5-1.png"
-                                    alt="Picture of the author"
-                                    width={1300}
-                                    height={1200}
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Thinking Components
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/piano-tutor-header-testimonial.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Functional Fury
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/kelly-sikkema-nPMkfYtO9JA-unsplash-1365x2048.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    React Rendezvous
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Ethan Byte
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/Carolyn-Arends-Allow-For-Space-In-The-Music.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Stateful Symphony
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Async Awakenings
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Nina Netcode
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    The Art of Reusability
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                              </div>
-                              <ScrollBar orientation="horizontal" />
-                            </ScrollArea>
-                          </div>
-                        </div>
-                      </TabsContent>
-                      <TabsContent value="podcasts">
-                        <div>
-                          <div className="mt-[2rem]">
-                            <div className="">
-                              <h1 className="font-bold text-2xl">
-                                New Episodes
-                              </h1>
-                              <p className="text-sm text-[#a1a1a1]">
-                                Your favorite podcasts. Updated daily.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="w-[1000px] pt-[2rem] border-t border-t-[#202020] mt-[2rem]">
-                            <div className="border-dashed border w-[1000px] h-[450px] border-[#202020] rounded-lg flex items-center justify-center">
-                              <div className="flex flex-col gap-[1rem] items-center">
-                                <Podcast className="w-[3rem] h-[3rem]" />
-                                <h1 className="text-md font-bold">
-                                  No episodes added
-                                </h1>
-                                <p className="text-xs text-[#a1a1a1]">
-                                  You have not added any podcasts. Add one
-                                  below.
-                                </p>
-                                <AlertDialog>
-                                  <AlertDialogTrigger asChild>
-                                    <Button>Add Podcast</Button>
-                                  </AlertDialogTrigger>
-                                  <AlertDialogContent>
-                                    <AlertDialogHeader>
-                                      <AlertDialogTitle>
-                                        Add Podcast
-                                      </AlertDialogTitle>
-                                      <AlertDialogDescription>
-                                        <p className="text-md text-[#a1a1a1]">
-                                          Copy and paste the podcast feed URL to
-                                          import.
-                                        </p>
-                                        <div className="flex flex-col gap-[0.4rem] mt-[2rem]">
-                                          <h1 className="text-white">
-                                            Podcast URL
-                                          </h1>
-                                          <Input
-                                            type="email"
-                                            placeholder="https://example.com/feed.xml"
-                                          />
-                                        </div>
-                                      </AlertDialogDescription>
-                                    </AlertDialogHeader>
-                                    <AlertDialogFooter>
-                                      <AlertDialogCancel>
-                                        Cancel
-                                      </AlertDialogCancel>
-                                      <AlertDialogAction>
-                                        Import Podcast
-                                      </AlertDialogAction>
-                                    </AlertDialogFooter>
-                                  </AlertDialogContent>
-                                </AlertDialog>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </TabsContent>
-                      <TabsContent value="live">
-                        <div className="pt-[2rem] w-[1030px] h-[849px]">
-                          <ScrollArea className="w-[1020px]  h-[849px]">
-                            <div className="flex flex-col gap-[5rem] pr-[3rem]">
-                              <div className="border-b border-b-[#202020] pb-[2rem]">
-                                <div className="mb-[2rem] items-center flex gap-[2rem]">
-                                  <Skeleton className="w-[3rem] h-[3rem] rounded-full" />
-                                  <div className="flex flex-col gap-[10px]">
-                                    <Skeleton className="w-[90px] h-[20px] rounded-full" />
-                                    <Skeleton className="w-[50px] h-[10px] rounded-full" />
-                                  </div>
-                                </div>
-                                <Skeleton className="w-[1000px] h-[500px]" />
-                                <div className="flex mt-[2rem] justify-between items-center">
-                                  <div className="">
-                                    <Button variant="outline">
-                                      <Eye className="mr-2 h-4 w-4" /> View
-                                    </Button>
-                                  </div>
-                                  <Button
-                                    variant="outline"
-                                    className="flex gap-[2rem]"
-                                  >
-                                    <ThumbsUp className="h-4 w-4" />
-                                    <MessageCircle className="h-4 w-4" />
-                                    <Share2 className="h-4 w-4" />
-                                  </Button>
-                                </div>
-                              </div>
-                            </div>
-                          </ScrollArea>
-                        </div>
-                      </TabsContent>
-                    </Tabs>
-                  </div>
-                  <div>
-                    <Button>
-                      <CirclePlus className="mr-2 h-4 w-4" /> Add Music
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-[1300px] h-[800px] flex flex-col border border-[#202020] rounded-lg">
-        <div className="w-full h-[48px] border-b border-b-[#202020]"></div>
-        <div className="w-full h-full flex">
-          <div className="w-[50px] items-center pt-[1rem] flex flex-col gap-[2rem] border-r border-r-[#202020]">
-            <Pizza className="" />
-            <Apple className="" />
-            <Ham className="" />
-            <Fish className="" />
-            <CupSoda className="" />
-            <Cake className="" />
           </div>
         </div>
       </div>
