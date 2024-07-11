@@ -393,7 +393,6 @@ export default function Home() {
                     <TabsList className="flex flex-col pl-[1rem] text-md gap-[1rem]">
                       <TabsTrigger
                         value="listennow"
-                        variant="secondary"
                         className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
                       >
                         <CirclePlay className="w-4 h-4" />
@@ -415,7 +414,6 @@ export default function Home() {
                       </Button>
                     </TabsList>
                     <TabsContent value="listennow"></TabsContent>
-                    <TabsContent></TabsContent>
                   </Tabs>
                 </div>
                 <div className="flex pl-[2rem] flex-col gap-[1rem]">
