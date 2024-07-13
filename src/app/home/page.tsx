@@ -97,7 +97,7 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 export default function Home() {
   return (
-    <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
+    <main className="flex GeistSans overflow-x-hidden relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="w-full  px-[2rem]  border bg-[#000000] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
         <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
           <Link
@@ -346,7 +346,7 @@ export default function Home() {
             <Button variant="outline">Discover Features</Button>
           </div>
         </div>
-        <div className="border flex items-center justify-center animate-[spin_12s_linear_infinite] relative w-[400px] h-[400px]   rounded-full border-[#000000]">
+        <div className="border flex items-center justify-center animate-[spin_12s_linear_infinite] relative w-[400px] h-[400px]   rounded-full border-[#202020]">
           <div>
             <Music2 className="w-[4rem] h-[4rem]  text-[#a1a1a1]" />
           </div>
