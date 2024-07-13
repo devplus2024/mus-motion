@@ -5,7 +5,16 @@ import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { House, Podcast, UserRound } from "lucide-react";
+import {
+  EllipsisVertical,
+  House,
+  Play,
+  PlayCircle,
+  Podcast,
+  SkipBack,
+  SkipForward,
+  UserRound,
+} from "lucide-react";
 import { Library } from "lucide-react";
 import { CirclePlus } from "lucide-react";
 import { Search } from "lucide-react";
@@ -85,6 +94,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 export default function Home() {
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
@@ -321,22 +331,29 @@ export default function Home() {
           <Button>Download</Button>
         </div>
       </div>
-      <div className="mt-[3rem]">
+      <div className="mt-[3rem] w-full px-[5rem] items-center justify-between flex">
         <div>
-          <h1 className="text-center text-[3rem] font-bold">
-            MusicHub - Unlimited Music
-          </h1>
-          <p className="text-[1.5rem] text-center">
-            Discover, listen, and enjoy music your way.
-          </p>
+          <div>
+            <h1 className="text-center text-[3rem] font-bold">
+              MusicHub - Unlimited Music
+            </h1>
+            <p className="text-[1.5rem] text-center">
+              Discover, listen, and enjoy music your way.
+            </p>
+          </div>
+          <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
+            <Button>Explore Now</Button>
+            <Button variant="outline">Discover Features</Button>
+          </div>
         </div>
-        <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
-          <Button>Explore Now</Button>
-          <Button variant="outline">Discover Features</Button>
+        <div className="border flex items-center justify-center animate-[spin_12s_linear_infinite] relative w-[400px] h-[400px]   rounded-full border-[#000000]">
+          <div>
+            <Music2 className="w-[4rem] h-[4rem]  text-[#a1a1a1]" />
+          </div>
         </div>
       </div>
       <div className="contentsP active" id="musicContent">
-        <div className="flex justify-center mt-[6rem]">
+        <div className="flex justify-center mt-[6rem] mb-[6rem]">
           <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border border-[#202020]">
             <div className="flex gap-[2rem] bg-black rounded-t-lg border-b border-b-[#202020] ">
               <Menubar className="bg-black border-none">
@@ -429,375 +446,556 @@ export default function Home() {
                 </MenubarMenu>
               </Menubar>
             </div>
-            <div className="flex h-full">
-              <div className="border-r w-[300px] py-[1.5rem] flex flex-col items-start   gap-[2rem]  border-r-[#202020]">
-                <div className="flex  flex-col gap-[1rem]">
-                  <div className="text-xl font-bold pl-[2rem]">Discover</div>
-                  <div className="flex gap-[1rem]">
-                    <div className="flex flex-col pl-[1rem] text-md gap-[1rem]">
-                      <Button
-                        variant="secondary"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <CirclePlay className="w-4 h-4" />
-                        <p>Listen Now</p>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <LayoutGrid className="w-4 h-4" />
-                        <p>Browser</p>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <Radio className="w-4 h-4" />
-                        <p>Radio</p>
-                      </Button>
-                    </div>
+            <div className="flex h-full w-full">
+              <Tabs
+                defaultValue="listennow_parent"
+                className="flex w-full  rounded-t-none rounded-br-none rounded-bl-lg"
+              >
+                <TabsList className="flex justify-start pt-[24px] flex-col w-[238px] rounded-t-none rounded-br-none rounded-bl-lg h-full border-r border-r-[#202020] bg-black gap-[1rem] ">
+                  <div>
+                    <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
+                      Discorver
+                    </h1>
                   </div>
-                </div>
-                <div className="flex pl-[2rem] flex-col gap-[1rem]">
-                  <div className="text-xl font-bold">Library</div>
-                  <div className="flex gap-[1rem]">
+                  <TabsTrigger
+                    value="listennow_parent"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <CirclePlay className="w-4 h-4" />
+                    <p className="text-md">Listen Now</p>
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="browser_parent"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <LayoutGrid className="w-4 h-4" />
+                    <p>Browser</p>
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="radio_parent"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <Radio className="w-4 h-4" />
+                    <p>Radio</p>
+                  </TabsTrigger>
+                  <div>
+                    <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
+                      Library
+                    </h1>
+                  </div>
+                  <TabsTrigger
+                    value="playlist"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <ListMusic className="w-4 h-4" />
+                    <p>Playlist</p>
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="song"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <Music2 className="w-4 h-4" />
+                    <p>Song</p>
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="make_for_you"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <User className="w-4 h-4" />
+                    <p>Make for You</p>
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="artists"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="h-4 w-4"
+                    >
+                      <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path>
+                      <circle cx="17" cy="7" r="5"></circle>
+                    </svg>
+                    <p>Artists</p>
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="albums"
+                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                  >
+                    <Library className="w-4 h-4" />
+                    <p>Albums</p>
+                  </TabsTrigger>
+                  <div>
+                    <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
+                      Library
+                    </h1>
+                  </div>
+                  <ScrollArea className="h-[310px]  pl-[1rem] w-[230px]">
                     <div className="flex flex-col text-md gap-[1rem]">
-                      <div className="flex items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
-                        <p>Playlist</p>
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                        <ListMusic className="w-4 h-4" />
+                        <p>Recently Added</p>
+                      </TabsTrigger>
+                    </div>
+                  </ScrollArea>
+                </TabsList>
+                <TabsContent value="listennow_parent" className="w-full h-full">
+                  <div className="flex w-full flex-col">
+                    <div className="flex mt-[1rem] mx-[2rem] justify-between">
+                      <div className="">
+                        <Tabs defaultValue="music" className="w-[400px]">
+                          <TabsList>
+                            <TabsTrigger value="music">Music</TabsTrigger>
+                            <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
+                            <TabsTrigger value="live">Live</TabsTrigger>
+                          </TabsList>
+                          <TabsContent value="music">
+                            <div className="mt-[2rem]">
+                              <div className="">
+                                <h1 className="font-bold text-2xl">
+                                  Listen Now
+                                </h1>
+                                <p className="text-sm text-[#a1a1a1]">
+                                  Top picks for you. Updated daily.
+                                </p>
+                              </div>
+                              <div>
+                                <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
+                                  <div className="flex gap-[3rem]">
+                                    <div>
+                                      <Image
+                                        src="/kelly-sikkema-_-TwILDnZSU-unsplash.jpg"
+                                        alt="Picture of the author"
+                                        width={1300}
+                                        height={1200}
+                                        className="rounded-lg max-w-[255px] max-h-[350px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        React Rendezvous
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Ethan Byte
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg max-w-[255px] max-h-[350px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        Async Awakenings
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Nina Netcode
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/daniel-angele-2gu4hKuFhi0-unsplash.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg max-w-[255px] h-[350px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        The Art of Reusability
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Lena Logic
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg max-w-[255px] max-h-[350px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        Stateful Symphony
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Beth Binary
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <ScrollBar orientation="horizontal" />
+                                </ScrollArea>
+                              </div>
+                            </div>
+                            <div className="mt-[2rem]">
+                              <div className="">
+                                <h1 className="font-bold text-2xl">
+                                  Make for You
+                                </h1>
+                                <p className="text-sm text-[#a1a1a1]">
+                                  Your personal playlists. Updated daily.
+                                </p>
+                              </div>
+                              <div>
+                                <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
+                                  <div className="flex gap-[1.8rem]">
+                                    <div>
+                                      <Image
+                                        src="/5-1.png"
+                                        alt="Picture of the author"
+                                        width={1300}
+                                        height={1200}
+                                        className="rounded-lg w-[150px] h-[150px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        Thinking Components
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Lena Logic
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/piano-tutor-header-testimonial.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg w-[150px] h-[150px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        Functional Fury
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Beth Binary
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/kelly-sikkema-nPMkfYtO9JA-unsplash-1365x2048.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg w-[150px] h-[150px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        React Rendezvous
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Ethan Byte
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/Carolyn-Arends-Allow-For-Space-In-The-Music.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg w-[150px] h-[150px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        Stateful Symphony
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Beth Binary
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg w-[150px] h-[150px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        Async Awakenings
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Nina Netcode
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <Image
+                                        src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
+                                        width={1300}
+                                        height={1200}
+                                        alt="Picture of the author"
+                                        className="rounded-lg w-[150px] h-[150px]"
+                                      />
+                                      <p className="text-sm mt-[0.5rem]">
+                                        The Art of Reusability
+                                      </p>
+                                      <p className="text-xs text-[#a1a1a1]">
+                                        Lena Logic
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <ScrollBar orientation="horizontal" />
+                                </ScrollArea>
+                              </div>
+                            </div>
+                          </TabsContent>
+                          <TabsContent value="podcasts">
+                            Change your password here.
+                          </TabsContent>
+                          <TabsContent value="live">
+                            Change your password here.
+                          </TabsContent>
+                        </Tabs>
                       </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <Music2 className="w-4 h-4" />
-                        <p>Songs</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <User className="w-4 h-4" />
-                        <p>Make for You</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="h-4 w-4"
-                        >
-                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path>
-                          <circle cx="17" cy="7" r="5"></circle>
-                        </svg>
-                        <p>Artists</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <Library className="w-4 h-4" />
-                        <p>Albums</p>
+                      <div>
+                        <Button>
+                          <CirclePlus className="mr-2 h-4 w-4" /> Add Music
+                        </Button>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex flex-col gap-[1rem]">
-                  <div className="text-xl font-bold pl-[2rem]">Playlists</div>
-                  <div className="flex gap-[1rem]">
-                    <ScrollArea className="h-[320px] pl-[1rem] w-[230px]">
-                      <div className="flex flex-col text-md gap-[1rem]">
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Recently Added</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Recently Played</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Top Songs</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Top Albums</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Top Artists</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Logic Discography</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Bedtime Beats</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Feeling Happy</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>I miss Y2K Pop</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Runtober</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Mellow Days</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Eminem Essentials</p>
-                        </Button>
-                      </div>
-                    </ScrollArea>
-                  </div>
-                </div>
-              </div>
-              <div className="flex w-full flex-col">
-                <div className="flex mt-[1rem] mx-[2rem] justify-between">
-                  <div className="">
-                    <Tabs defaultValue="music" className="w-[400px]">
-                      <TabsList>
-                        <TabsTrigger value="music">Music</TabsTrigger>
-                        <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
-                        <TabsTrigger value="live">Live</TabsTrigger>
+                </TabsContent>
+                <TabsContent
+                  value="browser_parent"
+                  className="mt-0 w-full h-full  "
+                >
+                  <div className="h-full  flex items-center  w-full">
+                    <Tabs
+                      defaultValue="all"
+                      className="w-full flex flex-col h-full pt-[2rem]"
+                    >
+                      <TabsList className="ml-[33px] w-fit">
+                        <TabsTrigger value="all">All</TabsTrigger>
+                        <TabsTrigger>United State</TabsTrigger>
+                        <TabsTrigger>On World</TabsTrigger>
                       </TabsList>
-                      <TabsContent value="music">
-                        <div className="mt-[2rem]">
-                          <div className="">
-                            <h1 className="font-bold text-2xl">Listen Now</h1>
-                            <p className="text-sm text-[#a1a1a1]">
-                              Top picks for you. Updated daily.
-                            </p>
-                          </div>
-                          <div>
-                            <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
-                              <div className="flex gap-[3rem]">
-                                <div>
-                                  <Image
-                                    src="/kelly-sikkema-_-TwILDnZSU-unsplash.jpg"
-                                    alt="Picture of the author"
-                                    width={1300}
-                                    height={1200}
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    React Rendezvous
+                      <TabsContent value="all" className="w-full  h-full">
+                        <div className="h-full w-full flex flex-col  justify-between">
+                          <ScrollArea className="h-[830px] pt-[2rem]">
+                            <div className="grid gap-x-[2rem]  w-[970px] grid-cols-3 ml-[33px] ">
+                              <div className="flex gap-4 items-center">
+                                <Image
+                                  src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
+                                  width={1300}
+                                  height={1200}
+                                  alt="Picture of the author"
+                                  className="rounded-lg max-w-[100px] max-h-[100px]"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold">Vi Sao Em Ghet</h1>
+                                  <p className="text-sm text-[#a1a1a1]">
+                                    Tran Dinh Quang
                                   </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Ethan Byte
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Async Awakenings
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Nina Netcode
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/daniel-angele-2gu4hKuFhi0-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    The Art of Reusability
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Stateful Symphony
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
+                                  <p className="text-sm text-[#a1a1a1]">
+                                    Hom qua
                                   </p>
                                 </div>
                               </div>
-                              <ScrollBar orientation="horizontal" />
-                            </ScrollArea>
-                          </div>
-                        </div>
-                        <div className="mt-[2rem]">
-                          <div className="">
-                            <h1 className="font-bold text-2xl">Make for You</h1>
-                            <p className="text-sm text-[#a1a1a1]">
-                              Your personal playlists. Updated daily.
-                            </p>
-                          </div>
-                          <div>
-                            <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
-                              <div className="flex gap-[1.8rem]">
-                                <div>
-                                  <Image
-                                    src="/5-1.png"
-                                    alt="Picture of the author"
-                                    width={1300}
-                                    height={1200}
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Thinking Components
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/piano-tutor-header-testimonial.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Functional Fury
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/kelly-sikkema-nPMkfYtO9JA-unsplash-1365x2048.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    React Rendezvous
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Ethan Byte
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/Carolyn-Arends-Allow-For-Space-In-The-Music.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Stateful Symphony
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Async Awakenings
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Nina Netcode
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    The Art of Reusability
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
+                              <div className="flex gap-4 items-center">
+                                <Image
+                                  src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
+                                  width={1300}
+                                  height={1200}
+                                  alt="Picture of the author"
+                                  className="rounded-lg max-w-[100px] max-h-[100px]"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold">Vi Sao Em Ghet</h1>
+                                  <p className="text-sm">Tran Dinh Quang</p>
+                                  <p className="text-sm">Hom qua</p>
                                 </div>
                               </div>
-                              <ScrollBar orientation="horizontal" />
-                            </ScrollArea>
+                              <div className="flex gap-4 items-center">
+                                <Image
+                                  src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
+                                  width={1300}
+                                  height={1200}
+                                  alt="Picture of the author"
+                                  className="rounded-lg max-w-[100px] max-h-[100px]"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold">Vi Sao Em Ghet</h1>
+                                  <p className="text-sm">Tran Dinh Quang</p>
+                                  <p className="text-sm">Hom qua</p>
+                                </div>
+                              </div>
+                            </div>
+                          </ScrollArea>
+                          <div className="h-[70px] justify-center flex items-center w-full border-t-[#202020] border-t">
+                            <div className="flex gap-[2rem]">
+                              <SkipBack />
+                              <PlayCircle />
+                              <SkipForward />
+                            </div>
                           </div>
                         </div>
-                      </TabsContent>
-                      <TabsContent value="podcasts">
-                        Change your password here.
-                      </TabsContent>
-                      <TabsContent value="live">
-                        Change your password here.
                       </TabsContent>
                     </Tabs>
                   </div>
-                  <div>
-                    <Button>
-                      <CirclePlus className="mr-2 h-4 w-4" /> Add Music
-                    </Button>
+                </TabsContent>
+                <TabsContent value="radio_parent">
+                  <div className="flex w-full flex-col">aa</div>
+                </TabsContent>
+                <TabsContent value="recently_added">
+                  <div className="flex w-full flex-col"></div>
+                </TabsContent>
+                <TabsContent value="playlist" className="mt-0 w-full  h-full">
+                  <div className="w-full h-full">
+                    <Tabs
+                      defaultValue="gio_list"
+                      className="flex flex-col h-full justify-between w-full  "
+                    >
+                      <TabsContent
+                        value="gio_list"
+                        className="flex w-full mt-0 h-full items-center justify-center"
+                      >
+                        <div className="flex flex-col gap-[2rem]">
+                          <Image
+                            width={400}
+                            height={300}
+                            alt="Gio_Cover_Image"
+                            src="/1678963583887_500.jpg"
+                            className="w-[300px] h-[300px] rounded-md"
+                          />
+                          <div className="flex justify-between">
+                            <SkipBack />
+                            <Play />
+                            <SkipForward />
+                          </div>
+                        </div>
+                      </TabsContent>
+                      <TabsList className="bg-black h-[300px] p-0 w-full">
+                        <ScrollArea className="h-[300px] py-[1rem] w-full border-t border-t-[#202020]">
+                          <TabsTrigger
+                            value="gio_list"
+                            className="flex w-full gap-[3rem]  items-center flex-col"
+                          >
+                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
+                              <div className="flex gap-[2rem] items-center">
+                                <Image
+                                  width={400}
+                                  height={300}
+                                  alt="Gio_Cover_Image"
+                                  src="/1678963583887_500.jpg"
+                                  className="w-[4rem] h-[4rem] rounded-full"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold text-md">Gio</h1>
+                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                </div>
+                              </div>
+                              <div className="flex gap-[2rem]">
+                                <EllipsisVertical className="text-[#acacac]" />
+                              </div>
+                            </div>
+                          </TabsTrigger>
+                          <TabsTrigger
+                            value="gio_list"
+                            className="flex w-full gap-[3rem]  items-center flex-col"
+                          >
+                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
+                              <div className="flex gap-[2rem] items-center">
+                                <Image
+                                  width={400}
+                                  height={300}
+                                  alt="Gio_Cover_Image"
+                                  src="/1678963583887_500.jpg"
+                                  className="w-[4rem] h-[4rem] rounded-full"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold text-md">Gio</h1>
+                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                </div>
+                              </div>
+                              <div className="flex gap-[2rem]">
+                                <EllipsisVertical className="text-[#acacac]" />
+                              </div>
+                            </div>
+                          </TabsTrigger>
+                          <TabsTrigger
+                            value="gio_list"
+                            className="flex w-full gap-[3rem]  items-center flex-col"
+                          >
+                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
+                              <div className="flex gap-[2rem] items-center">
+                                <Image
+                                  width={400}
+                                  height={300}
+                                  alt="Gio_Cover_Image"
+                                  src="/1678963583887_500.jpg"
+                                  className="w-[4rem] h-[4rem] rounded-full"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold text-md">Gio</h1>
+                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                </div>
+                              </div>
+                              <div className="flex gap-[2rem]">
+                                <EllipsisVertical className="text-[#acacac]" />
+                              </div>
+                            </div>
+                          </TabsTrigger>
+                          <TabsTrigger
+                            value="gio_list"
+                            className="flex w-full gap-[3rem]  items-center flex-col"
+                          >
+                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
+                              <div className="flex gap-[2rem] items-center">
+                                <Image
+                                  width={400}
+                                  height={300}
+                                  alt="Gio_Cover_Image"
+                                  src="/1678963583887_500.jpg"
+                                  className="w-[4rem] h-[4rem] rounded-full"
+                                />
+                                <div className="flex flex-col">
+                                  <h1 className="font-bold text-md">Gio</h1>
+                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                </div>
+                              </div>
+                              <div className="flex gap-[2rem]">
+                                <EllipsisVertical className="text-[#acacac]" />
+                              </div>
+                            </div>
+                          </TabsTrigger>
+                        </ScrollArea>
+                      </TabsList>
+                    </Tabs>
                   </div>
-                </div>
-              </div>
+                </TabsContent>
+              </Tabs>
             </div>
           </div>
         </div>
