@@ -97,7 +97,7 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 export default function Home() {
   return (
-    <main className="flex GeistSans overflow-x-hidden relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
+    <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="w-full  px-[2rem]  border bg-[#000000] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
         <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
           <Link
@@ -331,29 +331,24 @@ export default function Home() {
           <Button>Download</Button>
         </div>
       </div>
-      <div className="mt-[3rem] w-full px-[5rem] items-center justify-between flex">
-        <div>
-          <div>
-            <h1 className="text-center text-[3rem] font-bold">
-              MusicHub - Unlimited Music
-            </h1>
-            <p className="text-[1.5rem] text-center">
-              Discover, listen, and enjoy music your way.
-            </p>
-          </div>
-          <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
-            <Button>Explore Now</Button>
-            <Button variant="outline">Discover Features</Button>
-          </div>
+      <div className="mt-[3rem] w-full px-[5rem] items-center justify-center gap-[1.5rem] flex flex-col">
+        <div className="items-center gap-[2rem] justify-center flex flex-col">
+          <h1 className="text-center  text-[3rem] font-bold">
+            Your Gateway to Unlimited Music
+          </h1>
+          <p className="text-[1.2rem] w-[40rem] text-center">
+            Discover new horizons in music. Listen to your favorite tracks,
+            create personalized playlists, and enjoy high-quality audio
+            streaming. MusicHub brings the world of music to your fingertips.
+          </p>
         </div>
-        <div className="border flex items-center justify-center animate-[spin_12s_linear_infinite] relative w-[400px] h-[400px]   rounded-full border-[#202020]">
-          <div>
-            <Music2 className="w-[4rem] h-[4rem]  text-[#a1a1a1]" />
-          </div>
+        <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
+          <Button>Explore Now</Button>
+          <Button variant="outline">Discover Features</Button>
         </div>
       </div>
       <div className="contentsP active" id="musicContent">
-        <div className="flex justify-center mt-[6rem] mb-[6rem]">
+        <div className="flex justify-center mt-[4rem] mb-[6rem]">
           <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border border-[#202020]">
             <div className="flex gap-[2rem] bg-black rounded-t-lg border-b border-b-[#202020] ">
               <Menubar className="bg-black border-none">
@@ -825,53 +820,178 @@ export default function Home() {
                         <TabsTrigger value="on_world">On World</TabsTrigger>
                       </TabsList>
                       <TabsContent value="all" className="w-full  h-full">
-                        <div className="h-full w-full flex flex-col  justify-between">
-                          <ScrollArea className="h-[830px] pt-[2rem]">
-                            <div className="grid gap-x-[2rem]  w-[970px] grid-cols-3 ml-[33px] ">
-                              <div className="flex gap-4 items-center">
-                                <Image
-                                  src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                  width={1300}
-                                  height={1200}
-                                  alt="Picture of the author"
-                                  className="rounded-lg max-w-[100px] max-h-[100px]"
-                                />
-                                <div className="flex flex-col">
-                                  <h1 className="font-bold">Vi Sao Em Ghet</h1>
-                                  <p className="text-sm text-[#a1a1a1]">
-                                    Tran Dinh Quang
-                                  </p>
-                                  <p className="text-sm text-[#a1a1a1]">
-                                    Hom qua
-                                  </p>
+                        <div className="h-full w-full flex flex-col gap-[1rem]  justify-between">
+                          <ScrollArea className="h-[800px] mt-[1rem] ">
+                            <div>
+                              <h1 className="font-bold   text-xl ml-[33px]">
+                                New Releases
+                              </h1>
+                              <div className="grid gap-x-[2rem] mt-[1rem] gap-y-[2rem] w-[970px] grid-cols-3 ml-[33px] ">
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="flex gap-4 items-center">
-                                <Image
-                                  src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                  width={1300}
-                                  height={1200}
-                                  alt="Picture of the author"
-                                  className="rounded-lg max-w-[100px] max-h-[100px]"
-                                />
-                                <div className="flex flex-col">
-                                  <h1 className="font-bold">Vi Sao Em Ghet</h1>
-                                  <p className="text-sm">Tran Dinh Quang</p>
-                                  <p className="text-sm">Hom qua</p>
+                            </div>
+                            <div>
+                              <h1 className="font-bold mt-[1rem] text-xl ml-[33px]">
+                                New Releases
+                              </h1>
+                              <div className="grid gap-x-[2rem] mt-[1rem] gap-y-[2rem] w-[970px] grid-cols-3 ml-[33px] ">
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="flex gap-4 items-center">
-                                <Image
-                                  src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                  width={1300}
-                                  height={1200}
-                                  alt="Picture of the author"
-                                  className="rounded-lg max-w-[100px] max-h-[100px]"
-                                />
-                                <div className="flex flex-col">
-                                  <h1 className="font-bold">Vi Sao Em Ghet</h1>
-                                  <p className="text-sm">Tran Dinh Quang</p>
-                                  <p className="text-sm">Hom qua</p>
+                            </div>
+                            <div>
+                              <h1 className="font-bold mt-[1rem] text-xl ml-[33px]">
+                                New Releases
+                              </h1>
+                              <div className="grid gap-x-[2rem] mt-[1rem] gap-y-[2rem] w-[970px] grid-cols-3 ml-[33px] ">
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
+                                  <div className="flex flex-col justify-between h-[100px]">
+                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
+                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
+                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1023,6 +1143,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div></div>
     </main>
   );
 }

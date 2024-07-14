@@ -20,7 +20,7 @@ export default function RootLayout({
       className={`${GeistSans.className} dark_black`}
       style={{ colorScheme: "dark" }}
     >
-      <body className="dark:[color-scheme:dark] overflow-x-hidden">
+      <body className="dark:[color-scheme:dark] overflow-x-hidden relative">
         {children}
       </body>
     </html>
