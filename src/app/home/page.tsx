@@ -544,31 +544,52 @@ export default function Home() {
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
-                      <TabsTrigger className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]">
+                      <TabsTrigger
+                        value="recently_added"
+                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                      >
                         <ListMusic className="w-4 h-4" />
                         <p>Recently Added</p>
                       </TabsTrigger>
@@ -798,8 +819,10 @@ export default function Home() {
                     >
                       <TabsList className="ml-[33px] w-fit">
                         <TabsTrigger value="all">All</TabsTrigger>
-                        <TabsTrigger>United State</TabsTrigger>
-                        <TabsTrigger>On World</TabsTrigger>
+                        <TabsTrigger value="united_state">
+                          United State
+                        </TabsTrigger>
+                        <TabsTrigger value="on_world">On World</TabsTrigger>
                       </TabsList>
                       <TabsContent value="all" className="w-full  h-full">
                         <div className="h-full w-full flex flex-col  justify-between">
