@@ -15,9 +15,9 @@ export const contentType = "image/png";
 // Image generation
 export default async function Image() {
   // Font
-  const interSemiBold = fetch(
-    new URL("./Geist-Light.woff", import.meta.url)
-  ).then((res) => res.arrayBuffer());
+  const geistLight = fetch(new URL("./Geist-Light.woff", import.meta.url)).then(
+    (res) => res.arrayBuffer()
+  );
 
   return new ImageResponse(
     (
@@ -25,7 +25,7 @@ export default async function Image() {
       <div
         style={{
           fontSize: 128,
-          background: "white",
+          background: "black",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -44,9 +44,9 @@ export default async function Image() {
       fonts: [
         {
           name: "Geist",
-          data: await interSemiBold,
+          data: await geistLight,
           style: "normal",
-          weight: 400,
+          weight: 600,
         },
       ],
     }
