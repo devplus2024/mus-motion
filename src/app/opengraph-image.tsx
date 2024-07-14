@@ -15,7 +15,7 @@ export const contentType = "image/png";
 // Image generation
 export default async function Image() {
   // Font
-  const geistLight = fetch(new URL("./Geist-Light.woff", import.meta.url)).then(
+  const geistLight = fetch(new URL("./Geist-Bold.woff", import.meta.url)).then(
     (res) => res.arrayBuffer()
   );
 
