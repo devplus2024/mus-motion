@@ -85,6 +85,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { Toaster, toast } from "sonner";
 export default function Home() {
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
@@ -321,13 +322,15 @@ export default function Home() {
           <Button>Download</Button>
         </div>
       </div>
-      <div className="mt-[3rem]">
-        <div>
-          <h1 className="text-center text-[3rem] font-bold">
-            MusicHub - Unlimited Music
+      <div className="mt-[3rem] w-full px-[5rem] items-center justify-center gap-[1.5rem] flex flex-col">
+        <div className="items-center gap-[2rem] justify-center flex flex-col">
+          <h1 className="text-center  text-[3rem] font-bold">
+            Your Gateway to Unlimited Music
           </h1>
-          <p className="text-[1.5rem] text-center">
-            Discover, listen, and enjoy music your way.
+          <p className="text-[1.2rem] w-[40rem] text-center">
+            Discover new horizons in music. Listen to your favorite tracks,
+            create personalized playlists, and enjoy high-quality audio
+            streaming. MusicHub brings the world of music to your fingertips.
           </p>
         </div>
         <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
@@ -336,7 +339,7 @@ export default function Home() {
         </div>
       </div>
       <div className="contentsP active" id="musicContent">
-        <div className="flex justify-center mt-[6rem]">
+        <div className="flex justify-center mt-[3rem]">
           <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border border-[#202020]">
             <div className="flex gap-[2rem] bg-black rounded-t-lg border-b border-b-[#202020] ">
               <Menubar className="bg-black border-none">
@@ -801,6 +804,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mb-[5rem]">
+        <Toaster richColors closeButton />
+        <Button onClick={() => toast.success("Event has been created")}>
+          The End
+        </Button>
       </div>
     </main>
   );

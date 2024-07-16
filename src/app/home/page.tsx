@@ -7,6 +7,7 @@ import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { CommandMenu } from "./CommandMenu";
+import TabsComponent from "./TabsComponent";
 import {
   EllipsisVertical,
   House,
