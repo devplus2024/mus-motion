@@ -1,10 +1,12 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { Toaster, toast } from "sonner";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { CommandMenu } from "./CommandMenu";
 import {
   EllipsisVertical,
   House,
@@ -98,6 +100,7 @@ import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 export default function Home() {
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
+      <CommandMenu />
       <div className="w-full  px-[2rem]  border bg-[#000000] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
         <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
           <Link
@@ -1143,7 +1146,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div></div>
+      <div className="mb-[5rem]">
+        <Toaster richColors closeButton />
+        <Button onClick={() => toast.success("Event has been created")}>
+          The End
+        </Button>
+      </div>
     </main>
   );
 }
