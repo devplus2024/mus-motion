@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 const geist = Inter({ subsets: ["latin"] });
@@ -17,12 +18,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${GeistSans.className} dark_black`}
-      style={{ colorScheme: "dark" }}
-    >
-      <body className="dark:[color-scheme:dark]">{children}</body>
-    </html>
+    <>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={`${GeistSans.className} dark_black`}
+        style={{ colorScheme: "dark" }}
+      >
+        <head />
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   );
 }

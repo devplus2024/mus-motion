@@ -63,6 +63,7 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { Input } from "@/components/ui/input";
+import { ThemeMode } from "./ThemeMode";
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -86,7 +87,7 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { Toaster, toast } from "sonner";
-export default function Home() {
+export default function App() {
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="w-full  px-[2rem]  border bg-[#000000] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
