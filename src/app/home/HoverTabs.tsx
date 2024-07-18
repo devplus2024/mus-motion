@@ -176,7 +176,7 @@ export const HoverTabs = (): JSX.Element => {
               onPointerEnter={(e) => onEnterTab(e, 0)}
               onFocus={(e) => onEnterTab(e, 0)}
             >
-              Library
+              Feature
             </NavigationMenuTrigger>
             <NavigationMenuContent className="w-[30rem] data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight   py-[1rem] px-[1rem] flex  gap-[2.5rem]">
               <div className="flex flex-col gap-[2rem]">
