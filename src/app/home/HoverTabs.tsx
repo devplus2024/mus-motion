@@ -109,7 +109,7 @@ export const HoverTabs = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
-    buttonRefs.current = buttonRefs.current.slice(0, 3); // Adjust the number to match the number of tabs
+    buttonRefs.current = buttonRefs.current.slice(0, 3); // Điều chỉnh số lượng cho phù hợp với số tab
   }, []);
 
   const [hoveredTabIndex, setHoveredTabIndex] = useState<number | null>(null);
@@ -156,8 +156,8 @@ export const HoverTabs = (): JSX.Element => {
   return (
     <nav
       ref={navRef}
-      className="flex flex-shrink-0 justify-center items-center relative z-0 py-2"
       onPointerLeave={onLeaveTabs}
+      className="flex flex-shrink-0 justify-center items-center relative z-0 py-2"
     >
       <NavigationMenu>
         <NavigationMenuList>
@@ -170,7 +170,9 @@ export const HoverTabs = (): JSX.Element => {
                   "bg-[#1f1f1f]": hoveredTabIndex === 0,
                 }
               )}
-              ref={(el) => (buttonRefs.current[0] = el)}
+              ref={(el) => {
+                buttonRefs.current[0] = el;
+              }}
               onPointerEnter={(e) => onEnterTab(e, 0)}
               onFocus={(e) => onEnterTab(e, 0)}
             >
@@ -270,13 +272,14 @@ export const HoverTabs = (): JSX.Element => {
                   "bg-[#1f1f1f]": hoveredTabIndex === 1,
                 }
               )}
-              ref={(el) => (buttonRefs.current[1] = el)}
+              ref={(el) => {
+                buttonRefs.current[1] = el;
+              }}
               onPointerEnter={(e) => onEnterTab(e, 1)}
               onFocus={(e) => onEnterTab(e, 1)}
             >
               Library
             </NavigationMenuTrigger>
-
             <NavigationMenuContent className="w-[37rem]    py-[1rem] px-[1rem] flex justify-between  gap-[2.5rem]">
               <div className="grid grid-cols-2 w-[37rem] place-content-between gap-[2rem]">
                 <div className="flex flex-col gap-[1.5rem]">
@@ -374,7 +377,9 @@ export const HoverTabs = (): JSX.Element => {
                       "text-white": hoveredTabIndex === 2,
                     }
                   )}
-                  ref={(el) => (buttonRefs.current[2] = el)}
+                  ref={(el) => {
+                    buttonRefs.current[2] = el;
+                  }}
                   onPointerEnter={(e) => onEnterTab(e, 2)}
                   onFocus={(e) => onEnterTab(e, 2)}
                 >
@@ -393,7 +398,9 @@ export const HoverTabs = (): JSX.Element => {
                       "text-white": hoveredTabIndex === 3,
                     }
                   )}
-                  ref={(el) => (buttonRefs.current[3] = el)}
+                  ref={(el) => {
+                    buttonRefs.current[3] = el;
+                  }}
                   onPointerEnter={(e) => onEnterTab(e, 3)}
                   onFocus={(e) => onEnterTab(e, 3)}
                 >
@@ -412,7 +419,9 @@ export const HoverTabs = (): JSX.Element => {
                       "text-white": hoveredTabIndex === 4,
                     }
                   )}
-                  ref={(el) => (buttonRefs.current[4] = el)}
+                  ref={(el) => {
+                    buttonRefs.current[4] = el;
+                  }}
                   onPointerEnter={(e) => onEnterTab(e, 4)}
                   onFocus={(e) => onEnterTab(e, 4)}
                 >
@@ -431,7 +440,9 @@ export const HoverTabs = (): JSX.Element => {
                       "text-white": hoveredTabIndex === 5,
                     }
                   )}
-                  ref={(el) => (buttonRefs.current[5] = el)}
+                  ref={(el) => {
+                    buttonRefs.current[5] = el;
+                  }}
                   onPointerEnter={(e) => onEnterTab(e, 5)}
                   onFocus={(e) => onEnterTab(e, 5)}
                 >
