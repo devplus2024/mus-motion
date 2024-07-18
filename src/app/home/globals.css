@@ -49,6 +49,7 @@
     --radius: 0.5rem;
   }
   .dark_black {
+    --duration-menu: 400ms;
     --background: 0, 0%, 0%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
