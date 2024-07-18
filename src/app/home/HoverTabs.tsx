@@ -109,7 +109,7 @@ export const HoverTabs = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
-    buttonRefs.current = buttonRefs.current.slice(0, 3); // Điều chỉnh số lượng cho phù hợp với số tab
+    buttonRefs.current = buttonRefs.current.slice(0, 5); // Điều chỉnh số lượng cho phù hợp với số tab
   }, []);
 
   const [hoveredTabIndex, setHoveredTabIndex] = useState<number | null>(null);
@@ -269,7 +269,6 @@ export const HoverTabs = (): JSX.Element => {
                 "text-sm relative rounded-full flex items-center h-7 px-3 z-[30] bg-transparent  text-[#a1a1a1] cursor-pointer select-none transition-colors",
                 {
                   "text-white": hoveredTabIndex === 1,
-                  "bg-[#1f1f1f]": hoveredTabIndex === 1,
                 }
               )}
               ref={(el) => {
