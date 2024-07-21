@@ -134,7 +134,7 @@ export default function Home() {
                     <DropdownMenuItem>New Chats</DropdownMenuItem>
                     <DropdownMenuItem>Setting</DropdownMenuItem>
                     <DropdownMenuItem>Help</DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-black">
+                    <DropdownMenuItem className="dark:hover:bg-black">
                       <ThemeMode />
                     </DropdownMenuItem>
                   </DropdownMenuContent>
