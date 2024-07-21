@@ -113,19 +113,19 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
+    <main className="h-[calc(100vh-58px)] dark:bg-black flex items-center justify-center ">
       <Tabs
         defaultValue="sofia_davis"
-        className="w-[1000px] flex h-[560px] rounded-lg border border-[#202020]"
+        className="w-[1000px] flex h-[560px] rounded-lg border dark:border-[#202020]"
       >
-        <TabsList className="bg-black w-[310px] rounded-br-none rounded-tr-none  h-full justify-start border-r border-r-[#202020] flex flex-col">
+        <TabsList className="dark:bg-black bg-white w-[310px] rounded-br-none rounded-tr-none  h-full justify-start border-r dark:border-r-[#202020] flex flex-col">
           <div className=" flex flex-col w-full   ">
             <div className="px-[1rem] pt-[1rem] w-full flex justify-between">
-              <p className="text-white">Chats</p>
+              <p className="dark:text-white">Chats</p>
               <div>
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <Ellipsis className="text-white" />
+                    <Ellipsis className="dark:text-white" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="right-0">
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -149,9 +149,9 @@ export default function Home() {
             <div className="flex flex-col px-[1rem] gap-[0.7rem] w-full items-start">
               <TabsTrigger
                 value="sofia_davis"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted  w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -162,9 +162,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="alex_johnson"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -175,9 +175,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="maria_gonzalez"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -188,9 +188,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="kevin_brown"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -203,9 +203,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="lily_white"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -216,9 +216,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="john_paul"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -229,9 +229,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="mary_jane"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -242,9 +242,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="anna_belle"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border border-dark:[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -255,9 +255,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="mark_allen"
-                className=" data-[state=active]:bg-[#101010] w-full flex justify-start gap-[1rem] "
+                className=" dark:data-[state=active]:bg-[#101010] data-[state=active]:bg-muted w-full flex justify-start gap-[1rem] "
               >
-                <div className="w-[3rem] h-[3rem] rounded-full border border-[#202020] flex items-center justify-center">
+                <div className="w-[3rem] h-[3rem] rounded-full border dark:border-[#202020] flex items-center justify-center">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -271,9 +271,9 @@ export default function Home() {
         </TabsList>
         <TabsContent value="sofia_davis" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -298,7 +298,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -311,7 +311,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -323,7 +323,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -336,7 +336,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -344,7 +344,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -432,9 +432,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="alex_johnson" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -459,7 +459,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -472,7 +472,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -484,7 +484,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -497,7 +497,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -505,7 +505,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -593,9 +593,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="maria_gonzalez" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -620,7 +620,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -633,7 +633,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -645,7 +645,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -658,7 +658,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -666,7 +666,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -754,9 +754,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="kevin_brown" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -781,7 +781,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -794,7 +794,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -806,7 +806,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -819,7 +819,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -827,7 +827,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -915,9 +915,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="lily_white" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -942,7 +942,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -955,7 +955,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -967,7 +967,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -980,7 +980,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -988,7 +988,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -1076,9 +1076,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="john_paul" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1103,7 +1103,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1116,7 +1116,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1128,7 +1128,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1141,7 +1141,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1149,7 +1149,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -1237,9 +1237,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="mary_jane" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1264,7 +1264,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1277,7 +1277,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1289,7 +1289,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1302,7 +1302,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2  rounded-full px-4 py-2 text-sm dark:dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1310,7 +1310,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -1398,9 +1398,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="anna_belle" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1425,7 +1425,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1438,7 +1438,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1450,7 +1450,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1463,7 +1463,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1471,7 +1471,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>
@@ -1559,9 +1559,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="mark_allen" className="w-full mt-0">
           <div className="flex flex-col h-full justify-between w-full">
-            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full border-b border-b-[#202020]">
+            <div className="h-[80px] items-center flex justify-between px-[2rem] w-full  border-b dark:border-b-[#202020]">
               <div className="flex gap-[1rem] items-center">
-                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border border-[#202020]">
+                <div className="h-[3rem] w-[3rem] flex items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1586,7 +1586,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1599,7 +1599,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1611,7 +1611,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1624,7 +1624,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1632,7 +1632,7 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t border-t-[#202020]">
+            <div className="h-[80px] justify-center gap-[2rem]  items-center flex w-full border-t dark:border-t-[#202020]">
               <div>
                 <Input className="w-[25rem]" />
               </div>

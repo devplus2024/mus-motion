@@ -4,14 +4,13 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
+import { Navigation } from "@/components/Navigation";
+import { CommandMenu } from "@/components/CommandMenu";
 const inter = Inter({ subsets: ["latin"] });
-const geist = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "MusicHub App",
   description: "MusicHub App",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,19 +19,21 @@ export default function RootLayout({
   return (
     <>
       <html
-        lang="en"
         suppressHydrationWarning
-        className={`${GeistSans.className} dark_black`}
+        lang="en"
+        className={`${GeistSans.className} dark`}
         style={{ colorScheme: "dark" }}
       >
         <head />
-        <body>
+        <body className="relative">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
+            <CommandMenu />
+            <Navigation />
             {children}
           </ThemeProvider>
         </body>

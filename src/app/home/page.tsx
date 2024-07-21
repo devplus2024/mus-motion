@@ -7,7 +7,6 @@ import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { CommandMenu } from "./CommandMenu";
-import TabsComponent from "./TabsComponent";
 import {
   EllipsisVertical,
   Heart,
@@ -100,37 +99,24 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { HoverTabs } from "./HoverTabs";
+import { useRouter } from "next/navigation";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
-import { NavigationEffect } from "../NavigationEffect";
+import { NavigationEffect } from "@/components/NavigationEffect";
 export default function Home() {
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <CommandMenu />
-      <div className="w-full  px-[2rem]  border bg-[#000000] border-[#202020] sticky top-0 items-center rounded-md flex justify-between gap-[2rem] z-[3]">
-        <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
-          <Link
-            href="/home"
-            className="text-white text-[1.5rem] duration-300 transition-colors ease-out"
-          >
-            /:\
-          </Link>
-          <HoverTabs />
-        </div>
-        <div className="flex gap-[2rem]">
-          <Button variant={"outline"}>Play Now</Button>
-          <Button>Download</Button>
-        </div>
-      </div>
-      <div className="mt-[3rem] w-full px-[5rem] items-center justify-center gap-[1.5rem] flex flex-col">
+      <div className="mt-[3rem] w-full px-[5rem] items-center justify-center gap-[1.1rem] flex flex-col">
         <div className="items-center gap-[2rem] justify-center flex flex-col">
-          <h1 className="text-center  text-[3rem] font-bold">
-            Your Gateway to Unlimited Music
+          <div>
+            <p className="font-bold text-[1rem]">
+              Your Ultimate Music Destination
+            </p>
+          </div>
+          <h1 className="text-center leading-[2.6rem] w-[42rem] text-[3rem] font-bold">
+            Unleash Your Music Experience Today
           </h1>
-          <p className="text-[1.2rem] w-[40rem] text-center">
-            Discover new horizons in music. Listen to your favorite tracks,
-            create personalized playlists, and enjoy high-quality audio
-            streaming. MusicHub brings the world of music to your fingertips.
+          <p className="font-bold text-[1rem]">
+            Discover Infinite Melodies Here
           </p>
         </div>
         <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
