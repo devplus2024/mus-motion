@@ -128,7 +128,7 @@ export default function Home() {
         <div className="flex justify-center mt-[4rem] mb-[6rem]">
           <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
             <div className="flex gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
-              <Menubar className="bg-black border-none">
+              <Menubar className="dark:bg-black border-none rounded-none">
                 <MenubarMenu>
                   <MenubarTrigger>File</MenubarTrigger>
                   <MenubarContent>
@@ -223,9 +223,9 @@ export default function Home() {
                 defaultValue="listennow_parent"
                 className="flex w-full  rounded-t-none rounded-br-none rounded-bl-lg"
               >
-                <TabsList className="flex justify-start pt-[24px] flex-col w-[238px] rounded-t-none rounded-br-none rounded-bl-lg h-full border-r dark:border-r-[#202020] dark:bg-black gap-[1rem] ">
+                <TabsList className="flex justify-start pt-[24px] flex-col w-[238px] rounded-t-none rounded-br-none rounded-bl-lg h-full border-r dark:border-r-[#202020] dark:bg-black bg-white gap-[1rem] ">
                   <div>
-                    <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
+                    <h1 className="flex pl-[12px] font-bold text-xl dark:text-white w-[190px] justify-start items-center gap-[1rem]">
                       Discorver
                     </h1>
                   </div>
@@ -251,7 +251,7 @@ export default function Home() {
                     <p>Radio</p>
                   </TabsTrigger>
                   <div>
-                    <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
+                    <h1 className="flex pl-[12px] font-bold text-xl dark:text-white w-[190px] justify-start items-center gap-[1rem]">
                       Library
                     </h1>
                   </div>
