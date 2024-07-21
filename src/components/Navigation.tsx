@@ -171,7 +171,13 @@ export const Navigation = (): JSX.Element => {
               href="/"
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
             >
-              /:\
+              <Image
+                src="/logo.svg"
+                width="30"
+                height="30"
+                className="w-[30px] h-[30px]"
+                alt="logo"
+              />
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
