@@ -104,7 +104,7 @@ import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { NavigationEffect } from "@/components/NavigationEffect";
 export default function Home() {
   return (
-    <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
+    <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="mt-[3rem] w-full px-[5rem] items-center justify-center gap-[1.1rem] flex flex-col">
         <div className="items-center gap-[2rem] justify-center flex flex-col">
           <div>
@@ -126,8 +126,8 @@ export default function Home() {
       </div>
       <div className="contentsP active" id="musicContent">
         <div className="flex justify-center mt-[4rem] mb-[6rem]">
-          <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border border-[#202020]">
-            <div className="flex gap-[2rem] bg-black rounded-t-lg border-b border-b-[#202020] ">
+          <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
+            <div className="flex gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
               <Menubar className="bg-black border-none">
                 <MenubarMenu>
                   <MenubarTrigger>File</MenubarTrigger>
@@ -223,7 +223,7 @@ export default function Home() {
                 defaultValue="listennow_parent"
                 className="flex w-full  rounded-t-none rounded-br-none rounded-bl-lg"
               >
-                <TabsList className="flex justify-start pt-[24px] flex-col w-[238px] rounded-t-none rounded-br-none rounded-bl-lg h-full border-r border-r-[#202020] bg-black gap-[1rem] ">
+                <TabsList className="flex justify-start pt-[24px] flex-col w-[238px] rounded-t-none rounded-br-none rounded-bl-lg h-full border-r dark:border-r-[#202020] dark:bg-black gap-[1rem] ">
                   <div>
                     <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
                       Discorver
@@ -389,7 +389,7 @@ export default function Home() {
                                 </p>
                               </div>
                               <div>
-                                <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
+                                <ScrollArea className=" border-t dark:border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
                                   <div className="flex gap-[3rem]">
                                     <div>
                                       <Image
@@ -466,7 +466,7 @@ export default function Home() {
                                 </p>
                               </div>
                               <div>
-                                <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
+                                <ScrollArea className=" border-t dark:border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
                                   <div className="flex gap-[1.8rem]">
                                     <div>
                                       <Image
@@ -773,7 +773,7 @@ export default function Home() {
                               </div>
                             </div>
                           </ScrollArea>
-                          <div className="h-[70px] justify-center flex items-center w-full border-t-[#202020] border-t">
+                          <div className="h-[70px] justify-center flex items-center w-full dark:border-t-[#202020] border-t">
                             <div className="flex gap-[2rem]">
                               <SkipBack />
                               <PlayCircle />
@@ -816,13 +816,13 @@ export default function Home() {
                           </div>
                         </div>
                       </TabsContent>
-                      <TabsList className="bg-black h-[300px] p-0 w-full">
-                        <ScrollArea className="h-[300px] py-[1rem] w-full border-t border-t-[#202020]">
+                      <TabsList className="dark:bg-black h-[300px] p-0 w-full">
+                        <ScrollArea className="h-[300px] py-[1rem] w-full border-t dark:border-t-[#202020]">
                           <TabsTrigger
                             value="gio_list"
                             className="flex w-full gap-[3rem]  items-center flex-col"
                           >
-                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
+                            <div className=" flex justify-between items-center px-[2rem] dark:border-[#202020] rounded-sm w-[1000px] h-[80px]">
                               <div className="flex gap-[2rem] items-center">
                                 <Image
                                   width={400}
@@ -845,7 +845,7 @@ export default function Home() {
                             value="gio_list"
                             className="flex w-full gap-[3rem]  items-center flex-col"
                           >
-                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
+                            <div className=" flex justify-between items-center px-[2rem] dark:border-[#202020] rounded-sm w-[1000px] h-[80px]">
                               <div className="flex gap-[2rem] items-center">
                                 <Image
                                   width={400}
