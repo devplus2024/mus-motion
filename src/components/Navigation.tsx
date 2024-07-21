@@ -196,39 +196,39 @@ export const Navigation = (): JSX.Element => {
                     <div className="flex flex-col gap-[2rem]">
                       <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                         <div>
-                          <Lightbulb className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                          <Lightbulb className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                         </div>
                         <div className="flex justify-start items-start flex-col">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
                             Smart Recommendations
                           </NavigationMenuLink>
-                          <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                             Discover music curated just for you.
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                         <div>
-                          <WifiOff className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                          <WifiOff className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                         </div>
                         <div className="flex justify-start items-start flex-col">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
                             Offline Mode
                           </NavigationMenuLink>
-                          <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                             Download songs and listen offline.
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                         <div>
-                          <Podcast className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                          <Podcast className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                         </div>
                         <div className="flex justify-start items-start flex-col">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
                             Podcasts
                           </NavigationMenuLink>
-                          <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                             Access a wide range of podcasts.
                           </p>
                         </div>
@@ -237,39 +237,39 @@ export const Navigation = (): JSX.Element => {
                     <div className="flex flex-col items-start justify-between">
                       <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                         <div>
-                          <NotebookText className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                          <NotebookText className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                         </div>
                         <div className="flex justify-start items-start flex-col">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
                             Lyrics Display
                           </NavigationMenuLink>
-                          <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                             Sing along with on-screen lyrics.
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                         <div>
-                          <Medal className="text-[#a1a1a1] dark:group-hover:text-black dark:group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                          <Medal className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                         </div>
                         <div className="flex justify-start items-start flex-col">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
                             High-Quality Audio
                           </NavigationMenuLink>
-                          <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                             Enjoy lossless audio streaming.
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                         <div>
-                          <Share2 className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                          <Share2 className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                         </div>
                         <div className="flex justify-start items-start flex-col">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
                             Social Sharing
                           </NavigationMenuLink>
-                          <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                          <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                             Share your favorite tracks on social media.
                           </p>
                         </div>
@@ -304,39 +304,39 @@ export const Navigation = (): JSX.Element => {
                         <div className="flex flex-col gap-[1.8rem]">
                           <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                             <div>
-                              <ListPlus className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                              <ListPlus className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                             </div>
                             <div className="flex justify-start items-start flex-col">
                               <NavigationMenuLink className="text-nowrap text-sm font-bold">
                                 Create New
                               </NavigationMenuLink>
-                              <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                              <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                                 Start personalized playlists here.
                               </p>
                             </div>
                           </div>
                           <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                             <div>
-                              <Heart className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                              <Heart className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                             </div>
                             <div className="flex justify-start items-start flex-col">
                               <NavigationMenuLink className="text-nowrap text-sm font-bold">
                                 Favorites
                               </NavigationMenuLink>
-                              <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                              <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                                 Manage curated favorite playlists.
                               </p>
                             </div>
                           </div>
                           <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                             <div>
-                              <Play className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                              <Play className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                             </div>
                             <div className="flex justify-start items-start flex-col">
                               <NavigationMenuLink className="text-nowrap text-sm font-bold">
                                 Currently Playing
                               </NavigationMenuLink>
-                              <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                              <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                                 View active playlists now.
                               </p>
                             </div>
@@ -352,26 +352,26 @@ export const Navigation = (): JSX.Element => {
                         <div className="flex flex-col gap-[1.8rem]">
                           <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                             <div>
-                              <Clock className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                              <Clock className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                             </div>
                             <div className="flex justify-start items-start flex-col">
                               <NavigationMenuLink className="text-nowrap text-sm font-bold">
                                 Recent
                               </NavigationMenuLink>
-                              <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                              <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                                 Review recently played songs and albums.
                               </p>
                             </div>
                           </div>
                           <div className="flex items-center cursor-pointer group  gap-[0.5rem]">
                             <div>
-                              <Save className="text-[#a1a1a1] group-hover:text-black group-hover:bg-white duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
+                              <Save className="text-[#a1a1a1] dark:group-hover:text-black group-hover:text-white dark:group-hover:bg-white group-hover:bg-black duration-300 ease-out transition-colors  border w-[2rem] h-[2rem] p-1 rounded-sm" />
                             </div>
                             <div className="flex justify-start items-start flex-col">
                               <NavigationMenuLink className="text-nowrap text-sm font-bold">
                                 Saved
                               </NavigationMenuLink>
-                              <p className="text-xs group-hover:text-white duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
+                              <p className="text-xs dark:group-hover:text-white group-hover:text-black duration-300 ease-out transition-colors text-[#a1a1a1] text-nowrap">
                                 Access saved songs and albums.
                               </p>
                             </div>
