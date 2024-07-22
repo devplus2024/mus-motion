@@ -484,7 +484,7 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex gap-[2rem] items-center">
-            <div className="border p-2 h-[36px] w-[36px] rounded-md">
+            <div className="border p-2 flex items-center justify-center h-[36px] w-[36px] rounded-md">
               <Search className="w-5 h-5" />
             </div>
             <div className="flex gap-[2rem]">
