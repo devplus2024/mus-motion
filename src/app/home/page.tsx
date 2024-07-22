@@ -105,17 +105,17 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 export default function Home() {
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="py-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[1.1rem] flex flex-col">
-        <div className="items-center gap-[2rem] justify-center flex flex-col">
+      <div className="pt-[7rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
+        <div className="items-center gap-[3rem] justify-center flex flex-col">
           <div>
-            <p className="font-bold text-[1rem]">
+            <p className="font-medium bg-white rounded-full px-3 text-black text-[1rem]">
               Your Ultimate Music Destination
             </p>
           </div>
           <h1 className="text-center leading-[2.6rem]  text-[3rem] font-bold">
             Unleash Your Music Experience Today
           </h1>
-          <p className="font-bold w-[42rem] text-center text-[1rem]">
+          <p className="font-medium w-[30rem] text-center text-[1rem]">
             Dive into an endless sea of melodies. Customize your playlists,
             stream in high quality, and enjoy music like never before. Your
             journey into the world of music starts here.
