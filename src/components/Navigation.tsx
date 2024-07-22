@@ -483,9 +483,14 @@ export const Navigation = (): JSX.Element => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex gap-[2rem]">
-            <Button variant={"outline"}>Play Now</Button>
-            <Button>Download</Button>
+          <div className="flex gap-[4rem] items-center">
+            <div className="border p-2 rounded-md">
+              <Search />
+            </div>
+            <div className="flex gap-[2rem]">
+              <Button variant={"outline"}>Play Now</Button>
+              <Button>Download</Button>
+            </div>
           </div>
           <div
             className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#1f1f1f] transition-[width]"

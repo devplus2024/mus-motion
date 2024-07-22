@@ -126,6 +126,14 @@ export default function Home() {
           <Button variant="outline">Discover Features</Button>
         </div>
       </div>
+      <div className="mt-[5rem] flex flex-col items-center gap-[2.5rem]">
+        <p className="font-medium  text-center w-fit bg-white rounded-full px-3 text-black text-[1rem]">
+          Lasted Version
+        </p>
+        <h1 className="text-center leading-[2.6rem]  text-[2.5rem] font-bold">
+          Preview Of MusicHub App
+        </h1>
+      </div>
       <div className="contentsP active" id="musicContent">
         <div className="flex justify-center mt-[4rem] mb-[6rem]">
           <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
