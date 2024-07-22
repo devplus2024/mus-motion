@@ -435,7 +435,7 @@ export const Navigation = (): JSX.Element => {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/resource" legacyBehavior passHref>
+                  <Link href="/resources" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
