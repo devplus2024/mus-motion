@@ -176,7 +176,7 @@ export const Navigation = (): JSX.Element => {
                 src="/logo.svg"
                 width="30"
                 height="30"
-                className="w-[30px] h-[30px]"
+                className="w-[30px] dark:fill-white h-[30px]"
                 alt="logo"
               />
             </Link>
