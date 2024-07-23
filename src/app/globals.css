@@ -75,6 +75,8 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
+    --cmdk-list-height: 600px;
+    --cmdk-list-width: 600px;
   }
 
   .custom_command_scroll {
@@ -86,6 +88,15 @@
     width: 32px;
     height: 32px;
     transform: rotate(180deg);
+  }
+  [cmdk-list] {
+    min-height: 300px;
+    height: var(--cmdk-list-height);
+    max-height: 500px;
+    transition: height 100ms ease;
+  }
+  [cmdk-root] {
+    max-width: 640px;
   }
 }
 

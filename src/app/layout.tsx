@@ -32,7 +32,6 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <CommandMenu />
             <Navigation />
             {children}
           </ThemeProvider>

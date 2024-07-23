@@ -106,6 +106,7 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
+import { CommandMenu } from "./CommandMenu";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -164,7 +165,7 @@ export const Navigation = (): JSX.Element => {
         <nav
           ref={navRef}
           onPointerLeave={onLeaveTabs}
-          className="w-full  px-[2rem]  relative border bg-white dark:bg-[#000000] dark:border-[#202020]  items-center rounded-md flex justify-between gap-[2rem] z-[1]"
+          className="w-full  px-[2rem]  relative border-b bg-white dark:bg-[#000000] dark:border-[#202020]  items-center  flex justify-between gap-[2rem] z-[1]"
         >
           <div className="h-[56px] text-sm    w-fit items-center  flex gap-[2rem] ">
             <Link
@@ -184,7 +185,7 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem className="">
                   <NavigationMenuTrigger
                     className={classNames(
-                      "text-sm relative rounded-full flex items-center h-7 px-3    text-[#a1a1a1] cursor-pointer select-none transition-colors",
+                      "text-sm relative rounded-full flex items-center h-7 px-3    text-[#7c7c7c] cursor-pointer select-none transition-colors",
                       {
                         "dark:text-white": hoveredTabIndex === 0,
                         "dark:bg-[#1f1f1f]": hoveredTabIndex === 0,
@@ -286,7 +287,7 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
                     className={classNames(
-                      "text-sm relative rounded-full flex items-center h-7 px-3   text-[#a1a1a1] cursor-pointer select-none transition-colors",
+                      "text-sm relative rounded-full flex items-center h-7 px-3   text-[#7c7c7c] cursor-pointer select-none transition-colors",
                       {
                         "dark:text-white": hoveredTabIndex === 1,
                       }
@@ -395,7 +396,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm font-medium transition-colors  text-[#a1a1a1] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm  transition-colors text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 2,
                           }
@@ -406,7 +407,7 @@ export const Navigation = (): JSX.Element => {
                         onPointerEnter={(e) => onEnterTab(e, 2)}
                         onFocus={(e) => onEnterTab(e, 2)}
                       >
-                        Documention
+                        Docs
                       </button>
                     </NavigationMenuLink>
                   </Link>
@@ -418,7 +419,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm font-medium transition-colors  text-[#a1a1a1] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 3,
                           }
@@ -441,7 +442,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm font-medium transition-colors  text-[#a1a1a1] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm text-[#7c7c7c] transition-colors  hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 4,
                           }
@@ -464,7 +465,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm font-medium transition-colors  text-[#a1a1a1] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 5,
                           }
@@ -484,9 +485,7 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex gap-[2rem] items-center">
-            <div className="border p-2 flex items-center justify-center h-[36px] w-[36px] rounded-md">
-              <Search className="w-5 h-5" />
-            </div>
+            <CommandMenu />
             <div className="flex gap-[2rem]">
               <Button variant={"outline"}>Play Now</Button>
               <Button>Download</Button>
