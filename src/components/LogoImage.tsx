@@ -5,17 +5,23 @@ const LogoImage = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check if the body has the class 'dark'
     const checkDarkMode = () => {
-      setIsDarkMode(document.body.classList.contains("dark"));
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
     };
 
     // Initial check
     checkDarkMode();
 
-    // Optional: Add an event listener to check for changes
-    const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.body, { attributes: true });
+    // Create a MutationObserver to watch for changes to the body's class list
+    const observer = new MutationObserver(() => {
+      checkDarkMode();
+    });
+
+    // Observe changes in attributes on the body element
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     // Clean up the observer on component unmount
     return () => observer.disconnect();
@@ -24,6 +30,8 @@ const LogoImage = () => {
   return (
     <Image
       className="w-[30px] h-[30px]"
+      width={"30"}
+      height={"30"}
       alt="Logo"
       src={isDarkMode ? "dark.svg" : "light.svg"}
     />
