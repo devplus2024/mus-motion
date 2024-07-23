@@ -107,7 +107,7 @@ import {
 } from "@/components/ui/resizable";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
-import SvgLogo from "./SvgLogo";
+import LogoImage from "./LogoImage";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -173,7 +173,7 @@ export const Navigation = (): JSX.Element => {
               href="/"
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
             >
-              <SvgLogo />
+              <LogoImage />
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
