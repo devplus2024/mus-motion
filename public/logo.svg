@@ -10,7 +10,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-   <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="./src/app/globals.css" type="text/css"/>
+   <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="./styles.css" type="text/css"/>
   <sodipodi:namedview
      id="namedview5"
      pagecolor="#ffffff"
