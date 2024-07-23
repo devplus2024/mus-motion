@@ -17,7 +17,7 @@ const SvgLogo: React.FC = () => {
     xmlns: "http://www.w3.org/2000/svg",
     "xmlns:svg": "http://www.w3.org/2000/svg",
     version: "1.0",
-    className: "dark:fill-white",
+    className: "dark:fill-white w-[30px] h-[30px]",
     id: "svg2",
     "sodipodi:docname": "Odal_rune.svg",
     "inkscape:version": "1.2.2 (732a01da63, 2022-12-09)",
