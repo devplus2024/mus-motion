@@ -25,7 +25,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5% 64.9%;
     --radius: 0.5rem;
-	--scrollbar-color:#000000;
+    --scrollbar-color: #000000;
+    --fill-logo-svg: #000000;
   }
   .dark {
     --menu-border-color: #202020;
@@ -53,7 +54,8 @@
     --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
     --blur: 45px;
-	--scrollbar-color:#eaeaea;
+    --scrollbar-color: #eaeaea;
+    --fill-logo-svg: #ffffff;
   }
   .dark_black {
     --chat: #1a1a1a;
@@ -79,7 +81,8 @@
     --radius: 0.5rem;
     --cmdk-list-height: 600px;
     --cmdk-list-width: 600px;
-	--scrollbar-color:#eaeaea;
+    --scrollbar-color: #eaeaea;
+    --fill-logo-svg: #000000;
   }
 
   .custom_command_scroll {
@@ -100,6 +103,9 @@
   }
   [cmdk-root] {
     max-width: 640px;
+  }
+  .fill_logo_svg {
+    fill: var(--fill-logo-svg);
   }
 }
 
