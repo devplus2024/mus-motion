@@ -50,7 +50,7 @@ export function CommandMenu() {
         onClick={() => setOpen((open) => !open)}
         className="cursor-pointer border p-2 flex gap-4 group hover:bg-muted transition-all duration-200 ease-out items-center justify-between h-[36px] w-[300px] rounded-md"
       >
-        <div className="gap-4 flex items-center text-[#7c7c7c] group-hover:text-white transition-all duration-200 ease-out ">
+        <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
           <Search className="h-5 w-5  " />
           <p className="text-sm">Search documetion...</p>
         </div>
