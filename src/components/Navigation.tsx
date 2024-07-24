@@ -9,12 +9,13 @@ import {
   CSSProperties,
 } from "react";
 import Image from "next/image";
+import {ModeToggle} 
 import { Toaster, toast } from "sonner";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import {
+import {ModeToggle} from "./mode-toggle";
   EllipsisVertical,
   Heart,
   House,
@@ -480,6 +481,9 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex gap-[2rem] items-center">
+			<div>
+			  <ModeToggle/>
+			</div>
             <CommandMenu />
             <div className="flex gap-[2rem]">
               <Button variant={"outline"}>Play Now</Button>
