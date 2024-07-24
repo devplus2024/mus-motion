@@ -1,6 +1,7 @@
+'use client'
 import Image from "next/image";
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const LogoImage = () => {
   const [src, setSrc] = useState('light.svg');
