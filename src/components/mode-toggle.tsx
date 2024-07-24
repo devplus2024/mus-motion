@@ -4,6 +4,7 @@ import { Moon, Sun } from 'lucide-react'; // Đảm bảo bạn đã nhập các
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 const ModeToggle = () => {
+  const { setTheme } = useTheme();
   const [icontoggle, setIcon] = useState(<Moon size={16} />);
 
   const updateIcon = () => {
