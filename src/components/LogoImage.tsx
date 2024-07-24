@@ -1,15 +1,15 @@
 import Image from "next/image";
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom'; // Assuming you are using react-router for routing
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const LogoImage = () => {
   const [src, setSrc] = useState('light.svg');
-  const location = useLocation();
+  const router = useRouter();
 
   const updateSrc = () => {
     const isDarkMode = document.documentElement.classList.contains('dark');
     const baseSrc = isDarkMode ? 'dark.svg' : 'light.svg';
-    const newSrc = location.pathname === '/chat/vi-vn' ? `../${baseSrc}` : baseSrc;
+    const newSrc = router.pathname === '/chat/vi-vn' ? `../${baseSrc}` : baseSrc;
     setSrc(newSrc);
   };
 
@@ -27,18 +27,19 @@ const LogoImage = () => {
 
     // Clean up the observer on component unmount
     return () => observer.disconnect();
-  }, [location.pathname]); // Re-run the effect when the pathname changes
+  }, [router.pathname]); // Re-run the effect when the pathname changes
 
   return (
-    <Image
-      width={"30"}
-      height={"30"}
+	<Image
       className="w-[30px] h-[30px]"
       alt="Logo"
       src={src}
+      width={"30"}
+      height={"30"}
     />
   );
 };
 
 export default LogoImage;
+
 
