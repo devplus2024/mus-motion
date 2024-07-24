@@ -35,7 +35,7 @@ const ModeToggle = () => {
   return (
     <Button variant="outline" onClick={toggleTheme} aria-label="Toggle Theme">
       {icontoggle}
-    </button>
+    </Button>
   );
 };
 
