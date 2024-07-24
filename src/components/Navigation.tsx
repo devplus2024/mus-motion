@@ -9,13 +9,13 @@ import {
   CSSProperties,
 } from "react";
 import Image from "next/image";
-import {ModeToggle} 
 import { Toaster, toast } from "sonner";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import {ModeToggle} from "./mode-toggle";
+import { ModeToggle } from "./mode-toggle";
+import {
   EllipsisVertical,
   Heart,
   House,
