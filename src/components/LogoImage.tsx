@@ -1,16 +1,15 @@
 'use client'
-import Image from "next/image";
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const LogoImage = () => {
   const [src, setSrc] = useState('light.svg');
-  const router = useRouter();
+  const pathname = usePathname();
 
   const updateSrc = () => {
     const isDarkMode = document.documentElement.classList.contains('dark');
     const baseSrc = isDarkMode ? 'dark.svg' : 'light.svg';
-    const newSrc = router.pathname === '/chat/vi-vn' ? `../${baseSrc}` : baseSrc;
+    const newSrc = pathname === '/chat/vi-vn' ? `../${baseSrc}` : baseSrc;
     setSrc(newSrc);
   };
 
@@ -28,10 +27,10 @@ const LogoImage = () => {
 
     // Clean up the observer on component unmount
     return () => observer.disconnect();
-  }, [router.pathname]); // Re-run the effect when the pathname changes
+  }, [pathname]); // Re-run the effect when the pathname changes
 
   return (
-	<Image
+    <Image
       className="w-[30px] h-[30px]"
       alt="Logo"
       src={src}
@@ -42,5 +41,3 @@ const LogoImage = () => {
 };
 
 export default LogoImage;
-
-
