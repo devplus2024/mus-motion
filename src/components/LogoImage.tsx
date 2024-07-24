@@ -9,7 +9,7 @@ const LogoImage = () => {
   const updateSrc = () => {
     const isDarkMode = document.documentElement.classList.contains('dark');
     const baseSrc = isDarkMode ? 'dark.svg' : 'light.svg';
-    const newSrc = pathname === '/chat/vi-vn' ? `../${baseSrc}` : baseSrc;
+    const newSrc = pathname === '/chat/vn-vi' ? `../${baseSrc}` : baseSrc;
     setSrc(newSrc);
   };
 
