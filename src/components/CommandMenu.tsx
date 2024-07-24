@@ -9,6 +9,10 @@ import {
   User,
   Search,
   RocketIcon,
+  StickyNote,
+  Sun,
+  Moon,
+  Monitor,
 } from "lucide-react";
 import {
   Command,
@@ -22,6 +26,9 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useTheme } from "next-themes";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { useRouter } from "next/navigation";
 import {
   CalendarIcon,
   EnvelopeClosedIcon,
@@ -29,8 +36,41 @@ import {
   GearIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
+import { useCommandState } from "cmdk";
 export function CommandMenu() {
+  const router = useRouter();
+  const { setTheme } = useTheme();
   const [open, setOpen] = React.useState(false);
+  const SubItem = (
+    props: React.JSX.IntrinsicAttributes &
+      Omit<
+        { children?: React.ReactNode } & Omit<
+          Pick<
+            Pick<
+              React.DetailedHTMLProps<
+                React.HTMLAttributes<HTMLDivElement>,
+                HTMLDivElement
+              >,
+              "key" | keyof React.HTMLAttributes<HTMLDivElement>
+            > & { ref?: React.Ref<HTMLDivElement> } & { asChild?: boolean },
+            "key" | keyof React.HTMLAttributes<HTMLDivElement> | "asChild"
+          >,
+          "onSelect" | "disabled" | "value"
+        > & {
+            disabled?: boolean;
+            onSelect?: (value: string) => void;
+            value?: string;
+            keywords?: string[];
+            forceMount?: boolean;
+          } & React.RefAttributes<HTMLDivElement>,
+        "ref"
+      > &
+      React.RefAttributes<HTMLDivElement>
+  ) => {
+    const search = useCommandState((state) => state.search);
+    if (!search) return null;
+    return <CommandItem {...props} />;
+  };
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -64,56 +104,99 @@ export function CommandMenu() {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList className="custom_command_scroll h-[500px] ">
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>
-              <CalendarIcon className="mr-2 h-4 w-4" />
-              <span>Calendar</span>
+          <CommandGroup heading="Link">
+            <CommandItem
+              onSelect={() => {
+                router.push("/");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Home</span>
             </CommandItem>
-            <CommandItem>
-              <FaceIcon className="mr-2 h-4 w-4" />
-              <span>Search Emoji</span>
+            <CommandItem
+              onSelect={() => {
+                router.push("/docs");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Docs</span>
             </CommandItem>
-            <CommandItem>
-              <RocketIcon className="mr-2 h-4 w-4" />
-              <span>Launch</span>
+            <CommandItem
+              onSelect={() => {
+                router.push("/pricing");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Pricing</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/resources");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Resources</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/enterprise");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Enterprise</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/docs");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Play Now</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/docs");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Download</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>
-              <PersonIcon className="mr-2 h-4 w-4" />
-              <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
+          <CommandGroup heading="Theme">
+            <CommandItem
+              onSelect={() => {
+                setTheme("light");
+                setOpen((open) => !open);
+              }}
+            >
+              <Sun className="mr-2 h-4 w-4" />
+              <span>Light</span>
             </CommandItem>
-            <CommandItem>
-              <EnvelopeClosedIcon className="mr-2 h-4 w-4" />
-              <span>Mail</span>
-              <CommandShortcut>⌘B</CommandShortcut>
+            <CommandItem
+              onSelect={() => {
+                setTheme("dark");
+                setOpen((open) => !open);
+              }}
+            >
+              <Moon className="mr-2 h-4 w-4" />
+              <span>Dark</span>
             </CommandItem>
-            <CommandItem>
-              <GearIcon className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <GearIcon className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <GearIcon className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <GearIcon className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <GearIcon className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
+            <CommandItem
+              onSelect={() => {
+                setTheme("system");
+                setOpen((open) => !open);
+              }}
+            >
+              <Monitor className="mr-2 h-4 w-4" />
+              <span>System</span>
             </CommandItem>
           </CommandGroup>
         </CommandList>
