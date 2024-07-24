@@ -13,6 +13,7 @@ const ModeToggle = () => {
   };
 
   const toggleTheme = () => {
+	const isDarkMode = document.documentElement.classList.contains('dark');
 	setTheme(isDarkMode ? "light" : "dark");
     updateIcon(); // Update icon when theme is toggled
   };
