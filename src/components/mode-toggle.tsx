@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react'; // Đảm bảo bạn đã nhập các biểu tượng này
-import { Button } from "@component/ui/button";
+import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 const ModeToggle = () => {
   const [icontoggle, setIcon] = useState(<Moon size={16} />);
