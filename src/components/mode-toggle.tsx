@@ -10,10 +10,10 @@ const ModeToggle = () => {
   const updateIcon = () => {
     const isDarkMode = document.documentElement.classList.contains('dark');
     setIcon(isDarkMode ? <Moon size={16} /> : <Sun size={16} />);
-	setTheme(isDarkMode ? "dark" : "light");
   };
 
   const toggleTheme = () => {
+	setTheme(isDarkMode ? "light" : "dark");
     updateIcon(); // Update icon when theme is toggled
   };
 
