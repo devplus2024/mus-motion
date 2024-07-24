@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-
+import Image from 'next/image';
 const LogoImage = () => {
   const [src, setSrc] = useState('light.svg');
   const pathname = usePathname();
@@ -27,15 +27,15 @@ const LogoImage = () => {
 
     // Clean up the observer on component unmount
     return () => observer.disconnect();
-  }, [pathname]); // Re-run the effect when the pathname changes
+  }, [pathname, updateSrc]); // Include updateSrc in the dependency array
 
   return (
     <Image
       className="w-[30px] h-[30px]"
       alt="Logo"
       src={src}
-      width={"30"}
-      height={"30"}
+      width={30}
+      height={30}
     />
   );
 };
