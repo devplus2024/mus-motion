@@ -484,11 +484,12 @@ export const Navigation = (): JSX.Element => {
 		    <CommandMenu />
 			<div className="flex gap-[1rem] items-center">
 			  <ModeToggle/>
+			  <div class="cursor-pointer h-[24px] border-r"></div>   
 			  <Link href="https://github.com/devplus2024/music-app">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width={24}
-					height={24}
+					width={21}
+					height={21}
 					fill="currentColor"
 					className="bi bi-github"
 					viewBox="0 0 16 16"
@@ -499,8 +500,8 @@ export const Navigation = (): JSX.Element => {
 			  <Link href="https://x.com/DeveloperPlus24">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width={24}
-					height={24}
+					width={21}
+					height={21}
 					fill="currentColor"
 					className="bi bi-twitter"
 					viewBox="0 0 16 16"
@@ -511,8 +512,8 @@ export const Navigation = (): JSX.Element => {
 			  <Link href="https://discord.gg/WhZAF8Dz">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width={27}
-					height={27}
+					width={24}
+					height={24}
 					fill="currentColor"
 					className="bi bi-discord"
 					viewBox="0 0 16 16"

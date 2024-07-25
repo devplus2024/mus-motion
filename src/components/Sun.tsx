@@ -2,8 +2,8 @@ export default function Sun() {
   return (
 	<svg
 	  xmlns="http://www.w3.org/2000/svg"
-	  width={35}
-	  height={35}
+	  width={30}
+	  height={30}
 	  fill="currentColor"
 	  className="bi bi-brightness-low-fill"
 	  viewBox="0 0 16 16"
