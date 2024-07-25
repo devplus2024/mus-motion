@@ -109,6 +109,7 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
 import LogoImage from "./LogoImage";
+import { Switch } from "@/components/ui/switch";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -181,10 +182,10 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem className="">
                   <NavigationMenuTrigger
                     className={classNames(
-                      "text-sm relative rounded-full flex items-center h-7 px-3    text-[#7c7c7c] cursor-pointer select-none transition-colors",
+                      "text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  text-[#7c7c7c] cursor-pointer select-none transition-colors",
                       {
                         "dark:text-white": hoveredTabIndex === 0,
-                        "dark:bg-[#1f1f1f]": hoveredTabIndex === 0,
+                        "dark:bg-[#000000]": hoveredTabIndex === 0,
                       }
                     )}
                     ref={(el) => {
@@ -483,8 +484,8 @@ export const Navigation = (): JSX.Element => {
           <div className="flex gap-[2rem] items-center">
 		    <CommandMenu />
 			<div className="flex gap-[1rem] items-center">
-			  <ModeToggle/>
-			  <div className="cursor-pointer h-[24px] border-r"></div>   
+			  <Switch id="theme-mode" />
+			  <div className="cursor-pointer hidden h-[24px] border-r"></div>   
 			  <Link href="https://github.com/devplus2024/music-app">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -524,7 +525,7 @@ export const Navigation = (): JSX.Element => {
 			</div>
           </div>
           <div
-            className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#1f1f1f] transition-[width]"
+            className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#000000] transition-[width]"
             style={hoverStyles}
           />
         </nav>
