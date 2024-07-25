@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 const LogoImage = () => {
-  const [src, setSrc] = useState('light.svg');
+  const [src, setSrc] = useState('dark.svg');
   const pathname = usePathname();
 
   const updateSrc = () => {
