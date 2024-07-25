@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 const ModeToggle = () => {
   const { setTheme } = useTheme();
-  const [icontoggle, setIcon] = useState(<Sun size={16} />);
+  const [icontoggle, setIcon] = useState(<Sun/>);
 
   const updateIcon = () => {
     const isDarkMode = document.documentElement.classList.contains('dark');
-    setIcon(isDarkMode ? <Moon size={16} /> : <Sun size={16} />);
+    setIcon(isDarkMode ? <Moon/> : <Sun/>);
   };
 
   const toggleTheme = () => {
