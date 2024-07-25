@@ -36,9 +36,9 @@ const ModeToggle = () => {
   }, []); // Include an empty dependency array
 
   return (
-    <Button variant="outline" onClick={toggleTheme} aria-label="Toggle Theme">
+    <div variant="outline" onClick={toggleTheme} aria-label="Toggle Theme">
       {icontoggle}
-    </Button>
+    </div>
   );
 };
 
