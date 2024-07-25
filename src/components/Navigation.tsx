@@ -484,7 +484,7 @@ export const Navigation = (): JSX.Element => {
           <div className="flex gap-[2rem] items-center">
 		    <CommandMenu />
 			<div className="flex gap-[1rem] items-center">
-			  <Switch checked id="theme-mode" />
+			  <Switch defaultChecked id="theme-mode" />
 			  <div className="cursor-pointer hidden h-[24px] border-r"></div>   
 			  <Link href="https://github.com/devplus2024/music-app">
 				<svg
