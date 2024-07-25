@@ -484,7 +484,7 @@ export const Navigation = (): JSX.Element => {
 		    <CommandMenu />
 			<div className="flex gap-[1rem] items-center">
 			  <ModeToggle/>
-			  <div class="cursor-pointer h-[24px] border-r"></div>   
+			  <div className="cursor-pointer h-[24px] border-r"></div>   
 			  <Link href="https://github.com/devplus2024/music-app">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
