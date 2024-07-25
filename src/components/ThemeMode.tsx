@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -32,7 +33,7 @@ export function ThemeMode() {
           strokeLinejoin="round"
           viewBox="0 0 16 16"
           width={16}
-          className="dark:text-white text-black"
+          style={{ color: "currentcolor" }}
         >
           <path
             fillRule="evenodd"
@@ -53,7 +54,7 @@ export function ThemeMode() {
           strokeLinejoin="round"
           viewBox="0 0 16 16"
           width={16}
-          className="dark:text-white text-black"
+          style={{ color: "currentcolor" }}
         >
           <path
             fillRule="evenodd"
@@ -74,7 +75,7 @@ export function ThemeMode() {
           strokeLinejoin="round"
           viewBox="0 0 16 16"
           width={16}
-          className="dark:text-white text-black"
+          style={{ color: "currentcolor" }}
         >
           <path
             fillRule="evenodd"

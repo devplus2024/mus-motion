@@ -273,7 +273,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -286,7 +286,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -298,7 +298,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -311,7 +311,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -434,7 +434,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -447,7 +447,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -459,7 +459,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -472,7 +472,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -595,7 +595,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -608,7 +608,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -620,7 +620,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -633,7 +633,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -756,7 +756,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -769,7 +769,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -781,7 +781,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -794,7 +794,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -917,7 +917,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -930,7 +930,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -942,7 +942,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -955,7 +955,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1078,7 +1078,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1091,7 +1091,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1103,7 +1103,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1116,7 +1116,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1239,7 +1239,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1252,7 +1252,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1264,7 +1264,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1277,7 +1277,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1400,7 +1400,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1413,7 +1413,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1425,7 +1425,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1438,7 +1438,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1561,7 +1561,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1574,7 +1574,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1586,7 +1586,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1599,7 +1599,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full px-4 py-2 text-sm dark:bg-[--chat] bg-muted"
                     data-id={72}
                   >
                     Perfect! See you then! 👍

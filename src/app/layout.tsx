@@ -2,27 +2,41 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
+import { Navigation } from "@/components/Navigation";
+import { CommandMenu } from "@/components/CommandMenu";
 const inter = Inter({ subsets: ["latin"] });
-const geist = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "MusicHub App",
   description: "MusicHub App",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${GeistSans.className} dark_black`}
-      style={{ colorScheme: "dark" }}
-    >
-      <body className="dark:[color-scheme:dark]">{children}</body>
-    </html>
+    <>
+      <html
+        suppressHydrationWarning
+        lang="en"
+        className={`${GeistSans.className} dark`}
+        style={{ colorScheme: "dark" }}
+      >
+        <head />
+        <body className="relative">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navigation />
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   );
 }
