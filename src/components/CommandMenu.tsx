@@ -168,6 +168,15 @@ export function CommandMenu() {
               <StickyNote className="mr-2 h-4 w-4" />
               <span>Download</span>
             </CommandItem>
+			 <CommandItem
+              onSelect={() => {
+                router.push("/chat");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Chat</span>
+            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Theme">
