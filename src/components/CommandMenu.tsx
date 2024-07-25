@@ -92,7 +92,7 @@ export function CommandMenu() {
       >
         <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
           <Search className="h-5 w-5  " />
-          <p className="text-sm">Search documetion...</p>
+          <p className="text-sm select-none">Search documetion...</p>
         </div>
         <p className="text-sm text-muted-foreground">
           <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
