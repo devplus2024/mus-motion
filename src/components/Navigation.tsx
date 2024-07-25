@@ -481,6 +481,7 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex gap-[2rem] items-center">
+		    <CommandMenu />
 			<div className="flex gap-[1rem] items-center">
 			  <ModeToggle/>
 			  <Link href="https://github.com/devplus2024/music-app">
@@ -520,7 +521,6 @@ export const Navigation = (): JSX.Element => {
 				</svg>
 			  </Link>
 			</div>
-            <CommandMenu />
           </div>
           <div
             className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#1f1f1f] transition-[width]"

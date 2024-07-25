@@ -36,7 +36,7 @@ const ModeToggle = () => {
   }, []); // Include an empty dependency array
 
   return (
-    <div onClick={toggleTheme} aria-label="Toggle Theme">
+    <div onClick={toggleTheme} aria-label="Toggle Theme" className="cursor-pointer">
       {icontoggle}
     </div>
   );
