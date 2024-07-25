@@ -511,8 +511,8 @@ export const Navigation = (): JSX.Element => {
 			  <Link href="https://discord.gg/WhZAF8Dz">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width={24}
-					height={24}
+					width={27}
+					height={27}
 					fill="currentColor"
 					className="bi bi-discord"
 					viewBox="0 0 16 16"
