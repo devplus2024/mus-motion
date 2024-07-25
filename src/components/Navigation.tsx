@@ -393,7 +393,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm  transition-colors text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm  transition-colors text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 2,
                           }
@@ -416,7 +416,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 3,
                           }
@@ -439,7 +439,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm text-[#7c7c7c] transition-colors  hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm text-[#7c7c7c] transition-colors  hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 4,
                           }
@@ -462,7 +462,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <button
                         className={classNames(
-                          "group inline-flex h-7 w-max items-center dark:hover:bg-[#1f1f1f] justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
+                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
                           {
                             "dark:text-white": hoveredTabIndex === 5,
                           }
