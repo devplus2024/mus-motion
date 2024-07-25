@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { Moon } from "./Moon";
-import { Sun } from "./Sun";
+import Moon  from "./Moon";
+import Sun  from "./Sun";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 const ModeToggle = () => {
