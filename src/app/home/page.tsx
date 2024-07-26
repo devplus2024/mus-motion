@@ -108,14 +108,14 @@ export default function Home() {
       <div className="pt-[7rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
         <div className="items-center gap-[3rem] justify-center flex flex-col">
           <div>
-            <p className="font-medium dark:bg-white bg-black rounded-md px-3 dark:text-black text-white text-[1rem]">
+            <p className="font-medium dark:bg-white bg-black transition-colors rounded-md px-3 dark:text-black text-white text-[1rem]">
               Your Ultimate Music Destination
             </p>
           </div>
-          <h1 className="text-center leading-[2.6rem] w-[54rem] text-[3rem] font-bold">
+          <h1 className="text-center transition-colors leading-[2.6rem] w-[54rem] text-[3rem] font-bold">
             A place where music connects people from all corners of the world
           </h1>
-          <p className="font-medium w-[30rem] text-center text-[1rem]">
+          <p className="font-medium transition-colors w-[30rem] text-center text-[1rem]">
             Dive into an endless sea of melodies. Customize your playlists,
             stream in high quality, and enjoy music like never before. Your
             journey into the world of music starts here.
