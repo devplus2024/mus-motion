@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <head />
         <body className="relative">
-          <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+          <ThemeProvider enableSystem attribute="class" defaultTheme="dark">
             <Navigation />
             {children}
           </ThemeProvider>

@@ -7,17 +7,18 @@ import { useTheme } from "next-themes";
 const ModeToggle = () => {
   const { setTheme, theme } = useTheme();
   const check_theme = theme === "dark" ? <Moon /> : <Sun />;
-  const [icontoggle, setIcon] = useState(check_theme);
+  const [icontoggle, setIcon] = useState(theme === "dark" ? <Moon /> : <Sun />);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateIcon = () => {
-    const check_theme = theme === "dark" ? <Moon /> : <Sun />;
+    setIcon(theme === "dark" ? <Moon /> : <Sun />);
   };
 
   const toggleTheme = () => {
     const isDarkMode = document.documentElement.classList.contains("dark");
+    updateIcon();
     setTheme(isDarkMode ? "light" : "dark");
-    updateIcon(); // Update icon when theme is toggled
+    // Update icon when theme is toggled
   };
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const ModeToggle = () => {
       aria-label="Toggle Theme"
       className="cursor-pointer"
     >
-      {theme === "dark" ? <Moon /> : <Sun />}
+      {icontoggle}
     </div>
   );
 };
