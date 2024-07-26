@@ -1,42 +1,27 @@
 "use client";
-
-import { useEffect, useState, useCallback } from "react";
-import { useTheme } from "next-themes";
+import { useCallback, useEffect, useState } from "react";
 import Moon from "./Moon";
 import Sun from "./Sun";
-
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 const ModeToggle = () => {
-  const { theme, setTheme } = useTheme();
-  const [iconToggle, setIcon] = useState<JSX.Element | null>(null);
+  const { setTheme, theme } = useTheme();
+  const check_theme = theme === "dark" ? <Moon /> : <Sun />;
+  const [icontoggle, setIcon] = useState(check_theme);
 
-  // Determine the icon based on the current theme
-  const determineIcon = useCallback(() => {
-    if (typeof document !== "undefined") {
-      let value;
-      // Get the value from local storage if it exists
-      value = localStorage.getItem("theme");
-      const check_theme = value === "dark" ? "dark.svg" : "light.svg";
-      const isDarkMode = check_theme;
-      return isDarkMode ? <Moon /> : <Sun />;
-    }
-    // Default fallback for server-side rendering
-    return <Sun />;
-  }, []); // Remove `theme` from dependency array
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateIcon = () => {
+    const check_theme = theme === "dark" ? <Moon /> : <Sun />;
+  };
 
-  // Update the icon state
-  const updateIcon = useCallback(() => {
-    setIcon(determineIcon());
-  }, [determineIcon]);
-
-  // Toggle the theme between dark and light
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    updateIcon(); // Update the icon immediately after changing the theme
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setTheme(isDarkMode ? "light" : "dark");
+    updateIcon(); // Update icon when theme is toggled
   };
 
   useEffect(() => {
-    // Set initial icon based on the current theme
+    // Initial check
     updateIcon();
 
     // Create a MutationObserver to watch for changes to the html's class list
@@ -45,25 +30,14 @@ const ModeToggle = () => {
     });
 
     // Observe changes in attributes on the html element
-    if (typeof document !== "undefined") {
-      observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ["class"],
-      });
-    }
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     // Clean up the observer on component unmount
-    return () => {
-      if (typeof document !== "undefined") {
-        observer.disconnect();
-      }
-    };
-  }, [updateIcon]);
-
-  // Render a loading or placeholder icon if `iconToggle` is not set yet
-  if (iconToggle === null) {
-    return null; // or a loading spinner if preferred
-  }
+    return () => observer.disconnect();
+  }, [updateIcon]); // Include an empty dependency array
 
   return (
     <div
@@ -71,7 +45,7 @@ const ModeToggle = () => {
       aria-label="Toggle Theme"
       className="cursor-pointer"
     >
-      {iconToggle}
+      {theme === "dark" ? <Moon /> : <Sun />}
     </div>
   );
 };
