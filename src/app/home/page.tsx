@@ -112,8 +112,8 @@ export default function Home() {
               Your Ultimate Music Destination
             </p>
           </div>
-          <h1 className="text-center leading-[2.6rem]  text-[2.5rem] font-bold">
-            Unleash Your Music Experience Today
+          <h1 className="text-center leading-[2.6rem] w-[49rem] text-[3rem] font-bold">
+            A place where music connects people from all corners of the world
           </h1>
           <p className="font-medium w-[30rem] text-center text-[1rem]">
             Dive into an endless sea of melodies. Customize your playlists,

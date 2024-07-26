@@ -108,7 +108,7 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
 import LogoImage from "./LogoImage";
-import ModeToggle from "./mode-toggle";
+import { ThemeToggle } from "./mode-toggle";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -179,20 +179,7 @@ export const Navigation = (): JSX.Element => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem className="">
-                  <NavigationMenuTrigger
-                    className={classNames(
-                      "text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  text-[#7c7c7c] cursor-pointer select-none transition-colors",
-                      {
-                        "dark:text-white": hoveredTabIndex === 0,
-                        "dark:bg-[#000000]": hoveredTabIndex === 0,
-                      }
-                    )}
-                    ref={(el) => {
-                      buttonRefs.current[0] = el;
-                    }}
-                    onPointerEnter={(e) => onEnterTab(e, 0)}
-                    onFocus={(e) => onEnterTab(e, 0)}
-                  >
+                  <NavigationMenuTrigger className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
                     Feature
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="w-[30rem] data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight   py-[1rem] px-[1rem] flex  gap-[2.5rem]">
@@ -281,19 +268,7 @@ export const Navigation = (): JSX.Element => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger
-                    className={classNames(
-                      "text-sm relative rounded-full flex items-center h-7 px-3   text-[#7c7c7c] cursor-pointer select-none transition-colors",
-                      {
-                        "dark:text-white": hoveredTabIndex === 1,
-                      }
-                    )}
-                    ref={(el) => {
-                      buttonRefs.current[1] = el;
-                    }}
-                    onPointerEnter={(e) => onEnterTab(e, 1)}
-                    onFocus={(e) => onEnterTab(e, 1)}
-                  >
+                  <NavigationMenuTrigger className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
                     Library
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="w-[37rem]    py-[1rem] px-[1rem] flex justify-between  gap-[2.5rem]">
@@ -387,93 +362,29 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuIndicator className="" />
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      <button
-                        className={classNames(
-                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm  transition-colors text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
-                          {
-                            "dark:text-white": hoveredTabIndex === 2,
-                          }
-                        )}
-                        ref={(el) => {
-                          buttonRefs.current[2] = el;
-                        }}
-                        onPointerEnter={(e) => onEnterTab(e, 2)}
-                        onFocus={(e) => onEnterTab(e, 2)}
-                      >
-                        Docs
-                      </button>
+                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Docs
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/pricing" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      <button
-                        className={classNames(
-                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
-                          {
-                            "dark:text-white": hoveredTabIndex === 3,
-                          }
-                        )}
-                        ref={(el) => {
-                          buttonRefs.current[3] = el;
-                        }}
-                        onPointerEnter={(e) => onEnterTab(e, 3)}
-                        onFocus={(e) => onEnterTab(e, 3)}
-                      >
-                        Pricing
-                      </button>
+                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Pricing
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/resources" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      <button
-                        className={classNames(
-                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm text-[#7c7c7c] transition-colors  hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
-                          {
-                            "dark:text-white": hoveredTabIndex === 4,
-                          }
-                        )}
-                        ref={(el) => {
-                          buttonRefs.current[4] = el;
-                        }}
-                        onPointerEnter={(e) => onEnterTab(e, 4)}
-                        onFocus={(e) => onEnterTab(e, 4)}
-                      >
-                        Resources
-                      </button>
+                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Resources
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/enterprise" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      <button
-                        className={classNames(
-                          "group inline-flex h-7 w-max items-center  justify-center rounded-full  px-3  text-sm  transition-colors  text-[#7c7c7c] hover:text-accent-foreground  disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-white data-[state=open]:bg-accent/50 data-[state=open]:text-white",
-                          {
-                            "dark:text-white": hoveredTabIndex === 5,
-                          }
-                        )}
-                        ref={(el) => {
-                          buttonRefs.current[5] = el;
-                        }}
-                        onPointerEnter={(e) => onEnterTab(e, 5)}
-                        onFocus={(e) => onEnterTab(e, 5)}
-                      >
-                        Enterprise
-                      </button>
+                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Enterprise
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -483,7 +394,7 @@ export const Navigation = (): JSX.Element => {
           <div className="flex gap-[2rem] items-center">
             <CommandMenu />
             <div className="flex gap-[1rem] items-center">
-              <ModeToggle />
+              <ThemeToggle />
               <div className="cursor-pointer hidden h-[24px] border-r"></div>
               <Link href="https://github.com/devplus2024/music-app">
                 <svg

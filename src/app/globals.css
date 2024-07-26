@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --theme-toggle-sun-icon-display: block;
+    --theme-toggle-moon-icon-display: none;
     --menu-border-color: #ffffff;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -29,6 +31,8 @@
     --fill-logo-svg: #000000;
   }
   .dark {
+    --theme-toggle-sun-icon-display: none;
+    --theme-toggle-moon-icon-display: block;
     --menu-border-color: #202020;
     ----arrow-bg: #202020;
     --chat: #1a1a1a;
