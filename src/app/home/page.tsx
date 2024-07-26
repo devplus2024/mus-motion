@@ -108,7 +108,7 @@ export default function Home() {
       <div className="pt-[7rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
         <div className="items-center gap-[3rem] justify-center flex flex-col">
           <div>
-            <p className="font-medium bg-white rounded-full px-3 text-black text-[1rem]">
+            <p className="font-medium bg-white rounded-md px-3 text-black text-[1rem]">
               Your Ultimate Music Destination
             </p>
           </div>
