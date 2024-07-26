@@ -112,7 +112,7 @@ export default function Home() {
               Your Ultimate Music Destination
             </p>
           </div>
-          <h1 className="text-center leading-[2.6rem] w-[49rem] text-[3rem] font-bold">
+          <h1 className="text-center leading-[2.6rem] w-[54rem] text-[3rem] font-bold">
             A place where music connects people from all corners of the world
           </h1>
           <p className="font-medium w-[30rem] text-center text-[1rem]">
