@@ -1,15 +1,18 @@
-'use client'
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
+"use client";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 const LogoImage = () => {
-  const [src, setSrc] = useState('dark.svg');
+  const isDarkMode = document.documentElement.classList.contains("dark");
+  const baseSrc = isDarkMode ? "dark.svg" : "light.svg";
+  const [src, setSrc] = useState(baseSrc);
   const pathname = usePathname();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateSrc = () => {
-    const isDarkMode = document.documentElement.classList.contains('dark');
-    const baseSrc = isDarkMode ? 'dark.svg' : 'light.svg';
-    const newSrc = pathname === '/chat/vn-vi' ? `../${baseSrc}` : baseSrc;
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    const baseSrc = isDarkMode ? "dark.svg" : "light.svg";
+    const newSrc = pathname === "/chat/vn-vi" ? `../${baseSrc}` : baseSrc;
     setSrc(newSrc);
   };
 
@@ -23,7 +26,10 @@ const LogoImage = () => {
     });
 
     // Observe changes in attributes on the html element
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     // Clean up the observer on component unmount
     return () => observer.disconnect();
