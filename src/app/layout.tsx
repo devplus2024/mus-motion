@@ -28,9 +28,8 @@ export default function RootLayout({
         <body className="relative">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+            defaultTheme="dark"
+            storageKey="theme"
           >
             <Navigation />
             {children}
