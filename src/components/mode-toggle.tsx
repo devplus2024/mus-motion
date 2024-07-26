@@ -12,7 +12,11 @@ const ModeToggle = () => {
   // Determine the icon based on the current theme
   const determineIcon = useCallback(() => {
     if (typeof document !== "undefined") {
-      const isDarkMode = document.documentElement.classList.contains("dark");
+      let value;
+      // Get the value from local storage if it exists
+      value = localStorage.getItem("theme");
+      const check_theme = value === "dark" ? "dark.svg" : "light.svg";
+      const isDarkMode = check_theme;
       return isDarkMode ? <Moon /> : <Sun />;
     }
     // Default fallback for server-side rendering
