@@ -174,7 +174,7 @@ export const Navigation = (): JSX.Element => {
               href="/"
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
             >
-              <LogoImage />
+              <p className="font-bold">LostMotion</p>
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
