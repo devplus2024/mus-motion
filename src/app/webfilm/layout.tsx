@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Resource",
+  title: "WebFilm",
   description: "MusicHub App",
 };
 export default function WebFilmLayout({
