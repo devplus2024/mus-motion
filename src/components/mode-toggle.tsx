@@ -66,7 +66,7 @@ export const ThemeToggle = ({
     toast(nofi_toat, {
       description: formatDate(now),
       action: {
-        label: "Undo",
+        label: "Delete",
         onClick: () => console.log("Undo"),
       },
     });
