@@ -178,6 +178,15 @@ export function CommandMenu() {
               <StickyNote className="mr-2 h-4 w-4" />
               <span>Chat</span>
             </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/webfilm");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>WebFilm</span>
+            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Theme">

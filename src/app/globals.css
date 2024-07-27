@@ -108,6 +108,9 @@
   .fill_logo_svg {
     fill: var(--fill-logo-svg);
   }
+  .webfilm-class {
+    display: none;
+  }
 }
 
 @layer base {
