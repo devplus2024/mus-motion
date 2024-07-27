@@ -107,7 +107,7 @@ export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="pt-[7rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
+      <div className="pt-[5rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
         <div className="items-center gap-[3rem] justify-center flex flex-col">
           <div>
             <p className="font-medium dark:bg-white bg-black transition-colors rounded-md px-3 dark:text-black text-white text-[1rem]">
