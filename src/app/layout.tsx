@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { CommandMenu } from "@/components/CommandMenu";
+import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "MusicHub App",
@@ -28,6 +29,19 @@ export default function RootLayout({
         <body className="relative">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
+            <Toaster
+              className=""
+              closeButton
+              hotkey={["alt + C"]}
+              toastOptions={{
+                unstyled: false,
+                classNames: {
+                  cancelButton: "bg-orange-400",
+                  closeButton:
+                    "dark:bg-black dark:hover:bg-white dark:hover:text-black",
+                },
+              }}
+            />
             {children}
           </ThemeProvider>
         </body>

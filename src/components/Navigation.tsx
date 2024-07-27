@@ -395,7 +395,6 @@ export const Navigation = (): JSX.Element => {
             <CommandMenu />
             <div className="flex gap-[1rem] items-center">
               <ThemeToggle />
-              <div className="cursor-pointer hidden h-[24px] border-r"></div>
               <Link href="https://github.com/devplus2024/music-app">
                 <svg
                   width="21"

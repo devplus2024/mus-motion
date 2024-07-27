@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Toaster, toast } from "sonner";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
@@ -94,6 +93,7 @@ import {
 } from "@/components/ui/menubar";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -102,7 +102,9 @@ import {
 import { useRouter } from "next/navigation";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { NavigationEffect } from "@/components/NavigationEffect";
+import { Toaster } from "@/components/ui/sonner";
 export default function Home() {
+  const { theme, systemTheme, setTheme } = useTheme();
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="pt-[7rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
@@ -933,12 +935,7 @@ export default function Home() {
       <div>
         <NavigationEffect />
       </div>
-      <div className="mb-[5rem]">
-        <Toaster richColors closeButton />
-        <Button onClick={() => toast.success("Event has been created")}>
-          The End
-        </Button>
-      </div>
+      <div className="mb-[5rem]"> </div>
     </main>
   );
 }
