@@ -101,6 +101,7 @@ import {
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -112,7 +113,7 @@ import LogoImage from "./LogoImage";
 import { ThemeToggle } from "./mode-toggle";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   useEffect(() => {
     buttonRefs.current = buttonRefs.current.slice(0, 5); // Điều chỉnh số lượng cho phù hợp với số tab
