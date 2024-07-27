@@ -100,7 +100,7 @@ import {
 } from "@/components/ui/menubar";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import {
   ResizableHandle,
   ResizablePanel,

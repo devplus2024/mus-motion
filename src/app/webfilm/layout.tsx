@@ -3,7 +3,7 @@ export const metadata: Metadata = {
   title: "Resource",
   description: "MusicHub App",
 };
-export default function ResourcesLayout({
+export default function WebFilmLayout({
   children,
 }: {
   children: React.ReactNode;
