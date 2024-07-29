@@ -6,6 +6,24 @@ import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { CommandMenu } from "./CommandMenu";
+import { playlist, PlayList } from "./data/playlist";
+import { imagelist, ImageList } from "./data/image";
+import { list, List } from "./data/list";
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu";
 import {
   EllipsisVertical,
   Heart,
@@ -105,6 +123,7 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 import { Toaster } from "@/components/ui/sonner";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
+  const [position, setPosition] = React.useState("benoit");
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="pt-[5rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
@@ -140,29 +159,81 @@ export default function Home() {
         <div className="flex justify-center mt-[4rem] mb-[6rem]">
           <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
             <div className="flex gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
-              <Menubar className="dark:bg-black border-none rounded-none">
+              <Menubar className="dark:bg-black border-none rounded-t-lg">
+                <MenubarMenu>
+                  <MenubarTrigger>MusMotion</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>About MusMotion</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Preferences<MenubarShortcut>⌘,</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Hide MusMotion<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Quit MusMotion
+                      <MenubarShortcut>⌘Q</MenubarShortcut>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger>File</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>
-                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      New Window <MenubarShortcut>⌘N</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem disabled>New Incognito Window</MenubarItem>
-                    <MenubarSeparator />
                     <MenubarSub>
-                      <MenubarSubTrigger>Share</MenubarSubTrigger>
+                      <MenubarSubTrigger>New</MenubarSubTrigger>
                       <MenubarSubContent>
-                        <MenubarItem>Email link</MenubarItem>
-                        <MenubarItem>Messages</MenubarItem>
-                        <MenubarItem>Notes</MenubarItem>
+                        <MenubarItem>Playlist</MenubarItem>
+                        <MenubarItem>Playlist from Selection</MenubarItem>
+                        <MenubarItem>Smart Playlist</MenubarItem>
+                        <MenubarItem>Playlist Folder</MenubarItem>
+                        <MenubarItem>Genius Playlist</MenubarItem>
                       </MenubarSubContent>
                     </MenubarSub>
+                    <MenubarItem>
+                      Open Stream Url<MenubarShortcut>⌘U</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Close Window <MenubarShortcut>⌘W</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                      <MenubarSubTrigger>Libary</MenubarSubTrigger>
+                      <MenubarSubContent>
+                        <MenubarItem>Update Cloud Library</MenubarItem>
+                        <MenubarItem>Update Genius</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Organize Library</MenubarItem>
+                        <MenubarItem>Export Library</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Import Playlist</MenubarItem>
+                        <MenubarItem>Export Playlist</MenubarItem>
+                        <MenubarItem>Show Duplicate Items</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Get Album ArtWord</MenubarItem>
+                        <MenubarItem>Get Track Name</MenubarItem>
+                        <MenubarSeparator />
+                      </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarItem>
+                      Import... <MenubarShortcut>⌘O</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>Burn Playlist to Dis... </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                      Show in Finder
+                      <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>Convert...</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Page Setup</MenubarItem>
+                    <MenubarItem>
+                      Print
+                      <MenubarShortcut>⌘P</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
@@ -176,56 +247,95 @@ export default function Home() {
                       Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
-                    <MenubarSub>
-                      <MenubarSubTrigger>Find</MenubarSubTrigger>
-                      <MenubarSubContent>
-                        <MenubarItem>Search the web</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Find...</MenubarItem>
-                        <MenubarItem>Find Next</MenubarItem>
-                        <MenubarItem>Find Previous</MenubarItem>
-                      </MenubarSubContent>
-                    </MenubarSub>
+                    <MenubarItem>
+                      Cut <MenubarShortcut>⌘X</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Copy <MenubarShortcut>⌘C</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Paste <MenubarShortcut>⌘V</MenubarShortcut>
+                    </MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem>Cut</MenubarItem>
-                    <MenubarItem>Copy</MenubarItem>
-                    <MenubarItem>Paste</MenubarItem>
+                    <MenubarItem>
+                      Select All <MenubarShortcut>⌘A</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Deselect All<MenubarShortcut>⇧⌘A</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Smart Distation{" "}
+                      <MenubarShortcut>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
+                          <circle cx="17" cy="7" r="5" />
+                        </svg>
+                      </MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Emoji & Symbols{" "}
+                      <MenubarShortcut>
+                        {" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                      </MenubarShortcut>
+                    </MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger>View</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarCheckboxItem>
-                      Always Show Bookmarks Bar
-                    </MenubarCheckboxItem>
+                    <MenubarCheckboxItem>Show Playing Next</MenubarCheckboxItem>
                     <MenubarCheckboxItem checked>
-                      Always Show Full URLs
+                      Show Lyrics
                     </MenubarCheckboxItem>
                     <MenubarSeparator />
-                    <MenubarItem inset>
-                      Reload <MenubarShortcut>⌘R</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem disabled inset>
-                      Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
-                    </MenubarItem>
+                    <MenubarItem inset>Show Status Bar</MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                    <MenubarItem inset>Enter Fullscreen</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem inset>Hide Sidebar</MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
-                  <MenubarTrigger>Profiles</MenubarTrigger>
+                  <MenubarTrigger>Account</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarRadioGroup value="benoit">
+                    <MenubarItem inset>Switch Account</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarRadioGroup
+                      defaultValue="benoit"
+                      value={position}
+                      onValueChange={setPosition}
+                    >
                       <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
                       <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
                       <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
                     </MenubarRadioGroup>
                     <MenubarSeparator />
-                    <MenubarItem inset>Edit...</MenubarItem>
+                    <MenubarItem inset>Manage Family...</MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem inset>Add Profile...</MenubarItem>
+                    <MenubarItem inset>Add Account...</MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
               </Menubar>
@@ -403,66 +513,94 @@ export default function Home() {
                               <div>
                                 <ScrollArea className=" border-t dark:border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
                                   <div className="flex gap-[3rem]">
-                                    <div>
-                                      <Image
-                                        src="/kelly-sikkema-_-TwILDnZSU-unsplash.jpg"
-                                        alt="Picture of the author"
-                                        width={1300}
-                                        height={1200}
-                                        className="rounded-lg max-w-[255px] max-h-[350px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        React Rendezvous
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Ethan Byte
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg max-w-[255px] max-h-[350px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        Async Awakenings
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Nina Netcode
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/daniel-angele-2gu4hKuFhi0-unsplash.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg max-w-[255px] h-[350px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        The Art of Reusability
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Lena Logic
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg max-w-[255px] max-h-[350px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        Stateful Symphony
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Beth Binary
-                                      </p>
-                                    </div>
+                                    {list.slice(0, 4).map((list: List) => (
+                                      <div key={list.id}>
+                                        <ContextMenu>
+                                          <ContextMenuTrigger>
+                                            <Image
+                                              src={`/${list.src}`}
+                                              alt="Picture of the author"
+                                              width={1300}
+                                              height={1200}
+                                              className="rounded-lg w-[320px] h-[350px]"
+                                            />
+                                          </ContextMenuTrigger>
+                                          <ContextMenuContent className="w-[11rem]">
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Add to Library
+                                            </ContextMenuItem>
+                                            <ContextMenuSub>
+                                              <ContextMenuSubTrigger
+                                                inset
+                                                className="pl-[8px]"
+                                              >
+                                                Add to Playlist
+                                              </ContextMenuSubTrigger>
+                                              <ContextMenuSubContent className="w-48">
+                                                <ContextMenuItem>
+                                                  <CirclePlus className="h-4 w-4 mr-2" />
+                                                  New Playlist{" "}
+                                                </ContextMenuItem>
+                                                <ContextMenuSeparator />
+                                                {playlist.map(
+                                                  (playlist: PlayList) => (
+                                                    <ContextMenuItem
+                                                      key={playlist.id}
+                                                    >
+                                                      <ListMusic className="h-4 w-4 mr-2" />
+                                                      {playlist.name}
+                                                    </ContextMenuItem>
+                                                  )
+                                                )}
+                                              </ContextMenuSubContent>
+                                            </ContextMenuSub>
+                                            <ContextMenuSeparator />
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Play Next
+                                            </ContextMenuItem>
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Play After
+                                            </ContextMenuItem>
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Create Station
+                                            </ContextMenuItem>
+                                            <ContextMenuSeparator />
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Like
+                                            </ContextMenuItem>
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Share
+                                            </ContextMenuItem>
+                                          </ContextMenuContent>
+                                        </ContextMenu>
+                                        <div key={list.id}>
+                                          <p className="text-sm mt-[0.5rem]">
+                                            {list.title}
+                                          </p>
+                                          <p className="text-xs text-[#a1a1a1]">
+                                            {list.artist}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    ))}
                                   </div>
                                   <ScrollBar orientation="horizontal" />
                                 </ScrollArea>
@@ -480,96 +618,92 @@ export default function Home() {
                               <div>
                                 <ScrollArea className=" border-t dark:border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
                                   <div className="flex gap-[1.8rem]">
-                                    <div>
-                                      <Image
-                                        src="/5-1.png"
-                                        alt="Picture of the author"
-                                        width={1300}
-                                        height={1200}
-                                        className="rounded-lg w-[150px] h-[150px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        Thinking Components
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Lena Logic
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/piano-tutor-header-testimonial.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg w-[150px] h-[150px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        Functional Fury
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Beth Binary
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/kelly-sikkema-nPMkfYtO9JA-unsplash-1365x2048.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg w-[150px] h-[150px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        React Rendezvous
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Ethan Byte
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/Carolyn-Arends-Allow-For-Space-In-The-Music.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg w-[150px] h-[150px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        Stateful Symphony
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Beth Binary
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg w-[150px] h-[150px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        Async Awakenings
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Nina Netcode
-                                      </p>
-                                    </div>
-                                    <div>
-                                      <Image
-                                        src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                        width={1300}
-                                        height={1200}
-                                        alt="Picture of the author"
-                                        className="rounded-lg w-[150px] h-[150px]"
-                                      />
-                                      <p className="text-sm mt-[0.5rem]">
-                                        The Art of Reusability
-                                      </p>
-                                      <p className="text-xs text-[#a1a1a1]">
-                                        Lena Logic
-                                      </p>
-                                    </div>
+                                    {list.slice(4).map((list: List) => (
+                                      <div key={list.id}>
+                                        <ContextMenu>
+                                          <ContextMenuTrigger>
+                                            <Image
+                                              src={`/${list.src}`}
+                                              alt="Picture of the author"
+                                              width={1300}
+                                              height={1200}
+                                              className="rounded-lg w-[150px] h-[150px]"
+                                            />
+                                          </ContextMenuTrigger>
+                                          <ContextMenuContent className="w-[11rem]">
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Add to Library
+                                            </ContextMenuItem>
+                                            <ContextMenuSub>
+                                              <ContextMenuSubTrigger
+                                                inset
+                                                className="pl-[8px]"
+                                              >
+                                                Add to Playlist
+                                              </ContextMenuSubTrigger>
+                                              <ContextMenuSubContent className="w-48">
+                                                <ContextMenuItem>
+                                                  <CirclePlus className="h-4 w-4 mr-2" />
+                                                  New Playlist{" "}
+                                                </ContextMenuItem>
+                                                <ContextMenuSeparator />
+                                                {playlist.map(
+                                                  (playlist: PlayList) => (
+                                                    <ContextMenuItem
+                                                      key={playlist.id}
+                                                    >
+                                                      <ListMusic className="h-4 w-4 mr-2" />
+                                                      {playlist.name}
+                                                    </ContextMenuItem>
+                                                  )
+                                                )}
+                                              </ContextMenuSubContent>
+                                            </ContextMenuSub>
+                                            <ContextMenuSeparator />
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Play Next
+                                            </ContextMenuItem>
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Play After
+                                            </ContextMenuItem>
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Create Station
+                                            </ContextMenuItem>
+                                            <ContextMenuSeparator />
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Like
+                                            </ContextMenuItem>
+                                            <ContextMenuItem
+                                              inset
+                                              className="pl-[8px]"
+                                            >
+                                              Share
+                                            </ContextMenuItem>
+                                          </ContextMenuContent>
+                                        </ContextMenu>
+                                        <p className="text-sm mt-[0.5rem]">
+                                          {list.title}
+                                        </p>
+                                        <p className="text-xs text-[#a1a1a1]">
+                                          {list.artist}
+                                        </p>
+                                      </div>
+                                    ))}
                                   </div>
                                   <ScrollBar orientation="horizontal" />
                                 </ScrollArea>
