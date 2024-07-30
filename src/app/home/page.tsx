@@ -216,7 +216,6 @@ export default function Home() {
                         <MenubarSeparator />
                         <MenubarItem>Get Album ArtWord</MenubarItem>
                         <MenubarItem>Get Track Name</MenubarItem>
-                        <MenubarSeparator />
                       </MenubarSubContent>
                     </MenubarSub>
                     <MenubarItem>
@@ -431,62 +430,16 @@ export default function Home() {
                   </div>
                   <ScrollArea className="h-[310px]  pl-[1rem] w-[230px]">
                     <div className="flex flex-col text-md gap-[1rem]">
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
-                      <TabsTrigger
-                        value="recently_added"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <ListMusic className="w-4 h-4" />
-                        <p>Recently Added</p>
-                      </TabsTrigger>
+                      {playlist.map((playlist: PlayList) => (
+                        <TabsTrigger
+                          key={playlist.id}
+                          value={`${playlist.value}`}
+                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                        >
+                          <ListMusic className="w-4 h-4" />
+                          <p>{playlist.name}</p>
+                        </TabsTrigger>
+                      ))}
                     </div>
                   </ScrollArea>
                 </TabsList>
@@ -522,7 +475,7 @@ export default function Home() {
                                               alt="Picture of the author"
                                               width={1300}
                                               height={1200}
-                                              className="rounded-lg w-[320px] h-[350px]"
+                                              className="rounded-lg max-w-[255px] h-[350px]"
                                             />
                                           </ContextMenuTrigger>
                                           <ContextMenuContent className="w-[11rem]">
