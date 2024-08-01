@@ -123,6 +123,7 @@ import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { NavigationEffect } from "@/components/NavigationEffect";
 import { Toaster } from "@/components/ui/sonner";
 import { TabList, tablist } from "./data/tablist";
+import MusicTab from "./components/musictab";
 export default function Docs() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
@@ -349,8 +350,10 @@ export default function Docs() {
                 className="flex items-center w-full justify-center"
                 value="listennow"
               >
-                <ScrollArea>
-                  <div className="w-[954px] border h-[583px]"></div>
+                <ScrollArea className="">
+                  <div className="w-[954px]   h-[583px]">
+                    <MusicTab />
+                  </div>
                 </ScrollArea>
               </TabsContent>
             </Tabs>
