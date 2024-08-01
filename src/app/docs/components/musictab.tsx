@@ -30,7 +30,9 @@ export default function MusicTab() {
               </div>
             </TabsList>
             <div>
-              <Button>Add Music</Button>
+              <Button>
+                <CirclePlus className="mr-2 h-4 w-4" /> Add Music
+              </Button>
             </div>
           </div>
           <TabsContent value="music">
