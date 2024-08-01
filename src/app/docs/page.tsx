@@ -313,7 +313,7 @@ export default function Docs() {
                 </MenubarMenu>
               </Menubar>
             </div>
-            <Tabs defaultValue="a" className="flex w-full h-full">
+            <Tabs defaultValue="listennow" className="flex w-full h-full">
               <TabsList className="w-[280px] h-full border-r">
                 <div className="flex flex-col gap-[0.5rem]">
                   <div className="text-white font-bold text-xl">Dicover</div>
