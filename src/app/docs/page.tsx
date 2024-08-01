@@ -316,7 +316,9 @@ export default function Docs() {
             <Tabs defaultValue="listennow" className="flex w-full h-full">
               <TabsList className="w-[280px] h-full border-r">
                 <div className="flex flex-col gap-[0.5rem]">
-                  <div className="text-white font-bold text-xl">Dicover</div>
+                  <div className="dark:text-white font-bold text-xl">
+                    Dicover
+                  </div>
                   {tablist.slice(0, 3).map((tablist: TabList) => (
                     <TabsTrigger key={tablist.id} value={tablist.value}>
                       {tablist.icon}
@@ -326,7 +328,9 @@ export default function Docs() {
                 </div>
 
                 <div className="flex flex-col gap-[0.5rem]">
-                  <div className="text-white font-bold text-xl">Library</div>
+                  <div className="dark:text-white font-bold text-xl">
+                    Library
+                  </div>
                   {tablist.slice(3, 8).map((tablist: TabList) => (
                     <TabsTrigger key={tablist.id} value={tablist.value}>
                       {tablist.icon}
@@ -335,7 +339,9 @@ export default function Docs() {
                   ))}
                 </div>
                 <div className="flex flex-col gap-[0.5rem]">
-                  <div className="text-white font-bold text-xl">Playlists</div>
+                  <div className="dark:text-white font-bold text-xl">
+                    Playlists
+                  </div>
                   <ScrollArea className="h-[130px] w-[240px]">
                     {tablist.slice(8).map((tablist: TabList) => (
                       <TabsTrigger key={tablist.id} value={tablist.value}>
