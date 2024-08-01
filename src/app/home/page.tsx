@@ -151,9 +151,14 @@ export default function Home() {
         <p className="font-medium  text-center w-fit bg-white rounded-full px-3 text-black text-[1rem]">
           Lasted Version
         </p>
-        <h1 className="text-center leading-[2.6rem]  text-[2.5rem] font-bold">
-          Preview Of MusicHub App
+        <h1 className="text-center leading-[2.6rem] w-[52rem] text-[2.5rem] font-bold">
+          Experience the Ultimate Music Journey with Our Innovative Software
         </h1>
+        <p className="text-center  w-[30rem] text-[1rem] font-medium">
+          Dive into a seamless music experience with our cutting-edge software.
+          Unleash your creativity, manage your playlists, and explore a universe
+          of sounds.
+        </p>
       </div>
       <div className="contentsP active" id="musicContent">
         <div className="flex justify-center mt-[4rem] mb-[6rem]">
@@ -471,7 +476,7 @@ export default function Home() {
                                         <ContextMenu>
                                           <ContextMenuTrigger>
                                             <Image
-                                              src={`/${list.src}`}
+                                              src={`/image/${list.src}`}
                                               alt="Picture of the author"
                                               width={1300}
                                               height={1200}
@@ -576,7 +581,7 @@ export default function Home() {
                                         <ContextMenu>
                                           <ContextMenuTrigger>
                                             <Image
-                                              src={`/${list.src}`}
+                                              src={`/image/${list.src}`}
                                               alt="Picture of the author"
                                               width={1300}
                                               height={1200}

@@ -5,7 +5,39 @@ import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { House, Podcast, UserRound } from "lucide-react";
+import { CommandMenu } from "./CommandMenu";
+import { playlist, PlayList } from "./data/playlist";
+import { imagelist, ImageList } from "./data/image";
+import { list, List } from "./data/list";
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu";
+import {
+  EllipsisVertical,
+  Grid,
+  Heart,
+  House,
+  ListPlus,
+  Play,
+  PlayCircle,
+  Podcast,
+  Save,
+  SkipBack,
+  SkipForward,
+  UserRound,
+} from "lucide-react";
 import { Library } from "lucide-react";
 import { CirclePlus } from "lucide-react";
 import { Search } from "lucide-react";
@@ -30,7 +62,7 @@ import { Cake } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { User } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Mail } from "lucide-react";
@@ -80,55 +112,100 @@ import {
 } from "@/components/ui/menubar";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-export default function Home() {
+import { useRouter } from "next/navigation";
+import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
+import { NavigationEffect } from "@/components/NavigationEffect";
+import { Toaster } from "@/components/ui/sonner";
+import { TabList, tablist } from "./data/tablist";
+export default function Docs() {
+  const { theme, systemTheme, setTheme } = useTheme();
+  const [position, setPosition] = React.useState("benoit");
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="mt-[3rem]">
-        <div>
-          <h1 className="text-center text-[3rem] font-bold">
-            MusicHub - Unlimited Music
-          </h1>
-          <p className="text-[1.5rem] text-center">
-            Discover, listen, and enjoy music your way.
-          </p>
-        </div>
-        <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
-          <Button>Explore Now</Button>
-          <Button variant="outline">Discover Features</Button>
-        </div>
-      </div>
       <div className="contentsP active" id="musicContent">
-        <div className="flex justify-center mt-[6rem]">
-          <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border border-[#202020]">
-            <div className="flex gap-[2rem] bg-black rounded-t-lg border-b border-b-[#202020] ">
-              <Menubar className="bg-black border-none">
+        <div className="flex justify-center mt-[4rem] mb-[6rem]">
+          <div className="h-[670px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
+            <div className="flex h-[37px] gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
+              <Menubar className="dark:bg-black border-none rounded-t-lg">
+                <MenubarMenu>
+                  <MenubarTrigger>MusMotion</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>About MusMotion</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Preferences<MenubarShortcut>⌘,</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Hide MusMotion<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Quit MusMotion
+                      <MenubarShortcut>⌘Q</MenubarShortcut>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger>File</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>
-                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      New Window <MenubarShortcut>⌘N</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem disabled>New Incognito Window</MenubarItem>
-                    <MenubarSeparator />
                     <MenubarSub>
-                      <MenubarSubTrigger>Share</MenubarSubTrigger>
+                      <MenubarSubTrigger>New</MenubarSubTrigger>
                       <MenubarSubContent>
-                        <MenubarItem>Email link</MenubarItem>
-                        <MenubarItem>Messages</MenubarItem>
-                        <MenubarItem>Notes</MenubarItem>
+                        <MenubarItem>Playlist</MenubarItem>
+                        <MenubarItem>Playlist from Selection</MenubarItem>
+                        <MenubarItem>Smart Playlist</MenubarItem>
+                        <MenubarItem>Playlist Folder</MenubarItem>
+                        <MenubarItem>Genius Playlist</MenubarItem>
                       </MenubarSubContent>
                     </MenubarSub>
+                    <MenubarItem>
+                      Open Stream Url<MenubarShortcut>⌘U</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Close Window <MenubarShortcut>⌘W</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                      <MenubarSubTrigger>Libary</MenubarSubTrigger>
+                      <MenubarSubContent>
+                        <MenubarItem>Update Cloud Library</MenubarItem>
+                        <MenubarItem>Update Genius</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Organize Library</MenubarItem>
+                        <MenubarItem>Export Library</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Import Playlist</MenubarItem>
+                        <MenubarItem>Export Playlist</MenubarItem>
+                        <MenubarItem>Show Duplicate Items</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Get Album ArtWord</MenubarItem>
+                        <MenubarItem>Get Track Name</MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarItem>
+                      Import... <MenubarShortcut>⌘O</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>Burn Playlist to Dis... </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                      Show in Finder
+                      <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>Convert...</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Page Setup</MenubarItem>
+                    <MenubarItem>
+                      Print
+                      <MenubarShortcut>⌘P</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
@@ -142,430 +219,141 @@ export default function Home() {
                       Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
-                    <MenubarSub>
-                      <MenubarSubTrigger>Find</MenubarSubTrigger>
-                      <MenubarSubContent>
-                        <MenubarItem>Search the web</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Find...</MenubarItem>
-                        <MenubarItem>Find Next</MenubarItem>
-                        <MenubarItem>Find Previous</MenubarItem>
-                      </MenubarSubContent>
-                    </MenubarSub>
+                    <MenubarItem>
+                      Cut <MenubarShortcut>⌘X</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Copy <MenubarShortcut>⌘C</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Paste <MenubarShortcut>⌘V</MenubarShortcut>
+                    </MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem>Cut</MenubarItem>
-                    <MenubarItem>Copy</MenubarItem>
-                    <MenubarItem>Paste</MenubarItem>
+                    <MenubarItem>
+                      Select All <MenubarShortcut>⌘A</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Deselect All<MenubarShortcut>⇧⌘A</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Smart Distation{" "}
+                      <MenubarShortcut>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
+                          <circle cx="17" cy="7" r="5" />
+                        </svg>
+                      </MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Emoji & Symbols{" "}
+                      <MenubarShortcut>
+                        {" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                      </MenubarShortcut>
+                    </MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger>View</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarCheckboxItem>
-                      Always Show Bookmarks Bar
-                    </MenubarCheckboxItem>
+                    <MenubarCheckboxItem>Show Playing Next</MenubarCheckboxItem>
                     <MenubarCheckboxItem checked>
-                      Always Show Full URLs
+                      Show Lyrics
                     </MenubarCheckboxItem>
                     <MenubarSeparator />
-                    <MenubarItem inset>
-                      Reload <MenubarShortcut>⌘R</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem disabled inset>
-                      Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
-                    </MenubarItem>
+                    <MenubarItem inset>Show Status Bar</MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                    <MenubarItem inset>Enter Fullscreen</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem inset>Hide Sidebar</MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
-                  <MenubarTrigger>Profiles</MenubarTrigger>
+                  <MenubarTrigger>Account</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarRadioGroup value="benoit">
+                    <MenubarItem inset>Switch Account</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarRadioGroup
+                      defaultValue="benoit"
+                      value={position}
+                      onValueChange={setPosition}
+                    >
                       <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
                       <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
                       <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
                     </MenubarRadioGroup>
                     <MenubarSeparator />
-                    <MenubarItem inset>Edit...</MenubarItem>
+                    <MenubarItem inset>Manage Family...</MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem inset>Add Profile...</MenubarItem>
+                    <MenubarItem inset>Add Account...</MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
               </Menubar>
             </div>
-            <div className="flex h-full">
-              <div className="border-r w-[300px] py-[1.5rem] flex flex-col items-start   gap-[2rem]  border-r-[#202020]">
-                <div className="flex  flex-col gap-[1rem]">
-                  <div className="text-xl font-bold pl-[2rem]">Discover</div>
-                  <div className="flex gap-[1rem]">
-                    <div className="flex flex-col pl-[1rem] text-md gap-[1rem]">
-                      <Button
-                        variant="secondary"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <CirclePlay className="w-4 h-4" />
-                        <p>Listen Now</p>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <LayoutGrid className="w-4 h-4" />
-                        <p>Browser</p>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                      >
-                        <Radio className="w-4 h-4" />
-                        <p>Radio</p>
-                      </Button>
-                    </div>
-                  </div>
+            <Tabs defaultValue="a" className="flex w-full h-full">
+              <TabsList className="w-[280px] h-full border-r">
+                <div className="flex flex-col gap-[0.5rem]">
+                  <div className="text-white font-bold text-xl">Dicover</div>
+                  {tablist.slice(0, 3).map((tablist: TabList) => (
+                    <TabsTrigger key={tablist.id} value={tablist.value}>
+                      {tablist.icon}
+                      {tablist.tabname}
+                    </TabsTrigger>
+                  ))}
                 </div>
-                <div className="flex pl-[2rem] flex-col gap-[1rem]">
-                  <div className="text-xl font-bold">Library</div>
-                  <div className="flex gap-[1rem]">
-                    <div className="flex flex-col text-md gap-[1rem]">
-                      <div className="flex items-center gap-[1rem]">
-                        <ListMusic className="w-4 h-4" />
-                        <p>Playlist</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <Music2 className="w-4 h-4" />
-                        <p>Songs</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <User className="w-4 h-4" />
-                        <p>Make for You</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="h-4 w-4"
-                        >
-                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path>
-                          <circle cx="17" cy="7" r="5"></circle>
-                        </svg>
-                        <p>Artists</p>
-                      </div>
-                      <div className="flex items-center gap-[1rem]">
-                        <Library className="w-4 h-4" />
-                        <p>Albums</p>
-                      </div>
-                    </div>
-                  </div>
+
+                <div className="flex flex-col gap-[0.5rem]">
+                  <div className="text-white font-bold text-xl">Library</div>
+                  {tablist.slice(3, 8).map((tablist: TabList) => (
+                    <TabsTrigger key={tablist.id} value={tablist.value}>
+                      {tablist.icon}
+                      {tablist.tabname}
+                    </TabsTrigger>
+                  ))}
                 </div>
-                <div className="flex flex-col gap-[1rem]">
-                  <div className="text-xl font-bold pl-[2rem]">Playlists</div>
-                  <div className="flex gap-[1rem]">
-                    <ScrollArea className="h-[320px] pl-[1rem] w-[230px]">
-                      <div className="flex flex-col text-md gap-[1rem]">
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Recently Added</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Recently Played</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Top Songs</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Top Albums</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Top Artists</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Logic Discography</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Bedtime Beats</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Feeling Happy</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>I miss Y2K Pop</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Runtober</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Mellow Days</p>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
-                        >
-                          <ListMusic className="w-4 h-4" />
-                          <p>Eminem Essentials</p>
-                        </Button>
-                      </div>
-                    </ScrollArea>
-                  </div>
+                <div className="flex flex-col gap-[0.5rem]">
+                  <div className="text-white font-bold text-xl">Playlists</div>
+                  <ScrollArea className="h-[130px] w-[240px]">
+                    {tablist.slice(8).map((tablist: TabList) => (
+                      <TabsTrigger key={tablist.id} value={tablist.value}>
+                        {tablist.icon}
+                        {tablist.tabname}
+                      </TabsTrigger>
+                    ))}
+                  </ScrollArea>
                 </div>
-              </div>
-              <div className="flex w-full flex-col">
-                <div className="flex mt-[1rem] mx-[2rem] justify-between">
-                  <div className="">
-                    <Tabs defaultValue="music" className="w-[400px]">
-                      <TabsList>
-                        <TabsTrigger value="music">Music</TabsTrigger>
-                        <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
-                        <TabsTrigger value="live">Live</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="music">
-                        <div className="mt-[2rem]">
-                          <div className="">
-                            <h1 className="font-bold text-2xl">Listen Now</h1>
-                            <p className="text-sm text-[#a1a1a1]">
-                              Top picks for you. Updated daily.
-                            </p>
-                          </div>
-                          <div>
-                            <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
-                              <div className="flex gap-[3rem]">
-                                <div>
-                                  <Image
-                                    src="/kelly-sikkema-_-TwILDnZSU-unsplash.jpg"
-                                    alt="Picture of the author"
-                                    width={1300}
-                                    height={1200}
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    React Rendezvous
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Ethan Byte
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Async Awakenings
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Nina Netcode
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/daniel-angele-2gu4hKuFhi0-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    The Art of Reusability
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg max-w-[255px] max-h-[350px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Stateful Symphony
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                              </div>
-                              <ScrollBar orientation="horizontal" />
-                            </ScrollArea>
-                          </div>
-                        </div>
-                        <div className="mt-[2rem]">
-                          <div className="">
-                            <h1 className="font-bold text-2xl">Make for You</h1>
-                            <p className="text-sm text-[#a1a1a1]">
-                              Your personal playlists. Updated daily.
-                            </p>
-                          </div>
-                          <div>
-                            <ScrollArea className=" border-t border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
-                              <div className="flex gap-[1.8rem]">
-                                <div>
-                                  <Image
-                                    src="/5-1.png"
-                                    alt="Picture of the author"
-                                    width={1300}
-                                    height={1200}
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Thinking Components
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/piano-tutor-header-testimonial.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Functional Fury
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/kelly-sikkema-nPMkfYtO9JA-unsplash-1365x2048.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    React Rendezvous
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Ethan Byte
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/Carolyn-Arends-Allow-For-Space-In-The-Music.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Stateful Symphony
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Beth Binary
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/averie-woodard-th3rQu0K3aM-unsplash.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    Async Awakenings
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Nina Netcode
-                                  </p>
-                                </div>
-                                <div>
-                                  <Image
-                                    src="/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
-                                    width={1300}
-                                    height={1200}
-                                    alt="Picture of the author"
-                                    className="rounded-lg w-[150px] h-[150px]"
-                                  />
-                                  <p className="text-sm mt-[0.5rem]">
-                                    The Art of Reusability
-                                  </p>
-                                  <p className="text-xs text-[#a1a1a1]">
-                                    Lena Logic
-                                  </p>
-                                </div>
-                              </div>
-                              <ScrollBar orientation="horizontal" />
-                            </ScrollArea>
-                          </div>
-                        </div>
-                      </TabsContent>
-                      <TabsContent value="podcasts">
-                        Change your password here.
-                      </TabsContent>
-                      <TabsContent value="live">
-                        Change your password here.
-                      </TabsContent>
-                    </Tabs>
-                  </div>
-                  <div>
-                    <Button>
-                      <CirclePlus className="mr-2 h-4 w-4" /> Add Music
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </TabsList>
+              <TabsContent
+                className="flex items-center w-full justify-center"
+                value="listennow"
+              >
+                <ScrollArea>
+                  <div className="w-[954px] border h-[583px]"></div>
+                </ScrollArea>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </div>
