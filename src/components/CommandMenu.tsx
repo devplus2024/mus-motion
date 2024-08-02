@@ -30,6 +30,10 @@ import { useTheme } from "next-themes";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useRouter } from "next/navigation";
 import {
+  MoonIcon,
+  SunIcon,
+  FileTextIcon,
+  LaptopIcon,
   CalendarIcon,
   EnvelopeClosedIcon,
   FaceIcon,
@@ -112,7 +116,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Home</span>
             </CommandItem>
             <CommandItem
@@ -121,7 +125,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Docs</span>
             </CommandItem>
             <CommandItem
@@ -130,7 +134,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Pricing</span>
             </CommandItem>
             <CommandItem
@@ -139,7 +143,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Resources</span>
             </CommandItem>
             <CommandItem
@@ -148,7 +152,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Enterprise</span>
             </CommandItem>
             <CommandItem
@@ -157,7 +161,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Play Now</span>
             </CommandItem>
             <CommandItem
@@ -166,7 +170,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Download</span>
             </CommandItem>
             <CommandItem
@@ -175,7 +179,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Chat</span>
             </CommandItem>
             <CommandItem
@@ -184,7 +188,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>WebFilm</span>
             </CommandItem>
           </CommandGroup>
@@ -196,7 +200,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Sun className="mr-2 h-4 w-4" />
+              <SunIcon className="mr-2 h-4 w-4" />
               <span>Light</span>
             </CommandItem>
             <CommandItem
@@ -205,7 +209,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Moon className="mr-2 h-4 w-4" />
+              <MoonIcon className="mr-2 h-4 w-4" />
               <span>Dark</span>
             </CommandItem>
             <CommandItem
@@ -214,7 +218,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Monitor className="mr-2 h-4 w-4" />
+              <LaptopIcon className="mr-2 h-4 w-4" />
               <span>System</span>
             </CommandItem>
           </CommandGroup>
