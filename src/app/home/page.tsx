@@ -126,29 +126,8 @@ export default function Home() {
   const [position, setPosition] = React.useState("benoit");
   return (
     <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="pt-[5rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
-        <div className="items-center gap-[3rem] justify-center flex flex-col">
-          <div>
-            <p className="font-medium dark:bg-white bg-black transition-colors rounded-md px-3 dark:text-black text-white text-[1rem]">
-              Your Ultimate Music Destination
-            </p>
-          </div>
-          <h1 className="text-center transition-colors leading-[2.6rem] w-[54rem] text-[3rem] font-bold">
-            A place where music connects people from all corners of the world
-          </h1>
-          <p className="font-medium transition-colors w-[30rem] text-center text-[1rem]">
-            Dive into an endless sea of melodies. Customize your playlists,
-            stream in high quality, and enjoy music like never before. Your
-            journey into the world of music starts here.
-          </p>
-        </div>
-        <div className="flex w-full justify-center gap-[2rem] mt-[2rem]">
-          <Button>Explore Now</Button>
-          <Button variant="outline">Discover Features</Button>
-        </div>
-      </div>
       <div className="mt-[5rem] flex flex-col items-center gap-[2.5rem]">
-        <p className="font-medium  text-center w-fit bg-white rounded-full px-3 text-black text-[1rem]">
+        <p className="font-medium  text-center bg-black w-fit dark:bg-white rounded-full px-3 text-white dark:text-black text-[1rem]">
           Lasted Version
         </p>
         <h1 className="text-center leading-[2.6rem] w-[52rem] text-[2.5rem] font-bold">
