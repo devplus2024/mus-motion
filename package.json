@@ -1,9 +1,7 @@
 {
-  "type": "module",
   "name": "music-app",
   "version": "0.1.0",
   "private": true,
-  "main": "main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
