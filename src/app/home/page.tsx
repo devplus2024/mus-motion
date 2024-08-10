@@ -125,19 +125,34 @@ export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
-    <main className="flex GeistSans  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="mt-[5rem] flex flex-col items-center gap-[2.5rem]">
-        <p className="font-medium  text-center bg-black w-fit dark:bg-white rounded-full px-3 text-white dark:text-black text-[1rem]">
-          Lasted Version
-        </p>
-        <h1 className="text-center leading-[2.6rem] w-[52rem] text-[2.5rem] font-bold">
-          Experience the Ultimate Music Journey with Our Innovative Software
-        </h1>
-        <p className="text-center  w-[30rem] text-[1rem] font-medium">
-          Dive into a seamless music experience with our cutting-edge software.
-          Unleash your creativity, manage your playlists, and explore a universe
-          of sounds.
-        </p>
+    <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
+      <div className="w-ful mt-[3rem] flex items-center mx-[3rem]">
+        <div className=" flex flex-col items-start gap-[2.5rem]">
+          <p className="font-medium  text-center bg-black w-fit dark:bg-white rounded-md px-3 text-white dark:text-black text-[1rem]">
+            Lasted Version
+          </p>
+          <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
+            Experience the Ultimate Music Journey with Our Innovative Software
+          </h1>
+          <p className="text   text-[1rem] font-medium">
+            Dive into a seamless music experience with our cutting-edge
+            software. Unleash your creativity, manage your playlists, and
+            explore a universe of sounds.
+          </p>
+          <div className="flex gap-[2rem]">
+            <Button>Download</Button>
+            <Button variant={"outline"}>Try On The Web</Button>
+          </div>
+        </div>
+        <div>
+          <Image
+            src={"/image/preview.png"}
+            height={"600"}
+            alt="preview_App"
+            width={"650"}
+            className="max-w-[600px]"
+          ></Image>
+        </div>
       </div>
       <div className="contentsP active" id="musicContent">
         <div className="flex justify-center mt-[4rem] mb-[6rem]">

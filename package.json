@@ -1,13 +1,16 @@
 {
+  "type": "module",
   "name": "music-app",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "electron-build": "electron-builder"
+    "electron-build": "electron-builder",
+    "electron": "electron ."
   },
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
@@ -72,6 +75,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "electron": "^31.3.1",
+    "electron-is-dev": "^3.0.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",

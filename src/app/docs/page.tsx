@@ -129,10 +129,10 @@ export default function Docs() {
   const [position, setPosition] = React.useState("benoit");
   return (
     <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="contentsP active" id="musicContent">
-        <div className="flex justify-center mt-[4rem] mb-[6rem]">
-          <div className="h-[670px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
-            <div className="flex h-[37px] gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
+      <div className="contentsP w-full active" id="musicContent">
+        <div className="flex justify-center w-full ">
+          <div className="h-screen w-full min-w-[656px] flex flex-col rounded-lg border dark:border-[#202020]">
+            <div className="flex h-[37px] title_bar gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
               <Menubar className="dark:bg-black border-none rounded-t-lg">
                 <MenubarMenu>
                   <MenubarTrigger>MusMotion</MenubarTrigger>
@@ -353,11 +353,11 @@ export default function Docs() {
                 </div>
               </TabsList>
               <TabsContent
-                className="flex items-center w-full justify-center"
+                className="flex items-center px-2 w-full justify-center"
                 value="listennow"
               >
                 <ScrollArea className="">
-                  <div className="w-[954px]   h-[583px]">
+                  <div className="w-[calc(100vw-330px)]   h-[583px]">
                     <MusicTab />
                   </div>
                 </ScrollArea>

@@ -114,6 +114,7 @@ export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
+  const isDocsPath = pathname === "/docs";
   useEffect(() => {
     buttonRefs.current = buttonRefs.current.slice(0, 5); // Điều chỉnh số lượng cho phù hợp với số tab
   }, []);
@@ -161,7 +162,7 @@ export const Navigation = (): JSX.Element => {
 
   return (
     <div
-      className={`${isWebfilmPath ? "webfilm-class" : ""} sticky top-0 z-[20]`}
+      className={`${isWebfilmPath || isDocsPath ? "webfilm-class" : ""} sticky top-0 z-[20]`}
     >
       <nav
         ref={navRef}
