@@ -126,7 +126,7 @@ export default function Home() {
   const [position, setPosition] = React.useState("benoit");
   return (
     <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="w-ful mt-[3rem] flex items-center mx-[3rem]">
+      <div className="w-ful mt-[3rem] flex gap-[3.5rem] items-center mx-[5rem]">
         <div className=" flex flex-col items-start gap-[2.5rem]">
           <p className="font-medium  text-center bg-black w-fit dark:bg-white rounded-md px-3 text-white dark:text-black text-[1rem]">
             Lasted Version
@@ -134,7 +134,7 @@ export default function Home() {
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
-          <p className="text   text-[1rem] font-medium">
+          <p className="text w-[30rem]  text-[1rem] font-medium">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
@@ -143,6 +143,9 @@ export default function Home() {
             <Button>Download</Button>
             <Button variant={"outline"}>Try On The Web</Button>
           </div>
+		  <div>
+			<p>By using Mus Motion, you agree to its <a href="/license" className="underline">license</a> and <a className="underline" href="/privacy">privacy</a> statement.</p>
+		  </div>
         </div>
         <div>
           <Image

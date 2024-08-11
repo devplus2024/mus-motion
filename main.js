@@ -1,9 +1,9 @@
-import { app, BrowserWindow } from "electron";
+const { app, BrowserWindow } = require('electron');
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 1040,
-    height: 670,
+    height: 690,
     frame: false,
     titleBarStyle: "hidden",
     titleBarOverlay: {
