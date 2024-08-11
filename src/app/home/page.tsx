@@ -146,11 +146,20 @@ export default function Home() {
         </div>
         <div>
           <Image
-            src={"/image/preview.png"}
+            style={{ display: "var(--preview-image-dark-display)" }}
+            src={"/image/preview-dark.png"}
             height={"600"}
             alt="preview_App"
             width={"650"}
             className="max-w-[600px]"
+          ></Image>
+          <Image
+            src={"/image/preview-light.png"}
+            height={"600"}
+            alt="preview_App"
+            width={"650"}
+            className="max-w-[600px] "
+            style={{ display: "var(--preview-image-light-display)" }}
           ></Image>
         </div>
       </div>

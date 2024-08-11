@@ -133,7 +133,7 @@ export default function Docs() {
         <div className="flex justify-center w-full ">
           <div className="h-screen w-full min-w-[656px] flex flex-col rounded-lg border dark:border-[#202020]">
             <div className="flex h-[37px] title_bar gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
-              <Menubar className="dark:bg-black border-none rounded-t-lg">
+              <Menubar className="dark:bg-black title_bar_no border-none rounded-t-lg">
                 <MenubarMenu>
                   <MenubarTrigger>MusMotion</MenubarTrigger>
                   <MenubarContent>
@@ -342,7 +342,7 @@ export default function Docs() {
                   <div className="dark:text-white font-bold text-xl">
                     Playlists
                   </div>
-                  <ScrollArea className="h-[130px] w-[240px]">
+                  <ScrollArea className="h-[100px] w-[240px]">
                     {tablist.slice(8).map((tablist: TabList) => (
                       <TabsTrigger key={tablist.id} value={tablist.value}>
                         {tablist.icon}
