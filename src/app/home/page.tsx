@@ -121,6 +121,7 @@ import { useRouter } from "next/navigation";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { NavigationEffect } from "@/components/NavigationEffect";
 import { Toaster } from "@/components/ui/sonner";
+import { Dot } from 'lucide-react';
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
@@ -128,9 +129,15 @@ export default function Home() {
     <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="w-ful mt-[3rem] flex gap-[3.5rem] items-center mx-[5rem]">
         <div className=" flex flex-col items-start gap-[2.5rem]">
-          <p className="font-medium  text-center bg-black w-fit dark:bg-white rounded-md px-3 text-white dark:text-black text-[1rem]">
-            Lasted Version
-          </p>
+          <div className="flex gap-[0rem] items-center">
+			<Button variant="outline" className="font-medium  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]">
+				Lasted Version
+			</Button>
+			<Dot className="h-[4rem] w-[4rem]"/>
+			<Button variant="outline" className="font-medium  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]">
+				v2.5.3
+			</Button>
+		  </div>
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
@@ -154,14 +161,14 @@ export default function Home() {
             height={"600"}
             alt="preview_App"
             width={"650"}
-            className="max-w-[600px]"
+            className="max-w-[600px] h-[398.39px]"
           ></Image>
           <Image
             src={"/image/preview-light.png"}
             height={"600"}
             alt="preview_App"
             width={"650"}
-            className="max-w-[600px] "
+            className="max-w-[600px] h-[398.39px]"
             style={{ display: "var(--preview-image-light-display)" }}
           ></Image>
         </div>
