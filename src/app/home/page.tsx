@@ -148,10 +148,12 @@ export default function Home() {
           </p>
           <div className="flex gap-[2rem]">
             <Button>Download</Button>
-            <Button variant={"outline"}>Try On The Web</Button>
+            <Link href="/docs">
+				<Button variant={"outline"}>Try On The Web</Button>
+			</Link>
           </div>
 		  <div>
-			<p>By using Mus Motion, you agree to its <a href="/license" className="underline">license</a> and <a className="underline" href="/privacy">privacy</a> statement.</p>
+			<p>By using Mus Motion, you agree to its <Link href="/license" className="underline">license</Link> and <Link className="underline" href="/privacy">privacy</Link> statement.</p>
 		  </div>
         </div>
         <div>
