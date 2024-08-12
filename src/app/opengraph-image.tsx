@@ -1,6 +1,5 @@
-"use client";
 import { ImageResponse } from "next/og";
-import React, { useEffect, useState } from 'react';
+
 // Route segment config
 export const runtime = "edge";
 
@@ -14,28 +13,24 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function Image() {
-  // Font
-  const [content, setContent] = useState('');
+export default async function Image({ url }) {
+  // Determine content based on hostname
+  const hostname = url.hostname;
+  let content = '';
 
-  useEffect(() => {
-    const url = window.location.hostname;
+  if (hostname === 'nguyendangbinh.vercel.app') {
+    content = 'Đăng Bình';
+  } else if (hostname === 'phamviettuan.vercel.app') {
+    content = 'Viết Tuấn';
+  }
 
-    if (url === 'nguyendangbinh.vercel.app') {
-      setContent('Đăng Bình');
-    } else if (url === 'phamviettuan.vercel.app') {
-      setContent('Viết Tuấn');
-    }
-  }, []);
-
-
-  const geistLight = fetch(
+  // Load font
+  const geistLight = await fetch(
     new URL("../font/Geist-Bold.woff", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           fontSize: 128,
@@ -51,15 +46,12 @@ export default async function Image() {
         {content}
       </div>
     ),
-    // ImageResponse options
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse's width and height.
       ...size,
       fonts: [
         {
           name: "Geist",
-          data: await geistLight,
+          data: geistLight,
           style: "normal",
           weight: 600,
         },
