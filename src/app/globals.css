@@ -129,7 +129,9 @@
     --scrollbar-color: #eaeaea;
     --fill-logo-svg: #ffffff;
   }
-
+  * {
+    box-sizing: border-box;
+  }
   .custom_command_scroll {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-color) transparent;

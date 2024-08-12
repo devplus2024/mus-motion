@@ -110,6 +110,9 @@ import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
 import LogoImage from "./LogoImage";
 import { ThemeToggle } from "./mode-toggle";
+import { useTheme } from "next-themes";
+import ShinyButton from "@/components/magicui/shiny-button";
+import ShineBorder from "@/components/magicui/shine-border";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
@@ -159,10 +162,12 @@ export const Navigation = (): JSX.Element => {
       ? `opacity 150ms`
       : `transform 150ms 0ms, opacity 150ms 0ms, width 150ms`;
   }
-
+  const theme = useTheme();
   return (
     <div
-      className={`${isWebfilmPath || isDocsPath ? "webfilm-class" : ""} sticky top-0 z-[20]`}
+      className={`${
+        isWebfilmPath || isDocsPath ? "webfilm-class" : ""
+      } sticky top-0 z-[20]`}
     >
       <nav
         ref={navRef}
@@ -216,7 +221,7 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/enterprise" legacyBehavior passHref>
                     <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
-                      Support
+                      Blog
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -234,8 +239,14 @@ export const Navigation = (): JSX.Element => {
             <CommandMenu />
             <div className="flex gap-[1rem] items-center">
               <ThemeToggle />
-              <Button>Login</Button>
-              <Button variant={"outline"}>Sign Up</Button>
+              <Link href="/downloads">
+                <ShinyButton text="Download" className="font-normal" />
+              </Link>
+              <Link href="/support">
+                <ShineBorder className="text-center text-sm min-w-[100px] py-2 h-[36px]">
+                  Support
+                </ShineBorder>
+              </Link>
             </div>
           </div>
           <div

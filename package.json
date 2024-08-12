@@ -4,27 +4,27 @@
   "private": true,
   "main": "main.js",
   "build": {
-	"compression": "store",
+    "compression": "store",
     "appId": "com.musmotion.inc",
     "directories": {
-      "output": "dist" 
+      "output": "dist"
     },
     "files": [
-      "dist/**/*", 
-      "main.js", 
+      "dist/**/*",
+      "main.js",
       "package.json"
     ],
-    "win": { 
+    "win": {
       "target": "nsis",
-      "icon": "build/icon.ico" 
+      "icon": "build/icon.ico"
     },
-    "mac": { 
+    "mac": {
       "target": "dmg",
-      "icon": "build/icon.icns" 
+      "icon": "build/icon.icns"
     },
-    "linux": { 
+    "linux": {
       "target": "AppImage",
-      "icon": "build/icon.png" 
+      "icon": "build/icon.png"
     }
   },
   "scripts": {
@@ -75,7 +75,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.1.7",
-    "framer-motion": "^11.3.6",
+    "framer-motion": "^11.3.24",
     "geist": "^1.3.0",
     "input-otp": "^1.2.4",
     "lucide": "^0.400.0",
@@ -89,7 +89,7 @@
     "react-hook-form": "^7.52.1",
     "react-resizable-panels": "^2.0.20",
     "sonner": "^1.5.0",
-    "tailwind-merge": "^2.3.0",
+    "tailwind-merge": "^2.5.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.1",
     "zod": "^3.23.8"

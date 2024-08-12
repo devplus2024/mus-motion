@@ -123,6 +123,7 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 import { Toaster } from "@/components/ui/sonner";
 import { Dot } from "lucide-react";
 import DownloadButton from "./components/DownloadButton";
+import { BorderBeam } from "@/components/magicui/border-beam";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
@@ -133,16 +134,32 @@ export default function Home() {
           <div className="flex gap-[0rem] items-center">
             <Button
               variant="outline"
-              className="font-medium  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
+              className="font-medium relative text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
             >
               Lasted Version
+              <BorderBeam
+                colorFrom="#06b6d4"
+                colorTo="#3b82f6"
+                size={60}
+                duration={3}
+                delay={0}
+                borderWidth={1.5}
+              />
             </Button>
             <Dot className="h-[50px] w-[50px]" />
             <Button
               variant="outline"
-              className="font-medium  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
+              className="font-medium relative  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
             >
               v2.5.3
+              <BorderBeam
+                size={50}
+                colorFrom="#06b6d4"
+                colorTo="#3b82f6"
+                duration={3}
+                delay={0}
+                borderWidth={1.5}
+              />
             </Button>
           </div>
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
@@ -174,22 +191,32 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Image
-            style={{ display: "var(--preview-image-dark-display)" }}
-            src={"/image/preview-dark.png"}
-            height={"600"}
-            alt="preview_App"
-            width={"650"}
-            className="max-w-[600px] h-[398.39px]"
-          ></Image>
-          <Image
-            src={"/image/preview-light.png"}
-            height={"600"}
-            alt="preview_App"
-            width={"650"}
-            className="max-w-[600px] h-[398.39px]"
-            style={{ display: "var(--preview-image-light-display)" }}
-          ></Image>
+          <div className="relative rounded-lg">
+            <Image
+              style={{ display: "var(--preview-image-dark-display)" }}
+              src={"/image/preview-dark.png"}
+              height={"600"}
+              alt="preview_App"
+              width={"650"}
+              className="max-w-[600px] relative h-[398.39px] "
+            ></Image>
+            <Image
+              src={"/image/preview-light.png"}
+              height={"600"}
+              alt="preview_App"
+              width={"650"}
+              className="max-w-[600px]  h-[398.39px] "
+              style={{ display: "var(--preview-image-light-display)" }}
+            ></Image>
+            <BorderBeam
+              colorFrom="#06b6d4"
+              colorTo="#3b82f6"
+              size={150}
+              duration={6}
+              delay={0}
+              borderWidth={1.8}
+            />
+          </div>
         </div>
       </div>
       <div className="contentsP active" id="musicContent">
