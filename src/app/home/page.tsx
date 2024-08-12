@@ -124,6 +124,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Dot } from "lucide-react";
 import DownloadButton from "./components/DownloadButton";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import Meteors from "@/components/magicui/meteors";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
@@ -216,6 +217,7 @@ export default function Home() {
               delay={0}
               borderWidth={1.8}
             />
+			<Meteors number={50} />
           </div>
         </div>
       </div>
