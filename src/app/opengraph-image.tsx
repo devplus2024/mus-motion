@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-
+import React, { useEffect, useState } from 'react';
 // Route segment config
 export const runtime = "edge";
 
@@ -15,6 +15,19 @@ export const contentType = "image/png";
 // Image generation
 export default async function Image() {
   // Font
+  const [content, setContent] = useState('');
+
+  useEffect(() => {
+    const url = window.location.hostname;
+
+    if (url === 'nguyendangbinh.vercel.app') {
+      setContent('Đăng Bình');
+    } else if (url === 'phamviettuan.vercel.app') {
+      setContent('Viết Tuấn');
+    }
+  }, []);
+
+
   const geistLight = fetch(
     new URL("../font/Geist-Bold.woff", import.meta.url)
   ).then((res) => res.arrayBuffer());
@@ -34,7 +47,7 @@ export default async function Image() {
           color: "white",
         }}
       >
-        MusicHub
+        {content}
       </div>
     ),
     // ImageResponse options
