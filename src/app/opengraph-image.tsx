@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import type { NextRequest } from "next/server";
 
 // Route segment config
 export const runtime = "edge";
@@ -13,9 +14,9 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function Image({ url }) {
-  // Determine content based on hostname
-  const hostname = url.hostname;
+export default async function Image(req: NextRequest) {
+  // Extract hostname from the request URL
+  const hostname = req.nextUrl.hostname;
   let content = '';
 
   if (hostname === 'nguyendangbinh.vercel.app') {
