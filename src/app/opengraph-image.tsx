@@ -1,3 +1,4 @@
+"use client",
 import { ImageResponse } from "next/og";
 import React, { useEffect, useState } from 'react';
 // Route segment config
