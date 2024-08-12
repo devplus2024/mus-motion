@@ -1,8 +1,32 @@
 {
-  "name": "music-app",
-  "version": "0.1.0",
+  "name": "MusMotion",
+  "version": "2.5.3",
   "private": true,
   "main": "main.js",
+  "build": {
+	"compression": "store",
+    "appId": "com.musmotion.inc",
+    "directories": {
+      "output": "dist" 
+    },
+    "files": [
+      "dist/**/*", 
+      "main.js", 
+      "package.json"
+    ],
+    "win": { 
+      "target": "nsis",
+      "icon": "build/icon.ico" 
+    },
+    "mac": { 
+      "target": "dmg",
+      "icon": "build/icon.icns" 
+    },
+    "linux": { 
+      "target": "AppImage",
+      "icon": "build/icon.png" 
+    }
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -75,6 +99,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "electron": "^31.3.1",
+    "electron-builder": "^24.13.3",
     "electron-is-dev": "^3.0.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",

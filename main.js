@@ -13,7 +13,7 @@ function createWindow() {
     }, // Loại bỏ khung mặc định của hệ điều hành
   });
 
-  win.loadURL("http://localhost:3000/docs");
+  win.loadURL("http://musmotion.vercel.app/docs");
 }
 
 app.whenReady().then(() => {
