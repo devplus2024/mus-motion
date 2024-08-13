@@ -9,8 +9,8 @@ import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "MusicHub App",
-  description: "MusicHub App",
+  title: "Mus Motion",
+  description: "MusMotion App",
 };
 export default function RootLayout({
   children,
