@@ -9,7 +9,7 @@ import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Mus Motion",
+  title: "Phạm Viết Tuấn",
   description: "MusMotion App",
 };
 export default function RootLayout({
