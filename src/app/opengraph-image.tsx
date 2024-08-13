@@ -34,7 +34,7 @@ export default async function Image() {
           color: "white",
         }}
       >
-        Mus Motion
+        Đăng Bình
       </div>
     ),
     // ImageResponse options
