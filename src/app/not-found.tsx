@@ -7,8 +7,7 @@ export default function NotFound() {
       <div className=" w-[900px] gap-[2rem] h-[400px] flex flex-col items-center justify-center rounded-lg">
         <p className="text-3xl"> Oops, page not found!</p>
         <p>
-          The page you`&apos;`aposre looking for doesn`&apos;`t exist or has
-          been moved.
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className="flex gap-[1rem]">
           <Link
