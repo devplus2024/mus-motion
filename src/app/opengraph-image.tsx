@@ -34,7 +34,7 @@ export default async function Image() {
           color: "white",
         }}
       >
-        Viết Tuấn
+        Đăng Bình
       </div>
     ),
     // ImageResponse options
