@@ -1,11 +1,10 @@
 import { ImageResponse } from "next/og";
-import type { NextRequest } from "next/server";
 
 // Route segment config
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "MusicHub";
+export const alt = "Mus Motion";
 export const size = {
   width: 1200,
   height: 630,
@@ -14,24 +13,15 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function Image(req: NextRequest) {
-  // Extract hostname from the request URL
-  const hostname = req.nextUrl.hostname;
-  let content = '';
-
-  if (hostname === 'nguyendangbinh.vercel.app') {
-    content = 'Đăng Bình';
-  } else if (hostname === 'phamviettuan.vercel.app') {
-    content = 'Viết Tuấn';
-  }
-
-  // Load font
-  const geistLight = await fetch(
+export default async function Image() {
+  // Font
+  const geistLight = fetch(
     new URL("../font/Geist-Bold.woff", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
+      // ImageResponse JSX element
       <div
         style={{
           fontSize: 128,
@@ -44,15 +34,18 @@ export default async function Image(req: NextRequest) {
           color: "white",
         }}
       >
-        {content}
+        Mus Motion
       </div>
     ),
+    // ImageResponse options
     {
+      // For convenience, we can re-use the exported opengraph-image
+      // size config to also set the ImageResponse's width and height.
       ...size,
       fonts: [
         {
           name: "Geist",
-          data: geistLight,
+          data: await geistLight,
           style: "normal",
           weight: 600,
         },
