@@ -52,7 +52,7 @@ export default async function Image() {
           color: "white",
         }}
       >
-        {currentUrl}
+        {imagePreview}
       </div>
     ),
     // ImageResponse options
