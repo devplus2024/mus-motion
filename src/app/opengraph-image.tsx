@@ -23,10 +23,11 @@ export default async function Image() {
 
   const currentUrl = `${protocol}://${host}`;
   let imagePreview = "";
-  if (currentUrl === "phamviettuan.vercel.app") {
+  if (currentUrl === "https://phamviettuan.vercel.app/") {
     imagePreview = "Viết Tuấn";
-  }
-  if (currentUrl === "nguyendangbinh.vercel.app") {
+  } else if (currentUrl === "https://nguyendangbinh.vercel.app/") {
+    imagePreview = "Đăng Bình";
+  } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
     imagePreview = "Mus Motion";
@@ -51,7 +52,7 @@ export default async function Image() {
           color: "white",
         }}
       >
-        {imagePreview}
+        {currentUrl}
       </div>
     ),
     // ImageResponse options
