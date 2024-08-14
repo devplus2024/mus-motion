@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/sonner";
+import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Mus Motion",
@@ -43,6 +44,7 @@ export default function RootLayout({
               }}
             />
             {children}
+            <Footer />
           </ThemeProvider>
         </body>
       </html>
