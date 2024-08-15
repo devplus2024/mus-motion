@@ -118,50 +118,7 @@ export const Navigation = (): JSX.Element => {
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   const isDocsPath = pathname === "/docs";
-  useEffect(() => {
-    buttonRefs.current = buttonRefs.current.slice(0, 5); // Điều chỉnh số lượng cho phù hợp với số tab
-  }, []);
 
-  const [hoveredTabIndex, setHoveredTabIndex] = useState<number | null>(null);
-  const [hoveredRect, setHoveredRect] = useState<DOMRect | null>(null);
-
-  const navRef = useRef<HTMLDivElement>(null);
-  const navRect = navRef.current?.getBoundingClientRect();
-
-  const [isInitialHoveredElement, setIsInitialHoveredElement] = useState(true);
-
-  const onLeaveTabs = () => {
-    setIsInitialHoveredElement(true);
-    setHoveredTabIndex(null);
-  };
-
-  const onEnterTab = (
-    e: PointerEvent<HTMLButtonElement> | FocusEvent<HTMLButtonElement>,
-    i: number
-  ) => {
-    if (!e.target || !(e.target instanceof HTMLButtonElement)) return;
-
-    setHoveredTabIndex((prev) => {
-      if (prev != null && prev !== i) {
-        setIsInitialHoveredElement(false);
-      }
-      return i;
-    });
-    setHoveredRect(e.target.getBoundingClientRect());
-  };
-
-  let hoverStyles: CSSProperties = { opacity: 0 };
-  if (navRect && hoveredRect) {
-    hoverStyles.transform = `translate3d(${hoveredRect.left - navRect.left}px,${
-      hoveredRect.top - navRect.top
-    }px,0px)`;
-    hoverStyles.width = hoveredRect.width;
-    hoverStyles.height = hoveredRect.height;
-    hoverStyles.opacity = hoveredTabIndex != null ? 1 : 0;
-    hoverStyles.transition = isInitialHoveredElement
-      ? `opacity 150ms`
-      : `transform 150ms 0ms, opacity 150ms 0ms, width 150ms`;
-  }
   const theme = useTheme();
   return (
     <div
@@ -169,16 +126,8 @@ export const Navigation = (): JSX.Element => {
         isWebfilmPath || isDocsPath ? "webfilm-class" : ""
       } sticky top-0 z-[20]`}
     >
-      <nav
-        ref={navRef}
-        onPointerLeave={onLeaveTabs}
-        className="flex flex-shrink-0 justify-center   items-center relative z-[4] "
-      >
-        <nav
-          ref={navRef}
-          onPointerLeave={onLeaveTabs}
-          className="w-full  px-[2rem]  relative border-b bg-white dark:bg-[#000000] dark:border-[#202020]  items-center  flex justify-between gap-[2rem] z-[1]"
-        >
+      <nav className="flex flex-shrink-0 justify-center   items-center relative z-[4] ">
+        <nav className="w-full  px-[2rem]  relative border-b bg-white dark:bg-[#000000] dark:border-[#202020]  items-center  flex justify-between gap-[2rem] z-[1]">
           <div className="h-[66px] text-sm    w-fit items-center  flex gap-[2rem] ">
             <Link
               href="/"
@@ -249,10 +198,7 @@ export const Navigation = (): JSX.Element => {
               </Link>
             </div>
           </div>
-          <div
-            className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#000000] transition-[width]"
-            style={hoverStyles}
-          />
+          <div className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#000000] transition-[width]" />
         </nav>
       </nav>
     </div>

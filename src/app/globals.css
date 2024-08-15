@@ -133,10 +133,11 @@
     box-sizing: border-box;
   }
   @media (prefers-color-scheme: dark) {
-    body:not(.dark):not(.light) .icon-preview {
+    .icon-preview {
       filter: invert(1);
     }
   }
+
   .custom_command_scroll {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-color) transparent;

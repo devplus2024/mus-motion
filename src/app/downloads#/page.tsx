@@ -22,13 +22,7 @@ export default function DownloadsPage() {
         </p>
       </div>
       <div className="grid grid-cols-3 mt-[5rem] justify-items-center">
-        <div
-          style={{
-            background:
-              "linear-gradient(100deg, rgb(8 8 8) 0%, rgb(60 60 60) 56%, #0e0e0e 100%)",
-          }}
-          className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
-        >
+        <div className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg">
           <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
             <Image
               src={"/windows11.svg"}
@@ -43,20 +37,14 @@ export default function DownloadsPage() {
             </div>
           </div>
           <a className="w-full" href={"#"} onClick={handleClick}>
-            <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-              <CircleArrowDown className="dark:text-white text-black" />
+            <div className="dark:bg-white bg-black w-full flex  items-center gap-[0.5rem] px-3 py-1 rounded-md">
+              <CircleArrowDown className="dark:text-black text-white" />
 
-              <p className="dark:text-white text-black">Download for Windows</p>
+              <p className="dark:text-black text-white">Download for Windows</p>
             </div>
           </a>
         </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(100deg, rgb(8 8 8) 0%, rgb(60 60 60) 56%, #0e0e0e 100%)",
-          }}
-          className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
-        >
+        <div className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg">
           <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
             <Image
               src={"/linux.svg"}
@@ -70,18 +58,12 @@ export default function DownloadsPage() {
               <p>Debian, Ubuntu</p>
             </div>
           </div>
-          <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-            <CircleArrowDown className="dark:text-white text-black" />
-            <p className="dark:text-white text-black">Download for Linux</p>
+          <div className="dark:bg-white bg-black w-full flex  items-center gap-[0.5rem] px-3 py-1 rounded-md">
+            <CircleArrowDown className="dark:text-black text-white" />
+            <p className="dark:text-black text-white">Download for Linux</p>
           </div>
         </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(100deg, rgb(8 8 8) 0%, rgb(60 60 60) 56%, #0e0e0e 100%)",
-          }}
-          className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
-        >
+        <div className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg">
           <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
             <Image
               src={"/apple.svg"}
@@ -95,16 +77,16 @@ export default function DownloadsPage() {
               <p>MacOs 10.15+</p>
             </div>
           </div>
-          <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-            <CircleArrowDown className="dark:text-white text-black" />
-            <p className="dark:text-white text-black">Download for MacOs</p>
+          <div className="dark:bg-white bg-black w-full flex  items-center gap-[0.5rem] px-3 py-1 rounded-md">
+            <CircleArrowDown className="dark:text-black text-white" />
+            <p className="dark:text-black text-white">Download for MacOs</p>
           </div>
         </div>
       </div>
       <section className="w-full xl:py-[5.4rem] md:py-24 lg:py-32">
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="mt-[3rem]">
+            <div className="">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                 Key Features
               </div>
