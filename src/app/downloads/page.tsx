@@ -42,7 +42,7 @@ export default function DownloadsPage() {
               <p>Windows 11 , 10</p>
             </div>
           </div>
-          <a className="w-full" href="/download" onClick={handleClick}>
+          <a className="w-full" href="/downloads" onClick={handleClick}>
             <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
               <CircleArrowDown className="dark:text-white text-black" />
 
