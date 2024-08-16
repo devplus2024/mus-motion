@@ -206,7 +206,7 @@ export default function DocumentionPage() {
           <p className="text-[#a1a1a1]">
             The software not only serves as a production tool but also as a
             learning platform. Users can gradually advance from basic tasks to
-            mastering complex production techniques, supported by the software's
+            mastering complex production techniques, supported by the software&apos;s
             comprehensive feature set and educational resources.
           </p>
           <p className="text-xl">Market Readiness:</p>
