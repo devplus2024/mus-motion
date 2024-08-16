@@ -21,29 +21,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 export default function DocumentionPage() {
-  const pathname = usePathname(); // Gets the current path
-  const [activeHash, setActiveHash] = useState("");
 
-  useEffect(() => {
-    // Function to handle hash change
-    const handleHashChange = () => {
-      setActiveHash(window.location.hash);
-    };
-
-    // Set initial hash value
-    handleHashChange();
-
-    // Add event listener for hash change
-    window.addEventListener("hashchange", handleHashChange);
-
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
-
-  // Function to check if a hash is active
-  const isActive = (hash) => pathname === "/docs" && activeHash === hash;
 
   return (
     <main className="w-full flex justify-between px-[2rem] mb-[4rem] relative">
