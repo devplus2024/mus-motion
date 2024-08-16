@@ -117,13 +117,13 @@ export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
-  const isDocsPath = pathname === "/docs";
+  const isWebAppPath = pathname === "/webapp";
 
   const theme = useTheme();
   return (
     <div
       className={`${
-        isWebfilmPath || isDocsPath ? "webfilm-class" : ""
+        isWebfilmPath || isWebAppPath ? "webfilm-class" : ""
       } sticky top-0 z-[20]`}
     >
       <nav className="flex flex-shrink-0 justify-center   items-center relative z-[4] ">

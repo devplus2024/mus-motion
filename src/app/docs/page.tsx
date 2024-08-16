@@ -1,369 +1,231 @@
-"use client";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import NextLink from "next/link";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { CommandMenu } from "./CommandMenu";
-import { playlist, PlayList } from "./data/playlist";
-import { imagelist, ImageList } from "./data/image";
-import { list, List } from "./data/list";
-import {
-  ContextMenu,
-  ContextMenuCheckboxItem,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuLabel,
-  ContextMenuRadioGroup,
-  ContextMenuRadioItem,
-  ContextMenuSeparator,
-  ContextMenuShortcut,
-  ContextMenuSub,
-  ContextMenuSubContent,
-  ContextMenuSubTrigger,
-  ContextMenuTrigger,
-} from "@/components/ui/context-menu";
-import {
-  EllipsisVertical,
-  Grid,
-  Heart,
-  House,
-  ListPlus,
-  Play,
-  PlayCircle,
-  Podcast,
-  Save,
-  SkipBack,
-  SkipForward,
-  UserRound,
-} from "lucide-react";
-import { Library } from "lucide-react";
-import { CirclePlus } from "lucide-react";
-import { Search } from "lucide-react";
-import { CalendarPlus } from "lucide-react";
-import { Mic } from "lucide-react";
-import { CirclePlay } from "lucide-react";
-import { LayoutGrid } from "lucide-react";
-import { Radio } from "lucide-react";
-import { ListMusic } from "lucide-react";
-import { Clock } from "lucide-react";
-import { Guitar } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { PanelGroup, Panel } from "react-resizable-panels";
-import { Music2 } from "lucide-react";
-import { ThumbsUp } from "lucide-react";
-import { Pizza } from "lucide-react";
-import { Apple } from "lucide-react";
-import { CupSoda } from "lucide-react";
-import { Fish } from "lucide-react";
-import { Ham } from "lucide-react";
-import { Cake } from "lucide-react";
-import { MessageCircle } from "lucide-react";
-import { Share2 } from "lucide-react";
-import { User } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import React from "react";
+import { Navigation } from "@/components/Navigation";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Mail } from "lucide-react";
-import { Lightbulb } from "lucide-react";
-import { Headphones } from "lucide-react";
-import { WifiOff } from "lucide-react";
-import { NotebookText } from "lucide-react";
-import { Medal } from "lucide-react";
-import { Eye } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
-import { Input } from "@/components/ui/input";
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
-import { useRouter } from "next/navigation";
-import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
-import { NavigationEffect } from "@/components/NavigationEffect";
-import { Toaster } from "@/components/ui/sonner";
-import { TabList, tablist } from "./data/tablist";
-import MusicTab from "./components/musictab";
-export default function Docs() {
-  const { theme, systemTheme, setTheme } = useTheme();
-  const [position, setPosition] = React.useState("benoit");
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+export default function DocumentionPage() {
   return (
-    <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="contentsP w-full active" id="musicContent">
-        <div className="flex justify-center w-full ">
-          <div className="h-screen w-full min-w-[656px] flex flex-col rounded-lg border dark:border-[#202020]">
-            <div className="flex h-[37px] title_bar gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
-              <Menubar className="dark:bg-black title_bar_no border-none rounded-t-lg">
-                <MenubarMenu>
-                  <MenubarTrigger>MusMotion</MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>About MusMotion</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>
-                      Preferences<MenubarShortcut>⌘,</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>
-                      Hide MusMotion<MenubarShortcut>⇧⌘H</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Quit MusMotion
-                      <MenubarShortcut>⌘Q</MenubarShortcut>
-                    </MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger>File</MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarSub>
-                      <MenubarSubTrigger>New</MenubarSubTrigger>
-                      <MenubarSubContent>
-                        <MenubarItem>Playlist</MenubarItem>
-                        <MenubarItem>Playlist from Selection</MenubarItem>
-                        <MenubarItem>Smart Playlist</MenubarItem>
-                        <MenubarItem>Playlist Folder</MenubarItem>
-                        <MenubarItem>Genius Playlist</MenubarItem>
-                      </MenubarSubContent>
-                    </MenubarSub>
-                    <MenubarItem>
-                      Open Stream Url<MenubarShortcut>⌘U</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Close Window <MenubarShortcut>⌘W</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarSub>
-                      <MenubarSubTrigger>Libary</MenubarSubTrigger>
-                      <MenubarSubContent>
-                        <MenubarItem>Update Cloud Library</MenubarItem>
-                        <MenubarItem>Update Genius</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Organize Library</MenubarItem>
-                        <MenubarItem>Export Library</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Import Playlist</MenubarItem>
-                        <MenubarItem>Export Playlist</MenubarItem>
-                        <MenubarItem>Show Duplicate Items</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Get Album ArtWord</MenubarItem>
-                        <MenubarItem>Get Track Name</MenubarItem>
-                      </MenubarSubContent>
-                    </MenubarSub>
-                    <MenubarItem>
-                      Import... <MenubarShortcut>⌘O</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>Burn Playlist to Dis... </MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>
-                      Show in Finder
-                      <MenubarShortcut>⇧⌘R</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>Convert...</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Page Setup</MenubarItem>
-                    <MenubarItem>
-                      Print
-                      <MenubarShortcut>⌘P</MenubarShortcut>
-                    </MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger>Edit</MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>
-                      Cut <MenubarShortcut>⌘X</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Copy <MenubarShortcut>⌘C</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Paste <MenubarShortcut>⌘V</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>
-                      Select All <MenubarShortcut>⌘A</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Deselect All<MenubarShortcut>⇧⌘A</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>
-                      Smart Distation{" "}
-                      <MenubarShortcut>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          className="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
-                          <circle cx="17" cy="7" r="5" />
-                        </svg>
-                      </MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>
-                      Emoji & Symbols{" "}
-                      <MenubarShortcut>
-                        {" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          className="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                        </svg>
-                      </MenubarShortcut>
-                    </MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger>View</MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarCheckboxItem>Show Playing Next</MenubarCheckboxItem>
-                    <MenubarCheckboxItem checked>
-                      Show Lyrics
-                    </MenubarCheckboxItem>
-                    <MenubarSeparator />
-                    <MenubarItem inset>Show Status Bar</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem inset>Enter Fullscreen</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem inset>Hide Sidebar</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger>Account</MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem inset>Switch Account</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarRadioGroup
-                      defaultValue="benoit"
-                      value={position}
-                      onValueChange={setPosition}
-                    >
-                      <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                      <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-                      <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-                    </MenubarRadioGroup>
-                    <MenubarSeparator />
-                    <MenubarItem inset>Manage Family...</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem inset>Add Account...</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-              </Menubar>
+    <main className="w-full flex mb-[4rem] relative">
+      <div className="sticky h-full w-[320px] mr-[1rem]  top-[5.6rem]">
+        <ScrollArea className="mr-[1rem] h-[520px] w-[320px] ">
+          <div className="flex gap-[1rem] ml-[1rem] sticky top-[1rem] pl-[1.5rem]   h-[520px]  flex-col">
+            <div className="flex flex-col gap-[0.5rem]">
+              <h1 className="font-medium">Introduction</h1>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm text-[#a1a1a1]">
+                  Purpose of the Software
+                </p>
+                <p className="text-sm text-[#a1a1a1]">Key Features</p>
+                <p className="text-sm text-[#a1a1a1]">Versions and Updates</p>
+              </div>
             </div>
-            <Tabs defaultValue="listennow" className="flex w-full h-full">
-              <TabsList className="w-[280px] h-full border-r">
-                <div className="flex flex-col gap-[0.5rem]">
-                  <div className="dark:text-white font-bold text-xl">
-                    Dicover
-                  </div>
-                  {tablist.slice(0, 3).map((tablist: TabList) => (
-                    <TabsTrigger key={tablist.id} value={tablist.value}>
-                      {tablist.icon}
-                      {tablist.tabname}
-                    </TabsTrigger>
-                  ))}
-                </div>
-
-                <div className="flex flex-col gap-[0.5rem]">
-                  <div className="dark:text-white font-bold text-xl">
-                    Library
-                  </div>
-                  {tablist.slice(3, 8).map((tablist: TabList) => (
-                    <TabsTrigger key={tablist.id} value={tablist.value}>
-                      {tablist.icon}
-                      {tablist.tabname}
-                    </TabsTrigger>
-                  ))}
-                </div>
-                <div className="flex flex-col gap-[0.5rem]">
-                  <div className="dark:text-white font-bold text-xl">
-                    Playlists
-                  </div>
-                  <ScrollArea className="h-[100px] w-[240px]">
-                    {tablist.slice(8).map((tablist: TabList) => (
-                      <TabsTrigger key={tablist.id} value={tablist.value}>
-                        {tablist.icon}
-                        {tablist.tabname}
-                      </TabsTrigger>
-                    ))}
-                  </ScrollArea>
-                </div>
-              </TabsList>
-              <TabsContent
-                className="flex items-center px-2 w-full justify-center"
-                value="listennow"
-              >
-                <ScrollArea className="">
-                  <div className="w-[calc(100vw-330px)]   h-[583px]">
-                    <MusicTab />
-                  </div>
-                </ScrollArea>
-              </TabsContent>
-            </Tabs>
+            <div className="flex flex-col gap-[0.5rem]">
+              <h1 className="font-medium">System Requirements</h1>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm text-[#a1a1a1]">
+                  Minimum Hardware Specifications
+                </p>
+                <p className="text-sm text-[#a1a1a1]">
+                  Necessary Software Requirements
+                </p>
+                <p className="text-sm text-[#a1a1a1]">
+                  Operating System Compatibility
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[0.5rem]">
+              <h1 className="font-medium">Installation</h1>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm text-[#a1a1a1]">
+                  Downloading the Software
+                </p>
+                <p className="text-sm text-[#a1a1a1]">
+                  Installation on Windows
+                </p>
+                <p className="text-sm text-[#a1a1a1]">Installation on Linux</p>
+                <p className="text-sm text-[#a1a1a1]">Installation on macOS</p>
+                <p className="text-sm text-[#a1a1a1]">
+                  Upgrading and Uninstalling the Software
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[0.5rem]">
+              <h1 className="font-medium">Installation</h1>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm text-[#a1a1a1]">
+                  Downloading the Software
+                </p>
+                <p className="text-sm text-[#a1a1a1]">
+                  Installation on Windows
+                </p>
+                <p className="text-sm text-[#a1a1a1]">Installation on Linux</p>
+                <p className="text-sm text-[#a1a1a1]">Installation on macOS</p>
+                <p className="text-sm text-[#a1a1a1]">
+                  Upgrading and Uninstalling the Software
+                </p>
+              </div>
+            </div>
           </div>
+        </ScrollArea>
+      </div>
+      <div className="mt-[1.3rem] w-[800px]">
+        <div>
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-1">
+                    <BreadcrumbEllipsis className="h-4 w-4" />
+                    <span className="sr-only">Toggle menu</span>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    <DropdownMenuItem>Documentation</DropdownMenuItem>
+                    <DropdownMenuItem>Themes</DropdownMenuItem>
+                    <DropdownMenuItem>GitHub</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/docs/components">
+                  Components
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+        <div className="flex flex-col gap-[1rem]">
+          <h1 className="text-[1.5rem] mt-[1rem]">1. Core Objectives</h1>
+          <p className="text-xl">Simplifying Music Production:</p>
+          <p className="text-[#a1a1a1]">
+            The primary goal of the software is to streamline the music
+            production process, making it accessible to both beginners and
+            professionals. By providing an intuitive interface and a
+            comprehensive set of tools, the software allows users to focus on
+            creativity rather than technical complexity.
+          </p>
+          <p className="text-xl">Enhancing Creative Freedom:</p>
+          <p className="text-[#a1a1a1]">
+            The software is designed to remove barriers to creativity, offering
+            a flexible environment where users can experiment with sounds,
+            effects, and compositions without limitations. Its non-destructive
+            editing capabilities ensure that users can make changes freely
+            without fear of losing their original work.
+          </p>
+          <p className="text-xl">Supporting Professional-Grade Output:</p>
+          <p className="text-[#a1a1a1]">
+            Despite its user-friendly design, the software is equipped with
+            advanced features that enable users to produce professional-quality
+            audio. From high-resolution audio support to sophisticated effect
+            processors, the software ensures that the final output meets
+            industry standards.
+          </p>
+        </div>
+        <div className="flex flex-col gap-[1rem]">
+          <h1 className="text-[1.5rem] mt-[1rem]">2. Target Audience</h1>
+          <p className="text-xl">Beginners and Hobbyists:</p>
+          <p className="text-[#a1a1a1]">
+            For those new to music production, the software offers a gentle
+            learning curve, with tutorials, templates, and presets that help
+            users get started quickly. It demystifies complex audio concepts and
+            provides a safe space for learning and experimentation.
+          </p>
+          <p className="text-xl">Independent Musicians and Producers:</p>
+          <p className="text-[#a1a1a1]">
+            The software is a powerful tool for indie musicians and producers
+            who require professional capabilities without the steep costs
+            associated with high-end production suites. It supports the entire
+            creative process, from recording and editing to mixing and
+            mastering.
+          </p>
+          <p className="text-xl">Educators and Students:</p>
+          <p className="text-[#a1a1a1]">
+            With its educational resources and interactive interface, the
+            software is ideal for use in music education. Teachers can use it to
+            demonstrate audio concepts, while students can practice and develop
+            their skills in a hands-on environment.
+          </p>
+        </div>
+        <div className="flex flex-col gap-[1rem]">
+          <h1 className="text-[1.5rem] mt-[1rem]">2. Key Benefits</h1>
+          <p className="text-xl">Efficiency and Productivity:</p>
+          <p className="text-[#a1a1a1]">
+            The software is designed to enhance workflow efficiency, enabling
+            users to complete projects faster without sacrificing quality.
+            Features like batch processing, customizable shortcuts, and
+            automated tasks reduce repetitive work and streamline the production
+            process.
+          </p>
+          <p className="text-xl">Collaborative Capabilities:</p>
+          <p className="text-[#a1a1a1]">
+            The software supports collaboration among multiple users, whether
+            they are in the same studio or working remotely. Features like
+            real-time editing, cloud project storage, and version control allow
+            teams to work together seamlessly.
+          </p>
+          <p className="text-xl">Customization and Flexibility:</p>
+          <p className="text-[#a1a1a1]">
+            Users can tailor the software to their specific needs, with options
+            to customize the interface, effects, and workflow. This flexibility
+            makes it suitable for a wide range of projects, from simple
+            recordings to complex, multi-track productions.
+          </p>
+        </div>
+        <div className="flex flex-col gap-[1rem]">
+          <h1 className="text-[1.5rem] mt-[1rem]">4. Impact on Users</h1>
+          <p className="text-xl">Empowering Creativity:</p>
+          <p className="text-[#a1a1a1]">
+            By providing a robust platform for music creation, the software
+            empowers users to bring their artistic visions to life. Whether
+            composing original music, remixing existing tracks, or experimenting
+            with sound design, users have the tools they need to express
+            themselves fully.
+          </p>
+          <p className="text-xl">Skill Development:</p>
+          <p className="text-[#a1a1a1]">
+            The software not only serves as a production tool but also as a
+            learning platform. Users can gradually advance from basic tasks to
+            mastering complex production techniques, supported by the software's
+            comprehensive feature set and educational resources.
+          </p>
+          <p className="text-xl">Market Readiness:</p>
+          <p className="text-[#a1a1a1]">
+            For professionals aiming to release their work commercially, the
+            software ensures that the final product is market-ready. It supports
+            industry-standard file formats, high-resolution audio, and export
+            options that meet the demands of streaming platforms, record labels,
+            and more.
+          </p>
+        </div>
+      </div>
+      <div className="w-[200px] sticky  top-[5.6rem]   pl-[1rem] flex flex-col gap-[1rem]  h-[500px]">
+        <h1 className="text-sm">On This Page</h1>
+        <div className="gap-[0.5rem] flex flex-col">
+          <p className="text-sm text-[#a1a1a1]">Core Objectives</p>
+          <p className="text-sm text-[#a1a1a1]">Target Audience</p>
+          <p className="text-sm text-[#a1a1a1]">Key Benefits</p>
+          <p className="text-sm text-[#a1a1a1]">Impact on Users</p>
         </div>
       </div>
     </main>

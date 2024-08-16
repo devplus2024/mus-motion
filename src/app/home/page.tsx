@@ -173,7 +173,7 @@ export default function Home() {
           </p>
           <div className="flex gap-[2rem]">
             <DownloadButton />
-            <Link href="/docs">
+            <Link href="/webapp">
               <Button variant={"outline"}>Try On The Web</Button>
             </Link>
           </div>

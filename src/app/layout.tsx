@@ -27,7 +27,7 @@ export default function RootLayout({
         style={{ colorScheme: "dark" }}
       >
         <head />
-        <body className="relative">
+        <body className="relative ">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster
