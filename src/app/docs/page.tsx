@@ -286,25 +286,25 @@ export default function DocumentionPage() {
         <div className="gap-[0.5rem] flex flex-col">
           <Link
             href="#core-objectives"
-            className="docs-content-title  hover:text-white"
+            className="docs-content-title transition-colors hover:text-white"
           >
             Core Objectives
           </Link>
           <a
             href="#target-audience"
-            className="docs-content-title hover:text-white"
+            className="docs-content-title transition-colors hover:text-white"
           >
             Target Audience
           </a>
           <a
             href="#key-benefits"
-            className="docs-content-title hover:text-white"
+            className="docs-content-title transition-colors hover:text-white"
           >
             Key Benefits
           </a>
           <a
             href="#impact-on-users"
-            className="docs-content-title hover:text-white"
+            className="docs-content-title transition-colors hover:text-white"
           >
             Impact on Users
           </a>
