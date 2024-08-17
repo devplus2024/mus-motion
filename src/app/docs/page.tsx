@@ -21,7 +21,44 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 export default function DocumentionPage() {
+  useEffect(() => {
+    // This code runs only on the client-side
+    var content_docs_purpose = document.querySelectorAll(
+      ".docs-content-purpose",
+    );
+    var title_For_content = document.querySelectorAll(".docs-content-title");
 
+    function checkPositions() {
+      content_docs_purpose.forEach((element, index) => {
+        // Ensure the corresponding title element exists
+        if (title_For_content[index]) {
+          const topDistance = element.getBoundingClientRect().top;
+          const remToPixels =
+            26 *
+            parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+          if (topDistance <= remToPixels && topDistance >= 0) {
+            title_For_content[index].classList.add("active");
+          } else {
+            title_For_content[index].classList.remove("active");
+          }
+        }
+      });
+    }
+
+    // Initial check
+    checkPositions();
+
+    // Optionally, run the check on window resize or scroll
+    window.addEventListener("resize", checkPositions);
+    window.addEventListener("scroll", checkPositions);
+
+    // Cleanup event listeners on unmount
+    return () => {
+      window.removeEventListener("resize", checkPositions);
+      window.removeEventListener("scroll", checkPositions);
+    };
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <main className="w-full flex justify-between px-[2rem] mb-[4rem] relative">
@@ -116,15 +153,15 @@ export default function DocumentionPage() {
             </BreadcrumbList>
           </Breadcrumb>
         </div>
-        <div className="flex flex-col gap-[1rem]">
+        <div className="flex flex-col  gap-[1rem]">
           <h1
-            className="text-[1.5rem] scroll-m-20 font-bold mt-[1rem]"
+            className="text-[1.5rem] docs-content-purpose scroll-m-20 font-bold mt-[1rem]"
             id="core-objectives"
           >
             1. Core Objectives
           </h1>
           <p className="text-md font-medium">Simplifying Music Production:</p>
-          <p className="text-[#a1a1a1]">
+          <p className="text-[#a1a1a1] ">
             The primary goal of the software is to streamline the music
             production process, making it accessible to both beginners and
             professionals. By providing an intuitive interface and a
@@ -150,9 +187,9 @@ export default function DocumentionPage() {
             industry standards.
           </p>
         </div>
-        <div className="flex flex-col gap-[1rem]">
+        <div className="flex flex-col  gap-[1rem]">
           <h1
-            className="text-[1.5rem] font-bold mt-[1rem] scroll-m-20"
+            className="text-[1.5rem] docs-content-purpose font-bold mt-[1rem] scroll-m-20"
             id="target-audience"
           >
             2. Target Audience
@@ -182,9 +219,9 @@ export default function DocumentionPage() {
             their skills in a hands-on environment.
           </p>
         </div>
-        <div className="flex flex-col gap-[1rem]">
+        <div className="flex  flex-col gap-[1rem]">
           <h1
-            className="text-[1.5rem] font-bold mt-[1rem] scroll-m-20"
+            className="text-[1.5rem] docs-content-purpose font-bold mt-[1rem] scroll-m-20"
             id="key-benefits"
           >
             3. Key Benefits
@@ -212,9 +249,9 @@ export default function DocumentionPage() {
             recordings to complex, multi-track productions.
           </p>
         </div>
-        <div className="flex flex-col gap-[1rem]">
+        <div className="flex  flex-col gap-[1rem]">
           <h1
-            className="text-[1.5rem] font-bold mt-[1rem scroll-m-20]"
+            className="text-[1.5rem] docs-content-purpose font-bold mt-[1rem scroll-m-20]"
             id="impact-on-users"
           >
             4. Impact on Users
@@ -249,25 +286,25 @@ export default function DocumentionPage() {
         <div className="gap-[0.5rem] flex flex-col">
           <Link
             href="#core-objectives"
-            className="text-sm text-[#a1a1a1] hover:text-white"
+            className="docs-content-title  hover:text-white"
           >
             Core Objectives
           </Link>
           <a
             href="#target-audience"
-            className="text-sm text-[#a1a1a1] hover:text-white"
+            className="docs-content-title hover:text-white"
           >
             Target Audience
           </a>
           <a
             href="#key-benefits"
-            className="text-sm text-[#a1a1a1] hover:text-white"
+            className="docs-content-title hover:text-white"
           >
             Key Benefits
           </a>
           <a
             href="#impact-on-users"
-            className="text-sm text-[#a1a1a1] hover:text-white"
+            className="docs-content-title hover:text-white"
           >
             Impact on Users
           </a>

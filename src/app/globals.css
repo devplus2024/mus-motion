@@ -129,6 +129,17 @@
         --scrollbar-color: #eaeaea;
         --fill-logo-svg: #ffffff;
     }
+
+    .docs-content-title.active {
+        font-size: 0.875rem /* 14px */;
+        line-height: 1.25rem /* 20px */;
+        color: white;
+    }
+    .docs-content-title {
+        font-size: 0.875rem /* 14px */;
+        line-height: 1.25rem /* 20px */;
+        color: #a1a1a1;
+    }
     .antialiased {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
