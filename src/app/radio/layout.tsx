@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Enterprise",
-  description: "MusicHub App",
+  title: "Radio",
+  description: "MusMotion - Radio",
 };
 export default function ResourcesLayout({
   children,

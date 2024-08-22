@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Pricing",
-  description: "MusMotion - Pricing",
+  title: "Community",
+  description: "MusMotion - Community",
 };
-export default function PricingLayout({
+export default function CommunityLayout({
   children,
 }: {
   children: React.ReactNode;

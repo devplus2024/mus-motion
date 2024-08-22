@@ -26,9 +26,11 @@ import {
 } from "@/components/ui/context-menu";
 import {
   EllipsisVertical,
+  Globe,
   Heart,
   House,
   ListPlus,
+  Minus,
   Play,
   PlayCircle,
   Podcast,
@@ -135,24 +137,9 @@ export default function Home() {
           <div className="flex gap-[0rem] items-center">
             <Button
               variant="outline"
-              className="font-medium relative text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
-            >
-              Lasted Version
-              <BorderBeam
-                colorFrom="#06b6d4"
-                colorTo="#3b82f6"
-                size={60}
-                duration={3}
-                delay={0}
-                borderWidth={1.5}
-              />
-            </Button>
-            <Dot className="h-[50px] w-[50px]" />
-            <Button
-              variant="outline"
               className="font-medium relative  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
             >
-              v2.5.3
+              Lasted Version <Minus className="h-4 w-4 mx-2" /> v2.5.3
               <BorderBeam
                 size={50}
                 colorFrom="#06b6d4"
@@ -171,13 +158,16 @@ export default function Home() {
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
           </p>
-          <div className="flex gap-[2rem]">
+          <div className="flex  gap-[2rem]">
             <DownloadButton />
             <Link href="/webapp">
-              <Button variant={"outline"}>Try On The Web</Button>
+              <Button variant={"outline"}>
+                <Globe className="mr-2 h-4 w-4" />
+                Try On The Web
+              </Button>
             </Link>
           </div>
-          <div>
+          <div className="text-sm">
             <p>
               By using Mus Motion, you agree to its{" "}
               <Link href="/license" className="underline">
@@ -199,14 +189,14 @@ export default function Home() {
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="max-w-[600px] relative h-[398.39px] "
+              className="max-w-[680px]  h-[500px]"
             ></Image>
             <Image
               src={"/image/preview-light.png"}
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="max-w-[600px]  h-[398.39px] "
+              className="max-w-[650px]  h-[500px] "
               style={{ display: "var(--preview-image-light-display)" }}
             ></Image>
             <BorderBeam
@@ -217,7 +207,7 @@ export default function Home() {
               delay={0}
               borderWidth={1.8}
             />
-			<Meteors number={50} />
+            <Meteors number={50} />
           </div>
         </div>
       </div>

@@ -133,20 +133,20 @@ export const Navigation = (): JSX.Element => {
               href="/"
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
             >
-              <p className="font-bold">MusPlayer</p>
+              <p className="font-bold">Musplayer</p>
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="/features" legacyBehavior passHref>
-                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
-                      Features
+                  <Link href="/browse" legacyBehavior passHref>
+                    <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Browse
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/pricing" legacyBehavior passHref>
-                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                    <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
                       Pricing
                     </NavigationMenuLink>
                   </Link>
@@ -154,29 +154,29 @@ export const Navigation = (): JSX.Element => {
 
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                    <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
                       Docs
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/resources" legacyBehavior passHref>
-                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
-                      Resources
+                  <Link href="/radio" legacyBehavior passHref>
+                    <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Radio
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/enterprise" legacyBehavior passHref>
-                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
-                      Blog
+                  <Link href="/community" legacyBehavior passHref>
+                    <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                      Community
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/enterprise" legacyBehavior passHref>
-                    <NavigationMenuLink className="text-[0.9rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                  <Link href="/aboutus" legacyBehavior passHref>
+                    <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
                       About Us
                     </NavigationMenuLink>
                   </Link>
