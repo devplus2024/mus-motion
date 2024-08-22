@@ -93,7 +93,7 @@ export function CommandMenu() {
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="cursor-pointer border p-2 flex gap-4 group hover:bg-muted dark:hover:bg-[#101010] transition-all duration-200 ease-out items-center justify-between h-[36px] w-[250px] rounded-md"
+        className="cursor-pointer border-[8px] p-2 flex gap-4 group hover:bg-muted dark:hover:bg-[#101010] transition-all duration-200 ease-out items-center justify-between h-[36px] w-[250px] rounded-md"
       >
         <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
           <MagnifyingGlassIcon width="21" height="21" />
