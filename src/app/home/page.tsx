@@ -154,25 +154,74 @@ export default function Home() {
               
             </Button>
             <div className="flex items-center gap-[0.5rem]">
-               <a href="https://x.com/DeveloperPlus24">
+              
+               <HoverCard>
+      <HoverCardTrigger asChild>
+      <a href="https://x.com/DeveloperPlus24">
                  <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]"  size="icon">
                  <Image src="/x.svg" width="50" height="50" alt="x-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
                </a>
-                <a href="">
+      </HoverCardTrigger>
+      <HoverCardContent className="w-[16rem]" side="top">
+        <div className="flex justify-between space-x-4">
+          <Avatar>
+            <AvatarImage className="dark:invert-[1]" src="/x.svg" />
+            <AvatarFallback>IG</AvatarFallback>
+          </Avatar>
+          <div className="space-y-1">
+            <h4 className="text-sm font-semibold">@x</h4>
+            <p className="text-sm">
+              Pham Quang Truong An
+            </p>
+            <div className="flex items-center pt-2">
+              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+              <span className="text-xs text-muted-foreground">
+                Joined Jun 2024
+              </span>
+            </div>
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+                <HoverCard>
+      <HoverCardTrigger asChild>
+      <a href="">
                   <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]"  size="icon">
                    <Image src="/instagram.svg" width="50" height="50" alt="instagram-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
                 </a>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-[16rem]" side="top">
+        <div className="flex justify-between space-x-4">
+          <Avatar>
+            <AvatarImage className="dark:invert-[1]" src="/instagram.svg" />
+            <AvatarFallback>IG</AvatarFallback>
+          </Avatar>
+          <div className="space-y-1">
+            <h4 className="text-sm font-semibold">@instagram</h4>
+            <p className="text-sm">
+              Pham Quang Truong An
+            </p>
+            <div className="flex items-center pt-2">
+              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+              <span className="text-xs text-muted-foreground">
+                Joined August 2024
+              </span>
+            </div>
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
                 <HoverCard>
       <HoverCardTrigger asChild>
-      <a href="" >
+      <a href="https://www.facebook.com/phamquangtruongan" >
                   <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]" size="icon">
                   <Image src="/facebook.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                  </Button>
                 </a>
       </HoverCardTrigger>
-      <HoverCardContent className="w-[16rem]">
+      <HoverCardContent className="w-[16rem]" side="top">
         <div className="flex justify-between space-x-4">
           <Avatar>
             <AvatarImage className="dark:invert-[1]" src="/facebook.svg" />
