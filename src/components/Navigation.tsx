@@ -195,7 +195,7 @@ export const Navigation = (): JSX.Element => {
             <CommandMenu />
             <div className="flex gap-[1rem] items-center">
               <Link href="/downloads">
-                <Button variant={"outline"} className="dark:hover:bg-[#1a1a1a] hover:bg-muted">Download</Button>
+                <Button variant={"outline"} className="dark:hover:bg-[#1a1a1a] hover:bg-accent">Download</Button>
               </Link>
             </div>
           </div>
