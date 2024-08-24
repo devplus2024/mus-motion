@@ -126,7 +126,7 @@ export default function BrowsePage() {
                     alt={product.name}
                     width={"200"}
                     height={"300"}
-                    className="w-full h-32 object-cover mb-4 rounded"
+                    className="w-full h-[12rem] object-cover mb-4 rounded"
                   />
                   <p className="text-sm text-muted-foreground mb-2">
                     {product.category}
