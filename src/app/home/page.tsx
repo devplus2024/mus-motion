@@ -172,11 +172,11 @@ export default function Home() {
                  </Button>
                 </a>
       </HoverCardTrigger>
-      <HoverCardContent className="w-80">
+      <HoverCardContent className="w-[16rem]">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src="/facebook.svg" />
-            <AvatarFallback>VC</AvatarFallback>
+            <AvatarImage className="dark:invert-[1]" src="/facebook.svg" />
+            <AvatarFallback>FB</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
             <h4 className="text-sm font-semibold">@facebook</h4>
