@@ -102,7 +102,7 @@ export default function BrowsePage() {
             <MagnifyingGlassIcon width="21" height="21" className="absolute left-[16px] top-1/2 -translate-y-1/2 " />
             </div>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-[200px]">
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
               <SelectContent>
