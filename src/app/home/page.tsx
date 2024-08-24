@@ -134,21 +134,25 @@ export default function Home() {
     <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="w-ful mt-[3rem] flex gap-[3.5rem] items-center mx-[5rem]">
         <div className=" flex flex-col items-start gap-[2.5rem]">
-          <div className="flex gap-[0rem] items-center">
+          <div className="flex gap-[2rem] items-center">
             <Button
               variant="outline"
               className="font-medium relative  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
             >
-              Lasted Version <Minus className="h-4 w-4 mx-2" /> v2.5.3
-              <BorderBeam
-                size={50}
-                colorFrom="#06b6d4"
-                colorTo="#3b82f6"
-                duration={3}
-                delay={0}
-                borderWidth={1.5}
-              />
+              v2.5.3
+              
             </Button>
+            <div>
+               <Button variant="ghost" size="icon">
+                
+                </Button>
+                <Button variant="ghost" size="icon">
+              
+                </Button>
+                <Button variant="ghost" size="icon">
+                  <Image src="/youtube.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] max-height-[50px] "/>
+                 </Button>
+            </div>
           </div>
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
             Experience the Ultimate Music Journey with Our Innovative Software
