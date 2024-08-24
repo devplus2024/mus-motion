@@ -171,7 +171,7 @@ export default function Home() {
           <div className="flex  gap-[2rem]">
             <DownloadButton />
             <Link href="/webapp">
-              <Button variant={"outline"}>
+              <Button variant={"outline"} className="dark:hover:bg-[#1a1a1a] hover:bg-accent">
                 <Globe className="mr-2 h-4 w-4" />
                 Try On The Web
               </Button>
