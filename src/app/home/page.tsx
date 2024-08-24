@@ -150,7 +150,7 @@ export default function Home() {
               
                 </Button>
                 <Button variant="ghost" size="icon">
-                  <Image src="/youtube.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] max-height-[50px] ">
+                  <Image src="/youtube.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] max-height-[50px] "/>
                  </Button>
             </div>
           </div>
