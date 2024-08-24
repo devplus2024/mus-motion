@@ -78,13 +78,13 @@ export default function BrowsePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col gap-[3rem] justify-center md:flex-row gap-8">
+      <div className="flex flex-col  justify-center md:flex-row gap-8">
         {/* Sidebar */}
         
 
         {/* Main Content */}
         <div className="w-full md:w-3/4">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between gap-[3rem] items-center mb-6">
           <Input type="text" placeholder="Search for favorite songs" className="w-full placeholder:text-[#7c7c7c]" />
             <Select>
               <SelectTrigger className="w-[180px]">
