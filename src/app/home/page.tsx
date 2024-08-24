@@ -127,6 +127,19 @@ import { Dot } from "lucide-react";
 import DownloadButton from "./components/DownloadButton";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Meteors from "@/components/magicui/meteors";
+import { CalendarIcon } from "@radix-ui/react-icons"
+ 
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
@@ -153,11 +166,36 @@ export default function Home() {
                    <Image src="/instagram.svg" width="50" height="50" alt="instagram-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
                 </a>
-                <a href="https://www.facebook.com/phamquangtruongan" >
+                <HoverCard>
+      <HoverCardTrigger asChild>
+      <a href="" >
                   <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]" size="icon">
                   <Image src="/facebook.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                  </Button>
                 </a>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-80">
+        <div className="flex justify-between space-x-4">
+          <Avatar>
+            <AvatarImage src="/facebook.svg" />
+            <AvatarFallback>VC</AvatarFallback>
+          </Avatar>
+          <div className="space-y-1">
+            <h4 className="text-sm font-semibold">@facebook</h4>
+            <p className="text-sm">
+              Pham Quang Truong An
+            </p>
+            <div className="flex items-center pt-2">
+              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+              <span className="text-xs text-muted-foreground">
+                Joined December 2023
+              </span>
+            </div>
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+               
             </div>
           </div>
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
@@ -217,7 +255,6 @@ export default function Home() {
               delay={0}
               borderWidth={1.8}
             />
-            <Meteors number={50} />
           </div>
         </div>
       </div>
