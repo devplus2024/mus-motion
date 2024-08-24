@@ -128,7 +128,7 @@ export const Navigation = (): JSX.Element => {
     >
       <nav className="flex flex-shrink-0 justify-center   items-center relative z-[4] ">
         <nav className="w-full  px-[2rem]  relative border-b bg-white dark:bg-[#000000] dark:border-[#202020]  items-center  flex justify-between gap-[2rem] z-[1]">
-          <div className="h-[66px] text-sm    w-fit items-center  flex gap-[2rem] ">
+          <div className="h-[58px] text-sm    w-fit items-center  flex gap-[2rem] ">
             <Link
               href="/"
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
