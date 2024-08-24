@@ -78,47 +78,14 @@ export default function BrowsePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col justify-center md:flex-row gap-8">
         {/* Sidebar */}
-        <div className="w-full md:w-1/4">
-          <div className="mb-6">
-            <Input
-              type="text"
-              placeholder="Search software..."
-              className="w-full"
-            />
-          </div>
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Categories</h2>
-            <div className="space-y-2">
-              {categories.map((category) => (
-                <div key={category} className="flex items-center">
-                  <Checkbox id={category} />
-                  <label
-                    htmlFor={category}
-                    className="ml-2 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {category}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Price Range</h2>
-            <div className="flex items-center space-x-2">
-              <Input type="number" placeholder="Min" className="w-1/2" />
-              <span>-</span>
-              <Input type="number" placeholder="Max" className="w-1/2" />
-            </div>
-          </div>
-          <Button className="w-full">Apply Filters</Button>
-        </div>
+        
 
         {/* Main Content */}
         <div className="w-full md:w-3/4">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold">Browse Music Software</h1>
+          <Input type="text" placeholder="Search for favorite songs" className="w-full placeholder:text-[#7c7c7c]" />
             <Select>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Sort by" />
