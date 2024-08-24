@@ -97,9 +97,9 @@ export default function BrowsePage() {
         {/* Main Content */}
         <div className="w-full md:w-3/4">
           <div className="flex justify-between gap-[3rem] items-center mb-6">
-          <div className="relative">
+          <div className="relative w-full">
             <Input type="text" placeholder="Search for favorite songs" className="w-full pl-[3rem] placeholder:text-[#7c7c7c]" />
-            <MagnifyingGlassIcon width="21" height="21" className="absolute left-[8px] top-1/2 -translate-y-1/2 " />
+            <MagnifyingGlassIcon width="21" height="21" className="absolute left-[16px] top-1/2 -translate-y-1/2 " />
             </div>
             <Select>
               <SelectTrigger className="w-[180px]">
