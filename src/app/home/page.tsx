@@ -134,7 +134,7 @@ export default function Home() {
     <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
       <div className="w-ful mt-[3rem] flex gap-[3.5rem] items-center mx-[5rem]">
         <div className=" flex flex-col items-start gap-[2.5rem]">
-          <div className="flex gap-[2rem] items-center">
+          <div className="flex gap-[1rem] items-center">
             <Button
               variant="outline"
               className="font-medium relative  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
@@ -143,15 +143,21 @@ export default function Home() {
               
             </Button>
             <div className="flex items-center gap-[0.5rem]">
-               <Button variant="ghost" className="px-2"  size="icon">
+               <a href="https://x.com/DeveloperPlus24">
+                 <Button variant="ghost" className="px-2"  size="icon">
                  <Image src="/x.svg" width="50" height="50" alt="x-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
-                <Button variant="ghost" className="px-2"  size="icon">
+               </a>
+                <a href="">
+                  <Button variant="ghost" className="px-2"  size="icon">
                    <Image src="/instagram.svg" width="50" height="50" alt="instagram-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
-                <Button variant="ghost" className="px-2" size="icon">
-                  <Image src="/youtube.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
+                </a>
+                <a href="https://www.facebook.com/phamquangtruongan" >
+                  <Button variant="ghost" className="px-2" size="icon">
+                  <Image src="/facebook.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                  </Button>
+                </a>
             </div>
           </div>
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
