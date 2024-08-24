@@ -166,7 +166,7 @@ export default function Home() {
       <HoverCardContent className="w-[16rem]" side="top">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage className="dark:invert-[1]" src="/x.svg" />
+            <AvatarImage className="dark:invert-[1] rounded-[0px]" src="/x.svg" />
             <AvatarFallback>IG</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
@@ -195,7 +195,7 @@ export default function Home() {
       <HoverCardContent className="w-[16rem]" side="top">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage className="dark:invert-[1]" src="/instagram.svg" />
+            <AvatarImage className="dark:invert-[1] rounded-[0px]" src="/instagram.svg" />
             <AvatarFallback>IG</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
@@ -224,7 +224,7 @@ export default function Home() {
       <HoverCardContent className="w-[16rem]" side="top">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage className="dark:invert-[1]" src="/facebook.svg" />
+            <AvatarImage className="dark:invert-[1] rounded-[0px]" src="/facebook.svg" />
             <AvatarFallback>FB</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
