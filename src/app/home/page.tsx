@@ -142,15 +142,15 @@ export default function Home() {
               v2.5.3
               
             </Button>
-            <div>
-               <Button variant="ghost" size="icon">
-                
+            <div className="flex items-center gap-[0.5rem]">
+               <Button variant="ghost" className="px-2"  size="icon">
+                 <Image src="/x.svg" width="50" height="50" alt="x-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
-                <Button variant="ghost" size="icon">
-              
+                <Button variant="ghost" className="px-2"  size="icon">
+                   <Image src="/instagram.svg" width="50" height="50" alt="instagram-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
-                <Button variant="ghost" size="icon">
-                  <Image src="/youtube.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] max-height-[50px] "/>
+                <Button variant="ghost" className="px-2" size="icon">
+                  <Image src="/youtube.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                  </Button>
             </div>
           </div>
