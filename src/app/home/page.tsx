@@ -148,7 +148,7 @@ export default function Home() {
           <div className="flex gap-[1rem] items-center">
             <Button
               variant="outline"
-              className="font-medium relative  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
+              className="font-medium relative h-[2rem] text-sm  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
             >
               v2.5.3
               
