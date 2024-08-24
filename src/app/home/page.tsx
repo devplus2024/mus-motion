@@ -144,17 +144,17 @@ export default function Home() {
             </Button>
             <div className="flex items-center gap-[0.5rem]">
                <a href="https://x.com/DeveloperPlus24">
-                 <Button variant="ghost" className="px-2"  size="icon">
+                 <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]"  size="icon">
                  <Image src="/x.svg" width="50" height="50" alt="x-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
                </a>
                 <a href="">
-                  <Button variant="ghost" className="px-2"  size="icon">
+                  <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]"  size="icon">
                    <Image src="/instagram.svg" width="50" height="50" alt="instagram-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                 </Button>
                 </a>
                 <a href="https://www.facebook.com/phamquangtruongan" >
-                  <Button variant="ghost" className="px-2" size="icon">
+                  <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]" size="icon">
                   <Image src="/facebook.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
                  </Button>
                 </a>
