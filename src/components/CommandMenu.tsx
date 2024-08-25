@@ -95,8 +95,8 @@ export function CommandMenu() {
         onClick={() => setOpen((open) => !open)}
         className="cursor-pointer border px-2 flex gap-4 group hover:bg-muted dark:hover:bg-[#101010] transition-all duration-200 ease-out items-center justify-between h-[36px] w-[250px] rounded-[8px]"
       >
-        <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
-          <div className="flex items-center border-r h-full">
+        <div className="gap-4 h-full flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
+          <div className="flex items-center border-r pr-2 h-full">
           <MagnifyingGlassIcon width="21" height="21" />
           </div>
           <p className="text-sm select-none">Search documetion...</p>
