@@ -108,12 +108,12 @@ export default function Home() {
       <div className="pt-[7rem] pb-[10rem] border-b dark:border-b-[#202020] w-full px-[5rem] items-center justify-center gap-[3rem] flex flex-col">
         <div className="items-center gap-[3rem] justify-center flex flex-col">
           <div>
-            <p className="font-medium bg-white rounded-full px-3 text-black text-[1rem]">
+            <p className="font-medium bg-white rounded-md px-3 text-black text-[1rem]">
               Your Ultimate Music Destination
             </p>
           </div>
-          <h1 className="text-center leading-[2.6rem]  text-[2.5rem] font-bold">
-            Unleash Your Music Experience Today
+          <h1 className="text-center leading-[2.6rem] w-[54rem] text-[3rem] font-bold">
+            A place where music connects people from all corners of the world
           </h1>
           <p className="font-medium w-[30rem] text-center text-[1rem]">
             Dive into an endless sea of melodies. Customize your playlists,

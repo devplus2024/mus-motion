@@ -34,6 +34,7 @@ import {
   EnvelopeClosedIcon,
   FaceIcon,
   GearIcon,
+  MagnifyingGlassIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
 import { useCommandState } from "cmdk";
@@ -91,8 +92,8 @@ export function CommandMenu() {
         className="cursor-pointer border p-2 flex gap-4 group hover:bg-muted transition-all duration-200 ease-out items-center justify-between h-[36px] w-[300px] rounded-md"
       >
         <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
-          <Search className="h-5 w-5  " />
-          <p className="text-sm">Search documetion...</p>
+          <MagnifyingGlassIcon width="21" height="21" />
+          <p className="text-sm select-none">Search documetion...</p>
         </div>
         <p className="text-sm text-muted-foreground">
           <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
@@ -167,6 +168,15 @@ export function CommandMenu() {
             >
               <StickyNote className="mr-2 h-4 w-4" />
               <span>Download</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/chat");
+                setOpen((open) => !open);
+              }}
+            >
+              <StickyNote className="mr-2 h-4 w-4" />
+              <span>Chat</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
