@@ -23,7 +23,7 @@ export default function DownloadsPage() {
       </div>
       <div className="grid grid-cols-1 mt-[5rem] gap-[2rem] justify-items-center">
   <div
-    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
     style={{ background: "black" }}
   >
     <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
@@ -63,7 +63,7 @@ export default function DownloadsPage() {
     </a>
   </div>
   <div
-    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
     style={{ background: "black" }}
   >
     <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
@@ -89,7 +89,7 @@ export default function DownloadsPage() {
     </div>
   </div>
   <div
-    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
     style={{ background: "black" }}
   >
     <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
