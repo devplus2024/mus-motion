@@ -56,7 +56,7 @@ export default function DownloadsPage() {
       </div>
     </div>
     <a className="w-full" href="/downloads">
-      <div className="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+      <div className="dark:bg-black justify-center border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
       <CircleArrowDown className="dark:text-white text-black" />
         <p className="dark:text-white text-black">Download for Windows</p>
       </div>
@@ -83,7 +83,7 @@ export default function DownloadsPage() {
         <p>Debian, Ubuntu</p>
       </div>
     </div>
-    <div className="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+    <div className="dark:bg-black justify-center border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
     <CircleArrowDown className="dark:text-white text-black" />
       <p className="dark:text-white text-black">Download for Linux</p>
     </div>
@@ -106,7 +106,7 @@ export default function DownloadsPage() {
         <p>MacOs 10.15+</p>
       </div>
     </div>
-    <div className="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+    <div className="dark:bg-black border bg-white w-full flex justify-center items-center gap-[0.5rem] px-3 py-2 rounded-md">
     <CircleArrowDown className="dark:text-white text-black" />
       <p className="dark:text-white text-black">Download for MacOs</p>
     </div>
