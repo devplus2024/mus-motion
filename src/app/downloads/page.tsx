@@ -21,7 +21,150 @@ export default function DownloadsPage() {
           Download our app now and enjoy unlimited access to millions of songs.
         </p>
       </div>
-      <div class="grid grid-cols-1 mt-[5rem] gap-[2rem] justify-items-center"><div class="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg" style="background: black;"><div class="w-full gap-[2rem] flex items-center  px-[1rem] "><img alt="windows-11-logo" loading="lazy" width="100" height="100" decoding="async" data-nimg="1" class="dark:invert-[1]" src="/windows11.svg" style="color: transparent;"><div class="border-r flex flex-col items-center justify-center h-[6rem] pr-[2rem]"><p class="text-xl">Windows</p><p class="text-sm">Windows 11 , 10</p></div><div><p class="text-xl">User Install</p><p class="text-sm hover:underline">x64 Arm64</p></div><div><p class="text-xl">System Install</p><p class="text-sm hover:underline">x64 Arm64</p></div><div><p class="text-xl">.zip</p><p class="text-sm hover:underline">x64 Arm64</p></div><div><p class="text-xl">CLI</p><p class="text-sm hover:underline">x64 Arm64</p></div></div><a class="w-full" href="/downloads"><div class="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-down dark:text-white text-black"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="m8 12 4 4 4-4"></path></svg><p class="dark:text-white text-black">Download for Windows</p></div></a></div><div class="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg" style="background: black;"><div class="w-full gap-[2rem] flex items-center  px-[1rem] "><img alt="windows-11-logo" loading="lazy" width="100" height="100" decoding="async" data-nimg="1" class="dark:invert-[1] " src="/linux.svg" style="color: transparent;"><div><p class="text-2xl">Linux</p><p>Debian, Ubuntu</p></div></div><div class="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-down dark:text-white text-black"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="m8 12 4 4 4-4"></path></svg><p class="dark:text-white text-black">Download for Linux</p></div></div><div class="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg" style="background: black;"><div class="w-full gap-[2rem] flex items-center  px-[1rem] "><img alt="windows-11-logo" loading="lazy" width="100" height="100" decoding="async" data-nimg="1" class="dark:invert-[1] " src="/apple.svg" style="color: transparent;"><div><p class="text-2xl ">Mac Os</p><p>MacOs 10.15+</p></div></div><div class="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-down dark:text-white text-black"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="m8 12 4 4 4-4"></path></svg><p class="dark:text-white text-black">Download for MacOs</p></div></div></div>
+      <div className="grid grid-cols-1 mt-[5rem] gap-[2rem] justify-items-center">
+  <div
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
+    style={{ background: "black" }}
+  >
+    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
+      <Image
+        alt="windows-11-logo"
+        loading="lazy"
+        width={100}
+        height={100}
+        decoding="async"
+        data-nimg={1}
+        className="dark:invert-[1]"
+        src="/windows11.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="border-r flex flex-col items-center justify-center h-[6rem] pr-[2rem]">
+        <p className="text-xl">Windows</p>
+        <p className="text-sm">Windows 11 , 10</p>
+      </div>
+      <div>
+        <p className="text-xl">User Install</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+      <div>
+        <p className="text-xl">System Install</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+      <div>
+        <p className="text-xl">.zip</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+      <div>
+        <p className="text-xl">CLI</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+    </div>
+    <a className="w-full" href="/downloads">
+      <div className="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={24}
+          height={24}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-circle-arrow-down dark:text-white text-black"
+        >
+          <circle cx={12} cy={12} r={10}></circle>
+          <path d="M12 8v8"></path>
+          <path d="m8 12 4 4 4-4"></path>
+        </svg>
+        <p className="dark:text-white text-black">Download for Windows</p>
+      </div>
+    </a>
+  </div>
+  <div
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
+    style={{ background: "black" }}
+  >
+    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
+      <Image
+        alt="windows-11-logo"
+        loading="lazy"
+        width={100}
+        height={100}
+        decoding="async"
+        data-nimg={1}
+        className="dark:invert-[1] "
+        src="/linux.svg"
+        style={{ color: "transparent" }}
+      />
+      <div>
+        <p className="text-2xl">Linux</p>
+        <p>Debian, Ubuntu</p>
+      </div>
+    </div>
+    <div className="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-circle-arrow-down dark:text-white text-black"
+      >
+        <circle cx={12} cy={12} r={10}></circle>
+        <path d="M12 8v8"></path>
+        <path d="m8 12 4 4 4-4"></path>
+      </svg>
+      <p className="dark:text-white text-black">Download for Linux</p>
+    </div>
+  </div>
+  <div
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
+    style={{ background: "black" }}
+  >
+    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
+      <Image
+        alt="windows-11-logo"
+        loading="lazy"
+        width={100}
+        height={100}
+        decoding="async"
+        data-nimg={1}
+        className="dark:invert-[1] "
+        src="/apple.svg"
+        style={{ color: "transparent" }}
+      />
+      <div>
+        <p className="text-2xl ">Mac Os</p>
+        <p>MacOs 10.15+</p>
+      </div>
+    </div>
+    <div className="dark:bg-black border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-circle-arrow-down dark:text-white text-black"
+      >
+        <circle cx={12} cy={12} r={10}></circle>
+        <path d="M12 8v8"></path>
+        <path d="m8 12 4 4 4-4"></path>
+      </svg>
+      <p className="dark:text-white text-black">Download for MacOs</p>
+    </div>
+  </div>
+</div>
+
       <section className="w-full xl:py-[5.4rem] md:py-24 lg:py-32">
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
