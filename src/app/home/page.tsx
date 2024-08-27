@@ -146,8 +146,7 @@ export default function Home() {
               variant="outline"
               className="font-medium rounded-full relative h-[2rem] text-sm  text-center  w-fit  px-3 text-black dark:text-white text-[1rem]"
             >
-              MusMotion v2.6.5 is now available! Read about the new features and
-              fixes from August.
+              MusMotion v2.6.5 is now available!
             </Button>
             <div className="flex items-center gap-[0.5rem]">
               <HoverCard>
