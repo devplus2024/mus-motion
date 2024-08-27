@@ -127,17 +127,13 @@ import { Dot } from "lucide-react";
 import DownloadButton from "./components/DownloadButton";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Meteors from "@/components/magicui/meteors";
-import { CalendarIcon } from "@radix-ui/react-icons"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
@@ -148,101 +144,132 @@ export default function Home() {
           <div className="flex gap-[1rem] items-center">
             <Button
               variant="outline"
-              className="font-medium relative h-[2rem] text-sm  text-center  w-fit rounded-md px-3 text-black dark:text-white text-[1rem]"
+              className="font-medium rounded-full relative h-[2rem] text-sm  text-center  w-fit  px-3 text-black dark:text-white text-[1rem]"
             >
-              v2.5.3
-              
+              MusMotion v2.6.5 is now available! Read about the new features and
+              fixes from August.
             </Button>
             <div className="flex items-center gap-[0.5rem]">
-              
-               <HoverCard>
-      <HoverCardTrigger asChild>
-      <a href="https://x.com/DeveloperPlus24">
-                 <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]"  size="icon">
-                 <Image src="/x.svg" width="50" height="50" alt="x-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
-                </Button>
-               </a>
-      </HoverCardTrigger>
-      <HoverCardContent className="w-[16rem]" side="top">
-        <div className="flex justify-between space-x-4">
-          <Avatar>
-            <AvatarImage className="dark:invert-[1] rounded-[0px]" src="/x.svg" />
-            <AvatarFallback>IG</AvatarFallback>
-          </Avatar>
-          <div className="space-y-1">
-            <h4 className="text-sm font-semibold">@x</h4>
-            <p className="text-sm">
-              Pham Quang Truong An
-            </p>
-            <div className="flex items-center pt-2">
-              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
-              <span className="text-xs text-muted-foreground">
-                Joined Jun 2024
-              </span>
-            </div>
-          </div>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-                <HoverCard>
-      <HoverCardTrigger asChild>
-      <a href="">
-                  <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]"  size="icon">
-                   <Image src="/instagram.svg" width="50" height="50" alt="instagram-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
-                </Button>
-                </a>
-      </HoverCardTrigger>
-      <HoverCardContent className="w-[16rem]" side="top">
-        <div className="flex justify-between space-x-4">
-          <Avatar>
-            <AvatarImage className="dark:invert-[1] rounded-[0px]" src="/instagram.svg" />
-            <AvatarFallback>IG</AvatarFallback>
-          </Avatar>
-          <div className="space-y-1">
-            <h4 className="text-sm font-semibold">@instagram</h4>
-            <p className="text-sm">
-              Pham Quang Truong An
-            </p>
-            <div className="flex items-center pt-2">
-              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
-              <span className="text-xs text-muted-foreground">
-                Joined August 2024
-              </span>
-            </div>
-          </div>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-                <HoverCard>
-      <HoverCardTrigger asChild>
-      <a href="https://www.facebook.com/phamquangtruongan" >
-                  <Button variant="ghost" className="px-2 dark:hover:bg-[#161616]" size="icon">
-                  <Image src="/facebook.svg" width="50" height="50" alt="youtube-icon" className="max-w-[50px] dark:invert-[1]  max-height-[50px] "/>
-                 </Button>
-                </a>
-      </HoverCardTrigger>
-      <HoverCardContent className="w-[16rem]" side="top">
-        <div className="flex justify-between space-x-4">
-          <Avatar>
-            <AvatarImage className="dark:invert-[1] rounded-[0px]" src="/facebook.svg" />
-            <AvatarFallback>FB</AvatarFallback>
-          </Avatar>
-          <div className="space-y-1">
-            <h4 className="text-sm font-semibold">@facebook</h4>
-            <p className="text-sm">
-              Pham Quang Truong An
-            </p>
-            <div className="flex items-center pt-2">
-              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
-              <span className="text-xs text-muted-foreground">
-                Joined December 2023
-              </span>
-            </div>
-          </div>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-               
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a href="https://x.com/DeveloperPlus24">
+                    <Button
+                      variant="ghost"
+                      className="px-2 dark:hover:bg-[#161616]"
+                      size="icon"
+                    >
+                      <Image
+                        src="/x.svg"
+                        width="50"
+                        height="50"
+                        alt="x-icon"
+                        className="max-w-[50px] dark:invert-[1]  max-height-[50px] "
+                      />
+                    </Button>
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[16rem]" side="top">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage
+                        className="dark:invert-[1] rounded-[0px]"
+                        src="/x.svg"
+                      />
+                      <AvatarFallback>IG</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">@x</h4>
+                      <p className="text-sm">Pham Quang Truong An</p>
+                      <div className="flex items-center pt-2">
+                        <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+                        <span className="text-xs text-muted-foreground">
+                          Joined Jun 2024
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a href="">
+                    <Button
+                      variant="ghost"
+                      className="px-2 dark:hover:bg-[#161616]"
+                      size="icon"
+                    >
+                      <Image
+                        src="/instagram.svg"
+                        width="50"
+                        height="50"
+                        alt="instagram-icon"
+                        className="max-w-[50px] dark:invert-[1]  max-height-[50px] "
+                      />
+                    </Button>
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[16rem]" side="top">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage
+                        className="dark:invert-[1] rounded-[0px]"
+                        src="/instagram.svg"
+                      />
+                      <AvatarFallback>IG</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">@instagram</h4>
+                      <p className="text-sm">Pham Quang Truong An</p>
+                      <div className="flex items-center pt-2">
+                        <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+                        <span className="text-xs text-muted-foreground">
+                          Joined August 2024
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a href="https://www.facebook.com/phamquangtruongan">
+                    <Button
+                      variant="ghost"
+                      className="px-2 dark:hover:bg-[#161616]"
+                      size="icon"
+                    >
+                      <Image
+                        src="/facebook.svg"
+                        width="50"
+                        height="50"
+                        alt="youtube-icon"
+                        className="max-w-[50px] dark:invert-[1]  max-height-[50px] "
+                      />
+                    </Button>
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[16rem]" side="top">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage
+                        className="dark:invert-[1] rounded-[0px]"
+                        src="/facebook.svg"
+                      />
+                      <AvatarFallback>FB</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">@facebook</h4>
+                      <p className="text-sm">Pham Quang Truong An</p>
+                      <div className="flex items-center pt-2">
+                        <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+                        <span className="text-xs text-muted-foreground">
+                          Joined December 2023
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
             </div>
           </div>
           <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
@@ -256,7 +283,10 @@ export default function Home() {
           <div className="flex  gap-[2rem]">
             <DownloadButton />
             <Link href="/webapp">
-              <Button variant={"outline"} className="dark:hover:bg-[#1a1a1a] hover:bg-accent">
+              <Button
+                variant={"outline"}
+                className="dark:hover:bg-[#1a1a1a] hover:bg-accent"
+              >
                 <Globe className="mr-2 h-4 w-4" />
                 Try On The Web
               </Button>
