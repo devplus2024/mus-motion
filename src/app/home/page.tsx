@@ -138,16 +138,17 @@ export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
-    <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="w-ful mt-[3rem] flex gap-[3.5rem] items-center mx-[5rem]">
+    <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-[1rem]">
+      <Button
+        variant="outline"
+        className="font-medium rounded-md relative h-[2rem] text-sm  text-center  w-fit  px-3 text-black dark:text-white text-[1rem]"
+      >
+        MusMotion v2.6.5 is now available! Read about the new features and fixes
+        from August.
+      </Button>
+      <div className="w-ful mt-[1rem] flex gap-[3.5rem] items-center mx-[5rem]">
         <div className=" flex flex-col items-start gap-[2.5rem]">
           <div className="flex gap-[1rem] items-center">
-            <Button
-              variant="outline"
-              className="font-medium rounded-full relative h-[2rem] text-sm  text-center  w-fit  px-3 text-black dark:text-white text-[1rem]"
-            >
-              MusMotion v2.6.5 is now available!
-            </Button>
             <div className="flex items-center gap-[0.5rem]">
               <HoverCard>
                 <HoverCardTrigger asChild>
