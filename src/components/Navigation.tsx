@@ -133,7 +133,13 @@ export const Navigation = (): JSX.Element => {
               href="/"
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
             >
-              <p className="font-bold">Musplayer</p>
+              <Image
+                className=""
+                alt="logo-svg"
+                src={"/logo.svg"}
+                width={"60"}
+                height={"60"}
+              />
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
