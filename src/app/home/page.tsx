@@ -138,7 +138,7 @@ export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
-    <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-[1rem]">
+    <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[1rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-[1rem]">
       <Button
         variant="outline"
         className="font-medium rounded-md relative h-[2rem] text-sm  text-center  w-fit  px-3 text-black dark:text-white text-[1rem]"
@@ -314,14 +314,14 @@ export default function Home() {
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="max-w-[680px]  h-[500px]"
+              className="max-w-[680px]  h-[450px]"
             ></Image>
             <Image
               src={"/image/preview-light.png"}
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="max-w-[650px]  h-[500px] "
+              className="max-w-[650px]  h-[450px] "
               style={{ display: "var(--preview-image-light-display)" }}
             ></Image>
             <BorderBeam
