@@ -134,7 +134,7 @@ export const Navigation = (): JSX.Element => {
               className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
             >
               <Image
-                className=""
+                className="dark:invert-[1]"
                 alt="logo-svg"
                 src={"/logo.svg"}
                 width={"60"}
@@ -144,15 +144,27 @@ export const Navigation = (): JSX.Element => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="/browse"  legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/browse" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`} >
+                  <Link href="/browse" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/browse"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       Browse
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/pricing" legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/pricing" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`}>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/pricing"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       Pricing
                     </NavigationMenuLink>
                   </Link>
@@ -160,7 +172,13 @@ export const Navigation = (): JSX.Element => {
 
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/docs" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`}>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/docs"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       Docs
                     </NavigationMenuLink>
                   </Link>
@@ -168,28 +186,52 @@ export const Navigation = (): JSX.Element => {
 
                 <NavigationMenuItem>
                   <Link href="/radio" legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/radio" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`}>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/radio"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       Radio
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/community" legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/community" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`}>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/community"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       Community
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/aboutus" legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/aboutus" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`}>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/aboutus"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       About Us
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/support" legacyBehavior passHref>
-                    <NavigationMenuLink className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${pathname === "/support" ? "dark:text-white" : "dark:text-[#9b9b9b]" }  dark:hover:text-white  cursor-pointer select-none transition-colors`}>
+                    <NavigationMenuLink
+                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                        pathname === "/support"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                    >
                       Support
                     </NavigationMenuLink>
                   </Link>
@@ -201,7 +243,12 @@ export const Navigation = (): JSX.Element => {
             <CommandMenu />
             <div className="flex gap-[1rem] items-center">
               <Link href="/downloads">
-                <Button variant={"outline"} className="dark:hover:bg-[#1a1a1a] hover:bg-accent">Download</Button>
+                <Button
+                  variant={"outline"}
+                  className="dark:hover:bg-[#1a1a1a] hover:bg-accent"
+                >
+                  Download
+                </Button>
               </Link>
             </div>
           </div>
