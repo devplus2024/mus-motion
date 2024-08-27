@@ -93,14 +93,16 @@ export function CommandMenu() {
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="cursor-pointer border p-2 flex gap-4 group hover:bg-muted dark:hover:bg-[#101010] transition-all duration-200 ease-out items-center justify-between h-[36px] w-[250px] rounded-[8px]"
+        className="cursor-pointer border px-2 flex gap-4 group hover:bg-muted dark:hover:bg-[#101010] transition-all duration-200 ease-out items-center justify-between h-[36px] w-[260px] rounded-[8px]"
       >
-        <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
+        <div className="gap-4 h-full flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
+          <div className="flex items-center border-r pr-2 h-full">
           <MagnifyingGlassIcon width="21" height="21" />
-          <p className="text-sm select-none">Search documetion...</p>
+          </div>
         </div>
+          <p className="text-sm select-none text-[#7c7c7c] dark:group-hover:text-white">Search documetion...</p>
         <p className="text-sm text-muted-foreground">
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border  px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
           </kbd>
         </p>

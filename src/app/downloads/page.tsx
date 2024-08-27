@@ -21,86 +21,98 @@ export default function DownloadsPage() {
           Download our app now and enjoy unlimited access to millions of songs.
         </p>
       </div>
-      <div className="grid grid-cols-3 mt-[5rem] justify-items-center">
-        <div
-          style={{
-            background:
-              "linear-gradient(100deg, rgb(8 8 8) 0%, rgb(60 60 60) 56%, #0e0e0e 100%)",
-          }}
-          className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
-        >
-          <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
-            <Image
+      <div className="grid grid-cols-1 mt-[5rem] gap-[2rem] justify-items-center">
+  <div
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
+    style={{ background: "black" }}
+  >
+    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
+    <Image
               src={"/windows11.svg"}
               width={"100"}
               height={"100"}
               alt="windows-11-logo"
               className="dark:invert-[1]"
             ></Image>
-            <div>
-              <p className="text-2xl">Windows</p>
-              <p>Windows 11 , 10</p>
-            </div>
-          </div>
-          <a className="w-full" href="/downloads" onClick={handleClick}>
-            <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-              <CircleArrowDown className="dark:text-white text-black" />
-
-              <p className="dark:text-white text-black">Download for Windows</p>
-            </div>
-          </a>
-        </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(100deg, rgb(8 8 8) 0%, rgb(60 60 60) 56%, #0e0e0e 100%)",
-          }}
-          className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
-        >
-          <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
-            <Image
-              src={"/linux.svg"}
-              width={"100"}
-              height={"100"}
-              alt="windows-11-logo"
-              className="dark:invert-[1] "
-            ></Image>
-            <div>
-              <p className="text-2xl">Linux</p>
-              <p>Debian, Ubuntu</p>
-            </div>
-          </div>
-          <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-            <CircleArrowDown className="dark:text-white text-black" />
-            <p className="dark:text-white text-black">Download for Linux</p>
-          </div>
-        </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(100deg, rgb(8 8 8) 0%, rgb(60 60 60) 56%, #0e0e0e 100%)",
-          }}
-          className="w-[400px] px-[2rem] flex items-center justify-center flex-col gap-[1rem] h-[200px] border rounded-lg"
-        >
-          <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
-            <Image
+      <div className="border-r flex flex-col items-center justify-center h-[6rem] pr-[2rem]">
+        <p className="text-xl">Windows</p>
+        <p className="text-sm">Windows 11 , 10</p>
+      </div>
+      <div>
+        <p className="text-xl">User Install</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+      <div>
+        <p className="text-xl">System Install</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+      <div>
+        <p className="text-xl">.zip</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+      <div>
+        <p className="text-xl">CLI</p>
+        <p className="text-sm hover:underline">x64 Arm64</p>
+      </div>
+    </div>
+    <a className="w-full" href="/downloads">
+      <div className="dark:bg-black justify-center border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+      <CircleArrowDown className="dark:text-white text-black" />
+        <p className="dark:text-white text-black">Download for Windows</p>
+      </div>
+    </a>
+  </div>
+  <div
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
+    style={{ background: "black" }}
+  >
+    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
+      <Image
+        alt="windows-11-logo"
+        loading="lazy"
+        width={100}
+        height={100}
+        decoding="async"
+        data-nimg={1}
+        className="dark:invert-[1] "
+        src="/linux.svg"
+        style={{ color: "transparent" }}
+      />
+      <div>
+        <p className="text-2xl">Linux</p>
+        <p>Debian, Ubuntu</p>
+      </div>
+    </div>
+    <div className="dark:bg-black justify-center border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
+    <CircleArrowDown className="dark:text-white text-black" />
+      <p className="dark:text-white text-black">Download for Linux</p>
+    </div>
+  </div>
+  <div
+    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
+    style={{ background: "black" }}
+  >
+    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
+      
+             <Image
               src={"/apple.svg"}
               width={"100"}
               height={"100"}
               alt="windows-11-logo"
               className="dark:invert-[1] "
             ></Image>
-            <div>
-              <p className="text-2xl ">Mac Os</p>
-              <p>MacOs 10.15+</p>
-            </div>
-          </div>
-          <div className="dark:bg-black bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-            <CircleArrowDown className="dark:text-white text-black" />
-            <p className="dark:text-white text-black">Download for MacOs</p>
-          </div>
-        </div>
+      <div>
+        <p className="text-2xl ">Mac Os</p>
+        <p>MacOs 10.15+</p>
       </div>
+    </div>
+    <div className="dark:bg-black border bg-white w-full flex justify-center items-center gap-[0.5rem] px-3 py-2 rounded-md">
+    <CircleArrowDown className="dark:text-white text-black" />
+      <p className="dark:text-white text-black">Download for MacOs</p>
+    </div>
+  </div>
+</div>
+
       <section className="w-full xl:py-[5.4rem] md:py-24 lg:py-32">
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">

@@ -45,7 +45,7 @@ export default function AboutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">About Our Company</h1>
+     
 
       {/* Company History */}
       <Card className="mb-8 bg-[#000000]">
