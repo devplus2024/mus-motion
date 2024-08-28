@@ -16,7 +16,7 @@ export default function PricingPage() {
         <h1 className="mb-[0.5rem] text-[1.8rem] font-bold">
           Choose Your Perfect Plan
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-md text-muted-foreground">
           Unlock your musical potential with our cutting-edge software suite
         </p>
       </div>
