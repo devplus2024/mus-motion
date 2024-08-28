@@ -19,7 +19,7 @@ export default function PricingPage() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-12">
+      <div className="grid md:grid-cols-4 gap-8 mb-12">
         {[
           {
             "title": "Free",
