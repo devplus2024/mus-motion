@@ -1,3 +1,5 @@
+[public/image/preview-dark.png](https://github.com/devplus2024/mus-motion/blob/main/public/image/preview-dark.png)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
