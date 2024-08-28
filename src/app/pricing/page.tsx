@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CheckIcon, HelpCircleIcon } from "lucide-react";
-import { CheckCircled } from "@radix-ui/react-icons";
+import { CheckCircledIcon } from "@radix-ui/react-icons";
 export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
