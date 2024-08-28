@@ -22,6 +22,17 @@ export default function PricingPage() {
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         {[
           {
+            "title": "Free",
+            "price": "$0",
+            "description": "For entry-level users and trial",
+            "features": [
+              "5 virtual instruments",
+              "10 audio effects",
+              "2GB cloud storage",
+              "Community forum access"
+            ],
+          },
+          {
             title: "Basic",
             price: "$9.99",
             description: "For hobbyists and beginners",
