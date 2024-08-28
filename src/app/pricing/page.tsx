@@ -68,7 +68,7 @@ export default function PricingPage() {
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center">
-                    <CheckCircledIcon size={'20'} className="text-green-500 mr-2 h-5 w-5" />
+                    <CheckCircledIcon width={'20'} height={'20'} className="mr-2 "/>
                     {feature}
                   </li>
                 ))}
