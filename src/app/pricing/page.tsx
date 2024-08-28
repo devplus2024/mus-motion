@@ -12,24 +12,26 @@ import { CheckCircledIcon } from "@radix-ui/react-icons";
 export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Choose Your Perfect Plan</h1>
+      <div className="mb-12 text-center">
+        <h1 className="mb-4 text-[1.8rem] font-bold">
+          Choose Your Perfect Plan
+        </h1>
         <p className="text-xl text-muted-foreground">
           Unlock your musical potential with our cutting-edge software suite
         </p>
       </div>
 
-      <div className="grid md:grid-cols-4 gap-8 mb-12">
+      <div className="mb-12 grid gap-8 md:grid-cols-4">
         {[
           {
-            "title": "Free",
-            "price": "$0",
-            "description": "For entry-level users and trial",
-            "features": [
+            title: "Free",
+            price: "$0",
+            description: "For entry-level users and trial",
+            features: [
               "5 virtual instruments",
               "10 audio effects",
               "2GB cloud storage",
-              "Community forum access"
+              "Community forum access",
             ],
           },
           {
@@ -75,11 +77,15 @@ export default function PricingPage() {
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow">
-              <div className="text-4xl font-bold mb-4">{tier.price}</div>
+              <div className="mb-4 text-4xl font-bold">{tier.price}</div>
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center">
-                    <CheckCircledIcon width={'20'} height={'20'} className="mr-2 "/>
+                    <CheckCircledIcon
+                      width={"20"}
+                      height={"20"}
+                      className="mr-2"
+                    />
                     {feature}
                   </li>
                 ))}
@@ -95,10 +101,10 @@ export default function PricingPage() {
       </div>
 
       <div className="mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+        <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {[
             {
               question: "Can I switch plans later?",
