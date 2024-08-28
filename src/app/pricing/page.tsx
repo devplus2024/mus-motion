@@ -11,11 +11,9 @@ import { CheckIcon, HelpCircleIcon } from "lucide-react";
 import { CheckCircledIcon } from "@radix-ui/react-icons";
 export default function PricingPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 pb-8 pt-[1.5rem]">
       <div className="mb-[2.5rem] text-center">
-        <h1 className="mb-[0.5rem] text-[1.8rem] font-bold">
-          Choose Your Perfect Plan
-        </h1>
+        <h1 className="text-[1.8rem] font-bold">Choose Your Perfect Plan</h1>
         <p className="text-md text-muted-foreground">
           Unlock your musical potential with our cutting-edge software suite
         </p>
