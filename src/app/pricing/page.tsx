@@ -12,8 +12,8 @@ import { CheckCircledIcon } from "@radix-ui/react-icons";
 export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="mb-12 text-center">
-        <h1 className="mb-4 text-[1.8rem] font-bold">
+      <div className="mb-[2.5rem] text-center">
+        <h1 className="mb-[0.5rem] text-[1.8rem] font-bold">
           Choose Your Perfect Plan
         </h1>
         <p className="text-xl text-muted-foreground">
