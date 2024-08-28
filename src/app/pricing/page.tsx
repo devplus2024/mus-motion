@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CheckIcon, HelpCircleIcon } from "lucide-react";
-
+import { CheckCircled } from "@radix-ui/react-icons";
 export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
@@ -68,7 +68,7 @@ export default function PricingPage() {
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center">
-                    <CheckIcon className="text-green-500 mr-2 h-5 w-5" />
+                    <CheckCircled size={'20'} className="text-green-500 mr-2 h-5 w-5" />
                     {feature}
                   </li>
                 ))}

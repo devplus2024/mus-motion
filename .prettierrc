@@ -1,0 +1,7 @@
+// .prettierrc
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["clsx"],
+  "tailwindFunctions": ["tw"],
+   "tailwindConfig": "./styles/tailwind.config.js",
+}
