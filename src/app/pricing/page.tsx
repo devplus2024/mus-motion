@@ -31,7 +31,8 @@ function PricingPage() {
         </p>
       </div>
       <div className="flex justify-center space-x-1">
-        {tabs.map((tab) => (
+        <div className="flex w-fit border rounded-full">
+			{tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
@@ -53,9 +54,11 @@ function PricingPage() {
             {tab.label}
           </button>
         ))}
+		</div>
+		
       </div>
       <div className="mt-[4rem]">{contents[activeTab]}</div>
-      <div className="mt-16">
+      <div className="mt-16 mx-[2rem]">
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
