@@ -57,7 +57,7 @@ export default function PricingPage() {
           },
           {
             title: "Enterprise",
-            price: "Custom",
+            price: "$35.99",
             description: "For studios and professional teams",
             features: [
               "Unlimited virtual instruments",
@@ -102,7 +102,7 @@ export default function PricingPage() {
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-3">
           {[
             {
               question: "Can I switch plans later?",
@@ -123,6 +123,47 @@ export default function PricingPage() {
               question: "Do you offer educational discounts?",
               answer:
                 "Yes, we offer special discounts for students and educational institutions. Please contact our sales team for more information.",
+            },
+            {
+              question: "How secure is my data?",
+              answer:
+                "We use industry-standard encryption and security measures to protect your data. Your files are stored securely in the cloud with regular backups.",
+            },
+            {
+              question: "Can I share my projects with others?",
+              answer:
+                "Yes, you can easily share your projects with others. Our collaboration tools allow for seamless teamwork, especially in the Pro and Enterprise plans.",
+            },
+            {
+              question: "What happens to my projects if I downgrade my plan?",
+              answer:
+                "If you downgrade your plan, your projects will remain accessible, but certain features may become limited or unavailable based on the new plan.",
+            },
+            {
+              question: "Do you offer refunds?",
+              answer:
+                "We offer a 30-day money-back guarantee on annual subscriptions. Monthly subscriptions can be canceled at any time, but are non-refundable.",
+            },
+            {
+              question:
+                "Is there a limit to the number of projects I can create?",
+              answer:
+                "There is no limit to the number of projects you can create, regardless of your plan. However, storage limits may vary based on your chosen plan.",
+            },
+            {
+              question: "How often are new features added?",
+              answer:
+                "We regularly update our software with new features and improvements based on user feedback. Major updates are typically rolled out every quarter.",
+            },
+            {
+              question: "Can I collaborate with users on different plans?",
+              answer:
+                "Yes, you can collaborate with users on different plans, but certain features may be restricted based on the lowest plan in the collaboration.",
+            },
+            {
+              question: "Do I need an internet connection to use the software?",
+              answer:
+                "An internet connection is required for cloud storage and collaboration features, but most core features are available offline after installation.",
             },
           ].map((faq) => (
             <Card key={faq.question} className="bg-[#000000]">
