@@ -126,31 +126,25 @@ export const Navigation = (): JSX.Element => {
         isWebfilmPath || isWebAppPath ? "webfilm-class" : ""
       } sticky top-0 z-[20]`}
     >
-      <nav className="flex flex-shrink-0 justify-center   items-center relative z-[4] ">
-        <nav className="w-full  px-[2rem]  relative border-b bg-white dark:bg-[#000000] dark:border-[#202020]  items-center  flex justify-between gap-[2rem] z-[1]">
-          <div className="h-[58px] text-sm    w-fit items-center  flex gap-[2rem] ">
+      <nav className="relative z-[4] flex flex-shrink-0 items-center justify-center">
+        <nav className="relative z-[1] flex w-full items-center justify-between gap-[2rem] border-b bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]">
+          <div className="flex h-[58px] w-fit items-center gap-[2rem] text-sm">
             <Link
               href="/"
-              className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
+              className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
             >
-              <Image
-                className="dark:invert-[1]"
-                alt="logo-svg"
-                src={"/logo.svg"}
-                width={"60"}
-                height={"60"}
-              />
+              MusMotion
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link href="/browse" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/browse"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Browse
                     </NavigationMenuLink>
@@ -159,11 +153,11 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/pricing" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/pricing"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Pricing
                     </NavigationMenuLink>
@@ -173,11 +167,11 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/docs"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Docs
                     </NavigationMenuLink>
@@ -187,11 +181,11 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/radio" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/radio"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Radio
                     </NavigationMenuLink>
@@ -200,11 +194,11 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/community" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/community"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Community
                     </NavigationMenuLink>
@@ -213,11 +207,11 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/aboutus" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/aboutus"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       About Us
                     </NavigationMenuLink>
@@ -226,11 +220,11 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem>
                   <Link href="/support" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`text-sm relative rounded-full flex items-center h-7 px-3 duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/support"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      }  dark:hover:text-white  cursor-pointer select-none transition-colors`}
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Support
                     </NavigationMenuLink>
@@ -239,20 +233,20 @@ export const Navigation = (): JSX.Element => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex gap-[2rem] items-center">
+          <div className="flex items-center gap-[2rem]">
             <CommandMenu />
-            <div className="flex gap-[1rem] items-center">
+            <div className="flex items-center gap-[1rem]">
               <Link href="/downloads">
                 <Button
                   variant={"outline"}
-                  className="dark:hover:bg-[#1a1a1a] hover:bg-accent"
+                  className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
                 >
                   Download
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="absolute z-[3] top-0 left-0 rounded-full bg-slate-100 dark:bg-[#000000] transition-[width]" />
+          <div className="absolute left-0 top-0 z-[3] rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
       </nav>
     </div>
