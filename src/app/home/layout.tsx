@@ -5,8 +5,8 @@ import { GeistSans } from "geist/font/sans";
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "MusicHub App",
-  description: "MusicHub",
+  title: "Home | MusMotion",
+  description: "MusMotion - Home",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
       className={`${GeistSans.className} dark_black`}
       style={{ colorScheme: "dark" }}
     >
-      <body className="dark:[color-scheme:dark] overflow-x-hidden relative">
+      <body className="relative overflow-x-hidden dark:[color-scheme:dark]">
         {children}
       </body>
     </html>

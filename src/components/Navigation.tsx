@@ -204,7 +204,7 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                   <Link href="/aboutus" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
@@ -216,7 +216,7 @@ export const Navigation = (): JSX.Element => {
                       About Us
                     </NavigationMenuLink>
                   </Link>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
                 <NavigationMenuItem>
                   <Link href="/support" legacyBehavior passHref>
                     <NavigationMenuLink
