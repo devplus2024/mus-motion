@@ -67,77 +67,78 @@ function PricingPage() {
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          {[
-            {
-              question: "Can I switch plans later?",
-              answer:
-                "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
-            },
-            {
-              question: "Is there a free trial available?",
-              answer:
-                "We offer a 14-day free trial for all our plans. No credit card required to start your trial.",
-            },
-            {
-              question: "What payment methods do you accept?",
-              answer:
-                "We accept all major credit cards, PayPal, and bank transfers for annual subscriptions.",
-            },
-            {
-              question: "Do you offer educational discounts?",
-              answer:
-                "Yes, we offer special discounts for students and educational institutions. Please contact our sales team for more information.",
-            },
-            {
-              question: "How secure is my data?",
-              answer:
-                "We use industry-standard encryption and security measures to protect your data. Your files are stored securely in the cloud with regular backups.",
-            },
-            {
-              question: "Can I share my projects with others?",
-              answer:
-                "Yes, you can easily share your projects with others. Our collaboration tools allow for seamless teamwork, especially in the Pro and Enterprise plans.",
-            },
-            {
-              question: "What happens to my projects if I downgrade my plan?",
-              answer:
-                "If you downgrade your plan, your projects will remain accessible, but certain features may become limited or unavailable based on the new plan.",
-            },
-            {
-              question: "Do you offer refunds?",
-              answer:
-                "We offer a 30-day money-back guarantee on annual subscriptions. Monthly subscriptions can be canceled at any time, but are non-refundable.",
-            },
-            {
-              question:
-                "Is there a limit to the number of projects I can create?",
-              answer:
-                "There is no limit to the number of projects you can create, regardless of your plan. However, storage limits may vary based on your chosen plan.",
-            },
-            {
-              question: "How often are new features added?",
-              answer:
-                "We regularly update our software with new features and improvements based on user feedback. Major updates are typically rolled out every quarter.",
-            },
-            {
-              question: "Can I collaborate with users on different plans?",
-              answer:
-                "Yes, you can collaborate with users on different plans, but certain features may be restricted based on the lowest plan in the collaboration.",
-            },
-            {
-              question: "Do I need an internet connection to use the software?",
-              answer:
-                "An internet connection is required for cloud storage and collaboration features, but most core features are available offline after installation.",
-            },
-          ].map((faq) => (
-            <Accordion type="single" key={faq.question} collapsible>
-              <AccordionItem value="item-1">
+        <div className="grid w-full gap-8 md:grid-cols-2">
+          <Accordion type="single" collapsible className="w-full">
+            {[
+              {
+                question: "Can I switch plans later?",
+                answer:
+                  "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
+              },
+              {
+                question: "Is there a free trial available?",
+                answer:
+                  "We offer a 14-day free trial for all our plans. No credit card required to start your trial.",
+              },
+              {
+                question: "What payment methods do you accept?",
+                answer:
+                  "We accept all major credit cards, PayPal, and bank transfers for annual subscriptions.",
+              },
+              {
+                question: "Do you offer educational discounts?",
+                answer:
+                  "Yes, we offer special discounts for students and educational institutions. Please contact our sales team for more information.",
+              },
+              {
+                question: "How secure is my data?",
+                answer:
+                  "We use industry-standard encryption and security measures to protect your data. Your files are stored securely in the cloud with regular backups.",
+              },
+              {
+                question: "Can I share my projects with others?",
+                answer:
+                  "Yes, you can easily share your projects with others. Our collaboration tools allow for seamless teamwork, especially in the Pro and Enterprise plans.",
+              },
+              {
+                question: "What happens to my projects if I downgrade my plan?",
+                answer:
+                  "If you downgrade your plan, your projects will remain accessible, but certain features may become limited or unavailable based on the new plan.",
+              },
+              {
+                question: "Do you offer refunds?",
+                answer:
+                  "We offer a 30-day money-back guarantee on annual subscriptions. Monthly subscriptions can be canceled at any time, but are non-refundable.",
+              },
+              {
+                question:
+                  "Is there a limit to the number of projects I can create?",
+                answer:
+                  "There is no limit to the number of projects you can create, regardless of your plan. However, storage limits may vary based on your chosen plan.",
+              },
+              {
+                question: "How often are new features added?",
+                answer:
+                  "We regularly update our software with new features and improvements based on user feedback. Major updates are typically rolled out every quarter.",
+              },
+              {
+                question: "Can I collaborate with users on different plans?",
+                answer:
+                  "Yes, you can collaborate with users on different plans, but certain features may be restricted based on the lowest plan in the collaboration.",
+              },
+              {
+                question:
+                  "Do I need an internet connection to use the software?",
+                answer:
+                  "An internet connection is required for cloud storage and collaboration features, but most core features are available offline after installation.",
+              },
+            ].map((faq) => (
+              <AccordionItem key={faq.question} value={faq.question}>
                 <AccordionTrigger>{faq.question}</AccordionTrigger>
                 <AccordionContent>{faq.answer}</AccordionContent>
               </AccordionItem>
-            </Accordion>
-          ))}
+            ))}
+          </Accordion>
         </div>
       </div>
     </main>
