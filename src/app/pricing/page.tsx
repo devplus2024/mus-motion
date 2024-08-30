@@ -63,11 +63,11 @@ function PricingPage() {
         </div>
       </div>
       <div className="mt-[4rem]">{contents[activeTab]}</div>
-      <div className="mx-[2rem] mt-16">
+      <div className="mx-[2rem] mt-16 flex flex-col items-center">
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="grid justify-items-center gap-8 md:grid-cols-1">
+        <div className="grid w-[1000px] gap-8 md:grid-cols-1">
           {[
             {
               question: "Can I switch plans later?",
