@@ -5,6 +5,12 @@ import Individual from "./individual";
 import Business from "./business";
 import { HelpCircleIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -31,38 +37,37 @@ function PricingPage() {
         </p>
       </div>
       <div className="flex justify-center space-x-1">
-        <div className="flex w-fit border rounded-full">
-			{tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`${
-              activeTab === tab.id ? "" : "hover:text-white/60"
-            } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
-            style={{
-              WebkitTapHighlightColor: "transparent",
-            }}
-          >
-            {activeTab === tab.id && (
-              <motion.span
-                layoutId="bubble"
-                className="absolute inset-0 z-10 bg-white mix-blend-difference"
-                style={{ borderRadius: 9999 }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-            {tab.label}
-          </button>
-        ))}
-		</div>
-		
+        <div className="flex w-fit rounded-full border">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`${
+                activeTab === tab.id ? "" : "hover:text-white/60"
+              } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+              style={{
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
+              {activeTab === tab.id && (
+                <motion.span
+                  layoutId="bubble"
+                  className="absolute inset-0 z-10 bg-white mix-blend-difference"
+                  style={{ borderRadius: 9999 }}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              {tab.label}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="mt-[4rem]">{contents[activeTab]}</div>
-      <div className="mt-16 mx-[2rem]">
+      <div className="mx-[2rem] mt-16">
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid justify-items-center gap-8 md:grid-cols-1">
           {[
             {
               question: "Can I switch plans later?",
@@ -126,17 +131,12 @@ function PricingPage() {
                 "An internet connection is required for cloud storage and collaboration features, but most core features are available offline after installation.",
             },
           ].map((faq) => (
-            <Card key={faq.question} className="bg-[#000000]">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <HelpCircleIcon className="mr-2 h-5 w-5" />
-                  {faq.question}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{faq.answer}</p>
-              </CardContent>
-            </Card>
+            <Accordion type="single" key={faq.question} collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            </Accordion>
           ))}
         </div>
       </div>
