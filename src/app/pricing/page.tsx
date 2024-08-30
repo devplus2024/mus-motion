@@ -67,11 +67,11 @@ function PricingPage() {
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="w-full">
+        <div className="">
           <Accordion
             type="single"
             collapsible
-            className="grid w-[1000px] gap-8 md:grid-cols-2"
+            className="grid w-[1000px] gap-8 md:grid-cols-1"
           >
             {[
               {
