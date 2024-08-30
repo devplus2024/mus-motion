@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Browse",
+  title: "Browse | MusMotion",
   description: "MusMotion - Browse",
 };
 

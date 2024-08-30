@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Community",
+  title: "Community | MusMotion",
   description: "MusMotion - Community",
 };
 export default function CommunityLayout({
