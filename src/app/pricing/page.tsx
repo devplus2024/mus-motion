@@ -67,8 +67,12 @@ function PricingPage() {
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>
-        <div className="grid w-full gap-8 md:grid-cols-2">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="grid w-[1000px] gap-8 md:grid-cols-2"
+          >
             {[
               {
                 question: "Can I switch plans later?",
