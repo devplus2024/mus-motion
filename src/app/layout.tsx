@@ -7,6 +7,8 @@ import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/sonner";
+import type { AppProps } from "next/app";
+import { PagesProgressBar as ProgressBar } from "next-nprogress-bar";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -28,6 +30,12 @@ export default function RootLayout({
       >
         <head />
         <body className="relative antialiased">
+          <ProgressBar
+            height="4px"
+            color="#ffffff"
+            options={{ showSpinner: false }}
+            shallowRouting
+          />
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster
