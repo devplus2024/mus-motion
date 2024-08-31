@@ -7,7 +7,6 @@ import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/sonner";
-import type { AppProps } from "next/app";
 import { PagesProgressBar as ProgressBar } from "next-nprogress-bar";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
