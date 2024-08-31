@@ -141,13 +141,13 @@ export default function Home() {
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <Button
         variant="outline"
-        className="relative h-[2rem] w-fit rounded-md px-3 text-center text-[0.9rem] font-medium text-black dark:text-white"
+        className="xl;w-fit relative text-wrap rounded-md px-3 text-center text-[0.9rem] font-medium text-black dark:text-white min-[430px]:h-[5rem] min-[430px]:w-[18rem] xl:h-[2rem] xl:w-fit"
       >
         MusMotion v2.6.5 is now available! Read about the new features and fixes
         from August.
       </Button>
-      <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem]">
-        <div className="flex flex-col items-start gap-[2.5rem]">
+      <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem] min-[430px]:flex-col min-[645px]:flex-col xl:flex-row">
+        <div className="flex flex-col gap-[2.5rem] min-[430px]:items-center min-[645px]:items-center xl:items-start">
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center gap-[0.5rem]">
               <HoverCard>
@@ -272,27 +272,27 @@ export default function Home() {
               </HoverCard>
             </div>
           </div>
-          <h1 className="text-[2.5rem] font-bold leading-[2.6rem]">
+          <h1 className="font-bold leading-[2.6rem] min-[430px]:text-center min-[430px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-start xl:text-[2.3rem]">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
-          <p className="text w-[30rem] text-[1rem] font-medium">
+          <p className="font-medium min-[430px]:w-[24rem] min-[430px]:text-center min-[430px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
           </p>
-          <div className="flex gap-[2rem]">
+          <div className="flex gap-[2rem] min-[430px]:w-[22rem] min-[430px]:flex-col xl:flex-row">
             <DownloadButton />
             <Link href="/webapp">
               <Button
                 variant={"outline"}
-                className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[430px]:w-full"
               >
                 <Globe className="mr-2 h-4 w-4" />
                 Try On The Web
               </Button>
             </Link>
           </div>
-          <div className="text-sm">
+          <div className="min-[430px]:text-xs xl:text-sm">
             <p>
               By using Mus Motion, you agree to its{" "}
               <Link href="/license" className="underline">
@@ -306,7 +306,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="px-[1rem]">
           <div className="relative rounded-lg">
             <Image
               style={{ display: "var(--preview-image-dark-display)" }}
@@ -314,7 +314,7 @@ export default function Home() {
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="h-[450px] max-w-[680px]"
+              className="min-[645px]:h-[450px] min-[645px]:max-w-[640px] xl:h-[450px] xl:max-w-[680px]"
             ></Image>
             <Image
               src={"/image/preview-light.png"}
@@ -335,7 +335,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="contentsP active" id="musicContent">
+      <div
+        className="contentsP min-[430px]:hidden min-[645px]:hidden xl:block"
+        id="musicContent"
+      >
         <div className="mb-[6rem] mt-[4rem] flex justify-center">
           <div className="flex h-[1020px] w-[1300px] flex-col rounded-lg border dark:border-[#202020]">
             <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">

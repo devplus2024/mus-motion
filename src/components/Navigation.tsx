@@ -126,7 +126,7 @@ export const Navigation = (): JSX.Element => {
         isWebfilmPath || isWebAppPath ? "webfilm-class" : ""
       } sticky top-0 z-[20]`}
     >
-      <nav className="relative z-[4] flex flex-shrink-0 items-center justify-center">
+      <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[430px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav className="relative z-[1] flex w-full items-center justify-between gap-[2rem] border-b bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]">
           <div className="flex h-[58px] w-fit items-center gap-[2rem] text-sm">
             <Link
