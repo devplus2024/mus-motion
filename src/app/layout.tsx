@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/sonner";
-import { PagesProgressBar as ProgressBar } from "next-nprogress-bar";
+import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -29,30 +29,26 @@ export default function RootLayout({
       >
         <head />
         <body className="relative antialiased">
-          <ProgressBar
-            height="4px"
-            color="#ffffff"
-            options={{ showSpinner: false }}
-            shallowRouting
-          />
-          <ThemeProvider enableSystem attribute="class" defaultTheme="system">
-            <Navigation />
-            <Toaster
-              className=""
-              closeButton
-              hotkey={["alt + C"]}
-              toastOptions={{
-                unstyled: false,
-                classNames: {
-                  cancelButton: "bg-orange-400",
-                  closeButton:
-                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
-                },
-              }}
-            />
-            {children}
-            <Footer />
-          </ThemeProvider>
+          <Providers>
+            <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+              <Navigation />
+              <Toaster
+                className=""
+                closeButton
+                hotkey={["alt + C"]}
+                toastOptions={{
+                  unstyled: false,
+                  classNames: {
+                    cancelButton: "bg-orange-400",
+                    closeButton:
+                      "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
+                  },
+                }}
+              />
+              {children}
+              <Footer />
+            </ThemeProvider>
+          </Providers>
         </body>
       </html>
     </>
