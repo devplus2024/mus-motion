@@ -70,7 +70,7 @@ export function CommandMenu() {
           } & React.RefAttributes<HTMLDivElement>,
         "ref"
       > &
-      React.RefAttributes<HTMLDivElement>
+      React.RefAttributes<HTMLDivElement>,
   ) => {
     const search = useCommandState((state) => state.search);
     if (!search) return null;
@@ -93,23 +93,25 @@ export function CommandMenu() {
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="cursor-pointer border px-2 flex gap-4 group hover:bg-muted dark:hover:bg-[#101010] transition-all duration-200 ease-out items-center justify-between h-[36px] w-[260px] rounded-[8px]"
+        className="group flex h-[36px] w-[260px] cursor-pointer items-center justify-between gap-4 rounded-[8px] border px-2 transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
       >
-        <div className="gap-4 h-full flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
-          <div className="flex items-center border-r pr-2 h-full">
-          <MagnifyingGlassIcon width="21" height="21" />
+        <div className="flex h-full items-center gap-4 text-[#7c7c7c] transition-all duration-200 ease-out dark:group-hover:text-white">
+          <div className="flex h-full items-center border-r pr-2">
+            <MagnifyingGlassIcon width="21" height="21" />
           </div>
         </div>
-          <p className="text-sm select-none text-[#7c7c7c] dark:group-hover:text-white">Search documetion...</p>
+        <p className="select-none text-sm text-[#7c7c7c] transition-colors duration-300 ease-out dark:group-hover:text-white">
+          Search documetion...
+        </p>
         <p className="text-sm text-muted-foreground">
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border  px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
           </kbd>
         </p>
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
-        <CommandList className="custom_command_scroll h-[500px] ">
+        <CommandList className="custom_command_scroll h-[500px]">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Link">
             <CommandItem

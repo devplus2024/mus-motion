@@ -138,17 +138,17 @@ export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
-    <main className="flex GeistSans overflow-x-hidden  relative w-full min-h-screen gap-[1rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-[1rem]">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <Button
         variant="outline"
-        className="font-medium rounded-md relative h-[2rem] text-sm  text-center  w-fit  px-3 text-black dark:text-white text-[1rem]"
+        className="relative h-[2rem] w-fit rounded-md px-3 text-center text-[0.9rem] font-medium text-black dark:text-white"
       >
         MusMotion v2.6.5 is now available! Read about the new features and fixes
         from August.
       </Button>
-      <div className="w-ful mt-[1rem] flex gap-[3.5rem] items-center mx-[5rem]">
-        <div className=" flex flex-col items-start gap-[2.5rem]">
-          <div className="flex gap-[1rem] items-center">
+      <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem]">
+        <div className="flex flex-col items-start gap-[2.5rem]">
+          <div className="flex items-center gap-[1rem]">
             <div className="flex items-center gap-[0.5rem]">
               <HoverCard>
                 <HoverCardTrigger asChild>
@@ -163,7 +163,7 @@ export default function Home() {
                         width="50"
                         height="50"
                         alt="x-icon"
-                        className="max-w-[50px] dark:invert-[1]  max-height-[50px] "
+                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
                   </a>
@@ -172,7 +172,7 @@ export default function Home() {
                   <div className="flex justify-between space-x-4">
                     <Avatar>
                       <AvatarImage
-                        className="dark:invert-[1] rounded-[0px]"
+                        className="rounded-[0px] dark:invert-[1]"
                         src="/x.svg"
                       />
                       <AvatarFallback>IG</AvatarFallback>
@@ -203,7 +203,7 @@ export default function Home() {
                         width="50"
                         height="50"
                         alt="instagram-icon"
-                        className="max-w-[50px] dark:invert-[1]  max-height-[50px] "
+                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
                   </a>
@@ -212,7 +212,7 @@ export default function Home() {
                   <div className="flex justify-between space-x-4">
                     <Avatar>
                       <AvatarImage
-                        className="dark:invert-[1] rounded-[0px]"
+                        className="rounded-[0px] dark:invert-[1]"
                         src="/instagram.svg"
                       />
                       <AvatarFallback>IG</AvatarFallback>
@@ -243,7 +243,7 @@ export default function Home() {
                         width="50"
                         height="50"
                         alt="youtube-icon"
-                        className="max-w-[50px] dark:invert-[1]  max-height-[50px] "
+                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
                   </a>
@@ -252,7 +252,7 @@ export default function Home() {
                   <div className="flex justify-between space-x-4">
                     <Avatar>
                       <AvatarImage
-                        className="dark:invert-[1] rounded-[0px]"
+                        className="rounded-[0px] dark:invert-[1]"
                         src="/facebook.svg"
                       />
                       <AvatarFallback>FB</AvatarFallback>
@@ -272,20 +272,20 @@ export default function Home() {
               </HoverCard>
             </div>
           </div>
-          <h1 className=" leading-[2.6rem]  text-[2.5rem] font-bold">
+          <h1 className="text-[2.5rem] font-bold leading-[2.6rem]">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
-          <p className="text w-[30rem]  text-[1rem] font-medium">
+          <p className="text w-[30rem] text-[1rem] font-medium">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
           </p>
-          <div className="flex  gap-[2rem]">
+          <div className="flex gap-[2rem]">
             <DownloadButton />
             <Link href="/webapp">
               <Button
                 variant={"outline"}
-                className="dark:hover:bg-[#1a1a1a] hover:bg-accent"
+                className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
               >
                 <Globe className="mr-2 h-4 w-4" />
                 Try On The Web
@@ -314,14 +314,14 @@ export default function Home() {
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="max-w-[680px]  h-[450px]"
+              className="h-[450px] max-w-[680px]"
             ></Image>
             <Image
               src={"/image/preview-light.png"}
               height={"600"}
               alt="preview_App"
               width={"650"}
-              className="max-w-[650px]  h-[450px] "
+              className="h-[450px] max-w-[650px]"
               style={{ display: "var(--preview-image-light-display)" }}
             ></Image>
             <BorderBeam
@@ -336,10 +336,10 @@ export default function Home() {
         </div>
       </div>
       <div className="contentsP active" id="musicContent">
-        <div className="flex justify-center mt-[4rem] mb-[6rem]">
-          <div className="h-[1020px] w-[1300px] flex flex-col rounded-lg border dark:border-[#202020]">
-            <div className="flex gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
-              <Menubar className="dark:bg-black border-none rounded-t-lg">
+        <div className="mb-[6rem] mt-[4rem] flex justify-center">
+          <div className="flex h-[1020px] w-[1300px] flex-col rounded-lg border dark:border-[#202020]">
+            <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
+              <Menubar className="rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
                   <MenubarTrigger>MusMotion</MenubarTrigger>
                   <MenubarContent>
@@ -522,64 +522,64 @@ export default function Home() {
             <div className="flex h-full w-full">
               <Tabs
                 defaultValue="listennow_parent"
-                className="flex w-full  rounded-t-none rounded-br-none rounded-bl-lg"
+                className="flex w-full rounded-t-none rounded-bl-lg rounded-br-none"
               >
-                <TabsList className="flex justify-start pt-[24px] flex-col w-[238px] rounded-t-none rounded-br-none rounded-bl-lg h-full border-r dark:border-r-[#202020] dark:bg-black bg-white gap-[1rem] ">
+                <TabsList className="flex h-full w-[238px] flex-col justify-start gap-[1rem] rounded-t-none rounded-bl-lg rounded-br-none border-r bg-white pt-[24px] dark:border-r-[#202020] dark:bg-black">
                   <div>
-                    <h1 className="flex pl-[12px] font-bold text-xl dark:text-white w-[190px] justify-start items-center gap-[1rem]">
+                    <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold dark:text-white">
                       Discorver
                     </h1>
                   </div>
                   <TabsTrigger
                     value="listennow_parent"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <CirclePlay className="w-4 h-4" />
+                    <CirclePlay className="h-4 w-4" />
                     <p className="text-md">Listen Now</p>
                   </TabsTrigger>
                   <TabsTrigger
                     value="browser_parent"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <LayoutGrid className="w-4 h-4" />
+                    <LayoutGrid className="h-4 w-4" />
                     <p>Browser</p>
                   </TabsTrigger>
                   <TabsTrigger
                     value="radio_parent"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <Radio className="w-4 h-4" />
+                    <Radio className="h-4 w-4" />
                     <p>Radio</p>
                   </TabsTrigger>
                   <div>
-                    <h1 className="flex pl-[12px] font-bold text-xl dark:text-white w-[190px] justify-start items-center gap-[1rem]">
+                    <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold dark:text-white">
                       Library
                     </h1>
                   </div>
                   <TabsTrigger
                     value="playlist"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <ListMusic className="w-4 h-4" />
+                    <ListMusic className="h-4 w-4" />
                     <p>Playlist</p>
                   </TabsTrigger>
                   <TabsTrigger
                     value="song"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <Music2 className="w-4 h-4" />
+                    <Music2 className="h-4 w-4" />
                     <p>Song</p>
                   </TabsTrigger>
                   <TabsTrigger
                     value="make_for_you"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <User className="w-4 h-4" />
+                    <User className="h-4 w-4" />
                     <p>Make for You</p>
                   </TabsTrigger>
                   <TabsTrigger
                     value="artists"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -598,34 +598,34 @@ export default function Home() {
                   </TabsTrigger>
                   <TabsTrigger
                     value="albums"
-                    className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                    className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                   >
-                    <Library className="w-4 h-4" />
+                    <Library className="h-4 w-4" />
                     <p>Albums</p>
                   </TabsTrigger>
                   <div>
-                    <h1 className="flex pl-[12px] font-bold text-xl text-white w-[190px] justify-start items-center gap-[1rem]">
+                    <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold text-white">
                       Library
                     </h1>
                   </div>
-                  <ScrollArea className="h-[310px]  pl-[1rem] w-[230px]">
-                    <div className="flex flex-col text-md gap-[1rem]">
+                  <ScrollArea className="h-[310px] w-[230px] pl-[1rem]">
+                    <div className="text-md flex flex-col gap-[1rem]">
                       {playlist.map((playlist: PlayList) => (
                         <TabsTrigger
                           key={playlist.id}
                           value={`${playlist.value}`}
-                          className="flex -pl-[12px]  w-[190px] justify-start items-center gap-[1rem]"
+                          className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
                         >
-                          <ListMusic className="w-4 h-4" />
+                          <ListMusic className="h-4 w-4" />
                           <p>{playlist.name}</p>
                         </TabsTrigger>
                       ))}
                     </div>
                   </ScrollArea>
                 </TabsList>
-                <TabsContent value="listennow_parent" className="w-full h-full">
+                <TabsContent value="listennow_parent" className="h-full w-full">
                   <div className="flex w-full flex-col">
-                    <div className="flex mt-[1rem] mx-[2rem] justify-between">
+                    <div className="mx-[2rem] mt-[1rem] flex justify-between">
                       <div className="">
                         <Tabs defaultValue="music" className="w-[400px]">
                           <TabsList>
@@ -636,7 +636,7 @@ export default function Home() {
                           <TabsContent value="music">
                             <div className="mt-[2rem]">
                               <div className="">
-                                <h1 className="font-bold text-2xl">
+                                <h1 className="text-2xl font-bold">
                                   Listen Now
                                 </h1>
                                 <p className="text-sm text-[#a1a1a1]">
@@ -644,7 +644,7 @@ export default function Home() {
                                 </p>
                               </div>
                               <div>
-                                <ScrollArea className=" border-t dark:border-t-[#202020] pt-[2rem] mt-[2rem] h-[450px]  w-[1000px]">
+                                <ScrollArea className="mt-[2rem] h-[450px] w-[1000px] border-t pt-[2rem] dark:border-t-[#202020]">
                                   <div className="flex gap-[3rem]">
                                     {list.slice(0, 4).map((list: List) => (
                                       <div key={list.id}>
@@ -655,7 +655,7 @@ export default function Home() {
                                               alt="Picture of the author"
                                               width={1300}
                                               height={1200}
-                                              className="rounded-lg max-w-[255px] h-[350px]"
+                                              className="h-[350px] max-w-[255px] rounded-lg"
                                             />
                                           </ContextMenuTrigger>
                                           <ContextMenuContent className="w-[11rem]">
@@ -674,7 +674,7 @@ export default function Home() {
                                               </ContextMenuSubTrigger>
                                               <ContextMenuSubContent className="w-48">
                                                 <ContextMenuItem>
-                                                  <CirclePlus className="h-4 w-4 mr-2" />
+                                                  <CirclePlus className="mr-2 h-4 w-4" />
                                                   New Playlist{" "}
                                                 </ContextMenuItem>
                                                 <ContextMenuSeparator />
@@ -683,10 +683,10 @@ export default function Home() {
                                                     <ContextMenuItem
                                                       key={playlist.id}
                                                     >
-                                                      <ListMusic className="h-4 w-4 mr-2" />
+                                                      <ListMusic className="mr-2 h-4 w-4" />
                                                       {playlist.name}
                                                     </ContextMenuItem>
-                                                  )
+                                                  ),
                                                 )}
                                               </ContextMenuSubContent>
                                             </ContextMenuSub>
@@ -725,7 +725,7 @@ export default function Home() {
                                           </ContextMenuContent>
                                         </ContextMenu>
                                         <div key={list.id}>
-                                          <p className="text-sm mt-[0.5rem]">
+                                          <p className="mt-[0.5rem] text-sm">
                                             {list.title}
                                           </p>
                                           <p className="text-xs text-[#a1a1a1]">
@@ -741,7 +741,7 @@ export default function Home() {
                             </div>
                             <div className="mt-[2rem]">
                               <div className="">
-                                <h1 className="font-bold text-2xl">
+                                <h1 className="text-2xl font-bold">
                                   Make for You
                                 </h1>
                                 <p className="text-sm text-[#a1a1a1]">
@@ -749,7 +749,7 @@ export default function Home() {
                                 </p>
                               </div>
                               <div>
-                                <ScrollArea className=" border-t dark:border-t-[#202020] pt-[2rem] mt-[2rem]   w-[1000px]">
+                                <ScrollArea className="mt-[2rem] w-[1000px] border-t pt-[2rem] dark:border-t-[#202020]">
                                   <div className="flex gap-[1.8rem]">
                                     {list.slice(4).map((list: List) => (
                                       <div key={list.id}>
@@ -760,7 +760,7 @@ export default function Home() {
                                               alt="Picture of the author"
                                               width={1300}
                                               height={1200}
-                                              className="rounded-lg w-[150px] h-[150px]"
+                                              className="h-[150px] w-[150px] rounded-lg"
                                             />
                                           </ContextMenuTrigger>
                                           <ContextMenuContent className="w-[11rem]">
@@ -779,7 +779,7 @@ export default function Home() {
                                               </ContextMenuSubTrigger>
                                               <ContextMenuSubContent className="w-48">
                                                 <ContextMenuItem>
-                                                  <CirclePlus className="h-4 w-4 mr-2" />
+                                                  <CirclePlus className="mr-2 h-4 w-4" />
                                                   New Playlist{" "}
                                                 </ContextMenuItem>
                                                 <ContextMenuSeparator />
@@ -788,10 +788,10 @@ export default function Home() {
                                                     <ContextMenuItem
                                                       key={playlist.id}
                                                     >
-                                                      <ListMusic className="h-4 w-4 mr-2" />
+                                                      <ListMusic className="mr-2 h-4 w-4" />
                                                       {playlist.name}
                                                     </ContextMenuItem>
-                                                  )
+                                                  ),
                                                 )}
                                               </ContextMenuSubContent>
                                             </ContextMenuSub>
@@ -829,7 +829,7 @@ export default function Home() {
                                             </ContextMenuItem>
                                           </ContextMenuContent>
                                         </ContextMenu>
-                                        <p className="text-sm mt-[0.5rem]">
+                                        <p className="mt-[0.5rem] text-sm">
                                           {list.title}
                                         </p>
                                         <p className="text-xs text-[#a1a1a1]">
@@ -861,12 +861,12 @@ export default function Home() {
                 </TabsContent>
                 <TabsContent
                   value="browser_parent"
-                  className="mt-0 w-full h-full  "
+                  className="mt-0 h-full w-full"
                 >
-                  <div className="h-full  flex items-center  w-full">
+                  <div className="flex h-full w-full items-center">
                     <Tabs
                       defaultValue="all"
-                      className="w-full flex flex-col h-full pt-[2rem]"
+                      className="flex h-full w-full flex-col pt-[2rem]"
                     >
                       <TabsList className="ml-[33px] w-fit">
                         <TabsTrigger value="all">All</TabsTrigger>
@@ -875,184 +875,184 @@ export default function Home() {
                         </TabsTrigger>
                         <TabsTrigger value="on_world">On World</TabsTrigger>
                       </TabsList>
-                      <TabsContent value="all" className="w-full  h-full">
-                        <div className="h-full w-full flex flex-col gap-[1rem]  justify-between">
-                          <ScrollArea className="h-[800px] mt-[1rem] ">
+                      <TabsContent value="all" className="h-full w-full">
+                        <div className="flex h-full w-full flex-col justify-between gap-[1rem]">
+                          <ScrollArea className="mt-[1rem] h-[800px]">
                             <div>
-                              <h1 className="font-bold   text-xl ml-[33px]">
+                              <h1 className="ml-[33px] text-xl font-bold">
                                 New Releases
                               </h1>
-                              <div className="grid gap-x-[2rem] mt-[1rem] gap-y-[2rem] w-[970px] grid-cols-3 ml-[33px] ">
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                              <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div>
-                              <h1 className="font-bold mt-[1rem] text-xl ml-[33px]">
+                              <h1 className="ml-[33px] mt-[1rem] text-xl font-bold">
                                 New Releases
                               </h1>
-                              <div className="grid gap-x-[2rem] mt-[1rem] gap-y-[2rem] w-[970px] grid-cols-3 ml-[33px] ">
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                              <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div>
-                              <h1 className="font-bold mt-[1rem] text-xl ml-[33px]">
+                              <h1 className="ml-[33px] mt-[1rem] text-xl font-bold">
                                 New Releases
                               </h1>
-                              <div className="grid gap-x-[2rem] mt-[1rem] gap-y-[2rem] w-[970px] grid-cols-3 ml-[33px] ">
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                              <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                  <Skeleton className="w-[100px] h-[100px]"></Skeleton>
-                                  <div className="flex flex-col justify-between h-[100px]">
-                                    <Skeleton className="w-[12rem] h-[2rem]"></Skeleton>
-                                    <Skeleton className="w-[8rem] h-[1rem]"></Skeleton>
-                                    <Skeleton className="w-[5rem] h-[1rem]"></Skeleton>
+                                <div className="flex items-center gap-4">
+                                  <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                  <div className="flex h-[100px] flex-col justify-between">
+                                    <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                    <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </ScrollArea>
-                          <div className="h-[70px] justify-center flex items-center w-full dark:border-t-[#202020] border-t">
+                          <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
                             <div className="flex gap-[2rem]">
                               <SkipBack />
                               <PlayCircle />
@@ -1070,15 +1070,15 @@ export default function Home() {
                 <TabsContent value="recently_added">
                   <div className="flex w-full flex-col"></div>
                 </TabsContent>
-                <TabsContent value="playlist" className="mt-0 w-full  h-full">
-                  <div className="w-full h-full">
+                <TabsContent value="playlist" className="mt-0 h-full w-full">
+                  <div className="h-full w-full">
                     <Tabs
                       defaultValue="gio_list"
-                      className="flex flex-col h-full justify-between w-full  "
+                      className="flex h-full w-full flex-col justify-between"
                     >
                       <TabsContent
                         value="gio_list"
-                        className="flex w-full mt-0 h-full items-center justify-center"
+                        className="mt-0 flex h-full w-full items-center justify-center"
                       >
                         <div className="flex flex-col gap-[2rem]">
                           <Image
@@ -1086,7 +1086,7 @@ export default function Home() {
                             height={300}
                             alt="Gio_Cover_Image"
                             src="/1678963583887_500.jpg"
-                            className="w-[300px] h-[300px] rounded-md"
+                            className="h-[300px] w-[300px] rounded-md"
                           />
                           <div className="flex justify-between">
                             <SkipBack />
@@ -1095,24 +1095,24 @@ export default function Home() {
                           </div>
                         </div>
                       </TabsContent>
-                      <TabsList className="dark:bg-black h-[300px] p-0 w-full">
-                        <ScrollArea className="h-[300px] py-[1rem] w-full border-t dark:border-t-[#202020]">
+                      <TabsList className="h-[300px] w-full p-0 dark:bg-black">
+                        <ScrollArea className="h-[300px] w-full border-t py-[1rem] dark:border-t-[#202020]">
                           <TabsTrigger
                             value="gio_list"
-                            className="flex w-full gap-[3rem]  items-center flex-col"
+                            className="flex w-full flex-col items-center gap-[3rem]"
                           >
-                            <div className=" flex justify-between items-center px-[2rem] dark:border-[#202020] rounded-sm w-[1000px] h-[80px]">
-                              <div className="flex gap-[2rem] items-center">
+                            <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm px-[2rem] dark:border-[#202020]">
+                              <div className="flex items-center gap-[2rem]">
                                 <Image
                                   width={400}
                                   height={300}
                                   alt="Gio_Cover_Image"
                                   src="/1678963583887_500.jpg"
-                                  className="w-[4rem] h-[4rem] rounded-full"
+                                  className="h-[4rem] w-[4rem] rounded-full"
                                 />
                                 <div className="flex flex-col">
-                                  <h1 className="font-bold text-md">Gio</h1>
-                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                  <h1 className="text-md font-bold">Gio</h1>
+                                  <p className="text-sm text-[#a1a1a1]">Jank</p>
                                 </div>
                               </div>
                               <div className="flex gap-[2rem]">
@@ -1122,20 +1122,20 @@ export default function Home() {
                           </TabsTrigger>
                           <TabsTrigger
                             value="gio_list"
-                            className="flex w-full gap-[3rem]  items-center flex-col"
+                            className="flex w-full flex-col items-center gap-[3rem]"
                           >
-                            <div className=" flex justify-between items-center px-[2rem] dark:border-[#202020] rounded-sm w-[1000px] h-[80px]">
-                              <div className="flex gap-[2rem] items-center">
+                            <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm px-[2rem] dark:border-[#202020]">
+                              <div className="flex items-center gap-[2rem]">
                                 <Image
                                   width={400}
                                   height={300}
                                   alt="Gio_Cover_Image"
                                   src="/1678963583887_500.jpg"
-                                  className="w-[4rem] h-[4rem] rounded-full"
+                                  className="h-[4rem] w-[4rem] rounded-full"
                                 />
                                 <div className="flex flex-col">
-                                  <h1 className="font-bold text-md">Gio</h1>
-                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                  <h1 className="text-md font-bold">Gio</h1>
+                                  <p className="text-sm text-[#a1a1a1]">Jank</p>
                                 </div>
                               </div>
                               <div className="flex gap-[2rem]">
@@ -1145,20 +1145,20 @@ export default function Home() {
                           </TabsTrigger>
                           <TabsTrigger
                             value="gio_list"
-                            className="flex w-full gap-[3rem]  items-center flex-col"
+                            className="flex w-full flex-col items-center gap-[3rem]"
                           >
-                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
-                              <div className="flex gap-[2rem] items-center">
+                            <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm border-[#202020] px-[2rem]">
+                              <div className="flex items-center gap-[2rem]">
                                 <Image
                                   width={400}
                                   height={300}
                                   alt="Gio_Cover_Image"
                                   src="/1678963583887_500.jpg"
-                                  className="w-[4rem] h-[4rem] rounded-full"
+                                  className="h-[4rem] w-[4rem] rounded-full"
                                 />
                                 <div className="flex flex-col">
-                                  <h1 className="font-bold text-md">Gio</h1>
-                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                  <h1 className="text-md font-bold">Gio</h1>
+                                  <p className="text-sm text-[#a1a1a1]">Jank</p>
                                 </div>
                               </div>
                               <div className="flex gap-[2rem]">
@@ -1168,20 +1168,20 @@ export default function Home() {
                           </TabsTrigger>
                           <TabsTrigger
                             value="gio_list"
-                            className="flex w-full gap-[3rem]  items-center flex-col"
+                            className="flex w-full flex-col items-center gap-[3rem]"
                           >
-                            <div className=" flex justify-between items-center px-[2rem] border-[#202020] rounded-sm w-[1000px] h-[80px]">
-                              <div className="flex gap-[2rem] items-center">
+                            <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm border-[#202020] px-[2rem]">
+                              <div className="flex items-center gap-[2rem]">
                                 <Image
                                   width={400}
                                   height={300}
                                   alt="Gio_Cover_Image"
                                   src="/1678963583887_500.jpg"
-                                  className="w-[4rem] h-[4rem] rounded-full"
+                                  className="h-[4rem] w-[4rem] rounded-full"
                                 />
                                 <div className="flex flex-col">
-                                  <h1 className="font-bold text-md">Gio</h1>
-                                  <p className="text-[#a1a1a1] text-sm">Jank</p>
+                                  <h1 className="text-md font-bold">Gio</h1>
+                                  <p className="text-sm text-[#a1a1a1]">Jank</p>
                                 </div>
                               </div>
                               <div className="flex gap-[2rem]">
