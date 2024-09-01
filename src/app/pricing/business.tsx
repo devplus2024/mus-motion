@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckIcon, HelpCircleIcon } from "lucide-react";
+import { motion } from "framer-motion";
 import { CheckCircledIcon } from "@radix-ui/react-icons";
 
 const pricingData = {
@@ -110,8 +111,8 @@ const pricingData = {
 };
 export default function Business() {
   return (
-    <div>
-      <div className="grid place-content-center gap-8 px-[3rem] md:grid-cols-3">
+    <motion.div>
+      <motion.div className="grid place-content-center gap-8 px-[3rem] md:grid-cols-3">
         {pricingData.business.map((tier) => (
           <Card key={tier.title} className="flex flex-col bg-black">
             <CardHeader>
@@ -145,7 +146,7 @@ export default function Business() {
             </CardFooter>
           </Card>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

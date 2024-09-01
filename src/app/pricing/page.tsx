@@ -62,7 +62,7 @@ function PricingPage() {
           ))}
         </div>
       </div>
-      <div className="mt-[4rem]">{contents[activeTab]}</div>
+      <motion.div className="mt-[4rem]">{contents[activeTab]}</motion.div>
       <div className="mx-[2rem] mt-16 flex flex-col items-center">
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions

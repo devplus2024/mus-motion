@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -111,8 +112,8 @@ const pricingData = {
 export default function Individual() {
   const [activeTab, setActiveTab] = useState("individual");
   return (
-    <div>
-      <div className="grid gap-8 px-[1rem] md:grid-cols-4">
+    <motion.div>
+      <motion.div className="grid gap-8 px-[1rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card key={tier.title} className="flex flex-col bg-black">
             <CardHeader>
@@ -146,7 +147,7 @@ export default function Individual() {
             </CardFooter>
           </Card>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
