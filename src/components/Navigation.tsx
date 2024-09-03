@@ -244,7 +244,7 @@ export const Navigation = (): JSX.Element => {
                   Download
                 </Button>
               </Link>
-              <Link href="/https://ai-mus-motion.vercel.appp">
+              <Link href="https://ai-mus-motion.vercel.appp">
                 <Button
                   className=""
                 >
