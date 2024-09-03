@@ -57,7 +57,7 @@ export default function CommunityPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Community Of Mus Motion</h1>
+      <h1 className="text-3xl text-center font-bold mb-4">Community Of Mus Motion</h1>
       
       <Tabs defaultValue="discussions" className="mb-[4rem]">
         <TabsList className="grid w-full rounded-full  justify-items-center h-0 p-0  mb-8">
