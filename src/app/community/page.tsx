@@ -161,7 +161,7 @@ export default function CommunityPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Upcoming Events</CardTitle>
-                <CardDescription>Don't miss out on these community events</CardDescription>
+                <CardDescription>Don&apos;t miss out on these community events</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
