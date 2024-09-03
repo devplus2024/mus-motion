@@ -60,15 +60,17 @@ export default function CommunityPage() {
       <h1 className="text-4xl font-bold mb-8">Community Hub</h1>
       
       <Tabs defaultValue="discussions" className="mb-12">
-        <TabsList className="grid w-full grid-cols-3 mb-8">
-          <TabsTrigger value="discussions" onClick={() => setActiveTab("discussions")}>Discussions</TabsTrigger>
+        <TabsList className="grid w-full rounded-full border justify-items-center grid-cols-3 mb-8">
+          <div className="w-fit">
+          <TabsTrigger className="data-[state=active]:bg-white data-[state=active]:text-black bg-black" value="discussions" onClick={() => setActiveTab("discussions")}>Discussions</TabsTrigger>
           <TabsTrigger value="showcases" onClick={() => setActiveTab("showcases")}>Showcases</TabsTrigger>
           <TabsTrigger value="events" onClick={() => setActiveTab("events")}>Events</TabsTrigger>
+          </div>
         </TabsList>
         
         <TabsContent value="discussions">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card>
+            <Card className="bg-black">
               <CardHeader>
                 <CardTitle>Recent Discussions</CardTitle>
                 <CardDescription>Join the conversation</CardDescription>
@@ -95,7 +97,7 @@ export default function CommunityPage() {
               </CardFooter>
             </Card>
             
-            <Card>
+            <Card className="bg-black">
               <CardHeader>
                 <CardTitle>Start a New Discussion</CardTitle>
                 <CardDescription>Share your thoughts with the community</CardDescription>
@@ -113,7 +115,7 @@ export default function CommunityPage() {
         
         <TabsContent value="showcases">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card>
+            <Card className="bg-black">
               <CardHeader>
                 <CardTitle>User Showcases</CardTitle>
                 <CardDescription>Check out what our community is creating</CardDescription>
@@ -136,7 +138,7 @@ export default function CommunityPage() {
               </CardFooter>
             </Card>
             
-            <Card>
+            <Card className="bg-black">
               <CardHeader>
                 <CardTitle>Submit Your Work</CardTitle>
                 <CardDescription>Share your creations with the community</CardDescription>
@@ -158,7 +160,7 @@ export default function CommunityPage() {
         
         <TabsContent value="events">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card>
+            <Card className="bg-black">
               <CardHeader>
                 <CardTitle>Upcoming Events</CardTitle>
                 <CardDescription>Don&apos;t miss out on these community events</CardDescription>
@@ -183,7 +185,7 @@ export default function CommunityPage() {
               </CardFooter>
             </Card>
             
-            <Card>
+            <Card className="bg-black">
               <CardHeader>
                 <CardTitle>Suggest an Event</CardTitle>
                 <CardDescription>Have an idea for a community event?</CardDescription>
@@ -202,7 +204,7 @@ export default function CommunityPage() {
       </Tabs>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Card>
+        <Card className="bg-black" >
           <CardHeader>
             <CardTitle>Featured Community Members</CardTitle>
             <CardDescription>Meet our outstanding contributors</CardDescription>
@@ -229,7 +231,7 @@ export default function CommunityPage() {
           </CardFooter>
         </Card>
 
-        <Card>
+        <Card className="bg-black">
           <CardHeader>
             <CardTitle>Community Challenges</CardTitle>
             <CardDescription>Test your skills and win prizes</CardDescription>
@@ -252,7 +254,7 @@ export default function CommunityPage() {
           </CardFooter>
         </Card>
 
-        <Card>
+        <Card className="bg-black">
           <CardHeader>
             <CardTitle>Learning Resources</CardTitle>
             <CardDescription>Expand your knowledge and skills</CardDescription>
