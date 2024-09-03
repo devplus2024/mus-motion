@@ -235,13 +235,20 @@ export const Navigation = (): JSX.Element => {
           </div>
           <div className="flex items-center gap-[2rem]">
             <CommandMenu />
-            <div className="flex items-center gap-[1rem]">
+            <div className="flex items-center gap-[2rem]">
               <Link href="/downloads">
                 <Button
                   variant={"outline"}
                   className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
                 >
                   Download
+                </Button>
+              </Link>
+              <Link href="/https://ai-mus-motion.vercel.appp">
+                <Button
+                  className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                >
+                  Ask With Ai
                 </Button>
               </Link>
             </div>
