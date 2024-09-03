@@ -60,8 +60,8 @@ export default function CommunityPage() {
       <h1 className="text-4xl font-bold mb-8">Community Hub</h1>
       
       <Tabs defaultValue="discussions" className="mb-12">
-        <TabsList className="grid w-full bg-black  rounded-full border justify-items-center grid-cols-3 mb-8">
-          <div className="w-fit">
+        <TabsList className="grid w-full rounded-full  justify-items-center h-0 p-0  mb-8">
+          <div className="w-fit border bg-black rounded-full">
           <TabsTrigger className="data-[state=active]:bg-white data-[state=active]:text-black bg-black" value="discussions" onClick={() => setActiveTab("discussions")}>Discussions</TabsTrigger>
           <TabsTrigger className="data-[state=active]:bg-white data-[state=active]:text-black bg-black" value="showcases" onClick={() => setActiveTab("showcases")}>Showcases</TabsTrigger>
           <TabsTrigger className="data-[state=active]:bg-white data-[state=active]:text-black bg-black" value="events" onClick={() => setActiveTab("events")}>Events</TabsTrigger>
