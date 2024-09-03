@@ -246,7 +246,7 @@ export const Navigation = (): JSX.Element => {
               </Link>
               <Link href="/https://ai-mus-motion.vercel.appp">
                 <Button
-                  className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                  className=""
                 >
                   Ask With Ai
                 </Button>
