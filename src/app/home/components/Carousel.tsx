@@ -21,7 +21,7 @@ export default function Carousel() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
   const OPTIONS: EmblaOptionsType = { slidesToScroll: "auto" };
-  const SLIDE_COUNT = 10;
+  const SLIDE_COUNT = 2;
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <div>

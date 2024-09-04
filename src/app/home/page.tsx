@@ -315,9 +315,10 @@ export default function Home() {
           </div>
         </div>
         <div className="px-[1rem]">
-          <div className="relative rounded-lg">
+        <Carousel/>
+          {/* <div className="relative rounded-lg">
            
-            <Carousel/>
+            
      
    
             <BorderBeam
@@ -328,7 +329,7 @@ export default function Home() {
               delay={0}
               borderWidth={1.8}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <div
