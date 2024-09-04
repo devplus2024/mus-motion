@@ -152,7 +152,7 @@ export default function Home() {
             <div className="flex items-center gap-[0.5rem]">
               <HoverCard>
                 <HoverCardTrigger asChild>
-                  <a href="https://x.com/DeveloperPlus24">
+                  <a href="https://x.com/DeveloperPlus24" className="flex gap-[0.5rem] items-center">
                     <Button
                       variant="ghost"
                       className="px-2 dark:hover:bg-[#161616]"
@@ -166,8 +166,9 @@ export default function Home() {
                         className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
+                    <p>Twitter</p>
                   </a>
-                  <p>Twitter</p>
+                 
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
                   <div className="flex justify-between space-x-4">
