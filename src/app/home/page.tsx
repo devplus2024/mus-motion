@@ -166,7 +166,7 @@ export default function Home() {
                         className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
-                    <p>Twitter</p>
+                    <p className="text-sm">Twitter</p>
                   </a>
                  
                 </HoverCardTrigger>
@@ -208,7 +208,7 @@ export default function Home() {
                         className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
-                    <p>Instagram</p>
+                    <p className="text-sm">Instagram</p>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
@@ -249,7 +249,7 @@ export default function Home() {
                         className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
-                    <p>Facebook</p>
+                    <p className="text-sm">Facebook</p>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
