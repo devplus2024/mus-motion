@@ -167,6 +167,7 @@ export default function Home() {
                       />
                     </Button>
                   </a>
+                  <p>Twitter</p>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
                   <div className="flex justify-between space-x-4">
