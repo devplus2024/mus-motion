@@ -20,7 +20,7 @@ const PreViewAppCarousel: React.FC<PropType> = ({ slides, options }) => {
     Autoplay({
       playOnInit: false,
       delay: 3000,
-      stopOnInteraction: true,
+      stopOnInteraction: false,
       stopOnMouseEnter: true,
     }),
   ]);
