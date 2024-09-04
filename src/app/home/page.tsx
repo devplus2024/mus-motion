@@ -50,7 +50,7 @@ import { Radio } from "lucide-react";
 import { ListMusic } from "lucide-react";
 import { Clock } from "lucide-react";
 import { Guitar } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useRef } from "react";
 import { PanelGroup, Panel } from "react-resizable-panels";
 import { Music2 } from "lucide-react";
 import { ThumbsUp } from "lucide-react";
@@ -111,6 +111,14 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -135,6 +143,9 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 export default function Home() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
@@ -312,22 +323,45 @@ export default function Home() {
         </div>
         <div className="px-[1rem]">
           <div className="relative rounded-lg">
+           
+            <Carousel
+      plugins={[plugin.current]}
+      className="w-full max-w-xs"
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+    >
+      <CarouselContent>
+  
+          <CarouselItem>
+            <div className="">
             <Image
-              style={{ display: "var(--preview-image-dark-display)" }}
+             
               src={"/image/preview-dark.png"}
               height={"600"}
               alt="preview_App"
               width={"650"}
               className="min-[645px]:h-[450px] min-[645px]:max-w-[640px] xl:h-[450px] xl:max-w-[680px]"
             ></Image>
+           
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="">
             <Image
               src={"/image/preview-light.png"}
               height={"600"}
               alt="preview_App"
               width={"650"}
               className="h-[450px] max-w-[650px]"
-              style={{ display: "var(--preview-image-light-display)" }}
             ></Image>
+           
+            </div>
+          </CarouselItem>
+
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
             <BorderBeam
               colorFrom="#06b6d4"
               colorTo="#3b82f6"
