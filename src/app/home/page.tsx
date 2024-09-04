@@ -111,7 +111,7 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import Autoplay from "embla-carousel-autoplay";
+import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
@@ -119,6 +119,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { EmblaPluginType } from 'embla-carousel'
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -142,10 +143,8 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+
 export default function Home() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
