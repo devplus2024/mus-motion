@@ -325,10 +325,11 @@ export default function Home() {
           <div className="relative rounded-lg">
            
             <Carousel
-      plugins={[plugin.current]}
-      className="w-full max-w-xs"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
+     plugins={[
+      Autoplay({
+        delay: 2000,
+      }),
+    ]}
     >
       <CarouselContent>
   
