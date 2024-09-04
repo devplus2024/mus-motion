@@ -191,7 +191,7 @@
     max-width: screen;
     margin: auto;
     --slide-height: 150px;
-    --slide-spacing-home: 1rem;
+    --slide-spacing: 1rem;
     --slide-size: 100%;
   }
   .embla__viewport {

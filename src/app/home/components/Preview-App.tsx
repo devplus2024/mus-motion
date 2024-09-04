@@ -9,7 +9,7 @@ import {
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-
+import { useTheme } from "next-themes";
 type PropType = {
   slides: number[];
   options?: EmblaOptionsType;
@@ -28,20 +28,20 @@ const PreViewAppCarousel: React.FC<PropType> = ({ slides, options }) => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
-
+  const theme = useTheme();
   return (
     <div className="">
-      <div className="embla_home w-[645px]">
+      <div className="embla_home w-[650px]">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             {slides.map((slide, index) => (
-              <div className="embla__slide_home" key={index}>
+              <div className="embla__slide rounded-lg" key={index}>
                 <Image
-                  src={`/preview_App_${index}.png`}
+                  src={`/image/preview_App_${index}.png`}
                   height={600}
                   alt={`preview_App_${index}`}
                   width={650}
-                  className="min-[645px]:h-[450px] min-[645px]:max-w-[640px] xl:h-[450px] xl:max-w-[680px]"
+                  className={`min-[645px]:h-[450px] min-[645px]:max-w-[640px] xl:h-[450px] xl:max-w-[680px] ${index === 1 ? "rounded-lg" : ""}`}
                 />
               </div>
             ))}
