@@ -9,6 +9,7 @@ import { CommandMenu } from "./CommandMenu";
 import { playlist, PlayList } from "./data/playlist";
 import { imagelist, ImageList } from "./data/image";
 import { list, List } from "./data/list";
+import Carousel from "./components/Carousel";
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -112,13 +113,6 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import Autoplay from "embla-carousel-autoplay"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import { EmblaPluginType } from 'embla-carousel'
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Link from "next/link";
@@ -323,45 +317,9 @@ export default function Home() {
         <div className="px-[1rem]">
           <div className="relative rounded-lg">
            
-            <Carousel
-     plugins={[
-      Autoplay({
-        delay: 2000,
-      }),
-    ]}
-    >
-      <CarouselContent>
-  
-          <CarouselItem>
-            <div className="">
-            <Image
-             
-              src={"/image/preview-dark.png"}
-              height={"600"}
-              alt="preview_App"
-              width={"650"}
-              className="min-[645px]:h-[450px] min-[645px]:max-w-[640px] xl:h-[450px] xl:max-w-[680px]"
-            ></Image>
-           
-            </div>
-          </CarouselItem>
-          <CarouselItem>
-            <div className="">
-            <Image
-              src={"/image/preview-light.png"}
-              height={"600"}
-              alt="preview_App"
-              width={"650"}
-              className="h-[450px] max-w-[650px]"
-            ></Image>
-           
-            </div>
-          </CarouselItem>
-
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+            <Carousel/>
+     
+   
             <BorderBeam
               colorFrom="#06b6d4"
               colorTo="#3b82f6"
