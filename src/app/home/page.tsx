@@ -194,7 +194,7 @@ export default function Home() {
               </HoverCard>
               <HoverCard>
                 <HoverCardTrigger asChild>
-                  <a href="">
+                  <a href="" className="flex gap-[0.5rem] items-center">
                     <Button
                       variant="ghost"
                       className="px-2 dark:hover:bg-[#161616]"
@@ -208,6 +208,7 @@ export default function Home() {
                         className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
+                    <p>Instagram</p>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
@@ -234,7 +235,7 @@ export default function Home() {
               </HoverCard>
               <HoverCard>
                 <HoverCardTrigger asChild>
-                  <a href="https://www.facebook.com/phamquangtruongan">
+                  <a href="https://www.facebook.com/phamquangtruongan" className="flex gap-[0.5rem] items-center">
                     <Button
                       variant="ghost"
                       className="px-2 dark:hover:bg-[#161616]"
@@ -248,6 +249,7 @@ export default function Home() {
                         className="max-height-[50px] max-w-[50px] dark:invert-[1]"
                       />
                     </Button>
+                    <p>Facebook</p>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
