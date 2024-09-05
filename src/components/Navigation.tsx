@@ -118,12 +118,12 @@ export const Navigation = (): JSX.Element => {
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   const isWebAppPath = pathname === "/webapp";
-
+  const isAi = pathname === "/ai"
   const theme = useTheme();
   return (
     <div
       className={`${
-        isWebfilmPath || isWebAppPath ? "webfilm-class" : ""
+        isWebfilmPath || isWebAppPath || isAi ? "webfilm-class" : ""
       } sticky top-0 z-[20]`}
     >
       <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
