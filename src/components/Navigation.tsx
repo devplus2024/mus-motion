@@ -233,7 +233,7 @@ export const Navigation = (): JSX.Element => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex items-center gap-[2rem]">
+          <div className="flex items-center gap-[1rem]">
             <div className="flex items-center justify-center gap-[1rem]">
               <ThemeToggle />
               <CommandMenu />
