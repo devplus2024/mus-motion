@@ -1,4 +1,11 @@
-import React from "react";
+
+'use client';
+import { useState } from 'react';
+import { Message, continueConversation } from './actions';
+import { readStreamableValue } from 'ai/rsc';
+
+// Allow streaming responses up to 30 seconds
+export const maxDuration = 30;
 import {
   ViewVerticalIcon,
   PlusIcon,
@@ -10,6 +17,8 @@ import { Input } from "@/components/ui/input";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Button } from "@/components/ui/button";
 export default function AiPage() {
+	const [conversation, setConversation] = useState<Message[]>([]);
+  const [input, setInput] = useState<string>('');
   return (
     <main className="flex h-screen w-full">
       <div className="flex w-[56px] flex-col items-center justify-between border-r border-r-[#202020] bg-[#0c0c0c] py-[2rem]">
@@ -156,6 +165,14 @@ export default function AiPage() {
           <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
           <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
           <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
+		  <div>
+        {conversation.map((message, index) => (
+          <div key={index}>
+            {message.role}: {message.content}
+          </div>
+        ))}
+      </div>
+
         </div>
         <div className="mb-[2rem] flex h-[60px] w-[900px] items-center justify-between gap-4 rounded-md border border-[#202020] bg-[#0c0c0c] px-4">
           <div>
@@ -176,9 +193,29 @@ export default function AiPage() {
               </svg>
             </Button>
           </div>
-          <Input placeholder="Enter your question" />
+          <Input placeholder="Enter your question"  type="text"
+          value={input}
+          onChange={event => {
+            setInput(event.target.value);
+          }} />
           <div>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={async () => {
+            const { messages, newMessage } = await continueConversation([
+              ...conversation,
+              { role: 'user', content: input },
+            ]);
+
+            let textContent = '';
+
+            for await (const delta of readStreamableValue(newMessage)) {
+              textContent = `${textContent}${delta}`;
+
+              setConversation([
+                ...messages,
+                { role: 'assistant', content: textContent },
+              ]);
+            }
+          }}>
               <svg
                 data-testid="geist-icon"
                 height="16"

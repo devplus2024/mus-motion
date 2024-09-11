@@ -118,7 +118,7 @@ export const Navigation = (): JSX.Element => {
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   const isWebAppPath = pathname === "/webapp";
-  const isAi = pathname === "/ai"
+  const isAi = pathname === "/ai";
   const theme = useTheme();
   return (
     <div
@@ -234,6 +234,7 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex items-center gap-[2rem]">
+            <ThemeToggle />
             <CommandMenu />
             <div className="flex items-center gap-[2rem]">
               <Link href="/downloads">
@@ -245,11 +246,7 @@ export const Navigation = (): JSX.Element => {
                 </Button>
               </Link>
               <Link href="https://ai-mus-motion.vercel.app">
-                <Button
-                  className=""
-                >
-                  Ask With Ai
-                </Button>
+                <Button className="">Ask With Ai</Button>
               </Link>
             </div>
           </div>

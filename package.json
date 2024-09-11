@@ -37,6 +37,7 @@
     "electron": "electron ."
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.56",
     "@geist-ui/core": "^2.3.8",
     "@geist-ui/react": "^2.2.5",
     "@hookform/resolvers": "^3.8.0",
@@ -74,6 +75,7 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "@radix-ui/themes": "^3.1.1",
     "@types/mdx": "^2.0.13",
+    "ai": "^3.3.27",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",

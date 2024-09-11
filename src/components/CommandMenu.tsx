@@ -93,21 +93,21 @@ export function CommandMenu() {
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="group flex h-[36px] w-[260px] cursor-pointer items-center justify-between gap-4 rounded-[8px] border px-2 transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
+        className="group flex h-[36px] w-[50px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
       >
-        <div className="flex h-full items-center gap-4 text-[#7c7c7c] transition-all duration-200 ease-out dark:group-hover:text-white">
-          <div className="flex h-full items-center border-r pr-2">
+        <div className="flex h-full items-center justify-center text-[#7c7c7c] transition-all duration-200 ease-out dark:group-hover:text-white">
+          <div className="flex h-full items-center">
             <MagnifyingGlassIcon width="21" height="21" />
           </div>
         </div>
-        <p className="select-none text-sm text-[#7c7c7c] transition-colors duration-300 ease-out dark:group-hover:text-white">
+        {/* <p className="select-none text-sm text-[#7c7c7c] transition-colors duration-300 ease-out dark:group-hover:text-white">
           Search documetion...
-        </p>
-        <p className="text-sm text-muted-foreground">
+        </p> */}
+        {/* <p className="text-sm text-muted-foreground">
           <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
           </kbd>
-        </p>
+        </p> */}
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
