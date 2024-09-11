@@ -93,9 +93,9 @@ export function CommandMenu() {
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="group flex h-[36px] w-[50px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
+        className="group flex h-[36px] w-[40px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
       >
-        <div className="flex h-full items-center justify-center text-[#7c7c7c] transition-all duration-200 ease-out dark:group-hover:text-white">
+        <div className="flex h-full items-center justify-center text-[#ffffff] transition-all duration-200 ease-out dark:group-hover:text-white">
           <div className="flex h-full items-center">
             <MagnifyingGlassIcon width="21" height="21" />
           </div>

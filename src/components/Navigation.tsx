@@ -109,7 +109,7 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
 import LogoImage from "./LogoImage";
-import { ThemeToggle } from "./mode-toggle";
+import { ThemeToggle } from "./theme-toggle";
 import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
 import ShineBorder from "@/components/magicui/shine-border";
@@ -234,8 +234,10 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex items-center gap-[2rem]">
-            <ThemeToggle />
-            <CommandMenu />
+            <div className="flex items-center justify-center gap-[1rem]">
+              <ThemeToggle />
+              <CommandMenu />
+            </div>
             <div className="flex items-center gap-[2rem]">
               <Link href="/downloads">
                 <Button
