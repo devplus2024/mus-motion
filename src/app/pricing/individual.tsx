@@ -114,7 +114,7 @@ export default function Individual() {
   return (
     <motion.div>
       <motion.div className="grid  px-[5rem] md:grid-cols-4">
-        <div className="grid   px-[5rem] md:grid-cols-4">
+        
   <div className=" border text-card-foreground shadow flex flex-col bg-black">
     <div className="flex flex-col space-y-1.5 p-6">
       <h3 className="font-semibold tracking-tight text-2xl">Free</h3>
@@ -549,7 +549,9 @@ export default function Individual() {
       </button>
     </div>
   </div>
-</div>
+
+
+
 
       </motion.div>
     </motion.div>
