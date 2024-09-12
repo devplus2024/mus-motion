@@ -128,13 +128,17 @@ export const Navigation = (): JSX.Element => {
     >
       <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav className="relative z-[1] flex w-full items-center justify-between gap-[2rem] border-b bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]">
-          <div className="flex h-[58px] w-fit items-center gap-[2rem] text-sm">
-            <Link
+          <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
+           
+            <div class="flex gap-4 items-center">
+
+ <Link
               href="/"
               className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
             >
               MusMotion
-            </Link>
+            </Link><Link
+              href="/" className="text-xs border px-4 py-1 rounded-full font-bold transition-colors duration-300 ease-out dark:text-white" href="/">v2.6.5</Link></div>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
