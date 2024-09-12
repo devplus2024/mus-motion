@@ -130,7 +130,7 @@ export const Navigation = (): JSX.Element => {
         <nav className="relative z-[1] flex w-full items-center justify-between gap-[2rem] border-b bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]">
           <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
            
-            <div class="flex gap-4 items-center">
+            <div className="flex gap-4 items-center">
 
  <Link
               href="/"
@@ -140,7 +140,7 @@ export const Navigation = (): JSX.Element => {
             </Link><Link
               href="/" className="text-xs border px-4 py-1 rounded-full font-bold transition-colors duration-300 ease-out dark:text-white" href="/">v2.6.5</Link></div>
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="font-medium">
                 <NavigationMenuItem>
                   <Link href="/browse" legacyBehavior passHref>
                     <NavigationMenuLink
