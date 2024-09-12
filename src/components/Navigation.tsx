@@ -138,7 +138,7 @@ export const Navigation = (): JSX.Element => {
             >
               MusMotion
             </Link><Link
-              href="/" className="text-xs border px-4 py-1 rounded-full font-bold transition-colors duration-300 ease-out dark:text-white" href="/">v2.6.5</Link></div>
+              href="/" className="text-xs border px-4 py-1 rounded-full font-bold transition-colors duration-300 ease-out dark:text-white" >v2.6.5</Link></div>
             <NavigationMenu>
               <NavigationMenuList className="font-medium">
                 <NavigationMenuItem>
