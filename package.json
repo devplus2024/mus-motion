@@ -1,5 +1,5 @@
 {
-  "name": "MusMotion",
+  "name": "musmotion",
   "version": "2.5.3",
   "private": true,
   "main": "main.js",
@@ -29,6 +29,7 @@
     }
   },
   "scripts": {
+    "postinstall": "fumadocs-mdx",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
