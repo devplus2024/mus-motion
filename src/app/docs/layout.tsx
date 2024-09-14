@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Docs | MusMotion",
-  description: "MusMotion - Documention",
+  title: "Documention | MusMotion",
+  description: "MusicHub App",
 };
-export default function CommunityLayout({
+export default function DocumentionLayout({
   children,
 }: {
   children: React.ReactNode;
