@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "fumadocs-ui/style.css";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
