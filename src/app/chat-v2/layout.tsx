@@ -8,5 +8,5 @@ export default function ChatV2Layout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return <section className="h-screen w-full">{children}</section>;
 }
