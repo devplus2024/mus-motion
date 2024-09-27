@@ -29,11 +29,14 @@ function PricingPage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
 
   return (
-    <main className="pb-[6rem] pt-[1.3rem]">
-      <div className="mb-[1rem] text-center">
-        <h1 className="text-[1.8rem] font-bold">Choose Your Perfect Plan</h1>
-        <p className="text-md text-muted-foreground">
-          Unlock your musical potential with our cutting-edge software suite
+    <main className="pb-[6rem] pt-[2rem]">
+      <div className="mb-[1rem] flex flex-col items-center gap-[1rem] text-center">
+        <h1 className="w-[40rem] text-center text-[2rem] font-bold">
+          Choose the Ideal Plan to Elevate Your Music Creation Journey
+        </h1>
+        <p className="text-md w-[26rem] text-center text-muted-foreground">
+          Unlock Your Full Creative Potential with Our Comprehensive, Advanced,
+          and Cutting-Edge Music Software Suite Designed for Every Artist
         </p>
       </div>
       <div className="flex justify-center space-x-1">
