@@ -84,14 +84,6 @@ const pricingData = {
         "Cross-platform syncing",
         "Advanced sound design tools",
         "Personalized workflow consultation",
-        "Professional-grade recording tools",
-        "Dedicated project management tools",
-        "Export in multiple formats",
-        "Full integration with DAWs",
-        "Customizable templates",
-        "VIP access to events and workshops",
-        "Personalized coaching sessions",
-        "Brand partnerships for exclusive content",
       ],
     },
   ],
@@ -143,7 +135,7 @@ export default function Individual() {
   const [activeTab, setActiveTab] = useState("individual");
   return (
     <div>
-      <div className="grid gap-[2rem] px-[5rem] md:grid-cols-4">
+      <div className="grid gap-[2rem] px-[2rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card key={tier.title} className="flex flex-col bg-black">
             <CardHeader>
