@@ -142,277 +142,38 @@ const pricingData = {
 export default function Individual() {
   const [activeTab, setActiveTab] = useState("individual");
   return (
-    <motion.div>
-      <motion.div className="grid px-[5rem] md:grid-cols-3">
-        {/* <div className="flex flex-col border bg-black text-card-foreground shadow">
-          <div className="flex flex-col space-y-1.5 p-6">
-            <h3 className="text-2xl font-semibold tracking-tight">Free</h3>
-            <p className="text-sm text-muted-foreground">
-              For entry-level users and trial
-            </p>
-          </div>
-          <div className="flex-grow p-6 pt-0">
-            <div className="mb-4 text-4xl font-bold">
-              $0
-              <span className="text-lg font-normal text-muted-foreground">
-                /month
-              </span>
-            </div>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />5 virtual
-                instruments
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                10 audio effects
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                2GB cloud storage
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                Community forum access
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                Basic tutorials and resources
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                Limited export options
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                Monthly newsletters
-              </li>
-              <li className="flex items-center">
-               <BadgeCheck className="text-yellow-300 mr-2 h-[22px] w-[22px]" />
-                Access to user community events
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-center p-6 pt-0">
-            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-              Get Started
-            </button>
-          </div>
-        </div> */}
-        <div className="flex flex-col border-y border-l bg-black text-card-foreground shadow">
-          <div className="flex flex-col space-y-1.5 p-6">
-            <h3 className="text-2xl font-semibold tracking-tight">Basic</h3>
-            <p className="text-sm text-muted-foreground">
-              For hobbyists and beginners
-            </p>
-          </div>
-          <div className="flex-grow p-6 pt-0">
-            <div className="mb-4 text-4xl font-bold">
-              $9.99
-              <span className="text-lg font-normal text-muted-foreground">
-                /month
-              </span>
-            </div>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                10 virtual instruments
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                50 audio effects
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                5GB cloud storage
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Community forum access
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Standard tutorials and resources
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Basic MIDI support
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Limited collaborative features
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Monthly live Q&A sessions
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-center p-6 pt-0">
-            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-              Get Started
-            </button>
-          </div>
-        </div>
-        <div className="flex flex-col border-y border-l bg-black text-card-foreground shadow">
-          <div className="flex flex-col space-y-1.5 p-6">
-            <h3 className="text-2xl font-semibold tracking-tight">Pro</h3>
-            <p className="text-sm text-muted-foreground">
-              For serious musicians and producers
-            </p>
-          </div>
-          <div className="flex-grow p-6 pt-0">
-            <div className="mb-4 text-4xl font-bold">
-              $24.99
-              <span className="text-lg font-normal text-muted-foreground">
-                /month
-              </span>
-            </div>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                50 virtual instruments
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                100 audio effects
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                25GB cloud storage
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Priority email support
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Collaboration tools
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Access to premium tutorials and workshops
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Advanced MIDI editing features
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Audio mixing and mastering tools
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Monthly feature updates
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Cloud project backup
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Offline usage capabilities
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-center p-6 pt-0">
-            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-              Get Started
-            </button>
-          </div>
-        </div>
-        <div className="flex flex-col border bg-black text-card-foreground shadow">
-          <div className="flex flex-col space-y-1.5 p-6">
-            <h3 className="text-2xl font-semibold tracking-tight">Ultimate</h3>
-            <p className="text-sm text-muted-foreground">
-              For professional studios and artists
-            </p>
-          </div>
-          <div className="flex-grow p-6 pt-0">
-            <div className="mb-4 text-4xl font-bold">
-              $39.99
-              <span className="text-lg font-normal text-muted-foreground">
-                /month
-              </span>
-            </div>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Unlimited virtual instruments
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Unlimited audio effects
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                100GB cloud storage
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                24/7 phone support
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Advanced collaboration tools
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Exclusive artist packs
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Custom plugin integration
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Multi-user support for studios
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Access to beta features
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Direct developer support
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Tailored mastering services
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Priority software updates
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Cross-platform syncing
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Advanced sound design tools
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Personalized workflow consultation
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Professional-grade recording tools
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Dedicated project management tools
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-center p-6 pt-0">
-            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
+    <div>
+      <div className="grid gap-[2rem] px-[5rem] md:grid-cols-4">
+        {pricingData.individual.map((tier) => (
+          <Card key={tier.title} className="flex flex-col bg-black">
+            <CardHeader>
+              <CardTitle className="text-2xl">{tier.title}</CardTitle>
+              <CardDescription>{tier.description}</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <div className="mb-4 text-4xl font-bold">
+                {tier.price}
+                <span className="text-lg font-normal text-muted-foreground">
+                  /month
+                </span>
+              </div>
+              <ul className="space-y-2">
+                {tier.features.map((feature) => (
+                  <li key={feature} className="flex items-center">
+                    <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">
+                {tier.title === "Enterprise" ? "Contact Sales" : "Get Started"}
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 }
