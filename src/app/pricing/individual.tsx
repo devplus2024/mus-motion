@@ -199,7 +199,7 @@ export default function Individual() {
             </button>
           </div>
         </div> */}
-        <div className="flex flex-col border-y bg-black text-card-foreground shadow">
+        <div className="flex flex-col border-y border-l bg-black text-card-foreground shadow">
           <div className="flex flex-col space-y-1.5 p-6">
             <h3 className="text-2xl font-semibold tracking-tight">Basic</h3>
             <p className="text-sm text-muted-foreground">
@@ -403,30 +403,6 @@ export default function Individual() {
               <li className="flex items-center">
                 <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
                 Dedicated project management tools
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Export in multiple formats
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Full integration with DAWs
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Customizable templates
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                VIP access to events and workshops
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Personalized coaching sessions
-              </li>
-              <li className="flex items-center">
-                <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                Brand partnerships for exclusive content
               </li>
             </ul>
           </div>
