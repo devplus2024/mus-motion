@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckIcon, HelpCircleIcon } from "lucide-react";
+import { BadgeCheck, CheckIcon, HelpCircleIcon } from "lucide-react";
 import { CheckCircledIcon } from "@radix-ui/react-icons";
 
 const pricingData = {
@@ -28,8 +28,8 @@ const pricingData = {
         "Basic tutorials and resources",
         "Limited export options",
         "Monthly newsletters",
-        "Access to user community events"
-      ]
+        "Access to user community events",
+      ],
     },
     {
       title: "Basic",
@@ -43,8 +43,8 @@ const pricingData = {
         "Standard tutorials and resources",
         "Basic MIDI support",
         "Limited collaborative features",
-        "Monthly live Q&A sessions"
-      ]
+        "Monthly live Q&A sessions",
+      ],
     },
     {
       title: "Pro",
@@ -61,8 +61,8 @@ const pricingData = {
         "Audio mixing and mastering tools",
         "Monthly feature updates",
         "Cloud project backup",
-        "Offline usage capabilities"
-      ]
+        "Offline usage capabilities",
+      ],
     },
     {
       title: "Ultimate",
@@ -91,9 +91,9 @@ const pricingData = {
         "Customizable templates",
         "VIP access to events and workshops",
         "Personalized coaching sessions",
-        "Brand partnerships for exclusive content"
-      ]
-    }
+        "Brand partnerships for exclusive content",
+      ],
+    },
   ],
   business: [
     {
@@ -143,446 +143,299 @@ export default function Individual() {
   const [activeTab, setActiveTab] = useState("individual");
   return (
     <motion.div>
-      <motion.div className="grid  px-[5rem] md:grid-cols-4">
-        
-  <div className=" border text-card-foreground shadow flex flex-col bg-black">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="font-semibold tracking-tight text-2xl">Free</h3>
-      <p className="text-sm text-muted-foreground">
-        For entry-level users and trial
-      </p>
-    </div>
-    <div className="p-6 pt-0 flex-grow">
-      <div className="mb-4 text-4xl font-bold">
-        $0
-        <span className="text-lg font-normal text-muted-foreground">
-          /month
-        </span>
-      </div>
-      <ul className="space-y-2">
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          5 virtual instruments
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          10 audio effects
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          2GB cloud storage
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Community forum access
-        </li>
-      </ul>
-    </div>
-    <div className="flex items-center p-6 pt-0">
-      <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full">
-        Get Started
-      </button>
-    </div>
-  </div>
-  <div className="border-y  text-card-foreground shadow flex flex-col bg-black">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="font-semibold tracking-tight text-2xl">Basic</h3>
-      <p className="text-sm text-muted-foreground">
-        For hobbyists and beginners
-      </p>
-    </div>
-    <div className="p-6 pt-0 flex-grow">
-      <div className="mb-4 text-4xl font-bold">
-        $9.99
-        <span className="text-lg font-normal text-muted-foreground">
-          /month
-        </span>
-      </div>
-      <ul className="space-y-2">
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          10 virtual instruments
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          50 audio effects
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          5GB cloud storage
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Community forum access
-        </li>
-      </ul>
-    </div>
-    <div className="flex items-center p-6 pt-0">
-      <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full">
-        Get Started
-      </button>
-    </div>
-  </div>
-  <div className="border-y border-l text-card-foreground shadow flex flex-col bg-black">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="font-semibold tracking-tight text-2xl">Pro</h3>
-      <p className="text-sm text-muted-foreground">
-        For serious musicians and producers
-      </p>
-    </div>
-    <div className="p-6 pt-0 flex-grow">
-      <div className="mb-4 text-4xl font-bold">
-        $24.99
-        <span className="text-lg font-normal text-muted-foreground">
-          /month
-        </span>
-      </div>
-      <ul className="space-y-2">
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          50 virtual instruments
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          100 audio effects
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          25GB cloud storage
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Priority email support
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Collaboration tools
-        </li>
-      </ul>
-    </div>
-    <div className="flex items-center p-6 pt-0">
-      <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full">
-        Get Started
-      </button>
-    </div>
-  </div>
-  <div className=" border text-card-foreground shadow flex flex-col bg-black">
-    <div className="flex flex-col space-y-1.5 p-6">
-      <h3 className="font-semibold tracking-tight text-2xl">Ultimate</h3>
-      <p className="text-sm text-muted-foreground">
-        For professional studios and artists
-      </p>
-    </div>
-    <div className="p-6 pt-0 flex-grow">
-      <div className="mb-4 text-4xl font-bold">
-        $39.99
-        <span className="text-lg font-normal text-muted-foreground">
-          /month
-        </span>
-      </div>
-      <ul className="space-y-2">
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Unlimited virtual instruments
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Unlimited audio effects
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          100GB cloud storage
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          24/7 phone support
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Advanced collaboration tools
-        </li>
-        <li className="flex items-center">
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <path
-              d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z"
-              fill="red"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            />
-          </svg>
-          Custom plugin integration
-        </li>
-      </ul>
-    </div>
-    <div className="flex items-center p-6 pt-0">
-      <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full">
-        Get Started
-      </button>
-    </div>
-  </div>
-
-
-
-
+      <motion.div className="grid px-[5rem] md:grid-cols-4">
+        <div className="flex flex-col border bg-black text-card-foreground shadow">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <h3 className="text-2xl font-semibold tracking-tight">Free</h3>
+            <p className="text-sm text-muted-foreground">
+              For entry-level users and trial
+            </p>
+          </div>
+          <div className="flex-grow p-6 pt-0">
+            <div className="mb-4 text-4xl font-bold">
+              $0
+              <span className="text-lg font-normal text-muted-foreground">
+                /month
+              </span>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />5 virtual
+                instruments
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                10 audio effects
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                2GB cloud storage
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Community forum access
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Basic tutorials and resources
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Limited export options
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Monthly newsletters
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Access to user community events
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center p-6 pt-0">
+            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+              Get Started
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-col border-y bg-black text-card-foreground shadow">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <h3 className="text-2xl font-semibold tracking-tight">Basic</h3>
+            <p className="text-sm text-muted-foreground">
+              For hobbyists and beginners
+            </p>
+          </div>
+          <div className="flex-grow p-6 pt-0">
+            <div className="mb-4 text-4xl font-bold">
+              $9.99
+              <span className="text-lg font-normal text-muted-foreground">
+                /month
+              </span>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                10 virtual instruments
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                50 audio effects
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                5GB cloud storage
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Community forum access
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Standard tutorials and resources
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Basic MIDI support
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Limited collaborative features
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Monthly live Q&A sessions
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center p-6 pt-0">
+            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+              Get Started
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-col border-y border-l bg-black text-card-foreground shadow">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <h3 className="text-2xl font-semibold tracking-tight">Pro</h3>
+            <p className="text-sm text-muted-foreground">
+              For serious musicians and producers
+            </p>
+          </div>
+          <div className="flex-grow p-6 pt-0">
+            <div className="mb-4 text-4xl font-bold">
+              $24.99
+              <span className="text-lg font-normal text-muted-foreground">
+                /month
+              </span>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                50 virtual instruments
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                100 audio effects
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                25GB cloud storage
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Priority email support
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Collaboration tools
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Access to premium tutorials and workshops
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Advanced MIDI editing features
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Audio mixing and mastering tools
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Monthly feature updates
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Cloud project backup
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Offline usage capabilities
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center p-6 pt-0">
+            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+              Get Started
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-col border bg-black text-card-foreground shadow">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <h3 className="text-2xl font-semibold tracking-tight">Ultimate</h3>
+            <p className="text-sm text-muted-foreground">
+              For professional studios and artists
+            </p>
+          </div>
+          <div className="flex-grow p-6 pt-0">
+            <div className="mb-4 text-4xl font-bold">
+              $39.99
+              <span className="text-lg font-normal text-muted-foreground">
+                /month
+              </span>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Unlimited virtual instruments
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Unlimited audio effects
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                100GB cloud storage
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                24/7 phone support
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Advanced collaboration tools
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Exclusive artist packs
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Custom plugin integration
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Multi-user support for studios
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Access to beta features
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Direct developer support
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Tailored mastering services
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Priority software updates
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Cross-platform syncing
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Advanced sound design tools
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Personalized workflow consultation
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Professional-grade recording tools
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Dedicated project management tools
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Export in multiple formats
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Full integration with DAWs
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Customizable templates
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                VIP access to events and workshops
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Personalized coaching sessions
+              </li>
+              <li className="flex items-center">
+                <BadgeCheck className="text-yellow h-4 w-4" />
+                Brand partnerships for exclusive content
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center p-6 pt-0">
+            <button className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+              Get Started
+            </button>
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   );
