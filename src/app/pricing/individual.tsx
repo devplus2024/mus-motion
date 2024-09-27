@@ -143,8 +143,8 @@ export default function Individual() {
   const [activeTab, setActiveTab] = useState("individual");
   return (
     <motion.div>
-      <motion.div className="grid px-[5rem] md:grid-cols-4">
-        <div className="flex flex-col border bg-black text-card-foreground shadow">
+      <motion.div className="grid justify-items-center px-[5rem] md:grid-cols-3">
+        {/* <div className="flex flex-col border bg-black text-card-foreground shadow">
           <div className="flex flex-col space-y-1.5 p-6">
             <h3 className="text-2xl font-semibold tracking-tight">Free</h3>
             <p className="text-sm text-muted-foreground">
@@ -160,35 +160,35 @@ export default function Individual() {
             </div>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />5 virtual
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />5 virtual
                 instruments
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 10 audio effects
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 2GB cloud storage
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Community forum access
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Basic tutorials and resources
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Limited export options
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Monthly newsletters
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Access to user community events
               </li>
             </ul>
@@ -215,35 +215,35 @@ export default function Individual() {
             </div>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 10 virtual instruments
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 50 audio effects
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 5GB cloud storage
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Community forum access
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Standard tutorials and resources
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Basic MIDI support
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Limited collaborative features
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Monthly live Q&A sessions
               </li>
             </ul>
@@ -253,7 +253,7 @@ export default function Individual() {
               Get Started
             </button>
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col border-y border-l bg-black text-card-foreground shadow">
           <div className="flex flex-col space-y-1.5 p-6">
             <h3 className="text-2xl font-semibold tracking-tight">Pro</h3>
@@ -270,47 +270,47 @@ export default function Individual() {
             </div>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 50 virtual instruments
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 100 audio effects
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 25GB cloud storage
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Priority email support
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Collaboration tools
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Access to premium tutorials and workshops
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Advanced MIDI editing features
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Audio mixing and mastering tools
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Monthly feature updates
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Cloud project backup
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Offline usage capabilities
               </li>
             </ul>
@@ -337,95 +337,95 @@ export default function Individual() {
             </div>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Unlimited virtual instruments
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Unlimited audio effects
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 100GB cloud storage
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 24/7 phone support
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Advanced collaboration tools
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Exclusive artist packs
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Custom plugin integration
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Multi-user support for studios
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Access to beta features
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Direct developer support
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Tailored mastering services
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Priority software updates
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Cross-platform syncing
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Advanced sound design tools
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Personalized workflow consultation
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Professional-grade recording tools
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Dedicated project management tools
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Export in multiple formats
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Full integration with DAWs
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Customizable templates
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 VIP access to events and workshops
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Personalized coaching sessions
               </li>
               <li className="flex items-center">
-                <BadgeCheck className="text-yellow h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 text-yellow-300" />
                 Brand partnerships for exclusive content
               </li>
             </ul>
