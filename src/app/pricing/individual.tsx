@@ -143,7 +143,7 @@ export default function Individual() {
   const [activeTab, setActiveTab] = useState("individual");
   return (
     <motion.div>
-      <motion.div className="grid justify-items-center px-[5rem] md:grid-cols-3">
+      <motion.div className="grid px-[5rem] md:grid-cols-3">
         {/* <div className="flex flex-col border bg-black text-card-foreground shadow">
           <div className="flex flex-col space-y-1.5 p-6">
             <h3 className="text-2xl font-semibold tracking-tight">Free</h3>
