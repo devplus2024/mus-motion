@@ -137,7 +137,7 @@ export default function Individual() {
     <div>
       <div className="grid gap-[2rem] px-[2rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
-          <Card key={tier.title} className="flex flex-col bg-black">
+          <Card key={tier.title} className="flex flex-col bg-[#0c0c0c]">
             <CardHeader>
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
@@ -151,9 +151,9 @@ export default function Individual() {
               </div>
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-center">
-                    <BadgeCheck className="mr-2 h-[22px] w-[22px] text-yellow-300" />
-                    {feature}
+                  <li key={feature} className="flex items-center gap-2">
+                    <BadgeCheck className="h-[22px] w-[22px] text-[#bfbfbf]" />
+                    <p>{feature}</p>
                   </li>
                 ))}
               </ul>
