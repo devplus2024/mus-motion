@@ -153,7 +153,7 @@ export default function Individual() {
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
                     <BadgeCheck className="h-[22px] w-[22px] text-[#bfbfbf]" />
-                    <p>{feature}</p>
+                    <p className="text-sm">{feature}</p>
                   </li>
                 ))}
               </ul>
