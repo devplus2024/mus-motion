@@ -137,7 +137,7 @@ export default function Individual() {
     <div>
       <div className="grid gap-[2rem] px-[2rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
-          <Card key={tier.title} className="flex flex-col bg-[#0c0c0c]">
+          <Card key={tier.title} className="flex flex-col dark:bg-[#000000]">
             <CardHeader>
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
