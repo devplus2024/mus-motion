@@ -142,7 +142,7 @@ export default function Individual() {
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow">
+            <CardContent className="flex-grow pt-[2rem]">
               <div className="mb-4 text-4xl font-bold">
                 {tier.price}
                 <span className="text-lg font-normal text-muted-foreground">
@@ -152,15 +152,15 @@ export default function Individual() {
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                   <div className="rounded-md bg-[#303030] p-[4px] "> 
-                    <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" />
+                    <div className="rounded-md bg-[#303030] p-[4px]">
+                      <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" />
                     </div>
                     <p className="text-sm">{feature}</p>
                   </li>
                 ))}
               </ul>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="px-6 py-[2rem]">
               <Button className="w-full">
                 {tier.title === "Enterprise" ? "Contact Sales" : "Get Started"}
               </Button>
