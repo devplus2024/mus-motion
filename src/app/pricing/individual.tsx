@@ -11,8 +11,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BadgeCheck, CheckIcon, HelpCircleIcon } from "lucide-react";
-import { CheckCircledIcon } from "@radix-ui/react-icons";
+import { BadgeCheck, HelpCircleIcon } from "lucide-react";
+import { CheckCircledIcon, CheckIcon } from "@radix-ui/react-icons";
 
 const pricingData = {
   individual: [
@@ -152,7 +152,9 @@ export default function Individual() {
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <BadgeCheck className="h-[22px] w-[22px] flex-shrink-0 text-[#bfbfbf]" />
+                   <div className="rounded-md bg-[#303030] p-[4px] "> 
+                    <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" />
+                    </div>
                     <p className="text-sm">{feature}</p>
                   </li>
                 ))}
