@@ -160,7 +160,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="px-6 py-[2rem]">
+            <CardFooter className="border-t px-6 py-[2rem]">
               <Button className="w-full">
                 {tier.title === "Enterprise" ? "Contact Sales" : "Get Started"}
               </Button>
