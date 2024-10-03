@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/accordion";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import RetroGrid from "@/components/ui/retro-grid";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -40,15 +41,7 @@ function PricingPage() {
           Unlock Your Full Creative Potential with Our Comprehensive, Advanced,
           and Cutting-Edge Music Software Suite Designed for Every Artist
         </p>
-        <GridPattern
-          width={20}
-          height={20}
-          x={-1}
-          y={-1}
-          className={cn(
-            "h-full w-full [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]",
-          )}
-        />
+        <RetroGrid />
       </div>
       <div className="flex justify-center space-x-1">
         <div className="flex w-fit rounded-full border">
