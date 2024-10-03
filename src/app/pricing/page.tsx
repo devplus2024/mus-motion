@@ -11,6 +11,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import GridPattern from "@/components/ui/grid-pattern";
+import { cn } from "@/lib/utils";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -29,8 +31,8 @@ function PricingPage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
 
   return (
-    <main className="pb-[6rem] pt-[2rem]">
-      <div className="mb-[1rem] flex flex-col items-center gap-[1rem] text-center">
+    <main className="pb-[6rem] pt-[4rem]">
+      <div className="mb-[2rem] flex flex-col items-center gap-[1rem] text-center">
         <h1 className="w-[45rem] text-center text-[2.6rem] font-bold leading-[43px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
@@ -38,6 +40,15 @@ function PricingPage() {
           Unlock Your Full Creative Potential with Our Comprehensive, Advanced,
           and Cutting-Edge Music Software Suite Designed for Every Artist
         </p>
+        <GridPattern
+          width={20}
+          height={20}
+          x={-1}
+          y={-1}
+          className={cn(
+            "h-full w-full [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]",
+          )}
+        />
       </div>
       <div className="flex justify-center space-x-1">
         <div className="flex w-fit rounded-full border">
