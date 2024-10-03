@@ -139,7 +139,7 @@ export default function Individual() {
         {pricingData.individual.map((tier) => (
           <Card key={tier.title} className="flex flex-col dark:bg-[#000000]">
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#6b00ff]/10" : tier.title === "Basic" ? "to-[#00ff57]/10" : tier.title === "Pro" ? "to-[#ff000f]/10" : "to-[#feff00]/10"} rounded-xl bg-gradient-to-tr from-black/50`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} rounded-b-none rounded-t-xl bg-gradient-to-tr from-black/50`}
             >
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
