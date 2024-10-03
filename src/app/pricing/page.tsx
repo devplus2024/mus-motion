@@ -32,7 +32,7 @@ function PricingPage() {
 
   return (
     <main className="pb-[6rem] pt-[4rem]">
-      <div className="mb-[2rem] flex flex-col items-center gap-[1rem] text-center">
+      <div className="relative mb-[2rem] flex flex-col items-center gap-[1rem] text-center">
         <h1 className="w-[45rem] text-center text-[2.6rem] font-bold leading-[43px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
