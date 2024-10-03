@@ -14,6 +14,7 @@ import {
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
 import RetroGrid from "@/components/ui/retro-grid";
+import { BackgroundLines } from "@/components/ui/background-lines";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -32,8 +33,8 @@ function PricingPage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
 
   return (
-    <main className="pb-[6rem] pt-[4rem]">
-      <div className="relative mb-[2rem] flex flex-col items-center gap-[1rem] text-center">
+    <main className="pb-[6rem]">
+      <BackgroundLines className="relative flex h-[350px] flex-col items-center justify-end gap-[1rem] text-center">
         <h1 className="w-[45rem] text-center text-[2.6rem] font-bold leading-[43px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
@@ -41,34 +42,34 @@ function PricingPage() {
           Unlock Your Full Creative Potential with Our Comprehensive, Advanced,
           and Cutting-Edge Music Software Suite Designed for Every Artist
         </p>
-        <RetroGrid />
-      </div>
-      <div className="flex justify-center space-x-1">
-        <div className="flex w-fit rounded-full border">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`${
-                activeTab === tab.id ? "" : "hover:text-white/60"
-              } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
-              style={{
-                WebkitTapHighlightColor: "transparent",
-              }}
-            >
-              {activeTab === tab.id && (
-                <motion.span
-                  layoutId="bubble"
-                  className="absolute inset-0 z-10 bg-white mix-blend-difference"
-                  style={{ borderRadius: 9999 }}
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              {tab.label}
-            </button>
-          ))}
+        <div className="flex justify-center space-x-1">
+          <div className="flex w-fit rounded-full border">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`${
+                  activeTab === tab.id ? "" : "hover:text-white/60"
+                } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                }}
+              >
+                {activeTab === tab.id && (
+                  <motion.span
+                    layoutId="bubble"
+                    className="absolute inset-0 z-10 bg-white mix-blend-difference"
+                    style={{ borderRadius: 9999 }}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      </BackgroundLines>
+
       <motion.div className="mt-[4rem]">{contents[activeTab]}</motion.div>
       <div className="mx-[2rem] mt-16 flex flex-col items-center">
         <h2 className="mb-8 text-center text-3xl font-bold">
