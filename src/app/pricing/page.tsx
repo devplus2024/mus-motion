@@ -34,7 +34,7 @@ function PricingPage() {
 
   return (
     <main className="pb-[6rem]">
-      <BackgroundLines className="relative flex h-[350px] flex-col items-center justify-end gap-[1rem] text-center">
+      <BackgroundLines className="relative flex h-[350px] flex-col items-center justify-center gap-[1rem] text-center">
         <h1 className="w-[45rem] text-center text-[2.6rem] font-bold leading-[43px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
@@ -70,7 +70,7 @@ function PricingPage() {
         </div>
       </BackgroundLines>
 
-      <motion.div className="mt-[4rem]">{contents[activeTab]}</motion.div>
+      <motion.div className="mt-[1rem]">{contents[activeTab]}</motion.div>
       <div className="mx-[2rem] mt-16 flex flex-col items-center">
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
