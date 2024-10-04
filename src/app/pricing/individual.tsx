@@ -144,7 +144,7 @@ export default function Individual() {
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow border-t pt-[2rem]">
+            <CardContent className="flex-grow border-t bg-gradient-to-tr from-black/50 to-[#121212] pt-[2rem]">
               <div className="mb-4 text-4xl font-bold">
                 {tier.price}
                 <span className="text-lg font-normal text-muted-foreground">
@@ -162,7 +162,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="border-t px-6 py-[2rem]">
+            <CardFooter className="rounded-b-xl rounded-t-none border-t bg-gradient-to-tr from-black/50 to-[#121212] px-6 py-[2rem]">
               <Button className="w-full">
                 {tier.title === "Enterprise" ? "Contact Sales" : "Get Started"}
               </Button>
