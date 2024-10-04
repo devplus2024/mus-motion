@@ -2,10 +2,10 @@ export default function Sparkles() {
   return (
     <svg
       data-testid="geist-icon"
-      height={20}
+      height={"16"}
       strokeLinejoin="round"
       viewBox="0 0 16 16"
-      width={20}
+      width={"16"}
       className="mr-2"
       style={{ color: "currentcolor" }}
     >
