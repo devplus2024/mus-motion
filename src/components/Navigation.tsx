@@ -117,6 +117,7 @@ import Sparkles from "./Sparkles";
 import GitHub from "./GitHub";
 import Discord from "./Discord";
 import X from "./x";
+import Linkedin from "./Linkedin";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
@@ -248,9 +249,24 @@ export const Navigation = (): JSX.Element => {
           </div>
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center justify-center gap-[1rem]">
-              <GitHub />
-              <Discord />
-              <X />
+              <Link
+                className="cursor-pointer"
+                href="https://github.com/devplus2024"
+              >
+                <GitHub />
+              </Link>
+              <Link
+                className="cursor-pointer"
+                href="https://www.linkedin.com/in/devplus2024/"
+              >
+                <Linkedin />
+              </Link>
+              <Link
+                className="cursor-pointer"
+                href="https://x.com/DeveloperPlus24"
+              >
+                <X />
+              </Link>
             </div>
             <div className="flex items-center justify-center gap-[1rem]">
               <ThemeToggle />
