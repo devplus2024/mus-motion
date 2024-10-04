@@ -279,20 +279,20 @@ export const Navigation = (): JSX.Element => {
               >
                 <Button
                   variant={"outline"}
-                  className="flex items-center hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                  className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
                 >
                   <Image
                     src={"/windows11.svg"}
                     className="mr-2 h-[20px] w-[20px] dark:invert-[1]"
-                    width={"20"}
-                    height={"20"}
+                    width={"16"}
+                    height={"16"}
                     alt="window-logo"
                   ></Image>
                   Download
                 </Button>
               </Link>
               <Link href="https://ai-mus-motion.vercel.app">
-                <Button className="">
+                <Button variant="outline" className="">
                   <Sparkles />
                   Ask With Ai
                 </Button>
