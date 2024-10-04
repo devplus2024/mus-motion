@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Radio | MusMotion",
-  description: "MusMotion - Radio",
+  title: "Radio | NoneTheLes",
+  description: "NoneTheLes - Radio",
 };
 export default function ResourcesLayout({
   children,

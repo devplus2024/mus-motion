@@ -1,12 +1,12 @@
 {
-  "name": "MusMotion",
+  "name": "NoneTheLes",
   "version": "2.5.3",
   "private": true,
   "main": "main.js",
   "build": {
     "asar": false,
     "compression": "store",
-    "appId": "com.musmotion.inc",
+    "appId": "com.NoneTheLes.inc",
     "directories": {
       "output": "dist"
     },

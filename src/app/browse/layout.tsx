@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Browse | MusMotion",
-  description: "MusMotion - Browse",
+  title: "Browse | NoneTheLes",
+  description: "NoneTheLes - Browse",
 };
 
 export default function BrowseLayout({

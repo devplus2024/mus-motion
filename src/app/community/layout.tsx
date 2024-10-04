@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Community | MusMotion",
-  description: "MusMotion - Community",
+  title: "Community | NoneTheLes",
+  description: "NoneTheLes - Community",
 };
 export default function CommunityLayout({
   children,

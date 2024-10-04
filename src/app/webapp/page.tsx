@@ -124,33 +124,33 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 import { Toaster } from "@/components/ui/sonner";
 import { TabList, tablist } from "./data/tablist";
 import MusicTab from "./components/musictab";
-export default function MusMotionWebApp() {
+export default function NoneTheLesWebApp() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
-    <main className="flex GeistSans relative w-full min-h-screen gap-[3rem] dark:bg-black dark:[color-scheme:dark] flex-col items-center justify-between  py-0">
-      <div className="contentsP w-full active" id="musicContent">
-        <div className="flex justify-center w-full ">
-          <div className="h-screen w-full min-w-[656px] flex flex-col rounded-lg border dark:border-[#202020]">
-            <div className="flex h-[37px] title_bar gap-[2rem] dark:bg-black rounded-t-lg border-b dark:border-b-[#202020] ">
-              <Menubar className="dark:bg-black title_bar_no border-none rounded-t-lg">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[3rem] py-0 dark:bg-black dark:[color-scheme:dark]">
+      <div className="contentsP active w-full" id="musicContent">
+        <div className="flex w-full justify-center">
+          <div className="flex h-screen w-full min-w-[656px] flex-col rounded-lg border dark:border-[#202020]">
+            <div className="title_bar flex h-[37px] gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
+              <Menubar className="title_bar_no rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
-                  <MenubarTrigger>MusMotion</MenubarTrigger>
+                  <MenubarTrigger>NoneTheLes</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>About MusMotion</MenubarItem>
+                    <MenubarItem>About NoneTheLes</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                       Preferences<MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Hide MusMotion<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                      Hide NoneTheLes<MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
                       Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                      Quit MusMotion
+                      Quit NoneTheLes
                       <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>
@@ -313,10 +313,10 @@ export default function MusMotionWebApp() {
                 </MenubarMenu>
               </Menubar>
             </div>
-            <Tabs defaultValue="listennow" className="flex w-full h-full">
-              <TabsList className="w-[280px] h-full border-r">
+            <Tabs defaultValue="listennow" className="flex h-full w-full">
+              <TabsList className="h-full w-[280px] border-r">
                 <div className="flex flex-col gap-[0.5rem]">
-                  <div className="dark:text-white font-bold text-xl">
+                  <div className="text-xl font-bold dark:text-white">
                     Dicover
                   </div>
                   {tablist.slice(0, 3).map((tablist: TabList) => (
@@ -328,7 +328,7 @@ export default function MusMotionWebApp() {
                 </div>
 
                 <div className="flex flex-col gap-[0.5rem]">
-                  <div className="dark:text-white font-bold text-xl">
+                  <div className="text-xl font-bold dark:text-white">
                     Library
                   </div>
                   {tablist.slice(3, 8).map((tablist: TabList) => (
@@ -339,7 +339,7 @@ export default function MusMotionWebApp() {
                   ))}
                 </div>
                 <div className="flex flex-col gap-[0.5rem]">
-                  <div className="dark:text-white font-bold text-xl">
+                  <div className="text-xl font-bold dark:text-white">
                     Playlists
                   </div>
                   <ScrollArea className="h-[100px] w-[240px]">
@@ -353,11 +353,11 @@ export default function MusMotionWebApp() {
                 </div>
               </TabsList>
               <TabsContent
-                className="flex items-center px-2 w-full justify-center"
+                className="flex w-full items-center justify-center px-2"
                 value="listennow"
               >
                 <ScrollArea className="">
-                  <div className="w-[calc(100vw-330px)]   h-[583px]">
+                  <div className="h-[583px] w-[calc(100vw-330px)]">
                     <MusicTab />
                   </div>
                 </ScrollArea>

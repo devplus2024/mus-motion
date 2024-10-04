@@ -3,7 +3,7 @@ export const metadata: Metadata = {
   title: "NoneTheLes WebApp",
   description: "NoneTheLes WebApp",
 };
-export default function MusMotionWebAppLayout({
+export default function NoneTheLesWebAppLayout({
   children,
 }: {
   children: React.ReactNode;

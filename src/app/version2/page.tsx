@@ -1,4 +1,4 @@
-export default function MusMotion2_0() {
+export default function NoneTheLes2_0() {
   return (
     <main>
       <div></div>

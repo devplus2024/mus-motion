@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Download",
-  description: "MusMotion",
+  description: "NoneTheLes",
 };
 export default function DownloadsLayout({
   children,

@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -7,13 +7,13 @@ function createWindow() {
     frame: false,
     titleBarStyle: "hidden",
     titleBarOverlay: {
-	  color:"#000",
+      color: "#000",
       symbolColor: "#fff",
       height: 37,
     }, // Loại bỏ khung mặc định của hệ điều hành
   });
 
-  win.loadURL("http://musmotion.vercel.app/docs");
+  win.loadURL("http://NoneTheLes.vercel.app/docs");
 }
 
 app.whenReady().then(() => {

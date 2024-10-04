@@ -8,10 +8,11 @@ export default function Dpage() {
     // Chờ 5 giây sau khi trang tải xong và thực hiện tải file
     const timer = setTimeout(() => {
       // URL của file cần tải
-      const fileUrl = "https://github.com/devplus2024/music-app/releases/download/2.3.5/MusMotionSetup.2.5.3.exe";
+      const fileUrl =
+        "https://github.com/devplus2024/music-app/releases/download/2.3.5/NoneTheLesSetup.2.5.3.exe";
       const link = document.createElement("a");
       link.href = fileUrl;
-      link.setAttribute("download", "MusMotionSetup.2.5.3.exe"); // Tên file sẽ tải xuống
+      link.setAttribute("download", "NoneTheLesSetup.2.5.3.exe"); // Tên file sẽ tải xuống
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

@@ -147,8 +147,8 @@ export default function Home() {
         variant="outline"
         className="xl;w-fit relative text-wrap rounded-md px-3 text-center text-[0.9rem] font-medium text-black dark:text-white min-[375px]:h-[5rem] min-[375px]:w-[18rem] xl:h-[2rem] xl:w-fit"
       >
-        MusMotion v2.6.5 is now available! Read about the new features and fixes
-        from August.
+        NoneTheLes v2.6.5 is now available! Read about the new features and
+        fixes from August.
       </Button>
       <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-row">
         <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
@@ -346,22 +346,22 @@ export default function Home() {
             <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
               <Menubar className="rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
-                  <MenubarTrigger>MusMotion</MenubarTrigger>
+                  <MenubarTrigger>NoneTheLes</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>About MusMotion</MenubarItem>
+                    <MenubarItem>About NoneTheLes</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                       Preferences<MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Hide MusMotion<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                      Hide NoneTheLes<MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
                       Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                      Quit MusMotion
+                      Quit NoneTheLes
                       <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>
