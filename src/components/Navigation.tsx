@@ -113,6 +113,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
 import ShineBorder from "@/components/magicui/shine-border";
+import Sparkles from "./sparkles";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
@@ -248,7 +249,17 @@ export const Navigation = (): JSX.Element => {
               <CommandMenu />
             </div>
             <div className="flex items-center gap-[2rem]">
-              <Link href="/downloads">
+              <Link
+                className="flex items-center justify-center gap-3"
+                href="/downloads"
+              >
+                <Image
+                  src={"/windows11.svg"}
+                  className="h-[20px] w-[20px]"
+                  width={"20"}
+                  height={"20"}
+                  alt="window-logo"
+                ></Image>
                 <Button
                   variant={"outline"}
                   className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
@@ -257,7 +268,10 @@ export const Navigation = (): JSX.Element => {
                 </Button>
               </Link>
               <Link href="https://ai-mus-motion.vercel.app">
-                <Button className="">Ask With Ai</Button>
+                <Button className="">
+                  <Sparkles />
+                  Ask With Ai
+                </Button>
               </Link>
             </div>
           </div>
