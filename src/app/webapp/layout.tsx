@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Mus Motion WebApp",
-  description: "Mus Motion WebApp",
+  title: "NoneTheLes WebApp",
+  description: "NoneTheLes WebApp",
 };
 export default function MusMotionWebAppLayout({
   children,

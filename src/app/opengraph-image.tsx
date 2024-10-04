@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "Mus Motion";
+export const alt = "NoneTheLes";
 export const size = {
   width: 1200,
   height: 630,
@@ -30,11 +30,11 @@ export default async function Image() {
   } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
-    imagePreview = "Mus Motion";
+    imagePreview = "@Leader Develop";
   }
 
   const geistLight = fetch(
-    new URL("./font/Geist-Bold.woff", import.meta.url)
+    new URL("./font/Geist-Bold.woff", import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -68,6 +68,6 @@ export default async function Image() {
           weight: 600,
         },
       ],
-    }
+    },
   );
 }

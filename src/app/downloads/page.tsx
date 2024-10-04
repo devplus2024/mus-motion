@@ -13,114 +13,113 @@ export default function DownloadsPage() {
     await router.push("/docs/user-win-download");
   };
   return (
-    <main className="w-full mt-[3rem]">
-      <div className="w-full flex gap-[1rem] flex-col items-center justify-center">
-        <p className="text-4xl text-center font-bold">Download Mus Motion </p>
-        <p className="text-xl text-center w-[45rem] text-[#a1a1a1]">
+    <main className="mt-[3rem] w-full">
+      <div className="flex w-full flex-col items-center justify-center gap-[1rem]">
+        <p className="text-center text-4xl font-bold">Download NoneTheLes </p>
+        <p className="w-[45rem] text-center text-xl text-[#a1a1a1]">
           Experience the best music streaming service on your favorite device.
           Download our app now and enjoy unlimited access to millions of songs.
         </p>
       </div>
-      <div className="grid grid-cols-1 mt-[5rem] gap-[2rem] justify-items-center">
-  <div
-    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
-    style={{ background: "black" }}
-  >
-    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
-    <Image
+      <div className="mt-[5rem] grid grid-cols-1 justify-items-center gap-[2rem]">
+        <div
+          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-[2rem] rounded-lg border px-[2rem]"
+          style={{ background: "black" }}
+        >
+          <div className="flex w-full items-center gap-[2rem] px-[1rem]">
+            <Image
               src={"/windows11.svg"}
               width={"100"}
               height={"100"}
               alt="windows-11-logo"
               className="dark:invert-[1]"
             ></Image>
-      <div className="border-r flex flex-col items-center justify-center h-[6rem] pr-[2rem]">
-        <p className="text-xl">Windows</p>
-        <p className="text-sm">Windows 11 , 10</p>
-      </div>
-      <div>
-        <p className="text-xl">User Install</p>
-        <p className="text-sm hover:underline">x64 Arm64</p>
-      </div>
-      <div>
-        <p className="text-xl">System Install</p>
-        <p className="text-sm hover:underline">x64 Arm64</p>
-      </div>
-      <div>
-        <p className="text-xl">.zip</p>
-        <p className="text-sm hover:underline">x64 Arm64</p>
-      </div>
-      <div>
-        <p className="text-xl">CLI</p>
-        <p className="text-sm hover:underline">x64 Arm64</p>
-      </div>
-    </div>
-    <a className="w-full" href="/downloads">
-      <div className="dark:bg-black justify-center border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-      <CircleArrowDown className="dark:text-white text-black" />
-        <p className="dark:text-white text-black">Download for Windows</p>
-      </div>
-    </a>
-  </div>
-  <div
-    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
-    style={{ background: "black" }}
-  >
-    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
-      <Image
-        alt="windows-11-logo"
-        loading="lazy"
-        width={100}
-        height={100}
-        decoding="async"
-        data-nimg={1}
-        className="dark:invert-[1] "
-        src="/linux.svg"
-        style={{ color: "transparent" }}
-      />
-      <div>
-        <p className="text-2xl">Linux</p>
-        <p>Debian, Ubuntu</p>
-      </div>
-    </div>
-    <div className="dark:bg-black justify-center border bg-white w-full flex  items-center gap-[0.5rem] px-3 py-2 rounded-md">
-    <CircleArrowDown className="dark:text-white text-black" />
-      <p className="dark:text-white text-black">Download for Linux</p>
-    </div>
-  </div>
-  <div
-    className="w-[880px] px-[2rem] flex items-center justify-center flex-col gap-[2rem] h-[250px] border rounded-lg"
-    style={{ background: "black" }}
-  >
-    <div className="w-full gap-[2rem] flex items-center  px-[1rem] ">
-      
-             <Image
+            <div className="flex h-[6rem] flex-col items-center justify-center border-r pr-[2rem]">
+              <p className="text-xl">Windows</p>
+              <p className="text-sm">Windows 11 , 10</p>
+            </div>
+            <div>
+              <p className="text-xl">User Install</p>
+              <p className="text-sm hover:underline">x64 Arm64</p>
+            </div>
+            <div>
+              <p className="text-xl">System Install</p>
+              <p className="text-sm hover:underline">x64 Arm64</p>
+            </div>
+            <div>
+              <p className="text-xl">.zip</p>
+              <p className="text-sm hover:underline">x64 Arm64</p>
+            </div>
+            <div>
+              <p className="text-xl">CLI</p>
+              <p className="text-sm hover:underline">x64 Arm64</p>
+            </div>
+          </div>
+          <a className="w-full" href="/downloads">
+            <div className="flex w-full items-center justify-center gap-[0.5rem] rounded-md border bg-white px-3 py-2 dark:bg-black">
+              <CircleArrowDown className="text-black dark:text-white" />
+              <p className="text-black dark:text-white">Download for Windows</p>
+            </div>
+          </a>
+        </div>
+        <div
+          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-[2rem] rounded-lg border px-[2rem]"
+          style={{ background: "black" }}
+        >
+          <div className="flex w-full items-center gap-[2rem] px-[1rem]">
+            <Image
+              alt="windows-11-logo"
+              loading="lazy"
+              width={100}
+              height={100}
+              decoding="async"
+              data-nimg={1}
+              className="dark:invert-[1]"
+              src="/linux.svg"
+              style={{ color: "transparent" }}
+            />
+            <div>
+              <p className="text-2xl">Linux</p>
+              <p>Debian, Ubuntu</p>
+            </div>
+          </div>
+          <div className="flex w-full items-center justify-center gap-[0.5rem] rounded-md border bg-white px-3 py-2 dark:bg-black">
+            <CircleArrowDown className="text-black dark:text-white" />
+            <p className="text-black dark:text-white">Download for Linux</p>
+          </div>
+        </div>
+        <div
+          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-[2rem] rounded-lg border px-[2rem]"
+          style={{ background: "black" }}
+        >
+          <div className="flex w-full items-center gap-[2rem] px-[1rem]">
+            <Image
               src={"/apple.svg"}
               width={"100"}
               height={"100"}
               alt="windows-11-logo"
-              className="dark:invert-[1] "
+              className="dark:invert-[1]"
             ></Image>
-      <div>
-        <p className="text-2xl ">Mac Os</p>
-        <p>MacOs 10.15+</p>
+            <div>
+              <p className="text-2xl">Mac Os</p>
+              <p>MacOs 10.15+</p>
+            </div>
+          </div>
+          <div className="flex w-full items-center justify-center gap-[0.5rem] rounded-md border bg-white px-3 py-2 dark:bg-black">
+            <CircleArrowDown className="text-black dark:text-white" />
+            <p className="text-black dark:text-white">Download for MacOs</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div className="dark:bg-black border bg-white w-full flex justify-center items-center gap-[0.5rem] px-3 py-2 rounded-md">
-    <CircleArrowDown className="dark:text-white text-black" />
-      <p className="dark:text-white text-black">Download for MacOs</p>
-    </div>
-  </div>
-</div>
 
-      <section className="w-full xl:py-[5.4rem] md:py-24 lg:py-32">
+      <section className="w-full md:py-24 lg:py-32 xl:py-[5.4rem]">
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="mt-[3rem]">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                 Key Features
               </div>
-              <h2 className="text-3xl mt-[2rem] font-bold tracking-tighter sm:text-5xl">
+              <h2 className="mt-[2rem] text-3xl font-bold tracking-tighter sm:text-5xl">
                 Why Choose the Music App?
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -175,7 +174,7 @@ export default function DownloadsPage() {
               </p>
             </div>
           </div>
-          <div className="flex justify-center flex-col sm:flex-row items-start gap-4">
+          <div className="flex flex-col items-start justify-center gap-4 sm:flex-row">
             <Link
               href="#"
               className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
