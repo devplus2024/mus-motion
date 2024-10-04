@@ -114,6 +114,9 @@ import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
 import ShineBorder from "@/components/magicui/shine-border";
 import Sparkles from "./sparkles";
+import GitHub from "./GitHub";
+import Discord from "./Discord";
+import X from "./x";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
@@ -244,6 +247,11 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex items-center gap-[1rem]">
+            <div className="flex items-center justify-center gap-[1rem]">
+              <GitHub />
+              <Discord />
+              <X />
+            </div>
             <div className="flex items-center justify-center gap-[1rem]">
               <ThemeToggle />
               <CommandMenu />

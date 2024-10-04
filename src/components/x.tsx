@@ -1,4 +1,4 @@
-export default function GitHub() {
+export default function X() {
   return (
     <svg
       data-testid="geist-icon"
