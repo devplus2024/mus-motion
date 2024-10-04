@@ -283,7 +283,7 @@ export const Navigation = (): JSX.Element => {
                 >
                   <Image
                     src={"/windows11.svg"}
-                    className="mr-2 h-[20px] w-[20px] dark:invert-[1]"
+                    className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
                     width={"16"}
                     height={"16"}
                     alt="window-logo"
