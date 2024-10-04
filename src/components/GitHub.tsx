@@ -2,10 +2,10 @@ export default function GitHub() {
   return (
     <svg
       data-testid="geist-icon"
-      height={20}
+      height={19}
       strokeLinejoin="round"
       viewBox="0 0 16 16"
-      width={20}
+      width={19}
       style={{ color: "currentcolor" }}
     >
       <g clipPath="url(#clip0_872_3147)">
