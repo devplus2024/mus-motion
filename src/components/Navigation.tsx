@@ -113,7 +113,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
 import ShineBorder from "@/components/magicui/shine-border";
-import Sparkles from "./sparkles";
+import Sparkles from "./Sparkles";
 import GitHub from "./GitHub";
 import Discord from "./Discord";
 import X from "./x";
