@@ -291,7 +291,7 @@ export const Navigation = (): JSX.Element => {
                   Download
                 </Button>
               </Link>
-              <Link href="https://ai-mus-motion.vercel.app">
+              <Link href="/ai">
                 <Button variant="outline" className="">
                   <Sparkles />
                   Ask With Ai
