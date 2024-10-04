@@ -261,17 +261,17 @@ export const Navigation = (): JSX.Element => {
                 className="flex items-center justify-center gap-3"
                 href="/downloads"
               >
-                <Image
-                  src={"/windows11.svg"}
-                  className="h-[20px] w-[20px]"
-                  width={"20"}
-                  height={"20"}
-                  alt="window-logo"
-                ></Image>
                 <Button
                   variant={"outline"}
-                  className="hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                  className="flex items-center hover:bg-accent dark:hover:bg-[#1a1a1a]"
                 >
+                  <Image
+                    src={"/windows11.svg"}
+                    className="mr-2 h-[20px] w-[20px] dark:invert-[1]"
+                    width={"20"}
+                    height={"20"}
+                    alt="window-logo"
+                  ></Image>
                   Download
                 </Button>
               </Link>
