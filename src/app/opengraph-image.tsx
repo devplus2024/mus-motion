@@ -30,7 +30,7 @@ export default async function Image() {
   } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
-    imagePreview = "Free Fire Sống Dai Thành Huyền Thoại";
+    imagePreview = "Tunasbeo";
   }
 
   const geistLight = fetch(
