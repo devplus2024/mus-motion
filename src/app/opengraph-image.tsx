@@ -30,7 +30,7 @@ export default async function Image() {
   } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
-    imagePreview = "@Leader Develop";
+    imagePreview = "@Võ Hải ?";
   }
 
   const geistLight = fetch(
