@@ -185,10 +185,10 @@ export default function AiPage() {
           {title_ai.map((title) => (
             <div
               key={title.title}
-              className="boder-[#202020] h-[100px] w-[442px] rounded-lg border bg-[#0c0c0c] p-3"
+              className="boder-[#202020] h-[120px] w-[442px] rounded-lg border bg-[#0c0c0c] p-3"
             >
-              <p>{title.title}</p>
-              <p>{title.description}</p>
+              <p className="font-bold">{title.title}</p>
+              <p className="text-sm text-[#a1a1a1]">{title.description}</p>
             </div>
           ))}
           <div>
