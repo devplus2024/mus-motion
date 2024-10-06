@@ -1,8 +1,7 @@
-
-'use client';
-import { useState } from 'react';
-import { Message, continueConversation } from './actions';
-import { readStreamableValue } from 'ai/rsc';
+"use client";
+import { useState } from "react";
+import { Message, continueConversation } from "./actions";
+import { readStreamableValue } from "ai/rsc";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -17,8 +16,30 @@ import { Input } from "@/components/ui/input";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Button } from "@/components/ui/button";
 export default function AiPage() {
-	const [conversation, setConversation] = useState<Message[]>([]);
-  const [input, setInput] = useState<string>('');
+  const [conversation, setConversation] = useState<Message[]>([]);
+  const [input, setInput] = useState<string>("");
+  const title_ai = [
+    {
+      title: "Instant Smart Conversations",
+      description:
+        "Leverage advanced AI for quick responses, providing information and support to users within seconds.",
+    },
+    {
+      title: "Learn and Evolve with AI",
+      description:
+        "The AI system continuously learns from conversations, improving its understanding and providing more accurate answers over time.",
+    },
+    {
+      title: "Seamless Integration",
+      description:
+        "Support integration with popular platforms, offering a smooth and convenient chat experience for everyone.",
+    },
+    {
+      title: "Customizable to Your Needs",
+      description:
+        "Personalize the AI conversation experience based on user preferences, from communication style to the type of information provided.",
+    },
+  ];
   return (
     <main className="flex h-screen w-full">
       <div className="flex w-[56px] flex-col items-center justify-between border-r border-r-[#202020] bg-[#0c0c0c] py-[2rem]">
@@ -161,18 +182,22 @@ export default function AiPage() {
       </div>
       <div className="flex h-full w-full flex-col items-center justify-between">
         <div className="mt-[4rem] grid grid-cols-2 gap-[1rem]">
-          <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
-          <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
-          <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
-          <div className="boder-[#202020] h-[200px] w-[442px] rounded-lg border bg-[#0c0c0c]"></div>
-		  <div>
-        {conversation.map((message, index) => (
-          <div key={index}>
-            {message.role}: {message.content}
+          {title_ai.map((title) => (
+            <div
+              key={title.title}
+              className="boder-[#202020] h-[100px] w-[442px] rounded-lg border bg-[#0c0c0c] p-3"
+            >
+              <p>{title.title}</p>
+              <p>{title.description}</p>
+            </div>
+          ))}
+          <div>
+            {conversation.map((message, index) => (
+              <div key={index}>
+                {message.role}: {message.content}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
         </div>
         <div className="mb-[2rem] flex h-[60px] w-[900px] items-center justify-between gap-4 rounded-md border border-[#202020] bg-[#0c0c0c] px-4">
           <div>
@@ -193,29 +218,36 @@ export default function AiPage() {
               </svg>
             </Button>
           </div>
-          <Input placeholder="Enter your question"  type="text"
-          value={input}
-          onChange={event => {
-            setInput(event.target.value);
-          }} />
+          <Input
+            placeholder="Enter your question"
+            type="text"
+            value={input}
+            onChange={(event) => {
+              setInput(event.target.value);
+            }}
+          />
           <div>
-            <Button variant="ghost" size="icon" onClick={async () => {
-            const { messages, newMessage } = await continueConversation([
-              ...conversation,
-              { role: 'user', content: input },
-            ]);
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={async () => {
+                const { messages, newMessage } = await continueConversation([
+                  ...conversation,
+                  { role: "user", content: input },
+                ]);
 
-            let textContent = '';
+                let textContent = "";
 
-            for await (const delta of readStreamableValue(newMessage)) {
-              textContent = `${textContent}${delta}`;
+                for await (const delta of readStreamableValue(newMessage)) {
+                  textContent = `${textContent}${delta}`;
 
-              setConversation([
-                ...messages,
-                { role: 'assistant', content: textContent },
-              ]);
-            }
-          }}>
+                  setConversation([
+                    ...messages,
+                    { role: "assistant", content: textContent },
+                  ]);
+                }
+              }}
+            >
               <svg
                 data-testid="geist-icon"
                 height="16"
