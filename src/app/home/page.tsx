@@ -137,19 +137,14 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
-      <Button
-        variant="outline"
-        className="xl;w-fit relative text-wrap rounded-md px-3 text-center text-[0.9rem] font-medium text-black dark:text-white min-[375px]:h-[5rem] min-[375px]:w-[18rem] xl:h-[2rem] xl:w-fit"
-      >
-        NoneTheLes v2.6.5 is now available! Read about the new features and
-        fixes from August.
-      </Button>
+      <TailwindcssButton />
       <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-row">
         <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
           <div className="flex items-center gap-[1rem]">
