@@ -156,6 +156,141 @@ export default function Home() {
             explore a universe of sounds.
           </p>
         </div>
+        <div className="rounded-lg border-[#202020] px-3">
+          <div className="flex items-center gap-[1rem]">
+            <div className="flex items-center gap-[0.5rem]">
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a
+                    href="https://x.com/DeveloperPlus24"
+                    className="flex items-center gap-[0.5rem]"
+                  >
+                    <Button
+                      variant="ghost"
+                      className="px-2 dark:hover:bg-[#161616]"
+                      size="icon"
+                    >
+                      <Image
+                        src="/x.svg"
+                        width="50"
+                        height="50"
+                        alt="x-icon"
+                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
+                      />
+                    </Button>
+                    <p className="text-sm">Twitter</p>
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[16rem]" side="top">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage
+                        className="rounded-[0px] dark:invert-[1]"
+                        src="/x.svg"
+                      />
+                      <AvatarFallback>IG</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">@x</h4>
+                      <p className="text-sm">Pham Quang Truong An</p>
+                      <div className="flex items-center pt-2">
+                        <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+                        <span className="text-xs text-muted-foreground">
+                          Joined Jun 2024
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a href="" className="flex items-center gap-[0.5rem]">
+                    <Button
+                      variant="ghost"
+                      className="px-2 dark:hover:bg-[#161616]"
+                      size="icon"
+                    >
+                      <Image
+                        src="/instagram.svg"
+                        width="50"
+                        height="50"
+                        alt="instagram-icon"
+                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
+                      />
+                    </Button>
+                    <p className="text-sm">Instagram</p>
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[16rem]" side="top">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage
+                        className="rounded-[0px] dark:invert-[1]"
+                        src="/instagram.svg"
+                      />
+                      <AvatarFallback>IG</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">@instagram</h4>
+                      <p className="text-sm">Pham Quang Truong An</p>
+                      <div className="flex items-center pt-2">
+                        <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+                        <span className="text-xs text-muted-foreground">
+                          Joined August 2024
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a
+                    href="https://www.facebook.com/phamquangtruongan"
+                    className="flex items-center gap-[0.5rem]"
+                  >
+                    <Button
+                      variant="ghost"
+                      className="px-2 dark:hover:bg-[#161616]"
+                      size="icon"
+                    >
+                      <Image
+                        src="/facebook.svg"
+                        width="50"
+                        height="50"
+                        alt="youtube-icon"
+                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
+                      />
+                    </Button>
+                    <p className="text-sm">Facebook</p>
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[16rem]" side="top">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage
+                        className="rounded-[0px] dark:invert-[1]"
+                        src="/facebook.svg"
+                      />
+                      <AvatarFallback>FB</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">@facebook</h4>
+                      <p className="text-sm">Pham Quang Truong An</p>
+                      <div className="flex items-center pt-2">
+                        <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
+                        <span className="text-xs text-muted-foreground">
+                          Joined December 2023
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+          </div>
+        </div>
       </div>
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
