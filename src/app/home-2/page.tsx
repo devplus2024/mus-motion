@@ -145,11 +145,16 @@ export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
-      <div className="mx-[5rem] mt-[1rem] flex h-[500px] w-[980px] flex-col items-center gap-[3.5rem] border min-[375px]:flex-col min-[645px]:flex-col xl:flex-row">
-        <div className="border-b">
+      <div className="mx-[5rem] mt-[1rem] flex h-[650px] w-[1200px] flex-col items-center gap-[3.5rem] border min-[375px]:flex-col min-[645px]:flex-col xl:flex-row">
+        <div className="flex flex-col items-center gap-[2rem] self-start border-b bg-[#0c0c0c] px-[5rem] py-4">
           <h1 className="font-bold leading-[2.6rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-start xl:text-[2.3rem]">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
+          <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
+            Dive into a seamless music experience with our cutting-edge
+            software. Unleash your creativity, manage your playlists, and
+            explore a universe of sounds.
+          </p>
         </div>
       </div>
       <div
