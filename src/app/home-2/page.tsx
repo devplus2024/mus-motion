@@ -145,7 +145,7 @@ export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
-      <div className="mx-[5rem] mt-[1rem] flex h-[650px] w-[1200px] flex-col items-center gap-[3.5rem] border min-[375px]:flex-col min-[645px]:flex-col xl:flex-col">
+      <div className="mx-[5rem] mt-[1rem] flex h-[650px] w-[1200px] flex-col items-center gap-[2rem] border pt-4 min-[375px]:flex-col min-[645px]:flex-col xl:flex-col">
         <div className="rounded-lg border border-[#202020] px-3">
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center gap-[0.5rem]">
