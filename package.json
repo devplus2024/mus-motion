@@ -103,6 +103,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
     "react-resizable-panels": "^2.0.20",
+    "react-use-measure": "^2.1.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.13.2",
     "rehype-slug": "^6.0.0",

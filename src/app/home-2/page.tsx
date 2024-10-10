@@ -10,6 +10,7 @@ import { playlist, PlayList } from "./data/playlist";
 import { imagelist, ImageList } from "./data/image";
 import { list, List } from "./data/list";
 import Carousel from "./components/Carousel";
+import { InfiniteSlider } from "./components/core/infinite-slider";
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -304,6 +305,45 @@ export default function Home() {
               </Button>
             </Link>
           </div>
+        </div>
+        <div className="flex w-full items-center justify-center border-b py-[2rem]">
+          <InfiniteSlider gap={24} reverse>
+            <Image
+              className="h-[120px] w-auto"
+              src="/windows.logo"
+              width="120"
+              height="120"
+              alt="logo"
+            ></Image>
+            <Image
+              className="h-[120px] w-auto"
+              src="/windows.logo"
+              width="120"
+              height="120"
+              alt="logo"
+            ></Image>
+            <Image
+              className="h-[120px] w-auto"
+              src="/windows.logo"
+              width="120"
+              height="120"
+              alt="logo"
+            ></Image>
+            <Image
+              className="h-[120px] w-auto"
+              src="/windows.logo"
+              width="120"
+              height="120"
+              alt="logo"
+            ></Image>
+            <Image
+              className="h-[120px] w-auto"
+              src="/windows.logo"
+              width="120"
+              height="120"
+              alt="logo"
+            ></Image>
+          </InfiniteSlider>
         </div>
       </div>
       <div
