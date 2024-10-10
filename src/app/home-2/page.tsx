@@ -281,7 +281,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-[2rem] self-start border-t bg-[#0c0c0c] px-[5rem] py-4">
+        <div className="flex flex-col items-center gap-[2rem] self-start border-y bg-[#0c0c0c] px-[5rem] py-4">
           <h1 className="font-bold leading-[2.6rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-center xl:text-[2.3rem]">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
@@ -290,6 +290,20 @@ export default function Home() {
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
           </p>
+        </div>
+        <div className="border-b">
+          <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
+            <DownloadButton />
+            <Link href="/webapp">
+              <Button
+                variant={"outline"}
+                className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full"
+              >
+                <Globe className="mr-2 h-4 w-4" />
+                Try On The Web
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
       <div
