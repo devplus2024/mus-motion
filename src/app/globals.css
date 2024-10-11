@@ -104,8 +104,8 @@
     --menu-border-color: #202020;
     ----arrow-bg: #202020;
     --chat: #1a1a1a;
-    --chart-1: 255, 255, 255;
-    --chart-2: 255, 255, 255;
+    --chart-1: #ffffff;
+    --chart-2: #ffffff;
     --background: 0, 0%, 0%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
