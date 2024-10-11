@@ -336,7 +336,42 @@ export default function Home() {
         </div>
         <div className="flex w-full items-center justify-center border-b pb-[2rem]">
           <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
-            <DownloadButton />
+            <Link
+              className="flex items-center justify-center gap-3"
+              href="/downloads"
+            >
+              <Button
+                variant={"outline"}
+                className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
+              >
+                <Image
+                  src={"/windows11.svg"}
+                  className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
+                  width={"16"}
+                  height={"16"}
+                  alt="window-logo"
+                ></Image>
+                Download
+              </Button>
+            </Link>
+            <Link
+              className="flex items-center justify-center gap-3"
+              href="/downloads"
+            >
+              <Button
+                variant={"outline"}
+                className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
+              >
+                <Image
+                  src={"/apple.svg"}
+                  className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
+                  width={"16"}
+                  height={"16"}
+                  alt="window-logo"
+                ></Image>
+                Download
+              </Button>
+            </Link>
             <Link href="/webapp">
               <Button
                 variant={"outline"}
