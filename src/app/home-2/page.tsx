@@ -143,6 +143,48 @@ import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
+  const list_logo = [
+    {
+      icon: "windows11-logo",
+      src: "windows11.svg",
+    },
+    {
+      icon: "linux-logo",
+      src: "linux.svg",
+    },
+    {
+      icon: "spple-logo",
+      src: "apple.svg",
+    },
+    {
+      icon: "nextdotjs-logo",
+      src: "nextdotjs.svg",
+    },
+    {
+      icon: "react-logo",
+      src: "react.svg",
+    },
+    {
+      icon: "swc-logo",
+      src: "swc.svg",
+    },
+    {
+      icon: "framer-motion-logo",
+      src: "framer.svg",
+    },
+    {
+      icon: "type-script-logo",
+      src: "typescript.svg",
+    },
+    {
+      icon: "astro-logo",
+      src: "astro.svg",
+    },
+    {
+      icon: "shadcnui-logo",
+      src: "shadcnui.svg",
+    },
+  ];
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
@@ -308,48 +350,16 @@ export default function Home() {
         </div>
         <div className="flex w-full items-center justify-center border-b py-[2rem]">
           <InfiniteSlider gap={24} reverse>
-            <Image
-              className="h-[120px] w-auto dark:invert-[1]"
-              src="/windows11.svg"
-              width="120"
-              height="120"
-              alt="logo"
-            ></Image>
-            <Image
-              className="h-[120px] w-auto dark:invert-[1]"
-              src="/linux.svg"
-              width="120"
-              height="120"
-              alt="logo"
-            ></Image>
-            <Image
-              className="h-[120px] w-auto dark:invert-[1]"
-              src="/apple.svg"
-              width="120"
-              height="120"
-              alt="logo"
-            ></Image>
-            <Image
-              className="h-[120px] w-auto dark:invert-[1]"
-              src="/windows11.svg"
-              width="120"
-              height="120"
-              alt="logo"
-            ></Image>
-            <Image
-              className="h-[120px] w-auto dark:invert-[1]"
-              src="/linux.svg"
-              width="120"
-              height="120"
-              alt="logo"
-            ></Image>
-            <Image
-              className="h-[120px] w-auto dark:invert-[1]"
-              src="/apple.svg"
-              width="120"
-              height="120"
-              alt="logo"
-            ></Image>
+            {list_logo.map((logo) => (
+              <Image
+                key={logo.icon}
+                className="h-[40px] w-auto dark:invert-[1]"
+                src={`/${logo.src}`}
+                width="120"
+                height="120"
+                alt="logo"
+              ></Image>
+            ))}
           </InfiniteSlider>
         </div>
       </div>
