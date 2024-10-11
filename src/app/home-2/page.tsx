@@ -363,13 +363,13 @@ export default function Home() {
                 className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
               >
                 <Image
-                  src={"/apple.svg"}
+                  src={"/linux.svg"}
                   className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
                   width={"16"}
                   height={"16"}
                   alt="window-logo"
                 ></Image>
-                Download For Mac
+                Download For Linux
               </Button>
             </Link>
             <Link
@@ -380,8 +380,14 @@ export default function Home() {
                 variant={"outline"}
                 className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
               >
-                <Globe className="mr-2 h-4 w-4" />
-                Try On Web
+                <Image
+                  src={"/apple.svg"}
+                  className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
+                  width={"16"}
+                  height={"16"}
+                  alt="window-logo"
+                ></Image>
+                Download For Mac
               </Button>
             </Link>
           </div>
