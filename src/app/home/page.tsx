@@ -333,7 +333,7 @@ export default function Home() {
           </div> */}
         </div>
       </div>
-      <div className="mt-[4rem]">
+      <div className="mt-[4rem] w-full px-[4rem]">
         <ChartBar />
       </div>
       <div
