@@ -282,8 +282,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-[2rem] self-start border-y bg-[#0c0c0c] px-[5rem] py-4">
-          <h1 className="font-bold leading-[2.6rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-center xl:text-[2.3rem]">
+        <div className="flex w-full flex-col items-center gap-[2rem] self-start border-y bg-[#0c0c0c] px-[5rem] py-4">
+          <h1 className="w-[700px] font-bold leading-[2.6rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-center xl:text-[2.3rem]">
             Experience the Ultimate Music Journey with Our Innovative Software
           </h1>
           <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-center xl:text-[1rem]">
@@ -310,35 +310,42 @@ export default function Home() {
           <InfiniteSlider gap={24} reverse>
             <Image
               className="h-[120px] w-auto"
-              src="/windows.logo"
+              src="/windows11.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
               className="h-[120px] w-auto"
-              src="/windows.logo"
+              src="/linux.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
               className="h-[120px] w-auto"
-              src="/windows.logo"
+              src="/app.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
               className="h-[120px] w-auto"
-              src="/windows.logo"
+              src="/windows11.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
               className="h-[120px] w-auto"
-              src="/windows.logo"
+              src="/linux.svg"
+              width="120"
+              height="120"
+              alt="logo"
+            ></Image>
+            <Image
+              className="h-[120px] w-auto"
+              src="/app.svg"
               width="120"
               height="120"
               alt="logo"
