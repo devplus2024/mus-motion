@@ -309,43 +309,43 @@ export default function Home() {
         <div className="flex w-full items-center justify-center border-b py-[2rem]">
           <InfiniteSlider gap={24} reverse>
             <Image
-              className="h-[120px] w-auto"
+              className="h-[120px] w-auto dark:invert-[1]"
               src="/windows11.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
-              className="h-[120px] w-auto"
+              className="h-[120px] w-auto dark:invert-[1]"
               src="/linux.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
-              className="h-[120px] w-auto"
-              src="/app.svg"
+              className="h-[120px] w-auto dark:invert-[1]"
+              src="/apple.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
-              className="h-[120px] w-auto"
+              className="h-[120px] w-auto dark:invert-[1]"
               src="/windows11.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
-              className="h-[120px] w-auto"
+              className="h-[120px] w-auto dark:invert-[1]"
               src="/linux.svg"
               width="120"
               height="120"
               alt="logo"
             ></Image>
             <Image
-              className="h-[120px] w-auto"
-              src="/app.svg"
+              className="h-[120px] w-auto dark:invert-[1]"
+              src="/apple.svg"
               width="120"
               height="120"
               alt="logo"
