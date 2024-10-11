@@ -335,7 +335,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex w-full items-center justify-center border-b pb-[2rem]">
-          <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
+          <div className="flex flex-row gap-[2rem]">
             <Link
               className="flex items-center justify-center gap-3"
               href="/downloads"
