@@ -381,7 +381,7 @@ export default function Home() {
                 className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
               >
                 <Globe className="mr-2 h-4 w-4" />
-                Download
+                Try On Web
               </Button>
             </Link>
           </div>
