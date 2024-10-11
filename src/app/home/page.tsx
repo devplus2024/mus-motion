@@ -138,6 +138,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
+import { ChartBar } from "./components/chart";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -331,6 +332,9 @@ export default function Home() {
             />
           </div> */}
         </div>
+      </div>
+      <div className="mt-[4rem]">
+        <ChartBar />
       </div>
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
