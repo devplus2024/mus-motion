@@ -351,7 +351,7 @@ export default function Home() {
                   height={"16"}
                   alt="window-logo"
                 ></Image>
-                Download
+                Download For Windows
               </Button>
             </Link>
             <Link
@@ -369,16 +369,19 @@ export default function Home() {
                   height={"16"}
                   alt="window-logo"
                 ></Image>
-                Download
+                Download For Mac
               </Button>
             </Link>
-            <Link href="/webapp">
+            <Link
+              className="flex items-center justify-center gap-3"
+              href="/downloads"
+            >
               <Button
                 variant={"outline"}
-                className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full"
+                className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
               >
                 <Globe className="mr-2 h-4 w-4" />
-                Try On The Web
+                Download
               </Button>
             </Link>
           </div>
