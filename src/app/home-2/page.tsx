@@ -349,18 +349,20 @@ export default function Home() {
           </div>
         </div>
         <div className="flex w-full items-center justify-center border-b py-[2rem]">
-          <InfiniteSlider gap={24} reverse>
-            {list_logo.map((logo) => (
-              <Image
-                key={logo.icon}
-                className="h-[40px] w-auto dark:invert-[1]"
-                src={`/${logo.src}`}
-                width="120"
-                height="120"
-                alt="logo"
-              ></Image>
-            ))}
-          </InfiniteSlider>
+          <div className="w-[500px]">
+            <InfiniteSlider gap={24} reverse>
+              {list_logo.map((logo) => (
+                <Image
+                  key={logo.icon}
+                  className="h-[40px] w-auto dark:invert-[1]"
+                  src={`/${logo.src}`}
+                  width="120"
+                  height="120"
+                  alt="logo"
+                ></Image>
+              ))}
+            </InfiniteSlider>
+          </div>
         </div>
       </div>
       <div
