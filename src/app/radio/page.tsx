@@ -46,7 +46,7 @@ export default function Component() {
 
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
-      <div className="grid h-full grid-cols-2 gap-8 md:grid-cols-3">
+      <div className="grid h-[calc(100vh-129px)] grid-cols-2 gap-8 overflow-y-auto md:grid-cols-3">
         <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
           <CardHeader>
             <CardTitle>Stations</CardTitle>
