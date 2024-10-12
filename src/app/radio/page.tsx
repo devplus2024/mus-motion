@@ -25,6 +25,7 @@ export default function Component() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(75);
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
+  const [currentGenre, setCurrentGenre] = useState("Electronic");
 
   const stations = [
     { name: "Synthwave Nights", genre: "Electronic" },
@@ -69,7 +70,10 @@ export default function Component() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setCurrentStation(station.name)}
+                      onClick={() => {
+                        setCurrentStation(station.name);
+                        setCurrentGenre(station.genre);
+                      }}
                     >
                       <Radio className="mr-2 h-4 w-4" />
                       Tune In
@@ -83,6 +87,13 @@ export default function Component() {
       </div>
       <div>
         <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
+          <div className="flex items-center gap-3">
+            <div className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"></div>
+            <div className="flex flex-col gap-1">
+              <h1 className="text-sm font-medium">{currentStation}</h1>
+              <p className="text-xs text-[#a1a1a1]">{currentGenre}</p>
+            </div>
+          </div>
           <div className="flex gap-[2rem]">
             <svg
               data-testid="geist-icon"
