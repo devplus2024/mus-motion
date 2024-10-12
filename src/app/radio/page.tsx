@@ -20,6 +20,7 @@ import {
   SkipForward,
 } from "lucide-react";
 import Image from "next/image";
+import { ScrollArea } from "@/components/ui/scroll-area";
 export default function Component() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(75);
@@ -46,37 +47,39 @@ export default function Component() {
 
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
-      <div className="grid h-[calc(100vh-129px)] grid-cols-2 gap-8 overflow-y-auto md:grid-cols-3">
-        <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
-          <CardHeader>
-            <CardTitle>Stations</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-4">
-              {stations.map((station) => (
-                <li
-                  key={station.name}
-                  className="flex items-center justify-between"
-                >
-                  <div>
-                    <p className="font-medium">{station.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {station.genre}
-                    </p>
-                  </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setCurrentStation(station.name)}
+      <div className="grid h-[calc(100vh-129px)] grid-cols-2 gap-8 md:grid-cols-3">
+        <ScrollArea>
+          <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
+            <CardHeader>
+              <CardTitle>Stations</CardTitle>
+            </CardHeader>
+            <CardContent className=" ">
+              <ul className="space-y-4">
+                {stations.map((station) => (
+                  <li
+                    key={station.name}
+                    className="flex items-center justify-between"
                   >
-                    <Radio className="mr-2 h-4 w-4" />
-                    Tune In
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+                    <div>
+                      <p className="font-medium">{station.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {station.genre}
+                      </p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentStation(station.name)}
+                    >
+                      <Radio className="mr-2 h-4 w-4" />
+                      Tune In
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </ScrollArea>
       </div>
       <div>
         <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
