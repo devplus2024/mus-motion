@@ -41,9 +41,9 @@ export default function Component() {
   ];
 
   return (
-    <div className="container mx-auto flex h-[calc(100vh-59px)] flex-col px-4 py-8">
+    <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="grid h-full grid-cols-2 gap-8 md:grid-cols-3">
-        <Card className="rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
+        <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
           <CardHeader>
             <CardTitle>Stations</CardTitle>
           </CardHeader>
