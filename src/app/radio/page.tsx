@@ -87,69 +87,88 @@ export default function Component() {
       </div>
       <div>
         <div className="flex h-[70px] w-full items-center justify-between border-t px-[1rem] dark:border-t-[#202020]">
-          <div className="flex items-center gap-3">
+          <div className="flex w-[200px] items-center gap-3">
             <div className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"></div>
             <div className="flex flex-col gap-1">
               <h1 className="text-sm font-medium">{currentStation}</h1>
               <p className="text-xs text-[#a1a1a1]">{currentGenre}</p>
             </div>
           </div>
-          <div className="flex gap-[2rem]">
-            <svg
-              data-testid="geist-icon"
-              height={16}
-              strokeLinejoin="round"
-              viewBox="0 0 16 16"
-              width={16}
-              style={{ color: "currentcolor" }}
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4.08144 8.21092C3.92706 8.11268 3.92706 7.88733 4.08144 7.78909L14.3658 1.24451C14.5322 1.1386 14.75 1.25815 14.75 1.45542L14.75 14.5446C14.75 14.7419 14.5322 14.8614 14.3658 14.7555L4.08144 8.21092ZM0.75 2V1.25H2.25V2V14V14.75H0.75V14V2Z"
-                fill="currentColor"
-              />
-            </svg>
+          <div className="flex flex-col gap-[2rem]">
+            <div className="flex gap-[2rem]">
+              <svg
+                data-testid="geist-icon"
+                height={16}
+                strokeLinejoin="round"
+                viewBox="0 0 16 16"
+                width={16}
+                style={{ color: "currentcolor" }}
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.08144 8.21092C3.92706 8.11268 3.92706 7.88733 4.08144 7.78909L14.3658 1.24451C14.5322 1.1386 14.75 1.25815 14.75 1.45542L14.75 14.5446C14.75 14.7419 14.5322 14.8614 14.3658 14.7555L4.08144 8.21092ZM0.75 2V1.25H2.25V2V14V14.75H0.75V14V2Z"
+                  fill="currentColor"
+                />
+              </svg>
 
-            <svg
-              data-testid="geist-icon"
-              height={16}
-              strokeLinejoin="round"
-              viewBox="0 0 16 16"
-              width={16}
-              style={{ color: "currentcolor" }}
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.5528 7.77638C14.737 7.86851 14.737 8.13147 14.5528 8.2236L1.3618 14.8191C1.19558 14.9022 1 14.7813 1 14.5955L1 1.4045C1 1.21865 1.19558 1.09778 1.3618 1.18089L14.5528 7.77638Z"
-                fill="currentColor"
-              />
-            </svg>
+              <svg
+                data-testid="geist-icon"
+                height={16}
+                strokeLinejoin="round"
+                viewBox="0 0 16 16"
+                width={16}
+                style={{ color: "currentcolor" }}
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M14.5528 7.77638C14.737 7.86851 14.737 8.13147 14.5528 8.2236L1.3618 14.8191C1.19558 14.9022 1 14.7813 1 14.5955L1 1.4045C1 1.21865 1.19558 1.09778 1.3618 1.18089L14.5528 7.77638Z"
+                  fill="currentColor"
+                />
+              </svg>
 
-            <svg
-              data-testid="geist-icon"
-              height={16}
-              strokeLinejoin="round"
-              viewBox="0 0 16 16"
-              width={16}
-              style={{ color: "currentcolor" }}
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M11.6686 8.21092C11.8229 8.11268 11.8229 7.88733 11.6686 7.78909L1.38422 1.24451C1.21779 1.1386 1 1.25815 1 1.45542V14.5446C1 14.7419 1.21779 14.8614 1.38422 14.7555L11.6686 8.21092ZM15 2V1.25H13.5V2V14V14.75H15V14V2Z"
-                fill="currentColor"
+              <svg
+                data-testid="geist-icon"
+                height={16}
+                strokeLinejoin="round"
+                viewBox="0 0 16 16"
+                width={16}
+                style={{ color: "currentcolor" }}
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M11.6686 8.21092C11.8229 8.11268 11.8229 7.88733 11.6686 7.78909L1.38422 1.24451C1.21779 1.1386 1 1.25815 1 1.45542V14.5446C1 14.7419 1.21779 14.8614 1.38422 14.7555L11.6686 8.21092ZM15 2V1.25H13.5V2V14V14.75H15V14V2Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div className="w-[20rem]">
+              <Slider
+                className="w-[60%]"
+                defaultValue={[33]}
+                max={100}
+                step={1}
               />
-            </svg>
+            </div>
           </div>
-          <div>
-            <Slider
-              className="w-[60%]"
-              defaultValue={[33]}
-              max={100}
-              step={1}
-            />
+          <div className="flex items-center gap-3">
+            <svg
+              data-testid="geist-icon"
+              height={16}
+              strokeLinejoin="round"
+              viewBox="0 0 16 16"
+              width={16}
+              style={{ color: "currentcolor" }}
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM14.2585 2.96051L14.6728 3.58567C15.5116 4.85121 16 6.3697 16 8C16 9.6303 15.5116 11.1488 14.6728 12.4143L14.2585 13.0395L13.0082 12.2108L13.4225 11.5857C14.1034 10.5582 14.5 9.32657 14.5 8C14.5 6.67343 14.1034 5.44176 13.4225 4.41433L13.0082 3.78916L14.2585 2.96051ZM12.059 4.98506L12.4125 5.64655C12.7876 6.34871 13 7.15067 13 8C13 8.84933 12.7876 9.65129 12.4125 10.3534L12.059 11.0149L10.736 10.3081L11.0895 9.64655C11.3513 9.15657 11.5 8.59676 11.5 8C11.5 7.40324 11.3513 6.84344 11.0895 6.35345L10.736 5.69195L12.059 4.98506Z"
+                fill="currentColor"
+              />
+            </svg>
           </div>
         </div>
       </div>
