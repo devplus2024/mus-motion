@@ -86,7 +86,7 @@ export default function Component() {
         </ScrollArea>
       </div>
       <div>
-        <div className="flex h-[70px] w-full items-center justify-between border-t px-[1rem] dark:border-t-[#202020]">
+        <div className="flex h-[70px] w-full items-center justify-between border-t pl-[1rem] pr-[3rem] dark:border-t-[#202020]">
           <div className="flex w-[200px] items-center gap-3">
             <div className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"></div>
             <div className="flex flex-col gap-1">
@@ -94,7 +94,7 @@ export default function Component() {
               <p className="text-xs text-[#a1a1a1]">{currentGenre}</p>
             </div>
           </div>
-          <div className="flex flex-col gap-[2rem]">
+          <div className="flex w-[20rem] flex-col items-center justify-center gap-[1rem]">
             <div className="flex gap-[2rem]">
               <svg
                 data-testid="geist-icon"
@@ -144,7 +144,7 @@ export default function Component() {
                 />
               </svg>
             </div>
-            <div className="w-[20rem]">
+            <div className="">
               <Slider
                 className="w-[60%]"
                 defaultValue={[33]}
@@ -154,6 +154,37 @@ export default function Component() {
             </div>
           </div>
           <div className="flex items-center gap-3">
+            <svg
+              data-testid="geist-icon"
+              height={16}
+              strokeLinejoin="round"
+              viewBox="0 0 16 16"
+              width={16}
+              style={{ color: "currentcolor" }}
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M7.06463 3.20474C5.79164 1.93175 3.72772 1.93175 2.45474 3.20474C1.18175 4.47773 1.18175 6.54166 2.45474 7.81465L8 13.3599L13.5453 7.81465C14.8182 6.54166 14.8182 4.47773 13.5453 3.20474C12.2723 1.93175 10.2084 1.93175 8.93537 3.20474L8.53033 3.60979L8 4.14012L7.46967 3.60979L7.06463 3.20474ZM8 2.02321C6.13348 0.286219 3.21165 0.326509 1.39408 2.14408C-0.464694 4.00286 -0.464691 7.01653 1.39408 8.87531L7.46967 14.9509L8 15.4812L8.53033 14.9509L14.6059 8.87531C16.4647 7.01653 16.4647 4.00286 14.6059 2.14408C12.7884 0.326509 9.86653 0.286221 8 2.02321Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              data-testid="geist-icon"
+              height={16}
+              strokeLinejoin="round"
+              viewBox="0 0 16 16"
+              width={16}
+              style={{ color: "currentcolor" }}
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M8.00001 0.433594L8.65845 1.64093L10.5908 5.18412L14.5577 5.92698L15.9094 6.18011L14.9646 7.17942L12.192 10.1121L12.7113 14.1144L12.8883 15.4782L11.6459 14.8884L8.00001 13.1577L4.35408 14.8884L3.11173 15.4782L3.28869 14.1144L3.80802 10.1121L1.03538 7.17942L0.0906067 6.18011L1.44233 5.92698L5.40922 5.18412L7.34156 1.64093L8.00001 0.433594ZM8.00001 3.56646L6.55565 6.21487L6.38519 6.52743L6.03525 6.59296L3.07014 7.14822L5.14259 9.34029L5.38718 9.59899L5.34137 9.95205L4.95318 12.9436L7.67838 11.65L8.00001 11.4973L8.32163 11.65L11.0468 12.9436L10.6586 9.95205L10.6128 9.59899L10.8574 9.34029L12.9299 7.14822L9.96476 6.59296L9.61482 6.52743L9.44436 6.21487L8.00001 3.56646Z"
+                fill="currentColor"
+              />
+            </svg>
+
             <svg
               data-testid="geist-icon"
               height={16}
