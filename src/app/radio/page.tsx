@@ -146,14 +146,14 @@ export default function Component() {
             </div>
             <div className="">
               <Slider
-                className="w-[60%]"
+                className="w-[20rem]"
                 defaultValue={[33]}
                 max={100}
                 step={1}
               />
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-[1.25rem]">
             <svg
               data-testid="geist-icon"
               height={16}
