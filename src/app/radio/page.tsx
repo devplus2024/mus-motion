@@ -86,7 +86,7 @@ export default function Component() {
         </ScrollArea>
       </div>
       <div>
-        <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
+        <div className="flex h-[70px] w-full items-center justify-between border-t px-[4rem] dark:border-t-[#202020]">
           <div className="flex items-center gap-3">
             <div className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"></div>
             <div className="flex flex-col gap-1">
@@ -142,6 +142,9 @@ export default function Component() {
                 fill="currentColor"
               />
             </svg>
+          </div>
+          <div>
+            <Slider defaultValue={[33]} max={100} step={1} />
           </div>
         </div>
       </div>
