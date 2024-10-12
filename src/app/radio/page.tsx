@@ -15,6 +15,9 @@ import {
   SkipForwardIcon,
   VolumeIcon,
   Radio,
+  SkipBack,
+  PlayCircle,
+  SkipForward,
 } from "lucide-react";
 import Image from "next/image";
 export default function Component() {
@@ -38,54 +41,9 @@ export default function Component() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Main Player Section */}
-        <Card className="md:col-span-2 bg-[#000000]">
-          <CardHeader>
-            <CardTitle>Now Playing</CardTitle>
-            <CardDescription>{currentStation}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold">Neon Cruise</h2>
-                <p className="text-muted-foreground">RetroWave</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setIsPlaying(!isPlaying)}
-                >
-                  {isPlaying ? (
-                    <PauseIcon className="h-4 w-4" />
-                  ) : (
-                    <PlayIcon className="h-4 w-4" />
-                  )}
-                </Button>
-                <Button variant="outline" size="icon">
-                  <SkipForwardIcon className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <VolumeIcon className="h-5 w-5" />
-                <Slider
-                  value={[volume]}
-                  max={100}
-                  step={1}
-                  className="w-full"
-                  onValueChange={(value) => setVolume(value[0])}
-                />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Stations List */}
-        <Card className="bg-[#000000]">
+    <div className="container mx-auto flex h-[calc(100vh-59px)] flex-col px-4 py-8">
+      <div className="grid h-full grid-cols-2 gap-8 md:grid-cols-3">
+        <Card className="rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
           <CardHeader>
             <CardTitle>Stations</CardTitle>
           </CardHeader>
@@ -107,7 +65,7 @@ export default function Component() {
                     size="sm"
                     onClick={() => setCurrentStation(station.name)}
                   >
-                    <Radio className="h-4 w-4 mr-2" />
+                    <Radio className="mr-2 h-4 w-4" />
                     Tune In
                   </Button>
                 </li>
@@ -115,46 +73,15 @@ export default function Component() {
             </ul>
           </CardContent>
         </Card>
-
-        {/* Recently Played Tracks */}
-        <Card className="md:col-span-2 bg-[#000000]">
-          <CardHeader>
-            <CardTitle>Recently Played</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-4">
-              {recentTracks.map((track, index) => (
-                <li key={index} className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium">{track.title}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {track.artist}
-                    </p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">
-                    {track.time}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Album Art / Track Info */}
-        <Card className="bg-[#000000]">
-          <CardHeader>
-            <CardTitle>Album Art</CardTitle>
-          </CardHeader>
-          <CardContent className="flex justify-center">
-            <Image
-              src={`/image/5-1.png?height=100&width=200&text`}
-              width={"200"}
-              alt="prw"
-              height={"300"}
-              className="w-full h-32 object-cover mb-4 rounded"
-            />
-          </CardContent>
-        </Card>
+      </div>
+      <div>
+        <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
+          <div className="flex gap-[2rem]">
+            <SkipBack />
+            <PlayCircle />
+            <SkipForward />
+          </div>
+        </div>
       </div>
     </div>
   );
