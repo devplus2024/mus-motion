@@ -48,7 +48,7 @@ export default function Component() {
 
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
-      <div className="flex h-[calc(100vh-129px)] w-full">
+      <div className="flex h-[calc(100vh-129px)] w-full justify-between">
         <ScrollArea className="w-[300px] flex-shrink-0">
           <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
             <CardHeader>
