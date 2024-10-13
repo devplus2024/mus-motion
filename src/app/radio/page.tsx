@@ -48,8 +48,8 @@ export default function Component() {
 
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
-      <div className="grid h-[calc(100vh-129px)] grid-cols-2 gap-8 md:grid-cols-3">
-        <ScrollArea className="w-[300px]">
+      <div className="flex h-[calc(100vh-129px)] w-full">
+        <ScrollArea className="w-[300px] flex-shrink-0">
           <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
             <CardHeader>
               <CardTitle>Stations</CardTitle>
@@ -93,10 +93,45 @@ export default function Component() {
             </div>
           </div>
         </div>
+        <ScrollArea className="w-[300px] flex-shrink-0">
+          <Card className="w-[300px] rounded-none border-y-0 border-l border-r bg-[#000000]">
+            <CardHeader>
+              <CardTitle>Stations</CardTitle>
+            </CardHeader>
+            <CardContent className=" ">
+              <ul className="space-y-4">
+                {stations.map((station) => (
+                  <li
+                    key={station.name}
+                    className="flex items-center justify-between"
+                  >
+                    <div>
+                      <p className="font-medium">{station.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {station.genre}
+                      </p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setCurrentStation(station.name);
+                        setCurrentGenre(station.genre);
+                      }}
+                    >
+                      <Radio className="mr-2 h-4 w-4" />
+                      Tune In
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </ScrollArea>
       </div>
       <div>
-        <div className="flex h-[70px] w-full items-center justify-between border-t pl-[1rem] pr-[3rem] dark:border-t-[#202020]">
-          <div className="flex w-[200px] items-center gap-3">
+        <div className="flex h-[70px] w-full items-center justify-between border-t dark:border-t-[#202020]">
+          <div className="flex w-[299px] items-center gap-3 pl-[1rem]">
             <div className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"></div>
             <div className="flex flex-col gap-1">
               <h1 className="text-sm font-medium">{currentStation}</h1>
@@ -162,7 +197,7 @@ export default function Component() {
               />
             </div>
           </div>
-          <div className="flex items-center gap-[1.25rem]">
+          <div className="flex w-[299px] items-center justify-center gap-[1.25rem]">
             <svg
               data-testid="geist-icon"
               height={16}
