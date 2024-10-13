@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -46,13 +46,24 @@ export default function Component() {
     { title: "Retro Flashback", artist: "80s Revival", time: "3:21" },
   ];
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const handlePlay = () => {
-    // Sử dụng phương thức play() để phát âm thanh
+  useEffect(() => {
+    // Phát âm thanh khi component được render
     if (audioRef.current) {
-      audioRef.current.play();
+      audioRef.current.play().catch((error) => {
+        console.log("Không thể phát âm thanh:", error);
+      });
+    }
+  }, []);
+  const handlePlayPause = () => {
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
     }
   };
+
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
@@ -184,7 +195,7 @@ export default function Component() {
                 className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(true);
-                  handlePlay();
+                  handlePlayPause();
                 }}
               >
                 <svg
@@ -209,7 +220,7 @@ export default function Component() {
                 className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(false);
-                  handlePlay();
+                  handlePlayPause();
                 }}
               >
                 <svg
