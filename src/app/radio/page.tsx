@@ -272,8 +272,8 @@ export default function Component() {
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 className="w-[20rem]"
-                defaultValue={[(currentTime / 210) * 100]}
-                value={[(currentTime / 210) * 100]}
+                defaultValue={[(currentTime / 220) * 100]}
+                value={[(currentTime / 220) * 100]}
                 max={100}
                 step={1}
               />
