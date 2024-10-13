@@ -100,7 +100,7 @@ export default function Component() {
               <audio
                 id="audio"
                 ref={audioRef}
-                src="/tawerrw6f4.mp4"
+                src="/tawerrw6f4.mp3"
                 loop
                 autoPlay
                 className="hidden"
