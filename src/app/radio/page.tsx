@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -45,7 +45,14 @@ export default function Component() {
     { title: "Digital Dreams", artist: "Cybernetic", time: "4:12" },
     { title: "Retro Flashback", artist: "80s Revival", time: "3:21" },
   ];
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  const handlePlay = () => {
+    // Sử dụng phương thức play() để phát âm thanh
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
@@ -86,7 +93,15 @@ export default function Component() {
         </ScrollArea>
         <div className="flex items-center justify-center">
           <div className="flex flex-col items-center justify-center gap-[2rem]">
-            <div className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]"></div>
+            <div className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]">
+              <audio
+                id="audio"
+                src="/DaiDienHauSinhTuKienLouisRemix-VuongNgocManh-14125736.mp3"
+                loop
+                autoPlay
+                className="hidden"
+              ></audio>
+            </div>
             <div className="flex flex-col items-center justify-center">
               <h1 className="text-xl font-medium">{currentStation}</h1>
               <p className="text-md text-[#a1a1a1]">{currentGenre}</p>
@@ -168,6 +183,7 @@ export default function Component() {
                 className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(true);
+                  handlePlay();
                 }}
               >
                 <svg
@@ -192,6 +208,7 @@ export default function Component() {
                 className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(false);
+                  handlePlay();
                 }}
               >
                 <svg
