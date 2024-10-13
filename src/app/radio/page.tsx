@@ -26,7 +26,8 @@ export default function Component() {
   const [volume, setVolume] = useState(75);
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
   const [currentGenre, setCurrentGenre] = useState("Electronic");
-  const [currentTimeMusic, setCurrentTimeMusic] = useState("3:40");
+  const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
+
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
     { name: "Synthwave Nights", genre: "Electronic", time: "3:40" },
@@ -47,6 +48,18 @@ export default function Component() {
     { title: "Retro Flashback", artist: "80s Revival", time: "3:21" },
   ];
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [totalSeconds, setTotalSeconds] = useState<number>(0);
+
+  // Hàm chuyển đổi từ "phút:giây" sang giây
+  const convertToSeconds = (time: string) => {
+    const [minutes, seconds] = time.split(":").map(Number);
+    return minutes * 60 + seconds;
+  };
+
+  const handleConvert = () => {
+    const seconds = convertToSeconds(currentTimeMusic);
+    setTotalSeconds(seconds);
+  };
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (audioRef.current.paused) {
@@ -152,6 +165,7 @@ export default function Component() {
                       onClick={() => {
                         setCurrentStation(station.name);
                         setCurrentGenre(station.genre);
+                        handleConvert();
                       }}
                     >
                       <Radio className="mr-2 h-4 w-4" />
@@ -276,7 +290,7 @@ export default function Component() {
                 onValueCommit={handleValueCommit}
                 className="w-[20rem]"
                 defaultValue={[0]}
-                value={[(currentTime / Number(currentTimeMusic)) * 100]}
+                value={[(currentTime / totalSeconds) * 100]}
                 max={100}
                 step={1}
               />
