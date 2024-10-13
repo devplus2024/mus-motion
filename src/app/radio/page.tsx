@@ -67,7 +67,9 @@ export default function Component() {
       setCurrentTime(audioRef.current.currentTime);
     }
   };
-
+  const handleValueCommit = (newValue: number[]) => {
+    console.log("Giá trị cuối cùng:", newValue[0]);
+  };
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
@@ -271,9 +273,10 @@ export default function Component() {
             <div className="flex gap-4">
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
+                onValueCommit={handleValueCommit}
                 className="w-[20rem]"
-                defaultValue={[(currentTime / 220) * 100]}
-                value={[(currentTime / 220) * 100]}
+                defaultValue={[(currentTime / Number(currentTimeMusic)) * 100]}
+                value={[(currentTime / Number(currentTimeMusic)) * 100]}
                 max={100}
                 step={1}
               />
