@@ -84,6 +84,15 @@ export default function Component() {
             </CardContent>
           </Card>
         </ScrollArea>
+        <div className="flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center gap-[2rem]">
+            <div className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]"></div>
+            <div className="flex flex-col items-center justify-center">
+              <h1 className="text-xl font-medium">{currentStation}</h1>
+              <p className="text-md text-[#a1a1a1]">{currentGenre}</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <div className="flex h-[70px] w-full items-center justify-between border-t pl-[1rem] pr-[3rem] dark:border-t-[#202020]">
