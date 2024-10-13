@@ -26,17 +26,18 @@ export default function Component() {
   const [volume, setVolume] = useState(75);
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
   const [currentGenre, setCurrentGenre] = useState("Electronic");
-
+  const [currentTimeMusic, setCurrentTimeMusic] = useState("3:40");
+  const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
-    { name: "Synthwave Nights", genre: "Electronic" },
-    { name: "Jazz Cafe", genre: "Jazz" },
-    { name: "Classical Serenity", genre: "Classical" },
-    { name: "Rock Legends", genre: "Rock" },
-    { name: "Hip Hop Beats", genre: "Hip Hop" },
-    { name: "Heart Over Mind", genre: "EDM" },
-    { name: "Heart Over Mind", genre: "EDM" },
-    { name: "Heart Over Mind", genre: "EDM" },
-    { name: "Heart Over Mind", genre: "EDM" },
+    { name: "Synthwave Nights", genre: "Electronic", time: "3:40" },
+    { name: "Jazz Cafe", genre: "Jazz", time: "3:40" },
+    { name: "Classical Serenity", genre: "Classical", time: "3:40" },
+    { name: "Rock Legends", genre: "Rock", time: "3:40" },
+    { name: "Hip Hop Beats", genre: "Hip Hop", time: "3:40" },
+    { name: "Heart Over Mind", genre: "EDM", time: "3:40" },
+    { name: "Heart Over Mind", genre: "EDM", time: "3:40" },
+    { name: "Heart Over Mind", genre: "EDM", time: "3:40" },
+    { name: "Heart Over Mind", genre: "EDM", time: "3:40" },
   ];
 
   const recentTracks = [
@@ -53,6 +54,17 @@ export default function Component() {
       } else {
         audioRef.current.pause();
       }
+    }
+  };
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60); // Tính phút
+    const seconds = Math.floor(time % 60); // Tính giây còn lại
+    // Định dạng với 2 chữ số (ví dụ: 01:05)
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
     }
   };
 
@@ -83,6 +95,7 @@ export default function Component() {
                       onClick={() => {
                         setCurrentStation(station.name);
                         setCurrentGenre(station.genre);
+                        setCurrentTimeMusic(station.time);
                       }}
                     >
                       <Radio className="mr-2 h-4 w-4" />
@@ -103,6 +116,7 @@ export default function Component() {
                 src="/tawerrw6f4.mp3"
                 loop
                 autoPlay
+                onTimeUpdate={handleTimeUpdate}
                 className="hidden"
               ></audio>
             </div>
@@ -255,12 +269,14 @@ export default function Component() {
               </Button>
             </div>
             <div className="">
+              <p>{formatTime(currentTime)}</p>
               <Slider
                 className="w-[20rem]"
                 defaultValue={[33]}
                 max={100}
                 step={1}
               />
+              <p>{currentTimeMusic}</p>
             </div>
           </div>
           <div className="flex w-[299px] items-center justify-end gap-[1.25rem] pr-[1rem]">
