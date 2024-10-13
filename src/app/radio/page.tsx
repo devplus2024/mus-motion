@@ -46,14 +46,6 @@ export default function Component() {
     { title: "Retro Flashback", artist: "80s Revival", time: "3:21" },
   ];
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  useEffect(() => {
-    // Phát âm thanh khi component được render
-    if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        console.log("Không thể phát âm thanh:", error);
-      });
-    }
-  }, []);
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (audioRef.current.paused) {
@@ -108,7 +100,7 @@ export default function Component() {
               <audio
                 id="audio"
                 ref={audioRef}
-                src="/DaiDienHauSinhTuKienLouisRemix-VuongNgocManh-14125736.mp3"
+                src="/tawerrw6f4.mp4"
                 loop
                 autoPlay
                 className="hidden"
