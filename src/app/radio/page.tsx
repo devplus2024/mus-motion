@@ -269,14 +269,15 @@ export default function Component() {
               </Button>
             </div>
             <div className="flex gap-4">
-              <p className="text-xs">{formatTime(currentTime)}</p>
+              <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 className="w-[20rem]"
                 defaultValue={[(currentTime / 210) * 100]}
+                value={[(currentTime / 210) * 100]}
                 max={100}
                 step={1}
               />
-              <p className="text-xs">{currentTimeMusic}</p>
+              <p className="text-xs tabular-nums">{currentTimeMusic}</p>
             </div>
           </div>
           <div className="flex w-[299px] items-center justify-end gap-[1.25rem] pr-[1rem]">
