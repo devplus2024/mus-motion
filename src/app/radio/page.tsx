@@ -275,7 +275,7 @@ export default function Component() {
               <Slider
                 onValueCommit={handleValueCommit}
                 className="w-[20rem]"
-                defaultValue={[(currentTime / Number(currentTimeMusic)) * 100]}
+                defaultValue={[0]}
                 value={[(currentTime / Number(currentTimeMusic)) * 100]}
                 max={100}
                 step={1}
