@@ -96,6 +96,7 @@ export default function Component() {
             <div className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]">
               <audio
                 id="audio"
+                ref={audioRef}
                 src="/DaiDienHauSinhTuKienLouisRemix-VuongNgocManh-14125736.mp3"
                 loop
                 autoPlay
