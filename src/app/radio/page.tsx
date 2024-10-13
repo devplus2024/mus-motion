@@ -161,7 +161,7 @@ export default function Component() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`${isPlaying ? "hidden" : "block"}`}
+                className={`${isPlaying ? "hidden" : "flex"}`}
                 onClick={() => {
                   setIsPlaying(true);
                 }}
@@ -185,7 +185,7 @@ export default function Component() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`${!isPlaying ? "hidden" : "block"}`}
+                className={`${!isPlaying ? "hidden" : "flex"}`}
                 onClick={() => {
                   setIsPlaying(false);
                 }}
