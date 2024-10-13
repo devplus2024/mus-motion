@@ -140,7 +140,11 @@ export default function Component() {
           </div>
           <div className="flex w-[20rem] flex-col items-center justify-center gap-[1rem]">
             <div className="flex gap-[2rem]">
-              <Button variant={"outline"} size={"icon"}>
+              <Button
+                variant={"outline"}
+                size={"icon"}
+                className="h-[1.8rem] w-[1.8rem]"
+              >
                 <svg
                   data-testid="geist-icon"
                   height={16}
@@ -207,7 +211,11 @@ export default function Component() {
                 </svg>
               </Button>
 
-              <Button variant="outline" size={"icon"}>
+              <Button
+                variant="outline"
+                size={"icon"}
+                className="h-[1.8rem] w-[1.8rem]"
+              >
                 <svg
                   data-testid="geist-icon"
                   height={16}
