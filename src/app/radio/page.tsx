@@ -158,7 +158,14 @@ export default function Component() {
                 </svg>
               </Button>
 
-              <Button variant="outline" size="icon">
+              <Button
+                variant="outline"
+                size="icon"
+                className={`${isPlaying ? "hidden" : "block"}`}
+                onClick={() => {
+                  setIsPlaying(true);
+                }}
+              >
                 <svg
                   data-testid="geist-icon"
                   height={16}
@@ -166,10 +173,6 @@ export default function Component() {
                   viewBox="0 0 16 16"
                   width={16}
                   style={{ color: "currentcolor" }}
-                  className={`${isPlaying ? "hidden" : "block"}`}
-                  onClick={() => {
-                    setIsPlaying(true);
-                  }}
                 >
                   <path
                     fillRule="evenodd"
@@ -179,7 +182,14 @@ export default function Component() {
                   />
                 </svg>
               </Button>
-              <Button variant="outline" size="icon">
+              <Button
+                variant="outline"
+                size="icon"
+                className={`${!isPlaying ? "hidden" : "block"}`}
+                onClick={() => {
+                  setIsPlaying(false);
+                }}
+              >
                 <svg
                   data-testid="geist-icon"
                   height={16}
@@ -187,10 +197,6 @@ export default function Component() {
                   viewBox="0 0 16 16"
                   width={16}
                   style={{ color: "currentcolor" }}
-                  className={`${!isPlaying ? "hidden" : "block"}`}
-                  onClick={() => {
-                    setIsPlaying(false);
-                  }}
                 >
                   <path
                     fillRule="evenodd"
