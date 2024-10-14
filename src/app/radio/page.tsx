@@ -76,13 +76,15 @@ export default function Component() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (audioRef.current) {
-      if (audioRef.current.paused) {
-        setIsPlaying(true);
-        audioRef.current.play();
-      } else {
-        setIsPlaying(false);
-        audioRef.current.pause();
+    if (pathname !== "/radio") {
+      if (audioRef.current) {
+        if (audioRef.current.paused) {
+          setIsPlaying(true);
+          audioRef.current.play();
+        } else {
+          setIsPlaying(false);
+          audioRef.current.pause();
+        }
       }
     }
   }, [pathname]);
