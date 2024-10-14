@@ -72,18 +72,25 @@ export default function Component() {
   };
   const router = useRouter();
   const initialTimeRef = useRef(currentTime);
+  const currentTimeRef = useRef(currentTime); // Lưu giá trị currentTime
   const pathname = usePathname();
   useEffect(() => {
-    if (initialTimeRef.current > 0) {
+    // Cập nhật giá trị currentTime vào ref
+    currentTimeRef.current = currentTime;
+  }, [currentTime]);
+
+  useEffect(() => {
+    // Kiểm tra giá trị currentTime mỗi khi pathname thay đổi
+    if (currentTimeRef.current > 0) {
       setIsPlaying(true);
     } else {
       setIsPlaying(false);
     }
 
     return () => {
-      // Cleanup code (nếu cần)
+      // Cleanup code nếu cần khi unmount hoặc chuyển trang
     };
-  }, [pathname]); // Theo dõi sự thay đổi đường dẫn
+  }, [pathname]);
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
