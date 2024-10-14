@@ -112,6 +112,7 @@ export default function Component() {
                         setCurrentStation(station.name);
                         setCurrentGenre(station.genre);
                         setCurrentTimeMusic(station.time);
+                        setCurrentTime(0);
                       }}
                     >
                       <Radio className="mr-2 h-4 w-4" />
