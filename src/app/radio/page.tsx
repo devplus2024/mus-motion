@@ -74,22 +74,17 @@ export default function Component() {
   const initialTimeRef = useRef(currentTime);
   const currentTimeRef = useRef(currentTime); // Lưu giá trị currentTime
   const pathname = usePathname();
-  useEffect(() => {
-    // Cập nhật giá trị currentTime vào ref
-    currentTimeRef.current = currentTime;
-  }, [currentTime]);
 
   useEffect(() => {
-    // Kiểm tra giá trị currentTime mỗi khi pathname thay đổi
-    if (currentTimeRef.current > 0) {
-      setIsPlaying(true);
-    } else {
-      setIsPlaying(false);
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        setIsPlaying(true);
+        audioRef.current.play();
+      } else {
+        setIsPlaying(false);
+        audioRef.current.pause();
+      }
     }
-
-    return () => {
-      // Cleanup code nếu cần khi unmount hoặc chuyển trang
-    };
   }, [pathname]);
 
   const formatTime = (time: number) => {
