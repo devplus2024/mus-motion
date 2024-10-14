@@ -63,6 +63,7 @@ export default function Component() {
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (audioRef.current.paused) {
+        handleConvert();
         audioRef.current.play();
       } else {
         audioRef.current.pause();
