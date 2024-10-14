@@ -48,7 +48,7 @@ export default function Component() {
     { title: "Retro Flashback", artist: "80s Revival", time: "3:21" },
   ];
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [totalSeconds, setTotalSeconds] = useState<number>(220);
+  const [totalSeconds, setTotalSeconds] = useState<number>(0);
 
   // Hàm chuyển đổi từ "phút:giây" sang giây
   const convertToSeconds = (time: string) => {
@@ -61,6 +61,7 @@ export default function Component() {
     setTotalSeconds(seconds);
   };
   const handlePlayPause = () => {
+    handleConvert();
     if (audioRef.current) {
       if (audioRef.current.paused) {
         audioRef.current.play();
