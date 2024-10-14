@@ -69,14 +69,19 @@ export default function Component() {
       }
     }
   };
+  const initialTimeRef = useRef(currentTime);
   useEffect(() => {
-    // Phát âm thanh khi component được render
-    if (currentTime > 0) {
+    if (initialTimeRef.current > 0) {
       setIsPlaying(true);
     } else {
       setIsPlaying(false);
     }
-  }, [currentTime]);
+
+    return () => {
+      // Cleanup code if necessary
+    };
+  }, []); // Mảng phụ thuộc rỗng -> chỉ chạy 1 lần khi component mount
+
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
