@@ -216,7 +216,7 @@ export default function Component() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
+                className={`${isPlaying || currentTime > 0 ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(true);
                   handlePlayPause();
@@ -241,7 +241,7 @@ export default function Component() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
+                className={`${!isPlaying || currentTime == 0 ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(false);
                   handlePlayPause();
