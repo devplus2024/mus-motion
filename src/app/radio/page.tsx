@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { usePathname, useRouter } from "next/navigation";
 export default function Component() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(75);
@@ -69,7 +70,9 @@ export default function Component() {
       }
     }
   };
+  const router = useRouter();
   const initialTimeRef = useRef(currentTime);
+  const pathname = usePathname();
   useEffect(() => {
     if (initialTimeRef.current > 0) {
       setIsPlaying(true);
@@ -78,9 +81,9 @@ export default function Component() {
     }
 
     return () => {
-      // Cleanup code if necessary
+      // Cleanup code (nếu cần)
     };
-  }, []); // Mảng phụ thuộc rỗng -> chỉ chạy 1 lần khi component mount
+  }, [pathname]); // Theo dõi sự thay đổi đường dẫn
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
