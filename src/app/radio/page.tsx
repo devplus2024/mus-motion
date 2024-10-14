@@ -61,7 +61,6 @@ export default function Component() {
     setTotalSeconds(seconds);
   };
   const handlePlayPause = () => {
-    handleConvert();
     if (audioRef.current) {
       if (audioRef.current.paused) {
         audioRef.current.play();
