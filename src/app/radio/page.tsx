@@ -64,8 +64,10 @@ export default function Component() {
     if (audioRef.current) {
       if (audioRef.current.paused) {
         audioRef.current.play();
+        setIsPlaying(true);
       } else {
         audioRef.current.pause();
+        setIsPlaying(false);
       }
     }
   };
