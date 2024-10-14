@@ -78,13 +78,8 @@ export default function Component() {
   useEffect(() => {
     if (pathname !== "/radio") {
       if (audioRef.current) {
-        if (audioRef.current.paused) {
-          setIsPlaying(false);
-          audioRef.current.play();
-        } else {
-          setIsPlaying(true);
-          audioRef.current.pause();
-        }
+        setIsPlaying(false);
+        audioRef.current.pause();
       }
     }
   }, [pathname]);
