@@ -79,10 +79,10 @@ export default function Component() {
     if (pathname !== "/radio") {
       if (audioRef.current) {
         if (audioRef.current.paused) {
-          setIsPlaying(true);
+          setIsPlaying(false);
           audioRef.current.play();
         } else {
-          setIsPlaying(false);
+          setIsPlaying(true);
           audioRef.current.pause();
         }
       }
