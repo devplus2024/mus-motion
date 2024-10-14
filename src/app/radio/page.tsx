@@ -71,6 +71,14 @@ export default function Component() {
       }
     }
   };
+  useEffect(() => {
+    // Phát âm thanh khi component được render
+    if (currentTime > 0) {
+      setIsPlaying(true);
+    } else {
+      setIsPlaying(false);
+    }
+  }, [currentTime]);
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
@@ -216,7 +224,7 @@ export default function Component() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`${isPlaying || currentTime > 0 ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
+                className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(true);
                   handlePlayPause();
@@ -241,7 +249,7 @@ export default function Component() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`${!isPlaying || currentTime == 0 ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
+                className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
                 onClick={() => {
                   setIsPlaying(false);
                   handlePlayPause();
