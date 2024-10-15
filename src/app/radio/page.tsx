@@ -28,7 +28,7 @@ export default function Component() {
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
-  const [value, setValue] = useState<number[]>([0]);
+  const [value, setValue] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
     { name: "Synthwave Nights", genre: "Electronic", time: "3:40" },
@@ -70,6 +70,11 @@ export default function Component() {
       }
     }
   };
+  const handlemas = (newValue: number[]) => {
+    setValue(newValue[0]);
+    console.log(`Value on mouse up: ${newValue[0]}`);
+  };
+
   const router = useRouter();
   const initialTimeRef = useRef(currentTime);
   const currentTimeRef = useRef(currentTime); // Lưu giá trị currentTime
@@ -308,7 +313,8 @@ export default function Component() {
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 // onValueCommit={handleValueCommit}
-                onValueChange={(newValue) => setValue(newValue)}
+                onValueChange={(newValue) => setValue(value)}
+                onMouseUp={() => handlemas([value])}
                 className="w-[20rem]"
                 defaultValue={[0]}
                 value={[(currentTime / totalSeconds) * 100]}
