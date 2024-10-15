@@ -80,7 +80,12 @@ export default function Component() {
       setIsPlaying(false);
       audioRef.current.pause();
     }
-  }, [pathname]);
+  }, [pathname, value]);
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Number(value);
+    }
+  }, [value]);
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
