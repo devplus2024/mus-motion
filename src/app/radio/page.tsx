@@ -28,7 +28,7 @@ export default function Component() {
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
-  const [value, setValue] = useState<number>(0);
+  const [value, setValue] = useState<number[]>([50]);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
     { name: "Synthwave Nights", genre: "Electronic", time: "3:40" },
@@ -93,10 +93,11 @@ export default function Component() {
       setCurrentTime(audioRef.current.currentTime);
     }
   };
-  const handleValueCommit = (newValue: number[]) => {
-    setValue(newValue[0]);
-    console.log("Giá trị cuối cùng:", newValue[0]);
-  };
+
+  // const handleValueCommit = (newValue: number[]) => {
+  //   setValue(newValue[0]);
+  //   console.log("Giá trị cuối cùng:", newValue[0]);
+  // };
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
@@ -301,10 +302,11 @@ export default function Component() {
             <div className="flex gap-4">
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
-                onValueCommit={handleValueCommit}
+                // onValueCommit={handleValueCommit}
+                onValueChange={(newValue) => setValue(newValue)}
                 className="w-[20rem]"
                 defaultValue={[0]}
-                value={[(currentTime / totalSeconds) * 100 + value]}
+                value={[(currentTime / totalSeconds) * 100 + Number(value)]}
                 max={100}
                 step={1}
               />
