@@ -311,7 +311,7 @@ export default function Component() {
                 onValueChange={(newValue) => setValue(newValue)}
                 className="w-[20rem]"
                 defaultValue={[0]}
-                value={[(currentTime / totalSeconds) * 100 + Number(value)]}
+                value={[(currentTime / totalSeconds) * 100]}
                 max={100}
                 step={1}
               />
