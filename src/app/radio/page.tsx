@@ -76,12 +76,12 @@ export default function Component() {
   // };
   const handlemousedown = () => {
     if (audioRef.current) {
-      audioRef.current.play();
+      audioRef.current.pause();
     }
   };
   const handlemouseup = () => {
     if (audioRef.current) {
-      audioRef.current.pause();
+      audioRef.current.play();
     }
   };
   const router = useRouter();
