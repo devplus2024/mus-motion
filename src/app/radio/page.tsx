@@ -71,7 +71,7 @@ export default function Component() {
     }
   };
   const handleValueCommit = (newValue: number[]) => {
-    console.log("Giá trị cuối cùng:", newValue[0]);
+    setValue(newValue);
   };
   const router = useRouter();
   const initialTimeRef = useRef(currentTime);
