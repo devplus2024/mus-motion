@@ -29,6 +29,7 @@ export default function Component() {
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
   const [value, setValue] = useState<number>(0);
+  const [tempValue, setTempValue] = useState<number[]>([0]);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
     { name: "Synthwave Nights", genre: "Electronic", time: "3:40" },
@@ -307,7 +308,7 @@ export default function Component() {
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 // onValueCommit={handleValueCommit}
-                // onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
+                onValueChange={(newValue) => setTempValue(newValue)} // Cập nhật liên tục
                 onValueCommit={handleValueCommit}
                 className="w-[20rem]"
                 defaultValue={[0]}
