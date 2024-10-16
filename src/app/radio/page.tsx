@@ -71,7 +71,8 @@ export default function Component() {
     }
   };
   const handleValueCommit = (newValue: number[]) => {
-    setValue(newValue);
+    console.log('Giá trị cuối cùng:', newValue[0]);
+    setValue(newValue[0]);
   };
   const router = useRouter();
   const initialTimeRef = useRef(currentTime);
@@ -306,7 +307,7 @@ export default function Component() {
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 // onValueCommit={handleValueCommit}
-                onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
+                // onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
                 onValueCommit={handleValueCommit}
                 className="w-[20rem]"
                 defaultValue={[0]}
