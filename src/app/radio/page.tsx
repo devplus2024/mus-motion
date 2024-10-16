@@ -28,9 +28,21 @@ export default function Component() {
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
-  const [value, setValue] = useState<number[]>([0]);
+  const [value, setValue] = useState<number>(0);
   const [tempValue, setTempValue] = useState<number[]>([0]);
   const [currentTime, setCurrentTime] = useState<number>(0);
+  const handleValueChangeAndCommit = (
+    newValue: number[],
+    isCommit: boolean,
+  ) => {
+    console.log("Giá trị hiện tại:", newValue[0]);
+    setValue(newValue[0]);
+
+    if (isCommit) {
+      console.log("Giá trị cuối cùng:", newValue[0]);
+      // Thực hiện logic cần thiết sau khi giá trị được chốt
+    }
+  };
   const stations = [
     { name: "Synthwave Nights", genre: "Electronic", time: "3:40" },
     { name: "Jazz Cafe", genre: "Jazz", time: "3:40" },
@@ -308,7 +320,12 @@ export default function Component() {
               <Slider
                 // onValueCommit={handleValueCommit}
                 // onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
-                onValueCommit={(newValue) => setValue(newValue)}
+                onValueChange={(newValue) =>
+                  handleValueChangeAndCommit(newValue, false)
+                }
+                onValueCommit={(newValue) =>
+                  handleValueChangeAndCommit(newValue, true)
+                }
                 className="w-[20rem]"
                 defaultValue={[0]}
                 value={[(currentTime / totalSeconds) * 100]}
