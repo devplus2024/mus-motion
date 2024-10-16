@@ -28,7 +28,7 @@ export default function Component() {
   const [currentStation, setCurrentStation] = useState("Synthwave Nights");
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
-  const [value, setValue] = useState<number>(0);
+  const [value, setValue] = useState<number[]>([0]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
@@ -71,10 +71,9 @@ export default function Component() {
       }
     }
   };
-  const handleValueCommit = (newValue: number[]) => {
-    console.log("Giá trị cuối cùng:", newValue[0]);
-    setValue(newValue[0]);
-  };
+  // const handleValueCommit = (newValue: number[]) => {
+  //   console.log("Giá trị cuối cùng:", newValue[0]);
+  // };
   const router = useRouter();
   const initialTimeRef = useRef(currentTime);
   const currentTimeRef = useRef(currentTime); // Lưu giá trị currentTime
@@ -308,8 +307,8 @@ export default function Component() {
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 // onValueCommit={handleValueCommit}
-                onValueChange={(newValue) => setTempValue(newValue)} // Cập nhật liên tục
-                onValueCommit={handleValueCommit}
+                onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
+                onValueCommit={(newValue) => setValue(newValue)}
                 className="w-[20rem]"
                 defaultValue={[0]}
                 value={[(currentTime / totalSeconds) * 100]}
