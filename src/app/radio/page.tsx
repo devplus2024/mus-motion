@@ -307,7 +307,7 @@ export default function Component() {
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider
                 // onValueCommit={handleValueCommit}
-                onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
+                // onValueChange={(newValue) => setValue(newValue)} // Cập nhật liên tục
                 onValueCommit={(newValue) => setValue(newValue)}
                 className="w-[20rem]"
                 defaultValue={[0]}
