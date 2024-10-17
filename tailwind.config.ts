@@ -66,48 +66,138 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        meteor: {
+          "0%": {
+            transform: "rotate(215deg) translateX(0px)",
+            opacity: "1",
+          },
+          "70%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+          },
+        },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+        "shine-pulse": {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          to: {
+            "background-position": "0% 0%",
+          },
+        },
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         enterFromRight: {
-          from: { opacity: "0", transform: "translateX(200px)" },
-          to: { opacity: "1", transform: "translateX(0)" },
+          from: {
+            opacity: "0",
+            transform: "translateX(200px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
         },
         enterFromLeft: {
-          from: { opacity: "0", transform: "translateX(-200px)" },
-          to: { opacity: "1", transform: "translateX(0)" },
+          from: {
+            opacity: "0",
+            transform: "translateX(-200px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
         },
         exitToRight: {
-          from: { opacity: "1", transform: "translateX(0)" },
-          to: { opacity: "0", transform: "translateX(200px)" },
+          from: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+          to: {
+            opacity: "0",
+            transform: "translateX(200px)",
+          },
         },
         exitToLeft: {
-          from: { opacity: "1", transform: "translateX(0)" },
-          to: { opacity: "0", transform: "translateX(-200px)" },
+          from: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+          to: {
+            opacity: "0",
+            transform: "translateX(-200px)",
+          },
         },
         scaleIn: {
-          from: { opacity: "0", transform: "rotateX(-10deg) scale(0.9)" },
-          to: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+          from: {
+            opacity: "0",
+            transform: "rotateX(-10deg) scale(0.9)",
+          },
+          to: {
+            opacity: "1",
+            transform: "rotateX(0deg) scale(1)",
+          },
         },
         scaleOut: {
-          from: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
-          to: { opacity: "0", transform: "rotateX(-10deg) scale(0.95)" },
+          from: {
+            opacity: "1",
+            transform: "rotateX(0deg) scale(1)",
+          },
+          to: {
+            opacity: "0",
+            transform: "rotateX(-10deg) scale(0.95)",
+          },
         },
         fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
         },
         fadeOut: {
-          from: { opacity: "1" },
-          to: { opacity: "0" },
+          from: {
+            opacity: "1",
+          },
+          to: {
+            opacity: "0",
+          },
+        },
+        grid: {
+          "0%": {
+            transform: "translateY(-50%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
         },
       },
       animation: {
+        meteor: "meteor 5s linear infinite",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         scaleIn: "scaleIn 200ms ease",
@@ -118,6 +208,7 @@ const config = {
         enterFromRight: "enterFromRight 250ms ease",
         exitToLeft: "exitToLeft 250ms ease",
         exitToRight: "exitToRight 250ms ease",
+        grid: "grid 15s linear infinite",
       },
     },
   },
