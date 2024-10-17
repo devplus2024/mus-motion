@@ -101,11 +101,11 @@ export default function Component() {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
     }
   }, [value, totalSeconds]);
-  useEffect(() => {
-    if (audioRef.current && audioRef.current.volume < 1) {
-      audioRef.current.volume = Number(soundValue) / 100;
-    }
-  }, [soundValue]);
+  // useEffect(() => {
+  //   if (audioRef.current && audioRef.current.volume < 1) {
+  //     audioRef.current.volume = Number(soundValue) / 100;
+  //   }
+  // }, [soundValue]);
   const increaseVolume = () => {
     if (audioRef.current && audioRef.current.volume < 1) {
       audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.1); // Tăng âm lượng 0.1 mỗi lần
