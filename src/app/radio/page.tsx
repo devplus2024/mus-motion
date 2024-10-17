@@ -316,8 +316,8 @@ export default function Component() {
             <div className="flex gap-4">
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider.Root
-                onValueChange={(newValue) => setValue(newValue)}
-                onValueCommit={(newValue) => setValue(newValue)}
+                onValueChange={(newTempValue) => setValue(newTempValue)}
+                onValueCommit={(newValue) => setValue(tempValue)}
                 defaultValue={[0]}
                 value={[(currentTime / totalSeconds) * 100]}
                 max={100}
