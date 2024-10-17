@@ -101,7 +101,25 @@ export default function Component() {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
     }
   }, [value, totalSeconds]);
+  // useEffect(() => {
+  //   if (audioRef.current && audioRef.current.volume < 1) {
+  //     audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.1); // Tăng âm lượng 0.1 mỗi lần
+  //     console.log(`Current volume: ${audioRef.current.volume}`);
+  //   }
+  // }, [soundValue]);
+  const increaseVolume = () => {
+    if (audioRef.current && audioRef.current.volume < 1) {
+      audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.1); // Tăng âm lượng 0.1 mỗi lần
+      console.log(`Current volume: ${audioRef.current.volume}`);
+    }
+  };
 
+  const decreaseVolume = () => {
+    if (audioRef.current && audioRef.current.volume > 0) {
+      audioRef.current.volume = Math.max(0, audioRef.current.volume - 0.1); // Giảm âm lượng 0.1 mỗi lần
+      console.log(`Current volume: ${audioRef.current.volume}`);
+    }
+  };
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
@@ -113,6 +131,7 @@ export default function Component() {
       setCurrentTime(audioRef.current.currentTime);
     }
   };
+
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
@@ -356,6 +375,7 @@ export default function Component() {
           </div>
           <div className="flex w-[299px] items-center justify-between gap-[1.25rem] pr-[1rem]">
             <svg
+              onClick={decreaseVolume}
               data-testid="geist-icon"
               height={16}
               strokeLinejoin="round"
@@ -366,7 +386,7 @@ export default function Component() {
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
-                d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM14.2585 2.96051L14.6728 3.58567C15.5116 4.85121 16 6.3697 16 8C16 9.6303 15.5116 11.1488 14.6728 12.4143L14.2585 13.0395L13.0082 12.2108L13.4225 11.5857C14.1034 10.5582 14.5 9.32657 14.5 8C14.5 6.67343 14.1034 5.44176 13.4225 4.41433L13.0082 3.78916L14.2585 2.96051ZM12.059 4.98506L12.4125 5.64655C12.7876 6.34871 13 7.15067 13 8C13 8.84933 12.7876 9.65129 12.4125 10.3534L12.059 11.0149L10.736 10.3081L11.0895 9.64655C11.3513 9.15657 11.5 8.59676 11.5 8C11.5 7.40324 11.3513 6.84344 11.0895 6.35345L10.736 5.69195L12.059 4.98506Z"
+                d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM13.9115 5.64655L13.5581 4.98506L12.2351 5.69195L12.5885 6.35345C12.8503 6.84344 12.9991 7.40324 12.9991 8C12.9991 8.59676 12.8503 9.15657 12.5885 9.64655L12.2351 10.3081L13.558 11.0149L13.9115 10.3534C14.2867 9.65129 14.4991 8.84933 14.4991 8C14.4991 7.15067 14.2867 6.34871 13.9115 5.64655Z"
                 fill="currentColor"
               />
             </svg>
@@ -388,6 +408,7 @@ export default function Component() {
               <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
             <svg
+              onClick={increaseVolume}
               data-testid="geist-icon"
               height={16}
               strokeLinejoin="round"
@@ -398,7 +419,7 @@ export default function Component() {
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
-                d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM13.9115 5.64655L13.5581 4.98506L12.2351 5.69195L12.5885 6.35345C12.8503 6.84344 12.9991 7.40324 12.9991 8C12.9991 8.59676 12.8503 9.15657 12.5885 9.64655L12.2351 10.3081L13.558 11.0149L13.9115 10.3534C14.2867 9.65129 14.4991 8.84933 14.4991 8C14.4991 7.15067 14.2867 6.34871 13.9115 5.64655Z"
+                d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM14.2585 2.96051L14.6728 3.58567C15.5116 4.85121 16 6.3697 16 8C16 9.6303 15.5116 11.1488 14.6728 12.4143L14.2585 13.0395L13.0082 12.2108L13.4225 11.5857C14.1034 10.5582 14.5 9.32657 14.5 8C14.5 6.67343 14.1034 5.44176 13.4225 4.41433L13.0082 3.78916L14.2585 2.96051ZM12.059 4.98506L12.4125 5.64655C12.7876 6.34871 13 7.15067 13 8C13 8.84933 12.7876 9.65129 12.4125 10.3534L12.059 11.0149L10.736 10.3081L11.0895 9.64655C11.3513 9.15657 11.5 8.59676 11.5 8C11.5 7.40324 11.3513 6.84344 11.0895 6.35345L10.736 5.69195L12.059 4.98506Z"
                 fill="currentColor"
               />
             </svg>
