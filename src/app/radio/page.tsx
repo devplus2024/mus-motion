@@ -394,7 +394,11 @@ export default function Component() {
               />
             </svg>
             <Slider.Root
-              onValueChange={(newSoundValue) => setSoundValue(newSoundValue)}
+              onValueChange={(newSoundValue) => {
+                setSoundValue(newSoundValue);
+                var soundls = Number(newSoundValue);
+                setSoundValue([soundls]);
+              }}
               defaultValue={[0]}
               value={[Number(soundValue) * 100]}
               max={100}
