@@ -399,7 +399,7 @@ export default function Component() {
             <Slider.Root
               onValueChange={(newSoundValue) => setSoundValue(newSoundValue)}
               defaultValue={[0]}
-              value={[Number(soundValue)]}
+              value={[Number(soundValue) * 100]}
               max={100}
               step={1}
               className="relative flex w-[6rem] touch-none select-none items-center"
