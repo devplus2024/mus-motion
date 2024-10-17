@@ -29,6 +29,7 @@ export default function Component() {
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
   const [value, setValue] = useState<number[]>([0]);
+  const [soundValue, setSoundValue] = useState<number[]>([0]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
@@ -353,7 +354,7 @@ export default function Component() {
               <p className="text-xs tabular-nums">{currentTimeMusic}</p>
             </div>
           </div>
-          <div className="flex w-[299px] items-center justify-end gap-[1.25rem] pr-[1rem]">
+          <div className="flex w-[299px] items-center justify-between gap-[1.25rem] pr-[1rem]">
             <svg
               data-testid="geist-icon"
               height={16}
@@ -366,6 +367,38 @@ export default function Component() {
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM14.2585 2.96051L14.6728 3.58567C15.5116 4.85121 16 6.3697 16 8C16 9.6303 15.5116 11.1488 14.6728 12.4143L14.2585 13.0395L13.0082 12.2108L13.4225 11.5857C14.1034 10.5582 14.5 9.32657 14.5 8C14.5 6.67343 14.1034 5.44176 13.4225 4.41433L13.0082 3.78916L14.2585 2.96051ZM12.059 4.98506L12.4125 5.64655C12.7876 6.34871 13 7.15067 13 8C13 8.84933 12.7876 9.65129 12.4125 10.3534L12.059 11.0149L10.736 10.3081L11.0895 9.64655C11.3513 9.15657 11.5 8.59676 11.5 8C11.5 7.40324 11.3513 6.84344 11.0895 6.35345L10.736 5.69195L12.059 4.98506Z"
+                fill="currentColor"
+              />
+            </svg>
+            <Slider.Root
+              onValueChange={(newSoundValue) => setSoundValue(newSoundValue)}
+              defaultValue={[0]}
+              value={[Number(soundValue)]}
+              max={100}
+              step={1}
+              className="relative flex w-[6rem] touch-none select-none items-center"
+            >
+              <Slider.Track
+                onMouseDown={handlemousedown}
+                onMouseUp={handlemouseup}
+                className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20"
+              >
+                <Slider.Range className="absolute h-full bg-primary" />
+              </Slider.Track>
+              <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+            </Slider.Root>
+            <svg
+              data-testid="geist-icon"
+              height={16}
+              strokeLinejoin="round"
+              viewBox="0 0 16 16"
+              width={16}
+              style={{ color: "currentcolor" }}
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M0 5V11C0 11.5523 0.447715 12 1 12H3L10 16V0L3 4H1C0.447715 4 0 4.44772 0 5ZM13.9115 5.64655L13.5581 4.98506L12.2351 5.69195L12.5885 6.35345C12.8503 6.84344 12.9991 7.40324 12.9991 8C12.9991 8.59676 12.8503 9.15657 12.5885 9.64655L12.2351 10.3081L13.558 11.0149L13.9115 10.3534C14.2867 9.65129 14.4991 8.84933 14.4991 8C14.4991 7.15067 14.2867 6.34871 13.9115 5.64655Z"
                 fill="currentColor"
               />
             </svg>
