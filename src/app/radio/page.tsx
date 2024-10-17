@@ -101,16 +101,20 @@ export default function Component() {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
     }
   }, [value, totalSeconds]);
-  // useEffect(() => {
-  //   if (audioRef.current && audioRef.current.volume < 1) {
-  //     audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.1); // Tăng âm lượng 0.1 mỗi lần
-  //     console.log(`Current volume: ${audioRef.current.volume}`);
-  //   }
-  // }, [soundValue]);
+  useEffect(() => {
+    if (audioRef.current && audioRef.current.volume < 1) {
+      audioRef.current.volume = Math.min(
+        1,
+        audioRef.current.volume + Number(soundValue),
+      ); // Tăng âm lượng 0.1 mỗi lần
+    }
+  }, [soundValue]);
   const increaseVolume = () => {
     if (audioRef.current && audioRef.current.volume < 1) {
       audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.1); // Tăng âm lượng 0.1 mỗi lần
       console.log(`Current volume: ${audioRef.current.volume}`);
+      const sound = audioRef.current.volume; // Lấy giá trị âm lượng hiện tại
+      setSoundValue([sound]);
     }
   };
 
@@ -118,6 +122,8 @@ export default function Component() {
     if (audioRef.current && audioRef.current.volume > 0) {
       audioRef.current.volume = Math.max(0, audioRef.current.volume - 0.1); // Giảm âm lượng 0.1 mỗi lần
       console.log(`Current volume: ${audioRef.current.volume}`);
+      const sound = audioRef.current.volume; // Lấy giá trị âm lượng hiện tại
+      setSoundValue([sound]);
     }
   };
   const formatTime = (time: number) => {
