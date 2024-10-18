@@ -18,6 +18,10 @@ import {
   SkipBack,
   PlayCircle,
   SkipForward,
+  Pause,
+  Play,
+  FastForward,
+  Rewind,
 } from "lucide-react";
 import Image from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -176,7 +180,7 @@ export default function Component() {
             </CardContent>
           </Card>
         </ScrollArea>
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-[4rem]">
           <div className="flex flex-col items-center justify-center gap-[2rem]">
             <div className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]">
               <audio
@@ -193,6 +197,60 @@ export default function Component() {
               <h1 className="text-xl font-medium">{currentStation}</h1>
               <p className="text-md text-[#a1a1a1]">{currentGenre}</p>
             </div>
+          </div>
+          <div className="flex gap-[2rem]">
+            <Button
+              variant={"outline"}
+              size={"icon"}
+              className="h-[1.8rem] w-[1.8rem]"
+            >
+              <Rewind />
+            </Button>
+            <Button
+              variant={"outline"}
+              size={"icon"}
+              className="h-[1.8rem] w-[1.8rem]"
+            >
+              <SkipBack />
+            </Button>
+
+            <Button
+              variant="outline"
+              size="icon"
+              className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
+              onClick={() => {
+                setIsPlaying(true);
+                handlePlayPause();
+              }}
+            >
+              <Play />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
+              onClick={() => {
+                setIsPlaying(false);
+                handlePlayPause();
+              }}
+            >
+              <Pause />
+            </Button>
+
+            <Button
+              variant="outline"
+              size={"icon"}
+              className="h-[1.8rem] w-[1.8rem]"
+            >
+              <SkipForward />
+            </Button>
+            <Button
+              variant="outline"
+              size={"icon"}
+              className="h-[1.8rem] w-[1.8rem]"
+            >
+              <FastForward />
+            </Button>
           </div>
         </div>
         <ScrollArea className="w-[300px] flex-shrink-0">
@@ -242,102 +300,6 @@ export default function Component() {
             </div>
           </div>
           <div className="flex w-[20rem] flex-col items-center justify-center gap-[1rem]">
-            <div className="flex gap-[2rem]">
-              <Button
-                variant={"outline"}
-                size={"icon"}
-                className="h-[1.8rem] w-[1.8rem]"
-              >
-                <svg
-                  data-testid="geist-icon"
-                  height={16}
-                  strokeLinejoin="round"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  style={{ color: "currentcolor" }}
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M4.08144 8.21092C3.92706 8.11268 3.92706 7.88733 4.08144 7.78909L14.3658 1.24451C14.5322 1.1386 14.75 1.25815 14.75 1.45542L14.75 14.5446C14.75 14.7419 14.5322 14.8614 14.3658 14.7555L4.08144 8.21092ZM0.75 2V1.25H2.25V2V14V14.75H0.75V14V2Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </Button>
-
-              <Button
-                variant="outline"
-                size="icon"
-                className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
-                onClick={() => {
-                  setIsPlaying(true);
-                  handlePlayPause();
-                }}
-              >
-                <svg
-                  data-testid="geist-icon"
-                  height={16}
-                  strokeLinejoin="round"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  style={{ color: "currentcolor" }}
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M14.5528 7.77638C14.737 7.86851 14.737 8.13147 14.5528 8.2236L1.3618 14.8191C1.19558 14.9022 1 14.7813 1 14.5955L1 1.4045C1 1.21865 1.19558 1.09778 1.3618 1.18089L14.5528 7.77638Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem]`}
-                onClick={() => {
-                  setIsPlaying(false);
-                  handlePlayPause();
-                }}
-              >
-                <svg
-                  data-testid="geist-icon"
-                  height={16}
-                  strokeLinejoin="round"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  style={{ color: "currentcolor" }}
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M5.5 2.5V1.75H4V2.5V13.5V14.25H5.5V13.5V2.5ZM12 2.5V1.75H10.5V2.5V13.5V14.25H12V13.5V2.5Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </Button>
-
-              <Button
-                variant="outline"
-                size={"icon"}
-                className="h-[1.8rem] w-[1.8rem]"
-              >
-                <svg
-                  data-testid="geist-icon"
-                  height={16}
-                  strokeLinejoin="round"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  style={{ color: "currentcolor" }}
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M11.6686 8.21092C11.8229 8.11268 11.8229 7.88733 11.6686 7.78909L1.38422 1.24451C1.21779 1.1386 1 1.25815 1 1.45542V14.5446C1 14.7419 1.21779 14.8614 1.38422 14.7555L11.6686 8.21092ZM15 2V1.25H13.5V2V14V14.75H15V14V2Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </Button>
-            </div>
             <div className="flex gap-4">
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider.Root
