@@ -156,20 +156,26 @@ export default function Home() {
                     href="https://x.com/DeveloperPlus24"
                     className="flex items-center gap-[0.5rem]"
                   >
-                    <Button
-                      variant="ghost"
-                      className="px-2 dark:hover:bg-[#161616]"
-                      size="icon"
-                    >
-                      <Image
-                        src="/x.svg"
-                        width="50"
-                        height="50"
-                        alt="x-icon"
-                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
-                      />
-                    </Button>
-                    <p className="text-sm">Twitter</p>
+                    <div className="relative mt-[3rem] flex h-[20px] w-[150px] items-center justify-center rounded-full border border-[#202020]">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-1">
+                        <svg
+                          data-testid="geist-icon"
+                          height={16}
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          style={{ color: "currentcolor" }}
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M1.60022 2H5.80022L8.78759 6.16842L12.4002 2H14.0002L9.5118 7.17895L14.4002 14H10.2002L7.21285 9.83158L3.60022 14H2.00022L6.48864 8.82105L1.60022 2ZM10.8166 12.8L3.93657 3.2H5.18387L12.0639 12.8H10.8166Z"
+                            fill="#ffffff"
+                          />
+                        </svg>
+                      </span>
+                      <p className="text-xs font-medium text-white">Twitter</p>
+                    </div>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
@@ -197,20 +203,26 @@ export default function Home() {
               <HoverCard>
                 <HoverCardTrigger asChild>
                   <a href="" className="flex items-center gap-[0.5rem]">
-                    <Button
-                      variant="ghost"
-                      className="px-2 dark:hover:bg-[#161616]"
-                      size="icon"
-                    >
-                      <Image
-                        src="/instagram.svg"
-                        width="50"
-                        height="50"
-                        alt="instagram-icon"
-                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
-                      />
-                    </Button>
-                    <p className="text-sm">Instagram</p>
+                    <div className="relative mt-[3rem] flex h-[20px] w-[150px] items-center justify-center rounded-full border border-[#202020]">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-1">
+                        <svg
+                          data-testid="geist-icon"
+                          height={16}
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          style={{ color: "currentcolor" }}
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M1.60022 2H5.80022L8.78759 6.16842L12.4002 2H14.0002L9.5118 7.17895L14.4002 14H10.2002L7.21285 9.83158L3.60022 14H2.00022L6.48864 8.82105L1.60022 2ZM10.8166 12.8L3.93657 3.2H5.18387L12.0639 12.8H10.8166Z"
+                            fill="#ffffff"
+                          />
+                        </svg>
+                      </span>
+                      <p className="text-xs font-medium text-white">Twitter</p>
+                    </div>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
@@ -241,20 +253,26 @@ export default function Home() {
                     href="https://www.facebook.com/phamquangtruongan"
                     className="flex items-center gap-[0.5rem]"
                   >
-                    <Button
-                      variant="ghost"
-                      className="px-2 dark:hover:bg-[#161616]"
-                      size="icon"
-                    >
-                      <Image
-                        src="/facebook.svg"
-                        width="50"
-                        height="50"
-                        alt="youtube-icon"
-                        className="max-height-[50px] max-w-[50px] dark:invert-[1]"
-                      />
-                    </Button>
-                    <p className="text-sm">Facebook</p>
+                    <div className="relative mt-[3rem] flex h-[20px] w-[150px] items-center justify-center rounded-full border border-[#202020]">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-1">
+                        <svg
+                          data-testid="geist-icon"
+                          height={16}
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          style={{ color: "currentcolor" }}
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M1.60022 2H5.80022L8.78759 6.16842L12.4002 2H14.0002L9.5118 7.17895L14.4002 14H10.2002L7.21285 9.83158L3.60022 14H2.00022L6.48864 8.82105L1.60022 2ZM10.8166 12.8L3.93657 3.2H5.18387L12.0639 12.8H10.8166Z"
+                            fill="#ffffff"
+                          />
+                        </svg>
+                      </span>
+                      <p className="text-xs font-medium text-white">Twitter</p>
+                    </div>
                   </a>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-[16rem]" side="top">
