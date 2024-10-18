@@ -398,7 +398,7 @@ export default function Component() {
                 setSoundValue(newSoundValue);
               }}
               defaultValue={[0]}
-              value={[Number(soundValue) * 100]}
+              value={[Number(soundValue)]}
               max={100}
               step={1}
               className="relative flex w-[6rem] touch-none select-none items-center"
