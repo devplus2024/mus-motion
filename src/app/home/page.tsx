@@ -149,21 +149,21 @@ export default function Home() {
       <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-row">
         <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
           <div className="flex items-center gap-[1rem]">
-            <div className="flex items-center gap-[0.5rem]">
+            <div className="flex items-center gap-[2rem]">
               <HoverCard>
                 <HoverCardTrigger asChild>
                   <a
                     href="https://x.com/DeveloperPlus24"
                     className="flex items-center gap-[0.5rem]"
                   >
-                    <div className="relative mt-[3rem] flex h-[20px] w-[150px] items-center justify-center rounded-full border border-[#202020]">
+                    <div className="relative mt-[3rem] flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020] p-6">
                       <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-1">
                         <svg
                           data-testid="geist-icon"
-                          height={16}
+                          height={20}
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
-                          width={16}
+                          width={20}
                           style={{ color: "currentcolor" }}
                         >
                           <path
@@ -203,14 +203,14 @@ export default function Home() {
               <HoverCard>
                 <HoverCardTrigger asChild>
                   <a href="" className="flex items-center gap-[0.5rem]">
-                    <div className="relative mt-[3rem] flex h-[20px] w-[150px] items-center justify-center rounded-full border border-[#202020]">
+                    <div className="relative mt-[3rem] flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020] p-6">
                       <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-1">
                         <svg
                           data-testid="geist-icon"
-                          height={16}
+                          height={20}
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
-                          width={16}
+                          width={20}
                           style={{ color: "currentcolor" }}
                         >
                           <path
@@ -253,14 +253,14 @@ export default function Home() {
                     href="https://www.facebook.com/phamquangtruongan"
                     className="flex items-center gap-[0.5rem]"
                   >
-                    <div className="relative mt-[3rem] flex h-[20px] w-[150px] items-center justify-center rounded-full border border-[#202020]">
+                    <div className="relative mt-[3rem] flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020] p-6">
                       <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-1">
                         <svg
                           data-testid="geist-icon"
-                          height={16}
+                          height={20}
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
-                          width={16}
+                          width={20}
                           style={{ color: "currentcolor" }}
                         >
                           <path
