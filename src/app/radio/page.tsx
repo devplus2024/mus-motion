@@ -30,6 +30,7 @@ export default function Component() {
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
   const [value, setValue] = useState<number[]>([0]);
   const [soundValue, setSoundValue] = useState<number[]>([50]);
+  const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
@@ -101,11 +102,12 @@ export default function Component() {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
     }
   }, [value, totalSeconds]);
-  // useEffect(() => {
-  //   if (audioRef.current && audioRef.current.volume < 1) {
-  //     audioRef.current.volume = Number(soundValue) / 100;
-  //   }
-  // }, [soundValue]);
+  useEffect(() => {
+    setSoundTempValue(soundValue);
+    if (audioRef.current) {
+      audioRef.current.volume = Number(soundTempValue);
+    }
+  }, [soundTempValue, soundValue]);
   const increaseVolume = () => {
     if (audioRef.current && audioRef.current.volume <= 1) {
       audioRef.current.volume = Math.min(1, Number(soundValue) / 100 + 0.1); // Tăng âm lượng 0.1 mỗi lần
