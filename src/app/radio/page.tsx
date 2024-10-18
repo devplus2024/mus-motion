@@ -110,7 +110,7 @@ export default function Component() {
     if (audioRef.current && audioRef.current.volume < 1) {
       audioRef.current.volume = Math.min(1, Number(soundValue) / 100 + 0.1); // Tăng âm lượng 0.1 mỗi lần
       console.log(`Current volume: ${Number(soundValue) / 100}`);
-      const sound = audioRef.current.volume; // Lấy giá trị âm lượng hiện tại
+      const sound = audioRef.current.volume * 100; // Lấy giá trị âm lượng hiện tại
       setSoundValue([sound]);
     }
   };
@@ -119,7 +119,7 @@ export default function Component() {
     if (audioRef.current && audioRef.current.volume > 0) {
       audioRef.current.volume = Math.max(0, Number(soundValue) / 100 - 0.1); // Giảm âm lượng 0.1 mỗi lần
       console.log(`Current volume: ${Number(soundValue) / 100}`);
-      const sound = audioRef.current.volume; // Lấy giá trị âm lượng hiện tại
+      const sound = audioRef.current.volume * 100; // Lấy giá trị âm lượng hiện tại
       setSoundValue([sound]);
     }
   };
