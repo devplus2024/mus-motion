@@ -157,7 +157,7 @@ export default function Home() {
                     className="flex items-center gap-[0.5rem]"
                   >
                     <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020]">
-                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-6">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-[0.6rem]">
                         <svg
                           data-testid="geist-icon"
                           height={20}
@@ -204,7 +204,7 @@ export default function Home() {
                 <HoverCardTrigger asChild>
                   <a href="" className="flex items-center gap-[0.5rem]">
                     <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020]">
-                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-6">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-[0.6rem]">
                         <svg
                           data-testid="geist-icon"
                           height={20}
@@ -254,7 +254,7 @@ export default function Home() {
                     className="flex items-center gap-[0.5rem]"
                   >
                     <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020]">
-                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-6">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-[0.6rem]">
                         <svg
                           data-testid="geist-icon"
                           height={20}
