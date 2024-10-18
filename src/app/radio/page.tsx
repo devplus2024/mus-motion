@@ -293,7 +293,13 @@ export default function Component() {
       <div>
         <div className="flex h-[70px] w-full items-center justify-between border-t dark:border-t-[#202020]">
           <div className="flex w-[299px] items-center gap-3 pl-[1rem]">
-            <div className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"></div>
+            <div
+              className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"
+              style={{
+                background:
+                  'url("https://avatar-ex-swe.nixcdn.com/song/2024/08/15/n/m/F/k/1723689056060_500.jpg") left center / contain no-repeat',
+              }}
+            ></div>
             <div className="flex flex-col gap-1">
               <h1 className="text-sm font-medium">{currentStation}</h1>
               <p className="text-xs text-[#a1a1a1]">{currentGenre}</p>
