@@ -340,7 +340,7 @@ export default function Component() {
               <p className="text-xs tabular-nums">{currentTimeMusic}</p>
             </div>
           </div>
-          <div className="flex w-[299px] items-center justify-between gap-[1.25rem] pr-[1rem]">
+          <div className="flex w-[299px] items-center justify-center gap-[1.25rem] pr-[1rem]">
             <svg
               onClick={decreaseVolume}
               data-testid="geist-icon"
