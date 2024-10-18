@@ -105,7 +105,7 @@ export default function Component() {
   useEffect(() => {
     setSoundTempValue(soundValue);
     if (audioRef.current) {
-      audioRef.current.volume = Number(soundTempValue);
+      audioRef.current.volume = Number(soundTempValue) / 100;
     }
   }, [soundTempValue, soundValue]);
   const increaseVolume = () => {
