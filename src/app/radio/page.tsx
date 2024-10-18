@@ -182,7 +182,13 @@ export default function Component() {
         </ScrollArea>
         <div className="flex flex-col items-center justify-center gap-[4rem]">
           <div className="flex flex-col items-center justify-center gap-[2rem]">
-            <div className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]">
+            <div
+              className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]"
+              style={{
+                background:
+                  'url("https://avatar-ex-swe.nixcdn.com/song/2024/08/15/n/m/F/k/1723689056060_500.jpg") left center / contain no-repeat',
+              }}
+            >
               <audio
                 id="audio"
                 ref={audioRef}
