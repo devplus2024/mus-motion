@@ -29,7 +29,7 @@ export default function Component() {
   const [currentGenre, setCurrentGenre] = useState("Electronic");
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
   const [value, setValue] = useState<number[]>([0]);
-  const [soundValue, setSoundValue] = useState<number[]>([0]);
+  const [soundValue, setSoundValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const stations = [
@@ -108,8 +108,8 @@ export default function Component() {
   // }, [soundValue]);
   const increaseVolume = () => {
     if (audioRef.current && audioRef.current.volume < 1) {
-      audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.1); // Tăng âm lượng 0.1 mỗi lần
-      console.log(`Current volume: ${audioRef.current.volume}`);
+      audioRef.current.volume = Math.min(1, Number(soundValue) / 100 + 0.1); // Tăng âm lượng 0.1 mỗi lần
+      console.log(`Current volume: ${Number(soundValue) / 100}`);
       const sound = audioRef.current.volume; // Lấy giá trị âm lượng hiện tại
       setSoundValue([sound]);
     }
@@ -117,8 +117,8 @@ export default function Component() {
 
   const decreaseVolume = () => {
     if (audioRef.current && audioRef.current.volume > 0) {
-      audioRef.current.volume = Math.max(0, audioRef.current.volume - 0.1); // Giảm âm lượng 0.1 mỗi lần
-      console.log(`Current volume: ${audioRef.current.volume}`);
+      audioRef.current.volume = Math.max(0, Number(soundValue) / 100 - 0.1); // Giảm âm lượng 0.1 mỗi lần
+      console.log(`Current volume: ${Number(soundValue) / 100}`);
       const sound = audioRef.current.volume; // Lấy giá trị âm lượng hiện tại
       setSoundValue([sound]);
     }
@@ -396,8 +396,6 @@ export default function Component() {
             <Slider.Root
               onValueChange={(newSoundValue) => {
                 setSoundValue(newSoundValue);
-                var soundls = Number(newSoundValue);
-                setSoundValue([soundls]);
               }}
               defaultValue={[0]}
               value={[Number(soundValue) * 100]}
