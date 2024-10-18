@@ -30,6 +30,10 @@ import { useTheme } from "next-themes";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useRouter } from "next/navigation";
 import {
+  MoonIcon,
+  SunIcon,
+  FileTextIcon,
+  LaptopIcon,
   CalendarIcon,
   EnvelopeClosedIcon,
   FaceIcon,
@@ -66,7 +70,7 @@ export function CommandMenu() {
           } & React.RefAttributes<HTMLDivElement>,
         "ref"
       > &
-      React.RefAttributes<HTMLDivElement>
+      React.RefAttributes<HTMLDivElement>,
   ) => {
     const search = useCommandState((state) => state.search);
     if (!search) return null;
@@ -89,21 +93,25 @@ export function CommandMenu() {
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="cursor-pointer border p-2 flex gap-4 group hover:bg-muted transition-all duration-200 ease-out items-center justify-between h-[36px] w-[300px] rounded-md"
+        className="group flex h-[36px] w-[40px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
       >
-        <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
-          <MagnifyingGlassIcon width="21" height="21" />
-          <p className="text-sm select-none">Search documetion...</p>
+        <div className="flex h-full items-center justify-center dark:text-[#ffffff] transition-all duration-200 ease-out dark:group-hover:text-white">
+          <div className="flex h-full items-center">
+            <MagnifyingGlassIcon width="21" height="21" />
+          </div>
         </div>
-        <p className="text-sm text-muted-foreground">
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        {/* <p className="select-none text-sm text-[#7c7c7c] transition-colors duration-300 ease-out dark:group-hover:text-white">
+          Search documetion...
+        </p> */}
+        {/* <p className="text-sm text-muted-foreground">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
           </kbd>
-        </p>
+        </p> */}
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
-        <CommandList className="custom_command_scroll h-[500px] ">
+        <CommandList className="custom_command_scroll h-[500px]">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Link">
             <CommandItem
@@ -112,7 +120,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Home</span>
             </CommandItem>
             <CommandItem
@@ -121,7 +129,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Docs</span>
             </CommandItem>
             <CommandItem
@@ -130,7 +138,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Pricing</span>
             </CommandItem>
             <CommandItem
@@ -139,7 +147,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Resources</span>
             </CommandItem>
             <CommandItem
@@ -148,7 +156,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Enterprise</span>
             </CommandItem>
             <CommandItem
@@ -157,7 +165,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Play Now</span>
             </CommandItem>
             <CommandItem
@@ -166,7 +174,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Download</span>
             </CommandItem>
             <CommandItem
@@ -175,8 +183,17 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <StickyNote className="mr-2 h-4 w-4" />
+              <FileTextIcon className="mr-2 h-4 w-4" />
               <span>Chat</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                router.push("/webfilm");
+                setOpen((open) => !open);
+              }}
+            >
+              <FileTextIcon className="mr-2 h-4 w-4" />
+              <span>WebFilm</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
@@ -187,7 +204,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Sun className="mr-2 h-4 w-4" />
+              <SunIcon className="mr-2 h-4 w-4" />
               <span>Light</span>
             </CommandItem>
             <CommandItem
@@ -196,7 +213,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Moon className="mr-2 h-4 w-4" />
+              <MoonIcon className="mr-2 h-4 w-4" />
               <span>Dark</span>
             </CommandItem>
             <CommandItem
@@ -205,7 +222,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Monitor className="mr-2 h-4 w-4" />
+              <LaptopIcon className="mr-2 h-4 w-4" />
               <span>System</span>
             </CommandItem>
           </CommandGroup>
