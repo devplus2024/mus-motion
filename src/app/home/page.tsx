@@ -156,8 +156,8 @@ export default function Home() {
                     href="https://x.com/DeveloperPlus24"
                     className="flex items-center gap-[0.5rem]"
                   >
-                    <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020]">
-                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-[0.6rem]">
+                    <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#434343] bg-gradient-to-tr from-black/50 to-[#121212]">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#434343] bg-[#141414] p-[0.6rem]">
                         <svg
                           data-testid="geist-icon"
                           height={20}
@@ -203,8 +203,8 @@ export default function Home() {
               <HoverCard>
                 <HoverCardTrigger asChild>
                   <a href="" className="flex items-center gap-[0.5rem]">
-                    <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020]">
-                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-[0.6rem]">
+                    <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#434343] bg-gradient-to-tr from-black/50 to-[#121212]">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#434343] bg-[#141414] p-[0.6rem]">
                         <svg
                           data-testid="geist-icon"
                           height={20}
@@ -253,8 +253,8 @@ export default function Home() {
                     href="https://www.facebook.com/phamquangtruongan"
                     className="flex items-center gap-[0.5rem]"
                   >
-                    <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#202020]">
-                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#202020] bg-black p-[0.6rem]">
+                    <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#434343] bg-gradient-to-tr from-black/50 to-[#121212]">
+                      <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#434343] bg-[#141414] p-[0.6rem]">
                         <svg
                           data-testid="geist-icon"
                           height={20}
