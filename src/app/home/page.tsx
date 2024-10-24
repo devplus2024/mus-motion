@@ -299,8 +299,8 @@ export default function Home() {
               </HoverCard>
             </div>
           </div>
-          <h1 className="font-bold leading-[2.6rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-start xl:text-[2.3rem]">
-            Experience the Ultimate Music Journey with Our Innovative Software
+          <h1 className="font-bold leading-[3.2rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-start xl:text-[2.3rem]">
+            Experience the Ultimate Music Journey with Our <span className="bg-white text-black px-2 mx-2">Innovative Software</span>
           </h1>
           <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
             Dive into a seamless music experience with our cutting-edge
