@@ -147,7 +147,7 @@ export function CommandMenu() {
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
-        <CommandList className="custom_command_scroll h-[500px]">
+        <CommandList className="custom_command_scroll h-[500px] bg-[#080808]">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Link">
             {docsTitle.map((items_cm) => (
@@ -164,7 +164,7 @@ export function CommandMenu() {
                   strokeLinejoin="round"
                   viewBox="0 0 16 16"
                   width={16}
-                  className="mr-2 h-4 w-4"
+                  className="mr-2"
                   style={{ color: "currentcolor" }}
                 >
                   <path
@@ -187,7 +187,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <SunIcon className="mr-2 h-4 w-4" />
+              <SunIcon className="mr-2" />
               <span>Light</span>
             </CommandItem>
             <CommandItem
@@ -196,7 +196,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <MoonIcon className="mr-2 h-4 w-4" />
+              <MoonIcon className="mr-2" />
               <span>Dark</span>
             </CommandItem>
             <CommandItem
@@ -205,7 +205,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <LaptopIcon className="mr-2 h-4 w-4" />
+              <LaptopIcon className="mr-2" />
               <span>System</span>
             </CommandItem>
           </CommandGroup>
