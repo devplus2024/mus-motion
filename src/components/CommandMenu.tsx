@@ -95,34 +95,49 @@ export function CommandMenu() {
       src: "/",
     },
     {
-      id: "1",
+      id: "2",
       name: "Browse",
       src: "browse",
     },
     {
-      id: "1",
+      id: "3",
       name: "Pricing",
       src: "pricing",
     },
     {
-      id: "1",
+      id: "4",
       name: "Docs",
       src: "docs",
     },
     {
-      id: "1",
+      id: "5",
       name: "Radio",
       src: "radio",
     },
     {
-      id: "1",
+      id: "6",
       name: "Community",
       src: "community",
     },
     {
-      id: "1",
+      id: "7",
       name: "Support",
       src: "support",
+    },
+    {
+      id: "8",
+      name: "Download",
+      src: "downloads",
+    },
+    {
+      id: "9",
+      name: "Try On Web",
+      src: "support",
+    },
+    {
+      id: "10",
+      name: "AI Chat Box",
+      src: "ai",
     },
   ];
   return (
