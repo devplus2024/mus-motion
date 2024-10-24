@@ -30,6 +30,10 @@ import { useTheme } from "next-themes";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useRouter } from "next/navigation";
 import {
+  MoonIcon,
+  SunIcon,
+  FileTextIcon,
+  LaptopIcon,
   CalendarIcon,
   EnvelopeClosedIcon,
   FaceIcon,
@@ -66,7 +70,7 @@ export function CommandMenu() {
           } & React.RefAttributes<HTMLDivElement>,
         "ref"
       > &
-      React.RefAttributes<HTMLDivElement>
+      React.RefAttributes<HTMLDivElement>,
   ) => {
     const search = useCommandState((state) => state.search);
     if (!search) return null;
@@ -84,100 +88,111 @@ export function CommandMenu() {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
-
+  const docsTitle = [
+    {
+      id: "1",
+      name: "Home",
+      src: "/",
+    },
+    {
+      id: "2",
+      name: "Browse",
+      src: "browse",
+    },
+    {
+      id: "3",
+      name: "Pricing",
+      src: "pricing",
+    },
+    {
+      id: "4",
+      name: "Docs",
+      src: "docs",
+    },
+    {
+      id: "5",
+      name: "Radio",
+      src: "radio",
+    },
+    {
+      id: "6",
+      name: "Community",
+      src: "community",
+    },
+    {
+      id: "7",
+      name: "Support",
+      src: "support",
+    },
+    {
+      id: "8",
+      name: "Download",
+      src: "downloads",
+    },
+    {
+      id: "9",
+      name: "Try On Web",
+      src: "webapp",
+    },
+    {
+      id: "10",
+      name: "AI Chat Box",
+      src: "ai",
+    },
+  ];
   return (
     <>
       <div
         onClick={() => setOpen((open) => !open)}
-        className="cursor-pointer border p-2 flex gap-4 group hover:bg-muted transition-all duration-200 ease-out items-center justify-between h-[36px] w-[300px] rounded-md"
+        className="group flex h-[36px] w-[40px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
       >
-        <div className="gap-4 flex items-center text-[#7c7c7c] dark:group-hover:text-white transition-all duration-200 ease-out ">
-          <MagnifyingGlassIcon width="21" height="21" />
-          <p className="text-sm select-none">Search documetion...</p>
+        <div className="flex h-full items-center justify-center transition-all duration-200 ease-out dark:text-[#ffffff] dark:group-hover:text-white">
+          <div className="flex h-full items-center">
+            <MagnifyingGlassIcon width="21" height="21" />
+          </div>
         </div>
-        <p className="text-sm text-muted-foreground">
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        {/* <p className="select-none text-sm text-[#7c7c7c] transition-colors duration-300 ease-out dark:group-hover:text-white">
+          Search documetion...
+        </p> */}
+        {/* <p className="text-sm text-muted-foreground">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
           </kbd>
-        </p>
+        </p> */}
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
-        <CommandList className="custom_command_scroll h-[500px] ">
+        <CommandList className="custom_command_scroll h-[500px]">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Link">
-            <CommandItem
-              onSelect={() => {
-                router.push("/");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Home</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/docs");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Docs</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/pricing");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Pricing</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/resources");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Resources</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/enterprise");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Enterprise</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/docs");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Play Now</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/docs");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Download</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/chat");
-                setOpen((open) => !open);
-              }}
-            >
-              <StickyNote className="mr-2 h-4 w-4" />
-              <span>Chat</span>
-            </CommandItem>
+            {docsTitle.map((items_cm) => (
+              <CommandItem
+                key={items_cm.id}
+                onSelect={() => {
+                  router.push(`${items_cm.src}`);
+                  setOpen((open) => !open);
+                }}
+              >
+                <svg
+                  data-testid="geist-icon"
+                  height={16}
+                  strokeLinejoin="round"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  className="mr-2"
+                  style={{ color: "currentcolor" }}
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M14.5 13.5V6.5V5.41421C14.5 5.149 14.3946 4.89464 14.2071 4.70711L9.79289 0.292893C9.60536 0.105357 9.351 0 9.08579 0H8H3H1.5V1.5V13.5C1.5 14.8807 2.61929 16 4 16H12C13.3807 16 14.5 14.8807 14.5 13.5ZM13 13.5V6.5H9.5H8V5V1.5H3V13.5C3 14.0523 3.44772 14.5 4 14.5H12C12.5523 14.5 13 14.0523 13 13.5ZM9.5 5V2.12132L12.3787 5H9.5ZM5.13 5.00062H4.505V6.25062H5.13H6H6.625V5.00062H6H5.13ZM4.505 8H5.13H11H11.625V9.25H11H5.13H4.505V8ZM5.13 11H4.505V12.25H5.13H11H11.625V11H11H5.13Z"
+                    fill="currentColor"
+                  />
+                </svg>
+
+                <span>{items_cm.name}</span>
+              </CommandItem>
+            ))}
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Theme">
@@ -187,7 +202,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Sun className="mr-2 h-4 w-4" />
+              <SunIcon className="mr-2" />
               <span>Light</span>
             </CommandItem>
             <CommandItem
@@ -196,7 +211,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Moon className="mr-2 h-4 w-4" />
+              <MoonIcon className="mr-2" />
               <span>Dark</span>
             </CommandItem>
             <CommandItem
@@ -205,7 +220,7 @@ export function CommandMenu() {
                 setOpen((open) => !open);
               }}
             >
-              <Monitor className="mr-2 h-4 w-4" />
+              <LaptopIcon className="mr-2" />
               <span>System</span>
             </CommandItem>
           </CommandGroup>
