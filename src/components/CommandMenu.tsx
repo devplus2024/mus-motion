@@ -132,7 +132,7 @@ export function CommandMenu() {
     {
       id: "9",
       name: "Try On Web",
-      src: "support",
+      src: "webapp",
     },
     {
       id: "10",
