@@ -88,14 +88,50 @@ export function CommandMenu() {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
-
+  const docsTitle = [
+    {
+      id: "1",
+      name: "Home",
+      src: "/",
+    },
+    {
+      id: "1",
+      name: "Browse",
+      src: "browse",
+    },
+    {
+      id: "1",
+      name: "Pricing",
+      src: "pricing",
+    },
+    {
+      id: "1",
+      name: "Docs",
+      src: "docs",
+    },
+    {
+      id: "1",
+      name: "Radio",
+      src: "radio",
+    },
+    {
+      id: "1",
+      name: "Community",
+      src: "community",
+    },
+    {
+      id: "1",
+      name: "Support",
+      src: "support",
+    },
+  ];
   return (
     <>
       <div
         onClick={() => setOpen((open) => !open)}
         className="group flex h-[36px] w-[40px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
       >
-        <div className="flex h-full items-center justify-center dark:text-[#ffffff] transition-all duration-200 ease-out dark:group-hover:text-white">
+        <div className="flex h-full items-center justify-center transition-all duration-200 ease-out dark:text-[#ffffff] dark:group-hover:text-white">
           <div className="flex h-full items-center">
             <MagnifyingGlassIcon width="21" height="21" />
           </div>
@@ -114,87 +150,34 @@ export function CommandMenu() {
         <CommandList className="custom_command_scroll h-[500px]">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Link">
-            <CommandItem
-              onSelect={() => {
-                router.push("/");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Home</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/docs");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Docs</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/pricing");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Pricing</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/resources");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Resources</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/enterprise");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Enterprise</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/docs");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Play Now</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/docs");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Download</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/chat");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>Chat</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                router.push("/webfilm");
-                setOpen((open) => !open);
-              }}
-            >
-              <FileTextIcon className="mr-2 h-4 w-4" />
-              <span>WebFilm</span>
-            </CommandItem>
+            {docsTitle.map((items_cm) => (
+              <CommandItem
+                key={items_cm.id}
+                onSelect={() => {
+                  router.push(`${items_cm.src}`);
+                  setOpen((open) => !open);
+                }}
+              >
+                <svg
+                  data-testid="geist-icon"
+                  height={16}
+                  strokeLinejoin="round"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  className="mr-2 h-4 w-4"
+                  style={{ color: "currentcolor" }}
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M14.5 13.5V6.5V5.41421C14.5 5.149 14.3946 4.89464 14.2071 4.70711L9.79289 0.292893C9.60536 0.105357 9.351 0 9.08579 0H8H3H1.5V1.5V13.5C1.5 14.8807 2.61929 16 4 16H12C13.3807 16 14.5 14.8807 14.5 13.5ZM13 13.5V6.5H9.5H8V5V1.5H3V13.5C3 14.0523 3.44772 14.5 4 14.5H12C12.5523 14.5 13 14.0523 13 13.5ZM9.5 5V2.12132L12.3787 5H9.5ZM5.13 5.00062H4.505V6.25062H5.13H6H6.625V5.00062H6H5.13ZM4.505 8H5.13H11H11.625V9.25H11H5.13H4.505V8ZM5.13 11H4.505V12.25H5.13H11H11.625V11H11H5.13Z"
+                    fill="currentColor"
+                  />
+                </svg>
+
+                <span>{items_cm.name}</span>
+              </CommandItem>
+            ))}
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Theme">
