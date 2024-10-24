@@ -147,7 +147,7 @@ export function CommandMenu() {
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
-        <CommandList className="custom_command_scroll h-[500px] bg-[#080808]">
+        <CommandList className="custom_command_scroll h-[500px]">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Link">
             {docsTitle.map((items_cm) => (
