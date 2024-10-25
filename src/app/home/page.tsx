@@ -139,6 +139,7 @@ import {
 } from "@/components/ui/hover-card";
 import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
 import { ChartBar } from "./components/chart";
+import { TextShimmer } from "@/components/core/text-shimmer";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -363,11 +364,19 @@ export default function Home() {
               Innovative Software
             </span>
           </h1>
-          <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
+          {/* <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
-          </p>
+          </p> */}
+          <TextShimmer
+            className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]"
+            duration={1}
+          >
+            Dive into a seamless music experience with our cutting-edge
+            software. Unleash your creativity, manage your playlists, and
+            explore a universe of sounds.
+          </TextShimmer>
           <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
             <DownloadButton />
             <Link href="/webapp">
