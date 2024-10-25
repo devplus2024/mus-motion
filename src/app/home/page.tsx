@@ -143,6 +143,64 @@ import { ChartBar } from "./components/chart";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
+  const listLogo = [
+    {
+      id: "1",
+      src: "10-up",
+    },
+    {
+      id: "2",
+      src: "altudo",
+    },
+    {
+      id: "3",
+      src: "america-eagle",
+    },
+    {
+      id: "4",
+      src: "avanade",
+    },
+    {
+      id: "5",
+      src: "basement",
+    },
+    {
+      id: "6",
+      src: "codal",
+    },
+    {
+      id: "7",
+      src: "jakala",
+    },
+    {
+      id: "8",
+      src: "merkle",
+    },
+    {
+      id: "9",
+      src: "monogram",
+    },
+    {
+      id: "10",
+      src: "branhdung",
+    },
+    {
+      id: "11",
+      src: "code-theory",
+    },
+    {
+      id: "12",
+      src: "apply-digital",
+    },
+    {
+      id: "13",
+      src: "horzontal",
+    },
+    {
+      id: "14",
+      src: "labdigital",
+    },
+  ];
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
@@ -300,7 +358,10 @@ export default function Home() {
             </div>
           </div>
           <h1 className="font-bold leading-[3.2rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-start xl:text-[2.3rem]">
-            Experience the Ultimate Music Journey with Our <span className="bg-white text-black px-2 mx-2">Innovative Software</span>
+            Experience the Ultimate Music Journey with Our{" "}
+            <span className="mx-2 bg-white px-2 text-black">
+              Innovative Software
+            </span>
           </h1>
           <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
             Dive into a seamless music experience with our cutting-edge
@@ -350,6 +411,18 @@ export default function Home() {
             />
           </div> */}
         </div>
+      </div>
+      <div className="mt-[4rem] grid grid-cols-7">
+        {listLogo.map((logo) => (
+          <Image
+            key={logo.id}
+            src={`/${logo.src}.svg`}
+            height={"20"}
+            width={"20"}
+            alt={`${logo.src}`}
+            className=""
+          ></Image>
+        ))}
       </div>
       <div className="mt-[4rem] w-full px-[4rem]">
         <ChartBar />
