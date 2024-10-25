@@ -182,7 +182,7 @@ export default function Home() {
     },
     {
       id: "10",
-      src: "branddung",
+      src: "brandung",
     },
     {
       id: "11",
@@ -418,9 +418,9 @@ export default function Home() {
             key={logo.id}
             src={`/${logo.src}.svg`}
             height={"80"}
-            width={"40"}
+            width={"100"}
             alt={`${logo.src}`}
-            className="w-auto dark:invert-[1]"
+            className="dark:invert-[1]"
           ></Image>
         ))}
       </div>
