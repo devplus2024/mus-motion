@@ -412,7 +412,7 @@ export default function Home() {
           </div> */}
         </div>
       </div>
-      <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7">
+      <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7 justify-items-center gap-x-[20px] gap-y-[27px]">
         {listLogo.map((logo) => (
           <Image
             key={logo.id}
