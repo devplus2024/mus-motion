@@ -371,7 +371,7 @@ export default function Home() {
           </p> */}
           <TextShimmer
             className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]"
-            duration={5}
+            duration={3}
           >
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
