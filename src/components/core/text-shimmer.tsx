@@ -1,9 +1,10 @@
 "use client";
-import React, { useMemo, type JSX } from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface TextShimmerProps {
+// Define the props interface, excluding possible conflicts
+interface TextShimmerProps extends React.HTMLAttributes<HTMLElement> {
   children: string;
   as?: React.ElementType;
   className?: string;
@@ -13,12 +14,14 @@ interface TextShimmerProps {
 
 export function TextShimmer({
   children,
-  as: Component = "p",
+  as: Component = "p", // Default to <p> tag
   className,
   duration = 2,
   spread = 2,
+  ...props
 }: TextShimmerProps) {
-  const MotionComponent = motion(Component as keyof JSX.IntrinsicElements);
+  // Explicitly tell TypeScript that this is a motion component with HTML elements
+  const MotionComponent = motion(Component as React.ElementType);
 
   const dynamicSpread = useMemo(() => {
     return children.length * spread;
@@ -46,6 +49,7 @@ export function TextShimmer({
           backgroundImage: `var(--bg), linear-gradient(var(--base-color), var(--base-color))`,
         } as React.CSSProperties
       }
+      {...props}
     >
       {children}
     </MotionComponent>
