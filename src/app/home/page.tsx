@@ -412,13 +412,13 @@ export default function Home() {
           </div> */}
         </div>
       </div>
-      <div className="mt-[4rem] grid grid-cols-7">
+      <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7">
         {listLogo.map((logo) => (
           <Image
             key={logo.id}
             src={`/${logo.src}.svg`}
-            height={"20"}
-            width={"20"}
+            height={"120"}
+            width={"120"}
             alt={`${logo.src}`}
             className=""
           ></Image>
