@@ -154,7 +154,7 @@ export default function Home() {
     },
     {
       id: "3",
-      src: "america-eagle",
+      src: "american-eagle",
     },
     {
       id: "4",
@@ -182,7 +182,7 @@ export default function Home() {
     },
     {
       id: "10",
-      src: "branhdung",
+      src: "branddung",
     },
     {
       id: "11",
@@ -194,7 +194,7 @@ export default function Home() {
     },
     {
       id: "13",
-      src: "horzontal",
+      src: "horizontal",
     },
     {
       id: "14",
@@ -417,10 +417,10 @@ export default function Home() {
           <Image
             key={logo.id}
             src={`/${logo.src}.svg`}
-            height={"120"}
-            width={"120"}
+            height={"80"}
+            width={"40"}
             alt={`${logo.src}`}
-            className=""
+            className="w-auto dark:invert-[1]"
           ></Image>
         ))}
       </div>
