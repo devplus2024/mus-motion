@@ -433,7 +433,7 @@ export default function Home() {
           ></Image>
         ))}
       </div>
-      <div className="mt-[4rem] w-full px-[4rem]">
+      <div className="mt-[4rem] w-full px-[2rem]">
         <ChartBar />
       </div>
       <div
