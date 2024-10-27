@@ -128,7 +128,8 @@ export function ChartSingle() {
               left={50}
               dataKey="mobile"
               type="linear"
-              stroke="var(--color-desktop)"
+              //   stroke="var(--color-desktop)"
+              stroke="url(#lineGradient)"
               strokeWidth={2}
               dot={false}
               //   dot={{
