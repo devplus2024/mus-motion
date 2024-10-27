@@ -1,7 +1,14 @@
 "use client";
 
 import { TrendingUp } from "lucide-react";
-import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts";
+import {
+  CartesianGrid,
+  LabelList,
+  Line,
+  LineChart,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 import {
   Card,
@@ -65,6 +72,7 @@ export function ChartSingle() {
             }}
           >
             <CartesianGrid vertical={false} />
+            <YAxis />
             <XAxis
               dataKey="month"
               tickLine={false}
