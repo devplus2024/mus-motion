@@ -72,7 +72,7 @@ export function ChartSingle() {
             }}
           >
             <CartesianGrid vertical={false} />
-            <YAxis width={80} tickMargin={8} />
+            <YAxis tickMargin={8} />
             <XAxis
               dataKey="month"
               tickLine={false}
@@ -100,6 +100,7 @@ export function ChartSingle() {
               type="linear"
               stroke="var(--color-desktop)"
               strokeWidth={2}
+              left={50}
               dot={false}
               //   dot={{
               //     fill: "var(--color-desktop)",
@@ -116,6 +117,7 @@ export function ChartSingle() {
               />
             </Line>
             <Line
+              left={50}
               dataKey="mobile"
               type="linear"
               stroke="var(--color-desktop)"
