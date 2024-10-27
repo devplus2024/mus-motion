@@ -71,6 +71,13 @@ export function ChartSingle() {
               right: 12,
             }}
           >
+            <defs>
+              <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#15eb99" /> {/* Màu đỏ ở 0% */}
+                <stop offset="100%" stopColor="#159deb" />{" "}
+                {/* Màu xanh ở 100% */}
+              </linearGradient>
+            </defs>
             <CartesianGrid vertical={false} />
             <YAxis tickMargin={8} />
             <XAxis
@@ -98,7 +105,8 @@ export function ChartSingle() {
             <Line
               dataKey="desktop"
               type="linear"
-              stroke="var(--color-desktop)"
+              //   stroke="var(--color-desktop)"
+              stroke="url(#lineGradient)"
               strokeWidth={2}
               left={50}
               dot={false}

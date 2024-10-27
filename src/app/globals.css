@@ -327,3 +327,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.bg-df {
+  color: #159deb;
+}
