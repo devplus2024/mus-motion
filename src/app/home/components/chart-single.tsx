@@ -72,7 +72,7 @@ export function ChartSingle() {
             }}
           >
             <CartesianGrid vertical={false} />
-            <YAxis />
+            <YAxis tickMargin={8} />
             <XAxis
               dataKey="month"
               tickLine={false}
