@@ -140,6 +140,7 @@ import {
 import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
 import { ChartBar } from "./components/chart";
 import { TextShimmer } from "@/components/core/text-shimmer";
+import { ChartSingle } from "./components/chart-single";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -434,7 +435,7 @@ export default function Home() {
         ))}
       </div>
       <div className="mt-[4rem] w-full px-[2rem]">
-        <ChartBar />
+        <ChartSingle />
       </div>
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
