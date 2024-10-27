@@ -42,7 +42,7 @@ const chartConfig = {
 
 export function ChartSingle() {
   return (
-    <Card>
+    <Card className="bg-black">
       <CardHeader>
         <CardTitle>Line Chart - Label</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
