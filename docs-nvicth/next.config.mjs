@@ -1,10 +1,14 @@
-import { createMDX } from 'fumadocs-mdx/next';
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [
+      require("rehype-slug"),
+      require("rehype-autolink-headings"),
+    ],
+  },
+});
 
-const withMDX = createMDX();
-
-/** @type {import('next').NextConfig} */
-const config = {
-  reactStrictMode: true,
-};
-
-export default withMDX(config);
+module.exports = withMDX({
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+});
