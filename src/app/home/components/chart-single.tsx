@@ -48,7 +48,7 @@ export function ChartSingle() {
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer className="aspect-auto" config={chartConfig}>
+        <ChartContainer className="aspect-auto h-[250px]" config={chartConfig}>
           <LineChart
             accessibilityLayer
             data={chartData}
@@ -72,6 +72,25 @@ export function ChartSingle() {
             />
             <Line
               dataKey="desktop"
+              type="natural"
+              stroke="var(--color-desktop)"
+              strokeWidth={2}
+              dot={{
+                fill: "var(--color-desktop)",
+              }}
+              activeDot={{
+                r: 6,
+              }}
+            >
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Line>
+            <Line
+              dataKey="mobile"
               type="natural"
               stroke="var(--color-desktop)"
               strokeWidth={2}
