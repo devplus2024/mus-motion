@@ -141,7 +141,7 @@ export function ChartBar() {
 
   return (
     <Card className="w-full border-none bg-black">
-      <CardHeader className="flex flex-col items-stretch space-y-0 border p-2 sm:flex-row">
+      <CardHeader className="flex flex-col items-stretch space-y-0 rounded-lg border p-2 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6">
           <CardTitle>Bar Chart - Interactive</CardTitle>
           <CardDescription>
@@ -155,7 +155,7 @@ export function ChartBar() {
               <button
                 key={chart}
                 data-active={activeChart === chart}
-                className="relative z-30 flex flex-1 flex-col justify-center gap-1 px-6 text-left data-[active=true]:bg-white sm:px-8"
+                className="relative z-30 flex flex-1 flex-col justify-center gap-1 rounded-lg px-6 py-px text-left data-[active=true]:bg-[#0c0c0c] sm:px-8"
                 onClick={() => setActiveChart(chart)}
               >
                 <span className="text-xs data-[active=true]:text-black">

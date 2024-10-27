@@ -104,7 +104,8 @@
     --menu-border-color: #202020;
     ----arrow-bg: #202020;
     --chat: #1a1a1a;
-    --chart-bar-web: 0 0% 0%;
+    --chart-bar-web: 0 0% 81%;
+    --chart-bar-webs: hsl(0, 0%, 81%);
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
