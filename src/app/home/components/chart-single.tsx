@@ -97,7 +97,7 @@ export function ChartSingle() {
             />
             <Line
               dataKey="desktop"
-              type="natural"
+              type="linear"
               stroke="var(--color-desktop)"
               strokeWidth={2}
               dot={false}
@@ -117,7 +117,7 @@ export function ChartSingle() {
             </Line>
             <Line
               dataKey="mobile"
-              type="natural"
+              type="linear"
               stroke="var(--color-desktop)"
               strokeWidth={2}
               dot={false}
