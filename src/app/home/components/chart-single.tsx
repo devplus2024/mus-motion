@@ -67,7 +67,7 @@ export function ChartSingle() {
             data={chartData}
             margin={{
               top: 20,
-              left: 12,
+              left: 30,
               right: 12,
             }}
           >
