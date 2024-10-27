@@ -119,11 +119,11 @@ const chartConfig = {
   },
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-bar-web))",
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-bar-web))",
   },
 } satisfies ChartConfig;
 
@@ -141,8 +141,8 @@ export function ChartBar() {
 
   return (
     <Card className="w-full border-none bg-black">
-      <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
-        <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+      <CardHeader className="flex flex-col items-stretch space-y-0 border p-2 sm:flex-row">
+        <div className="flex flex-1 flex-col justify-center gap-1 px-6">
           <CardTitle>Bar Chart - Interactive</CardTitle>
           <CardDescription>
             Showing total visitors for the last 3 months
@@ -155,13 +155,13 @@ export function ChartBar() {
               <button
                 key={chart}
                 data-active={activeChart === chart}
-                className="relative z-30 flex flex-1 flex-col justify-center gap-1 px-6 py-4 text-left data-[active=true]:bg-white sm:px-8 sm:py-6"
+                className="relative z-30 flex flex-1 flex-col justify-center gap-1 px-6 text-left data-[active=true]:bg-white sm:px-8"
                 onClick={() => setActiveChart(chart)}
               >
-                <span className="text-xs text-black">
+                <span className="text-xs data-[active=true]:text-black">
                   {chartConfig[chart].label}
                 </span>
-                <span className="text-lg font-bold leading-none text-black sm:text-3xl">
+                <span className="text-lg font-bold leading-none data-[active=true]:text-black sm:text-3xl">
                   {total[key as keyof typeof total].toLocaleString()}
                 </span>
               </button>
@@ -169,7 +169,7 @@ export function ChartBar() {
           })}
         </div>
       </CardHeader>
-      <CardContent className="px-2 sm:p-6">
+      <CardContent className="px-6 pt-[2rem]">
         <ChartContainer
           config={chartConfig}
           className="aspect-auto h-[250px] w-full"
