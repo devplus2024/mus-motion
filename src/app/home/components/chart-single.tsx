@@ -32,11 +32,11 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-bar-web))",
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-bar-web))",
   },
 } satisfies ChartConfig;
 
@@ -48,7 +48,7 @@ export function ChartSingle() {
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer className="aspect-auto" config={chartConfig}>
           <LineChart
             accessibilityLayer
             data={chartData}
