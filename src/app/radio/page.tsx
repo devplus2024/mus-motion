@@ -204,18 +204,18 @@ export default function Component() {
               <p className="text-md text-[#a1a1a1]">{currentGenre}</p>
             </div>
           </div>
-          <div className="flex gap-[1rem] rounded-lg border px-2 py-1">
+          <div className="flex gap-[1rem] rounded-lg border bg-gradient-to-tr from-black/50 to-[#121212] px-2 py-1">
             <Button
               variant={"outline"}
               size={"icon"}
-              className="h-[1.8rem] w-[1.8rem] border-none"
+              className="h-4 w-4 border-none"
             >
               <Rewind />
             </Button>
             <Button
               variant={"outline"}
               size={"icon"}
-              className="h-[1.8rem] w-[1.8rem] border-none"
+              className="h-4 w-4 border-none"
             >
               <SkipBack />
             </Button>
@@ -223,7 +223,7 @@ export default function Component() {
             <Button
               variant="outline"
               size="icon"
-              className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none`}
+              className={`${isPlaying ? "hidden" : "flex"} h-4 w-4 border-none`}
               onClick={() => {
                 setIsPlaying(true);
                 handlePlayPause();
@@ -234,7 +234,7 @@ export default function Component() {
             <Button
               variant="outline"
               size="icon"
-              className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none`}
+              className={`${!isPlaying ? "hidden" : "flex"} h-4 w-4 border-none`}
               onClick={() => {
                 setIsPlaying(false);
                 handlePlayPause();
@@ -246,14 +246,14 @@ export default function Component() {
             <Button
               variant="outline"
               size={"icon"}
-              className="h-[1.8rem] w-[1.8rem] border-none"
+              className="h-4 w-4 border-none"
             >
               <SkipForward />
             </Button>
             <Button
               variant="outline"
               size={"icon"}
-              className="h-[1.8rem] w-[1.8rem] border-none"
+              className="h-4 w-4 border-none"
             >
               <FastForward />
             </Button>
