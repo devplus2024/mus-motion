@@ -100,12 +100,13 @@ export function ChartSingle() {
               type="natural"
               stroke="var(--color-desktop)"
               strokeWidth={2}
-              dot={{
-                fill: "var(--color-desktop)",
-              }}
-              activeDot={{
-                r: 6,
-              }}
+              dot={false}
+              //   dot={{
+              //     fill: "var(--color-desktop)",
+              //   }}
+              //   activeDot={{
+              //     r: 6,
+              //   }}
             >
               <LabelList
                 position="top"
@@ -119,12 +120,13 @@ export function ChartSingle() {
               type="natural"
               stroke="var(--color-desktop)"
               strokeWidth={2}
-              dot={{
-                fill: "var(--color-desktop)",
-              }}
-              activeDot={{
-                r: 6,
-              }}
+              dot={false}
+              //   dot={{
+              //     fill: "var(--color-desktop)",
+              //   }}
+              //   activeDot={{
+              //     r: 6,
+              //   }}
             >
               <LabelList
                 position="top"
