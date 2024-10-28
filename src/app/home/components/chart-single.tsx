@@ -56,11 +56,11 @@ const chartConfig = {
 export function ChartSingle() {
   return (
     <Card className="bg-black">
-      <CardHeader>
+      <CardHeader className="rounded-md border">
         <CardTitle>Line Chart - Label</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-6">
         <ChartContainer className="aspect-auto h-[250px]" config={chartConfig}>
           <LineChart
             accessibilityLayer
@@ -148,7 +148,7 @@ export function ChartSingle() {
           </LineChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
+      <CardFooter className="flex-col items-start gap-2 rounded-md border py-4 pl-6 text-sm">
         <div className="flex gap-2 font-medium leading-none">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
