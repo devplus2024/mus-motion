@@ -29,17 +29,17 @@ export const description = "A line chart with a label";
 
 const chartData = [
   { month: "January", desktop: 150, mobile: 40 },
-  { month: "February", desktop: 190, mobile: 200 },
-  { month: "March", desktop: 210, mobile: 120 },
-  { month: "April", desktop: 250, mobile: 190 },
-  { month: "May", desktop: 320, mobile: 130 },
-  { month: "June", desktop: 370, mobile: 140 },
-  { month: "July", desktop: 460, mobile: 320 },
-  { month: "August", desktop: 510, mobile: 120 },
-  { month: "September", desktop: 650, mobile: 458 },
-  { month: "October", desktop: 1000, mobile: 130 },
-  { month: "November", desktop: 1200, mobile: 260 },
-  { month: "December", desktop: 1500, mobile: 240 },
+  { month: "February", desktop: 190, mobile: 130 },
+  { month: "March", desktop: 210, mobile: 190 },
+  { month: "April", desktop: 250, mobile: 230 },
+  { month: "May", desktop: 320, mobile: 290 },
+  { month: "June", desktop: 370, mobile: 320 },
+  { month: "July", desktop: 460, mobile: 430 },
+  { month: "August", desktop: 510, mobile: 470 },
+  { month: "September", desktop: 650, mobile: 558 },
+  { month: "October", desktop: 1000, mobile: 730 },
+  { month: "November", desktop: 1200, mobile: 860 },
+  { month: "December", desktop: 1500, mobile: 940 },
 ];
 
 const chartConfig = {
