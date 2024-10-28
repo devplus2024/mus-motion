@@ -28,18 +28,18 @@ import {
 export const description = "A line chart with a label";
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-  { month: "July", desktop: 520, mobile: 320 },
-  { month: "August", desktop: 328, mobile: 120 },
-  { month: "September", desktop: 650, mobile: 458 },
-  { month: "October", desktop: 234, mobile: 130 },
-  { month: "November", desktop: 514, mobile: 260 },
-  { month: "December", desktop: 610, mobile: 240 },
+  { month: "January", desktop: 150, mobile: 80 },
+  { month: "February", desktop: 250, mobile: 200 },
+  { month: "March", desktop: 350, mobile: 120 },
+  { month: "April", desktop: 450, mobile: 190 },
+  { month: "May", desktop: 550, mobile: 130 },
+  { month: "June", desktop: 650, mobile: 140 },
+  { month: "July", desktop: 750, mobile: 320 },
+  { month: "August", desktop: 850, mobile: 120 },
+  { month: "September", desktop: 950, mobile: 458 },
+  { month: "October", desktop: 1000, mobile: 130 },
+  { month: "November", desktop: 1200, mobile: 260 },
+  { month: "December", desktop: 1500, mobile: 240 },
 ];
 
 const chartConfig = {
@@ -73,8 +73,9 @@ export function ChartSingle() {
           >
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#15eb99" /> {/* Màu đỏ ở 0% */}
-                <stop offset="100%" stopColor="#159deb" />{" "}
+                <stop offset="5%" stopColor="#15eb99" stop-opacity="0.09" />{" "}
+                {/* Màu đỏ ở 0% */}
+                <stop offset="50%" stopColor="#159deb" />{" "}
                 {/* Màu xanh ở 100% */}
               </linearGradient>
             </defs>
