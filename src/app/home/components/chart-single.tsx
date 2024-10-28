@@ -34,8 +34,8 @@ const chartData = [
   { month: "April", desktop: 450, mobile: 230 },
   { month: "May", desktop: 420, mobile: 290 },
   { month: "June", desktop: 540, mobile: 320 },
-  { month: "July", desktop: 560, mobile: 430 },
-  { month: "August", desktop: 510, mobile: 470 },
+  { month: "July", desktop: 520, mobile: 430 },
+  { month: "August", desktop: 560, mobile: 470 },
   { month: "September", desktop: 650, mobile: 558 },
   { month: "October", desktop: 600, mobile: 730 },
   { month: "November", desktop: 780, mobile: 860 },
@@ -124,7 +124,7 @@ export function ChartSingle() {
                 fontSize={12}
               />
             </Line>
-            <Line
+            {/* <Line
               dataKey="mobile"
               type="linear"
               //   stroke="var(--color-desktop)"
@@ -144,7 +144,7 @@ export function ChartSingle() {
                 className="fill-foreground"
                 fontSize={12}
               />
-            </Line>
+            </Line> */}
           </LineChart>
         </ChartContainer>
       </CardContent>
