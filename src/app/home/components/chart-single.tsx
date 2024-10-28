@@ -109,7 +109,6 @@ export function ChartSingle() {
               //   stroke="var(--color-desktop)"
               stroke="url(#lineGradient)"
               strokeWidth={2}
-              left={50}
               dot={false}
               //   dot={{
               //     fill: "var(--color-desktop)",
@@ -126,7 +125,6 @@ export function ChartSingle() {
               />
             </Line>
             <Line
-              left={50}
               dataKey="mobile"
               type="linear"
               //   stroke="var(--color-desktop)"
