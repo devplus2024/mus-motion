@@ -268,10 +268,10 @@ export const Navigation = (): JSX.Element => {
                 <X />
               </Link>
             </div>
-            <div className="h-4 border-r"></div>
+            <div className="h-[1.2rem] border-r"></div>
             <div className="flex items-center justify-center gap-[1rem]">
               <ThemeToggle />
-              <div className="h-4 border-r"></div>
+              <div className="h-[1.2rem] border-r"></div>
               <CommandMenu />
             </div>
             <div className="flex items-center gap-[1rem]">
