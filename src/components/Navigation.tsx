@@ -109,7 +109,7 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
 import LogoImage from "./LogoImage";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
 import ShineBorder from "@/components/magicui/shine-border";
@@ -255,12 +255,12 @@ export const Navigation = (): JSX.Element => {
               >
                 <GitHub />
               </Link>
-              <Link
+              {/* <Link
                 className="cursor-pointer"
                 href="https://www.linkedin.com/in/devplus2024/"
               >
                 <Linkedin />
-              </Link>
+              </Link> */}
               <Link
                 className="cursor-pointer"
                 href="https://x.com/DeveloperPlus24"
@@ -268,8 +268,10 @@ export const Navigation = (): JSX.Element => {
                 <X />
               </Link>
             </div>
+            <div className="h-4 border-r"></div>
             <div className="flex items-center justify-center gap-[1rem]">
               <ThemeToggle />
+              <div className="h-4 border-r"></div>
               <CommandMenu />
             </div>
             <div className="flex items-center gap-[1rem]">
