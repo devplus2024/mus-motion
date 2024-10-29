@@ -14,7 +14,7 @@ const buttonVariants = cva("size-6 rounded-full p-1 text-muted-foreground", {
   },
 });
 
-export function ThemeToggle({
+export function ThemeToggleLast({
   className,
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement>): React.ReactElement {
