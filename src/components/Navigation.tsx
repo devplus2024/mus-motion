@@ -109,7 +109,6 @@ import {
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { CommandMenu } from "./CommandMenu";
 import LogoImage from "./LogoImage";
-import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
 import ShineBorder from "@/components/magicui/shine-border";
@@ -118,6 +117,7 @@ import GitHub from "./GitHub";
 import Discord from "./Discord";
 import X from "./x";
 import Linkedin from "./Linkedin";
+import { ThemeToggle } from "./ThemeToggle";
 export const Navigation = (): JSX.Element => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
