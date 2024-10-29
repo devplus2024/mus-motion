@@ -25,7 +25,10 @@ export const ThemeToggle = ({
       `}</style>
       </Head>
 
-      <Tooltip className="radix-themes-custom-fonts" content="Toggle theme">
+      <div
+        className="radix-themes-custom-fonts flex items-center"
+        content="Toggle theme"
+      >
         <IconButton
           size="3"
           variant="ghost"
@@ -51,7 +54,7 @@ export const ThemeToggle = ({
             style={{ display: "var(--theme-toggle-moon-icon-display)" }}
           />
         </IconButton>
-      </Tooltip>
+      </div>
     </>
   );
 };
