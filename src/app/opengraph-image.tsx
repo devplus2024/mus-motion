@@ -66,7 +66,6 @@ export default async function Image() {
             fontSize: 12,
             fontWeight: 700,
           }}
-          className="rounded-full border px-4 py-1 text-xs font-bold transition-colors duration-300 ease-out dark:text-white"
         >
           v2.6.5
         </span>
@@ -96,6 +95,7 @@ export default async function Image() {
         >
           <button
             style={{
+              fontSize: 12,
               paddingLeft: 12,
               paddingRight: 12,
               paddingBottom: 4,
@@ -105,12 +105,12 @@ export default async function Image() {
               borderColor: "#202020",
               color: "white",
             }}
-            className="rounded-full border px-3 py-1"
           >
             View Now
           </button>
           <button
             style={{
+              fontSize: 12,
               paddingLeft: 12,
               paddingRight: 12,
               paddingBottom: 4,
@@ -120,7 +120,6 @@ export default async function Image() {
               borderColor: "#202020",
               color: "white",
             }}
-            className=""
           >
             Getting Started
           </button>
