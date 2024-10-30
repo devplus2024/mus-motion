@@ -56,7 +56,7 @@ const chartConfig = {
 export function ChartSingle() {
   return (
     <Card className="border-none dark:bg-black">
-      <CardHeader className="rounded-md border">
+      <CardHeader className="hidden rounded-md border">
         <CardTitle>Line Chart - Label</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>

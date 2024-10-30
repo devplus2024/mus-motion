@@ -434,7 +434,7 @@ export default function Home() {
           ></Image>
         ))}
       </div>
-      <div className="mt-[4rem] w-full px-[2rem]">
+      <div className="mt-[2rem] w-full px-[2rem]">
         <ChartSingle />
       </div>
       <div
