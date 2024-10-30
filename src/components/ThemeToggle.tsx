@@ -26,7 +26,7 @@ export const ThemeToggle = ({
       </Head>
 
       <div
-        className="radix-themes-custom-fonts flex h-[36px] w-[40px] items-center hover:bg-muted dark:hover:bg-[#101010]"
+        className="radix-themes-custom-fonts flex h-[36px] w-[37px] items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
         content="Toggle theme"
       >
         <IconButton
