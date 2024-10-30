@@ -86,44 +86,6 @@ export default async function Image() {
         >
           {imagePreview}
         </span>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <button
-            style={{
-              fontSize: 12,
-              paddingLeft: 12,
-              paddingRight: 12,
-              paddingBottom: 4,
-              paddingTop: 4,
-              borderRadius: 9999,
-              border: 1,
-              borderColor: "#202020",
-              color: "white",
-            }}
-          >
-            View Now
-          </button>
-          <button
-            style={{
-              fontSize: 12,
-              paddingLeft: 12,
-              paddingRight: 12,
-              paddingBottom: 4,
-              paddingTop: 4,
-              borderRadius: 9999,
-              border: 1,
-              borderColor: "#202020",
-              color: "white",
-            }}
-          >
-            Getting Started
-          </button>
-        </div>
       </div>
     ),
     // ImageResponse options
