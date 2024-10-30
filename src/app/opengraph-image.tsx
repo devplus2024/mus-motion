@@ -47,11 +47,17 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           color: "white",
+          textDecorationLine: "underline",
+          gap: "2rem",
         }}
       >
+        <span className="rounded-full border px-4 py-1 text-xs font-bold transition-colors duration-300 ease-out dark:text-white">
+          v2.6.5
+        </span>
         {imagePreview}
       </div>
     ),
