@@ -69,23 +69,8 @@ export default async function Image() {
         >
           v2.6.5
         </span>
-        <span
-          style={{
-            fontSize: 128,
-            background: "black",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            textDecorationLine: "italic",
-            gap: "2rem",
-          }}
-        >
-          {imagePreview}
-        </span>
+
+        {imagePreview}
       </div>
     ),
     // ImageResponse options
