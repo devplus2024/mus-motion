@@ -51,14 +51,80 @@ export default async function Image() {
           alignItems: "center",
           justifyContent: "center",
           color: "white",
-          textDecorationLine: "underline",
           gap: "2rem",
         }}
       >
-        <span className="rounded-full border px-4 py-1 text-xs font-bold transition-colors duration-300 ease-out dark:text-white">
+        <span
+          style={{
+            borderRadius: 9999,
+            border: 1,
+            borderColor: "#202020",
+            paddingLeft: 16,
+            paddingRight: 16,
+            paddingBottom: 4,
+            paddingTop: 4,
+            fontSize: 12,
+            fontWeight: 700,
+          }}
+          className="rounded-full border px-4 py-1 text-xs font-bold transition-colors duration-300 ease-out dark:text-white"
+        >
           v2.6.5
         </span>
-        {imagePreview}
+        <span
+          style={{
+            fontSize: 128,
+            background: "black",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            textDecorationLine: "italic",
+            gap: "2rem",
+          }}
+        >
+          {imagePreview}
+        </span>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <button
+            style={{
+              paddingLeft: 12,
+              paddingRight: 12,
+              paddingBottom: 4,
+              paddingTop: 4,
+              borderRadius: 9999,
+              border: 1,
+              borderColor: "#202020",
+              color: "white",
+            }}
+            className="rounded-full border px-3 py-1"
+          >
+            View Now
+          </button>
+          <button
+            style={{
+              paddingLeft: 12,
+              paddingRight: 12,
+              paddingBottom: 4,
+              paddingTop: 4,
+              borderRadius: 9999,
+              border: 1,
+              borderColor: "#202020",
+              color: "white",
+            }}
+            className=""
+          >
+            Getting Started
+          </button>
+        </div>
       </div>
     ),
     // ImageResponse options
