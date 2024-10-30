@@ -250,10 +250,11 @@ export const Navigation = (): JSX.Element => {
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center justify-center gap-[1rem]">
               <Link
-                className="cursor-pointer"
+                className="flex cursor-pointer items-center gap-4"
                 href="https://github.com/devplus2024"
               >
                 <GitHub />
+                <span className="text-sm">Github</span>
               </Link>
               {/* <Link
                 className="cursor-pointer"
@@ -262,16 +263,16 @@ export const Navigation = (): JSX.Element => {
                 <Linkedin />
               </Link> */}
               <Link
-                className="cursor-pointer"
+                className="flex cursor-pointer items-center gap-4"
                 href="https://x.com/DeveloperPlus24"
               >
                 <X />
+                <span className="text-sm">Twitter</span>
               </Link>
             </div>
             <div className="h-[1.2rem] border-r"></div>
-            <div className="flex items-center justify-center gap-[1rem]">
+            <div className="flex items-center justify-center gap-[0.5rem]">
               <ThemeToggle />
-              <div className="h-[1.2rem] border-r"></div>
               <CommandMenu />
             </div>
             <div className="flex items-center gap-[1rem]">
