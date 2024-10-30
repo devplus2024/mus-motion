@@ -271,7 +271,7 @@ export const Navigation = (): JSX.Element => {
               </Link>
             </div>
             <div className="h-[1.2rem] border-r"></div>
-            <div className="flex items-center justify-center gap-[0.5rem]">
+            <div className="flex items-center justify-center">
               <ThemeToggle />
               <CommandMenu />
             </div>
@@ -282,7 +282,7 @@ export const Navigation = (): JSX.Element => {
               >
                 <Button
                   variant={"outline"}
-                  className="flex items-center bg-gradient-to-tr from-black/50 to-[#121212] hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                  className="flex items-center hover:bg-accent dark:bg-gradient-to-tr dark:from-black/50 dark:to-[#121212] dark:hover:bg-[#1a1a1a]"
                 >
                   <Image
                     src={"/windows11.svg"}
