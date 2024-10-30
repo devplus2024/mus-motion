@@ -54,22 +54,6 @@ export default async function Image() {
           gap: "2rem",
         }}
       >
-        <span
-          style={{
-            borderRadius: 9999,
-            border: 1,
-            borderColor: "#202020",
-            paddingLeft: 16,
-            paddingRight: 16,
-            paddingBottom: 4,
-            paddingTop: 4,
-            fontSize: 12,
-            fontWeight: 700,
-          }}
-        >
-          v2.6.5
-        </span>
-
         {imagePreview}
       </div>
     ),
