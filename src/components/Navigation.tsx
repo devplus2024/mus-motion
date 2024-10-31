@@ -252,7 +252,7 @@ export const Navigation = (): JSX.Element => {
             <div className="flex items-center justify-center gap-[1rem]">
               <LinkPreview
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
-                href="https://github.com/devplus2024"
+                url="https://github.com/devplus2024"
               >
                 <GitHub />
                 <span className="text-sm">Github</span>
@@ -266,7 +266,7 @@ export const Navigation = (): JSX.Element => {
               </Link> */}
               <LinkPreview
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
-                href="https://x.com/DeveloperPlus24"
+                url="https://x.com/DeveloperPlus24"
               >
                 <X />
                 <span className="text-sm">Twitter</span>
