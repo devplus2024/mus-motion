@@ -257,7 +257,6 @@ export const Navigation = (): JSX.Element => {
                 <GitHub />
                 <span className="text-sm">Github</span>
               </LinkPreview>
-              span
               {/* <Link
                 className="cursor-pointer"
                 href="https://www.linkedin.com/in/devplus2024/"
