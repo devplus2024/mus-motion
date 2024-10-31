@@ -253,17 +253,15 @@ export const Navigation = (): JSX.Element => {
               <LinkPreview
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 url="https://github.com/devplus2024"
+                isStatic
+                imageSrc="/Opera Snapshot_2024-10-31_172630_github.com.png"
               >
                 <GitHub />
                 <span className="text-sm">Github</span>
               </LinkPreview>
-              {/* <Link
-                className="cursor-pointer"
-                href="https://www.linkedin.com/in/devplus2024/"
-              >
-                <Linkedin />
-              </Link> */}
               <LinkPreview
+                imageSrc="/Opera Snapshot_2024-10-31_172414_x.com.png"
+                isStatic
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 url="https://x.com/DeveloperPlus24"
               >
