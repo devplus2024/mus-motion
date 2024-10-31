@@ -9,6 +9,7 @@ import {
   CSSProperties,
 } from "react";
 import Image from "next/image";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { Toaster, toast } from "sonner";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
@@ -249,26 +250,27 @@ export const Navigation = (): JSX.Element => {
           </div>
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center justify-center gap-[1rem]">
-              <Link
-                className="flex cursor-pointer items-center gap-4"
+              <LinkPreview
+                className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 href="https://github.com/devplus2024"
               >
                 <GitHub />
                 <span className="text-sm">Github</span>
-              </Link>
+              </LinkPreview>
+              span
               {/* <Link
                 className="cursor-pointer"
                 href="https://www.linkedin.com/in/devplus2024/"
               >
                 <Linkedin />
               </Link> */}
-              <Link
-                className="flex cursor-pointer items-center gap-4"
+              <LinkPreview
+                className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 href="https://x.com/DeveloperPlus24"
               >
                 <X />
                 <span className="text-sm">Twitter</span>
-              </Link>
+              </LinkPreview>
             </div>
             <div className="h-[1.2rem] border-r"></div>
             <div className="flex items-center justify-center">

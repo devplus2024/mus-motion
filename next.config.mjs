@@ -5,6 +5,11 @@ module.exports = {
     config.plugins.push(new VeliteWebpackPlugin());
     return config;
   },
+  images: {
+    domains: [
+      "api.microlink.io", // Microlink Image Preview
+    ],
+  },
 };
 
 class VeliteWebpackPlugin {
