@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 interface TrackData {
   name: string;
   trackName: string;
-  artist: { name: string }[];
+  artist: { name: string }[]; // Ensure this structure matches the API response
   album: { images: { url: string }[] };
 }
 
@@ -29,7 +29,7 @@ export default function LibraryPage() {
       const uniqueTracks = [];
 
       for (const track of data) {
-        const artistNames = track.artist.map((a) => a.name).join(", ");
+        const artistNames = track.artist.map((a) => a.name).join(", "); // Kiểm tra artist
         // Kiểm tra nếu bài hát đã tồn tại trong tập hợp
         if (!seenTracks.has(track.trackName) && !seenArtists.has(artistNames)) {
           seenTracks.add(track.trackName);
@@ -65,7 +65,13 @@ export default function LibraryPage() {
       {tracks.map((track, index) => (
         <div key={index}>
           <h2>{track.trackName}</h2>
-          <p>Artist: {track.artist.map((a) => a.name).join(", ")}</p>
+          <p>
+            Artist:{" "}
+            {track.artist
+              ? track.artist.map((a) => a.name).join(", ")
+              : "Unknown Artist"}
+          </p>{" "}
+          {/* Check if artist exists */}
           <Image
             src={track.album.images[0]?.url || "/placeholder.jpg"}
             alt={track.name}
