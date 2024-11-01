@@ -54,11 +54,27 @@ export async function GET(req: NextRequest) {
   const data = await trackInfo.json();
 
   return NextResponse.json({
-    album: data.album.name,
-    artist: data.artists
-      .map((artist: { name: string }) => artist.name)
-      .join(", "),
-    previewImage: data.album.images[0]?.url, // Hình ảnh lớn nhất của album
     trackName: data.name,
+    album: {
+      name: data.album.name,
+      release_date: data.album.release_date,
+      total_tracks: data.album.total_tracks,
+      album_type: data.album.album_type,
+      images: data.album.images, // Danh sách các hình ảnh của album
+    },
+    artist: data.artists.map(
+      (artist: { name: string; id: string; href: string }) => ({
+        name: artist.name,
+        id: artist.id, // Thuộc tính id của nghệ sĩ
+        href: artist.href, // Liên kết tới trang Spotify của nghệ sĩ
+      }),
+    ),
+    popularity: data.popularity, // Độ phổ biến của bài hát (0 - 100)
+    duration_ms: data.duration_ms, // Thời lượng bài hát tính theo milliseconds
+    explicit: data.explicit, // Có explicit content hay không
+    external_urls: data.external_urls.spotify, // URL Spotify của bài hát
+    preview_url: data.preview_url, // Link preview bài hát (nếu có)
+    is_playable: data.is_playable, // Có thể phát bài hát không
+    track_number: data.track_number, // Số thứ tự của bài hát trong album
   });
 }
