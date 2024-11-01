@@ -9,7 +9,7 @@ interface TrackData {
     release_date: string;
     total_tracks: number;
     album_type: string;
-    images: { url: string }[];
+    images: { url: string; width: number; height: number }[]; // Thêm width và height
   };
   artist: { name: string }[];
   popularity: number;
@@ -56,8 +56,13 @@ export default function TrackPage({ params }: { params: { id: string } }) {
     return <div>Error: {error}</div>;
   }
 
-  const durationMinutes = Math.floor(track.duration_ms / 6000);
+  const durationMinutes = Math.floor(track.duration_ms / 60000);
   const durationSeconds = ((track.duration_ms % 60000) / 1000).toFixed(0);
+
+  // Tìm ảnh với kích thước 300x300
+  const image300x300 = track.album.images.find(
+    (img) => img.width === 300 && img.height === 300,
+  );
 
   return (
     <div>
@@ -88,13 +93,17 @@ export default function TrackPage({ params }: { params: { id: string } }) {
           </audio>
         </div>
       )}
-      <Image
-        src={track.album.images.map((a) => a.url).join(", ")}
-        alt={track.trackName}
-        width={300}
-        height={300}
-        style={{ maxWidth: "100%", height: "auto" }}
-      ></Image>
+      {image300x300 ? (
+        <Image
+          src={image300x300.url}
+          alt={track.trackName}
+          width={300}
+          height={300}
+          style={{ maxWidth: "100%", height: "auto" }}
+        />
+      ) : (
+        <p>No image available</p>
+      )}
     </div>
   );
 }
