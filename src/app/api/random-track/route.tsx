@@ -41,8 +41,9 @@ export async function GET() {
   }
 
   const data = await res.json();
-  const randomIndex = Math.floor(Math.random() * data.items.length);
-  const randomTrack = data.items[randomIndex].track;
 
-  return NextResponse.json(randomTrack);
+  // Lấy tối đa 20 bài hát
+  const tracks = data.items.slice(0, 20).map((item: any) => item.track);
+
+  return NextResponse.json(tracks);
 }
