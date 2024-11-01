@@ -94,7 +94,7 @@ export default function TrackPage({ params }: { params: { id: string } }) {
         width={300}
         height={300}
         style={{ maxWidth: "100%", height: "auto" }}
-      />
+      ></Image>
     </div>
   );
 }
