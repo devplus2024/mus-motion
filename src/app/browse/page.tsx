@@ -90,16 +90,23 @@ export default function BrowsePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col  justify-center md:flex-row gap-8">
+      <div className="flex flex-col justify-center gap-8 md:flex-row">
         {/* Sidebar */}
-        
 
         {/* Main Content */}
-        <div className="w-full md:w-3/4">
-          <div className="flex justify-between gap-[3rem] items-center mb-6">
-          <div className="relative w-full">
-            <Input type="text" placeholder="Search for favorite songs" className="w-full pl-[3rem] placeholder:text-[#7c7c7c]" />
-            <MagnifyingGlassIcon width="21" height="21" className="absolute left-[16px] top-1/2 -translate-y-1/2 " />
+        <div className="md:w-3/4 xl:w-full">
+          <div className="mb-6 flex items-center justify-between gap-[3rem]">
+            <div className="relative w-full">
+              <Input
+                type="text"
+                placeholder="Search for favorite songs"
+                className="w-full pl-[3rem] placeholder:text-[#7c7c7c]"
+              />
+              <MagnifyingGlassIcon
+                width="21"
+                height="21"
+                className="absolute left-[16px] top-1/2 -translate-y-1/2"
+              />
             </div>
             <Select>
               <SelectTrigger className="w-[200px]">
@@ -114,7 +121,7 @@ export default function BrowsePage() {
             </Select>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {softwareProducts.map((product) => (
               <Card key={product.id} className="bg-[#000000]">
                 <CardHeader>
@@ -126,18 +133,18 @@ export default function BrowsePage() {
                     alt={product.name}
                     width={"200"}
                     height={"300"}
-                    className="w-full h-[12rem] object-cover mb-4 rounded"
+                    className="mb-4 h-[12rem] w-full rounded object-cover"
                   />
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="mb-2 text-sm text-muted-foreground">
                     {product.category}
                   </p>
-                  <div className="flex items-center mb-2">
+                  <div className="mb-2 flex items-center">
                     {[...Array(5)].map((_, i) => (
                       <StarIcon
                         key={i}
-                        className={`w-4 h-4 ${
+                        className={`h-4 w-4 ${
                           i < Math.floor(product.rating)
-                            ? "text-yellow-400 fill-yellow-400"
+                            ? "fill-yellow-400 text-yellow-400"
                             : "text-gray-300"
                         }`}
                       />
