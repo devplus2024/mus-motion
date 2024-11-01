@@ -2,28 +2,29 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-interface Track {
+interface TrackData {
   id: string;
   name: string;
   album: {
     images: { url: string; height: number; width: number }[];
+    name: string;
   };
   artists: { name: string }[];
 }
 
 export default function LibraryPage() {
-  const [tracks, setTracks] = useState<Track[]>([]);
+  const [track, setTrack] = useState<TrackData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchLibrary = async () => {
+    const fetchRandomTrack = async () => {
       try {
-        const res = await fetch("/api/spotify");
+        const res = await fetch("/api/random-track");
         if (!res.ok) {
-          throw new Error("Failed to fetch library data");
+          throw new Error("Failed to fetch random track");
         }
-        const data = await res.json();
-        setTracks(data.items.map((item: { track: Track }) => item.track));
+        const data: TrackData = await res.json();
+        setTrack(data);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -33,35 +34,30 @@ export default function LibraryPage() {
       }
     };
 
-    fetchLibrary();
+    fetchRandomTrack();
   }, []);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
+  if (!track) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      <h1>Your Spotify Library</h1>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-        {tracks.length === 0 ? (
-          <p>Loading...</p>
-        ) : (
-          tracks.map((track) => (
-            <div key={track.id} style={{ width: "200px" }}>
-              <Image
-                src={track.album.images[0]?.url || "/placeholder.jpg"}
-                alt={track.name}
-                width={200}
-                height={200}
-                unoptimized={true} // Tắt tối ưu hóa
-              />
-              <p>{track.name}</p>
-              <p>Artist: {track.artists.map((a) => a.name).join(", ")}</p>
-            </div>
-          ))
-        )}
-      </div>
+      <h1>Random Track: {track.name}</h1>
+      <p>Artist: {track.artists.map((a) => a.name).join(", ")}</p>
+      <p>Album: {track.album.name}</p>
+      <Image
+        src={track.album.images[0]?.url || "/placeholder.jpg"}
+        alt={track.name}
+        width={300}
+        height={300}
+        style={{ maxWidth: "100%", height: "auto" }}
+        unoptimized
+      />
     </div>
   );
 }
