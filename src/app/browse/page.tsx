@@ -35,10 +35,13 @@ import Image from "next/image";
 export default function BrowsePage() {
   // This would typically come from a backend API
   interface TrackData {
+    id: string;
     name: string;
-    trackName: string;
-    artist: { name: string }[];
-    album: { images: { url: string }[] };
+    album: {
+      images: { url: string; height: number; width: number }[];
+      name: string;
+    };
+    artists: { name: string }[];
   }
 
   const softwareProducts = [
@@ -99,42 +102,30 @@ export default function BrowsePage() {
   const [tracks, setTracks] = useState<TrackData[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchTracks = async () => {
-    try {
-      const res = await fetch("/api/random-tracks", {
-        cache: "no-store", // Ngăn chặn lưu trữ cache
-      });
-      if (!res.ok) {
-        throw new Error("Failed to fetch tracks");
-      }
-      const data: TrackData[] = await res.json();
+  useEffect(() => {
+    const fetchTracks = async () => {
+      try {
+        const res = await fetch("/api/random-tracks");
+        if (!res.ok) {
+          throw new Error("Failed to fetch tracks");
+        }
+        const data: TrackData[] = await res.json();
 
-      // Sử dụng Set để tránh lặp lại bài hát và nghệ sĩ
-      const seenTracks = new Set();
-      const seenArtists = new Set();
-      const uniqueTracks = [];
+        // Loại bỏ bài hát trùng lặp dựa trên `id`
+        const uniqueTracks = Array.from(
+          new Map(data.map((track) => [track.id, track])).values(),
+        );
 
-      for (const track of data) {
-        const artistNames = track.artist.map((a) => a.name).join(", ");
-        // Kiểm tra nếu bài hát đã tồn tại trong tập hợp
-        if (!seenTracks.has(track.trackName) && !seenArtists.has(artistNames)) {
-          seenTracks.add(track.trackName);
-          seenArtists.add(artistNames);
-          uniqueTracks.push(track);
+        setTracks(uniqueTracks);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
         }
       }
+    };
 
-      setTracks(uniqueTracks);
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("An unknown error occurred");
-      }
-    }
-  };
-
-  useEffect(() => {
     fetchTracks();
   }, []);
 
@@ -179,10 +170,10 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {tracks.map((track, index) => (
-              <Card key={index} className="bg-[#000000]">
+            {tracks.map((track) => (
+              <Card key={track.id} className="bg-[#000000]">
                 <CardHeader>
-                  <CardTitle>{track.trackName}</CardTitle>
+                  <CardTitle>{track.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <Image
@@ -195,7 +186,8 @@ export default function BrowsePage() {
                     className="mb-4 h-[12rem] w-full rounded object-cover"
                   />
                   <p className="mb-2 text-sm text-muted-foreground">
-                    Artist: {track.artist.map((a) => a.name).join(", ")}
+                    Artist:{" "}
+                    {track.artists.map((artist) => artist.name).join(", ")}
                   </p>
                   <div className="mb-2 flex items-center">
                     {[...Array(5)].map((_, i) => (
