@@ -89,7 +89,7 @@ export default function TrackPage({ params }: { params: { id: string } }) {
         </div>
       )}
       <Image
-        src={track.album.images[0]?.url}
+        src={track.album.images.map((a) => a.url).join(", ")}
         alt={track.trackName}
         width={300}
         height={300}
