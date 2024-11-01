@@ -60,7 +60,7 @@ export async function GET(req: NextRequest) {
       release_date: data.album.release_date,
       total_tracks: data.album.total_tracks,
       album_type: data.album.album_type,
-      images: data.album.images, // Danh sách các hình ảnh của album
+      images: data.album.images.url, // Danh sách các hình ảnh của album
     },
     artist: data.artists.map(
       (artist: { name: string; id: string; href: string }) => ({
