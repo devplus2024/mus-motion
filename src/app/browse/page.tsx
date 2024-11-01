@@ -1,4 +1,6 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -32,6 +34,13 @@ import Image from "next/image";
 
 export default function BrowsePage() {
   // This would typically come from a backend API
+  interface TrackData {
+    name: string;
+    trackName: string;
+    artist: { name: string }[];
+    album: { images: { url: string }[] };
+  }
+
   const softwareProducts = [
     {
       id: 1,
@@ -87,7 +96,55 @@ export default function BrowsePage() {
     "Bass",
     "Mastering",
   ];
+  const [tracks, setTracks] = useState<TrackData[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
+  const fetchTracks = async () => {
+    try {
+      const res = await fetch("/api/random-tracks", {
+        cache: "no-store", // Ngăn chặn lưu trữ cache
+      });
+      if (!res.ok) {
+        throw new Error("Failed to fetch tracks");
+      }
+      const data: TrackData[] = await res.json();
+
+      // Sử dụng Set để tránh lặp lại bài hát và nghệ sĩ
+      const seenTracks = new Set();
+      const seenArtists = new Set();
+      const uniqueTracks = [];
+
+      for (const track of data) {
+        const artistNames = track.artist.map((a) => a.name).join(", ");
+        // Kiểm tra nếu bài hát đã tồn tại trong tập hợp
+        if (!seenTracks.has(track.trackName) && !seenArtists.has(artistNames)) {
+          seenTracks.add(track.trackName);
+          seenArtists.add(artistNames);
+          uniqueTracks.push(track);
+        }
+      }
+
+      setTracks(uniqueTracks);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchTracks();
+  }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (tracks.length === 0) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center gap-8 md:flex-row">
@@ -122,36 +179,34 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {softwareProducts.map((product) => (
-              <Card key={product.id} className="bg-[#000000]">
+            {tracks.map((track, index) => (
+              <Card key={index} className="bg-[#000000]">
                 <CardHeader>
-                  <CardTitle>{product.name}</CardTitle>
+                  <CardTitle>{track.trackName}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src={`/image/5-1.png?height=100&width=200&text=${product.name}`}
-                    alt={product.name}
+                    src={track.album.images[0]?.url || "/placeholder.jpg"}
+                    alt={track.name}
+                    style={{ maxWidth: "100%", height: "auto" }}
+                    unoptimized
                     width={"200"}
                     height={"300"}
                     className="mb-4 h-[12rem] w-full rounded object-cover"
                   />
                   <p className="mb-2 text-sm text-muted-foreground">
-                    {product.category}
+                    Artist: {track.artist.map((a) => a.name).join(", ")}
                   </p>
                   <div className="mb-2 flex items-center">
                     {[...Array(5)].map((_, i) => (
                       <StarIcon
                         key={i}
-                        className={`h-4 w-4 ${
-                          i < Math.floor(product.rating)
-                            ? "fill-yellow-400 text-yellow-400"
-                            : "text-gray-300"
-                        }`}
+                        className={`? "fill-yellow-400 text-yellow-400" : "text-gray-300" } h-4 w-4`}
                       />
                     ))}
-                    <span className="ml-2 text-sm">{product.rating}</span>
+                    <span className="ml-2 text-sm"></span>
                   </div>
-                  <p className="font-bold">{product.price}</p>
+                  <p className="font-bold"></p>
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full">View Details</Button>
