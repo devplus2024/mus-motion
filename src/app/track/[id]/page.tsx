@@ -97,6 +97,7 @@ export default function TrackPage({ params }: { params: { id: string } }) {
         <Image
           src={image300x300.url}
           overrideSrc={image300x300.url}
+          unoptimized={true}
           alt={track.trackName}
           width={300}
           height={300}
