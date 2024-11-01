@@ -1,6 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 interface TrackData {
   id: string;
@@ -24,7 +24,13 @@ export default function LibraryPage() {
           throw new Error("Failed to fetch tracks");
         }
         const data: TrackData[] = await res.json();
-        setTracks(data);
+
+        // Loại bỏ bài hát trùng lặp dựa trên `id`
+        const uniqueTracks = Array.from(
+          new Map(data.map((track) => [track.id, track])).values(),
+        );
+
+        setTracks(uniqueTracks);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -57,9 +63,12 @@ export default function LibraryPage() {
       >
         {tracks.map((track) => (
           <div key={track.id}>
-            <h2>{track.name}</h2>
-            <p>Artist: {track.artists.map((a) => a.name).join(", ")}</p>
+            <h3>{track.name}</h3>
+            <p>
+              Artist: {track.artists.map((artist) => artist.name).join(", ")}
+            </p>
             <p>Album: {track.album.name}</p>
+
             <Image
               src={track.album.images[0]?.url || "/placeholder.jpg"}
               alt={track.name}
