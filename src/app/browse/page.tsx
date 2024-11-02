@@ -173,12 +173,12 @@ export default function BrowsePage() {
             {tracks.map((track) => (
               <Card key={track.id} className={`bg-[#000000]`}>
                 <CardHeader
-                  className={`${check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
+                  className={`${!check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
                 >
                   <CardTitle>{track.name}</CardTitle>
                 </CardHeader>
                 <CardContent
-                  className={`${check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
+                  className={`${!check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
                 >
                   <Image
                     src={track.album.images[0]?.url || "/placeholder.jpg"}
@@ -205,7 +205,7 @@ export default function BrowsePage() {
                   <p className="font-bold"></p>
                 </CardContent>
                 <CardFooter
-                  className={`${check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
+                  className={`${!check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
                 >
                   <Button className="w-full">View Details</Button>
                 </CardFooter>
