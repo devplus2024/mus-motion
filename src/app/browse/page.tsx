@@ -128,10 +128,6 @@ export default function BrowsePage() {
 
     fetchTracks();
   }, []);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center gap-8 md:flex-row">
