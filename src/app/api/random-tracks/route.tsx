@@ -44,7 +44,7 @@ export async function GET() {
   const data = await res.json();
 
   // Lấy tối đa 20 bài hát
-  const tracks = data.items.slice(0, 10).map((item: any) => item.track);
+  const tracks = data.items.slice(0, 50).map((item: any) => item.track);
 
   return NextResponse.json(tracks);
 }
