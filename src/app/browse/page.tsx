@@ -128,6 +128,14 @@ export default function BrowsePage() {
 
     fetchTracks();
   }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (tracks.length === 0) {
+    return <div>Loading</div>;
+  }
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center gap-8 md:flex-row">
@@ -164,14 +172,10 @@ export default function BrowsePage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {tracks.map((track) => (
               <Card key={track.id} className={`bg-[#000000]`}>
-                <CardHeader
-                  className={`${tracks.length === 0 ? "animate-pulse rounded-md bg-primary/10" : ""}`}
-                >
+                <CardHeader>
                   <CardTitle>{track.name}</CardTitle>
                 </CardHeader>
-                <CardContent
-                  className={`${tracks.length === 0 ? "animate-pulse rounded-md bg-primary/10" : ""}`}
-                >
+                <CardContent>
                   <Image
                     src={track.album.images[0]?.url || "/placeholder.jpg"}
                     alt={track.name}
@@ -196,9 +200,7 @@ export default function BrowsePage() {
                   </div>
                   <p className="font-bold"></p>
                 </CardContent>
-                <CardFooter
-                  className={`${tracks.length === 0 ? "animate-pulse rounded-md bg-primary/10" : ""}`}
-                >
+                <CardFooter>
                   <Button className="w-full">View Details</Button>
                 </CardFooter>
               </Card>
