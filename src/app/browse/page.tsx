@@ -101,7 +101,7 @@ export default function BrowsePage() {
   ];
   const [tracks, setTracks] = useState<TrackData[]>([]);
   const [error, setError] = useState<string | null>(null);
-
+  const [check, setCheck] = useState(false);
   useEffect(() => {
     const fetchTracks = async () => {
       try {
@@ -134,7 +134,7 @@ export default function BrowsePage() {
   }
 
   if (tracks.length === 0) {
-    return <div>Loading...</div>;
+    setCheck(true);
   }
   return (
     <div className="container mx-auto px-4 py-8">
@@ -171,11 +171,15 @@ export default function BrowsePage() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {tracks.map((track) => (
-              <Card key={track.id} className="bg-[#000000]">
-                <CardHeader>
+              <Card key={track.id} className={`bg-[#000000]`}>
+                <CardHeader
+                  className={`${check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
+                >
                   <CardTitle>{track.name}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent
+                  className={`${check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
+                >
                   <Image
                     src={track.album.images[0]?.url || "/placeholder.jpg"}
                     alt={track.name}
@@ -200,7 +204,9 @@ export default function BrowsePage() {
                   </div>
                   <p className="font-bold"></p>
                 </CardContent>
-                <CardFooter>
+                <CardFooter
+                  className={`${check ? "animate-pulse rounded-md bg-primary/10" : ""}`}
+                >
                   <Button className="w-full">View Details</Button>
                 </CardFooter>
               </Card>
