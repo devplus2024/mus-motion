@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
@@ -25,12 +27,30 @@ export async function GET(request: NextRequest) {
   const data = await response.json();
 
   if (data.refresh_token) {
-    // In refresh token ra để lưu lại
     console.log("Refresh Token:", data.refresh_token);
 
-    // Lưu refresh token hoặc xử lý theo yêu cầu của bạn
+    // Đường dẫn đến tệp .env.local
+    const envPath = path.join(process.cwd(), ".env.local");
+
+    // Đọc nội dung tệp hiện tại
+    let envContent = fs.readFileSync(envPath, "utf-8");
+
+    // Tìm và thay thế giá trị của SPOTIFY_REFRESH_TOKEN nếu đã tồn tại
+    if (envContent.includes("SPOTIFY_REFRESH_TOKEN")) {
+      envContent = envContent.replace(
+        /SPOTIFY_REFRESH_TOKEN=.*/g,
+        `SPOTIFY_REFRESH_TOKEN=${data.refresh_token}`,
+      );
+    } else {
+      // Nếu biến SPOTIFY_REFRESH_TOKEN chưa tồn tại, thêm mới vào cuối file
+      envContent += `\nSPOTIFY_REFRESH_TOKEN=${data.refresh_token}`;
+    }
+
+    // Ghi lại nội dung mới vào tệp .env.local
+    fs.writeFileSync(envPath, envContent);
+
     return NextResponse.json({
-      message: "Tokens received!",
+      message: "Refresh Token saved successfully!",
       access_token: data.access_token,
       refresh_token: data.refresh_token,
     });
