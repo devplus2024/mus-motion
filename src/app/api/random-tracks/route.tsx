@@ -31,7 +31,6 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
   });
 
   if (!res.ok) {
