@@ -40,7 +40,7 @@ const fetchSpotifyData = async (endpoint: string, accessToken: string) => {
 
 const refreshAccessToken = async () => {
   try {
-    const res = await fetch("/api/refresh_token", {
+    const res = await fetch("/api/refresh-token", {
       method: "POST",
     });
 
