@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { NextResponse } from "next/server";
 import { useState, useEffect } from "react";
 
 interface TrackData {
@@ -13,6 +12,7 @@ interface TrackData {
   artists: { name: string }[];
 }
 
+// Hàm lấy dữ liệu từ Spotify API
 const fetchSpotifyData = async (endpoint: string, accessToken: string) => {
   try {
     const res = await fetch(endpoint, {
@@ -39,21 +39,18 @@ const fetchSpotifyData = async (endpoint: string, accessToken: string) => {
   }
 };
 
+// Hàm lấy access_token mới bằng refresh_token
 const refreshAccessToken = async () => {
-  const client_id = process.env.SPOTIFY_CLIENT_ID;
-  const redirect_uri = process.env.SPOTIFY_REDIRECT_URI || "";
-
-  const scopes = "user-read-private user-read-email";
-
-  // URL chuyển hướng đến trang cấp quyền của Spotify
-  const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${encodeURIComponent(
-    scopes,
-  )}&redirect_uri=${encodeURIComponent(redirect_uri)}`;
-
   try {
-    var api = NextResponse.redirect(authUrl);
-    const res = await fetch(`${api}`, {
+    const refreshToken = localStorage.getItem("refresh_token"); // Lấy refresh_token từ localStorage
+    if (!refreshToken) throw new Error("No refresh token available");
+
+    const res = await fetch("/api/refresh-token", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ refresh_token: refreshToken }), // Gửi refresh_token để làm mới access_token
     });
 
     if (!res.ok) {
@@ -61,9 +58,36 @@ const refreshAccessToken = async () => {
     }
 
     const data = await res.json();
-    return data.refresh_token;
+    localStorage.setItem("access_token", data.access_token); // Lưu access_token mới
+    return data.access_token;
   } catch (error) {
-    console.error(error);
+    console.error("Error refreshing access token:", error);
+    return null;
+  }
+};
+
+// Hàm lấy refresh_token từ API login
+const fetchRefreshToken = async (username: string, password: string) => {
+  try {
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to login");
+    }
+
+    const data = await res.json();
+    localStorage.setItem("refresh_token", data.refresh_token); // Lưu refresh_token vào localStorage
+    localStorage.setItem("access_token", data.access_token); // Lưu access_token vào localStorage
+
+    return data.access_token;
+  } catch (error) {
+    console.error("Error fetching refresh token:", error);
     return null;
   }
 };
@@ -73,17 +97,19 @@ export default function LibraryPage() {
   const [error, setError] = useState<string | null>(null);
   const [accessToken, setAccessToken] = useState<string | null>(null);
 
-  // Fetch the access token on initial render
+  // Lấy refresh_token và access_token khi login
   useEffect(() => {
-    const fetchAccessToken = async () => {
-      const newAccessToken = await refreshAccessToken();
-      setAccessToken(newAccessToken);
+    const loginAndFetchToken = async () => {
+      const username = "user"; // Thay thế bằng tên đăng nhập thực tế
+      const password = "password"; // Thay thế bằng mật khẩu thực tế
+      const token = await fetchRefreshToken(username, password);
+      setAccessToken(token);
     };
 
-    fetchAccessToken();
+    loginAndFetchToken();
   }, []);
 
-  // Fetch the tracks only after receiving the access token
+  // Lấy dữ liệu Spotify sau khi có accessToken
   useEffect(() => {
     if (!accessToken) return;
 
@@ -95,7 +121,7 @@ export default function LibraryPage() {
         }
         const data: TrackData[] = await res.json();
 
-        // Loại bỏ bài hát trùng lặp dựa trên `id` và `artist`
+        // Loại bỏ bài hát trùng lặp dựa trên `id` và nghệ sĩ
         const uniqueTracks = Array.from(
           new Map(
             data.map((track) => [track.id + track.artists[0]?.name, track]),
