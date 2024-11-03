@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { NextResponse } from "next/server";
 import { useState, useEffect } from "react";
 
 interface TrackData {
@@ -39,8 +40,19 @@ const fetchSpotifyData = async (endpoint: string, accessToken: string) => {
 };
 
 const refreshAccessToken = async () => {
+  const client_id = process.env.SPOTIFY_CLIENT_ID;
+  const redirect_uri = process.env.SPOTIFY_REDIRECT_URI || "";
+
+  const scopes = "user-read-private user-read-email";
+
+  // URL chuyển hướng đến trang cấp quyền của Spotify
+  const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${encodeURIComponent(
+    scopes,
+  )}&redirect_uri=${encodeURIComponent(redirect_uri)}`;
+
   try {
-    const res = await fetch("/api/login", {
+    var api = NextResponse.redirect(authUrl);
+    const res = await fetch(`${api}`, {
       method: "POST",
     });
 
