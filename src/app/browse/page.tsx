@@ -170,42 +170,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {!showContent &&
-              tracks.map((track) => (
-                <Card key={track.id} className={`bg-[#000000]`}>
-                  <CardHeader>
-                    <CardTitle>{track.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Image
-                      src={track.album.images[0]?.url || "/placeholder.jpg"}
-                      alt={track.name}
-                      style={{ maxWidth: "100%", height: "auto" }}
-                      unoptimized
-                      width={"200"}
-                      height={"300"}
-                      className="mb-4 h-[12rem] w-full rounded object-cover"
-                    />
-                    <p className="mb-2 text-sm text-muted-foreground">
-                      Artist:{" "}
-                      {track.artists.map((artist) => artist.name).join(", ")}
-                    </p>
-                    <div className="mb-2 flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <StarIcon
-                          key={i}
-                          className={`? "fill-yellow-400 text-yellow-400" : "text-gray-300" } h-4 w-4`}
-                        />
-                      ))}
-                      <span className="ml-2 text-sm"></span>
-                    </div>
-                    <p className="font-bold"></p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full">View Details</Button>
-                  </CardFooter>
-                </Card>
-              ))}
+            {!showContent && <MainLayOut />}
             {showContent &&
               tracks.map((track) => (
                 <Card key={track.id} className={`bg-[#000000]`}>
