@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -105,33 +105,40 @@ export default function BrowsePage() {
   const [error, setError] = useState<string | null>(null);
   const [check, setCheck] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
+
   useEffect(() => {
-    const fetchTracks = async () => {
-      try {
-        const res = await fetch("/api/random-tracks");
-        if (!res.ok) {
-          throw new Error("Failed to fetch tracks");
-        }
-        const data: TrackData[] = await res.json();
+    if (!isFetched.current) {
+      const fetchTracks = async () => {
+        try {
+          const res = await fetch("/api/random-tracks");
+          if (!res.ok) {
+            throw new Error("Failed to fetch tracks");
+          }
+          const data: TrackData[] = await res.json();
 
-        // Loại bỏ bài hát trùng lặp dựa trên `id`
-        const uniqueTracks = Array.from(
-          new Map(data.map((track) => [track.id, track])).values(),
-        );
-        setTracks(uniqueTracks);
-        const timer = setTimeout(() => {
-          setShowContent(true); // Hiển thị giao diện sau 5 giây
-        }, 5000);
-      } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
-      }
-    };
+          const uniqueTracks = Array.from(
+            new Map(data.map((track) => [track.id, track])).values(),
+          );
+          setTracks(uniqueTracks);
 
-    fetchTracks();
+          const timer = setTimeout(() => {
+            setShowContent(true);
+          }, 5000);
+
+          return () => clearTimeout(timer);
+        } catch (err) {
+          if (err instanceof Error) {
+            setError(err.message);
+          } else {
+            setError("An unknown error occurred");
+          }
+        }
+      };
+
+      fetchTracks();
+      isFetched.current = true; // Đặt ref thành true để không chạy lại
+    }
   }, []);
 
   // if (error) {
