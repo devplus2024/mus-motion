@@ -117,8 +117,10 @@ export default function BrowsePage() {
         const uniqueTracks = Array.from(
           new Map(data.map((track) => [track.id, track])).values(),
         );
-        setShowContent(true);
         setTracks(uniqueTracks);
+        const timer = setTimeout(() => {
+          setShowContent(true); // Hiển thị giao diện sau 5 giây
+        }, 5000);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
