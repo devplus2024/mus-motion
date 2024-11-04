@@ -181,8 +181,8 @@ export default function BrowsePage() {
                   <CardHeader className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10">
                     <CardTitle></CardTitle>
                   </CardHeader>
-                  <CardContent className="h-[354.5px] w-[310.5px] animate-pulse rounded-md bg-primary/10">
-                    <div className="mb-4 h-[12rem] w-full rounded object-cover"></div>
+                  <CardContent className="h-[354.5px] w-[310.5px]">
+                    <div className="mb-4 h-[262.5] w-[262.5] animate-pulse rounded bg-primary/10 object-cover"></div>
                     <p className="mb-2 text-sm text-muted-foreground"></p>
                     <div className="mb-2 flex items-center">
                       {[...Array(5)].map((_, i) => (
