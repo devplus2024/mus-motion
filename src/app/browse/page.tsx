@@ -182,7 +182,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {!isFetched &&
+            {!isFetched.current &&
               [...Array(50)].map((_, index) => (
                 <Card
                   key={index}
