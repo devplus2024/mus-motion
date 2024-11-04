@@ -1,3 +1,4 @@
+"use client";
 import type { Metadata } from "next";
 import MainLayOut from "./components/main";
 import { useEffect, useState } from "react";
