@@ -178,12 +178,12 @@ export default function BrowsePage() {
                   key={index}
                   className={`h-[480.5px] w-[312.5px] bg-[#000000]`}
                 >
-                  <CardHeader className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10">
-                    <CardTitle></CardTitle>
+                  <CardHeader className="h-[64px] w-[310.5px]">
+                    <CardTitle className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></CardTitle>
                   </CardHeader>
                   <CardContent className="h-[354.5px] w-[310.5px]">
-                    <div className="mb-4 h-[262.5] w-[262.5] animate-pulse rounded bg-primary/10 object-cover"></div>
-                    <p className="mb-2 text-sm text-muted-foreground"></p>
+                    <div className="mb-4 h-[262.5px] w-[262.5px] animate-pulse rounded bg-primary/10 object-cover"></div>
+                    <p className="mb-2 h-[16px] w-[158.61px] text-sm text-muted-foreground"></p>
                     <div className="mb-2 flex items-center">
                       {[...Array(5)].map((_, i) => (
                         <StarIcon
