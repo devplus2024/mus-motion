@@ -231,7 +231,10 @@ export default function BrowsePage() {
                     <p className="font-bold"></p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">View Details</Button>
+                    <a href={`/track/${track.id}`}>
+                      <Button className="w-full">View Details</Button>
+                    </a>
+                    <></>
                   </CardFooter>
                 </Card>
               ))}
