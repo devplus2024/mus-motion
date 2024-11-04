@@ -33,7 +33,7 @@ import Image from "next/image";
 import MainLayOut from "./components/main";
 
 export default function BrowsePage() {
-  // Định nghĩa kiểu dữ liệu cho track
+  // Interface cho track dữ liệu
   interface TrackData {
     id: string;
     name: string;
@@ -46,7 +46,8 @@ export default function BrowsePage() {
 
   const [tracks, setTracks] = useState<TrackData[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [contentLoaded, setContentLoaded] = useState(false);
+  const [loading, setLoading] = useState(true); // Biến loading để quản lý trạng thái tải dữ liệu
+  const [showTracks, setShowTracks] = useState(false); // Quản lý trạng thái hiển thị tracks
 
   useEffect(() => {
     const fetchTracks = async () => {
@@ -57,12 +58,14 @@ export default function BrowsePage() {
         }
         const data: TrackData[] = await res.json();
 
-        // Loại bỏ bài hát trùng lặp dựa trên `id`
         const uniqueTracks = Array.from(
           new Map(data.map((track) => [track.id, track])).values(),
         );
 
         setTracks(uniqueTracks);
+        setTimeout(() => {
+          setShowTracks(true); // Hiển thị giao diện sau 5 giây
+        }, 5000);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -70,19 +73,19 @@ export default function BrowsePage() {
           setError("An unknown error occurred");
         }
       } finally {
-        setContentLoaded(true); // Đánh dấu việc hoàn thành fetch
+        setLoading(false); // Dừng trạng thái tải
       }
     };
 
-    fetchTracks(); // Gọi hàm fetch khi thành phần được render
+    fetchTracks();
   }, []);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
-  if (!contentLoaded) {
-    // Hiển thị `MainLayOut` ngay lập tức khi component được render
+  // Hiển thị `MainLayOut` trong khi chờ fetch dữ liệu
+  if (loading || !showTracks) {
     return <MainLayOut />;
   }
 
@@ -90,7 +93,6 @@ export default function BrowsePage() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center gap-8 md:flex-row">
         {/* Sidebar */}
-
         {/* Main Content */}
         <div className="md:w-3/4 xl:w-full">
           <div className="mb-6 flex items-center justify-between gap-[3rem]">
@@ -141,11 +143,17 @@ export default function BrowsePage() {
                   </p>
                   <div className="mb-2 flex items-center">
                     {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className={`h-4 w-4 text-gray-300`} />
+                      <StarIcon
+                        key={i}
+                        className={`${
+                          i < 4
+                            ? "fill-yellow-400 text-yellow-400"
+                            : "text-gray-300"
+                        } h-4 w-4`}
+                      />
                     ))}
                     <span className="ml-2 text-sm"></span>
                   </div>
-                  <p className="font-bold"></p>
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full">View Details</Button>
