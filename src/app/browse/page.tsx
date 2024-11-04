@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -16,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { SearchIcon, StarIcon } from "lucide-react";
 import {
   MoonIcon,
   SunIcon,
@@ -28,12 +30,11 @@ import {
   MagnifyingGlassIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
-import { SearchIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import MainLayOut from "./components/main";
 
 export default function BrowsePage() {
-  // Interface cho track dữ liệu
+  // This would typically come from a backend API
   interface TrackData {
     id: string;
     name: string;
@@ -44,11 +45,65 @@ export default function BrowsePage() {
     artists: { name: string }[];
   }
 
+  const softwareProducts = [
+    {
+      id: 1,
+      name: "BeatMaker Pro",
+      category: "DAW",
+      rating: 4.5,
+      price: "$199.99",
+    },
+    {
+      id: 2,
+      name: "SynthWizard",
+      category: "Synthesizer",
+      rating: 4.2,
+      price: "$149.99",
+    },
+    {
+      id: 3,
+      name: "DrumCraft",
+      category: "Drums",
+      rating: 4.7,
+      price: "$79.99",
+    },
+    {
+      id: 4,
+      name: "MixMaster",
+      category: "Mixing",
+      rating: 4.4,
+      price: "$129.99",
+    },
+    {
+      id: 5,
+      name: "VocalEnhance",
+      category: "Vocal Processing",
+      rating: 4.3,
+      price: "$89.99",
+    },
+    {
+      id: 6,
+      name: "GuitarSuite",
+      category: "Guitar",
+      rating: 4.6,
+      price: "$109.99",
+    },
+  ];
+
+  const categories = [
+    "DAW",
+    "Synthesizer",
+    "Drums",
+    "Mixing",
+    "Vocal Processing",
+    "Guitar",
+    "Bass",
+    "Mastering",
+  ];
   const [tracks, setTracks] = useState<TrackData[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true); // Biến loading để quản lý trạng thái tải dữ liệu
-  const [showTracks, setShowTracks] = useState(false); // Quản lý trạng thái hiển thị tracks
-
+  const [check, setCheck] = useState(false);
+  const [showContent, setShowContent] = useState(false);
   useEffect(() => {
     const fetchTracks = async () => {
       try {
@@ -58,42 +113,35 @@ export default function BrowsePage() {
         }
         const data: TrackData[] = await res.json();
 
+        // Loại bỏ bài hát trùng lặp dựa trên `id`
         const uniqueTracks = Array.from(
           new Map(data.map((track) => [track.id, track])).values(),
         );
-
+        setShowContent(true);
         setTracks(uniqueTracks);
-        setTimeout(() => {
-          setShowTracks(true); // Hiển thị giao diện sau 5 giây
-        }, 5000);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
         } else {
           setError("An unknown error occurred");
         }
-      } finally {
-        setLoading(false); // Dừng trạng thái tải
       }
     };
 
     fetchTracks();
   }, []);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  // if (error) {
+  //   return <div>Error: {error}</div>;
+  // }
 
-  // Hiển thị `MainLayOut` trong khi chờ fetch dữ liệu
-  if (loading || !showTracks) {
-    return <MainLayOut />;
-  }
+  // if (tracks.length === 0) {
+  //   return <MainLayOut />;
+  // }
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center gap-8 md:flex-row">
-        {/* Sidebar */}
-        {/* Main Content */}
         <div className="md:w-3/4 xl:w-full">
           <div className="mb-6 flex items-center justify-between gap-[3rem]">
             <div className="relative w-full">
@@ -122,44 +170,78 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {tracks.map((track) => (
-              <Card key={track.id} className={`bg-[#000000]`}>
-                <CardHeader>
-                  <CardTitle>{track.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Image
-                    src={track.album.images[0]?.url || "/placeholder.jpg"}
-                    alt={track.name}
-                    style={{ maxWidth: "100%", height: "auto" }}
-                    unoptimized
-                    width={"200"}
-                    height={"300"}
-                    className="mb-4 h-[12rem] w-full rounded object-cover"
-                  />
-                  <p className="mb-2 text-sm text-muted-foreground">
-                    Artist:{" "}
-                    {track.artists.map((artist) => artist.name).join(", ")}
-                  </p>
-                  <div className="mb-2 flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon
-                        key={i}
-                        className={`${
-                          i < 4
-                            ? "fill-yellow-400 text-yellow-400"
-                            : "text-gray-300"
-                        } h-4 w-4`}
-                      />
-                    ))}
-                    <span className="ml-2 text-sm"></span>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full">View Details</Button>
-                </CardFooter>
-              </Card>
-            ))}
+            {!showContent &&
+              tracks.map((track) => (
+                <Card key={track.id} className={`bg-[#000000]`}>
+                  <CardHeader>
+                    <CardTitle>{track.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Image
+                      src={track.album.images[0]?.url || "/placeholder.jpg"}
+                      alt={track.name}
+                      style={{ maxWidth: "100%", height: "auto" }}
+                      unoptimized
+                      width={"200"}
+                      height={"300"}
+                      className="mb-4 h-[12rem] w-full rounded object-cover"
+                    />
+                    <p className="mb-2 text-sm text-muted-foreground">
+                      Artist:{" "}
+                      {track.artists.map((artist) => artist.name).join(", ")}
+                    </p>
+                    <div className="mb-2 flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <StarIcon
+                          key={i}
+                          className={`? "fill-yellow-400 text-yellow-400" : "text-gray-300" } h-4 w-4`}
+                        />
+                      ))}
+                      <span className="ml-2 text-sm"></span>
+                    </div>
+                    <p className="font-bold"></p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full">View Details</Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            {showContent &&
+              tracks.map((track) => (
+                <Card key={track.id} className={`bg-[#000000]`}>
+                  <CardHeader>
+                    <CardTitle>{track.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Image
+                      src={track.album.images[0]?.url || "/placeholder.jpg"}
+                      alt={track.name}
+                      style={{ maxWidth: "100%", height: "auto" }}
+                      unoptimized
+                      width={"200"}
+                      height={"300"}
+                      className="mb-4 h-[12rem] w-full rounded object-cover"
+                    />
+                    <p className="mb-2 text-sm text-muted-foreground">
+                      Artist:{" "}
+                      {track.artists.map((artist) => artist.name).join(", ")}
+                    </p>
+                    <div className="mb-2 flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <StarIcon
+                          key={i}
+                          className={`? "fill-yellow-400 text-yellow-400" : "text-gray-300" } h-4 w-4`}
+                        />
+                      ))}
+                      <span className="ml-2 text-sm"></span>
+                    </div>
+                    <p className="font-bold"></p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full">View Details</Button>
+                  </CardFooter>
+                </Card>
+              ))}
           </div>
 
           <div className="mt-8 flex justify-center">
