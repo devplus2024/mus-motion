@@ -1,7 +1,8 @@
-import {nextui} from '@nextui-org/theme';
+import { nextui } from "@nextui-org/theme";
+import tailwindcssAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -11,7 +12,7 @@ const config = {
     "./public/**/*.{ts,tsx,svg}",
     "./chat/vn-vi/**/*.{ts,tsx}",
     "./home/**/*.{ts,tsx}",
-    "./node_modules/@nextui-org/theme/dist/components/[object Object].js"
+    "./node_modules/@nextui-org/theme/dist/components/[object Object].js",
   ],
   prefix: "",
   theme: {
@@ -214,7 +215,7 @@ const config = {
       },
     },
   },
-  plugins: [require(tailwindcss-animate),nextui()],
-} satisfies Config;
+  plugins: [tailwindcssAnimate, nextui()],
+};
 
 export default config;
