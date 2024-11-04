@@ -173,7 +173,7 @@ export default function BrowsePage() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {!showContent &&
-              Array(30).map((_, index) => (
+              [...Array(50)].map((_, index) => (
                 <Card key={index} className={`bg-[#000000]`}>
                   <CardHeader className="h-[1rem] w-[4rem] animate-pulse rounded-md bg-primary/10">
                     <CardTitle></CardTitle>
