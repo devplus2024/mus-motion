@@ -137,7 +137,9 @@ export default function BrowsePage() {
       };
 
       fetchTracks();
-      isFetched.current = true; // Đặt ref thành true để không chạy lại
+      const timer = setTimeout(() => {
+        isFetched.current = true;
+      }, 5000); // Đặt ref thành true để không chạy lại
     }
   }, []);
 
