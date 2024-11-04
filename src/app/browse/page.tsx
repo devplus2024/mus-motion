@@ -180,11 +180,11 @@ export default function BrowsePage() {
                   className={`h-[480.5px] w-[312.5px] bg-[#000000]`}
                 >
                   <CardHeader className="h-[64px] w-[310.5px]">
-                    <Skeleton className="h-[16px] w-[262.5px]"></Skeleton>
+                    <Skeleton className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></Skeleton>
                   </CardHeader>
                   <CardContent className="h-[354.5px] w-[310.5px]">
-                    <Skeleton className="mb-4 h-[262.5px] w-[262.5px] object-cover"></Skeleton>
-                    <Skeleton className="mb-2 h-[16px] w-[158.61px] text-sm text-muted-foreground"></Skeleton>
+                    <Skeleton className="mb-4 h-[262.5px] w-[262.5px] animate-pulse rounded-md bg-primary/10 object-cover"></Skeleton>
+                    <Skeleton className="mb-2 h-[16px] w-[158.61px] animate-pulse rounded-md bg-primary/10 text-sm text-muted-foreground"></Skeleton>
                     <div className="mb-2 flex items-center">
                       <Skeleton
                         className={`h-4 w-[80px] animate-pulse rounded-md bg-primary/10`}
