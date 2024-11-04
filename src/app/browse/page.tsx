@@ -174,11 +174,14 @@ export default function BrowsePage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {!showContent &&
               [...Array(50)].map((_, index) => (
-                <Card key={index} className={`bg-[#000000]`}>
-                  <CardHeader className="h-[1rem] w-[4rem] animate-pulse rounded-md bg-primary/10">
+                <Card
+                  key={index}
+                  className={`h-[480.5px] w-[312.5px] bg-[#000000]`}
+                >
+                  <CardHeader className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10">
                     <CardTitle></CardTitle>
                   </CardHeader>
-                  <CardContent className="animate-pulse rounded-md bg-primary/10">
+                  <CardContent className="h-[354.5px] w-[310.5px] animate-pulse rounded-md bg-primary/10">
                     <div className="mb-4 h-[12rem] w-full rounded object-cover"></div>
                     <p className="mb-2 text-sm text-muted-foreground"></p>
                     <div className="mb-2 flex items-center">
@@ -192,8 +195,8 @@ export default function BrowsePage() {
                     </div>
                     <p className="font-bold"></p>
                   </CardContent>
-                  <CardFooter className="h-[1rem] w-[3rem] animate-pulse rounded-md bg-primary/10">
-                    <Button className="w-full">View Details</Button>
+                  <CardFooter className="h-[60px] w-[310.5px]">
+                    <Button className="h-[36px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></Button>
                   </CardFooter>
                 </Card>
               ))}
