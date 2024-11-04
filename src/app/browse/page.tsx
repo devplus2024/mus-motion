@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Skeleton } from "@nextui-org/skeleton";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import {
@@ -179,24 +180,22 @@ export default function BrowsePage() {
                   className={`h-[480.5px] w-[312.5px] bg-[#000000]`}
                 >
                   <CardHeader className="h-[64px] w-[310.5px]">
-                    <CardTitle className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></CardTitle>
+                    <Skeleton className="h-[16px] w-[262.5px]"></Skeleton>
                   </CardHeader>
                   <CardContent className="h-[354.5px] w-[310.5px]">
-                    <div className="mb-4 h-[262.5px] w-[262.5px] animate-pulse rounded bg-primary/10 object-cover"></div>
-                    <p className="mb-2 h-[16px] w-[158.61px] text-sm text-muted-foreground"></p>
+                    <Skeleton className="mb-4 h-[262.5px] w-[262.5px] object-cover"></Skeleton>
+                    <Skeleton className="mb-2 h-[16px] w-[158.61px] text-sm text-muted-foreground"></Skeleton>
                     <div className="mb-2 flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <StarIcon
-                          key={i}
-                          className={`? "fill-yellow-400 text-yellow-400" : "text-gray-300" } h-4 w-4`}
-                        />
-                      ))}
+                      <Skeleton
+                        className={`h-4 w-[80px] animate-pulse rounded-md bg-primary/10`}
+                      ></Skeleton>
+
                       <span className="ml-2 text-sm"></span>
                     </div>
                     <p className="font-bold"></p>
                   </CardContent>
                   <CardFooter className="h-[60px] w-[310.5px]">
-                    <Button className="h-[36px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></Button>
+                    <Skeleton className="h-[36px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></Skeleton>
                   </CardFooter>
                 </Card>
               ))}
