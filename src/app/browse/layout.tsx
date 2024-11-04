@@ -11,10 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { StarIcon } from "lucide-react";
-export const metadata: Metadata = {
-  title: "Browse | NoneTheLes",
-  description: "NoneTheLes - Browse",
-};
 
 export default function BrowseLayout({
   children,
