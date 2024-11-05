@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -110,6 +111,7 @@ export default function BrowsePage() {
   //   const showContent = sessionStorage.getItem("showContent");
   //   return Boolean(showContent) || false;
   // });
+  const router = useRouter();
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
   useEffect(() => {
     if (!isFetched.current) {
@@ -258,15 +260,16 @@ export default function BrowsePage() {
             <Button variant="outline" className="mx-1">
               Previous
             </Button>
-            <Button variant="outline" className="mx-1">
-              1
-            </Button>
-            <Button variant="outline" className="mx-1">
-              2
-            </Button>
-            <Button variant="outline" className="mx-1">
-              3
-            </Button>
+            {[...Array(10)].map((_, index) => (
+              <Button
+                variant="outline"
+                key={index}
+                onClick={() => router.push(`/browse?page=${index + 1}`)}
+                className="mx-1"
+              >
+                {index}{" "}
+              </Button>
+            ))}
             <Button variant="outline" className="mx-1">
               Next
             </Button>
