@@ -115,7 +115,7 @@ export default function BrowsePage() {
       navigationEntries.length > 0 &&
       navigationEntries[0].type === "reload"
     ) {
-      isFetched.current = true; // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
+      isFetched.current = false; // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
     }
   }, []);
   useEffect(() => {
