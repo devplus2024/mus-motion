@@ -201,7 +201,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {!isFetched.current &&
+            {isFetched.current == false &&
               [...Array(50)].map((_, index) => (
                 <Card
                   key={index}
@@ -227,7 +227,7 @@ export default function BrowsePage() {
                   </CardFooter>
                 </Card>
               ))}
-            {isFetched &&
+            {isFetched == true &&
               tracks.map((track) => (
                 <Card key={track.id} className={`bg-[#000000]`}>
                   <CardHeader>
