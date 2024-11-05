@@ -115,7 +115,7 @@ export default function BrowsePage() {
       navigationEntries.length > 0 &&
       navigationEntries[0].type === "reload"
     ) {
-      setShowContent(false);
+      setShowContent(true);
       console.log("Page is Loading with 1"); // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
     }
   }, []);
