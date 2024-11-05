@@ -115,7 +115,7 @@ export default function BrowsePage() {
       navigationEntries.length > 0 &&
       navigationEntries[0].type === "reload"
     ) {
-      setShowContent(true);
+      setShowContent(false);
       console.log("Page is Loading with 1"); // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
     }
   }, []);
@@ -150,6 +150,9 @@ export default function BrowsePage() {
 
       fetchTracks();
       const timer = setTimeout(() => {
+        const setSession = sessionStorage.setItem("showContent", "true");
+        const showContent = sessionStorage.getItem("showContent");
+        setShowContent(Boolean(showContent));
         isFetched.current = true;
       }, 5000); // Đặt ref thành true để không chạy lại
     }
