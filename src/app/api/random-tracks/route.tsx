@@ -1,5 +1,7 @@
+"use client";
 import { NextResponse } from "next/server";
 import Redis from "ioredis";
+import { usePathname } from "next/navigation";
 const client_id = process.env.SPOTIFY_CLIENT_ID!;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET!;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN!;
@@ -26,7 +28,7 @@ const getAccessToken = async () => {
 
 export async function GET() {
   const { access_token } = await getAccessToken();
-
+  const path = usePathname();
   const res = await fetch(PLAYLIST_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -39,11 +41,13 @@ export async function GET() {
       { status: res.status },
     );
   }
-
+  const isBrowse2 = path === "/browse?page=2";
   const data = await res.json();
 
   // Lấy tối đa 20 bài hát
-  const tracks = data.items.slice(0, 52).map((item: any) => item.track);
+  const tracks = isBrowse2
+    ? data.items.slice(53, 103).map((item: any) => item.track)
+    : data.items.slice(0, 52).map((item: any) => item.track);
 
   return NextResponse.json(tracks);
 }
