@@ -194,14 +194,14 @@ export default function BrowsePage() {
                   className={`h-[480.5px] w-[312.5px] bg-[#000000]`}
                 >
                   <CardHeader className="h-[64px] w-[310.5px]">
-                    <Skeleton className="h-[16px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></Skeleton>
+                    <Skeleton className="loading_skeleton h-[16px] w-[262.5px] rounded-md"></Skeleton>
                   </CardHeader>
                   <CardContent className="h-[354.5px] w-[310.5px]">
-                    <Skeleton className="mb-4 h-[262.5px] w-[262.5px] animate-pulse rounded-md bg-primary/10 object-cover"></Skeleton>
-                    <Skeleton className="mb-2 h-[16px] w-[158.61px] animate-pulse rounded-md bg-primary/10 text-sm text-muted-foreground"></Skeleton>
+                    <Skeleton className="loading_skeleton mb-4 h-[262.5px] w-[262.5px] rounded-md object-cover"></Skeleton>
+                    <Skeleton className="loading_skeleton mb-2 h-[16px] w-[158.61px] rounded-md text-sm text-muted-foreground"></Skeleton>
                     <div className="mb-2 flex items-center">
                       <Skeleton
-                        className={`h-4 w-[80px] animate-pulse rounded-md bg-primary/10`}
+                        className={`loading_skeleton h-4 w-[80px] rounded-md`}
                       ></Skeleton>
 
                       <span className="ml-2 text-sm"></span>
@@ -209,7 +209,7 @@ export default function BrowsePage() {
                     <p className="font-bold"></p>
                   </CardContent>
                   <CardFooter className="h-[60px] w-[310.5px]">
-                    <Skeleton className="h-[36px] w-[262.5px] animate-pulse rounded-md bg-primary/10"></Skeleton>
+                    <Skeleton className="loading_skeleton h-[36px] w-[262.5px] rounded-md"></Skeleton>
                   </CardFooter>
                 </Card>
               ))}
