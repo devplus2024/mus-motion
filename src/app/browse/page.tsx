@@ -104,11 +104,12 @@ export default function BrowsePage() {
   const [tracks, setTracks] = useState<TrackData[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [check, setCheck] = useState(false);
-  const [showContent, setShowContent] = useState(() => {
-    // Kiểm tra giá trị từ localStorage khi component mount
-    const showContent = sessionStorage.getItem("showContent");
-    return Boolean(showContent) || false;
-  });
+  const [showContent, setShowContent] = useState(false);
+  // const [showContent, setShowContent] = useState(() => {
+  //   // Kiểm tra giá trị từ localStorage khi component mount
+  //   const showContent = sessionStorage.getItem("showContent");
+  //   return Boolean(showContent) || false;
+  // });
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
   useEffect(() => {
     const navigationEntries = performance.getEntriesByType(
