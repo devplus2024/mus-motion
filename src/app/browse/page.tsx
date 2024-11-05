@@ -156,7 +156,9 @@ export default function BrowsePage() {
       };
 
       fetchTracks();
-      isFetched.current = true;
+      const timer = setTimeout(() => {
+        isFetched.current = true;
+      }, 5000); // Đặt ref thành true để không chạy lại
     }
   }, []);
 
@@ -225,7 +227,7 @@ export default function BrowsePage() {
                   </CardFooter>
                 </Card>
               ))}
-            {showContent &&
+            {isFetched &&
               tracks.map((track) => (
                 <Card key={track.id} className={`bg-[#000000]`}>
                   <CardHeader>
