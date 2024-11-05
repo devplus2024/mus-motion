@@ -112,23 +112,6 @@ export default function BrowsePage() {
   // });
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
   useEffect(() => {
-    console.log(isFetched.current);
-    const navigationEntries = performance.getEntriesByType(
-      "navigation",
-    ) as PerformanceNavigationTiming[];
-
-    if (
-      navigationEntries.length > 0 &&
-      navigationEntries[0].type === "reload"
-    ) {
-      const setSession = sessionStorage.setItem("showContent", "false");
-      const showContent = sessionStorage.getItem("showContent");
-      setShowContent(Boolean(showContent));
-      console.log("Page is Loading with 1"); // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
-    }
-  }, []);
-  useEffect(() => {
-    console.log(isFetched.current);
     if (!isFetched.current) {
       const fetchTracks = async () => {
         try {
