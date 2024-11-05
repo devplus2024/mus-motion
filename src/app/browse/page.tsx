@@ -107,7 +107,7 @@ export default function BrowsePage() {
   const [showContent, setShowContent] = useState(() => {
     // Kiểm tra giá trị từ localStorage khi component mount
     const showContent = sessionStorage.getItem("showContent");
-    return showContent || false;
+    return Boolean(showContent) || false;
   });
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
   useEffect(() => {
