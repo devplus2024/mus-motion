@@ -227,7 +227,7 @@ export default function BrowsePage() {
                   </CardFooter>
                 </Card>
               ))}
-            {isFetched == true &&
+            {isFetched.current == true &&
               tracks.map((track) => (
                 <Card key={track.id} className={`bg-[#000000]`}>
                   <CardHeader>
