@@ -115,7 +115,7 @@ export default function BrowsePage() {
       navigationEntries.length > 0 &&
       navigationEntries[0].type === "reload"
     ) {
-      setShowContent(true); // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
+      setShowContent(false); // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
     }
   }, []);
   useEffect(() => {
@@ -193,7 +193,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {!isFetched.current &&
+            {!showContent &&
               [...Array(50)].map((_, index) => (
                 <Card
                   key={index}
