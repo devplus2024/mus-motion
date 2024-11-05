@@ -112,6 +112,7 @@ export default function BrowsePage() {
   // });
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
   useEffect(() => {
+    console.log(isFetched.current);
     const navigationEntries = performance.getEntriesByType(
       "navigation",
     ) as PerformanceNavigationTiming[];
@@ -127,6 +128,7 @@ export default function BrowsePage() {
     }
   }, []);
   useEffect(() => {
+    console.log(isFetched.current);
     if (!isFetched.current) {
       const fetchTracks = async () => {
         try {
@@ -158,6 +160,7 @@ export default function BrowsePage() {
       fetchTracks();
       const timer = setTimeout(() => {
         isFetched.current = true;
+        console.log(isFetched.current);
       }, 5000); // Đặt ref thành true để không chạy lại
     }
   }, []);
