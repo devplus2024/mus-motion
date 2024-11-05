@@ -106,7 +106,18 @@ export default function BrowsePage() {
   const [check, setCheck] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
+  useEffect(() => {
+    const navigationEntries = performance.getEntriesByType(
+      "navigation",
+    ) as PerformanceNavigationTiming[];
 
+    if (
+      navigationEntries.length > 0 &&
+      navigationEntries[0].type === "reload"
+    ) {
+      isFetched.current = true; // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
+    }
+  }, []);
   useEffect(() => {
     if (!isFetched.current) {
       const fetchTracks = async () => {
