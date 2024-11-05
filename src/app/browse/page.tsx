@@ -260,11 +260,11 @@ export default function BrowsePage() {
             <Button variant="outline" className="mx-1">
               Previous
             </Button>
-            {[...Array(10)].map((_, index) => (
+            {[...Array(1, 10)].map((_, index) => (
               <Button
                 variant="outline"
                 key={index}
-                onClick={() => router.push(`/browse?page=${index + 1}`)}
+                onClick={() => router.push(`/browse?page=${index}`)}
                 className="mx-1"
               >
                 {index}{" "}
