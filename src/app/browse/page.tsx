@@ -104,7 +104,11 @@ export default function BrowsePage() {
   const [tracks, setTracks] = useState<TrackData[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [check, setCheck] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(() => {
+    // Kiểm tra giá trị từ localStorage khi component mount
+    const showContent = sessionStorage.getItem("showContent");
+    return showContent || false;
+  });
   const isFetched = useRef(false); // Sử dụng useRef để giữ trạng thái
   useEffect(() => {
     const navigationEntries = performance.getEntriesByType(
@@ -115,7 +119,9 @@ export default function BrowsePage() {
       navigationEntries.length > 0 &&
       navigationEntries[0].type === "reload"
     ) {
-      setShowContent(false);
+      const setSession = sessionStorage.setItem("showContent", "false");
+      const showContent = sessionStorage.getItem("showContent");
+      setShowContent(Boolean(showContent));
       console.log("Page is Loading with 1"); // Xóa dữ liệu trong sessionStorage nếu trang được tải lại
     }
   }, []);
