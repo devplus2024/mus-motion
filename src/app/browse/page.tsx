@@ -157,9 +157,6 @@ export default function BrowsePage() {
 
       fetchTracks();
       const timer = setTimeout(() => {
-        const setSession = sessionStorage.setItem("showContent", "true");
-        const showContent = sessionStorage.getItem("showContent");
-        setShowContent(Boolean(showContent));
         isFetched.current = true;
       }, 5000); // Đặt ref thành true để không chạy lại
     }
@@ -204,7 +201,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {!showContent &&
+            {!isFetched.current &&
               [...Array(50)].map((_, index) => (
                 <Card
                   key={index}
