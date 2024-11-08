@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import "@radix-ui/themes/styles.css";
+
 
 import { Button } from "@/components/ui/button";
 import {

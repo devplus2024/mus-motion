@@ -122,6 +122,10 @@
     --menu-border-color: #202020;
     ----arrow-bg: #202020;
     --chat: #1a1a1a;
+    --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
+      --scaling: 1;
+      --radius-factor: 1;
     --chart-bar-web: 0 0% 81%;
     --chart-bar-webs: hsl(0, 0%, 81%);
     --chart-1: 220 70% 50%;
@@ -132,6 +136,7 @@
     --background: 0, 0%, 0%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
+    --scaling: 1;
     --card-foreground: 0 0% 98%;
     --popover: 0, 0%, 0%;
     --popover-blur: 0, 0%, 0%, 0.6;
@@ -383,6 +388,8 @@
       display: block;
       width: 100%;
       height: 30%;
+      --scaling: 1;
+      --radius-factor: 1;
       --radius-1: calc(3px* var(--scaling)* var(--radius-factor));
       border-radius: var(--radius-1);
       background-color: currentColor;
@@ -395,30 +402,44 @@
       animation-delay: calc(-8 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(2)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(45deg);
       animation-delay: calc(-7 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(3)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(90deg);
       animation-delay: calc(-6 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(4)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(135deg);
       animation-delay: calc(-5 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(5)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(180deg);
       animation-delay: calc(-4 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(6)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(225deg);
       animation-delay: calc(-3 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(7)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(270deg);
       animation-delay: calc(-2 / 8 * var(--spinner-animation-duration));
     }
     &:where(:nth-child(8)) {
+      --spinner-animation-duration: 800ms;
+      --spinner-opacity: 0.65;
       transform: rotate(315deg);
       animation-delay: calc(-1 / 8 * var(--spinner-animation-duration));
     }
