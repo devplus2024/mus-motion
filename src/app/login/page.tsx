@@ -49,7 +49,11 @@ export default function LoginPage() {
                 </Link>
               </div>
               <div className="relative">
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  type={show ? "text" : "password"}
+                  required
+                />
                 <div
                   className="absolute right-[1rem] top-1/2 -translate-y-1/2"
                   onClick={showpassword}
