@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import "@radix-ui/themes/styles.css";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -101,7 +102,7 @@ export default function LoginPage() {
               </div>
             </div>
             <Button type="submit" className="w-full select-none">
-              <Spinner className={login ? "block" : "hidden"} />
+              <Spinner size="1" className={login ? "block" : "hidden"} />
               <p className={!login ? "hidden" : "block"}>Login</p>
             </Button>
             <Button variant="outline" className="w-full select-none">
