@@ -55,7 +55,7 @@ export default function LoginPage() {
                   required
                 />
                 <div
-                  className="absolute right-[1rem] top-1/2 -translate-y-1/2"
+                  className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer"
                   onClick={showpassword}
                 >
                   {show && (
@@ -95,10 +95,10 @@ export default function LoginPage() {
                 </div>
               </div>
             </div>
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="pointer-events-none w-full">
               Login
             </Button>
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="pointer-events-none w-full">
               Login with Google
             </Button>
           </div>
