@@ -12,11 +12,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { Spinner } from "@radix-ui/themes";
 
 export default function LoginPage() {
   const [show, setShow] = useState(false);
+  const [login, setLogin] = useState(false);
   const showpassword = () => {
     setShow(!show);
+    const timer = setTimeout(() => {
+      setLogin(false);
+    }, 3000);
   };
   return (
     <div className="flex h-[calc(100vh-60px)] w-full items-center justify-center px-4">
@@ -95,10 +100,11 @@ export default function LoginPage() {
                 </div>
               </div>
             </div>
-            <Button type="submit" className="pointer-events-none w-full">
-              Login
+            <Button type="submit" className="w-full select-none">
+              <Spinner className={login ? "block" : "hidden"} />
+              <p className={!login ? "hidden" : "block"}>Login</p>
             </Button>
-            <Button variant="outline" className="pointer-events-none w-full">
+            <Button variant="outline" className="w-full select-none">
               Login with Google
             </Button>
           </div>
