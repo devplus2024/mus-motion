@@ -63,8 +63,26 @@
     --radius: 0.5rem;
     --scrollbar-color: #000000;
     --fill-logo-svg: #000000;
+    --space-1: calc(4px* var(--scaling));
+    --space-2: calc(8px* var(--scaling));
+    --space-3: calc(12px* var(--scaling));
+    --space-4: calc(16px* var(--scaling));
+    --space-5: calc(24px* var(--scaling));
+    --space-6: calc(32px* var(--scaling));
+    --space-7: calc(40px* var(--scaling));
+    --space-8: calc(48px* var(--scaling));
+    --space-9: calc(64px* var(--scaling));
   }
   .dark {
+    --space-1: calc(4px* var(--scaling));
+    --space-2: calc(8px* var(--scaling));
+    --space-3: calc(12px* var(--scaling));
+    --space-4: calc(16px* var(--scaling));
+    --space-5: calc(24px* var(--scaling));
+    --space-6: calc(32px* var(--scaling));
+    --space-7: calc(40px* var(--scaling));
+    --space-8: calc(48px* var(--scaling));
+    --space-9: calc(64px* var(--scaling));
     --preview-image-dark-display: block;
     --preview-image-light-display: none;
     --brand-primary: rgb(138, 180, 248);
@@ -338,6 +356,8 @@
   .rt-Spinner {
     display: block;
     position: relative;
+    --spinner-animation-duration: 800ms;
+    --spinner-opacity: 0.65;
     opacity: var(--spinner-opacity);
   }
   
@@ -347,6 +367,14 @@
     left: calc(50% - 12.5% / 2);
     width: 12.5%;
     height: 100%;
+    --radius-1: calc(3px* var(--scaling)* var(--radius-factor));
+    --radius-2: calc(4px* var(--scaling)* var(--radius-factor));
+    --radius-3: calc(6px* var(--scaling)* var(--radius-factor));
+    --radius-4: calc(8px* var(--scaling)* var(--radius-factor));
+    --radius-5: calc(12px* var(--scaling)* var(--radius-factor));
+    --radius-6: calc(16px* var(--scaling)* var(--radius-factor));
+    --spinner-animation-duration: 800ms;
+    --spinner-opacity: 0.65;
     animation: rt-spinner-leaf-fade var(--spinner-animation-duration) linear infinite;
   
     &::before {
@@ -402,6 +430,15 @@
   }
   
   @breakpoints {
+    --space-1: calc(4px* var(--scaling));
+    --space-2: calc(8px* var(--scaling));
+    --space-3: calc(12px* var(--scaling));
+    --space-4: calc(16px* var(--scaling));
+    --space-5: calc(24px* var(--scaling));
+    --space-6: calc(32px* var(--scaling));
+    --space-7: calc(40px* var(--scaling));
+    --space-8: calc(48px* var(--scaling));
+    --space-9: calc(64px* var(--scaling));
     .rt-Spinner {
       &:where(.rt-r-size-1) {
         width: var(--space-3);
