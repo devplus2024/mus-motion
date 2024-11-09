@@ -18,6 +18,9 @@ export default function LoginPage() {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(false);
   const showpassword = () => {
+    setShow(!show);
+  };
+  const logincheck = () => {
     setLogin(!login);
     const timer = setTimeout(() => {
       setLogin(false);
@@ -100,7 +103,11 @@ export default function LoginPage() {
                 </div>
               </div>
             </div>
-            <Button type="submit" className="w-full select-none">
+            <Button
+              type="submit"
+              className="w-full select-none"
+              onClick={logincheck}
+            >
               <Spinner
                 size="1"
                 className={`${login ? "block" : "hidden"} radix-themes`}
