@@ -359,7 +359,6 @@
   }
 
   .rt-Spinner {
-    display: block;
     position: relative;
     opacity: var(--spinner-opacity);
   }
