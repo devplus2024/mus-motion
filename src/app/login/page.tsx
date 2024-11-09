@@ -51,7 +51,6 @@ export default function LoginPage() {
                   type="email"
                   placeholder="m@example.com"
                   required
-                  value={!namevalue ? "" : ""}
                 />
                 <div
                   onClick={refreshData}
