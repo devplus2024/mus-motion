@@ -46,12 +46,7 @@ export default function LoginPage() {
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
+                <Input id="email" type="email" placeholder="m@example.com" />
                 <div
                   onClick={refreshData}
                   className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer"
