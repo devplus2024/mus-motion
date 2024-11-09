@@ -72,6 +72,10 @@
     --space-7: calc(40px * var(--scaling));
     --space-8: calc(48px * var(--scaling));
     --space-9: calc(64px * var(--scaling));
+    --spinner-animation-duration: 800ms;
+    --spinner-opacity: 0.65;
+    --scaling: 1;
+    --radius-factor: 1;
   }
   .dark {
     --space-1: calc(4px * var(--scaling));
