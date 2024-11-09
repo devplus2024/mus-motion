@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(false);
   const showpassword = () => {
-    setShow(!show);
+    setLogin(!login);
     const timer = setTimeout(() => {
       setLogin(false);
     }, 3000);
