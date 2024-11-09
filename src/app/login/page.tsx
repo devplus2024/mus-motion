@@ -17,8 +17,12 @@ import { Spinner } from "@radix-ui/themes";
 export default function LoginPage() {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(false);
+  const [namevalue, setNameValue] = useState(false);
   const showpassword = () => {
     setShow(!show);
+  };
+  const refreshdata = () => {
+    setNameValue(false);
   };
   const logincheck = () => {
     setLogin(!login);
@@ -45,8 +49,12 @@ export default function LoginPage() {
                   type="email"
                   placeholder="m@example.com"
                   required
+                  value={!namevalue ? "" : ""}
                 />
-                <div className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer">
+                <div
+                  onClick={refreshdata}
+                  className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer"
+                >
                   <svg
                     data-testid="geist-icon"
                     height={16}
@@ -131,7 +139,15 @@ export default function LoginPage() {
                 size="1"
                 className={`${login ? "block" : "hidden"} radix-themes`}
               />
-              <p className={!login ? "block" : "hidden"}>Login</p>
+              <p
+                className={
+                  !login
+                    ? "pointer-events-auto block"
+                    : "pointer-events-none hidden"
+                }
+              >
+                Login
+              </p>
             </Button>
             <Button
               variant="outline"
