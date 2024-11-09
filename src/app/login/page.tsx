@@ -21,9 +21,11 @@ export default function LoginPage() {
   const showpassword = () => {
     setShow(!show);
   };
-  const refreshdata = () => {
-    setNameValue(false);
+  const refreshData = (e: React.MouseEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement; // Ép kiểu e.target thành HTMLInputElement
+    target.value = ""; // Làm trống giá trị của input
   };
+
   const logincheck = () => {
     setLogin(!login);
     const timer = setTimeout(() => {
@@ -52,7 +54,7 @@ export default function LoginPage() {
                   value={!namevalue ? "" : ""}
                 />
                 <div
-                  onClick={refreshdata}
+                  onClick={refreshData}
                   className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer"
                 >
                   <svg
