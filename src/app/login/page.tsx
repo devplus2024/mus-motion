@@ -132,22 +132,14 @@ export default function LoginPage() {
             </div>
             <Button
               type="submit"
-              className="w-full select-none"
+              className={`${login ? "pointer-events-none" : "pointer-events-auto"} w-full select-none`}
               onClick={logincheck}
             >
               <Spinner
                 size="1"
                 className={`${login ? "block" : "hidden"} radix-themes`}
               />
-              <p
-                className={
-                  !login
-                    ? "pointer-events-auto block"
-                    : "pointer-events-none hidden"
-                }
-              >
-                Login
-              </p>
+              <p className={!login ? "block" : "hidden"}>Login</p>
             </Button>
             <Button
               variant="outline"
