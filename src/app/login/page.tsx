@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -102,8 +101,11 @@ export default function LoginPage() {
               </div>
             </div>
             <Button type="submit" className="w-full select-none">
-              <Spinner size="1" className={login ? "block" : "hidden"} />
-              <p className={!login ? "hidden" : "block"}>Login</p>
+              <Spinner
+                size="1"
+                className={`${login ? "block" : "hidden"} radix-themes`}
+              />
+              <p className={!login ? "block" : "hidden"}>Login</p>
             </Button>
             <Button variant="outline" className="w-full select-none">
               Login with Google
