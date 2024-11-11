@@ -79,7 +79,7 @@ function PricingPage() {
           <Accordion
             type="single"
             collapsible
-            className="grid w-[700px] gap-8 md:grid-cols-1"
+            className="grid w-[700px] border rounded-lg px-4 py-2 gap-8 md:grid-cols-1"
           >
             {[
               {
