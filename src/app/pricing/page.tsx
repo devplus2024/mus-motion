@@ -50,7 +50,7 @@ function PricingPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
                   activeTab === tab.id ? "" : "hover:text-white/60"
-                } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                } relative rounded-full border-r px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
@@ -58,7 +58,7 @@ function PricingPage() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 bg-white mix-blend-difference"
+                    className="absolute inset-0 z-10 bg-[#0c0c0c] mix-blend-difference"
                     style={{ borderRadius: 9999 }}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
@@ -79,7 +79,7 @@ function PricingPage() {
           <Accordion
             type="single"
             collapsible
-            className="grid w-[700px] border rounded-lg px-4 py-2 gap-8 md:grid-cols-1"
+            className="grid w-[700px] gap-8 rounded-lg border px-4 py-2 md:grid-cols-1"
           >
             {[
               {
