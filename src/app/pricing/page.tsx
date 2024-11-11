@@ -145,7 +145,11 @@ function PricingPage() {
                   "An internet connection is required for cloud storage and collaboration features, but most core features are available offline after installation.",
               },
             ].map((faq) => (
-              <AccordionItem key={faq.question} value={faq.question}>
+              <AccordionItem
+                className="last:border-b-0"
+                key={faq.question}
+                value={faq.question}
+              >
                 <AccordionTrigger>{faq.question}</AccordionTrigger>
                 <AccordionContent>{faq.answer}</AccordionContent>
               </AccordionItem>
