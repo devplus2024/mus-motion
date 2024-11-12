@@ -43,14 +43,16 @@ function PricingPage() {
           and Cutting-Edge Music Software Suite Designed for Every Artist
         </p>
         <div className="flex justify-center space-x-1">
-          <div className="flex w-fit rounded-full border">
+          <div className="flex w-fit rounded-full border-y">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
-                  activeTab === tab.id ? "" : "bg-[#0c0c0c] hover:text-white/60"
-                } ${activeTab === "business" ? "border-l" : "border-r"} relative rounded-full bg-black px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                  activeTab === tab.id
+                    ? ""
+                    : "border-x bg-[#0c0c0c] hover:text-white/60"
+                } relative rounded-full bg-black px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
