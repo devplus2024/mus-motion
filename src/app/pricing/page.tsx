@@ -58,7 +58,7 @@ function PricingPage() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
+                    className="absolute z-10 border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
                     style={{ borderRadius: 9999 }}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
