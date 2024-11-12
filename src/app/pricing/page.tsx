@@ -52,7 +52,7 @@ function PricingPage() {
                   activeTab === tab.id
                     ? ""
                     : "border-r bg-[#0c0c0c] hover:text-white/60"
-                } ${tab.id === "individual" ? "border-r" : "border-l"} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                } ${activeTab === "individual" ? "border-r" : "border-l"} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
