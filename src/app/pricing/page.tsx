@@ -49,10 +49,8 @@ function PricingPage() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
-                  activeTab === tab.id
-                    ? ""
-                    : "border-r bg-[#0c0c0c] hover:text-white/60"
-                } ${activeTab === "business" ? "border-l" : "border-r"} relative rounded-full border-none bg-black px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                  activeTab === tab.id ? "" : "bg-[#0c0c0c] hover:text-white/60"
+                } ${activeTab === "business" ? "border-l" : "border-r"} relative rounded-full bg-black px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
