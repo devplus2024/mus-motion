@@ -49,8 +49,10 @@ function PricingPage() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
-                  activeTab === tab.id ? "" : "hover:text-white/60"
-                } relative rounded-full border-r px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                  activeTab === tab.id
+                    ? ""
+                    : "border-r bg-[#0c0c0c] hover:text-white/60"
+                } ${tab.id === "individual" ? "border-r" : "border-l"} relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
@@ -58,7 +60,7 @@ function PricingPage() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 bg-[#0c0c0c] mix-blend-difference"
+                    className="absolute inset-0 z-10 border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
                     style={{ borderRadius: 9999 }}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
