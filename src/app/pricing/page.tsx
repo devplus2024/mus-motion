@@ -44,7 +44,7 @@ function PricingPage() {
         </p>
         <div className="flex justify-center space-x-1">
           <div
-            className={`flex w-fit rounded-full border-y ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""}`}
+            className={`box-border flex h-[32px] w-fit rounded-full border ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""}`}
           >
             {tabs.map((tab) => (
               <button
@@ -52,7 +52,7 @@ function PricingPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
                   activeTab === tab.id ? "" : "bg-[#0c0c0c] hover:text-white/60"
-                } ${activeTab === "business" ? "border-l" : "border-r"} relative rounded-full bg-black px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                } ${activeTab === "business" ? "border-l" : "border-r"} relative -top-[1px] h-[32px] max-w-fit rounded-full bg-black px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
@@ -60,7 +60,7 @@ function PricingPage() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
+                    className="tabs_indicator__lFbpm absolute inset-0 z-10 h-[32px] border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
                     style={{ borderRadius: 9999 }}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
