@@ -456,7 +456,7 @@
 }
 .tabs_indicator__lFbpm {
   --ds-gray-alpha-400: hsla(0, 0%, 100%, 0.14);
-  --ds-background-100: hsla(0, 0%, 5%, 0.141);
+  --ds-background-100: hsl(0, 0%, 5%);
   border: 1px solid var(--ds-gray-alpha-400);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
   background: var(--ds-background-100);
