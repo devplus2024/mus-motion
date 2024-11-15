@@ -5,7 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Home | Stroma",
+  title: "Stroma: A Useful Platform For Musicians",
   description: "Stroma - Home",
 };
 
