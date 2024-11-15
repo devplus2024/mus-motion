@@ -141,7 +141,7 @@ export function CommandMenu() {
     },
   ];
   return (
-    <>
+    <div className="cursor-pointer">
       <div
         onClick={() => setOpen((open) => !open)}
         className="group flex h-[36px] w-[37px] cursor-pointer items-center justify-center rounded-md transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
@@ -240,6 +240,6 @@ export function CommandMenu() {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </>
+    </div>
   );
 }
