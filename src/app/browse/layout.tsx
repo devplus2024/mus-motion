@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Browse | NoneTheLes",
-  description: "NoneTheLes - Browse",
+  title: "Browse | Stroma",
+  description: "Stroma - Browse",
 };
 
 export default function BrowseLayout({

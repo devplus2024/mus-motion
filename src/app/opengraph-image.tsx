@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "NoneTheLes";
+export const alt = "Stroma";
 export const size = {
   width: 1200,
   height: 630,
@@ -30,7 +30,7 @@ export default async function Image() {
   } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
-    imagePreview = "NoneTheLes";
+    imagePreview = "Stroma";
   }
 
   const geistLight = fetch(

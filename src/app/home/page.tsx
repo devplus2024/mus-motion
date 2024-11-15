@@ -392,7 +392,7 @@ export default function Home() {
           </div>
           <div className="min-[375px]:text-xs xl:text-sm">
             <p>
-              By using NoneTheLes, you agree to its{" "}
+              By using Stroma, you agree to its{" "}
               <Link href="/license" className="underline">
                 license
               </Link>{" "}
@@ -446,22 +446,22 @@ export default function Home() {
             <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
               <Menubar className="rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
-                  <MenubarTrigger>NoneTheLes</MenubarTrigger>
+                  <MenubarTrigger>Stroma</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>About NoneTheLes</MenubarItem>
+                    <MenubarItem>About Stroma</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                       Preferences<MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Hide NoneTheLes<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                      Hide Stroma<MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
                       Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                      Quit NoneTheLes
+                      Quit Stroma
                       <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Support | NoneTheLes",
-  description: "NoneTheLes - Support",
+  title: "Support | Stroma",
+  description: "Stroma - Support",
 };
 export default function ResourcesLayout({
   children,

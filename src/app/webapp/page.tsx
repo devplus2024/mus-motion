@@ -124,7 +124,7 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 import { Toaster } from "@/components/ui/sonner";
 import { TabList, tablist } from "./data/tablist";
 import MusicTab from "./components/musictab";
-export default function NoneTheLesWebApp() {
+export default function StromaWebApp() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
@@ -135,22 +135,22 @@ export default function NoneTheLesWebApp() {
             <div className="title_bar flex h-[37px] gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
               <Menubar className="title_bar_no rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
-                  <MenubarTrigger>NoneTheLes</MenubarTrigger>
+                  <MenubarTrigger>Stroma</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>About NoneTheLes</MenubarItem>
+                    <MenubarItem>About Stroma</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                       Preferences<MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Hide NoneTheLes<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                      Hide Stroma<MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
                       Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                      Quit NoneTheLes
+                      Quit Stroma
                       <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>

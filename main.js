@@ -13,7 +13,7 @@ function createWindow() {
     }, // Loại bỏ khung mặc định của hệ điều hành
   });
 
-  win.loadURL("http://NoneTheLes.vercel.app/docs");
+  win.loadURL("http://Stroma.vercel.app/docs");
 }
 
 app.whenReady().then(() => {

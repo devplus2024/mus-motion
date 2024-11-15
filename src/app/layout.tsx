@@ -11,8 +11,8 @@ import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Home | NoneTheLes",
-  description: "NoneTheLes - Home",
+  title: "Home | Stroma",
+  description: "Stroma - Home",
 };
 export default function RootLayout({
   children,

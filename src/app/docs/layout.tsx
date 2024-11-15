@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Documention | NoneTheLes",
+  title: "Documention | Stroma",
   description: "MusicHub App",
 };
 export default function DocumentionLayout({

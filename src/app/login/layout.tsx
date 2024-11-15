@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Login | NoneTheLes",
-  description: "NoneTheLes - Login",
+  title: "Login | Stroma",
+  description: "Stroma - Login",
 };
 export default function PricingLayout({
   children,

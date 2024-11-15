@@ -1,4 +1,4 @@
-export default function NoneTheLes2_0() {
+export default function Stroma2_0() {
   return (
     <main>
       <div></div>

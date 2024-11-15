@@ -1,12 +1,12 @@
 {
-  "name": "NoneTheLes",
+  "name": "Stroma",
   "version": "2.5.3",
   "private": true,
   "main": "main.js",
   "build": {
     "asar": false,
     "compression": "store",
-    "appId": "com.NoneTheLes.inc",
+    "appId": "com.Stroma.inc",
     "directories": {
       "output": "dist"
     },

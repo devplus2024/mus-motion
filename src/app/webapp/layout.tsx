@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "NoneTheLes WebApp",
-  description: "NoneTheLes WebApp",
+  title: "Stroma WebApp",
+  description: "Stroma WebApp",
 };
-export default function NoneTheLesWebAppLayout({
+export default function StromaWebAppLayout({
   children,
 }: {
   children: React.ReactNode;
