@@ -272,9 +272,7 @@ export const Navigation = (): JSX.Element => {
             <div className="h-[1.2rem] border-r"></div>
             <div className="flex items-center justify-center">
               <ThemeToggle />
-              <div className="cursor-pointer">
-                <CommandMenu />
-              </div>
+              <CommandMenu />
             </div>
             <div className="flex items-center gap-[1rem]">
               <Link
