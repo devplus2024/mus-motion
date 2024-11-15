@@ -11,7 +11,7 @@ import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Home | Stroma",
+  title: "Stroma: A Useful Platform For Musicians",
   description: "Stroma - Home",
 };
 export default function RootLayout({
