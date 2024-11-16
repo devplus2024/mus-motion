@@ -120,8 +120,8 @@ const packages = [
 export default function PayMentPage() {
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [paymentStatus, setPaymentStatus] = useState("");
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isYearly, setIsYearly] = useState(false);
 
