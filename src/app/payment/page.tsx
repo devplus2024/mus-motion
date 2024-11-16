@@ -4,6 +4,20 @@ import { useState } from "react";
 import { CreditCard, CheckCircle, AlertCircle, Info, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -34,6 +48,40 @@ import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 
+const contries = [
+  {
+    value: "vietnam",
+    label: "Viet Nam",
+  },
+  {
+    value: "United State",
+    label: "unitedstate",
+  },
+  {
+    value: "canada",
+    label: "Canada",
+  },
+  {
+    value: "unitedkingdom",
+    label: "United Kingdom",
+  },
+  {
+    value: "rusia",
+    label: "Russia",
+  },
+  {
+    value: "mexico",
+    label: "Mexico",
+  },
+  {
+    value: "japan",
+    label: "Japan",
+  },
+  {
+    value: "australia",
+    label: "Australia",
+  },
+]
 const packages = [
   {
     id: "basic",
@@ -72,6 +120,8 @@ const packages = [
 export default function PayMentPage() {
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [paymentStatus, setPaymentStatus] = useState("");
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isYearly, setIsYearly] = useState(false);
 
@@ -238,17 +288,49 @@ export default function PayMentPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="country">Country</Label>
-                  <Select name="country">
-                    <SelectTrigger id="country">
-                      <SelectValue placeholder="Select country" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="us">United States</SelectItem>
-                      <SelectItem value="ca">Canada</SelectItem>
-                      <SelectItem value="uk">United Kingdom</SelectItem>
-                      {/* Add more countries as needed */}
-                    </SelectContent>
-                  </Select>
+                   <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[200px] justify-between"
+        >
+          {value
+            ? frameworks.find((framework) => framework.value === value)?.label
+            : "Select framework..."}
+          <ChevronsUpDown className="opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[200px] p-0">
+        <Command>
+          <CommandInput placeholder="Search framework..." />
+          <CommandList>
+            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandGroup>
+              {frameworks.map((framework) => (
+                <CommandItem
+                  key={framework.value}
+                  value={framework.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue)
+                    setOpen(false)
+                  }}
+                >
+                  {framework.label}
+                  <Check
+                    className={cn(
+                      "ml-auto",
+                      value === framework.value ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
                   {errors.country && (
                     <p className="text-sm text-red-500">{errors.country}</p>
                   )}
