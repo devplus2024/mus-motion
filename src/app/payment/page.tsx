@@ -48,7 +48,7 @@ import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 
-const contries = [
+const countries = [
   {
     value: "vietnam",
     label: "Viet Nam",
@@ -297,31 +297,31 @@ export default function PayMentPage() {
           className="w-[200px] justify-between"
         >
           {value
-            ? frameworks.find((framework) => framework.value === value)?.label
+            ? countries.find((country) => country.value === value)?.label
             : "Select framework..."}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." />
+          <CommandInput placeholder="Search country..." />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No country found.</CommandEmpty>
             <CommandGroup>
-              {frameworks.map((framework) => (
+              {countries.map((country) => (
                 <CommandItem
-                  key={framework.value}
-                  value={framework.value}
+                  key={country.value}
+                  value={country.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
                     setOpen(false)
                   }}
                 >
-                  {framework.label}
+                  {country.label}
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === framework.value ? "opacity-100" : "opacity-0"
+                      value === country.value ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>
