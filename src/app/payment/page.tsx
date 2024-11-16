@@ -115,7 +115,7 @@ export default function PayMentPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-8 p-4">
-      <Card>
+      <Card className="bg-black">
         <CardHeader>
           <CardTitle>Select a Software Package</CardTitle>
           <CardDescription>
@@ -139,7 +139,7 @@ export default function PayMentPage() {
             {packages.map((pkg) => (
               <Card
                 key={pkg.id}
-                className={`mb-4 ${selectedPackage.id === pkg.id ? "border-primary" : ""}`}
+                className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "border-primary" : ""}`}
               >
                 <CardHeader>
                   <div className="flex items-center justify-between">
@@ -340,7 +340,7 @@ export default function PayMentPage() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Order Summary</h3>
-              <div className="rounded-lg bg-muted p-4">
+              <div className="rounded-lg bg-black p-4">
                 <div className="mb-2 flex justify-between">
                   <span>{selectedPackage.name} Package</span>
                   <span>${isYearly ? annualPrice : selectedPackage.price}</span>
@@ -406,37 +406,50 @@ export default function PayMentPage() {
         </CardFooter>
       </Card>
 
-      <Card>
+<Card>
         <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
+          <CardTitle>Additional Information</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold">Can I upgrade my plan later?</h3>
-              <p className="text-sm text-muted-foreground">
-                Yes, you can upgrade your plan at any time. The price difference
-                will be prorated.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold">
-                What payment methods do you accept?
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                We accept all major credit cards and PayPal.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold">
-                Is there a money-back guarantee?
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Yes, we offer a 30-day money-back guarantee for all our
-                packages.
-              </p>
-            </div>
-          </div>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Frequently Asked Questions</AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold">Can I upgrade my plan later?</h3>
+                    <p className="text-sm text-muted-foreground">Yes, you can upgrade your plan at any time. The price difference will be prorated.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">What payment methods do you accept?</h3>
+                    <p className="text-sm text-muted-foreground">We accept all major credit cards and PayPal.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Is there a money-back guarantee?</h3>
+                    <p className="text-sm text-muted-foreground">Yes, we offer a 30-day money-back guarantee for all our packages.</p>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Terms of Service</AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-muted-foreground">
+                  By purchasing a package, you agree to our Terms of Service. Please read them carefully before proceeding with your purchase.
+                </p>
+                <Button variant="link" className="p-0 h-auto">Read Full Terms of Service</Button>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Privacy Policy</AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-muted-foreground">
+                  We take your privacy seriously. Our Privacy Policy outlines how we collect, use, and protect your personal information.
+                </p>
+                <Button variant="link" className="p-0 h-auto">Read Full Privacy Policy</Button>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
         <CardFooter>
           <Button variant="outline" className="w-full">
