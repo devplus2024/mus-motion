@@ -173,7 +173,7 @@ export default function PayMentPage() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="bg-black">
         <CardHeader>
           <CardTitle>Payment Details</CardTitle>
           <CardDescription>
@@ -341,7 +341,7 @@ export default function PayMentPage() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Order Summary</h3>
-              <div className="rounded-lg bg-black p-4">
+              <div className="rounded-lg bg-black border p-4">
                 <div className="mb-2 flex justify-between">
                   <span>{selectedPackage.name} Package</span>
                   <span>${isYearly ? annualPrice : selectedPackage.price}</span>
@@ -407,7 +407,7 @@ export default function PayMentPage() {
         </CardFooter>
       </Card>
 
-<Card>
+<Card className="bg-black">
         <CardHeader>
           <CardTitle>Additional Information</CardTitle>
         </CardHeader>
