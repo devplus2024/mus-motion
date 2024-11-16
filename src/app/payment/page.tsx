@@ -287,19 +287,19 @@ export default function PayMentPage() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="country">Country</Label>
+                  
                    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-full justify-between"
         >
           {value
             ? countries.find((country) => country.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown className="opacity-50" />
+          <ChevronsUpDown className="opacity-50 w-[10px]  h-[10px] " />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
