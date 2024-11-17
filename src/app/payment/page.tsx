@@ -87,6 +87,14 @@ const countries = [
     value: "australia",
     label: "Australia",
   },
+  {
+    value: "korea",
+    label: "Korea",
+  },
+  {
+    value: "french",
+    label: "French",
+  },
 ]
 const packages = [
   {
@@ -305,7 +313,7 @@ export default function PayMentPage() {
           {value
             ? countries.find((country) => country.value === value)?.label
             : "Select Country"}
-          < CaretSortIcon className="opacity-50 w-4  h-4 " />
+          <CaretSortIcon className="opacity-50 w-4  h-4 " />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
