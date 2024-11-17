@@ -54,8 +54,8 @@ const countries = [
     label: "Viet Nam",
   },
   {
-    value: "United State",
-    label: "unitedstate",
+    value: "unitedstate",
+    label: "United State",
   },
   {
     value: "canada",
@@ -298,7 +298,7 @@ export default function PayMentPage() {
         >
           {value
             ? countries.find((country) => country.value === value)?.label
-            : "Select framework..."}
+            : "Select Country..."}
           <ChevronsUpDown className="opacity-50 w-[10px]  h-[10px] " />
         </Button>
       </PopoverTrigger>
