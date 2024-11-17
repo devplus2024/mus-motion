@@ -287,7 +287,7 @@ export default function PayMentPage() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  
+                  <Label htmlFor="country">Country</Label>
                    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
