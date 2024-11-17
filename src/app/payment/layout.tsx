@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Paymemnt | Stroma",
+  title: "Payment | Stroma",
   description: "Stroma",
 };
 export default function PayMentLayout({
