@@ -85,8 +85,8 @@ const card = [
   },
   {
     id: 4,
-    name: "dinersclub",
-    src: "/dinersclub.svg",
+    name: "discover",
+    src: "/discover.svg",
   },
 ];
 const countries = [
