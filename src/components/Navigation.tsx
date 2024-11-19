@@ -270,7 +270,7 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem> */}
-                {/* <NavigationMenuItem>
+                <NavigationMenuItem>
                   <Link href="/support" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
@@ -282,8 +282,8 @@ export const Navigation = (): JSX.Element => {
                       Support
                     </NavigationMenuLink>
                   </Link>
-                </NavigationMenuItem> */}
-                <NavigationMenuItem>
+                </NavigationMenuItem>
+                {/* <NavigationMenuItem>
                   <NavigationMenuTrigger>Support</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1320px]">
@@ -298,7 +298,7 @@ export const Navigation = (): JSX.Element => {
                       ))}
                     </ul>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
