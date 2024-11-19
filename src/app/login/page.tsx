@@ -25,12 +25,13 @@ export default function LoginPage() {
   //   const target = e.target as HTMLInputElement; // Ép kiểu e.target thành HTMLInputElement
   //   target.value = ""; // Làm trống giá trị của input
   // };
-  const emailInput = document.getElementById("email") as HTMLInputElement; // Ép kiểu sang HTMLInputElement
-  function refreshData() {
-    if (emailInput) {
-      emailInput.value = ""; // Đặt giá trị về rỗng
+
+  const refreshData = () => {
+    const inputElement = document.getElementById("email") as HTMLInputElement;
+    if (inputElement) {
+      inputElement.value = ""; // Đặt giá trị về rỗng
     }
-  }
+  };
   const logincheck = () => {
     setLogin(!login);
     const timer = setTimeout(() => {
