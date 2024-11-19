@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "@radix-ui/themes";
 
 export default function LoginPage() {
@@ -21,11 +21,16 @@ export default function LoginPage() {
   const showpassword = () => {
     setShow(!show);
   };
-  const refreshData = (e: React.MouseEvent<HTMLInputElement>) => {
-    const target = e.target as HTMLInputElement; // Ép kiểu e.target thành HTMLInputElement
-    target.value = ""; // Làm trống giá trị của input
-  };
-
+  // const refreshData = (e: React.MouseEvent<HTMLInputElement>) => {
+  //   const target = e.target as HTMLInputElement; // Ép kiểu e.target thành HTMLInputElement
+  //   target.value = ""; // Làm trống giá trị của input
+  // };
+  const emailInput = document.getElementById("email") as HTMLInputElement; // Ép kiểu sang HTMLInputElement
+  function refreshData() {
+    if (emailInput) {
+      emailInput.value = ""; // Đặt giá trị về rỗng
+    }
+  }
   const logincheck = () => {
     setLogin(!login);
     const timer = setTimeout(() => {
