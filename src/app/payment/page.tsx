@@ -410,15 +410,15 @@ export default function PayMentPage() {
               <h3 className="text-lg font-semibold">Card Information</h3>
               <div className="space-y-2">
                 <Label htmlFor="card">Card Types</Label>
-                <div className="grid grid-cols-4">
+                <div className="grid grid-cols-4 justify-items-center">
                   {card.map((cd) => (
                     <Image
                       key={cd.id}
-                      src={`/${cd.src}`}
+                      src={`${cd.src}`}
                       alt={cd.name}
                       height="50"
                       width="50"
-                      className="h-[50px] w-auto"
+                      className="h-[50px] w-auto dark:invert-[1]"
                     ></Image>
                   ))}
                 </div>
