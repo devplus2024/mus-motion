@@ -83,11 +83,6 @@ const card = [
     name: "jcb",
     src: "/jcb.svg",
   },
-  {
-    id: 4,
-    name: "discover",
-    src: "/discover.svg",
-  },
 ];
 const countries = [
   {
@@ -421,6 +416,13 @@ export default function PayMentPage() {
                       className="h-[50px] w-auto dark:invert-[1]"
                     ></Image>
                   ))}
+				  <Image
+                      src={"/dinersclub.svg"}
+                      alt={"dinersclub"}
+                      height="40"
+                      width="40"
+                      className="h-[40px] w-auto dark:invert-[1]"
+                    ></Image>
                 </div>
                 {errors.card && (
                   <p className="text-sm text-red-500">{errors.card}</p>
