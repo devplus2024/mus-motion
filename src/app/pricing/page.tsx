@@ -44,7 +44,7 @@ function PricingPage() {
         </p>
         <div className="flex justify-center space-x-1">
           <div
-            className={`box-border flex h-[32px] w-fit rounded-full border ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""}`}
+            className={`box-border flex h-[32px] w-fit rounded-full border first:-mr-[1px] last:-mr-[1px] ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""}`}
           >
             {tabs.map((tab) => (
               <button
@@ -52,7 +52,7 @@ function PricingPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
                   activeTab === tab.id ? "" : "hover:text-white/60"
-                } ${activeTab === "individual" ? "-ml-[1px]" : ""} ${activeTab === "business" ? "-mr-[1px]" : ""} relative -top-[1px] h-[32px] max-w-fit rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                } relative -top-[1px] h-[32px] max-w-fit rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
