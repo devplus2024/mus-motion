@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { CreditCard, CheckCircle, AlertCircle, Info, Lock,  Check, ChevronsUpDown } from "lucide-react";
+import {
+  CreditCard,
+  CheckCircle,
+  AlertCircle,
+  Info,
+  Lock,
+  Check,
+  ChevronsUpDown,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -48,12 +56,38 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
-
+const card = [
+  {
+    id: 1,
+    name: "visa",
+    src: "/visa.svg",
+  },
+  {
+    id: 2,
+    name: "mastercard",
+    src: "/mastercard.svg",
+  },
+  {
+    id: 3,
+    name: "jcb",
+    src: "/jcb.svg",
+  },
+  {
+    id: 4,
+    name: "napas",
+    src: "/napas.svg",
+  },
+];
 const countries = [
   {
     value: "vietnam",
@@ -95,7 +129,7 @@ const countries = [
     value: "french",
     label: "French",
   },
-]
+];
 const packages = [
   {
     id: "basic",
@@ -302,49 +336,54 @@ export default function PayMentPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="country">Country</Label>
-                   <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className="w-full justify-between"
-        >
-          {value
-            ? countries.find((country) => country.value === value)?.label
-            : "Select Country"}
-          <CaretSortIcon className="opacity-50 w-4  h-4 " />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search country..." />
-          <CommandList>
-            <CommandEmpty>No country found.</CommandEmpty>
-            <CommandGroup>
-              {countries.map((country) => (
-                <CommandItem
-                  key={country.value}
-                  value={country.value}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
-                >
-                  {country.label}
-                  <CheckIcon
-                    className={cn(
-                      "ml-auto h-4 w-4",
-                      value === country.value ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+                  <Popover open={open} onOpenChange={setOpen}>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={open}
+                        className="w-full justify-between"
+                      >
+                        {value
+                          ? countries.find((country) => country.value === value)
+                              ?.label
+                          : "Select Country"}
+                        <CaretSortIcon className="h-4 w-4 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[200px] p-0">
+                      <Command>
+                        <CommandInput placeholder="Search country..." />
+                        <CommandList>
+                          <CommandEmpty>No country found.</CommandEmpty>
+                          <CommandGroup>
+                            {countries.map((country) => (
+                              <CommandItem
+                                key={country.value}
+                                value={country.value}
+                                onSelect={(currentValue) => {
+                                  setValue(
+                                    currentValue === value ? "" : currentValue,
+                                  );
+                                  setOpen(false);
+                                }}
+                              >
+                                {country.label}
+                                <CheckIcon
+                                  className={cn(
+                                    "ml-auto h-4 w-4",
+                                    value === country.value
+                                      ? "opacity-100"
+                                      : "opacity-0",
+                                  )}
+                                />
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </CommandList>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
                   {errors.country && (
                     <p className="text-sm text-red-500">{errors.country}</p>
                   )}
@@ -369,6 +408,24 @@ export default function PayMentPage() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Card Information</h3>
               <div className="space-y-2">
+                <Label htmlFor="card">Card Types</Label>
+                <div className="grid grid-cols-4">
+                  {card.map((cd) => (
+                    <Image
+                      key={cd.id}
+                      src={`/${cd.src}`}
+                      alt={cd.name}
+                      height="50"
+                      width="50"
+                      className="h-[50px] w-auto"
+                    ></Image>
+                  ))}
+                </div>
+                {errors.card && (
+                  <p className="text-sm text-red-500">{errors.card}</p>
+                )}
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="card">Card Number</Label>
                 <div className="relative">
                   <Input
@@ -378,21 +435,21 @@ export default function PayMentPage() {
                     required
                   />
                   <svg
-  data-testid="geist-icon"
-  className="lucide lucide-lock absolute right-3 top-1/2 -translate-y-1/2 transform text-muted-foreground"
-  height={16}
-  strokeLinejoin="round"
-  viewBox="0 0 16 16"
-  width={16}
-  style={{ color: "currentcolor" }}
->
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M10 4.5V6H6V4.5C6 3.39543 6.89543 2.5 8 2.5C9.10457 2.5 10 3.39543 10 4.5ZM4.5 6V4.5C4.5 2.567 6.067 1 8 1C9.933 1 11.5 2.567 11.5 4.5V6H12.5H14V7.5V12.5C14 13.8807 12.8807 15 11.5 15H4.5C3.11929 15 2 13.8807 2 12.5V7.5V6H3.5H4.5ZM11.5 7.5H10H6H4.5H3.5V12.5C3.5 13.0523 3.94772 13.5 4.5 13.5H11.5C12.0523 13.5 12.5 13.0523 12.5 12.5V7.5H11.5Z"
-    fill="currentColor"
-  />
-</svg>
+                    data-testid="geist-icon"
+                    className="lucide lucide-lock absolute right-3 top-1/2 -translate-y-1/2 transform text-muted-foreground"
+                    height={16}
+                    strokeLinejoin="round"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    style={{ color: "currentcolor" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M10 4.5V6H6V4.5C6 3.39543 6.89543 2.5 8 2.5C9.10457 2.5 10 3.39543 10 4.5ZM4.5 6V4.5C4.5 2.567 6.067 1 8 1C9.933 1 11.5 2.567 11.5 4.5V6H12.5H14V7.5V12.5C14 13.8807 12.8807 15 11.5 15H4.5C3.11929 15 2 13.8807 2 12.5V7.5V6H3.5H4.5ZM11.5 7.5H10H6H4.5H3.5V12.5C3.5 13.0523 3.94772 13.5 4.5 13.5H11.5C12.0523 13.5 12.5 13.0523 12.5 12.5V7.5H11.5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
                 </div>
                 {errors.card && (
                   <p className="text-sm text-red-500">{errors.card}</p>
@@ -452,7 +509,7 @@ export default function PayMentPage() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Order Summary</h3>
-              <div className="rounded-lg bg-black border p-4">
+              <div className="rounded-lg border bg-black p-4">
                 <div className="mb-2 flex justify-between">
                   <span>{selectedPackage.name} Package</span>
                   <span>${isYearly ? annualPrice : selectedPackage.price}</span>
@@ -518,7 +575,7 @@ export default function PayMentPage() {
         </CardFooter>
       </Card>
 
-<Card className="bg-black">
+      <Card className="bg-black">
         <CardHeader>
           <CardTitle>Additional Information</CardTitle>
         </CardHeader>
@@ -529,16 +586,30 @@ export default function PayMentPage() {
               <AccordionContent>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-semibold">Can I upgrade my plan later?</h3>
-                    <p className="text-sm text-muted-foreground">Yes, you can upgrade your plan at any time. The price difference will be prorated.</p>
+                    <h3 className="font-semibold">
+                      Can I upgrade my plan later?
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Yes, you can upgrade your plan at any time. The price
+                      difference will be prorated.
+                    </p>
                   </div>
                   <div>
-                    <h3 className="font-semibold">What payment methods do you accept?</h3>
-                    <p className="text-sm text-muted-foreground">We accept all major credit cards and PayPal.</p>
+                    <h3 className="font-semibold">
+                      What payment methods do you accept?
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      We accept all major credit cards and PayPal.
+                    </p>
                   </div>
                   <div>
-                    <h3 className="font-semibold">Is there a money-back guarantee?</h3>
-                    <p className="text-sm text-muted-foreground">Yes, we offer a 30-day money-back guarantee for all our packages.</p>
+                    <h3 className="font-semibold">
+                      Is there a money-back guarantee?
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Yes, we offer a 30-day money-back guarantee for all our
+                      packages.
+                    </p>
                   </div>
                 </div>
               </AccordionContent>
@@ -547,18 +618,25 @@ export default function PayMentPage() {
               <AccordionTrigger>Terms of Service</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground">
-                  By purchasing a package, you agree to our Terms of Service. Please read them carefully before proceeding with your purchase.
+                  By purchasing a package, you agree to our Terms of Service.
+                  Please read them carefully before proceeding with your
+                  purchase.
                 </p>
-                <Button variant="link" className="p-0 h-auto">Read Full Terms of Service</Button>
+                <Button variant="link" className="h-auto p-0">
+                  Read Full Terms of Service
+                </Button>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Privacy Policy</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground">
-                  We take your privacy seriously. Our Privacy Policy outlines how we collect, use, and protect your personal information.
+                  We take your privacy seriously. Our Privacy Policy outlines
+                  how we collect, use, and protect your personal information.
                 </p>
-                <Button variant="link" className="p-0 h-auto">Read Full Privacy Policy</Button>
+                <Button variant="link" className="h-auto p-0">
+                  Read Full Privacy Policy
+                </Button>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
