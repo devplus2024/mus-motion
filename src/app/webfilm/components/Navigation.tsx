@@ -51,7 +51,7 @@ import { MessageCircle } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { User } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button-variants";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Mail } from "lucide-react";
 import { Lightbulb } from "lucide-react";
@@ -114,11 +114,11 @@ import { DropdownMenuUser } from "./drop-menu-user";
 export const Navigation = (): JSX.Element => {
   return (
     <div className="sticky top-0 z-[20]">
-      <nav className="w-full  px-[2rem]  relative border-b bg-white dark:bg-[#000000] dark:border-[#202020]  items-center  flex justify-between gap-[2rem] z-[1]">
-        <div className="h-[66px] text-sm    w-fit items-center  flex gap-[2rem] ">
+      <nav className="relative z-[1] flex w-full items-center justify-between gap-[2rem] border-b bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]">
+        <div className="flex h-[66px] w-fit items-center gap-[2rem] text-sm">
           <Link
             href="/"
-            className="dark:text-white text-[1.5rem] duration-300 transition-colors ease-out"
+            className="text-[1.5rem] transition-colors duration-300 ease-out dark:text-white"
           >
             <p className="font-bold">WebFilm</p>
           </Link>
@@ -127,35 +127,35 @@ export const Navigation = (): JSX.Element => {
               <NavigationMenuIndicator className="" />
               <NavigationMenuItem>
                 <Link href="/docs" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                  <NavigationMenuLink className="relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-[1rem] transition-colors duration-300 ease-out dark:text-[#9b9b9b] dark:hover:text-white">
                     Home
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/pricing" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                  <NavigationMenuLink className="relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-[1rem] transition-colors duration-300 ease-out dark:text-[#9b9b9b] dark:hover:text-white">
                     Movies
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/resources" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                  <NavigationMenuLink className="relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-[1rem] transition-colors duration-300 ease-out dark:text-[#9b9b9b] dark:hover:text-white">
                     TV Shows
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/enterprise" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                  <NavigationMenuLink className="relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-[1rem] transition-colors duration-300 ease-out dark:text-[#9b9b9b] dark:hover:text-white">
                     Recently Added
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/enterprise" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-[1rem] relative rounded-full flex items-center h-7 px-3 duration-300 ease-out  dark:text-[#9b9b9b] dark:hover:text-white  cursor-pointer select-none transition-colors">
+                  <NavigationMenuLink className="relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-[1rem] transition-colors duration-300 ease-out dark:text-[#9b9b9b] dark:hover:text-white">
                     My List
                   </NavigationMenuLink>
                 </Link>
@@ -163,9 +163,9 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex gap-[2rem] items-center">
+        <div className="flex items-center gap-[2rem]">
           <CommandMenu />
-          <div className="flex gap-[1rem] items-center">
+          <div className="flex items-center gap-[1rem]">
             <ThemeToggle />
             <DropdownMenuUser />
           </div>

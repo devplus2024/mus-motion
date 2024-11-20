@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button-variants";
 import {
   Card,
   CardContent,
@@ -45,8 +45,6 @@ export default function AboutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-     
-
       {/* Company History */}
       <Card className="mb-8 bg-[#000000]">
         <CardHeader>
@@ -79,12 +77,12 @@ export default function AboutPage() {
       </Card>
 
       {/* Key Features */}
-      <h2 className="text-2xl font-bold mb-4">Key Features</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <h2 className="mb-4 text-2xl font-bold">Key Features</h2>
+      <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
         {features.map((feature, index) => (
           <Card key={index} className="bg-[#000000]">
             <CardHeader>
-              <feature.icon className="h-8 w-8 mb-2" />
+              <feature.icon className="mb-2 h-8 w-8" />
               <CardTitle>{feature.title}</CardTitle>
             </CardHeader>
             <CardContent>
@@ -95,19 +93,19 @@ export default function AboutPage() {
       </div>
 
       {/* Team Section */}
-      <h2 className="text-2xl font-bold mb-4">Our Team</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <h2 className="mb-4 text-2xl font-bold">Our Team</h2>
+      <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {teamMembers.map((member, index) => (
           <Card key={index} className="bg-[#000000]">
             <CardContent className="flex flex-col items-center pt-6">
-              <Avatar className="h-24 w-24 mb-4">
+              <Avatar className="mb-4 h-24 w-24">
                 <AvatarImage
                   src={`/placeholder.svg?text=${member.avatar}`}
                   alt={member.name}
                 />
                 <AvatarFallback>{member.avatar}</AvatarFallback>
               </Avatar>
-              <h3 className="font-semibold text-lg">{member.name}</h3>
+              <h3 className="text-lg font-semibold">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.role}</p>
             </CardContent>
           </Card>
@@ -121,15 +119,15 @@ export default function AboutPage() {
         </CardHeader>
         <CardContent className="space-y-2">
           <div className="flex items-center">
-            <MailIcon className="h-4 w-4 mr-2" />
+            <MailIcon className="mr-2 h-4 w-4" />
             <span>support@musicsoft.com</span>
           </div>
           <div className="flex items-center">
-            <PhoneIcon className="h-4 w-4 mr-2" />
+            <PhoneIcon className="mr-2 h-4 w-4" />
             <span>+1 (555) 123-4567</span>
           </div>
           <div className="flex items-center">
-            <GlobeIcon className="h-4 w-4 mr-2" />
+            <GlobeIcon className="mr-2 h-4 w-4" />
             <span>www.musicsoft.com</span>
           </div>
         </CardContent>

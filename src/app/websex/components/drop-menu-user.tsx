@@ -15,7 +15,7 @@ import {
   Users,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button-variants";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -36,8 +36,8 @@ export function DropdownMenuUser() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="border rounded-full flex items-center justify-center h-[2.5rem] w-[2.5rem] ">
-          <PersonIcon width="21" height="21" className=" cursor-pointer" />
+        <div className="flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full border">
+          <PersonIcon width="21" height="21" className="cursor-pointer" />
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end">

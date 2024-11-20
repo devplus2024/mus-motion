@@ -65,7 +65,7 @@ import { MessageCircle } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { User } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button-variants";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Mail } from "lucide-react";
 import { Lightbulb } from "lucide-react";

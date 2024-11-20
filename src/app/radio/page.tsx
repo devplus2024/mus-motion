@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button-variants";
 import * as Slider from "@radix-ui/react-slider";
 import {
   Card,

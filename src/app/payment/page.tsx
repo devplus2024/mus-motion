@@ -10,7 +10,7 @@ import {
   Check,
   ChevronsUpDown,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button-variants";
 import {
   Command,
   CommandEmpty,
@@ -209,7 +209,7 @@ export default function PayMentPage() {
   const annualPrice = (selectedPackage.price * 12 * 0.9).toFixed(2);
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-8 p-4">
+    <div className="mx-auto w-full max-w-[60rem] space-y-8 p-4">
       <Card className="bg-black">
         <CardHeader>
           <CardTitle>Select a Software Package</CardTitle>
@@ -228,6 +228,7 @@ export default function PayMentPage() {
             <span className="text-sm">Yearly (10% off)</span>
           </div>
           <RadioGroup
+            className="grid-cols-3 gap-4"
             defaultValue={selectedPackage.id}
             onValueChange={handlePackageSelect}
           >
@@ -416,13 +417,13 @@ export default function PayMentPage() {
                       className="h-[50px] w-auto dark:invert-[1]"
                     ></Image>
                   ))}
-				  <Image
-                      src={"/dinersclub.svg"}
-                      alt={"dinersclub"}
-                      height="40"
-                      width="40"
-                      className="h-[40px] w-auto dark:invert-[1]"
-                    ></Image>
+                  <Image
+                    src={"/dinersclub.svg"}
+                    alt={"dinersclub"}
+                    height="40"
+                    width="40"
+                    className="h-[40px] w-auto dark:invert-[1]"
+                  ></Image>
                 </div>
                 {errors.card && (
                   <p className="text-sm text-red-500">{errors.card}</p>
