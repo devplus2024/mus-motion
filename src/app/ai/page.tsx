@@ -14,7 +14,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Input } from "@/components/ui/input";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { Button } from "@/components/ui/button-variants";
+import { Button } from "@/components/ui/button";
 export default function AiPage() {
   const [conversation, setConversation] = useState<Message[]>([]);
   const [input, setInput] = useState<string>("");

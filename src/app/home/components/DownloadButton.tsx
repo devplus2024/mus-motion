@@ -1,6 +1,6 @@
 // components/DownloadButton.tsx
 "use client";
-import { Button } from "@/components/ui/button-variants";
+import { Button } from "@/components/ui/button";
 import { ArrowDownToLine, Wind } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
