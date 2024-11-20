@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { slug } from "github-slugger";
 import { badgeVariants } from "./ui/badge";
-
+const { slug } = require("github-slugger");
 interface TagProps {
   tag: string;
   current?: boolean;
@@ -12,7 +11,7 @@ export function Tag({ tag, current, count }: TagProps) {
     <Link
       className={badgeVariants({
         variant: current ? "default" : "secondary",
-        className: "no-underline rounded-md",
+        className: "rounded-md no-underline",
       })}
       href={`/tags/${slug(tag)}`}
     >
