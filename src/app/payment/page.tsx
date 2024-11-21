@@ -209,7 +209,7 @@ export default function PayMentPage() {
   const annualPrice = (selectedPackage.price * 12 * 0.9).toFixed(2);
 
   return (
-    <div className="mx-auto w-full max-w-[60rem] space-y-8 p-4">
+    <div className="mx-auto w-full max-w-[70rem] space-y-8 p-4">
       <Card className="bg-black">
         <CardHeader>
           <CardTitle>Select a Software Package</CardTitle>
@@ -280,123 +280,128 @@ export default function PayMentPage() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Personal Information</h3>
               <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="John Doe"
+                      required
+                    />
+                    {errors.name && (
+                      <p className="text-sm text-red-500">{errors.name}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      required
+                    />
+                    {errors.email && (
+                      <p className="text-sm text-red-500">{errors.email}</p>
+                    )}
+                  </div>
+                </div>
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="address">Address</Label>
                   <Input
-                    id="name"
-                    name="name"
-                    placeholder="John Doe"
+                    id="address"
+                    name="address"
+                    placeholder="123 Main St"
                     required
                   />
-                  {errors.name && (
-                    <p className="text-sm text-red-500">{errors.name}</p>
+                  {errors.address && (
+                    <p className="text-sm text-red-500">{errors.address}</p>
                   )}
                 </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="city">City</Label>
+                    <Input
+                      id="city"
+                      name="city"
+                      placeholder="New York"
+                      required
+                    />
+                    {errors.city && (
+                      <p className="text-sm text-red-500">{errors.city}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="country">Country</Label>
+                    <Popover open={open} onOpenChange={setOpen}>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          role="combobox"
+                          aria-expanded={open}
+                          className="w-full justify-between"
+                        >
+                          {value
+                            ? countries.find(
+                                (country) => country.value === value,
+                              )?.label
+                            : "Select Country"}
+                          <CaretSortIcon className="h-4 w-4 opacity-50" />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[200px] p-0">
+                        <Command>
+                          <CommandInput placeholder="Search country..." />
+                          <CommandList>
+                            <CommandEmpty>No country found.</CommandEmpty>
+                            <CommandGroup>
+                              {countries.map((country) => (
+                                <CommandItem
+                                  key={country.value}
+                                  value={country.value}
+                                  onSelect={(currentValue) => {
+                                    setValue(
+                                      currentValue === value
+                                        ? ""
+                                        : currentValue,
+                                    );
+                                    setOpen(false);
+                                  }}
+                                >
+                                  {country.label}
+                                  <CheckIcon
+                                    className={cn(
+                                      "ml-auto h-4 w-4",
+                                      value === country.value
+                                        ? "opacity-100"
+                                        : "opacity-0",
+                                    )}
+                                  />
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </CommandList>
+                        </Command>
+                      </PopoverContent>
+                    </Popover>
+                    {errors.country && (
+                      <p className="text-sm text-red-500">{errors.country}</p>
+                    )}
+                  </div>
+                </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email Address</Label>
+                  <Label htmlFor="zipcode">Zip/Postal Code</Label>
                   <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="john@example.com"
+                    id="zipcode"
+                    name="zipcode"
+                    placeholder="12345"
                     required
                   />
-                  {errors.email && (
-                    <p className="text-sm text-red-500">{errors.email}</p>
+                  {errors.zipcode && (
+                    <p className="text-sm text-red-500">{errors.zipcode}</p>
                   )}
                 </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="address">Address</Label>
-                <Input
-                  id="address"
-                  name="address"
-                  placeholder="123 Main St"
-                  required
-                />
-                {errors.address && (
-                  <p className="text-sm text-red-500">{errors.address}</p>
-                )}
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="city">City</Label>
-                  <Input
-                    id="city"
-                    name="city"
-                    placeholder="New York"
-                    required
-                  />
-                  {errors.city && (
-                    <p className="text-sm text-red-500">{errors.city}</p>
-                  )}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="country">Country</Label>
-                  <Popover open={open} onOpenChange={setOpen}>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={open}
-                        className="w-full justify-between"
-                      >
-                        {value
-                          ? countries.find((country) => country.value === value)
-                              ?.label
-                          : "Select Country"}
-                        <CaretSortIcon className="h-4 w-4 opacity-50" />
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[200px] p-0">
-                      <Command>
-                        <CommandInput placeholder="Search country..." />
-                        <CommandList>
-                          <CommandEmpty>No country found.</CommandEmpty>
-                          <CommandGroup>
-                            {countries.map((country) => (
-                              <CommandItem
-                                key={country.value}
-                                value={country.value}
-                                onSelect={(currentValue) => {
-                                  setValue(
-                                    currentValue === value ? "" : currentValue,
-                                  );
-                                  setOpen(false);
-                                }}
-                              >
-                                {country.label}
-                                <CheckIcon
-                                  className={cn(
-                                    "ml-auto h-4 w-4",
-                                    value === country.value
-                                      ? "opacity-100"
-                                      : "opacity-0",
-                                  )}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    </PopoverContent>
-                  </Popover>
-                  {errors.country && (
-                    <p className="text-sm text-red-500">{errors.country}</p>
-                  )}
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="zipcode">Zip/Postal Code</Label>
-                <Input
-                  id="zipcode"
-                  name="zipcode"
-                  placeholder="12345"
-                  required
-                />
-                {errors.zipcode && (
-                  <p className="text-sm text-red-500">{errors.zipcode}</p>
-                )}
               </div>
             </div>
 
