@@ -173,7 +173,7 @@ export function ChartSingle() {
         })
       }}
     >
-      Add to calendar
+      Download Chart
     </Button>
 		</div>
       </CardFooter>
