@@ -12,6 +12,15 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import {
   Command,
   CommandEmpty,
   CommandGroup,
@@ -66,6 +75,7 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
+import { toast } from "@/components/hooks/use-toast";
 import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -87,7 +97,7 @@ const card = [
     src: "/jcb.svg",
   },
 ];
-const countries = [
+const country = [
   {
     value: "vietnam",
     label: "Viet Nam",
@@ -218,7 +228,16 @@ export default function PayMentPage() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-
+  function onSubmit(data: z.infer<typeof FormSchema>) {
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
+  }
   return (
     <div className="mx-auto w-full max-w-[70rem] space-y-8 p-4">
       <Card className="bg-black">
@@ -344,58 +363,83 @@ export default function PayMentPage() {
                     )}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="country">Country</Label>
-                    <Popover open={open} onOpenChange={setOpen}>
-                      <PopoverTrigger asChild id="country">
-                        <Button
-                          variant="outline"
-                          role="combobox"
-                          aria-expanded={open}
-                          className="w-full justify-between"
-                        >
-                          {value
-                            ? countries.find(
-                                (country) => country.value === value,
-                              )?.label
-                            : "Select Country"}
-                          <CaretSortIcon className="h-4 w-4 opacity-50" />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-[200px] p-0">
-                        <Command>
-                          <CommandInput placeholder="Search country..." />
-                          <CommandList>
-                            <CommandEmpty>No country found.</CommandEmpty>
-                            <CommandGroup>
-                              {countries.map((country) => (
-                                <CommandItem
-                                  key={country.value}
-                                  value={country.value}
-                                  onSelect={(currentValue) => {
-                                    setValue(
-                                      currentValue === value
-                                        ? ""
-                                        : currentValue,
-                                    );
-                                    setOpen(false);
-                                  }}
-                                >
-                                  {country.label}
-                                  <CheckIcon
-                                    className={cn(
-                                      "ml-auto h-4 w-4",
-                                      value === country.value
-                                        ? "opacity-100"
-                                        : "opacity-0",
-                                    )}
-                                  />
-                                </CommandItem>
-                              ))}
-                            </CommandGroup>
-                          </CommandList>
-                        </Command>
-                      </PopoverContent>
-                    </Popover>
+                    <Form {...form}>
+                      <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="space-y-6"
+                      >
+                        <FormField
+                          control={form.control}
+                          name="language"
+                          render={({ field }) => (
+                            <FormItem className="flex flex-col">
+                              <FormLabel>Country</FormLabel>
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <FormControl>
+                                    <Button
+                                      variant="outline"
+                                      role="combobox"
+                                      aria-expanded={open}
+                                      className="w-full justify-between"
+                                    >
+                                      {value
+                                        ? country.find(
+                                            (country) =>
+                                              country.value === value,
+                                          )?.label
+                                        : "Select Country"}
+                                      <CaretSortIcon className="h-4 w-4 opacity-50" />
+                                    </Button>
+                                  </FormControl>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-[200px] p-0">
+                                  <Command>
+                                    <CommandInput placeholder="Search country..." />
+                                    <CommandList>
+                                      <CommandEmpty>
+                                        No country found.
+                                      </CommandEmpty>
+                                      <CommandGroup>
+                                        {country.map((country) => (
+                                          <CommandItem
+                                            key={country.value}
+                                            value={country.value}
+                                            onSelect={(currentValue) => {
+                                              setValue(
+                                                currentValue === value
+                                                  ? ""
+                                                  : currentValue,
+                                              );
+                                              setOpen(false);
+                                            }}
+                                          >
+                                            {country.label}
+                                            <CheckIcon
+                                              className={cn(
+                                                "ml-auto h-4 w-4",
+                                                value === country.value
+                                                  ? "opacity-100"
+                                                  : "opacity-0",
+                                              )}
+                                            />
+                                          </CommandItem>
+                                        ))}
+                                      </CommandGroup>
+                                    </CommandList>
+                                  </Command>
+                                </PopoverContent>
+                              </Popover>
+                              <FormDescription>
+                                This is the language that will be used in the
+                                dashboard.
+                              </FormDescription>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </form>
+                    </Form>
                     {errors.country && (
                       <p className="text-sm text-red-500">{errors.country}</p>
                     )}
