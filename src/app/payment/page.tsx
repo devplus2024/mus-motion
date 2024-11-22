@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ToastAction } from "@/components/ui/toast";
 import {
   CreditCard,
   CheckCircle,
@@ -562,12 +563,12 @@ export default function PayMentPage() {
                     type="submit"
                     className="w-full"
                     onClick={() => {
-                      const title = paymentStatus;
-                      toast({
-                        title: title,
-                        description: title,
-                      });
-                    }}
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
+        })
+      }}
                   >
                     <CreditCard className="mr-2 h-4 w-4" />
                     Pay ${isYearly ? annualPrice : selectedPackage.price}{" "}
