@@ -32,7 +32,6 @@ export default function RootLayout({
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster
-              className=""
               closeButton
               hotkey={["alt + C"]}
               toastOptions={{
