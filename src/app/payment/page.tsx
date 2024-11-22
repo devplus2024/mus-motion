@@ -80,6 +80,7 @@ import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
 const card = [
   {
     id: 1,
@@ -248,6 +249,7 @@ export default function PayMentPage() {
       ),
     });
   }
+  const { toast } = useToast();
   return (
     <div className="mx-auto w-full max-w-[70rem] space-y-8 p-4">
       <Card className="bg-black">
@@ -556,7 +558,17 @@ export default function PayMentPage() {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button type="submit" className="w-full">
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    onClick={() => {
+                      const title = paymentStatus;
+                      toast({
+                        title: title,
+                        description: title,
+                      });
+                    }}
+                  >
                     <CreditCard className="mr-2 h-4 w-4" />
                     Pay ${isYearly ? annualPrice : selectedPackage.price}{" "}
                     {isYearly ? "per year" : "per month"}
@@ -569,21 +581,6 @@ export default function PayMentPage() {
             </TooltipProvider>
           </form>
         </CardContent>
-        <CardFooter>
-          {paymentStatus && (
-            <Alert
-              variant={
-                paymentStatus.includes("successfully")
-                  ? "default"
-                  : "destructive"
-              }
-            >
-              <AlertCircle className="h-4 w-4" />
-              <AlertTitle>Payment Status</AlertTitle>
-              <AlertDescription>{paymentStatus}</AlertDescription>
-            </Alert>
-          )}
-        </CardFooter>
       </Card>
 
       <Card className="bg-black">

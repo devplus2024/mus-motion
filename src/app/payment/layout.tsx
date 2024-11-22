@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Payment | Stroma",
@@ -8,5 +9,10 @@ export default function PayMentLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return (
+    <section>
+      <Toaster />
+      {children}
+    </section>
+  );
 }
