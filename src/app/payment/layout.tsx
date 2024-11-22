@@ -11,7 +11,6 @@ export default function PayMentLayout({
 }) {
   return (
     <section>
-      <Toaster />
       {children}
     </section>
   );
