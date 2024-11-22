@@ -335,7 +335,7 @@ export default function PayMentPage() {
                   <div className="space-y-2">
                     <Label htmlFor="country">Country</Label>
                     <Popover open={open} onOpenChange={setOpen}>
-                      <PopoverTrigger asChild>
+                      <PopoverTrigger asChild name="country">
                         <Button
                           variant="outline"
                           role="combobox"
