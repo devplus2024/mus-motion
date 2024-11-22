@@ -1,5 +1,6 @@
 "use client";
-
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { TrendingUp } from "lucide-react";
 import {
   CartesianGrid,
@@ -54,6 +55,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function ChartSingle() {
+  const { toast } = useToast();
   return (
     <Card className="border-none dark:bg-black">
       <CardHeader className="hidden rounded-md border">
