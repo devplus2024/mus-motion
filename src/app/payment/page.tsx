@@ -99,42 +99,52 @@ const card = [
 ];
 const country = [
   {
+    id: 1,
     value: "vietnam",
     label: "Viet Nam",
   },
   {
+    id: 2,
     value: "unitedstate",
     label: "United State",
   },
   {
+    id: 3,
     value: "canada",
     label: "Canada",
   },
   {
+    id: 4,
     value: "unitedkingdom",
     label: "United Kingdom",
   },
   {
+    id: 5,
     value: "rusia",
     label: "Russia",
   },
   {
+    id: 6,
     value: "mexico",
     label: "Mexico",
   },
   {
+    id: 7,
     value: "japan",
     label: "Japan",
   },
   {
+    id: 8,
     value: "australia",
     label: "Australia",
   },
   {
+    id: 9,
     value: "korea",
     label: "Korea",
   },
   {
+    id: 10,
     value: "french",
     label: "French",
   },
@@ -363,83 +373,20 @@ export default function PayMentPage() {
                     )}
                   </div>
                   <div className="space-y-2">
-                    <Form {...form}>
-                      <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-6"
-                      >
-                        <FormField
-                          control={form.control}
-                          name="language"
-                          render={({ field }) => (
-                            <FormItem className="flex flex-col">
-                              <FormLabel>Country</FormLabel>
-                              <Popover>
-                                <PopoverTrigger asChild>
-                                  <FormControl>
-                                    <Button
-                                      variant="outline"
-                                      role="combobox"
-                                      aria-expanded={open}
-                                      className="w-full justify-between"
-                                    >
-                                      {value
-                                        ? country.find(
-                                            (country) =>
-                                              country.value === value,
-                                          )?.label
-                                        : "Select Country"}
-                                      <CaretSortIcon className="h-4 w-4 opacity-50" />
-                                    </Button>
-                                  </FormControl>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-[200px] p-0">
-                                  <Command>
-                                    <CommandInput placeholder="Search country..." />
-                                    <CommandList>
-                                      <CommandEmpty>
-                                        No country found.
-                                      </CommandEmpty>
-                                      <CommandGroup>
-                                        {country.map((country) => (
-                                          <CommandItem
-                                            key={country.value}
-                                            value={country.value}
-                                            onSelect={(currentValue) => {
-                                              setValue(
-                                                currentValue === value
-                                                  ? ""
-                                                  : currentValue,
-                                              );
-                                              setOpen(false);
-                                            }}
-                                          >
-                                            {country.label}
-                                            <CheckIcon
-                                              className={cn(
-                                                "ml-auto h-4 w-4",
-                                                value === country.value
-                                                  ? "opacity-100"
-                                                  : "opacity-0",
-                                              )}
-                                            />
-                                          </CommandItem>
-                                        ))}
-                                      </CommandGroup>
-                                    </CommandList>
-                                  </Command>
-                                </PopoverContent>
-                              </Popover>
-                              <FormDescription>
-                                This is the language that will be used in the
-                                dashboard.
-                              </FormDescription>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </form>
-                    </Form>
+                    <Label htmlFor="country">Country</Label>
+                    <Select name="country">
+                      <SelectTrigger id="country">
+                        <SelectValue placeholder="Select country" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {country.map((country) => (
+                          <SelectItem key={country.id} value={country.value}>
+                            {country.label}
+                          </SelectItem>
+                        ))}
+                        {/* Add more countries as needed */}
+                      </SelectContent>
+                    </Select>
                     {errors.country && (
                       <p className="text-sm text-red-500">{errors.country}</p>
                     )}
