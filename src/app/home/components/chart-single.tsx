@@ -148,13 +148,31 @@ export function ChartSingle() {
           </LineChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 rounded-md border py-4 pl-6 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
+      <CardFooter className="flex  justify-between gap-2 rounded-md border py-4 pl-6 text-sm">
+        <div className="flex flex-col justify-center">
+		<div className="flex gap-2 font-medium leading-none">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
           Showing total visitors for the last 6 months
         </div>
+		</div>
+		<div>
+		 <Button
+      variant="outline"
+      onClick={() => {
+        toast({
+          title: "Scheduled: Catch up ",
+          description: "Friday, February 10, 2023 at 5:57 PM",
+          action: (
+            <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+          ),
+        })
+      }}
+    >
+      Add to calendar
+    </Button>
+		</div>
       </CardFooter>
     </Card>
   );
