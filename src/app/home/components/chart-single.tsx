@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 import { ToastAction } from "@/components/ui/toast";
 import { TrendingUp } from "lucide-react";
 import {
@@ -175,6 +176,7 @@ export function ChartSingle() {
       }}
     >
       Download Chart
+	  <Toaster />
     </Button>
 		</div>
       </CardFooter>
