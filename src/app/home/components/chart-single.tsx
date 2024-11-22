@@ -166,7 +166,6 @@ export function ChartSingle() {
       onClick={() => {
 	  console.log("Toast is Active")
         toast.success('Event has been created')
-});
       }}
     >
       Download Chart
