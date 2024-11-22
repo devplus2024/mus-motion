@@ -31,7 +31,7 @@ export default function RootLayout({
         <body className="relative antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
-            <Toaster  closeButton
+            <Toaster position="top-center"  closeButton
               hotkey={["alt + C"]}
               toastOptions={{
                 unstyled: false,
