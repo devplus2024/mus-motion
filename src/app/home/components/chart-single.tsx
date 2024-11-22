@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 import { TrendingUp } from "lucide-react";
 import {
   CartesianGrid,
@@ -151,7 +152,7 @@ export function ChartSingle() {
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex  justify-between gap-2 rounded-md border py-4 pl-6 text-sm">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col gap-2 justify-center">
 		<div className="flex gap-2 font-medium leading-none">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
