@@ -67,6 +67,9 @@ import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
 const card = [
   {
     id: 1,
@@ -125,7 +128,12 @@ const countries = [
     value: "french",
     label: "French",
   },
-];
+] as const;
+const FormSchema = z.object({
+  language: z.string({
+    required_error: "City is required",
+  }),
+});
 const packages = [
   {
     id: "basic",
@@ -207,6 +215,9 @@ export default function PayMentPage() {
   };
 
   const annualPrice = (selectedPackage.price * 12 * 0.9).toFixed(2);
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+  });
 
   return (
     <div className="mx-auto w-full max-w-[70rem] space-y-8 p-4">
@@ -335,7 +346,7 @@ export default function PayMentPage() {
                   <div className="space-y-2">
                     <Label htmlFor="country">Country</Label>
                     <Popover open={open} onOpenChange={setOpen}>
-                      <PopoverTrigger asChild name="country">
+                      <PopoverTrigger asChild id="country">
                         <Button
                           variant="outline"
                           role="combobox"
