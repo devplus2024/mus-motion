@@ -32,17 +32,7 @@ export default function RootLayout({
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster
-              className=""
-              closeButton
-              hotkey={["alt + C"]}
-              toastOptions={{
-                unstyled: false,
-                classNames: {
-                  cancelButton: "bg-orange-400",
-                  closeButton:
-                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
-                },
-              }}
+              
             />
             {children}
             <Footer />
