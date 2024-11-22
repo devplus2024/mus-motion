@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { CommandMenu } from "@/components/CommandMenu";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +31,16 @@ export default function RootLayout({
         <body className="relative antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
-            <Toaster/>             
+            <Toaster  closeButton
+              hotkey={["alt + C"]}
+              toastOptions={{
+                unstyled: false,
+                classNames: {
+                  cancelButton: "bg-orange-400",
+                  closeButton:
+                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
+                },
+              }}/>             
             {children}
             <Footer />
 			

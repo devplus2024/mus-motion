@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
+import { Toaster, toast } from "sonner";
 import { ToastAction } from "@/components/ui/toast";
 import { TrendingUp } from "lucide-react";
 import {
@@ -57,7 +58,6 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function ChartSingle() {
-  const { toast } = useToast();
   return (
     <Card className="border-none dark:bg-black">
       <CardHeader className="hidden rounded-md border">
@@ -176,7 +176,6 @@ export function ChartSingle() {
       }}
     >
       Download Chart
-	  <Toaster />
     </Button>
 		</div>
       </CardFooter>
