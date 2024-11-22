@@ -21,6 +21,7 @@ export default function RootLayout({
       style={{ colorScheme: "dark" }}
     >
       <body className="relative overflow-x-hidden dark:[color-scheme:dark]">
+	   <Toaster />
         {children}
       </body>
     </html>
