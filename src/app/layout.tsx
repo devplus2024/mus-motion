@@ -31,11 +31,7 @@ export default function RootLayout({
         <body className="relative antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
-            
-            {children}
-            <Footer />
-          </ThemeProvider>
-		  <Toaster
+            <Toaster
               className=""
               closeButton
               hotkey={["alt + C"]}
@@ -48,6 +44,11 @@ export default function RootLayout({
                 },
               }}
             />
+            {children}
+            <Footer />
+			
+          </ThemeProvider>
+		  
         </body>
       </html>
     </>
