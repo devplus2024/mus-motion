@@ -31,18 +31,7 @@ export default function RootLayout({
         <body className="relative antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
-            <Toaster
-              closeButton
-              hotkey={["alt + C"]}
-              toastOptions={{
-                unstyled: false,
-                classNames: {
-                  cancelButton: "bg-orange-400",
-                  closeButton:
-                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
-                },
-              }}
-            />
+            <Toaster/>             
             {children}
             <Footer />
 			
