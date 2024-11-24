@@ -80,7 +80,7 @@ import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
-import { useToast } from "@/hooks/use-toast";
+// import { useToast } from "@/hooks/use-toast";
 const card = [
   {
     id: 1,
@@ -239,17 +239,17 @@ export default function PayMentPage() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
-  }
-  const { toast } = useToast();
+  // function onSubmit(data: z.infer<typeof FormSchema>) {
+  //   toast({
+  //     title: "You submitted the following values:",
+  //     description: (
+  //       <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+  //         <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+  //       </pre>
+  //     ),
+  //   });
+  // }
+  // const { toast } = useToast();
   return (
     <div className="mx-auto w-full max-w-[70rem] space-y-8 p-4">
       <Card className="bg-black">
@@ -558,21 +558,7 @@ export default function PayMentPage() {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button
-                    type="submit"
-                    className="w-full"
-                    onClick={() => {
-                      toast({
-                        title: "Uh oh! Something went wrong.",
-                        description: "There was a problem with your request.",
-                        action: (
-                          <ToastAction altText="Try again">
-                            Try again
-                          </ToastAction>
-                        ),
-                      });
-                    }}
-                  >
+                  <Button type="submit" className="w-full">
                     <CreditCard className="mr-2 h-4 w-4" />
                     Pay ${isYearly ? annualPrice : selectedPackage.price}{" "}
                     {isYearly ? "per year" : "per month"}
