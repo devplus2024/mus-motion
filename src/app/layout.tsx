@@ -32,31 +32,7 @@ export default function RootLayout({
         <body className="relative antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
-<<<<<<< HEAD
-            <Toaster
-            // closeButton
-            // hotkey={["alt + C"]}
-            // toastOptions={{
-            //   unstyled: false,
-            //   classNames: {
-            //     cancelButton: "bg-orange-400",
-            //     closeButton:
-            //       "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
-            //   },
-            // }}
-            />
-=======
-            <Toaster position="top-center"  closeButton
-              hotkey={["alt + C"]}
-              toastOptions={{
-                unstyled: false,
-                classNames: {
-                  cancelButton: "bg-orange-400",
-                  closeButton:
-                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
-                },
-              }}/>             
->>>>>>> 784c69abbfc2f01bea760a1fa8060a7361932945
+            <Toaster />
             {children}
             <Footer />
           </ThemeProvider>
