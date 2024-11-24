@@ -1,7 +1,6 @@
 import React, { useRef, useState, ReactNode } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Toaster, toast } from "sonner";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { GeistSans } from "geist/font/sans";

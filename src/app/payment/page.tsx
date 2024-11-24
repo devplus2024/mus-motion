@@ -76,7 +76,6 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
-import { toast } from "@/components/hooks/use-toast";
 import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -563,12 +562,16 @@ export default function PayMentPage() {
                     type="submit"
                     className="w-full"
                     onClick={() => {
-        toast({
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem with your request.",
-          action: <ToastAction altText="Try again">Try again</ToastAction>,
-        })
-      }}
+                      toast({
+                        title: "Uh oh! Something went wrong.",
+                        description: "There was a problem with your request.",
+                        action: (
+                          <ToastAction altText="Try again">
+                            Try again
+                          </ToastAction>
+                        ),
+                      });
+                    }}
                   >
                     <CreditCard className="mr-2 h-4 w-4" />
                     Pay ${isYearly ? annualPrice : selectedPackage.price}{" "}
