@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Toaster, toast } from "sonner";
+// import { Toaster, toast } from "sonner";
 import { ToastAction } from "@/components/ui/toast";
 import { TrendingUp } from "lucide-react";
 import {
@@ -57,6 +57,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function ChartSingle() {
+  const { toast } = useToast();
   return (
     <Card className="border-none dark:bg-black">
       <CardHeader className="hidden rounded-md border">
@@ -151,26 +152,31 @@ export function ChartSingle() {
           </LineChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex  justify-between gap-2 rounded-md border py-4 pl-6 text-sm">
-        <div className="flex flex-col gap-2 justify-center">
-		<div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+      <CardFooter className="flex justify-between gap-2 rounded-md border py-4 pl-6 text-sm">
+        <div className="flex flex-col justify-center gap-2">
+          <div className="flex gap-2 font-medium leading-none">
+            Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          </div>
+          <div className="leading-none text-muted-foreground">
+            Showing total visitors for the last 6 months
+          </div>
         </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+        <div>
+          <Button
+            variant="outline"
+            onClick={() => {
+              toast({
+                title: "Uh oh! Something went wrong.",
+                description: "There was a problem with your request.",
+                action: (
+                  <ToastAction altText="Try again">Try again</ToastAction>
+                ),
+              });
+            }}
+          >
+            Download Chart
+          </Button>
         </div>
-		</div>
-		<div>
-		 <Button
-      variant="outline"
-      onClick={() => {
-	  console.log("Toast is Active")
-        toast.success('Event has been created')
-      }}
-    >
-      Download Chart
-    </Button>
-		</div>
       </CardFooter>
     </Card>
   );
