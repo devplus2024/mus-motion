@@ -1,6 +1,7 @@
 "use client"
 
 import { useToast } from "@/components/hooks/use-toast"
+import { ToastAction } from "@/components/ui/toast"
 import { Button } from "@/components/ui/button"
 
 export default function SupportPage() {
