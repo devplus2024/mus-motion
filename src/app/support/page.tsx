@@ -1,10 +1,21 @@
-import { Banner } from "@/components/banner";
-import React from "react";
+"use client"
 
-export default function SupportPage() {
+import { useToast } from "@/components/hooks/use-toast"
+import { Button } from "@/components/ui/button"
+
+export function ToastSimple() {
+  const { toast } = useToast()
+
   return (
-    <div>
-      <Banner></Banner>
-    </div>
-  );
+    <Button
+      variant="outline"
+      onClick={() => {
+        toast({
+          description: "Your message has been sent.",
+        })
+      }}
+    >
+      Show Toast
+    </Button>
+  )
 }
