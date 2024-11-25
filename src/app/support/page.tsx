@@ -3,7 +3,7 @@
 import { useToast } from "@/components/hooks/use-toast"
 import { Button } from "@/components/ui/button"
 
-export function SupportPage() {
+export function Support() {
   const { toast } = useToast()
 
   return (
