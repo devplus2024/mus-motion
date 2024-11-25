@@ -11,7 +11,9 @@ export default function SupportPage() {
       variant="outline"
       onClick={() => {
         toast({
-          description: "Your message has been sent.",
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
         })
       }}
     >
