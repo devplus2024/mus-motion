@@ -8,21 +8,10 @@ export const metadata: Metadata = {
   title: "Stroma: A Useful Platform For Musicians",
   description: "Stroma - Home",
 };
-
-export default function RootLayout({
+export default function HomeLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en"
-      className={`${GeistSans.className} dark_black`}
-      style={{ colorScheme: "dark" }}
-    >
-      <body className="relative overflow-x-hidden dark:[color-scheme:dark]">
-        {children}
-      </body>
-    </html>
-  );
+}) {
+  return <section>{children}</section>;
 }
