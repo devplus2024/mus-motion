@@ -154,7 +154,7 @@ export default function Individual() {
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <div className="rounded-md bg-[#303030] p-[4px]">
+                    <div className="rounded-md border p-[4px]">
                       <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" />
                     </div>
                     <p className="text-sm">{feature}</p>
