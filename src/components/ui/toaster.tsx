@@ -20,7 +20,7 @@ export function Toaster() {
           <Toast
             key={id}
             {...props}
-            className="data-[state=closed]:slide-out-to-top-full"
+            className="data-[state=closed]:slide-out-to-top-[200px]"
           >
             <div className="grid gap-1">
               {title && <ToastTitle>{title}</ToastTitle>}
