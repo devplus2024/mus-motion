@@ -21,71 +21,78 @@ const pricingData = {
       price: "$0",
       description: "For entry-level users and trial",
       features: [
-        "5 virtual instruments",
-        "10 audio effects",
-        "2GB cloud storage",
-        "Community forum access",
-        "Basic tutorials and resources",
-        "Limited export options",
-        "Monthly newsletters",
-        "Access to user community events",
+        {
+          name: "5 virtual instruments",
+          icon:""
+        },
+        {
+          name: "10 audio effects",
+        },
+        {
+          name: "2GB cloud storage",
+        },
+        {
+          name: "Community forum access",
+        },
+        {
+          name: "Basic tutorials and resources",
+        },
+        {
+          name: "Limited export options",
+        },
+        {
+          name: "Monthly newsletters",
+        },
+        {
+          name: "Access to user community events",
+        },
       ],
     },
-    {
-      title: "Basic",
-      price: "$9.99",
-      description: "For hobbyists and beginners",
-      features: [
-        "10 virtual instruments",
-        "50 audio effects",
-        "5GB cloud storage",
-        "Community forum access",
-        "Standard tutorials and resources",
-        "Basic MIDI support",
-        "Limited collaborative features",
-        "Monthly live Q&A sessions",
-      ],
-    },
-    {
-      title: "Pro",
-      price: "$24.99",
-      description: "For serious musicians and producers",
-      features: [
-        "50 virtual instruments",
-        "100 audio effects",
-        "25GB cloud storage",
-        "Priority email support",
-        "Collaboration tools",
-        "Access to premium tutorials and workshops",
-        "Advanced MIDI editing features",
-        "Audio mixing and mastering tools",
-        "Monthly feature updates",
-        "Cloud project backup",
-        "Offline usage capabilities",
-      ],
-    },
-    {
-      title: "Ultimate",
-      price: "$39.99",
-      description: "For professional studios and artists",
-      features: [
-        "Unlimited virtual instruments",
-        "Unlimited audio effects",
-        "100GB cloud storage",
-        "24/7 phone support",
-        "Advanced collaboration tools",
-        "Custom plugin integration",
-        "Exclusive artist packs",
-        "Multi-user support for studios",
-        "Access to beta features",
-        "Direct developer support",
-        "Tailored mastering services",
-        "Priority software updates",
-        "Cross-platform syncing",
-        "Advanced sound design tools",
-        "Personalized workflow consultation",
-      ],
-    },
+    // {
+    //   title: "Basic",
+    //   price: "$9.99",
+    //   description: "For hobbyists and beginners",
+    //   features: [
+    //     "10 virtual instruments",
+    //     "50 audio effects",
+    //     "5GB cloud storage",
+    //     "Community forum access",
+    //     "Standard tutorials and resources",
+    //     "Basic MIDI support",
+    //     "Limited collaborative features",
+    //     "Monthly live Q&A sessions",
+    //   ],
+    // },
+    // {
+    //   title: "Pro",
+    //   price: "$24.99",
+    //   description: "For serious musicians and producers",
+    //   features: [
+    //     "50 virtual instruments",
+    //     "100 audio effects",
+    //     "25GB cloud storage",
+    //     "Priority email support",
+    //     "Collaboration tools",
+    //     "Access to premium tutorials and workshops",
+    //     "Monthly feature updates",
+    //     "Cloud project backup",
+    //   ],
+    // },
+    // {
+    //   title: "Ultimate",
+    //   price: "$39.99",
+    //   description: "For professional studios and artists",
+    //   features: [
+    //     "Unlimited virtual instruments",
+    //     "Unlimited audio effects",
+    //     "100GB cloud storage",
+    //     "24/7 phone support",
+    //     "Advanced collaboration tools",
+    //     "Custom plugin integration",
+    //     "Exclusive artist packs",
+    //     "Multi-user support for studios",
+    //   ],
+    // },
   ],
   business: [
     {
@@ -106,13 +113,15 @@ const pricingData = {
       price: "$199.99",
       description: "For professional recording studios",
       features: [
-        "10 user licenses",
-        "Unlimited virtual instruments",
-        "Unlimited audio effects",
-        "500GB shared cloud storage",
-        "24/7 phone support",
-        "Advanced team collaboration",
-        "Custom plugin integration",
+        {
+          name: "10 user licenses",
+        },
+        { name: "Unlimited virtual instruments" },
+        { name: "Unlimited audio effects" },
+        { name: "500GB shared cloud storage" },
+        { name: "24/7 phone support" },
+        { name: "Advanced team collaboration" },
+        { name: "Custom plugin integration" },
       ],
     },
     {
@@ -153,11 +162,11 @@ export default function Individual() {
               </div>
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2">
+                  <li key={feature.name} className="flex items-center gap-2">
                     <div className="rounded-md border p-[4px]">
                       <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" />
                     </div>
-                    <p className="text-sm">{feature}</p>
+                    <p className="text-sm">{feature.name}</p>
                   </li>
                 ))}
               </ul>
