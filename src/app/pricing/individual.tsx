@@ -766,7 +766,7 @@ export default function Individual() {
                   </Button>
                 </div>
               )}
-              {tier.title !== "Pro" && (
+              {tier.title !== "Pro" && tier.title !== "Ultimate" && (
                 <Button className="w-full" variant={"outline"}>
                   Get Started
                 </Button>
