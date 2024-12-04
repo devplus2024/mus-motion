@@ -755,9 +755,27 @@ export default function Individual() {
               </ul>
             </CardContent>
             <CardFooter className="rounded-b-xl rounded-t-none border-t px-6 py-[2rem]">
-              <Button className="w-full" variant={"outline"}>
-                {tier.title === "Enterprise" ? "Contact Sales" : "Get Started"}
-              </Button>
+              {tier.title === "Ultimate" && (
+                <div className="flex items-center justify-center gap-4">
+                  {" "}
+                  <Button className="w-full" variant={"outline"}>
+                    Get Started
+                  </Button>
+                  <Button className="w-full" variant={"outline"}>
+                    Contact Sale
+                  </Button>
+                </div>
+              )}
+              {tier.title !== "Pro" && (
+                <Button className="w-full" variant={"outline"}>
+                  Get Started
+                </Button>
+              )}
+              {tier.title !== "Pro" && (
+                <Button className="w-full" variant={"outline"}>
+                  Upgrade Now
+                </Button>
+              )}
             </CardFooter>
           </Card>
         ))}
