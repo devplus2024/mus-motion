@@ -771,7 +771,7 @@ export default function Individual() {
                   Get Started
                 </Button>
               )}
-              {tier.title !== "Pro" && (
+              {tier.title === "Pro" && (
                 <Button className="w-full" variant={"outline"}>
                   Upgrade Now
                 </Button>
