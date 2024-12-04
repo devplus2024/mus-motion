@@ -93,51 +93,61 @@ export function CommandMenu() {
       id: "1",
       name: "Home",
       src: "/",
+      shortcut: "⌘H",
     },
     {
       id: "2",
       name: "Browse",
       src: "browse",
+      shortcut: "⌘B",
     },
     {
       id: "3",
       name: "Pricing",
       src: "pricing",
+      shortcut: "⌘P",
     },
     {
       id: "4",
       name: "Docs",
       src: "docs",
+      shortcut: "⌘D",
     },
     {
       id: "5",
       name: "Radio",
       src: "radio",
+      shortcut: "⌘R",
     },
     {
       id: "6",
       name: "Community",
       src: "community",
+      shortcut: "⌘C",
     },
     {
       id: "7",
       name: "Support",
       src: "support",
+      shortcut: "⌘S",
     },
     {
       id: "8",
       name: "Download",
       src: "downloads",
+      shortcut: "⌘D",
     },
     {
       id: "9",
       name: "Try On Web",
       src: "webapp",
+      shortcut: "⌘T",
     },
     {
       id: "10",
       name: "AI Chat Box",
       src: "ai",
+      shortcut: "⌘A",
     },
   ];
   return (
@@ -205,6 +215,7 @@ export function CommandMenu() {
                 </svg>
 
                 <span>{items_cm.name}</span>
+                <CommandShortcut>⌘P{items_cm.shortcut}</CommandShortcut>
               </CommandItem>
             ))}
           </CommandGroup>
