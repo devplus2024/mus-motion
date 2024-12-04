@@ -97,6 +97,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -120,6 +121,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -143,6 +145,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -166,6 +169,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -189,6 +193,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -212,6 +217,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -235,6 +241,7 @@ export function CommandMenu() {
       icon: (
         <svg
           data-testid="geist-icon"
+          className="mr-2"
           height={16}
           strokeLinejoin="round"
           viewBox="0 0 16 16"
@@ -257,6 +264,7 @@ export function CommandMenu() {
         <svg
           data-testid="geist-icon"
           height={16}
+          className="mr-2"
           strokeLinejoin="round"
           viewBox="0 0 16 16"
           width={16}
@@ -280,6 +288,7 @@ export function CommandMenu() {
         <svg
           data-testid="geist-icon"
           height={16}
+          className="mr-2"
           strokeLinejoin="round"
           viewBox="0 0 16 16"
           width={16}
@@ -303,6 +312,7 @@ export function CommandMenu() {
         <svg
           data-testid="geist-icon"
           height={16}
+          className="mr-2"
           strokeLinejoin="round"
           viewBox="0 0 16 16"
           width={16}
