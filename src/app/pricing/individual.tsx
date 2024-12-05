@@ -2,6 +2,77 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ToastAction } from "@/components/ui/toast";
+import {
+  CreditCard,
+  CheckCircle,
+  AlertCircle,
+  Info,
+  Lock,
+  Check,
+  ChevronsUpDown,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import {
+  CaretSortIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@radix-ui/react-icons";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Separator } from "@/components/ui/separator";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -733,7 +804,43 @@ const pricingData = {
     },
   ],
 };
+const packages = [
+  {
+    id: "basic",
+    name: "Basic",
+    price: 9.99,
+    description: "Essential features for individuals",
+    features: ["5 GB Storage", "2 Projects", "Basic Support"],
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price: 19.99,
+    description: "Advanced features for professionals",
+    features: [
+      "20 GB Storage",
+      "Unlimited Projects",
+      "Priority Support",
+      "Advanced Analytics",
+    ],
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    price: 49.99,
+    description: "Full suite for large organizations",
+    features: [
+      "100 GB Storage",
+      "Unlimited Projects",
+      "24/7 Premium Support",
+      "Custom Integrations",
+      "Dedicated Account Manager",
+    ],
+  },
+];
+
 export default function Individual() {
+ const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [activeTab, setActiveTab] = useState("individual");
   return (
     <div>
@@ -771,11 +878,69 @@ export default function Individual() {
                   {" "}
                    <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline" className="w-full">Show Dialog</Button>
+        <Button variant="outline" className="w-full">Get Started</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>
+		  <Card className="bg-black">
+        <CardHeader>
+          <CardTitle>Select a Software Package</CardTitle>
+          <CardDescription>
+            Choose the package that best fits your needs
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="mb-4 flex items-center justify-end space-x-2">
+            <span className="text-sm">Monthly</span>
+            <Switch
+              checked={isYearly}
+              onCheckedChange={setIsYearly}
+              id="billing-toggle"
+            />
+            <span className="text-sm">Yearly (10% off)</span>
+          </div>
+          <RadioGroup
+            className="grid-cols-3 gap-4"
+            defaultValue={selectedPackage.id}
+            onValueChange={handlePackageSelect}
+          >
+            {packages.map((pkg) => (
+              <Card
+                key={pkg.id}
+                className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "border-primary" : ""}`}
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value={pkg.id} id={pkg.id} />
+                      <Label htmlFor={pkg.id} className="text-lg font-semibold">
+                        {pkg.name}
+                      </Label>
+                    </div>
+                    <Badge variant="secondary">
+                      $
+                      {isYearly ? (pkg.price * 12 * 0.9).toFixed(2) : pkg.price}
+                      /{isYearly ? "year" : "month"}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-2 text-sm text-muted-foreground">
+                    {pkg.description}
+                  </p>
+                  <ul className="list-inside list-disc text-sm">
+                    {pkg.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </RadioGroup>
+        </CardContent>
+      </Card>
+		  </AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone. This will permanently delete your
             account and remove your data from our servers.
