@@ -81,7 +81,7 @@ function PricingPage() {
           <Accordion
             type="single"
             collapsible
-            className="grid w-[700px] gap-8 rounded-lg border px-4 py-2 md:grid-cols-1"
+            className="grid w-[750px] gap-8 rounded-lg border md:grid-cols-1"
           >
             {[
               {
@@ -148,7 +148,7 @@ function PricingPage() {
               },
             ].map((faq) => (
               <AccordionItem
-                className="last:border-b-0"
+                className="px-4 last:border-b-0"
                 key={faq.question}
                 value={faq.question}
               >
