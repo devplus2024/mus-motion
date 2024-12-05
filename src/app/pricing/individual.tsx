@@ -840,6 +840,7 @@ const packages = [
 export default function Individual() {
  const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [activeTab, setActiveTab] = useState("individual");
+   const [isYearly, setIsYearly] = useState(false);
   return (
     <div>
       <div className="grid gap-[2rem] px-[2rem] md:grid-cols-4">
