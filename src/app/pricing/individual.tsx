@@ -92,7 +92,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BadgeCheck, HelpCircleIcon } from "lucide-react";
-import { CheckCircledIcon, CheckIcon } from "@radix-ui/react-icons";
+import { CheckCircledIcon} from "@radix-ui/react-icons";
 
 const pricingData = {
   individual: [
