@@ -883,7 +883,7 @@ export default function Individual() {
       <AlertDialogTrigger asChild>
         <Button variant="outline" className="w-full">Get Started</Button>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="max-w-[62rem]">
         <AlertDialogHeader>
           <AlertDialogTitle>
 		  <Card className="bg-black">
