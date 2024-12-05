@@ -841,6 +841,10 @@ export default function Individual() {
  const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [activeTab, setActiveTab] = useState("individual");
    const [isYearly, setIsYearly] = useState(false);
+   const handlePackageSelect = (packageId: string) => {
+    const selected = packages.find((pkg) => pkg.id === packageId);
+    if (selected) setSelectedPackage(selected);
+  };
   return (
     <div>
       <div className="grid gap-[2rem] px-[2rem] md:grid-cols-4">
