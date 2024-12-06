@@ -997,10 +997,9 @@ export default function Individual() {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="flex gap-[1rem] items-center "><Input type="email" placeholder="Email" /><Button variant="outline">Outline</Button></AlertDialogTitle>
+          <AlertDialogTitle className="flex gap-[1rem] items-center "><Input type="email" placeholder="Email" /><Button variant="outline">Subscribe</Button></AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+           Please Enter Your Email To We Send Sale Code
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
