@@ -989,7 +989,6 @@ export default function Individual() {
                   <Button
                     className="w-full"
                     variant={"outline"}
-                    onClick={() => setSelectedPackage([ultimate])}
                   >
                     Contact Sale
                   </Button>
