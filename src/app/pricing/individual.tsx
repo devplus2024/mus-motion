@@ -986,12 +986,30 @@ export default function Individual() {
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
-                  <Button
+				    <AlertDialog>
+      <AlertDialogTrigger asChild>
+       <Button
                     className="w-full"
                     variant={"outline"}
                   >
                     Contact Sale
                   </Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle className="flex gap-[1rem] items-center "><Input type="email" placeholder="Email" /><Button variant="outline">Outline</Button></AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+                  
                 </div>
               )}
               {tier.title !== "Pro" && tier.title !== "Ultimate" && (
