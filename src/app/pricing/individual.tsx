@@ -875,7 +875,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="rounded-b-xl rounded-t-none border-t px-6 py-[2rem]">
+            <CardFooter className="rounded-b-xl justify-center rounded-t-none border-t px-6 py-[2rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
@@ -889,6 +889,22 @@ export default function Individual() {
                         }
                       >
                         Get Started
+						<svg
+  data-testid="geist-icon"
+  height={16}
+  strokeLinejoin="round"
+  viewBox="0 0 16 16"
+  width={16}
+  style={{ color: "currentcolor" }}
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
+    fill="currentColor"
+  />
+</svg>
+
                       </Button>
                     </AlertDialogTrigger>
                     <AlertDialogContent className="max-w-[62rem]">
@@ -1014,11 +1030,41 @@ export default function Individual() {
               {tier.title !== "Pro" && tier.title !== "Ultimate" && (
                 <Button className="w-full" variant={"outline"}>
                   Get Started
+				  <svg
+  data-testid="geist-icon"
+  height={16}
+  strokeLinejoin="round"
+  viewBox="0 0 16 16"
+  width={16}
+  style={{ color: "currentcolor" }}
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
+    fill="currentColor"
+  />
+</svg>
                 </Button>
               )}
               {tier.title === "Pro" && (
                 <Button className="w-full" variant={"outline"}>
                   Upgrade Now
+				  <svg
+  data-testid="geist-icon"
+  height={16}
+  strokeLinejoin="round"
+  viewBox="0 0 16 16"
+  width={16}
+  style={{ color: "currentcolor" }}
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
+    fill="currentColor"
+  />
+</svg>
                 </Button>
               )}
             </CardFooter>
