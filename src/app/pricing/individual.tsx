@@ -911,7 +911,7 @@ export default function Individual() {
             {packages.map((pkg) => (
               <Card
                 key={pkg.id}
-                className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "border-primary" : ""}`}
+                className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "ring-offset-background shadow outline-none ring-2 ring-ring ring-offset-2" : ""}`}
               >
                 <CardHeader>
                   <div className="flex items-center justify-between">
