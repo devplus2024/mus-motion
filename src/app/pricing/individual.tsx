@@ -836,7 +836,13 @@ const packages = [
     ],
   },
 ];
-
+type Package = {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  features: string[];
+};
 export default function Individual() {
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [activeTab, setActiveTab] = useState("individual");
