@@ -965,7 +965,7 @@ export default function Individual() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-                  <Button className="w-full" variant={"outline"} onClick={() => setSelectedPackage("ultimate")} >
+                  <Button className="w-full" variant={"outline"} onClick={() => setSelectedPackage([ultimate])} >
                     Contact Sale
                   </Button>
                 </div>
