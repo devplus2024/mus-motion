@@ -823,8 +823,8 @@ const packages = [
     ],
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
+    id: "ultimate",
+    name: "Ultimate",
     price: 49.99,
     description: "Full suite for large organizations",
     features: [
@@ -955,7 +955,7 @@ export default function Individual() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-                  <Button className="w-full" variant={"outline"}>
+                  <Button className="w-full" variant={"outline"} onClick={() => setSelectedPackage(ultimate)} >
                     Contact Sale
                   </Button>
                 </div>
