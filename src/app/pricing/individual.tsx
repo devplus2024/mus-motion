@@ -962,11 +962,11 @@ export default function Individual() {
                             </CardContent>
                           </Card>
                         </AlertDialogTitle>
-                        <AlertDialogDescription>
+                        <AlertDialogDescription className="flex items-center  gap-2">
                           <Checkbox id="terms" required />
                           <label
                             htmlFor="terms"
-                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                           >
                             By purchasing a package, you agree to our{" "}
                             <a
@@ -982,7 +982,7 @@ export default function Individual() {
                       </AlertDialogHeader>
                       <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction>Continue</AlertDialogAction>
+                        <AlertDialogAction className="ml-[1.4rem]">Continue</AlertDialogAction>
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
