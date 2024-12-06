@@ -945,8 +945,18 @@ export default function Individual() {
       </Card>
 		  </AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            <Checkbox id="terms" required />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                 By purchasing a package, you agree to our <a href="#" className="text-primary hover:underline">
+                  terms and conditions
+                </a> of Service.
+                  Please read them carefully before proceeding with your
+                  purchase.{" "}
+                
+              </label>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -955,7 +965,7 @@ export default function Individual() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-                  <Button className="w-full" variant={"outline"} onClick={() => setSelectedPackage(ultimate)} >
+                  <Button className="w-full" variant={"outline"} onClick={() => setSelectedPackage("ultimate")} >
                     Contact Sale
                   </Button>
                 </div>
