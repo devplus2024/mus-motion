@@ -891,9 +891,7 @@ export default function Individual() {
                         variant="outline"
                         className="w-full"
                         onClick={() =>
-                          setSelectedPackage(
-                            packages.find((pkg) => pkg.id === "ultimate"),
-                          )
+                          handlePackageSelect("ultimate")}
                         }
                       >
                         Get Started
