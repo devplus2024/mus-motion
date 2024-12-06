@@ -81,7 +81,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
 import {
   Card,
   CardContent,
@@ -92,7 +92,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BadgeCheck, HelpCircleIcon } from "lucide-react";
-import { CheckCircledIcon} from "@radix-ui/react-icons";
+import { CheckCircledIcon } from "@radix-ui/react-icons";
 
 const pricingData = {
   individual: [
@@ -838,10 +838,10 @@ const packages = [
 ];
 
 export default function Individual() {
- const [selectedPackage, setSelectedPackage] = useState(packages[0]);
+  const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [activeTab, setActiveTab] = useState("individual");
-   const [isYearly, setIsYearly] = useState(false);
-   const handlePackageSelect = (packageId: string) => {
+  const [isYearly, setIsYearly] = useState(false);
+  const handlePackageSelect = (packageId: string) => {
     const selected = packages.find((pkg) => pkg.id === packageId);
     if (selected) setSelectedPackage(selected);
   };
@@ -879,93 +879,120 @@ export default function Individual() {
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
-                   <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button variant="outline" className="w-full">Get Started</Button>
-      </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-[62rem]">
-        <AlertDialogHeader>
-          <AlertDialogTitle>
-		  <Card className="bg-black">
-        <CardHeader>
-          <CardTitle>Select a Software Package</CardTitle>
-          <CardDescription>
-            Choose the package that best fits your needs
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="mb-4 flex items-center justify-end space-x-2">
-            <span className="text-sm">Monthly</span>
-            <Switch
-              checked={isYearly}
-              onCheckedChange={setIsYearly}
-              id="billing-toggle"
-            />
-            <span className="text-sm">Yearly (10% off)</span>
-          </div>
-          <RadioGroup
-            className="grid-cols-3 gap-4"
-            defaultValue={selectedPackage.id}
-            onValueChange={handlePackageSelect}
-          >
-            {packages.map((pkg) => (
-              <Card
-                key={pkg.id}
-                className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "ring-offset-background shadow outline-none ring-2 ring-ring ring-offset-2" : ""}`}
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value={pkg.id} id={pkg.id} />
-                      <Label htmlFor={pkg.id} className="text-lg font-semibold">
-                        {pkg.name}
-                      </Label>
-                    </div>
-                    <Badge variant="secondary">
-                      $
-                      {isYearly ? (pkg.price * 12 * 0.9).toFixed(2) : pkg.price}
-                      /{isYearly ? "year" : "month"}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-2 text-sm text-muted-foreground">
-                    {pkg.description}
-                  </p>
-                  <ul className="list-inside list-disc text-sm">
-                    {pkg.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </RadioGroup>
-        </CardContent>
-      </Card>
-		  </AlertDialogTitle>
-          <AlertDialogDescription>
-            <Checkbox id="terms" required />
-              <label
-                htmlFor="terms"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                 By purchasing a package, you agree to our <a href="#" className="text-primary hover:underline">
-                  terms and conditions
-                </a> of Service.
-                  Please read them carefully before proceeding with your
-                  purchase.{" "}
-                
-              </label>
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
-                  <Button className="w-full" variant={"outline"} onClick={() => setSelectedPackage([ultimate])} >
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        onClick={() =>
+                          setSelectedPackage(
+                            packages.find((pkg) => pkg.id === "ultimate"),
+                          )
+                        }
+                      >
+                        Get Started
+                      </Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent className="max-w-[62rem]">
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>
+                          <Card className="bg-black">
+                            <CardHeader>
+                              <CardTitle>Select a Software Package</CardTitle>
+                              <CardDescription>
+                                Choose the package that best fits your needs
+                              </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                              <div className="mb-4 flex items-center justify-end space-x-2">
+                                <span className="text-sm">Monthly</span>
+                                <Switch
+                                  checked={isYearly}
+                                  onCheckedChange={setIsYearly}
+                                  id="billing-toggle"
+                                />
+                                <span className="text-sm">
+                                  Yearly (10% off)
+                                </span>
+                              </div>
+                              <RadioGroup
+                                className="grid-cols-3 gap-4"
+                                defaultValue={selectedPackage.id}
+                                onValueChange={handlePackageSelect}
+                              >
+                                {packages.map((pkg) => (
+                                  <Card
+                                    key={pkg.id}
+                                    className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow outline-none ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
+                                  >
+                                    <CardHeader>
+                                      <div className="flex items-center justify-between">
+                                        <div className="flex items-center space-x-2">
+                                          <RadioGroupItem
+                                            value={pkg.id}
+                                            id={pkg.id}
+                                          />
+                                          <Label
+                                            htmlFor={pkg.id}
+                                            className="text-lg font-semibold"
+                                          >
+                                            {pkg.name}
+                                          </Label>
+                                        </div>
+                                        <Badge variant="secondary">
+                                          $
+                                          {isYearly
+                                            ? (pkg.price * 12 * 0.9).toFixed(2)
+                                            : pkg.price}
+                                          /{isYearly ? "year" : "month"}
+                                        </Badge>
+                                      </div>
+                                    </CardHeader>
+                                    <CardContent>
+                                      <p className="mb-2 text-sm text-muted-foreground">
+                                        {pkg.description}
+                                      </p>
+                                      <ul className="list-inside list-disc text-sm">
+                                        {pkg.features.map((feature, index) => (
+                                          <li key={index}>{feature}</li>
+                                        ))}
+                                      </ul>
+                                    </CardContent>
+                                  </Card>
+                                ))}
+                              </RadioGroup>
+                            </CardContent>
+                          </Card>
+                        </AlertDialogTitle>
+                        <AlertDialogDescription>
+                          <Checkbox id="terms" required />
+                          <label
+                            htmlFor="terms"
+                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                          >
+                            By purchasing a package, you agree to our{" "}
+                            <a
+                              href="#"
+                              className="text-primary hover:underline"
+                            >
+                              terms and conditions
+                            </a>{" "}
+                            of Service. Please read them carefully before
+                            proceeding with your purchase.{" "}
+                          </label>
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction>Continue</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                  <Button
+                    className="w-full"
+                    variant={"outline"}
+                    onClick={() => setSelectedPackage([ultimate])}
+                  >
                     Contact Sale
                   </Button>
                 </div>
