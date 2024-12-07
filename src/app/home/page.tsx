@@ -431,7 +431,7 @@ export default function Home() {
             explore a universe of sounds.
           </h1>
         </div>
-        <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
+        <div className="flex gap-[2rem]">
           <DownloadButton />
           <Link href="/webapp">
             <Button
