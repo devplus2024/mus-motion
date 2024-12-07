@@ -206,8 +206,8 @@ export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
-      <div className="w-ful mx-[5rem] mt-[1rem] flex items-center gap-[3.5rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-row">
-        <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
+      <div className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col">
+        {/* <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center gap-[2rem]">
               <HoverCard>
@@ -365,11 +365,11 @@ export default function Home() {
               Innovative Software
             </span>
           </h1>
-          {/* <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
+          <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
-          </p> */}
+          </p>
           <TextShimmer
             className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]"
             duration={3}
@@ -403,10 +403,10 @@ export default function Home() {
               statement.
             </p>
           </div>
-        </div>
-        <div className="px-[1rem]">
+        </div> */}
+        {/* <div className="px-[1rem]">
           <Carousel />
-          {/* <div className="relative rounded-lg">
+          <div className="relative rounded-lg">
            
             
      
@@ -419,7 +419,29 @@ export default function Home() {
               delay={0}
               borderWidth={1.8}
             />
-          </div> */}
+          </div>
+        </div> */}
+        <div className="flex flex-col items-center justify-center gap-[2rem]">
+          <h1 className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]">
+            The AI Music Player For People And Musican
+          </h1>
+          <h1 className="width-[420px] text-center">
+            Dive into a seamless music experience with our cutting-edge
+            software. Unleash your creativity, manage your playlists, and
+            explore a universe of sounds.
+          </h1>
+        </div>
+        <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
+          <DownloadButton />
+          <Link href="/webapp">
+            <Button
+              variant={"outline"}
+              className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full"
+            >
+              <Globe className="mr-2 h-4 w-4" />
+              Try On The Web
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7 justify-items-center gap-x-[20px] gap-y-[27px]">
