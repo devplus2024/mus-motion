@@ -15,6 +15,7 @@ import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
 import RetroGrid from "@/components/ui/retro-grid";
 import { BackgroundLines } from "@/components/ui/background-lines";
+import { MarqueeUI } from "./marquee-ui";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -78,7 +79,8 @@ function PricingPage() {
           Frequently Asked Questions
         </h2>
         <div className="">
-          <Accordion
+          <MarqueeUI />
+          {/* <Accordion
             type="single"
             collapsible
             className="grid w-[750px]  rounded-lg border md:grid-cols-1"
@@ -156,7 +158,7 @@ function PricingPage() {
                 <AccordionContent>{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
-          </Accordion>
+          </Accordion> */}
         </div>
       </div>
     </main>
