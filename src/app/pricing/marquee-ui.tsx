@@ -67,8 +67,8 @@ const ReviewCard = ({
     >
       <div className="flex flex-row items-center gap-2">
         <Image
-          className="rounded-full dark:invert-[1]"
-          width="40"
+          className=" dark:invert-[1]"
+          width="32"
           height="32"
           alt=""
           src={`/${img}.svg`}
