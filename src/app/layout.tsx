@@ -25,11 +25,11 @@ export default function RootLayout({
       <html
         suppressHydrationWarning
         lang="en"
-        className={`${GeistSans.className} custom_command_scroll overflow-x-hidden dark`}
+        className={`${GeistSans.className} custom_command_scroll dark`}
         style={{ colorScheme: "dark" }}
       >
         <head />
-        <body className="relative antialiased">
+        <body className="relative overflow-x-hidden antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster />
