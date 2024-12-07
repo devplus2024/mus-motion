@@ -204,7 +204,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden py-[1rem] dark:bg-black dark:[color-scheme:dark]">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
       <div className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col">
         {/* <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
@@ -425,7 +425,7 @@ export default function Home() {
           <h1 className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]">
             The AI Music Player For People And Musican
           </h1>
-          <h1 className="width-[420px] text-center">
+          <h1 className="w-[420px] text-center">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
