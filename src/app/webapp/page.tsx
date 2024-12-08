@@ -121,7 +121,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { NavigationEffect } from "@/components/NavigationEffect";
-import { Toaster } from "@/components/ui/sonner";
+import { ToasterSonner } from "@/components/ui/sonner";
 import { TabList, tablist } from "./data/tablist";
 import MusicTab from "./components/musictab";
 export default function StromaWebApp() {
