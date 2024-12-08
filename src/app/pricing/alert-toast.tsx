@@ -10,6 +10,7 @@ export default function AlertToast() {
   return (
     <Button
       variant="outline"
+	  className="mt-[2.5rem]"
       onClick={() => {
         toast.custom((t) => (
           <div className="w-[var(--width)] rounded-lg border border-border bg-background px-4 py-3">
@@ -55,7 +56,7 @@ export default function AlertToast() {
         ));
       }}
     >
-      Custom sonner
+      Feed Back
     </Button>
   );
 }
