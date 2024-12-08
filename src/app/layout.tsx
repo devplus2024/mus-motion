@@ -10,6 +10,7 @@ import { CommandMenu } from "@/components/CommandMenu";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
+import { ToasterSonner } from "../components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stroma: A Useful Platform For Musicians",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster />
+            <ToasterSonner />
             {children}
             <Footer />
           </ThemeProvider>
