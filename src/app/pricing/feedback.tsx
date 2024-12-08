@@ -12,7 +12,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import AlertToast from "./alert-toast";
 
-export default function DialogDemo() {
+export default function FeedBack() {
   return (
     <Dialog>
       <DialogTrigger asChild>

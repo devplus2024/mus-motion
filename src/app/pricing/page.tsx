@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import RetroGrid from "@/components/ui/retro-grid";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import { MarqueeUI } from "./marquee-ui";
+import FeedBack from "./feedback";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -160,6 +161,7 @@ function PricingPage() {
             ))}
           </Accordion> */}
         </div>
+        <FeedBack />
       </div>
     </main>
   );
