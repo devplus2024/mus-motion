@@ -126,7 +126,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
 import { NavigationEffect } from "@/components/NavigationEffect";
-import { Toaster } from "@/components/ui/sonner";
+// import { ToasterSonner } from "@/components/ui/sonner";
 import { Dot } from "lucide-react";
 import DownloadButton from "./components/DownloadButton";
 import { BorderBeam } from "@/components/magicui/border-beam";
