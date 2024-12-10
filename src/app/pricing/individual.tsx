@@ -846,12 +846,12 @@ export default function Individual() {
     if (selected) setSelectedPackage(selected);
   };
   return (
-    <div>
-      <div className="grid border gap-[0rem] px-[8rem] md:grid-cols-4">
+    <div className="px-[11rem]">
+      <div className="grid border gap-[0rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
-          <Card key={tier.title} className="flex flex-col dark:bg-[#000000]">
+          <Card key={tier.title} className="flex flex-col dark:bg-[#000000] ">
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} bg-gradient-to-tr from-black/50`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} rounded-none bg-gradient-to-tr from-black/50`}
             >
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
