@@ -256,7 +256,7 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/browse" ||   pathname === "/support" ||   pathname === "/radio" ||   pathname === "/community" ||   pathname === "/pricing" ? "hidden" : "block" } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                        pathname === "/browse" ||   pathname === "/support" ||   pathname === "/radio" ||   pathname === "/community" ||   pathname === "/pricing" || pathname === "/" ? "hidden" : "block" } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Guides
                     </NavigationMenuLink>
