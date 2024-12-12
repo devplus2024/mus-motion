@@ -198,7 +198,7 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" ? "hidden" : ""
+                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Browse
@@ -213,7 +213,7 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" ? "hidden" : ""
+                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Pricing
@@ -235,28 +235,30 @@ export const Navigation = (): JSX.Element => {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/docs" legacyBehavior passHref>
+                  <Link href="/help" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/docs"
+                        pathname === "/help"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                      } ${
+                        pathname === "/browse" ||   pathname === "/support" ||   pathname === "/radio" ||   pathname === "/community" ||   pathname === "/pricing" ? "hidden" : "block" } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      {pathname === "/docs" ? "Documention" : "Docs"}
+                      Help
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/docs" legacyBehavior passHref>
+                  <Link href="/guides" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/docs"
+                        pathname === "/guides"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
-                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                      } ${
+                        pathname === "/browse" ||   pathname === "/support" ||   pathname === "/radio" ||   pathname === "/community" ||   pathname === "/pricing" ? "hidden" : "block" } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      {pathname === "/docs" ? "Documention" : "Docs"}
+                      Guides
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -269,7 +271,7 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" ? "hidden" : ""
+                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Radio
@@ -284,7 +286,7 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" ? "hidden" : ""
+                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Community
@@ -312,7 +314,7 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" ? "hidden" : ""
+                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Support
