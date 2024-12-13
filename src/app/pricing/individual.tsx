@@ -846,7 +846,7 @@ export default function Individual() {
     if (selected) setSelectedPackage(selected);
   };
   return (
-    <div className="min-[1350px]:px-[8rem] max-[1467]:px-[11rem]">
+    <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[8rem]">
       <div className="grid gap-[0rem] border-y md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card

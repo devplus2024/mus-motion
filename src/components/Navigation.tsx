@@ -198,7 +198,11 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
+                        pathname === "/docs" ||
+                        pathname === "/help" ||
+                        pathname === "/guides"
+                          ? "hidden"
+                          : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Browse
@@ -213,7 +217,11 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
+                        pathname === "/docs" ||
+                        pathname === "/help" ||
+                        pathname === "/guides"
+                          ? "hidden"
+                          : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Pricing
@@ -242,7 +250,15 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/browse" ||   pathname === "/support" ||   pathname === "/radio" ||   pathname === "/community" ||   pathname === "/pricing" || pathname === "/" ? "hidden" : "block" } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                        pathname === "/browse" ||
+                        pathname === "/support" ||
+                        pathname === "/radio" ||
+                        pathname === "/community" ||
+                        pathname === "/pricing" ||
+                        pathname === "/"
+                          ? "hidden"
+                          : "block"
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Help
                     </NavigationMenuLink>
@@ -256,7 +272,15 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/browse" ||   pathname === "/support" ||   pathname === "/radio" ||   pathname === "/community" ||   pathname === "/pricing" || pathname === "/" ? "hidden" : "block" } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                        pathname === "/browse" ||
+                        pathname === "/support" ||
+                        pathname === "/radio" ||
+                        pathname === "/community" ||
+                        pathname === "/pricing" ||
+                        pathname === "/"
+                          ? "hidden"
+                          : "block"
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Guides
                     </NavigationMenuLink>
@@ -271,7 +295,11 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
+                        pathname === "/docs" ||
+                        pathname === "/help" ||
+                        pathname === "/guides"
+                          ? "hidden"
+                          : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Radio
@@ -286,7 +314,11 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
+                        pathname === "/docs" ||
+                        pathname === "/help" ||
+                        pathname === "/guides"
+                          ? "hidden"
+                          : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Community
@@ -314,7 +346,11 @@ export const Navigation = (): JSX.Element => {
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
-                        pathname === "/docs" || pathname === "/help" || pathname ==="/guides" ? "hidden" : ""
+                        pathname === "/docs" ||
+                        pathname === "/help" ||
+                        pathname === "/guides"
+                          ? "hidden"
+                          : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       Support
@@ -373,7 +409,7 @@ export const Navigation = (): JSX.Element => {
               >
                 <Button
                   variant={"outline"}
-                  className="flex items-center  px-3 py-1 hover:bg-accent  dark:hover:bg-[#1a1a1a]"
+                  className="h-none flex items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
                 >
                   <Image
                     src={"/windows11.svg"}
@@ -386,7 +422,7 @@ export const Navigation = (): JSX.Element => {
                 </Button>
               </Link>
               <Link href="/ai">
-                <Button variant="outline" className=" px-3 py-1">
+                <Button variant="outline" className="h-none px-3 py-1">
                   <Sparkles />
                   Ask Ai
                 </Button>
