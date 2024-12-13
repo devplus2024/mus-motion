@@ -847,7 +847,7 @@ export default function Individual() {
   };
   return (
     <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[8rem]">
-      <div className="grid gap-[0rem] border-y md:grid-cols-4">
+      <div className="grid gap-[0rem] border-t md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card
             key={tier.title}
@@ -878,7 +878,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="justify-center rounded-b-xl rounded-t-none border-t px-6 py-[2rem]">
+            <CardFooter className="justify-center rounded-none border-y px-6 py-[2rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
@@ -1071,7 +1071,6 @@ export default function Individual() {
             </CardFooter>
           </Card>
         ))}
-        <div className="h-[55px] border-b"></div>
       </div>
     </div>
   );
