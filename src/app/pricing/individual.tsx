@@ -890,7 +890,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="justify-center rounded-none border-y px-6 py-[2rem]">
+            <CardFooter className="justify-center rounded-none border-y px-6 py-[1rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
