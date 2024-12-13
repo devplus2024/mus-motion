@@ -858,7 +858,7 @@ export default function Individual() {
             >
               <CardTitle className="text-2xl">
                 {tier.title}
-                {tier.title !== "Pro" && (
+                {tier.title === "Pro" && (
                   <div className="flex justify-between">
                     {tier.title}
                     <Button className="h-fit px-3 py-1" variant={"outline"}>
