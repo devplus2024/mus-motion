@@ -862,7 +862,7 @@ export default function Individual() {
                 </p>
                 {tier.title === "Pro" && (
                   <div className="flex justify-between">
-                    {tier.title}
+                    Pro
                     <Button className="h-fit px-3 py-1" variant={"outline"}>
                       Popular
                     </Button>
