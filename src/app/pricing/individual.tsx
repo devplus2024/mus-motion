@@ -1069,9 +1069,9 @@ export default function Individual() {
                 </Button>
               )}
             </CardFooter>
-            <div className="h-[55px] border-b"></div>
           </Card>
         ))}
+        <div className="h-[55px] border-b"></div>
       </div>
     </div>
   );
