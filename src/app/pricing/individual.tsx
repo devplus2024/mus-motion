@@ -874,7 +874,7 @@ export default function Individual() {
             <CardContent className="flex-grow pt-[2rem]">
               <div className="mb-4 text-3xl font-bold">
                 {tier.price}
-                <span className="text-md font-normal text-muted-foreground">
+                <span className="text-lg font-normal text-muted-foreground">
                   /month
                 </span>
               </div>
@@ -903,7 +903,7 @@ export default function Individual() {
                       >
                         Get Started
                         <svg
-                          className="rounded-full bg-black fill-black dark:bg-white"
+                          className="rounded-full bg-black dark:bg-white"
                           data-testid="geist-icon"
                           height={16}
                           strokeLinejoin="round"
@@ -911,6 +911,7 @@ export default function Individual() {
                           width={16}
                         >
                           <path
+                            className="fill-black"
                             fillRule="evenodd"
                             clipRule="evenodd"
                             d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
@@ -1052,6 +1053,7 @@ export default function Individual() {
                     width={16}
                   >
                     <path
+                      className="fill-black"
                       fillRule="evenodd"
                       clipRule="evenodd"
                       d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
@@ -1072,6 +1074,7 @@ export default function Individual() {
                     width={16}
                   >
                     <path
+                      className="fill-black"
                       fillRule="evenodd"
                       clipRule="evenodd"
                       d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
