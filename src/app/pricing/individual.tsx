@@ -856,7 +856,17 @@ export default function Individual() {
             <CardHeader
               className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-none border-b bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
             >
-              <CardTitle className="text-2xl">{tier.title}</CardTitle>
+              <CardTitle className="text-2xl">
+                {tier.title}
+                {tier.title !== "Pro" && (
+                  <div className="flex justify-between">
+                    {tier.title}
+                    <Button className="h-fit px-3 py-1" variant={"outline"}>
+                      Popular
+                    </Button>
+                  </div>
+                )}
+              </CardTitle>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow pt-[2rem]">
@@ -891,6 +901,7 @@ export default function Individual() {
                       >
                         Get Started
                         <svg
+                          className="rounded-full bg-white text-black"
                           data-testid="geist-icon"
                           height={16}
                           strokeLinejoin="round"
@@ -1036,6 +1047,7 @@ export default function Individual() {
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
+                    className="rounded-full bg-white text-black"
                     width={16}
                     style={{ color: "currentcolor" }}
                   >
@@ -1053,6 +1065,7 @@ export default function Individual() {
                   Upgrade Now
                   <svg
                     data-testid="geist-icon"
+                    className="rounded-full bg-white text-black"
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
