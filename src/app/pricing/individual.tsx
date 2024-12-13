@@ -846,17 +846,20 @@ export default function Individual() {
     if (selected) setSelectedPackage(selected);
   };
   return (
-    <div className="px-[11rem]">
-      <div className="grid border-y gap-[0rem] md:grid-cols-4">
+    <div className="min-[1350px]:px-[8rem] max-[1467]:px-[11rem]">
+      <div className="grid gap-[0rem] border-y md:grid-cols-4">
         {pricingData.individual.map((tier) => (
-          <Card key={tier.title} className="flex flex-col dark:bg-[#000000] rounded-none border-[0px]">
+          <Card
+            key={tier.title}
+            className="flex flex-col rounded-none border-[0px] dark:bg-[#000000]"
+          >
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} border-b top-[55px] bg-[#00000099]  sticky backdrop-blur-[8px]  rounded-none `}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-none border-b bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
             >
               <CardTitle className="text-2xl">{tier.title}</CardTitle>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow  pt-[2rem]">
+            <CardContent className="flex-grow pt-[2rem]">
               <div className="mb-4 text-4xl font-bold">
                 {tier.price}
                 <span className="text-lg font-normal text-muted-foreground">
@@ -875,7 +878,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="rounded-b-xl justify-center rounded-t-none border-t px-6 py-[2rem]">
+            <CardFooter className="justify-center rounded-b-xl rounded-t-none border-t px-6 py-[2rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
@@ -884,27 +887,24 @@ export default function Individual() {
                       <Button
                         variant="outline"
                         className="w-full"
-                        onClick={() =>
-                          handlePackageSelect("ultimate")
-                        }
+                        onClick={() => handlePackageSelect("ultimate")}
                       >
                         Get Started
-						<svg
-  data-testid="geist-icon"
-  height={16}
-  strokeLinejoin="round"
-  viewBox="0 0 16 16"
-  width={16}
-  style={{ color: "currentcolor" }}
->
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
-    fill="currentColor"
-  />
-</svg>
-
+                        <svg
+                          data-testid="geist-icon"
+                          height={16}
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          style={{ color: "currentcolor" }}
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
+                            fill="currentColor"
+                          />
+                        </svg>
                       </Button>
                     </AlertDialogTrigger>
                     <AlertDialogContent className="max-w-[62rem]">
@@ -978,7 +978,7 @@ export default function Individual() {
                             </CardContent>
                           </Card>
                         </AlertDialogTitle>
-                        <AlertDialogDescription className="flex items-center  gap-2">
+                        <AlertDialogDescription className="flex items-center gap-2">
                           <Checkbox id="terms" required />
                           <label
                             htmlFor="terms"
@@ -998,73 +998,74 @@ export default function Individual() {
                       </AlertDialogHeader>
                       <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction className="ml-[1.4rem]">Continue</AlertDialogAction>
+                        <AlertDialogAction className="ml-[1.4rem]">
+                          Continue
+                        </AlertDialogAction>
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
-				    <AlertDialog>
-      <AlertDialogTrigger asChild>
-       <Button
-                    className="w-full"
-                    variant={"outline"}
-                  >
-                    Contact Sale
-                  </Button>
-      </AlertDialogTrigger>
-      <AlertDialogContent>
-        <AlertDialogHeader>
-          <AlertDialogTitle className="flex gap-[1rem] items-center "><Input type="email" placeholder="Email" /><Button variant="outline">Subscribe</Button></AlertDialogTitle>
-          <AlertDialogDescription>
-           Please Enter Your Email To We Send Sale Code
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
-                  
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button className="w-full" variant={"outline"}>
+                        Contact Sale
+                      </Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle className="flex items-center gap-[1rem]">
+                          <Input type="email" placeholder="Email" />
+                          <Button variant="outline">Subscribe</Button>
+                        </AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Please Enter Your Email To We Send Sale Code
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction>Continue</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </div>
               )}
               {tier.title !== "Pro" && tier.title !== "Ultimate" && (
                 <Button className="w-full" variant={"outline"}>
                   Get Started
-				  <svg
-  data-testid="geist-icon"
-  height={16}
-  strokeLinejoin="round"
-  viewBox="0 0 16 16"
-  width={16}
-  style={{ color: "currentcolor" }}
->
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
-    fill="currentColor"
-  />
-</svg>
+                  <svg
+                    data-testid="geist-icon"
+                    height={16}
+                    strokeLinejoin="round"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    style={{ color: "currentcolor" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
+                      fill="currentColor"
+                    />
+                  </svg>
                 </Button>
               )}
               {tier.title === "Pro" && (
                 <Button className="w-full" variant={"outline"}>
                   Upgrade Now
-				  <svg
-  data-testid="geist-icon"
-  height={16}
-  strokeLinejoin="round"
-  viewBox="0 0 16 16"
-  width={16}
-  style={{ color: "currentcolor" }}
->
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
-    fill="currentColor"
-  />
-</svg>
+                  <svg
+                    data-testid="geist-icon"
+                    height={16}
+                    strokeLinejoin="round"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    style={{ color: "currentcolor" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z"
+                      fill="currentColor"
+                    />
+                  </svg>
                 </Button>
               )}
             </CardFooter>
