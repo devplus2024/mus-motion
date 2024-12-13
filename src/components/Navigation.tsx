@@ -373,7 +373,7 @@ export const Navigation = (): JSX.Element => {
               >
                 <Button
                   variant={"outline"}
-                  className="flex items-center h-[30px] px-3 py-1 hover:bg-accent  dark:hover:bg-[#1a1a1a]"
+                  className="flex items-center h-[0px] px-3 py-1 hover:bg-accent  dark:hover:bg-[#1a1a1a]"
                 >
                   <Image
                     src={"/windows11.svg"}
@@ -386,7 +386,7 @@ export const Navigation = (): JSX.Element => {
                 </Button>
               </Link>
               <Link href="/ai">
-                <Button variant="outline" className="h-[30px] px-3 py-1">
+                <Button variant="outline" className="h-[0px] px-3 py-1">
                   <Sparkles />
                   Ask Ai
                 </Button>
