@@ -872,9 +872,9 @@ export default function Individual() {
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow pt-[2rem]">
-              <div className="mb-4 text-4xl font-bold">
+              <div className="mb-4 text-3xl font-bold">
                 {tier.price}
-                <span className="text-lg font-normal text-muted-foreground">
+                <span className="text-md font-normal text-muted-foreground">
                   /month
                 </span>
               </div>
@@ -903,7 +903,7 @@ export default function Individual() {
                       >
                         Get Started
                         <svg
-                          className="rounded-full bg-black stroke-black dark:bg-white"
+                          className="rounded-full bg-black fill-black dark:bg-white"
                           data-testid="geist-icon"
                           height={16}
                           strokeLinejoin="round"
@@ -1048,7 +1048,7 @@ export default function Individual() {
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
-                    className="rounded-full bg-black stroke-black dark:bg-white"
+                    className="rounded-full bg-black fill-black dark:bg-white"
                     width={16}
                   >
                     <path
@@ -1065,7 +1065,7 @@ export default function Individual() {
                   Upgrade Now
                   <svg
                     data-testid="geist-icon"
-                    className="rounded-full bg-black stroke-black dark:bg-white"
+                    className="rounded-full bg-black fill-black dark:bg-white"
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
