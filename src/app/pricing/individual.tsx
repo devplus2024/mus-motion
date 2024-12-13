@@ -903,7 +903,7 @@ export default function Individual() {
                       >
                         Get Started
                         <svg
-                          className="rounded-full bg-white text-black"
+                          className="rounded-full bg-white stroke-black"
                           data-testid="geist-icon"
                           height={16}
                           strokeLinejoin="round"
@@ -1049,7 +1049,7 @@ export default function Individual() {
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
-                    className="rounded-full bg-white text-black"
+                    className="rounded-full bg-white stroke-black"
                     width={16}
                     style={{ color: "currentcolor" }}
                   >
@@ -1067,7 +1067,7 @@ export default function Individual() {
                   Upgrade Now
                   <svg
                     data-testid="geist-icon"
-                    className="rounded-full bg-white text-black"
+                    className="rounded-full bg-white stroke-black"
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
