@@ -857,7 +857,9 @@ export default function Individual() {
               className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-none border-b bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
             >
               <CardTitle className="text-2xl">
-                {tier.title}
+                <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
+                  {tier.title}
+                </p>
                 {tier.title === "Pro" && (
                   <div className="flex justify-between">
                     {tier.title}
