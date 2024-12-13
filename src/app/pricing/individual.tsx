@@ -903,13 +903,12 @@ export default function Individual() {
                       >
                         Get Started
                         <svg
-                          className="rounded-full bg-white stroke-black"
+                          className="rounded-full bg-black stroke-black dark:bg-white"
                           data-testid="geist-icon"
                           height={16}
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width={16}
-                          style={{ color: "currentcolor" }}
                         >
                           <path
                             fillRule="evenodd"
@@ -1049,9 +1048,8 @@ export default function Individual() {
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
-                    className="rounded-full bg-white stroke-black"
+                    className="rounded-full bg-black stroke-black dark:bg-white"
                     width={16}
-                    style={{ color: "currentcolor" }}
                   >
                     <path
                       fillRule="evenodd"
@@ -1067,12 +1065,11 @@ export default function Individual() {
                   Upgrade Now
                   <svg
                     data-testid="geist-icon"
-                    className="rounded-full bg-white stroke-black"
+                    className="rounded-full bg-black stroke-black dark:bg-white"
                     height={16}
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
                     width={16}
-                    style={{ color: "currentcolor" }}
                   >
                     <path
                       fillRule="evenodd"
