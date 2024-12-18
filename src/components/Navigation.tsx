@@ -377,7 +377,7 @@ export const Navigation = (): JSX.Element => {
             </NavigationMenu>
           </div>
           <div className="flex items-center gap-[1rem]">
-            <div className="flex items-center justify-center gap-[1rem]">
+            {/* <div className="flex items-center justify-center gap-[1rem]">
               <LinkPreview
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 url="https://github.com/devplus2024"
@@ -396,7 +396,7 @@ export const Navigation = (): JSX.Element => {
                 <X />
                 <span className="text-sm">Twitter</span>
               </LinkPreview>
-            </div>
+            </div> */}
             <div className="h-[1.2rem] border-r"></div>
             <div className="flex items-center justify-center">
               <ThemeToggle />
@@ -411,20 +411,22 @@ export const Navigation = (): JSX.Element => {
                   variant={"outline"}
                   className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
                 >
-                  <Image
+                  {/* <Image
                     src={"/windows11.svg"}
                     className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
                     width={"16"}
                     height={"16"}
                     alt="window-logo"
-                  ></Image>
-                  Install
+                  ></Image> */}
+                  {/* Install */}
+                  Sign In
                 </Button>
               </Link>
               <Link href="/ai">
                 <Button variant="outline" className="h-fit px-3 py-1">
-                  <Sparkles />
-                  Ask Ai
+                  {/* <Sparkles />
+                  Ask Ai */}
+                  Sign Up
                 </Button>
               </Link>
             </div>
