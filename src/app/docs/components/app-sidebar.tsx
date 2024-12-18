@@ -28,6 +28,7 @@ import {
   SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 // This is sample data for the music software documentation.
 const docSections = [
@@ -112,25 +113,27 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>
-        {docSections.map((section) => (
-          <SidebarMenuItem key={section.title}>
-            <SidebarGroupLabel>
-              <section.icon className="mr-2 h-4 w-4" />
-              <span>{section.title}</span>
-            </SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenuSub>
-                {section.items.map((item) => (
-                  <SidebarMenuSubItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <a href={item.url}>{item.title}</a>
-                    </SidebarMenuButton>
-                  </SidebarMenuSubItem>
-                ))}
-              </SidebarMenuSub>
-            </SidebarGroupContent>
-          </SidebarMenuItem>
-        ))}
+        <ScrollArea>
+          {docSections.map((section) => (
+            <SidebarMenuItem key={section.title}>
+              <SidebarGroupLabel>
+                <section.icon className="mr-2 h-4 w-4" />
+                <span>{section.title}</span>
+              </SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenuSub>
+                  {section.items.map((item) => (
+                    <SidebarMenuSubItem key={item.title}>
+                      <SidebarMenuButton asChild>
+                        <a href={item.url}>{item.title}</a>
+                      </SidebarMenuButton>
+                    </SidebarMenuSubItem>
+                  ))}
+                </SidebarMenuSub>
+              </SidebarGroupContent>
+            </SidebarMenuItem>
+          ))}
+        </ScrollArea>
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
