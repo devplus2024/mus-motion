@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { AppSidebar } from './components/app-sidebar'
-import { Music } from 'lucide-react'
+import { AppSidebar } from "./app-sidebar";
+import { Music } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,13 +9,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
-import { Separator } from '@/components/ui/separator'
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from '@/components/ui/sidebar'
+} from "@/components/ui/sidebar";
 
 export default function Sidebar() {
   return (
@@ -50,6 +50,5 @@ export default function Sidebar() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }
-
