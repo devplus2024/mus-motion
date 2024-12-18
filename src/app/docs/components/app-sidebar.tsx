@@ -113,7 +113,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>
-        <ScrollArea>
+        <ScrollArea className="pl-4">
           {docSections.map((section) => (
             <SidebarMenuItem key={section.title}>
               <SidebarGroupLabel>
