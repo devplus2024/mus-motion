@@ -24,6 +24,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
 
@@ -119,11 +120,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarGroupContent>
               <SidebarMenu>
                 {section.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuSubItem key={item.title}>
                     <SidebarMenuButton asChild>
                       <a href={item.url}>{item.title}</a>
                     </SidebarMenuButton>
-                  </SidebarMenuItem>
+                  </SidebarMenuSubItem>
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>
