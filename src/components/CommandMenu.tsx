@@ -344,7 +344,7 @@ export function CommandMenu() {
           <div className="flex h-full items-center gap-3">
             <p className="text-xs">Search for documention</p>
             <div className="flex items-center gap-1">
-              <div className="flex gap-1 rounded-md border px-1">
+              <div className="flex items-center gap-1 rounded-md border px-1">
                 <svg
                   data-testid="geist-icon"
                   height={12}
