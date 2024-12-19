@@ -343,7 +343,7 @@ export function CommandMenu() {
         <div className="flex h-full items-center justify-center transition-all duration-200 ease-out dark:text-[#ffffff] dark:group-hover:text-white">
           <div className="flex h-full items-center gap-3">
             <p className="text-xs">Search for documention</p>
-            <div className="flex gap-1 px-1">
+            <div className="flex gap-1 rounded-lg border px-1">
               <svg
                 data-testid="geist-icon"
                 height={16}
