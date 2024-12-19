@@ -360,8 +360,6 @@ export function CommandMenu() {
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <div className="flex gap-1 rounded-md border px-1">
                 <p className="text-xs">K</p>
               </div>
             </div>

@@ -398,7 +398,7 @@ export const Navigation = (): JSX.Element => {
               </LinkPreview>
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center gap-2">
               <ThemeToggle />
               <CommandMenu />
             </div>
