@@ -405,7 +405,7 @@ export const Navigation = (): JSX.Element => {
             <div className="flex items-center gap-[1rem]">
               <Link
                 className="flex items-center justify-center gap-3"
-                href="/downloads"
+                href="/login"
               >
                 <Button
                   variant={"outline"}
