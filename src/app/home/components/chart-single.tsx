@@ -30,14 +30,15 @@ import {
 
 export const description = "A line chart with a label";
 
-const chartData = [
+const chartDataFristYear = [
   { month: "January", desktop: 100, mobile: 40 },
   { month: "February", desktop: 300, mobile: 130 },
   { month: "March", desktop: 300, mobile: 190 },
   { month: "April", desktop: 450, mobile: 230 },
   { month: "May", desktop: 420, mobile: 290 },
   { month: "June", desktop: 540, mobile: 320 },
-  { month: "July", desktop: 520, mobile: 430 },
+];
+const chartDataLastYear = [
   { month: "August", desktop: 590, mobile: 470 },
   { month: "September", desktop: 650, mobile: 558 },
   { month: "October", desktop: 600, mobile: 730 },
@@ -64,11 +65,97 @@ export function ChartSingle() {
         <CardTitle>Line Chart - Label</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="flex items-center p-6">
         <ChartContainer className="aspect-auto h-[250px]" config={chartConfig}>
           <LineChart
             accessibilityLayer
-            data={chartData}
+            data={chartDataFristYear}
+            margin={{
+              top: 20,
+              left: 30,
+              right: 12,
+            }}
+          >
+            <defs>
+              <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="5%" stopColor="#15eb99" stop-opacity="0.09" />{" "}
+                {/* Màu đỏ ở 0% */}
+                <stop offset="50%" stopColor="#159deb" />{" "}
+                {/* Màu xanh ở 100% */}
+              </linearGradient>
+            </defs>
+            <CartesianGrid vertical={false} />
+            <YAxis tickMargin={8} />
+            <XAxis
+              dataKey="month"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              tickFormatter={(value) => value.slice(0, 3)}
+            />
+            <ChartTooltip
+              content={
+                <ChartTooltipContent
+                  className="w-[150px]"
+                  nameKey="views"
+                  labelFormatter={(value) => {
+                    return new Date(value).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    });
+                  }}
+                />
+              }
+            />
+            <Line
+              dataKey="desktop"
+              type="linear"
+              //   stroke="var(--color-desktop)"
+              stroke="url(#lineGradient)"
+              strokeWidth={2}
+              dot={false}
+              //   dot={{
+              //     fill: "var(--color-desktop)",
+              //   }}
+              //   activeDot={{
+              //     r: 6,
+              //   }}
+            >
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Line>
+            {/* <Line
+              dataKey="mobile"
+              type="linear"
+              //   stroke="var(--color-desktop)"
+              stroke="url(#lineGradient)"
+              strokeWidth={2}
+              dot={false}
+              //   dot={{
+              //     fill: "var(--color-desktop)",
+              //   }}
+              //   activeDot={{
+              //     r: 6,
+              //   }}
+            >
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Line> */}
+          </LineChart>
+        </ChartContainer>
+        <ChartContainer className="aspect-auto h-[250px]" config={chartConfig}>
+          <LineChart
+            accessibilityLayer
+            data={chartDataLastYear}
             margin={{
               top: 20,
               left: 30,
