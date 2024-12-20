@@ -444,17 +444,17 @@ export default function Home() {
         </div>
       </div>
       <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">
-        <div className="transform rounded-lg border border-white/10 bg-black px-6 py-4 backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:bg-white/10">
+        <div className="transform rounded-lg border border-white/10 bg-black px-6 py-2 backdrop-blur-sm transition-all duration-200 hover:bg-white/10">
           <div className="text-3xl font-bold text-white">100K+</div>
-          <div>Active Users</div>
+          <div className="text-sm">Active Users</div>
         </div>
-        <div className="transform rounded-lg border border-white/10 bg-black px-6 py-4 backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:bg-white/10">
+        <div className="transform rounded-lg border border-white/10 bg-black px-6 py-2 backdrop-blur-sm transition-all duration-200 hover:bg-white/10">
           <div className="text-3xl font-bold text-white">50M+</div>
-          <div>Tracks Created</div>
+          <div className="text-sm">Tracks Created</div>
         </div>
-        <div className="transform rounded-lg border border-white/10 bg-black px-6 py-4 backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:bg-white/10">
+        <div className="transform rounded-lg border border-white/10 bg-black px-6 py-2 backdrop-blur-sm transition-all duration-200 hover:bg-white/10">
           <div className="text-3xl font-bold text-white">190+</div>
-          <div>Countries</div>
+          <div className="text-sm">Countries</div>
         </div>
       </div>
       <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7 justify-items-center gap-x-[20px] gap-y-[27px]">
