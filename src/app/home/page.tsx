@@ -459,7 +459,7 @@ export default function Home() {
           <div className="text-sm">Countries</div>
         </div>
       </div>
-      <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7 justify-items-center gap-x-[20px] gap-y-[27px]">
+      <div className="mx-[3rem] mt-[4rem] w-full">
         <InfiniteSlider gap={24} reverse>
           {listLogo.map((logo) => (
             <Image
@@ -473,7 +473,7 @@ export default function Home() {
           ))}
         </InfiniteSlider>
       </div>
-      <div className="mt-[2rem] flex w-full items-center px-[2rem]">
+      <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
         <ChartLastYear />
       </div>
