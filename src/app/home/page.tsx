@@ -139,7 +139,8 @@ import {
 import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
 import { ChartBar } from "./components/chart";
 import { TextShimmer } from "@/components/core/text-shimmer";
-import { ChartSingle } from "./components/chart-single";
+import { ChartFirstYear } from "./components/chart-first-year";
+import { ChartLastYear } from "./components/chart-last-yeart";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -469,8 +470,9 @@ export default function Home() {
           ></Image>
         ))}
       </div>
-      <div className="mt-[2rem] w-full px-[2rem]">
-        <ChartSingle />
+      <div className="mt-[2rem] flex w-full items-center px-[2rem]">
+        <ChartFirstYear />
+        <ChartLastYear />
       </div>
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
