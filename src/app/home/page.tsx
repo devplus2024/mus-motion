@@ -141,6 +141,7 @@ import { ChartBar } from "./components/chart";
 import { TextShimmer } from "@/components/core/text-shimmer";
 import { ChartFirstYear } from "./components/chart-first-year";
 import { ChartLastYear } from "./components/chart-last-yeart";
+import { InfiniteSlider } from "../home-2/components/core/infinite-slider";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -459,16 +460,18 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-[3rem] mt-[4rem] grid w-full grid-cols-7 justify-items-center gap-x-[20px] gap-y-[27px]">
-        {listLogo.map((logo) => (
-          <Image
-            key={logo.id}
-            src={`/${logo.src}.svg`}
-            height={"80"}
-            width={"100"}
-            alt={`${logo.src}`}
-            className="dark:invert-[1]"
-          ></Image>
-        ))}
+        <InfiniteSlider gap={24} reverse>
+          {listLogo.map((logo) => (
+            <Image
+              key={logo.id}
+              src={`/${logo.src}.svg`}
+              height={"80"}
+              width={"100"}
+              alt={`${logo.src}`}
+              className="dark:invert-[1]"
+            ></Image>
+          ))}
+        </InfiniteSlider>
       </div>
       <div className="mt-[2rem] flex w-full items-center px-[2rem]">
         <ChartFirstYear />
