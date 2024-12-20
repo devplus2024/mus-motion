@@ -459,7 +459,7 @@ export default function Home() {
           <div className="text-sm">Countries</div>
         </div>
       </div>
-      <div className="mx-[3rem] mt-[4rem] w-full">
+      <div className="mt-[4rem] w-full px-[6rem]">
         <InfiniteSlider gap={24} reverse>
           {listLogo.map((logo) => (
             <Image
