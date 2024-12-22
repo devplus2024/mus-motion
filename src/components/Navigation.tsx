@@ -399,6 +399,12 @@ export const Navigation = (): JSX.Element => {
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
             <div className="flex items-center justify-center gap-2">
+              <div className="flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]">
+                <GitHub />
+              </div>
+              <div className="flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]">
+                <X />
+              </div>
               <ThemeToggle />
               <CommandMenu />
             </div>
