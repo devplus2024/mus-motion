@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import { Spinner } from "@radix-ui/themes";
 
-export default function LoginPage() {
+export default function SignInPage() {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(false);
   const [namevalue, setNameValue] = useState(false);

@@ -164,6 +164,7 @@ export const Navigation = (): JSX.Element => {
   const isWebAppPath = pathname === "/webapp";
   const isAi = pathname === "/ai";
   const isChatV2 = pathname === "/chat-v2";
+  const isSignIn = pathname === "/signin";
   const theme = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -177,7 +178,9 @@ export const Navigation = (): JSX.Element => {
   return (
     <div
       className={`${
-        isWebfilmPath || isWebAppPath || isAi || isChatV2 ? "webfilm-class" : ""
+        isWebfilmPath || isWebAppPath || isAi || isChatV2 || isSignIn
+          ? "webfilm-class"
+          : ""
       } sticky top-0 z-[20]`}
     >
       <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">

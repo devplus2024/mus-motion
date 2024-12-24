@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Login | Stroma",
-  description: "Stroma - Login",
+  title: "Video | Stroma",
+  description: "Stroma - Video",
 };
-export default function PricingLayout({
+export default function ResourcesLayout({
   children,
 }: {
   children: React.ReactNode;

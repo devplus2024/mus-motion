@@ -8,10 +8,10 @@ export default function Footer() {
   const isAi = path === "/ai";
   const isChatV2 = path === "/chat-v2";
   const isRadio = path === "/radio";
-  const isLogin = path === "/login";
+  const isSignIn = path === "/signin";
   return (
     <div
-      className={`${isWebApp || isAi || isChatV2 || isRadio || isLogin ? "webfilm-class" : ""} h-[60px] border-t`}
+      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} h-[60px] border-t`}
     ></div>
   );
 }
