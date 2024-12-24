@@ -43,7 +43,7 @@ export default function SignInPage() {
       <Card className="mx-auto max-w-sm dark:bg-black">
         <CardHeader>
           <CardTitle className="text-center text-2xl">Welcome Back</CardTitle>
-          <CardDescription>
+          <CardDescription className="text-center">
             Enter your email below to login to your account
           </CardDescription>
         </CardHeader>
