@@ -143,9 +143,9 @@ export default function SignInPage() {
               />
               <p className={!login ? "block" : "hidden"}>Login</p>
             </Button>
-            <div className="relative w-full border-t">
+            <div className="relative my-4 w-full border-t">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black">
-                <span>Or</span>
+                <span className="text-sm text-[#a1a1a1]">Or</span>
               </div>
             </div>
             <Button
