@@ -143,6 +143,11 @@ export default function SignInPage() {
               />
               <p className={!login ? "block" : "hidden"}>Login</p>
             </Button>
+            <div className="relative w-full border-t">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black">
+                <span>Or</span>
+              </div>
+            </div>
             <Button
               variant="outline"
               className={`${login ? "pointer-events-none" : "pointer-events-auto"} w-full select-none`}
