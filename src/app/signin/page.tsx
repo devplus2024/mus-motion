@@ -39,7 +39,7 @@ export default function SignInPage() {
     }, 3000);
   };
   return (
-    <div className="flex h-[calc(100vh-60px)] w-full items-center justify-center px-4">
+    <div className="flex h-screen w-full items-center justify-center px-4">
       <Card className="mx-auto w-[29rem] max-w-[29rem] dark:bg-black">
         <CardHeader>
           <CardTitle className="text-center text-2xl">Welcome Back</CardTitle>
