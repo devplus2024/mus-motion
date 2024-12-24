@@ -480,3 +480,7 @@ li::marker {
   background: var(--ds-background-100);
   background-clip: padding-box !important;
 }
+
+.video {
+  border-radius: 6px;
+}
