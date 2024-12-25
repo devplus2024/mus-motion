@@ -486,7 +486,7 @@ li::marker {
 }
 .overlay {
   --color--transparent: #fff0;
-  --color--background-main: #08090a;
+  --color--background-main: #000000;
   background-image: linear-gradient(
     90deg,
     var(--color--background-main) 23%,
@@ -499,7 +499,7 @@ li::marker {
 }
 .overlay.right {
   --color--transparent: #fff0;
-  --color--background-main: #08090a;
+  --color--background-main: #000000;
   background-image: linear-gradient(
     90deg,
     var(--color--transparent),
