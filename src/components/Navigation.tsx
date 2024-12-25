@@ -257,10 +257,10 @@ export const Navigation = (): JSX.Element => {
                         <sup>
                           <svg
                             data-testid="geist-icon"
-                            height={15}
+                            height={12}
                             strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width={15}
+                            viewBox="0 0 15 15"
+                            width={12}
                             style={{ color: "currentcolor" }}
                           >
                             <path
@@ -275,45 +275,49 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem
+                  className={`${
+                    pathname === "/guides"
+                      ? "dark:text-white"
+                      : "dark:text-[#9b9b9b]"
+                  } ${
+                    pathname === "/browse" ||
+                    pathname === "/support" ||
+                    pathname === "/radio" ||
+                    pathname === "/community" ||
+                    pathname === "/pricing" ||
+                    pathname === "/"
+                      ? "hidden"
+                      : "block"
+                  }`}
+                >
                   <Link href="/help" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/help"
-                          ? "dark:text-white"
-                          : "dark:text-[#9b9b9b]"
-                      } ${
-                        pathname === "/browse" ||
-                        pathname === "/support" ||
-                        pathname === "/radio" ||
-                        pathname === "/community" ||
-                        pathname === "/pricing" ||
-                        pathname === "/"
-                          ? "hidden"
-                          : "block"
-                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                      className={`relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-sm transition-colors duration-300 ease-out dark:hover:text-white`}
                     >
                       Help
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem
+                  className={`${
+                    pathname === "/guides"
+                      ? "dark:text-white"
+                      : "dark:text-[#9b9b9b]"
+                  } ${
+                    pathname === "/browse" ||
+                    pathname === "/support" ||
+                    pathname === "/radio" ||
+                    pathname === "/community" ||
+                    pathname === "/pricing" ||
+                    pathname === "/"
+                      ? "hidden"
+                      : "block"
+                  }`}
+                >
                   <Link href="/guides" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/guides"
-                          ? "dark:text-white"
-                          : "dark:text-[#9b9b9b]"
-                      } ${
-                        pathname === "/browse" ||
-                        pathname === "/support" ||
-                        pathname === "/radio" ||
-                        pathname === "/community" ||
-                        pathname === "/pricing" ||
-                        pathname === "/"
-                          ? "hidden"
-                          : "block"
-                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                      className={`relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-sm transition-colors duration-300 ease-out dark:hover:text-white`}
                     >
                       Guides
                     </NavigationMenuLink>
@@ -339,10 +343,10 @@ export const Navigation = (): JSX.Element => {
                       <sup>
                         <svg
                           data-testid="geist-icon"
-                          height={15}
+                          height={12}
                           strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width={15}
+                          viewBox="0 0 15 15"
+                          width={12}
                           style={{ color: "currentcolor" }}
                         >
                           <path
