@@ -459,7 +459,7 @@ export default function Home() {
           <div className="text-sm">Countries</div>
         </div>
       </div>
-      <div className="mt-[4rem] w-full px-[6rem]">
+      <div className="relative mt-[4rem] w-full px-[15rem]">
         <InfiniteSlider gap={24} reverse>
           {listLogo.map((logo) => (
             <Image
@@ -471,6 +471,8 @@ export default function Home() {
               className="dark:invert-[1]"
             ></Image>
           ))}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
         </InfiniteSlider>
       </div>
       <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
