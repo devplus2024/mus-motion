@@ -484,3 +484,26 @@ li::marker {
 .video {
   border-radius: 6px;
 }
+.overlay {
+  --color--transparent: #fff0;
+  --color--background-main: #08090a;
+  background-image: linear-gradient(
+    90deg,
+    var(--color--background-main) 23%,
+    var(--color--transparent)
+  );
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  inset: 0% auto 0% 0%;
+}
+.overlay.right {
+  --color--transparent: #fff0;
+  --color--background-main: #08090a;
+  background-image: linear-gradient(
+    90deg,
+    var(--color--transparent),
+    var(--color--background-main) 77%
+  );
+  inset: 0% 0% 0% auto;
+}
