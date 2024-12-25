@@ -435,10 +435,7 @@ export default function Home() {
         <div className="flex gap-[2rem]">
           <DownloadButton />
           <Link href="/webapp">
-            <Button
-              variant={"outline"}
-              className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full"
-            >
+            <Button className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full">
               <svg
                 className="mr-2 h-4 w-4 dark:invert-[1]"
                 data-testid="geist-icon"
