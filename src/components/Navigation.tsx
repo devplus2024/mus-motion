@@ -497,19 +497,17 @@ export const Navigation = (): JSX.Element => {
                     </svg>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent className="w-[10rem]">
                   <DropdownMenuLabel>Social Media</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                      GitHub
+                    <DropdownMenuItem className="gap-4 text-xs">
                       <GitHub />
+                      GitHub
                       <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      X
-                      <X />
-                      <DropdownMenuShortcut>⇧⌘F</DropdownMenuShortcut>
+                    <DropdownMenuItem className="gap-4 text-xs">
+                      <X />X<DropdownMenuShortcut>⇧⌘F</DropdownMenuShortcut>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
