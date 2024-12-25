@@ -437,7 +437,7 @@ export default function Home() {
           <Link href="/webapp">
             <Button className="">
               <svg
-                className="mr-2 h-4 w-4 dark:invert-[1]"
+                className="mr-2 h-4 w-4"
                 data-testid="geist-icon"
                 height={16}
                 strokeLinejoin="round"
