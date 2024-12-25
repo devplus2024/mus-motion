@@ -475,6 +475,22 @@ export default function Home() {
         <div className="overlay"></div>
         <div className="overlay right"></div>
       </div>
+      <div className="my-[4rem] flex w-full items-center justify-between gap-[4rem] px-[4rem]">
+        <div>
+          <Image
+            alt="dark-preview"
+            height={"400"}
+            width={"500"}
+            src={"/Opera Snapshot_2024-12-25_203610_stromatech.vercel.app.png"}
+          ></Image>
+          <Image
+            alt="dark-preview"
+            height={"400"}
+            width={"500"}
+            src={"/Opera Snapshot_2024-12-25_203657_stromatech.vercel.app.png"}
+          ></Image>
+        </div>
+      </div>
       <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
         <ChartLastYear />
