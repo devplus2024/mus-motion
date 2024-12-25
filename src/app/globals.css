@@ -492,7 +492,7 @@ li::marker {
     var(--color--background-main) 23%,
     var(--color--transparent)
   );
-  width: 20%;
+  width: 50%;
   height: 100%;
   position: absolute;
   inset: 0% auto 0% 0%;
