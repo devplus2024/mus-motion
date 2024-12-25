@@ -483,9 +483,12 @@ export default function Home() {
             width={"500"}
             src={"/Opera Snapshot_2024-12-25_203610_stromatech.vercel.app.png"}
           ></Image>
+        </div>
+        <div>
           <Image
-            alt="dark-preview"
+            alt="light-preview"
             height={"400"}
+            className="rounded-lg"
             width={"500"}
             src={"/Opera Snapshot_2024-12-25_203657_stromatech.vercel.app.png"}
           ></Image>
