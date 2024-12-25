@@ -497,8 +497,10 @@ export const Navigation = (): JSX.Element => {
                     </svg>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[10rem]">
-                  <DropdownMenuLabel className="text-center"></DropdownMenuLabel>
+                <DropdownMenuContent className="w-[9rem]">
+                  <DropdownMenuLabel className="text-center">
+                    Social Media
+                  </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup style={{ display: "flex" }}>
                     <DropdownMenuItem className="gap-4 text-xs">
