@@ -424,7 +424,7 @@ export default function Home() {
         </div> */}
         <div className="flex flex-col items-center justify-center gap-[2rem]">
           <h1 className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]">
-            The AI Music Player For People And Musican
+            The next generation of audio collaboration.
           </h1>
           <h1 className="w-[420px] text-center">
             Dive into a seamless music experience with our cutting-edge
