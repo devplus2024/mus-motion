@@ -498,7 +498,9 @@ export const Navigation = (): JSX.Element => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[10rem]">
-                  <DropdownMenuLabel>Social Media</DropdownMenuLabel>
+                  <DropdownMenuLabel className="text-center">
+                    Social Media
+                  </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem className="gap-4 text-xs">
