@@ -26,6 +26,13 @@ export const ThemeToggle = ({
       </Head>
 
       <div
+        onClick={() => {
+          // Set 'system' theme if the next theme matches the system theme
+          const resolvedTheme = theme === "system" ? systemTheme : theme;
+          const newTheme = resolvedTheme === "dark" ? "light" : "dark";
+          const newThemeMatchesSystem = newTheme === systemTheme;
+          setTheme(newThemeMatchesSystem ? "system" : newTheme);
+        }}
         className="radix-themes-custom-fonts flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border bg-black transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
         content="Toggle theme"
       >
@@ -34,13 +41,6 @@ export const ThemeToggle = ({
           variant="ghost"
           color="gray"
           aria-label="Toggle theme"
-          onClick={() => {
-            // Set 'system' theme if the next theme matches the system theme
-            const resolvedTheme = theme === "system" ? systemTheme : theme;
-            const newTheme = resolvedTheme === "dark" ? "light" : "dark";
-            const newThemeMatchesSystem = newTheme === systemTheme;
-            setTheme(newThemeMatchesSystem ? "system" : newTheme);
-          }}
           {...props}
         >
           <svg
