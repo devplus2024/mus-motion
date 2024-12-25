@@ -439,8 +439,25 @@ export default function Home() {
               variant={"outline"}
               className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full"
             >
-              <Globe className="mr-2 h-4 w-4" />
-              Try On The Web
+              <svg
+                className="mr-2 h-4 w-4 dark:invert-[1]"
+                data-testid="geist-icon"
+                height={16}
+                strokeLinejoin="round"
+                viewBox="0 0 16 16"
+                width={16}
+                style={{ color: "currentcolor" }}
+              >
+                <path
+                  fill="#666"
+                  fillRule="evenodd"
+                  d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6 11l5.5-3L6 5v6Z"
+                  clipRule="evenodd"
+                  style={{ fill: "currentColor" }}
+                />
+              </svg>
+              {/* <Globe  /> */}
+              Watch Demo Now
             </Button>
           </Link>
         </div>
