@@ -503,11 +503,9 @@ export const Navigation = (): JSX.Element => {
                   <DropdownMenuGroup style={{ display: "flex" }}>
                     <DropdownMenuItem className="gap-4 text-xs">
                       <GitHub />
-                      <DropdownMenuShortcut>⇧⌘G</DropdownMenuShortcut>
                     </DropdownMenuItem>
                     <DropdownMenuItem className="gap-4 text-xs">
                       <X />
-                      <DropdownMenuShortcut>⇧⌘X</DropdownMenuShortcut>
                     </DropdownMenuItem>
                     <DropdownMenuItem className="gap-4 text-xs">
                       <svg
@@ -542,8 +540,6 @@ export const Navigation = (): JSX.Element => {
                           </clipPath>
                         </defs>
                       </svg>
-
-                      <DropdownMenuShortcut>⇧⌘X</DropdownMenuShortcut>
                     </DropdownMenuItem>
                     <DropdownMenuItem className="gap-4 text-xs">
                       <svg
@@ -572,7 +568,6 @@ export const Navigation = (): JSX.Element => {
                           </clipPath>
                         </defs>
                       </svg>
-                      <DropdownMenuShortcut>⇧⌘H</DropdownMenuShortcut>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
