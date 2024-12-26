@@ -14,7 +14,7 @@ export default function PhotoFeatures() {
               <Image
                 src="/Opera Snapshot_2024-12-25_203610_stromatech.vercel.app.png"
                 alt="Feature illustration"
-                className="object-cover"
+                className=""
                 fill
                 priority
               />
@@ -27,10 +27,10 @@ export default function PhotoFeatures() {
               <Badge variant="secondary" className="text-sm">
                 Revolutionary Features
               </Badge>
-              <h2 className="bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl xl:text-6xl/none">
+              <h2 className="bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl xl:text-[2.75rem]/none">
                 Unleash Your Creative Vision
               </h2>
-              <p className="max-w-[600px] text-zinc-500 dark:text-zinc-400 md:text-xl">
+              <p className="md:text-md max-w-[600px] text-zinc-500 dark:text-zinc-400">
                 Experience photography like never before with our cutting-edge
                 tools and features. From advanced editing to AI-powered
                 enhancements, we&apos;ve got everything you need to bring your
@@ -94,14 +94,6 @@ export default function PhotoFeatures() {
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 View All Features
               </Button>
-            </div>
-
-            <div className="mt-8 border-t border-zinc-200 pt-8 dark:border-zinc-700">
-              <p className="text-sm text-muted-foreground">
-                &quot;This platform has revolutionized my workflow. The AI
-                enhancements and cloud integration are game-changers!&quot; -
-                Professional Photographer
-              </p>
             </div>
           </div>
         </div>
