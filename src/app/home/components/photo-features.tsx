@@ -27,7 +27,7 @@ export default function PhotoFeatures() {
               <Badge variant="secondary" className="text-sm">
                 Revolutionary Features
               </Badge>
-              <h2 className="bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl xl:text-[2.75rem]/none">
+              <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
                 Unleash Your Creative Vision
               </h2>
               <p className="md:text-md max-w-[600px] text-zinc-500 dark:text-zinc-400">
