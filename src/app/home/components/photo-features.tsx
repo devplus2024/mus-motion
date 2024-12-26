@@ -7,7 +7,7 @@ export default function PhotoFeatures() {
   return (
     <section className="w-full bg-background py-[2rem] md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center gap-8 md:flex-row lg:gap-12">
+        <div className="flex flex-col items-center gap-8 md:flex-row-reverse lg:gap-12">
           {/* Left side - Photo */}
           <div className="w-full md:w-1/2">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
