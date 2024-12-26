@@ -490,7 +490,7 @@ export default function Home() {
         <div className="overlay"></div>
         <div className="overlay right"></div>
       </div>
-      <div className="mx-[12remư w-full border"></div>
+      <div className="mx-[12rem] mt-[2rem] w-full border-t"></div>
       <div className="w-full">
         <PhotoFeatures />
       </div>
