@@ -142,6 +142,7 @@ import { TextShimmer } from "@/components/core/text-shimmer";
 import { ChartFirstYear } from "./components/chart-first-year";
 import { ChartLastYear } from "./components/chart-last-yeart";
 import { InfiniteSlider } from "../home-2/components/core/infinite-slider";
+import PhotoFeatures from "./components/photo-features";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -489,24 +490,8 @@ export default function Home() {
         <div className="overlay"></div>
         <div className="overlay right"></div>
       </div>
-      <div className="my-[4rem] flex w-full items-center justify-between gap-[4rem] px-[4rem]">
-        <div>
-          <Image
-            alt="dark-preview"
-            height={"400"}
-            width={"500"}
-            src={"/Opera Snapshot_2024-12-25_203610_stromatech.vercel.app.png"}
-          ></Image>
-        </div>
-        <div>
-          <Image
-            alt="light-preview"
-            height={"400"}
-            className="rounded-lg"
-            width={"500"}
-            src={"/Opera Snapshot_2024-12-25_203657_stromatech.vercel.app.png"}
-          ></Image>
-        </div>
+      <div className="my-[4rem]">
+        <PhotoFeatures />
       </div>
       <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
