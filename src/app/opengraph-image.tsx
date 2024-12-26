@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "Stroma";
+export const alt = "The next generation of audio collaboration.";
 export const size = {
   width: 1200,
   height: 630,
@@ -42,7 +42,7 @@ export default async function Image() {
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 128,
+          fontSize: 98,
           background: "black",
           width: "100%",
           height: "100%",
