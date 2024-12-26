@@ -490,7 +490,7 @@ export default function Home() {
         <div className="overlay"></div>
         <div className="overlay right"></div>
       </div>
-      <div className="my-[4rem]">
+      <div className="">
         <PhotoFeatures />
       </div>
       <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
