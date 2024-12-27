@@ -50,7 +50,7 @@ export default function PhotoFeatures() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-4">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -77,7 +77,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -104,7 +104,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -130,7 +130,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -154,7 +154,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -181,7 +181,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     className="h-5 w-5 text-primary"
@@ -207,7 +207,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     className="h-5 w-5 text-primary"
@@ -233,7 +233,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 hover:border-primary/30">
                 <div className="border0 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -262,9 +262,20 @@ export default function PhotoFeatures() {
             </div>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="w-full text-black sm:w-auto">
+              {/* <Button size="lg" className="w-full text-black sm:w-auto">
                 Start Free Trial
-              </Button>
+              </Button> */}
+              <div className="relative">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-purple-600 px-8 py-6 text-lg text-primary-foreground hover:from-primary/90 hover:to-purple-600/90"
+                >
+                  Start Free Trial
+                </Button>
+                <span className="absolute -right-2 -top-2 rounded-full bg-yellow-400 px-2 py-1 text-xs font-bold text-yellow-900">
+                  14 Days Free
+                </span>
+              </div>
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 View All Features
               </Button>
