@@ -266,10 +266,10 @@ export default function PhotoFeatures() {
                 Start Free Trial
               </Button> */}
               <div className="relative">
-                <Button className="px-8 py-6 text-lg text-primary-foreground">
+                <Button className="text-lg text-primary-foreground">
                   Start Free Trial
                 </Button>
-                <span className="absolute -right-2 -top-2 rounded-full bg-white px-2 py-1 text-xs font-bold text-yellow-900">
+                <span className="absolute -right-2 -top-4 rounded-full border bg-black px-2 py-1 text-xs font-bold text-white">
                   14 Days Free
                 </span>
               </div>
