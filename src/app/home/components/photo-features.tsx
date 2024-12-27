@@ -1,15 +1,26 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Cloud, ImageIcon, Share2, Zap } from "lucide-react";
+import {
+  Camera,
+  ImageIcon,
+  Palette,
+  Share2,
+  Cloud,
+  Zap,
+  Layers,
+  Video,
+  Music,
+  Globe,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function PhotoFeatures() {
   return (
     <section className="w-full bg-background py-[2rem] md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center gap-8 md:flex-row-reverse lg:gap-12">
+        <div className="flex flex-col items-center justify-center gap-8 md:flex-row-reverse lg:gap-12">
           {/* Left side - Photo */}
-          <div className="w-full md:w-1/2">
+          {/* <div className="w-full md:w-1/2">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
                 src="/Opera Snapshot_2024-12-25_203610_stromatech.vercel.app.png"
@@ -19,11 +30,11 @@ export default function PhotoFeatures() {
                 priority
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Right side - Content */}
-          <div className="w-full space-y-8 lg:w-1/2">
-            <div className="space-y-4">
+          <div className="w-full space-y-8 lg:w-[90%]">
+            <div className="flex flex-col items-center justify-center space-y-4">
               <Badge variant="secondary" className="text-sm">
                 Revolutionary Features
               </Badge>
@@ -38,9 +49,9 @@ export default function PhotoFeatures() {
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-4">
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <ImageIcon className="h-5 w-5 text-primary" />
                 </div>
                 <div className="space-y-1">
@@ -52,7 +63,7 @@ export default function PhotoFeatures() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <Zap className="h-5 w-5 text-primary" />
                 </div>
                 <div className="space-y-1">
@@ -64,7 +75,7 @@ export default function PhotoFeatures() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <Share2 className="h-5 w-5 text-primary" />
                 </div>
                 <div className="space-y-1">
@@ -75,13 +86,58 @@ export default function PhotoFeatures() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <Cloud className="h-5 w-5 text-primary" />
                 </div>
                 <div className="space-y-1">
                   <h3 className="font-semibold">Cloud Integration</h3>
                   <p className="text-sm text-muted-foreground">
                     Automatic backup and sync across all your devices.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
+                  <Layers className="h-5 w-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-semibold">Layer Masking</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Create complex compositions with non-destructive layer
+                    masks.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
+                  <Video className="h-5 w-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-semibold">Video Editing</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Seamlessly edit videos with the same powerful photo tools.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
+                  <Music className="h-5 w-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-semibold">Audio Integration</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Add and edit audio tracks for your video projects.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="border0 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                  <Globe className="h-5 w-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-semibold">Collaborative Editing</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Work together in real-time with team members worldwide.
                   </p>
                 </div>
               </div>
