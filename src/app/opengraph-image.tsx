@@ -42,7 +42,7 @@ export default async function Image() {
       // ImageResponse JSX element
       <div
         style={{
-textAlign:"center",
+          textAlign: "center",
           fontSize: 98,
           background: "black",
           width: "100%",

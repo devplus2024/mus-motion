@@ -131,7 +131,7 @@ export default function PhotoFeatures() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="border0 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                <div className="border0 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <Globe className="h-5 w-5 text-primary" />
                 </div>
                 <div className="space-y-1">
@@ -143,7 +143,7 @@ export default function PhotoFeatures() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" className="w-full sm:w-auto">
                 Start Free Trial
               </Button>
