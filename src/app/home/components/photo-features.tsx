@@ -273,7 +273,7 @@ export default function PhotoFeatures() {
                   14 Days Free
                 </span>
               </div>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
+              <Button variant="outline" className="w-full sm:w-auto">
                 View All Features
               </Button>
             </div>
