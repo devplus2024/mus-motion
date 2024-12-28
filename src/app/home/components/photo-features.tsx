@@ -18,7 +18,7 @@ import React from "react";
 
 export default function PhotoFeatures() {
   const ref = React.useRef(null); // Tạo một ref để liên kết với phần tử
-  const isInView = useInView(ref, { once: true, margin: "-50px" }); // Quan sát phần tử với tùy chọn
+  const isInView = useInView(ref, { once: true }); // Quan sát phần tử với tùy chọn
 
   return (
     <section className="w-full bg-background py-[2rem] md:py-24 lg:py-[2rem]">
@@ -43,7 +43,7 @@ export default function PhotoFeatures() {
               ref={ref} // Gắn ref để quan sát
               initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
               animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 2, ease: "easeOut" }}
               className="flex flex-col items-center justify-center space-y-4"
             >
               <Badge variant="outline" className="text-sm">
@@ -64,7 +64,7 @@ export default function PhotoFeatures() {
               ref={ref} // Gắn ref để quan sát
               initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
               animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 1, ease: "easeOut" }}
               className="mt-[2rem] grid gap-6 md:grid-cols-4"
             >
               <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
