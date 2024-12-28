@@ -143,6 +143,7 @@ import { ChartFirstYear } from "./components/chart-first-year";
 import { ChartLastYear } from "./components/chart-last-yeart";
 import { InfiniteSlider } from "../home-2/components/core/infinite-slider";
 import PhotoFeatures from "./components/photo-features";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -208,7 +209,12 @@ export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
       <TailwindcssButton />
-      <div className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+        animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
+      >
         {/* <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
           <div className="flex items-center gap-[1rem]">
             <div className="flex items-center gap-[2rem]">
@@ -459,7 +465,7 @@ export default function Home() {
             </Button>
           </Link>
         </div>
-      </div>
+      </motion.div>
       {/* <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">
         <div className="transform rounded-lg border border-white/10 bg-black px-6 py-2 backdrop-blur-sm transition-all duration-200 hover:bg-white/10">
           <div className="text-3xl font-bold text-white">100K+</div>
