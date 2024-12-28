@@ -35,8 +35,9 @@ export default function PhotoFeatures() {
 
           {/* Right side - Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+            animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+            transition={{ duration: 0.5, ease: "easeOut" }} // Thời gian và kiểu chuyển đổi
           >
             <div className="flex flex-col items-center justify-center space-y-4">
               <Badge variant="outline" className="text-sm">
