@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
   Camera,
   ImageIcon,
@@ -14,8 +14,12 @@ import {
   Globe,
 } from "lucide-react";
 import Image from "next/image";
+import React from "react";
 
 export default function PhotoFeatures() {
+  const ref = React.useRef(null); // Tạo một ref để liên kết với phần tử
+  const isInView = useInView(ref, { once: true, margin: "-50px" }); // Quan sát phần tử với tùy chọn
+
   return (
     <section className="w-full bg-background py-[2rem] md:py-24 lg:py-[2rem]">
       <div className="container px-4 md:px-6">
@@ -35,8 +39,9 @@ export default function PhotoFeatures() {
 
           {/* Right side - Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-            animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+            ref={ref} // Gắn ref để quan sát
+            initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
             transition={{ duration: 0.5, ease: "easeOut" }} // Thời gian và kiểu chuyển đổi
           >
             <div className="flex flex-col items-center justify-center space-y-4">
