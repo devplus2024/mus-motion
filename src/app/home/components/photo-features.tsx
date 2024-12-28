@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import {
   Camera,
   ImageIcon,
@@ -33,7 +34,10 @@ export default function PhotoFeatures() {
           </div> */}
 
           {/* Right side - Content */}
-          <div className="w-full space-y-8 lg:w-[90%]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <div className="flex flex-col items-center justify-center space-y-4">
               <Badge variant="outline" className="text-sm">
                 Revolutionary Features
@@ -277,7 +281,7 @@ export default function PhotoFeatures() {
                 View All Features
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
