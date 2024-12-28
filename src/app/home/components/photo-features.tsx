@@ -43,7 +43,7 @@ export default function PhotoFeatures() {
               ref={ref} // Gắn ref để quan sát
               initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
               animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
-              transition={{ duration: 2, ease: "easeOut" }}
+              transition={{ duration: 1, ease: "easeOut", delay: 1 }}
               className="flex flex-col items-center justify-center space-y-4"
             >
               <Badge variant="outline" className="text-sm">
@@ -64,7 +64,7 @@ export default function PhotoFeatures() {
               ref={ref} // Gắn ref để quan sát
               initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
               animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 1, ease: "easeOut", delay: 2 }}
               className="mt-[2rem] grid gap-6 md:grid-cols-4"
             >
               <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
