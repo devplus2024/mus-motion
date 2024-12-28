@@ -46,7 +46,7 @@ export default function PhotoFeatures() {
               <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
                 Unleash Your Creative Vision
               </h2>
-              <p className="md:text-md max-w-[600px] text-zinc-500 dark:text-zinc-400">
+              <p className="md:text-md max-w-[600px] text-center text-zinc-500 dark:text-zinc-400">
                 Experience photography like never before with our cutting-edge
                 tools and features. From advanced editing to AI-powered
                 enhancements, we&apos;ve got everything you need to bring your
@@ -54,7 +54,7 @@ export default function PhotoFeatures() {
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-4">
+            <div className="mt-[2rem] grid gap-6 md:grid-cols-4">
               <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
