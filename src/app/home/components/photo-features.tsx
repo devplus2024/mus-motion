@@ -38,13 +38,14 @@ export default function PhotoFeatures() {
           </div> */}
 
           {/* Right side - Content */}
-          <motion.div
-            ref={ref} // Gắn ref để quan sát
-            initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
-            animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
-            transition={{ duration: 0.5, ease: "easeOut" }} // Thời gian và kiểu chuyển đổi
-          >
-            <div className="flex flex-col items-center justify-center space-y-4">
+          <div>
+            <motion.div
+              ref={ref} // Gắn ref để quan sát
+              initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
+              animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="flex flex-col items-center justify-center space-y-4"
+            >
               <Badge variant="outline" className="text-sm">
                 Revolutionary Features
               </Badge>
@@ -57,9 +58,15 @@ export default function PhotoFeatures() {
                 enhancements, we&apos;ve got everything you need to bring your
                 creative vision to life.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="mt-[2rem] grid gap-6 md:grid-cols-4">
+            <motion.div
+              ref={ref} // Gắn ref để quan sát
+              initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
+              animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mt-[2rem] grid gap-6 md:grid-cols-4"
+            >
               <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
@@ -269,7 +276,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               {/* <Button size="lg" className="w-full text-black sm:w-auto">
@@ -287,7 +294,7 @@ export default function PhotoFeatures() {
                 View All Features
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
