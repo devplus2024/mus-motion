@@ -185,11 +185,17 @@ export const Navigation = (): JSX.Element => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
+      const isScrolled = window.scrollY > 60;
+      const isBottom =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight;
+      setIsScrolled(isScrolled || isBottom);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
