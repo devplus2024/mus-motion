@@ -126,7 +126,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t pt-6 md:flex-row">
-          <p className="w-full text-center text-xs text-[#a1a1a1]">
+          <p className="w-full text-center text-sm text-[#a1a1a1]">
             © {new Date().getFullYear()} MusicSoft, Inc.
           </p>
           <div className="hidden space-x-5">
