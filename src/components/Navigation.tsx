@@ -182,6 +182,7 @@ export const Navigation = (): JSX.Element => {
   const isSignIn = pathname === "/signin";
   const theme = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isBottom, setIsBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -209,7 +210,7 @@ export const Navigation = (): JSX.Element => {
     >
       <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled ? "border-b bg-[#0c0c0c]" : ""} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]`}
+          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : ""} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]`}
         >
           <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
             <div className="flex items-center gap-4">
