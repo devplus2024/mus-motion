@@ -56,7 +56,7 @@ export default function Footer() {
           {/* More Column */}
           <div className="col-span-1">
             <h4 className="mb-3 text-sm font-semibold">More</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-sm">
               {[
                 "Music Store",
                 "Contact Sales",
@@ -67,7 +67,7 @@ export default function Footer() {
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-gray-400 transition-colors duration-200 hover:text-white"
+                    className="text-[#a1a1a1] transition-colors duration-200 hover:text-white"
                   >
                     {item}
                   </a>
@@ -79,7 +79,7 @@ export default function Footer() {
           {/* About Column */}
           <div className="col-span-1">
             <h4 className="mb-3 text-sm font-semibold">About MusicSoft</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-sm">
               {[
                 "MusicSoft + AI",
                 "Open Source Software",
@@ -89,7 +89,7 @@ export default function Footer() {
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-gray-400 transition-colors duration-200 hover:text-white"
+                    className="text-[#a1a1a1] transition-colors duration-200 hover:text-white"
                   >
                     {item}
                   </a>
