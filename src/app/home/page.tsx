@@ -208,8 +208,7 @@ export default function Home() {
     },
   ];
   return (
-    <>
-      <SmoothScroll>
+
         <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
           <TailwindcssButton />
           <motion.div
@@ -1399,7 +1398,5 @@ export default function Home() {
           </div>
           <div className="mb-[5rem]"> </div>
         </main>
-      </SmoothScroll>
-    </>
   );
 }
