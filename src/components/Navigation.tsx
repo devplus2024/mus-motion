@@ -186,12 +186,11 @@ export const Navigation = (): JSX.Element => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 60;
-      const isBottom =
-        window.scrollY + window.innerHeight >=
-        document.documentElement.scrollHeight;
-      setIsScrolled(isScrolled);
-      setIsBottom(isBottom);
+      setIsScrolled(
+        window.scrollY > 60 ||
+          window.scrollY + window.innerHeight >=
+            document.documentElement.scrollHeight,
+      );
     };
 
     window.addEventListener("scroll", handleScroll);
