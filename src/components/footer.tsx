@@ -20,22 +20,24 @@ export default function Footer() {
   };
   return (
     <div
-      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} h-[60px] border-t`}
+      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} h-[60px] border-t py-4`}
     >
       <div className="container mx-auto px-4">
-        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-5">
+        <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-5">
           {/* Logo Column */}
           <div className="col-span-1">
-            <div className="mb-4 flex items-center gap-2">
-              <Music2 className="h-6 w-6 text-white" />
-              <h3 className="text-xl font-bold">MusicSoft</h3>
+            <div className="mb-3 flex items-center gap-2">
+              <Music2 className="h-5 w-5 text-white" />
+              <h3 className="text-lg font-semibold tracking-tight">
+                MusicSoft
+              </h3>
             </div>
           </div>
 
           {/* Resources Column */}
           <div className="col-span-1">
-            <h4 className="mb-4 font-semibold">Resources</h4>
-            <ul className="space-y-3">
+            <h4 className="mb-3 text-sm font-semibold">Resources</h4>
+            <ul className="space-y-2 text-xs">
               {["Docs", "Learn", "Showcase", "Blog", "Analytics"].map(
                 (item) => (
                   <li key={item}>
@@ -53,8 +55,8 @@ export default function Footer() {
 
           {/* More Column */}
           <div className="col-span-1">
-            <h4 className="mb-4 font-semibold">More</h4>
-            <ul className="space-y-3">
+            <h4 className="mb-3 text-sm font-semibold">More</h4>
+            <ul className="space-y-2 text-xs">
               {[
                 "Music Store",
                 "Contact Sales",
@@ -76,8 +78,8 @@ export default function Footer() {
 
           {/* About Column */}
           <div className="col-span-1">
-            <h4 className="mb-4 font-semibold">About MusicSoft</h4>
-            <ul className="space-y-3">
+            <h4 className="mb-3 text-sm font-semibold">About MusicSoft</h4>
+            <ul className="space-y-2 text-xs">
               {[
                 "MusicSoft + AI",
                 "Open Source Software",
@@ -98,8 +100,10 @@ export default function Footer() {
 
           {/* Newsletter Column */}
           <div className="col-span-1">
-            <h4 className="mb-4 font-semibold">Subscribe to our newsletter</h4>
-            <p className="mb-4 text-sm text-gray-400">
+            <h4 className="mb-3 text-sm font-semibold">
+              Subscribe to our newsletter
+            </h4>
+            <p className="mb-3 text-xs text-gray-400">
               Stay updated on new releases and features, guides, and case
               studies.
             </p>
@@ -107,12 +111,12 @@ export default function Footer() {
               <Input
                 type="email"
                 placeholder="you@domain.com"
-                className="border-gray-800 bg-[#111] text-white placeholder:text-gray-500"
+                className="h-8 border-gray-800 bg-[#111] text-xs text-white placeholder:text-gray-500"
                 required
               />
               <Button
                 type="submit"
-                className="w-full bg-white text-black hover:bg-gray-200"
+                className="h-8 w-full bg-white text-xs text-black hover:bg-gray-200"
               >
                 Subscribe
               </Button>
@@ -121,31 +125,31 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 md:flex-row">
-          <p className="text-sm text-gray-400">
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-6 md:flex-row">
+          <p className="text-xs text-gray-400">
             © {new Date().getFullYear()} MusicSoft, Inc.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex space-x-5">
             <a
               href="#"
               className="text-gray-400 transition-colors duration-200 hover:text-white"
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-4 w-4" />
             </a>
             <a
               href="#"
               className="text-gray-400 transition-colors duration-200 hover:text-white"
               aria-label="Twitter"
             >
-              <Twitter className="h-5 w-5" />
+              <Twitter className="h-4 w-4" />
             </a>
             <a
               href="#"
               className="text-gray-400 transition-colors duration-200 hover:text-white"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-4 w-4" />
             </a>
           </div>
         </div>
