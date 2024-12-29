@@ -1,5 +1,6 @@
 "use client";
 import classNames from "classnames";
+import { motion, useInView } from "framer-motion";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -583,27 +584,39 @@ export const Navigation = (): JSX.Element => {
                 className="flex items-center justify-center gap-3"
                 href="/signin"
               >
-                <Button
-                  variant={"outline"}
-                  className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                <motion.div
+                  initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+                  animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  {/* <Image
-                    src={"/windows11.svg"}
-                    className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
-                    width={"16"}
-                    height={"16"}
-                    alt="window-logo"
-                  ></Image> */}
-                  {/* Install */}
-                  Sign In
-                </Button>
+                  <Button
+                    variant={"outline"}
+                    className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                  >
+                    {/* <Image
+                      src={"/windows11.svg"}
+                      className="mr-2 h-[16px] w-[16px] dark:invert-[1]"
+                      width={"16"}
+                      height={"16"}
+                      alt="window-logo"
+                    ></Image> */}
+                    {/* Install */}
+                    Sign In
+                  </Button>
+                </motion.div>
               </Link>
               <Link href="/ai">
-                <Button variant="outline" className="h-fit px-3 py-1">
-                  {/* <Sparkles />
-                  Ask Ai */}
-                  Sign Up
-                </Button>
+                <motion.div
+                  initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+                  animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <Button variant="outline" className="h-fit px-3 py-1">
+                    {/* <Sparkles />
+                    Ask Ai */}
+                    Sign Up
+                  </Button>
+                </motion.div>
               </Link>
             </div>
           </div>
