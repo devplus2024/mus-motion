@@ -506,10 +506,10 @@ export default function Home() {
       <div className="w-full">
         <PhotoFeatures />
       </div>
-      <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
+      {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
         <ChartLastYear />
-      </div>
+      </div> */}
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
         id="musicContent"
