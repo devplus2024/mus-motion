@@ -20,7 +20,7 @@ export default function Footer() {
   };
   return (
     <div
-      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} h-[60px] border-t py-4`}
+      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} border-t py-4`}
     >
       <div className="container mx-auto px-4">
         <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-5">
@@ -37,13 +37,13 @@ export default function Footer() {
           {/* Resources Column */}
           <div className="col-span-1">
             <h4 className="mb-3 text-sm font-semibold">Resources</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-sm">
               {["Docs", "Learn", "Showcase", "Blog", "Analytics"].map(
                 (item) => (
                   <li key={item}>
                     <a
                       href="#"
-                      className="text-gray-400 transition-colors duration-200 hover:text-white"
+                      className="text-[#a1a1a1] transition-colors duration-200 hover:text-white"
                     >
                       {item}
                     </a>
@@ -103,7 +103,7 @@ export default function Footer() {
             <h4 className="mb-3 text-sm font-semibold">
               Subscribe to our newsletter
             </h4>
-            <p className="mb-3 text-xs text-gray-400">
+            <p className="mb-3 text-xs text-[#a1a1a1]">
               Stay updated on new releases and features, guides, and case
               studies.
             </p>
@@ -132,21 +132,21 @@ export default function Footer() {
           <div className="flex space-x-5">
             <a
               href="#"
-              className="text-gray-400 transition-colors duration-200 hover:text-white"
+              className="text-[#a1a1a1] transition-colors duration-200 hover:text-white"
               aria-label="GitHub"
             >
               <Github className="h-4 w-4" />
             </a>
             <a
               href="#"
-              className="text-gray-400 transition-colors duration-200 hover:text-white"
+              className="text-[#a1a1a1] transition-colors duration-200 hover:text-white"
               aria-label="Twitter"
             >
               <Twitter className="h-4 w-4" />
             </a>
             <a
               href="#"
-              className="text-gray-400 transition-colors duration-200 hover:text-white"
+              className="text-[#a1a1a1] transition-colors duration-200 hover:text-white"
               aria-label="Email"
             >
               <Mail className="h-4 w-4" />
