@@ -481,7 +481,12 @@ export default function Home() {
             <div className="text-sm">Countries</div>
           </div>
         </div> */}
-      <div className="relative mt-[4rem] box-border h-fit w-full bg-contain px-[15rem]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, ease: "easeOut" }}
+        className="relative mt-[4rem] box-border h-fit w-full bg-contain px-[15rem]"
+      >
         <InfiniteSlider gap={24} className="h-fit bg-contain" reverse>
           {listLogo.map((logo) => (
             <Image
@@ -496,7 +501,7 @@ export default function Home() {
         </InfiniteSlider>
         <div className="overlay"></div>
         <div className="overlay right"></div>
-      </div>
+      </motion.div>
       <div className="mx-[12rem] mt-[2rem] w-full border-t"></div>
       <div className="w-full">
         <PhotoFeatures />
