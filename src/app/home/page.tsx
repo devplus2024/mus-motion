@@ -481,8 +481,8 @@ export default function Home() {
             <div className="text-sm">Countries</div>
           </div>
         </div> */}
-      <div className="relative mt-[4rem] box-border h-[80px] w-full px-[15rem]">
-        <InfiniteSlider gap={24} className="h-[80px]" reverse>
+      <div className="relative mt-[4rem] box-border h-fit w-full px-[15rem]">
+        <InfiniteSlider gap={24} className="h-fit" reverse>
           {listLogo.map((logo) => (
             <Image
               key={logo.id}
