@@ -3,7 +3,10 @@ import { Music } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-
+import { Mail, Github, Twitter, Music2 } from "lucide-react";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { toast } from "sonner";
 export default function Footer() {
   const path = usePathname();
   const isWebApp = path === "/webapp";
@@ -11,87 +14,140 @@ export default function Footer() {
   const isChatV2 = path === "/chat-v2";
   const isRadio = path === "/radio";
   const isSignIn = path === "/signin";
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Thanks for subscribing!");
+  };
   return (
     <div
       className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} h-[60px] border-t`}
     >
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          {/* Logo and tagline */}
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center">
-              <Music className="mr-2 h-8 w-8 text-indigo-500" />
-              <span className="text-xl font-bold text-white">MusicSoft</span>
-            </Link>
-            <p className="mt-2 text-sm">
-              Empowering musicians with cutting-edge software solutions.
-            </p>
+      <div className="container mx-auto px-4">
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-5">
+          {/* Logo Column */}
+          <div className="col-span-1">
+            <div className="mb-4 flex items-center gap-2">
+              <Music2 className="h-6 w-6 text-white" />
+              <h3 className="text-xl font-bold">MusicSoft</h3>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {["Products", "Features", "Pricing", "Tutorials", "Support"].map(
+          {/* Resources Column */}
+          <div className="col-span-1">
+            <h4 className="mb-4 font-semibold">Resources</h4>
+            <ul className="space-y-3">
+              {["Docs", "Learn", "Showcase", "Blog", "Analytics"].map(
                 (item) => (
                   <li key={item}>
-                    <Link
-                      href={`/${item.toLowerCase()}`}
-                      className="transition-colors hover:text-indigo-400"
+                    <a
+                      href="#"
+                      className="text-gray-400 transition-colors duration-200 hover:text-white"
                     >
                       {item}
-                    </Link>
+                    </a>
                   </li>
                 ),
               )}
             </ul>
           </div>
 
-          {/* Social Links */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">Connect</h3>
-            <div className="flex space-x-4">
-              {["Facebook", "Twitter", "Instagram", "YouTube"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="text-gray-400 transition-colors hover:text-indigo-400"
-                  aria-label={social}
-                >
-                  {social}
-                </a>
+          {/* More Column */}
+          <div className="col-span-1">
+            <h4 className="mb-4 font-semibold">More</h4>
+            <ul className="space-y-3">
+              {[
+                "Music Store",
+                "Contact Sales",
+                "GitHub",
+                "Releases",
+                "Support",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="text-gray-400 transition-colors duration-200 hover:text-white"
+                  >
+                    {item}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Newsletter Signup */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">
-              Stay Updated
-            </h3>
-            <form className="flex flex-col gap-2 sm:flex-row">
-              <input
+          {/* About Column */}
+          <div className="col-span-1">
+            <h4 className="mb-4 font-semibold">About MusicSoft</h4>
+            <ul className="space-y-3">
+              {[
+                "MusicSoft + AI",
+                "Open Source Software",
+                "GitHub",
+                "Community",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="text-gray-400 transition-colors duration-200 hover:text-white"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter Column */}
+          <div className="col-span-1">
+            <h4 className="mb-4 font-semibold">Subscribe to our newsletter</h4>
+            <p className="mb-4 text-sm text-gray-400">
+              Stay updated on new releases and features, guides, and case
+              studies.
+            </p>
+            <form onSubmit={handleSubscribe} className="space-y-2">
+              <Input
                 type="email"
-                placeholder="Enter your email"
-                className="rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-white focus:border-indigo-500 focus:outline-none"
+                placeholder="you@domain.com"
+                className="border-gray-800 bg-[#111] text-white placeholder:text-gray-500"
+                required
               />
-              <button
+              <Button
                 type="submit"
-                className="rounded-md bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-700"
+                className="w-full bg-white text-black hover:bg-gray-200"
               >
                 Subscribe
-              </button>
+              </Button>
             </form>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} MusicSoft. All rights reserved.
+        {/* Bottom Section */}
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 md:flex-row">
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} MusicSoft, Inc.
           </p>
+          <div className="flex space-x-6">
+            <a
+              href="#"
+              className="text-gray-400 transition-colors duration-200 hover:text-white"
+              aria-label="GitHub"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 transition-colors duration-200 hover:text-white"
+              aria-label="Twitter"
+            >
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 transition-colors duration-200 hover:text-white"
+              aria-label="Email"
+            >
+              <Mail className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
