@@ -490,7 +490,7 @@ export default function Home() {
               height={"80"}
               width={"100"}
               alt={`${logo.src}`}
-              className="aspect-video-[100/80] bg-contain object-cover dark:invert-[1]"
+              className="aspect-[100/80] bg-contain object-cover dark:invert-[1]"
             ></Image>
           ))}
         </InfiniteSlider>
