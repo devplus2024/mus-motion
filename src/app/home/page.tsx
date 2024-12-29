@@ -490,7 +490,7 @@ export default function Home() {
               height={"80"}
               width={"100"}
               alt={`${logo.src}`}
-              className="h-[80px] dark:invert-[1]"
+              className="h-[50px] dark:invert-[1]"
             ></Image>
           ))}
         </InfiniteSlider>
