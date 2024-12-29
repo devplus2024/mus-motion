@@ -467,7 +467,12 @@ export const Navigation = (): JSX.Element => {
               </LinkPreview>
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
-            <div className="flex items-center justify-center gap-2">
+            <motion.div
+              initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+              animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="flex items-center justify-center gap-2"
+            >
               {/* <div className="flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]">
                 <GitHub />
               </div>
@@ -578,7 +583,7 @@ export const Navigation = (): JSX.Element => {
 
               <ThemeToggle />
               <CommandMenu />
-            </div>
+            </motion.div>
             <div className="flex items-center gap-[1rem]">
               <Link
                 className="flex items-center justify-center gap-3"
