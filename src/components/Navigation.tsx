@@ -190,7 +190,8 @@ export const Navigation = (): JSX.Element => {
       const isBottom =
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight;
-      setIsScrolled(isScrolled || isBottom);
+      setIsScrolled(isScrolled);
+      setIsBottom(isBottom);
     };
 
     window.addEventListener("scroll", handleScroll);
