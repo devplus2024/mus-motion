@@ -278,7 +278,7 @@ export default function PhotoFeatures() {
               </div>
             </motion.div>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-[3rem] flex flex-col items-center justify-center gap-4 sm:flex-row">
               {/* <Button size="lg" className="w-full text-black sm:w-auto">
                 Start Free Trial
               </Button> */}
