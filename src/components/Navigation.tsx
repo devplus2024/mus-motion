@@ -191,7 +191,10 @@ export const Navigation = (): JSX.Element => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${
         isWebfilmPath || isWebAppPath || isAi || isChatV2 || isSignIn
           ? "webfilm-class"
@@ -628,7 +631,7 @@ export const Navigation = (): JSX.Element => {
           <div className="absolute left-0 top-0 z-[3] rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
       </nav>
-    </div>
+    </motion.div>
   );
 };
 const ListItem = React.forwardRef<
