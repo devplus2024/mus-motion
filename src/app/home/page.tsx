@@ -208,16 +208,17 @@ export default function Home() {
     },
   ];
   return (
-    <SmoothScroll>
-      <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
-        <TailwindcssButton />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
-        >
-          {/* <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
+    <>
+      <SmoothScroll>
+        <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
+          <TailwindcssButton />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+            animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
+          >
+            {/* <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
             <div className="flex items-center gap-[1rem]">
               <div className="flex items-center gap-[2rem]">
                 <HoverCard>
@@ -414,7 +415,7 @@ export default function Home() {
               </p>
             </div>
           </div> */}
-          {/* <div className="px-[1rem]">
+            {/* <div className="px-[1rem]">
             <Carousel />
             <div className="relative rounded-lg">
              
@@ -431,44 +432,44 @@ export default function Home() {
               />
             </div>
           </div> */}
-          <div className="flex flex-col items-center justify-center gap-[2rem]">
-            <h1 className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]">
-              The next generation of audio collaboration.
-            </h1>
-            <h1 className="w-[420px] text-center">
-              Dive into a seamless music experience with our cutting-edge
-              software. Unleash your creativity, manage your playlists, and
-              explore a universe of sounds.
-            </h1>
-          </div>
-          <div className="flex gap-[2rem]">
-            <DownloadButton />
-            <Link href="/webapp">
-              <Button className="">
-                <svg
-                  className="mr-2 h-4 w-4"
-                  data-testid="geist-icon"
-                  height={16}
-                  strokeLinejoin="round"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  style={{ color: "currentcolor" }}
-                >
-                  <path
-                    fill="#666"
-                    fillRule="evenodd"
-                    d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6 11l5.5-3L6 5v6Z"
-                    clipRule="evenodd"
-                    style={{ fill: "currentColor" }}
-                  />
-                </svg>
-                {/* <Globe  /> */}
-                Watch Demo Now
-              </Button>
-            </Link>
-          </div>
-        </motion.div>
-        {/* <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">
+            <div className="flex flex-col items-center justify-center gap-[2rem]">
+              <h1 className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]">
+                The next generation of audio collaboration.
+              </h1>
+              <h1 className="w-[420px] text-center">
+                Dive into a seamless music experience with our cutting-edge
+                software. Unleash your creativity, manage your playlists, and
+                explore a universe of sounds.
+              </h1>
+            </div>
+            <div className="flex gap-[2rem]">
+              <DownloadButton />
+              <Link href="/webapp">
+                <Button className="">
+                  <svg
+                    className="mr-2 h-4 w-4"
+                    data-testid="geist-icon"
+                    height={16}
+                    strokeLinejoin="round"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    style={{ color: "currentcolor" }}
+                  >
+                    <path
+                      fill="#666"
+                      fillRule="evenodd"
+                      d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6 11l5.5-3L6 5v6Z"
+                      clipRule="evenodd"
+                      style={{ fill: "currentColor" }}
+                    />
+                  </svg>
+                  {/* <Globe  /> */}
+                  Watch Demo Now
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+          {/* <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">
           <div className="transform rounded-lg border border-white/10 bg-black px-6 py-2 backdrop-blur-sm transition-all duration-200 hover:bg-white/10">
             <div className="text-3xl font-bold text-white">100K+</div>
             <div className="text-sm">Active Users</div>
@@ -482,432 +483,536 @@ export default function Home() {
             <div className="text-sm">Countries</div>
           </div>
         </div> */}
-        <div className="relative mt-[4rem] w-full px-[15rem]">
-          <InfiniteSlider gap={24} reverse>
-            {listLogo.map((logo) => (
-              <Image
-                key={logo.id}
-                src={`/${logo.src}.svg`}
-                height={"80"}
-                width={"100"}
-                alt={`${logo.src}`}
-                className="dark:invert-[1]"
-              ></Image>
-            ))}
-          </InfiniteSlider>
-          <div className="overlay"></div>
-          <div className="overlay right"></div>
-        </div>
-        <div className="mx-[12rem] mt-[2rem] w-full border-t"></div>
-        <div className="w-full">
-          <PhotoFeatures />
-        </div>
-        <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
-          <ChartFirstYear />
-          <ChartLastYear />
-        </div>
-        <div
-          className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
-          id="musicContent"
-        >
-          <div className="mb-[6rem] mt-[4rem] flex justify-center">
-            <div className="flex h-[1020px] w-[1300px] flex-col rounded-lg border dark:border-[#202020]">
-              <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
-                <Menubar className="rounded-t-lg border-none dark:bg-black">
-                  <MenubarMenu>
-                    <MenubarTrigger>Stroma</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem>About Stroma</MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        Preferences<MenubarShortcut>⌘,</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        Hide Stroma<MenubarShortcut>⇧⌘H</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Quit Stroma
-                        <MenubarShortcut>⌘Q</MenubarShortcut>
-                      </MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                  <MenubarMenu>
-                    <MenubarTrigger>File</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarSub>
-                        <MenubarSubTrigger>New</MenubarSubTrigger>
-                        <MenubarSubContent>
-                          <MenubarItem>Playlist</MenubarItem>
-                          <MenubarItem>Playlist from Selection</MenubarItem>
-                          <MenubarItem>Smart Playlist</MenubarItem>
-                          <MenubarItem>Playlist Folder</MenubarItem>
-                          <MenubarItem>Genius Playlist</MenubarItem>
-                        </MenubarSubContent>
-                      </MenubarSub>
-                      <MenubarItem>
-                        Open Stream Url<MenubarShortcut>⌘U</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Close Window <MenubarShortcut>⌘W</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarSub>
-                        <MenubarSubTrigger>Libary</MenubarSubTrigger>
-                        <MenubarSubContent>
-                          <MenubarItem>Update Cloud Library</MenubarItem>
-                          <MenubarItem>Update Genius</MenubarItem>
-                          <MenubarSeparator />
-                          <MenubarItem>Organize Library</MenubarItem>
-                          <MenubarItem>Export Library</MenubarItem>
-                          <MenubarSeparator />
-                          <MenubarItem>Import Playlist</MenubarItem>
-                          <MenubarItem>Export Playlist</MenubarItem>
-                          <MenubarItem>Show Duplicate Items</MenubarItem>
-                          <MenubarSeparator />
-                          <MenubarItem>Get Album ArtWord</MenubarItem>
-                          <MenubarItem>Get Track Name</MenubarItem>
-                        </MenubarSubContent>
-                      </MenubarSub>
-                      <MenubarItem>
-                        Import... <MenubarShortcut>⌘O</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>Burn Playlist to Dis... </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        Show in Finder
-                        <MenubarShortcut>⇧⌘R</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>Convert...</MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>Page Setup</MenubarItem>
-                      <MenubarItem>
-                        Print
-                        <MenubarShortcut>⌘P</MenubarShortcut>
-                      </MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                  <MenubarMenu>
-                    <MenubarTrigger>Edit</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem>
-                        Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        Cut <MenubarShortcut>⌘X</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Copy <MenubarShortcut>⌘C</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Paste <MenubarShortcut>⌘V</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        Select All <MenubarShortcut>⌘A</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Deselect All<MenubarShortcut>⇧⌘A</MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        Smart Distation{" "}
-                        <MenubarShortcut>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            className="h-4 w-4"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
-                            <circle cx="17" cy="7" r="5" />
-                          </svg>
-                        </MenubarShortcut>
-                      </MenubarItem>
-                      <MenubarItem>
-                        Emoji & Symbols{" "}
-                        <MenubarShortcut>
-                          {" "}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            className="h-4 w-4"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                          </svg>
-                        </MenubarShortcut>
-                      </MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                  <MenubarMenu>
-                    <MenubarTrigger>View</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarCheckboxItem>
-                        Show Playing Next
-                      </MenubarCheckboxItem>
-                      <MenubarCheckboxItem checked>
-                        Show Lyrics
-                      </MenubarCheckboxItem>
-                      <MenubarSeparator />
-                      <MenubarItem inset>Show Status Bar</MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem inset>Enter Fullscreen</MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem inset>Hide Sidebar</MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                  <MenubarMenu>
-                    <MenubarTrigger>Account</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem inset>Switch Account</MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarRadioGroup
-                        defaultValue="benoit"
-                        value={position}
-                        onValueChange={setPosition}
-                      >
-                        <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                        <MenubarRadioItem value="benoit">
-                          Benoit
-                        </MenubarRadioItem>
-                        <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-                      </MenubarRadioGroup>
-                      <MenubarSeparator />
-                      <MenubarItem inset>Manage Family...</MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem inset>Add Account...</MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                </Menubar>
-              </div>
-              <div className="flex h-full w-full">
-                <Tabs
-                  defaultValue="listennow_parent"
-                  className="flex w-full rounded-t-none rounded-bl-lg rounded-br-none"
-                >
-                  <TabsList className="flex h-full w-[238px] flex-col justify-start gap-[1rem] rounded-t-none rounded-bl-lg rounded-br-none border-r bg-white pt-[24px] dark:border-r-[#202020] dark:bg-black">
-                    <div>
-                      <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold dark:text-white">
-                        Discorver
-                      </h1>
-                    </div>
-                    <TabsTrigger
-                      value="listennow_parent"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <CirclePlay className="h-4 w-4" />
-                      <p className="text-md">Listen Now</p>
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="browser_parent"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <LayoutGrid className="h-4 w-4" />
-                      <p>Browser</p>
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="radio_parent"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <Radio className="h-4 w-4" />
-                      <p>Radio</p>
-                    </TabsTrigger>
-                    <div>
-                      <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold dark:text-white">
-                        Library
-                      </h1>
-                    </div>
-                    <TabsTrigger
-                      value="playlist"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <ListMusic className="h-4 w-4" />
-                      <p>Playlist</p>
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="song"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <Music2 className="h-4 w-4" />
-                      <p>Song</p>
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="make_for_you"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <User className="h-4 w-4" />
-                      <p>Make for You</p>
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="artists"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="h-4 w-4"
-                      >
-                        <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path>
-                        <circle cx="17" cy="7" r="5"></circle>
-                      </svg>
-                      <p>Artists</p>
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="albums"
-                      className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                    >
-                      <Library className="h-4 w-4" />
-                      <p>Albums</p>
-                    </TabsTrigger>
-                    <div>
-                      <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold text-white">
-                        Library
-                      </h1>
-                    </div>
-                    <ScrollArea className="h-[310px] w-[230px] pl-[1rem]">
-                      <div className="text-md flex flex-col gap-[1rem]">
-                        {playlist.map((playlist: PlayList) => (
-                          <TabsTrigger
-                            key={playlist.id}
-                            value={`${playlist.value}`}
-                            className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
-                          >
-                            <ListMusic className="h-4 w-4" />
-                            <p>{playlist.name}</p>
-                          </TabsTrigger>
-                        ))}
-                      </div>
-                    </ScrollArea>
-                  </TabsList>
-                  <TabsContent
-                    value="listennow_parent"
-                    className="h-full w-full"
+          <div className="relative mt-[4rem] w-full px-[15rem]">
+            <InfiniteSlider gap={24} reverse>
+              {listLogo.map((logo) => (
+                <Image
+                  key={logo.id}
+                  src={`/${logo.src}.svg`}
+                  height={"80"}
+                  width={"100"}
+                  alt={`${logo.src}`}
+                  className="dark:invert-[1]"
+                ></Image>
+              ))}
+            </InfiniteSlider>
+            <div className="overlay"></div>
+            <div className="overlay right"></div>
+          </div>
+          <div className="mx-[12rem] mt-[2rem] w-full border-t"></div>
+          <div className="w-full">
+            <PhotoFeatures />
+          </div>
+          <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
+            <ChartFirstYear />
+            <ChartLastYear />
+          </div>
+          <div
+            className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
+            id="musicContent"
+          >
+            <div className="mb-[6rem] mt-[4rem] flex justify-center">
+              <div className="flex h-[1020px] w-[1300px] flex-col rounded-lg border dark:border-[#202020]">
+                <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
+                  <Menubar className="rounded-t-lg border-none dark:bg-black">
+                    <MenubarMenu>
+                      <MenubarTrigger>Stroma</MenubarTrigger>
+                      <MenubarContent>
+                        <MenubarItem>About Stroma</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>
+                          Preferences<MenubarShortcut>⌘,</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>
+                          Hide Stroma<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Quit Stroma
+                          <MenubarShortcut>⌘Q</MenubarShortcut>
+                        </MenubarItem>
+                      </MenubarContent>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                      <MenubarTrigger>File</MenubarTrigger>
+                      <MenubarContent>
+                        <MenubarSub>
+                          <MenubarSubTrigger>New</MenubarSubTrigger>
+                          <MenubarSubContent>
+                            <MenubarItem>Playlist</MenubarItem>
+                            <MenubarItem>Playlist from Selection</MenubarItem>
+                            <MenubarItem>Smart Playlist</MenubarItem>
+                            <MenubarItem>Playlist Folder</MenubarItem>
+                            <MenubarItem>Genius Playlist</MenubarItem>
+                          </MenubarSubContent>
+                        </MenubarSub>
+                        <MenubarItem>
+                          Open Stream Url<MenubarShortcut>⌘U</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Close Window <MenubarShortcut>⌘W</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarSub>
+                          <MenubarSubTrigger>Libary</MenubarSubTrigger>
+                          <MenubarSubContent>
+                            <MenubarItem>Update Cloud Library</MenubarItem>
+                            <MenubarItem>Update Genius</MenubarItem>
+                            <MenubarSeparator />
+                            <MenubarItem>Organize Library</MenubarItem>
+                            <MenubarItem>Export Library</MenubarItem>
+                            <MenubarSeparator />
+                            <MenubarItem>Import Playlist</MenubarItem>
+                            <MenubarItem>Export Playlist</MenubarItem>
+                            <MenubarItem>Show Duplicate Items</MenubarItem>
+                            <MenubarSeparator />
+                            <MenubarItem>Get Album ArtWord</MenubarItem>
+                            <MenubarItem>Get Track Name</MenubarItem>
+                          </MenubarSubContent>
+                        </MenubarSub>
+                        <MenubarItem>
+                          Import... <MenubarShortcut>⌘O</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>Burn Playlist to Dis... </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>
+                          Show in Finder
+                          <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>Convert...</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Page Setup</MenubarItem>
+                        <MenubarItem>
+                          Print
+                          <MenubarShortcut>⌘P</MenubarShortcut>
+                        </MenubarItem>
+                      </MenubarContent>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                      <MenubarTrigger>Edit</MenubarTrigger>
+                      <MenubarContent>
+                        <MenubarItem>
+                          Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>
+                          Cut <MenubarShortcut>⌘X</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Copy <MenubarShortcut>⌘C</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Paste <MenubarShortcut>⌘V</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>
+                          Select All <MenubarShortcut>⌘A</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Deselect All<MenubarShortcut>⇧⌘A</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>
+                          Smart Distation{" "}
+                          <MenubarShortcut>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              className="h-4 w-4"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
+                              <circle cx="17" cy="7" r="5" />
+                            </svg>
+                          </MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                          Emoji & Symbols{" "}
+                          <MenubarShortcut>
+                            {" "}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              className="h-4 w-4"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle cx="12" cy="12" r="10" />
+                              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                          </MenubarShortcut>
+                        </MenubarItem>
+                      </MenubarContent>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                      <MenubarTrigger>View</MenubarTrigger>
+                      <MenubarContent>
+                        <MenubarCheckboxItem>
+                          Show Playing Next
+                        </MenubarCheckboxItem>
+                        <MenubarCheckboxItem checked>
+                          Show Lyrics
+                        </MenubarCheckboxItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Show Status Bar</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Enter Fullscreen</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Hide Sidebar</MenubarItem>
+                      </MenubarContent>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                      <MenubarTrigger>Account</MenubarTrigger>
+                      <MenubarContent>
+                        <MenubarItem inset>Switch Account</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarRadioGroup
+                          defaultValue="benoit"
+                          value={position}
+                          onValueChange={setPosition}
+                        >
+                          <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+                          <MenubarRadioItem value="benoit">
+                            Benoit
+                          </MenubarRadioItem>
+                          <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
+                        </MenubarRadioGroup>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Manage Family...</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Add Account...</MenubarItem>
+                      </MenubarContent>
+                    </MenubarMenu>
+                  </Menubar>
+                </div>
+                <div className="flex h-full w-full">
+                  <Tabs
+                    defaultValue="listennow_parent"
+                    className="flex w-full rounded-t-none rounded-bl-lg rounded-br-none"
                   >
-                    <div className="flex w-full flex-col">
-                      <div className="mx-[2rem] mt-[1rem] flex justify-between">
-                        <div className="">
-                          <Tabs defaultValue="music" className="w-[400px]">
-                            <TabsList>
-                              <TabsTrigger value="music">Music</TabsTrigger>
-                              <TabsTrigger value="podcasts">
-                                Podcasts
-                              </TabsTrigger>
-                              <TabsTrigger value="live">Live</TabsTrigger>
-                            </TabsList>
-                            <TabsContent value="music">
-                              <div className="mt-[2rem]">
-                                <div className="">
-                                  <h1 className="text-2xl font-bold">
-                                    Listen Now
-                                  </h1>
-                                  <p className="text-sm text-[#a1a1a1]">
-                                    Top picks for you. Updated daily.
-                                  </p>
-                                </div>
-                                <div>
-                                  <ScrollArea className="mt-[2rem] h-[450px] w-[1000px] border-t pt-[2rem] dark:border-t-[#202020]">
-                                    <div className="flex gap-[3rem]">
-                                      {list.slice(0, 4).map((list: List) => (
-                                        <div key={list.id}>
-                                          <ContextMenu>
-                                            <ContextMenuTrigger>
-                                              <Image
-                                                src={`/image/${list.src}`}
-                                                alt="Picture of the author"
-                                                width={1300}
-                                                height={1200}
-                                                className="h-[350px] max-w-[255px] rounded-lg"
-                                              />
-                                            </ContextMenuTrigger>
-                                            <ContextMenuContent className="w-[11rem]">
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Add to Library
-                                              </ContextMenuItem>
-                                              <ContextMenuSub>
-                                                <ContextMenuSubTrigger
+                    <TabsList className="flex h-full w-[238px] flex-col justify-start gap-[1rem] rounded-t-none rounded-bl-lg rounded-br-none border-r bg-white pt-[24px] dark:border-r-[#202020] dark:bg-black">
+                      <div>
+                        <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold dark:text-white">
+                          Discorver
+                        </h1>
+                      </div>
+                      <TabsTrigger
+                        value="listennow_parent"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <CirclePlay className="h-4 w-4" />
+                        <p className="text-md">Listen Now</p>
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="browser_parent"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <LayoutGrid className="h-4 w-4" />
+                        <p>Browser</p>
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="radio_parent"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <Radio className="h-4 w-4" />
+                        <p>Radio</p>
+                      </TabsTrigger>
+                      <div>
+                        <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold dark:text-white">
+                          Library
+                        </h1>
+                      </div>
+                      <TabsTrigger
+                        value="playlist"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <ListMusic className="h-4 w-4" />
+                        <p>Playlist</p>
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="song"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <Music2 className="h-4 w-4" />
+                        <p>Song</p>
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="make_for_you"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <User className="h-4 w-4" />
+                        <p>Make for You</p>
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="artists"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          className="h-4 w-4"
+                        >
+                          <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path>
+                          <circle cx="17" cy="7" r="5"></circle>
+                        </svg>
+                        <p>Artists</p>
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="albums"
+                        className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                      >
+                        <Library className="h-4 w-4" />
+                        <p>Albums</p>
+                      </TabsTrigger>
+                      <div>
+                        <h1 className="flex w-[190px] items-center justify-start gap-[1rem] pl-[12px] text-xl font-bold text-white">
+                          Library
+                        </h1>
+                      </div>
+                      <ScrollArea className="h-[310px] w-[230px] pl-[1rem]">
+                        <div className="text-md flex flex-col gap-[1rem]">
+                          {playlist.map((playlist: PlayList) => (
+                            <TabsTrigger
+                              key={playlist.id}
+                              value={`${playlist.value}`}
+                              className="-pl-[12px] flex w-[190px] items-center justify-start gap-[1rem]"
+                            >
+                              <ListMusic className="h-4 w-4" />
+                              <p>{playlist.name}</p>
+                            </TabsTrigger>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </TabsList>
+                    <TabsContent
+                      value="listennow_parent"
+                      className="h-full w-full"
+                    >
+                      <div className="flex w-full flex-col">
+                        <div className="mx-[2rem] mt-[1rem] flex justify-between">
+                          <div className="">
+                            <Tabs defaultValue="music" className="w-[400px]">
+                              <TabsList>
+                                <TabsTrigger value="music">Music</TabsTrigger>
+                                <TabsTrigger value="podcasts">
+                                  Podcasts
+                                </TabsTrigger>
+                                <TabsTrigger value="live">Live</TabsTrigger>
+                              </TabsList>
+                              <TabsContent value="music">
+                                <div className="mt-[2rem]">
+                                  <div className="">
+                                    <h1 className="text-2xl font-bold">
+                                      Listen Now
+                                    </h1>
+                                    <p className="text-sm text-[#a1a1a1]">
+                                      Top picks for you. Updated daily.
+                                    </p>
+                                  </div>
+                                  <div>
+                                    <ScrollArea className="mt-[2rem] h-[450px] w-[1000px] border-t pt-[2rem] dark:border-t-[#202020]">
+                                      <div className="flex gap-[3rem]">
+                                        {list.slice(0, 4).map((list: List) => (
+                                          <div key={list.id}>
+                                            <ContextMenu>
+                                              <ContextMenuTrigger>
+                                                <Image
+                                                  src={`/image/${list.src}`}
+                                                  alt="Picture of the author"
+                                                  width={1300}
+                                                  height={1200}
+                                                  className="h-[350px] max-w-[255px] rounded-lg"
+                                                />
+                                              </ContextMenuTrigger>
+                                              <ContextMenuContent className="w-[11rem]">
+                                                <ContextMenuItem
                                                   inset
                                                   className="pl-[8px]"
                                                 >
-                                                  Add to Playlist
-                                                </ContextMenuSubTrigger>
-                                                <ContextMenuSubContent className="w-48">
-                                                  <ContextMenuItem>
-                                                    <CirclePlus className="mr-2 h-4 w-4" />
-                                                    New Playlist{" "}
-                                                  </ContextMenuItem>
-                                                  <ContextMenuSeparator />
-                                                  {playlist.map(
-                                                    (playlist: PlayList) => (
-                                                      <ContextMenuItem
-                                                        key={playlist.id}
-                                                      >
-                                                        <ListMusic className="mr-2 h-4 w-4" />
-                                                        {playlist.name}
-                                                      </ContextMenuItem>
-                                                    ),
-                                                  )}
-                                                </ContextMenuSubContent>
-                                              </ContextMenuSub>
-                                              <ContextMenuSeparator />
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Play Next
-                                              </ContextMenuItem>
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Play After
-                                              </ContextMenuItem>
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Create Station
-                                              </ContextMenuItem>
-                                              <ContextMenuSeparator />
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Like
-                                              </ContextMenuItem>
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Share
-                                              </ContextMenuItem>
-                                            </ContextMenuContent>
-                                          </ContextMenu>
+                                                  Add to Library
+                                                </ContextMenuItem>
+                                                <ContextMenuSub>
+                                                  <ContextMenuSubTrigger
+                                                    inset
+                                                    className="pl-[8px]"
+                                                  >
+                                                    Add to Playlist
+                                                  </ContextMenuSubTrigger>
+                                                  <ContextMenuSubContent className="w-48">
+                                                    <ContextMenuItem>
+                                                      <CirclePlus className="mr-2 h-4 w-4" />
+                                                      New Playlist{" "}
+                                                    </ContextMenuItem>
+                                                    <ContextMenuSeparator />
+                                                    {playlist.map(
+                                                      (playlist: PlayList) => (
+                                                        <ContextMenuItem
+                                                          key={playlist.id}
+                                                        >
+                                                          <ListMusic className="mr-2 h-4 w-4" />
+                                                          {playlist.name}
+                                                        </ContextMenuItem>
+                                                      ),
+                                                    )}
+                                                  </ContextMenuSubContent>
+                                                </ContextMenuSub>
+                                                <ContextMenuSeparator />
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Play Next
+                                                </ContextMenuItem>
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Play After
+                                                </ContextMenuItem>
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Create Station
+                                                </ContextMenuItem>
+                                                <ContextMenuSeparator />
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Like
+                                                </ContextMenuItem>
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Share
+                                                </ContextMenuItem>
+                                              </ContextMenuContent>
+                                            </ContextMenu>
+                                            <div key={list.id}>
+                                              <p className="mt-[0.5rem] text-sm">
+                                                {list.title}
+                                              </p>
+                                              <p className="text-xs text-[#a1a1a1]">
+                                                {list.artist}
+                                              </p>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                      <ScrollBar orientation="horizontal" />
+                                    </ScrollArea>
+                                  </div>
+                                </div>
+                                <div className="mt-[2rem]">
+                                  <div className="">
+                                    <h1 className="text-2xl font-bold">
+                                      Make for You
+                                    </h1>
+                                    <p className="text-sm text-[#a1a1a1]">
+                                      Your personal playlists. Updated daily.
+                                    </p>
+                                  </div>
+                                  <div>
+                                    <ScrollArea className="mt-[2rem] w-[1000px] border-t pt-[2rem] dark:border-t-[#202020]">
+                                      <div className="flex gap-[1.8rem]">
+                                        {list.slice(4).map((list: List) => (
                                           <div key={list.id}>
+                                            <ContextMenu>
+                                              <ContextMenuTrigger>
+                                                <Image
+                                                  src={`/image/${list.src}`}
+                                                  alt="Picture of the author"
+                                                  width={1300}
+                                                  height={1200}
+                                                  className="h-[150px] w-[150px] rounded-lg"
+                                                />
+                                              </ContextMenuTrigger>
+                                              <ContextMenuContent className="w-[11rem]">
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Add to Library
+                                                </ContextMenuItem>
+                                                <ContextMenuSub>
+                                                  <ContextMenuSubTrigger
+                                                    inset
+                                                    className="pl-[8px]"
+                                                  >
+                                                    Add to Playlist
+                                                  </ContextMenuSubTrigger>
+                                                  <ContextMenuSubContent className="w-48">
+                                                    <ContextMenuItem>
+                                                      <CirclePlus className="mr-2 h-4 w-4" />
+                                                      New Playlist{" "}
+                                                    </ContextMenuItem>
+                                                    <ContextMenuSeparator />
+                                                    {playlist.map(
+                                                      (playlist: PlayList) => (
+                                                        <ContextMenuItem
+                                                          key={playlist.id}
+                                                        >
+                                                          <ListMusic className="mr-2 h-4 w-4" />
+                                                          {playlist.name}
+                                                        </ContextMenuItem>
+                                                      ),
+                                                    )}
+                                                  </ContextMenuSubContent>
+                                                </ContextMenuSub>
+                                                <ContextMenuSeparator />
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Play Next
+                                                </ContextMenuItem>
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Play After
+                                                </ContextMenuItem>
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Create Station
+                                                </ContextMenuItem>
+                                                <ContextMenuSeparator />
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Like
+                                                </ContextMenuItem>
+                                                <ContextMenuItem
+                                                  inset
+                                                  className="pl-[8px]"
+                                                >
+                                                  Share
+                                                </ContextMenuItem>
+                                              </ContextMenuContent>
+                                            </ContextMenu>
                                             <p className="mt-[0.5rem] text-sm">
                                               {list.title}
                                             </p>
@@ -915,486 +1020,386 @@ export default function Home() {
                                               {list.artist}
                                             </p>
                                           </div>
-                                        </div>
-                                      ))}
-                                    </div>
-                                    <ScrollBar orientation="horizontal" />
-                                  </ScrollArea>
+                                        ))}
+                                      </div>
+                                      <ScrollBar orientation="horizontal" />
+                                    </ScrollArea>
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="mt-[2rem]">
-                                <div className="">
-                                  <h1 className="text-2xl font-bold">
-                                    Make for You
-                                  </h1>
-                                  <p className="text-sm text-[#a1a1a1]">
-                                    Your personal playlists. Updated daily.
-                                  </p>
-                                </div>
-                                <div>
-                                  <ScrollArea className="mt-[2rem] w-[1000px] border-t pt-[2rem] dark:border-t-[#202020]">
-                                    <div className="flex gap-[1.8rem]">
-                                      {list.slice(4).map((list: List) => (
-                                        <div key={list.id}>
-                                          <ContextMenu>
-                                            <ContextMenuTrigger>
-                                              <Image
-                                                src={`/image/${list.src}`}
-                                                alt="Picture of the author"
-                                                width={1300}
-                                                height={1200}
-                                                className="h-[150px] w-[150px] rounded-lg"
-                                              />
-                                            </ContextMenuTrigger>
-                                            <ContextMenuContent className="w-[11rem]">
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Add to Library
-                                              </ContextMenuItem>
-                                              <ContextMenuSub>
-                                                <ContextMenuSubTrigger
-                                                  inset
-                                                  className="pl-[8px]"
-                                                >
-                                                  Add to Playlist
-                                                </ContextMenuSubTrigger>
-                                                <ContextMenuSubContent className="w-48">
-                                                  <ContextMenuItem>
-                                                    <CirclePlus className="mr-2 h-4 w-4" />
-                                                    New Playlist{" "}
-                                                  </ContextMenuItem>
-                                                  <ContextMenuSeparator />
-                                                  {playlist.map(
-                                                    (playlist: PlayList) => (
-                                                      <ContextMenuItem
-                                                        key={playlist.id}
-                                                      >
-                                                        <ListMusic className="mr-2 h-4 w-4" />
-                                                        {playlist.name}
-                                                      </ContextMenuItem>
-                                                    ),
-                                                  )}
-                                                </ContextMenuSubContent>
-                                              </ContextMenuSub>
-                                              <ContextMenuSeparator />
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Play Next
-                                              </ContextMenuItem>
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Play After
-                                              </ContextMenuItem>
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Create Station
-                                              </ContextMenuItem>
-                                              <ContextMenuSeparator />
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Like
-                                              </ContextMenuItem>
-                                              <ContextMenuItem
-                                                inset
-                                                className="pl-[8px]"
-                                              >
-                                                Share
-                                              </ContextMenuItem>
-                                            </ContextMenuContent>
-                                          </ContextMenu>
-                                          <p className="mt-[0.5rem] text-sm">
-                                            {list.title}
-                                          </p>
-                                          <p className="text-xs text-[#a1a1a1]">
-                                            {list.artist}
-                                          </p>
-                                        </div>
-                                      ))}
-                                    </div>
-                                    <ScrollBar orientation="horizontal" />
-                                  </ScrollArea>
-                                </div>
-                              </div>
-                            </TabsContent>
-                            <TabsContent value="podcasts">
-                              Change your password here.
-                            </TabsContent>
-                            <TabsContent value="live">
-                              Change your password here.
-                            </TabsContent>
-                          </Tabs>
-                        </div>
-                        <div>
-                          <Button>
-                            <CirclePlus className="mr-2 h-4 w-4" /> Add Music
-                          </Button>
+                              </TabsContent>
+                              <TabsContent value="podcasts">
+                                Change your password here.
+                              </TabsContent>
+                              <TabsContent value="live">
+                                Change your password here.
+                              </TabsContent>
+                            </Tabs>
+                          </div>
+                          <div>
+                            <Button>
+                              <CirclePlus className="mr-2 h-4 w-4" /> Add Music
+                            </Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </TabsContent>
-                  <TabsContent
-                    value="browser_parent"
-                    className="mt-0 h-full w-full"
-                  >
-                    <div className="flex h-full w-full items-center">
-                      <Tabs
-                        defaultValue="all"
-                        className="flex h-full w-full flex-col pt-[2rem]"
-                      >
-                        <TabsList className="ml-[33px] w-fit">
-                          <TabsTrigger value="all">All</TabsTrigger>
-                          <TabsTrigger value="united_state">
-                            United State
-                          </TabsTrigger>
-                          <TabsTrigger value="on_world">On World</TabsTrigger>
-                        </TabsList>
-                        <TabsContent value="all" className="h-full w-full">
-                          <div className="flex h-full w-full flex-col justify-between gap-[1rem]">
-                            <ScrollArea className="mt-[1rem] h-[800px]">
-                              <div>
-                                <h1 className="ml-[33px] text-xl font-bold">
-                                  New Releases
-                                </h1>
-                                <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                    </TabsContent>
+                    <TabsContent
+                      value="browser_parent"
+                      className="mt-0 h-full w-full"
+                    >
+                      <div className="flex h-full w-full items-center">
+                        <Tabs
+                          defaultValue="all"
+                          className="flex h-full w-full flex-col pt-[2rem]"
+                        >
+                          <TabsList className="ml-[33px] w-fit">
+                            <TabsTrigger value="all">All</TabsTrigger>
+                            <TabsTrigger value="united_state">
+                              United State
+                            </TabsTrigger>
+                            <TabsTrigger value="on_world">On World</TabsTrigger>
+                          </TabsList>
+                          <TabsContent value="all" className="h-full w-full">
+                            <div className="flex h-full w-full flex-col justify-between gap-[1rem]">
+                              <ScrollArea className="mt-[1rem] h-[800px]">
+                                <div>
+                                  <h1 className="ml-[33px] text-xl font-bold">
+                                    New Releases
+                                  </h1>
+                                  <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <h1 className="ml-[33px] mt-[1rem] text-xl font-bold">
-                                  New Releases
-                                </h1>
-                                <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div>
-                                <h1 className="ml-[33px] mt-[1rem] text-xl font-bold">
-                                  New Releases
-                                </h1>
-                                <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                <div>
+                                  <h1 className="ml-[33px] mt-[1rem] text-xl font-bold">
+                                    New Releases
+                                  </h1>
+                                  <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <Skeleton className="h-[100px] w-[100px]"></Skeleton>
-                                    <div className="flex h-[100px] flex-col justify-between">
-                                      <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
-                                      <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
+                                <div>
+                                  <h1 className="ml-[33px] mt-[1rem] text-xl font-bold">
+                                    New Releases
+                                  </h1>
+                                  <div className="ml-[33px] mt-[1rem] grid w-[970px] grid-cols-3 gap-x-[2rem] gap-y-[2rem]">
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                      <Skeleton className="h-[100px] w-[100px]"></Skeleton>
+                                      <div className="flex h-[100px] flex-col justify-between">
+                                        <Skeleton className="h-[2rem] w-[12rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[8rem]"></Skeleton>
+                                        <Skeleton className="h-[1rem] w-[5rem]"></Skeleton>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </ScrollArea>
+                              <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
+                                <div className="flex gap-[2rem]">
+                                  <SkipBack />
+                                  <PlayCircle />
+                                  <SkipForward />
+                                </div>
                               </div>
-                            </ScrollArea>
-                            <div className="flex h-[70px] w-full items-center justify-center border-t dark:border-t-[#202020]">
-                              <div className="flex gap-[2rem]">
+                            </div>
+                          </TabsContent>
+                        </Tabs>
+                      </div>
+                    </TabsContent>
+                    <TabsContent value="radio_parent">
+                      <div className="flex w-full flex-col">aa</div>
+                    </TabsContent>
+                    <TabsContent value="recently_added">
+                      <div className="flex w-full flex-col"></div>
+                    </TabsContent>
+                    <TabsContent
+                      value="playlist"
+                      className="mt-0 h-full w-full"
+                    >
+                      <div className="h-full w-full">
+                        <Tabs
+                          defaultValue="gio_list"
+                          className="flex h-full w-full flex-col justify-between"
+                        >
+                          <TabsContent
+                            value="gio_list"
+                            className="mt-0 flex h-full w-full items-center justify-center"
+                          >
+                            <div className="flex flex-col gap-[2rem]">
+                              <Image
+                                width={400}
+                                height={300}
+                                alt="Gio_Cover_Image"
+                                src="/1678963583887_500.jpg"
+                                className="h-[300px] w-[300px] rounded-md"
+                              />
+                              <div className="flex justify-between">
                                 <SkipBack />
-                                <PlayCircle />
+                                <Play />
                                 <SkipForward />
                               </div>
                             </div>
-                          </div>
-                        </TabsContent>
-                      </Tabs>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="radio_parent">
-                    <div className="flex w-full flex-col">aa</div>
-                  </TabsContent>
-                  <TabsContent value="recently_added">
-                    <div className="flex w-full flex-col"></div>
-                  </TabsContent>
-                  <TabsContent value="playlist" className="mt-0 h-full w-full">
-                    <div className="h-full w-full">
-                      <Tabs
-                        defaultValue="gio_list"
-                        className="flex h-full w-full flex-col justify-between"
-                      >
-                        <TabsContent
-                          value="gio_list"
-                          className="mt-0 flex h-full w-full items-center justify-center"
-                        >
-                          <div className="flex flex-col gap-[2rem]">
-                            <Image
-                              width={400}
-                              height={300}
-                              alt="Gio_Cover_Image"
-                              src="/1678963583887_500.jpg"
-                              className="h-[300px] w-[300px] rounded-md"
-                            />
-                            <div className="flex justify-between">
-                              <SkipBack />
-                              <Play />
-                              <SkipForward />
-                            </div>
-                          </div>
-                        </TabsContent>
-                        <TabsList className="h-[300px] w-full p-0 dark:bg-black">
-                          <ScrollArea className="h-[300px] w-full border-t py-[1rem] dark:border-t-[#202020]">
-                            <TabsTrigger
-                              value="gio_list"
-                              className="flex w-full flex-col items-center gap-[3rem]"
-                            >
-                              <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm px-[2rem] dark:border-[#202020]">
-                                <div className="flex items-center gap-[2rem]">
-                                  <Image
-                                    width={400}
-                                    height={300}
-                                    alt="Gio_Cover_Image"
-                                    src="/1678963583887_500.jpg"
-                                    className="h-[4rem] w-[4rem] rounded-full"
-                                  />
-                                  <div className="flex flex-col">
-                                    <h1 className="text-md font-bold">Gio</h1>
-                                    <p className="text-sm text-[#a1a1a1]">
-                                      Jank
-                                    </p>
+                          </TabsContent>
+                          <TabsList className="h-[300px] w-full p-0 dark:bg-black">
+                            <ScrollArea className="h-[300px] w-full border-t py-[1rem] dark:border-t-[#202020]">
+                              <TabsTrigger
+                                value="gio_list"
+                                className="flex w-full flex-col items-center gap-[3rem]"
+                              >
+                                <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm px-[2rem] dark:border-[#202020]">
+                                  <div className="flex items-center gap-[2rem]">
+                                    <Image
+                                      width={400}
+                                      height={300}
+                                      alt="Gio_Cover_Image"
+                                      src="/1678963583887_500.jpg"
+                                      className="h-[4rem] w-[4rem] rounded-full"
+                                    />
+                                    <div className="flex flex-col">
+                                      <h1 className="text-md font-bold">Gio</h1>
+                                      <p className="text-sm text-[#a1a1a1]">
+                                        Jank
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-[2rem]">
+                                    <EllipsisVertical className="text-[#acacac]" />
                                   </div>
                                 </div>
-                                <div className="flex gap-[2rem]">
-                                  <EllipsisVertical className="text-[#acacac]" />
-                                </div>
-                              </div>
-                            </TabsTrigger>
-                            <TabsTrigger
-                              value="gio_list"
-                              className="flex w-full flex-col items-center gap-[3rem]"
-                            >
-                              <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm px-[2rem] dark:border-[#202020]">
-                                <div className="flex items-center gap-[2rem]">
-                                  <Image
-                                    width={400}
-                                    height={300}
-                                    alt="Gio_Cover_Image"
-                                    src="/1678963583887_500.jpg"
-                                    className="h-[4rem] w-[4rem] rounded-full"
-                                  />
-                                  <div className="flex flex-col">
-                                    <h1 className="text-md font-bold">Gio</h1>
-                                    <p className="text-sm text-[#a1a1a1]">
-                                      Jank
-                                    </p>
+                              </TabsTrigger>
+                              <TabsTrigger
+                                value="gio_list"
+                                className="flex w-full flex-col items-center gap-[3rem]"
+                              >
+                                <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm px-[2rem] dark:border-[#202020]">
+                                  <div className="flex items-center gap-[2rem]">
+                                    <Image
+                                      width={400}
+                                      height={300}
+                                      alt="Gio_Cover_Image"
+                                      src="/1678963583887_500.jpg"
+                                      className="h-[4rem] w-[4rem] rounded-full"
+                                    />
+                                    <div className="flex flex-col">
+                                      <h1 className="text-md font-bold">Gio</h1>
+                                      <p className="text-sm text-[#a1a1a1]">
+                                        Jank
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-[2rem]">
+                                    <EllipsisVertical className="text-[#acacac]" />
                                   </div>
                                 </div>
-                                <div className="flex gap-[2rem]">
-                                  <EllipsisVertical className="text-[#acacac]" />
-                                </div>
-                              </div>
-                            </TabsTrigger>
-                            <TabsTrigger
-                              value="gio_list"
-                              className="flex w-full flex-col items-center gap-[3rem]"
-                            >
-                              <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm border-[#202020] px-[2rem]">
-                                <div className="flex items-center gap-[2rem]">
-                                  <Image
-                                    width={400}
-                                    height={300}
-                                    alt="Gio_Cover_Image"
-                                    src="/1678963583887_500.jpg"
-                                    className="h-[4rem] w-[4rem] rounded-full"
-                                  />
-                                  <div className="flex flex-col">
-                                    <h1 className="text-md font-bold">Gio</h1>
-                                    <p className="text-sm text-[#a1a1a1]">
-                                      Jank
-                                    </p>
+                              </TabsTrigger>
+                              <TabsTrigger
+                                value="gio_list"
+                                className="flex w-full flex-col items-center gap-[3rem]"
+                              >
+                                <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm border-[#202020] px-[2rem]">
+                                  <div className="flex items-center gap-[2rem]">
+                                    <Image
+                                      width={400}
+                                      height={300}
+                                      alt="Gio_Cover_Image"
+                                      src="/1678963583887_500.jpg"
+                                      className="h-[4rem] w-[4rem] rounded-full"
+                                    />
+                                    <div className="flex flex-col">
+                                      <h1 className="text-md font-bold">Gio</h1>
+                                      <p className="text-sm text-[#a1a1a1]">
+                                        Jank
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-[2rem]">
+                                    <EllipsisVertical className="text-[#acacac]" />
                                   </div>
                                 </div>
-                                <div className="flex gap-[2rem]">
-                                  <EllipsisVertical className="text-[#acacac]" />
-                                </div>
-                              </div>
-                            </TabsTrigger>
-                            <TabsTrigger
-                              value="gio_list"
-                              className="flex w-full flex-col items-center gap-[3rem]"
-                            >
-                              <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm border-[#202020] px-[2rem]">
-                                <div className="flex items-center gap-[2rem]">
-                                  <Image
-                                    width={400}
-                                    height={300}
-                                    alt="Gio_Cover_Image"
-                                    src="/1678963583887_500.jpg"
-                                    className="h-[4rem] w-[4rem] rounded-full"
-                                  />
-                                  <div className="flex flex-col">
-                                    <h1 className="text-md font-bold">Gio</h1>
-                                    <p className="text-sm text-[#a1a1a1]">
-                                      Jank
-                                    </p>
+                              </TabsTrigger>
+                              <TabsTrigger
+                                value="gio_list"
+                                className="flex w-full flex-col items-center gap-[3rem]"
+                              >
+                                <div className="flex h-[80px] w-[1000px] items-center justify-between rounded-sm border-[#202020] px-[2rem]">
+                                  <div className="flex items-center gap-[2rem]">
+                                    <Image
+                                      width={400}
+                                      height={300}
+                                      alt="Gio_Cover_Image"
+                                      src="/1678963583887_500.jpg"
+                                      className="h-[4rem] w-[4rem] rounded-full"
+                                    />
+                                    <div className="flex flex-col">
+                                      <h1 className="text-md font-bold">Gio</h1>
+                                      <p className="text-sm text-[#a1a1a1]">
+                                        Jank
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-[2rem]">
+                                    <EllipsisVertical className="text-[#acacac]" />
                                   </div>
                                 </div>
-                                <div className="flex gap-[2rem]">
-                                  <EllipsisVertical className="text-[#acacac]" />
-                                </div>
-                              </div>
-                            </TabsTrigger>
-                          </ScrollArea>
-                        </TabsList>
-                      </Tabs>
-                    </div>
-                  </TabsContent>
-                </Tabs>
+                              </TabsTrigger>
+                            </ScrollArea>
+                          </TabsList>
+                        </Tabs>
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <NavigationEffect />
-        </div>
-        <div className="mb-[5rem]"> </div>
-      </main>
-    </SmoothScroll>
+          <div>
+            <NavigationEffect />
+          </div>
+          <div className="mb-[5rem]"> </div>
+        </main>
+      </SmoothScroll>
+    </>
   );
 }
