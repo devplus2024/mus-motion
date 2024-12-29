@@ -481,8 +481,8 @@ export default function Home() {
             <div className="text-sm">Countries</div>
           </div>
         </div> */}
-      <div className="relative mt-[4rem] box-border h-fit w-full bg-cover px-[15rem]">
-        <InfiniteSlider gap={24} className="h-fit bg-cover" reverse>
+      <div className="relative mt-[4rem] box-border h-fit w-full bg-contain px-[15rem]">
+        <InfiniteSlider gap={24} className="h-fit bg-contain" reverse>
           {listLogo.map((logo) => (
             <Image
               key={logo.id}
@@ -490,7 +490,7 @@ export default function Home() {
               height={"80"}
               width={"100"}
               alt={`${logo.src}`}
-              className="bg-cover dark:invert-[1]"
+              className="bg-contain dark:invert-[1]"
             ></Image>
           ))}
         </InfiniteSlider>
