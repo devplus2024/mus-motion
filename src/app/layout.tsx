@@ -11,7 +11,6 @@ import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 import { ToasterSonner } from "../components/ui/sonner";
-import SmoothScroll from "@/components/SmoothScroll";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stroma: A Useful Platform For Musicians",
@@ -31,17 +30,15 @@ export default function RootLayout({
         style={{ colorScheme: "dark" }}
       >
         <head />
-        <SmoothScroll>
-          <body className="relative overflow-x-hidden antialiased">
-            <ThemeProvider enableSystem attribute="class" defaultTheme="system">
-              <Navigation />
-              <Toaster />
-              <ToasterSonner position="top-center" />
-              {children}
-              <Footer />
-            </ThemeProvider>
-          </body>
-        </SmoothScroll>
+        <body className="relative overflow-x-hidden antialiased">
+          <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+            <Navigation />
+            <Toaster />
+            <ToasterSonner position="top-center" />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </body>
       </html>
     </>
   );
