@@ -34,7 +34,21 @@ export default function RootLayout({
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster />
-            <ToasterSonner closeButton position="top-center" />
+            <ToasterSonner
+              toastOptions={{
+                unstyled: true,
+                classNames: {
+                  toast: "bg-black",
+                  title: "text-white",
+                  description: "text-red-400",
+                  actionButton: "bg-zinc-400",
+                  cancelButton: "bg-black ",
+                  closeButton: "bg-black",
+                },
+              }}
+              closeButton
+              position="top-center"
+            />
             {children}
             <Footer />
           </ThemeProvider>
