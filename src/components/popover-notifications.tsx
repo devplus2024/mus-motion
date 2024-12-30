@@ -13,12 +13,12 @@ import { Bell } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-import UserImg01 from "@/public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
-import UserImg02 from "@/public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
-import UserImg03 from "@/public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
-import UserImg04 from "@/public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
-import UserImg05 from "@/public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
-import UserImg06 from "@/public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
+import UserImg01 from "../../public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
+import UserImg02 from "../../public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
+import UserImg03 from "../../public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
+import UserImg04 from "../../public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
+import UserImg05 from "../../public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
+import UserImg06 from "../../public/Opera Snapshot_2024-10-27_194049_nonetheles.vercel.app.png";
 
 const initialNotifications = [
   {
