@@ -41,11 +41,11 @@ export default function RootLayout({
                 classNames: {
                   cancelButton: "bg-orange-400",
                   closeButton:
-                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
+                    "dark:bg-black right-[12px] top-1/2 -transalate-y-1/2 border border-[#404040] transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
                 },
               }}
               closeButton
-              className=""
+              className="top-[38px]"
               position="top-center"
             />
             {children}
