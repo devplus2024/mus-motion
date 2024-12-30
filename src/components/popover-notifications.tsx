@@ -133,7 +133,7 @@ export default function PopoverNotifications() {
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="w-80 p-0">
         <div className="flex items-baseline justify-between gap-4 px-3 py-2">
           <div className="text-sm font-semibold">Notifications</div>
           {unreadCount > 0 && (
@@ -153,7 +153,7 @@ export default function PopoverNotifications() {
         {notifications.map((notification) => (
           <div
             key={notification.id}
-            className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-[#0c0c0c]"
+            className="rounded-none px-3 py-2 text-sm transition-colors hover:bg-[#0c0c0c]"
           >
             <div className="relative flex items-start gap-3 pe-3">
               {/* <Image
