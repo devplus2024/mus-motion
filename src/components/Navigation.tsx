@@ -135,6 +135,7 @@ import X from "./x";
 import Linkedin from "./Linkedin";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
+import PopoverNotifications from "./popover-notifications";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -590,7 +591,7 @@ export const Navigation = (): JSX.Element => {
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
-
+              <PopoverNotifications />
               <ThemeToggle />
               <CommandMenu />
             </motion.div>
