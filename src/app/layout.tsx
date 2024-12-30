@@ -45,7 +45,7 @@ export default function RootLayout({
                 },
               }}
               closeButton
-              className="top-[38px]"
+              className="top-[60px]"
               position="top-center"
             />
             {children}
