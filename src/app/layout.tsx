@@ -35,13 +35,17 @@ export default function RootLayout({
             <Navigation />
             <Toaster />
             <ToasterSonner
+              hotkey={["alt + C"]}
               toastOptions={{
                 unstyled: false,
                 classNames: {
-                  closeButton: "bg-black",
+                  cancelButton: "bg-orange-400",
+                  closeButton:
+                    "dark:bg-black transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
                 },
               }}
               closeButton
+              className=""
               position="top-center"
             />
             {children}
