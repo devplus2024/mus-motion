@@ -38,10 +38,6 @@ export default function RootLayout({
               toastOptions={{
                 unstyled: true,
                 classNames: {
-                  toast: "bg-black border",
-                  title: "text-white",
-                  description: "text-red-400",
-                  actionButton: "bg-zinc-400",
                   closeButton: "bg-black",
                 },
               }}
