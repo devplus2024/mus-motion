@@ -122,12 +122,12 @@ export default function PopoverNotifications() {
         <Button
           size="icon"
           variant="outline"
-          className="relative"
+          className="relative h-[30px] w-[37px]"
           aria-label="Open notifications"
         >
           <Bell size={16} strokeWidth={2} aria-hidden="true" />
           {unreadCount > 0 && (
-            <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
+            <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 rounded-full px-1">
               {unreadCount > 99 ? "99+" : unreadCount}
             </Badge>
           )}
