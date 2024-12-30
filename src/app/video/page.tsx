@@ -10,7 +10,7 @@ export default function VideoPage() {
           <div className="flex">
             <div className="h-[200px] w-[380px] rounded-lg bg-[#0c0c0c]">
               <iframe
-                src="https://drive.google.com/file/d/16GJV_lbb_dIL-iv2ulykwnkd-L_fYf9e/preview"
+                src="https://drive.google.com/file/d/16GJV_lbb_dIL-iv2kd-L_fYf9e/preview"
                 width="380"
                 height="200"
                 allow="autoplay"
