@@ -36,7 +36,7 @@ export default function RootLayout({
             <Toaster />
             <ToasterSonner
               toastOptions={{
-                unstyled: true,
+                unstyled: false,
                 classNames: {
                   closeButton: "bg-black",
                 },
