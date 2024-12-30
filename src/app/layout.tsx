@@ -34,7 +34,7 @@ export default function RootLayout({
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
             <Toaster />
-            <ToasterSonner position="top-center" />
+            <ToasterSonner closeButton position="top-center" />
             {children}
             <Footer />
           </ThemeProvider>
