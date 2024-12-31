@@ -145,6 +145,7 @@ import { InfiniteSlider } from "../home-2/components/core/infinite-slider";
 import PhotoFeatures from "./components/photo-features";
 import { motion } from "framer-motion";
 import SmoothScroll from "@/components/SmoothScroll";
+import AccordionFAQ from "./components/faq";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -506,6 +507,7 @@ export default function Home() {
       <div className="w-full">
         <PhotoFeatures />
       </div>
+      <AccordionFAQ />
       {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
         <ChartLastYear />
