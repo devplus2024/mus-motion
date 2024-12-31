@@ -10,7 +10,7 @@ import {
   Variants,
 } from "motion/react";
 import React from "react";
-
+type AnimationDefinition = string | TargetAndTransition;
 type PresetType = "blur" | "fade-in-blur" | "scale" | "fade" | "slide";
 
 type PerType = "word" | "char" | "line";
@@ -29,8 +29,8 @@ type TextEffectProps = {
   speedReveal?: number;
   speedSegment?: number;
   trigger?: boolean;
-  onAnimationComplete?: (definition: any) => void;
-  onAnimationStart?: (definition: any) => void;
+  onAnimationStart?: (definition: string | TargetAndTransition) => void;
+  onAnimationComplete?: (definition: string | TargetAndTransition) => void;
 
   segmentWrapperClassName?: string;
   containerTransition?: Transition;
@@ -261,11 +261,11 @@ export function TextEffect({
           aria-label={per === "line" ? undefined : children}
           variants={computedVariants.container}
           className={cn("whitespace-pre-wrap", className)}
-          onAnimationComplete={(definition) => {
-            if (onAnimationComplete) onAnimationComplete(definition);
+          onAnimationStart={(definition: AnimationDefinition) => {
+            console.log("Animation started:", definition);
           }}
-          onAnimationStart={(definition) => {
-            if (onAnimationStart) onAnimationStart(definition);
+          onAnimationComplete={(definition: AnimationDefinition) => {
+            console.log("Animation completed:", definition);
           }}
           style={style}
         >
