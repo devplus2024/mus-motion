@@ -146,7 +146,6 @@ import PhotoFeatures from "./components/photo-features";
 import { motion } from "framer-motion";
 import SmoothScroll from "@/components/SmoothScroll";
 import AccordionFAQ from "./components/faq";
-import { TextEffect } from "@/components/ui/text-effect";
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -433,42 +432,9 @@ export default function Home() {
             </div>
           </div> */}
         <div className="flex flex-col items-center justify-center gap-[2rem]">
-          <TextEffect
-            className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]"
-            per="char"
-            delay={0.5}
-            variants={{
-              container: {
-                hidden: {
-                  opacity: 0,
-                },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.05,
-                  },
-                },
-              },
-              item: {
-                hidden: {
-                  opacity: 0,
-                  rotateX: 90,
-                  y: 10,
-                },
-                visible: {
-                  opacity: 1,
-                  rotateX: 0,
-                  y: 0,
-                  transition: {
-                    duration: 0.2,
-                  },
-                },
-              },
-            }}
-          >
+          <h1 className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]">
             The next generation of audio collaboration.
-          </TextEffect>
-
+          </h1>
           <h1 className="w-[420px] text-center">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
