@@ -56,7 +56,7 @@ function PricingPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
                   activeTab === tab.id ? "" : "hover:text-white/60"
-                } relative -top-[1px] h-[32px] max-w-fit rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition first:-ml-[1px] first:rounded-l-md last:-mr-[1px] last:rounded-r-md focus-visible:outline-2`}
+                } relative -top-[1px] h-[32px] max-w-fit rounded-md px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition first:-ml-[1px] last:-mr-[1px] focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
@@ -64,7 +64,7 @@ function PricingPage() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className={`${activeTab === "business" ? "rounded-l-md" : ""} ${activeTab === "individual" ? "rounded-r-md" : ""} tabs_indicator__lFbpm absolute inset-0 z-10 h-[32px] border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference`}
+                    className={`${activeTab === "business" ? "rounded-r-md" : ""} ${activeTab === "individual" ? "rounded-l-md" : ""} tabs_indicator__lFbpm absolute inset-0 z-10 h-[32px] border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference`}
                     transition={{ duration: 0.3 }}
                   />
                 )}
