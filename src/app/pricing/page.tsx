@@ -17,6 +17,7 @@ import RetroGrid from "@/components/ui/retro-grid";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import { MarqueeUI } from "./marquee-ui";
 import FeedBack from "./feedback";
+import { Button } from "@/components/ui/button";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -37,6 +38,7 @@ function PricingPage() {
   return (
     <main className="pb-[6rem]">
       <div className="relative flex h-[350px] flex-col items-center justify-center gap-[1rem] text-center">
+        <Button variant="outline">Pricing and Buy</Button>
         <h1 className="w-[45rem] text-center text-[2.6rem] font-bold leading-[43px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
