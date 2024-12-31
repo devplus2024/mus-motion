@@ -48,7 +48,7 @@ function PricingPage() {
         </p>
         <div className="flex justify-center space-x-1">
           <div
-            className={`box-border flex h-[32px] w-fit border ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""} rounded-x-md`}
+            className={`box-border flex h-[32px] w-fit border ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""} rounded-md`}
           >
             {tabs.map((tab) => (
               <button
