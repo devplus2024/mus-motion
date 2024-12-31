@@ -46,7 +46,7 @@ function PricingPage() {
         </p>
         <div className="flex justify-center space-x-1">
           <div
-            className={`box-border flex h-[32px] w-fit rounded-full border ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""}`}
+            className={`box-border flex h-[32px] w-fit rounded-full border ${activeTab === "business" ? "rounded-r-md border-r" : ""} ${activeTab === "individual" ? "rounded-l-md border-l" : ""}`}
           >
             {tabs.map((tab) => (
               <button
@@ -62,8 +62,7 @@ function PricingPage() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="tabs_indicator__lFbpm absolute inset-0 z-10 h-[32px] border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
-                    style={{ borderRadius: 9999 }}
+                    className="tabs_indicator__lFbpm absolute inset-0 z-10 h-[32px] rounded-md border-[#4e4e4e] bg-[#0c0c0c] mix-blend-difference"
                     transition={{ duration: 0.3 }}
                   />
                 )}
