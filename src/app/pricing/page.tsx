@@ -56,7 +56,7 @@ function PricingPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
                   activeTab === tab.id ? "" : "hover:text-white/60"
-                } relative -top-[1px] h-[32px] max-w-fit rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition first:-ml-[1px] last:-mr-[1px] focus-visible:outline-2`}
+                } relative -top-[1px] h-[32px] max-w-fit rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition first:-ml-[1px] first:rounded-l-md last:-mr-[1px] last:rounded-r-md focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
