@@ -246,7 +246,7 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      Browse
+                      <TextHoverEnter>Browse</TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -402,7 +402,7 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      Community
+                      <TextHoverEnter>Community</TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -434,7 +434,7 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      Support
+                      <TextHoverEnter>Support</TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
