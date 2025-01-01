@@ -138,7 +138,7 @@ import {
 } from "@/components/ui/hover-card";
 import TailwindcssButton from "@/components/ui/tailwindcss-buttons";
 import { ChartBar } from "./components/chart";
-import { TextShimmer } from "@/components/core/text-shimmer";
+// import { TextShimmer } from "@/components/core/text-shimmer";
 import { ChartFirstYear } from "./components/chart-first-year";
 import { ChartLastYear } from "./components/chart-last-yeart";
 import { InfiniteSlider } from "../home-2/components/core/infinite-slider";
