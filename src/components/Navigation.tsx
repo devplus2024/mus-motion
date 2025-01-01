@@ -136,6 +136,7 @@ import Linkedin from "./Linkedin";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import PopoverNotifications from "./popover-notifications";
+import TextHoverEnter from "./TextHoverEnter";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -264,7 +265,7 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      Pricing
+                      <TextHoverEnter>Pricing</TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
