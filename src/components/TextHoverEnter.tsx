@@ -50,7 +50,7 @@ export default function TextHoverEnter({
           </motion.span>
         ))}
       </div>
-      <div className="absolute inset-0 text-sm">
+      <div className="absolute inset-0 text-sm hover:text-white">
         {letters.map((letter, i) => (
           <motion.span
             key={i}
