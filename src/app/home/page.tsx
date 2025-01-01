@@ -466,7 +466,7 @@ export default function Home() {
               },
             }}
           >
-            Animate your ideasThe next generation of audio collaboration.
+            The next generation of audio collaboration.
           </TextEffect>
           <h1 className="w-[420px] text-center">
             Dive into a seamless music experience with our cutting-edge
