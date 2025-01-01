@@ -67,7 +67,7 @@ export default function PhotoFeatures() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
               className="mt-[2rem] grid gap-6 md:grid-cols-4"
             >
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -94,7 +94,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -121,7 +121,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -147,7 +147,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -171,7 +171,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
@@ -198,7 +198,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     className="h-5 w-5 text-primary"
@@ -224,7 +224,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     className="h-5 w-5 text-primary"
@@ -250,7 +250,7 @@ export default function PhotoFeatures() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 border-primary/10 transition-colors hover:border-primary/30">
+              <div className="flex items-start gap-4 border-[1px] border-primary/10 transition-colors hover:border-primary/30">
                 <div className="border0 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
                   <svg
                     data-testid="geist-icon"
