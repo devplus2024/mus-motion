@@ -211,7 +211,14 @@ export default function Home() {
   ];
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
-      <TailwindcssButton />
+      {/* <TailwindcssButton /> */}
+      <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
+        <span>
+          <span className="spark mask-gradient animate-flip before:animate-rotate absolute inset-0 h-[100%] w-[100%] overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
+        </span>
+        <span className="backdrop absolute inset-px rounded-full bg-neutral-950 transition-colors duration-200" />
+        <span className="z-10 text-xs font-medium text-neutral-400">Badge</span>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
         animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -418,10 +425,10 @@ export default function Home() {
         {/* <div className="px-[1rem]">
             <Carousel />
             <div className="relative rounded-lg">
-             
-              
-       
-     
+
+
+
+
               <BorderBeam
                 colorFrom="#06b6d4"
                 colorTo="#3b82f6"
