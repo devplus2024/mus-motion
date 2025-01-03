@@ -38,37 +38,40 @@ const items = [
 
 export default function AccordionFAQ() {
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-bold">Table w/ left plus-minus</h2>
-      <Accordion
-        type="single"
-        collapsible
-        className="w-full -space-y-px"
-        defaultValue="3"
-      >
-        {items.map((item) => (
-          <AccordionItem
-            value={item.id}
-            key={item.id}
-            className="border bg-background px-4 py-1 first:rounded-t-lg last:rounded-b-lg"
-          >
-            <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center gap-3 py-2 text-left text-[15px] font-semibold leading-6 transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&>svg]:-order-1 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0 [&[data-state=open]>svg]:rotate-180">
-                {item.title}
-                <Plus
-                  size={16}
-                  strokeWidth={2}
-                  className="shrink-0 opacity-60 transition-transform duration-200"
-                  aria-hidden="true"
-                />
-              </AccordionPrimitive.Trigger>
-            </AccordionPrimitive.Header>
-            <AccordionContent className="pb-2 text-muted-foreground">
-              {item.content}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+    <div className="flex w-full items-center justify-between px-[3rem]">
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold">Table w/ left plus-minus</h2>
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full -space-y-px"
+          defaultValue="3"
+        >
+          {items.map((item) => (
+            <AccordionItem
+              value={item.id}
+              key={item.id}
+              className="border bg-background px-4 py-1 first:rounded-t-lg last:rounded-b-lg"
+            >
+              <AccordionPrimitive.Header className="flex">
+                <AccordionPrimitive.Trigger className="flex flex-1 items-center gap-3 py-2 text-left text-[15px] font-semibold leading-6 transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&>svg]:-order-1 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0 [&[data-state=open]>svg]:rotate-180">
+                  {item.title}
+                  <Plus
+                    size={16}
+                    strokeWidth={2}
+                    className="shrink-0 opacity-60 transition-transform duration-200"
+                    aria-hidden="true"
+                  />
+                </AccordionPrimitive.Trigger>
+              </AccordionPrimitive.Header>
+              <AccordionContent className="pb-2 text-muted-foreground">
+                {item.content}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+      <div className="h-[300px] w-[400px] rounded-lg bg-[#0c0c0c]"></div>
     </div>
   );
 }
