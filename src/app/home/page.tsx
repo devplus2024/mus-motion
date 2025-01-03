@@ -478,7 +478,7 @@ export default function Home() {
             The next generation of audio collaboration.
           </TextEffect> */}
           <TextScramble
-            className="font-mono text-sm"
+            className="w-[800px] text-center font-mono text-[4rem] font-bold leading-[4rem]"
             duration={1.2}
             characterSet=". "
           >
