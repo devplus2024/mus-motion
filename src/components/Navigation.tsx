@@ -246,7 +246,15 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      <TextHoverEnter>Browse</TextHoverEnter>
+                      <TextHoverEnter
+                        className={`${
+                          pathname === "/browse"
+                            ? "dark:text-white"
+                            : "dark:text-[#9b9b9b]"
+                        }`}
+                      >
+                        Browse
+                      </TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -265,7 +273,15 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      <TextHoverEnter>Pricing</TextHoverEnter>
+                      <TextHoverEnter
+                        className={`${
+                          pathname === "/pricing"
+                            ? "dark:text-white"
+                            : "dark:text-[#9b9b9b]"
+                        }`}
+                      >
+                        Pricing
+                      </TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -402,7 +418,15 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      <TextHoverEnter>Community</TextHoverEnter>
+                      <TextHoverEnter
+                        className={`${
+                          pathname === "/community"
+                            ? "dark:text-white"
+                            : "dark:text-[#9b9b9b]"
+                        }`}
+                      >
+                        Community
+                      </TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -434,7 +458,15 @@ export const Navigation = (): JSX.Element => {
                           : ""
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
-                      <TextHoverEnter>Support</TextHoverEnter>
+                      <TextHoverEnter
+                        className={`${
+                          pathname === "/browse"
+                            ? "dark:text-white"
+                            : "dark:text-[#9b9b9b]"
+                        }`}
+                      >
+                        Support
+                      </TextHoverEnter>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

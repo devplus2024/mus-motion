@@ -1,7 +1,7 @@
 "use client"; // @NOTE: add in case you are using Next.js
 
 import { cn } from "@/lib/cn";
-
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 
 const DURATION = 0.25;
