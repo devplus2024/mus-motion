@@ -34,6 +34,30 @@ const items = [
     content:
       "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
   },
+  {
+    id: "5",
+    title: "How accessible are the components?",
+    content:
+      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+  },
+  {
+    id: "6",
+    title: "How accessible are the components?",
+    content:
+      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+  },
+  {
+    id: "7",
+    title: "How accessible are the components?",
+    content:
+      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+  },
+  {
+    id: "8",
+    title: "How accessible are the components?",
+    content:
+      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+  },
 ];
 
 export default function AccordionFAQ() {
@@ -44,7 +68,7 @@ export default function AccordionFAQ() {
         <Accordion
           type="single"
           collapsible
-          className="w-full -space-y-px"
+          className="w-[650px] -space-y-px"
           defaultValue="3"
         >
           {items.map((item) => (
@@ -71,7 +95,7 @@ export default function AccordionFAQ() {
           ))}
         </Accordion>
       </div>
-      <div className="h-[300px] w-[400px] rounded-lg bg-[#0c0c0c]"></div>
+      <div className="h-[450px] w-[650px] rounded-lg bg-[#0c0c0c]"></div>
     </div>
   );
 }
