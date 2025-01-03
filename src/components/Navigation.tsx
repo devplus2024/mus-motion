@@ -460,7 +460,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <TextHoverEnter
                         className={`${
-                          pathname === "/browse"
+                          pathname === "/support"
                             ? "dark:text-white"
                             : "dark:text-[#9b9b9b]"
                         }`}
