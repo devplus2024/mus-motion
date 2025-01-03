@@ -64,7 +64,6 @@ export default function AccordionFAQ() {
   return (
     <div className="flex w-full items-center justify-between px-[3rem]">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold">Table w/ left plus-minus</h2>
         <Accordion
           type="single"
           collapsible
@@ -95,7 +94,7 @@ export default function AccordionFAQ() {
           ))}
         </Accordion>
       </div>
-      <div className="h-[450px] w-[650px] rounded-lg bg-[#0c0c0c]"></div>
+      <div className="h-[450px] w-[650px] rounded-lg border bg-[#1f1f1f]"></div>
     </div>
   );
 }
