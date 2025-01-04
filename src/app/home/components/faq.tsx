@@ -120,10 +120,10 @@ export default function AccordionFAQ() {
           ))}
         </Accordion>
       </div>
-      <div className="grid h-[450px] w-[650px] grid-cols-2 rounded-lg border bg-[#1f1f1f]">
+      <div className="grid h-[450px] w-[650px] grid-cols-2 place-items-center rounded-lg border">
         {branch.map((branch) => (
           <div
-            className="flex h-[200px] w-[225px] items-center border"
+            className="flex h-[100px] w-[225px] items-center justify-center gap-[3rem] rounded-lg border"
             key={branch.id}
           >
             <h1 className="text-md">{branch.src}</h1>
