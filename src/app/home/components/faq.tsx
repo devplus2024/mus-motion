@@ -28,7 +28,7 @@ const branch = [
   },
   {
     id: "5",
-    src: "next",
+    src: "nextjs",
   },
   {
     id: "6",
@@ -126,14 +126,14 @@ export default function AccordionFAQ() {
             className="flex h-[100px] w-[225px] items-center justify-center gap-[3rem] rounded-lg border"
             key={branch.id}
           >
-            <h1 className="text-md capitalize">{branch.src}</h1>
             <Image
               src={`/${branch.src}.svg`}
               alt={branch.src}
-              className="h-[50px] w-[50px] dark:invert-[1]"
-              height={"50"}
-              width={"50"}
+              className="h-[50px] w-[50px]"
+              height={"30"}
+              width={"30"}
             ></Image>
+            <h1 className="text-md capitalize">{branch.src}</h1>
           </div>
         ))}
       </div>
