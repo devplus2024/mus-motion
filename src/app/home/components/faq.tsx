@@ -8,7 +8,33 @@ import {
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { Plus } from "lucide-react";
-
+import Image from "next/image";
+const branch = [
+  {
+    id: "1",
+    src: "tailwindcss",
+  },
+  {
+    id: "2",
+    src: "framer",
+  },
+  {
+    id: "3",
+    src: "shadcnui",
+  },
+  {
+    id: "4",
+    src: "react",
+  },
+  {
+    id: "5",
+    src: "next",
+  },
+  {
+    id: "6",
+    src: "swv",
+  },
+];
 const items = [
   {
     id: "1",
@@ -94,7 +120,23 @@ export default function AccordionFAQ() {
           ))}
         </Accordion>
       </div>
-      <div className="h-[450px] w-[650px] rounded-lg border bg-[#1f1f1f]"></div>
+      <div className="grid h-[450px] w-[650px] grid-cols-2 rounded-lg border bg-[#1f1f1f]">
+        {branch.map((branch) => (
+          <div
+            className="flex h-[200px] w-[225px] items-center border"
+            key={branch.id}
+          >
+            <h1 className="text-md">{branch.src}</h1>
+            <Image
+              src={`/${branch.src}.svg`}
+              alt={branch.src}
+              className="h-[50px] w-[50px] dark:invert-[1]"
+              height={"50"}
+              width={"50"}
+            ></Image>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

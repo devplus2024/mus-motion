@@ -65,7 +65,7 @@ export default function PhotoFeatures() {
               initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
               animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-              className="mt-[2rem] grid gap-6 md:grid-cols-4"
+              className="mt-[2rem] grid gap-6 md:grid-cols-2"
             >
               <div className="flex items-center gap-4 rounded-md border-[1px] border-primary/10 px-3 py-2 transition-colors hover:border-primary/30">
                 <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-lg">
@@ -286,9 +286,9 @@ export default function PhotoFeatures() {
                 <Button className="text-primary-foreground">
                   Start Free Trial
                 </Button>
-                <span className="absolute -right-2 -top-4 rounded-full border bg-black px-2 py-1 text-xs font-bold text-white">
+                {/* <span className="absolute -right-2 -top-4 rounded-full border bg-black px-2 py-1 text-xs font-bold text-white">
                   14 Days Free
-                </span>
+                </span> */}
               </div>
               <Button variant="outline" className="w-full sm:w-auto">
                 View All Features
