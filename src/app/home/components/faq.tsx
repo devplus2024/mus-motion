@@ -32,7 +32,7 @@ const branch = [
   },
   {
     id: "6",
-    src: "swv",
+    src: "swc",
   },
 ];
 const items = [
@@ -126,7 +126,7 @@ export default function AccordionFAQ() {
             className="flex h-[100px] w-[225px] items-center justify-center gap-[3rem] rounded-lg border"
             key={branch.id}
           >
-            <h1 className="text-md">{branch.src}</h1>
+            <h1 className="text-md capitalize">{branch.src}</h1>
             <Image
               src={`/${branch.src}.svg`}
               alt={branch.src}
