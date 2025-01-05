@@ -88,7 +88,7 @@ const items = [
 
 export default function AccordionFAQ() {
   return (
-    <div className="flex w-full items-center justify-between px-[3rem]">
+    <div className="flex w-full items-center justify-center px-[3rem]">
       <div className="hidden space-y-4">
         <Accordion
           type="single"
@@ -123,7 +123,7 @@ export default function AccordionFAQ() {
       <div className="grid grid-cols-3 place-items-center gap-[4rem] rounded-lg">
         {branch.map((branch) => (
           <div
-            className="flex h-[200px] w-[225px] flex-col items-start justify-start gap-1 rounded-lg border px-4 py-4"
+            className="flex h-[150px] w-[300px] flex-col items-start justify-start gap-1 rounded-lg border px-4 py-4"
             key={branch.id}
           >
             {/* <Image
