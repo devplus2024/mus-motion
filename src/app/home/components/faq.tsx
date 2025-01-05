@@ -89,7 +89,7 @@ const items = [
 export default function AccordionFAQ() {
   return (
     <div className="flex w-full items-center justify-between px-[3rem]">
-      <div className="space-y-4">
+      <div className="hidden space-y-4">
         <Accordion
           type="single"
           collapsible
@@ -120,10 +120,10 @@ export default function AccordionFAQ() {
           ))}
         </Accordion>
       </div>
-      <div className="grid h-[450px] w-[650px] grid-cols-2 place-items-center rounded-lg">
+      <div className="grid grid-cols-3 place-items-center gap-[4rem] rounded-lg">
         {branch.map((branch) => (
           <div
-            className="flex h-[100px] w-[225px] flex-col items-start justify-start gap-1 rounded-lg border px-4 py-4"
+            className="flex h-[200px] w-[225px] flex-col items-start justify-start gap-1 rounded-lg border px-4 py-4"
             key={branch.id}
           >
             {/* <Image
@@ -134,7 +134,7 @@ export default function AccordionFAQ() {
               width={"30"}
             ></Image> */}
             <h1 className="text-md capitalize">{branch.src}</h1>
-            <h1 className="text-sm capitalize">
+            <h1 className="text-sm capitalize text-[#a1a1a1]">
               The library for web and native user interfaces. Next.js is built
               on the latest React features, including Server Components and
               Actions.
