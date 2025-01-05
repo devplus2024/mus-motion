@@ -120,20 +120,25 @@ export default function AccordionFAQ() {
           ))}
         </Accordion>
       </div>
-      <div className="grid h-[450px] w-[650px] grid-cols-2 place-items-center rounded-lg border">
+      <div className="grid h-[450px] w-[650px] grid-cols-2 place-items-center rounded-lg">
         {branch.map((branch) => (
           <div
-            className="flex h-[100px] w-[225px] items-center justify-center gap-[3rem] rounded-lg border"
+            className="flex h-[100px] w-[225px] flex-col items-start justify-start gap-1 rounded-lg border px-4 py-4"
             key={branch.id}
           >
-            <Image
+            {/* <Image
               src={`/${branch.src}.svg`}
               alt={branch.src}
               className="h-[50px] w-[50px]"
               height={"30"}
               width={"30"}
-            ></Image>
+            ></Image> */}
             <h1 className="text-md capitalize">{branch.src}</h1>
+            <h1 className="text-sm capitalize">
+              The library for web and native user interfaces. Next.js is built
+              on the latest React features, including Server Components and
+              Actions.
+            </h1>
           </div>
         ))}
       </div>
