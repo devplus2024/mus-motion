@@ -552,10 +552,11 @@ export default function Home() {
         <div className="overlay"></div>
         <div className="overlay right"></div>
       </motion.div>
-      <div className="mx-[12rem] mt-[2rem] w-full border-t"></div>
+      <div className="mx-auto mt-[2rem] w-[700px] border-t"></div>
       <div className="w-full">
         <PhotoFeatures />
       </div>
+      <div className="mx-auto mt-[2rem] w-[700px] border-t"></div>
       <AccordionFAQ />
       {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
