@@ -556,7 +556,7 @@ export default function Home() {
       <div className="w-full">
         <PhotoFeatures />
       </div>
-      <div className="mx-auto mt-[2rem] w-[700px] border-t"></div>
+      <div className="mx-auto my-[2rem] w-[700px] border-t"></div>
       <AccordionFAQ />
       {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
