@@ -91,7 +91,9 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Advanced Editing Suite</h3>
+                  <h3 className="text-sm font-semibold">
+                    Advanced Editing Suite
+                  </h3>
                   <p className="text-sm text-muted-foreground">
                     Professional-grade tools for perfect adjustments and
                     creative effects.
@@ -118,7 +120,9 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">AI-Powered Enhancements</h3>
+                  <h3 className="text-sm font-semibold">
+                    AI-Powered Enhancements
+                  </h3>
                   <p className="text-sm text-muted-foreground">
                     Intelligent auto-adjustments and smart filters for stunning
                     results.
@@ -145,7 +149,7 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Seamless Sharing</h3>
+                  <h3 className="text-sm font-semibold">Seamless Sharing</h3>
                   <p className="text-sm text-muted-foreground">
                     Instantly share your creations across all major platforms.
                   </p>
@@ -169,7 +173,7 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Cloud Integration</h3>
+                  <h3 className="text-sm font-semibold">Cloud Integration</h3>
                   <p className="text-sm text-muted-foreground">
                     Automatic backup and sync across all your devices.
                   </p>
@@ -195,7 +199,7 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Layer Masking</h3>
+                  <h3 className="text-sm font-semibold">Layer Masking</h3>
                   <p className="text-sm text-muted-foreground">
                     Create complex compositions with non-destructive layer
                     masks.
@@ -222,7 +226,7 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Video Editing</h3>
+                  <h3 className="text-sm font-semibold">Video Editing</h3>
                   <p className="text-sm text-muted-foreground">
                     Seamlessly edit videos with the same powerful photo tools.
                   </p>
@@ -248,7 +252,7 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Audio Integration</h3>
+                  <h3 className="text-sm font-semibold">Audio Integration</h3>
                   <p className="text-sm text-muted-foreground">
                     Add and edit audio tracks for your video projects.
                   </p>
@@ -274,7 +278,9 @@ export default function PhotoFeatures() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-semibold">Collaborative Editing</h3>
+                  <h3 className="text-sm font-semibold">
+                    Collaborative Editing
+                  </h3>
                   <p className="text-sm text-muted-foreground">
                     Work together in real-time with team members worldwide.
                   </p>
