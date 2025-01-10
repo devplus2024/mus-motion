@@ -38,7 +38,9 @@ function PricingPage() {
   return (
     <main className="pb-[6rem]">
       <div className="relative flex h-[350px] flex-col items-center justify-center gap-[1rem] text-center">
-        <Button variant="outline">Pricing and Buy</Button>
+        <Button variant="outline" className="h-[30px]">
+          Pricing and Buy
+        </Button>
         <h1 className="w-[45rem] text-center text-[2.6rem] font-bold leading-[43px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
