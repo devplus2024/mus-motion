@@ -88,7 +88,7 @@ const items = [
 
 export default function AccordionFAQ() {
   return (
-    <div className="flex w-full items-center justify-center px-[3rem]">
+    <div className="hidden w-full items-center justify-center px-[3rem]">
       <div className="hidden space-y-4">
         <Accordion
           type="single"

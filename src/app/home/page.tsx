@@ -563,7 +563,7 @@ export default function Home() {
         <ChartLastYear />
       </div> */}
       <div
-        className="contentsP min-[375px]:hidden min-[645px]:hidden xl:block"
+        className="contentsP min-[375px]:hidden min-[645px]:hidden xl:hidden"
         id="musicContent"
       >
         <div className="mb-[6rem] mt-[4rem] flex justify-center">
