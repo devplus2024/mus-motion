@@ -442,7 +442,7 @@ export default function Home() {
             </div>
           </div> */}
         <div className="flex flex-col items-center justify-center gap-[2rem]">
-          {/* <TextEffect
+          <TextEffect
             className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]"
             per="char"
             delay={0.5}
@@ -476,14 +476,14 @@ export default function Home() {
             }}
           >
             The next generation of audio collaboration.
-          </TextEffect> */}
-          <TextScramble
+          </TextEffect>
+          {/* <TextScramble
             className="w-[800px] text-center font-mono text-[4rem] font-bold leading-[4rem]"
             duration={1.2}
             characterSet=". "
           >
             The next generation of audio collaboration.
-          </TextScramble>
+          </TextScramble> */}
           <h1 className="w-[420px] text-center">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
