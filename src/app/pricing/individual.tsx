@@ -846,15 +846,15 @@ export default function Individual() {
     if (selected) setSelectedPackage(selected);
   };
   return (
-    <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[8rem]">
-      <div className="grid gap-[0rem] border-t md:grid-cols-4">
+    <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[6rem]">
+      <div className="grid gap-[2rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card
             key={tier.title}
-            className="flex flex-col rounded-none border-[0px] dark:bg-[#000000]"
+            className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
           >
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-none border-b bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-t-lg border-b bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
             >
               <CardTitle className="text-2xl">
                 <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
@@ -890,7 +890,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="justify-center rounded-none border-y px-6 py-[1rem]">
+            <CardFooter className="justify-center rounded-none border-t px-6 py-[1rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}

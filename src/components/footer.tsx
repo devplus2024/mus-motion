@@ -14,22 +14,23 @@ export default function Footer() {
   const isChatV2 = path === "/chat-v2";
   const isRadio = path === "/radio";
   const isSignIn = path === "/signin";
+  const isDocs = path === "/docs";
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Thanks for subscribing!");
   };
   return (
     <div
-      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn ? "webfilm-class" : ""} border-t py-4`}
+      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn || isDocs ? "webfilm-class" : ""} border-t py-4`}
     >
-      <div className="container mx-auto px-4">
-        <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-5">
+      <div className="">
+        <div className="mb-10 grid grid-cols-1 gap-8 px-4 md:grid-cols-5">
           {/* Logo Column */}
           <div className="col-span-1">
             <div className="mb-3 flex items-center gap-2">
-              <Music2 className="h-5 w-5 text-white" />
+              {/* <Music2 className="h-5 w-5 text-white" /> */}
               <h3 className="text-lg font-semibold tracking-tight">
-                MusicSoft
+                Stroma Software Company
               </h3>
             </div>
           </div>
@@ -127,7 +128,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t pt-6 md:flex-row">
           <p className="w-full text-center text-sm text-[#a1a1a1]">
-            © {new Date().getFullYear()} MusicSoft, Inc.
+            © {new Date().getFullYear()} Stroma Software Company, Inc.
           </p>
           <div className="hidden space-x-5">
             <a

@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
+import { DocsNavigation } from "@/components/DocsNavigation";
 import { CommandMenu } from "@/components/CommandMenu";
 // import { Toaster } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -33,6 +34,7 @@ export default function RootLayout({
         <body className="relative overflow-x-hidden antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <Navigation />
+            <DocsNavigation />
             <Toaster />
             <ToasterSonner
               hotkey={["alt + C"]}
