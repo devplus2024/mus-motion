@@ -22,7 +22,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <div className="relative hidden bg-muted lg:block">
+      <div className="relative hidden lg:block">
         {/* <Image
           src="/placeholder.svg"
           alt="Image"
@@ -30,8 +30,8 @@ export default function LoginPage() {
           height={"20"}
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         /> */}
-        <div className="absolute inset-0 h-full w-full bg-black">
-          <TextLoop className="text-center font-mono text-2xl">
+        <div className="absolute inset-0 h-full w-full bg-black text-center">
+          <TextLoop className="top-1/2 -translate-y-1/2 text-center text-4xl font-bold">
             <span>How can I assist you today?</span>
             <span>Generate a logo</span>
             <span>Create a component</span>
