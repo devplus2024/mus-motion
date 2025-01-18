@@ -2,6 +2,7 @@ import { GalleryVerticalEnd } from "lucide-react";
 
 import { LoginForm } from "./components/login-form";
 import Image from "next/image";
+import { TextLoop } from "@/components/ui/text-loop";
 
 export default function LoginPage() {
   return (
@@ -22,13 +23,21 @@ export default function LoginPage() {
         </div>
       </div>
       <div className="relative hidden bg-muted lg:block">
-        <Image
+        {/* <Image
           src="/placeholder.svg"
           alt="Image"
           width={"20"}
           height={"20"}
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        />
+        /> */}
+        <div className="absolute inset-0 h-full w-full bg-black">
+          <TextLoop className="text-center font-mono text-2xl">
+            <span>How can I assist you today?</span>
+            <span>Generate a logo</span>
+            <span>Create a component</span>
+            <span>Draw a diagram</span>
+          </TextLoop>
+        </div>
       </div>
     </div>
   );
