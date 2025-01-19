@@ -5,6 +5,7 @@ import Image from "next/image";
 import { TextLoop } from "@/components/ui/text-loop";
 import { Typewriter } from "@/components/type-writer";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
+import { cn } from "@/lib/cn";
 
 const prompts = [
   "Chat with your data.",
