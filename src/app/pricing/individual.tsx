@@ -854,7 +854,7 @@ export default function Individual() {
             className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
           >
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] space-y-4 rounded-t-lg bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} space-y-4 rounded-t-lg bg-[#00000099] p-[0.8rem]`}
             >
               <CardTitle className="text-2xl">
                 <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
