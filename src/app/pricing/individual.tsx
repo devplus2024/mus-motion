@@ -878,7 +878,7 @@ export default function Individual() {
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow pt-[1rem]">
-              <ul className="space-y-2 first:mt-[1rem] first:border-t">
+              <ul className="space-y-2 first:border-t first:pt-[1rem]">
                 {tier.features.map((feature) => (
                   <li key={feature.name} className="flex items-center gap-2">
                     <div className="rounded-md p-[4px]">
