@@ -3,6 +3,15 @@ import { GalleryVerticalEnd } from "lucide-react";
 import { LoginForm } from "./components/login-form";
 import Image from "next/image";
 import { TextLoop } from "@/components/ui/text-loop";
+import { Typewriter } from "@/components/type-writer";
+
+const prompts = [
+  "Chat with your data.",
+  "Create marketing campaigns.",
+  "Write Python code.",
+  "Explain complex topics.",
+  "Brainstorm ideas.",
+];
 
 export default function LoginPage() {
   return (
@@ -30,13 +39,14 @@ export default function LoginPage() {
           height={"20"}
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         /> */}
-        <div className="absolute inset-0 h-full w-full bg-black text-center">
-          <TextLoop className="top-1/2 -translate-y-1/2 text-center text-4xl font-bold">
+        <div className="absolute inset-0 h-full w-full bg-white text-center">
+          {/* <TextLoop className="top-1/2 -translate-y-1/2 text-center text-4xl font-bold">
             <span>How can I assist you today?</span>
             <span>Generate a logo</span>
             <span>Create a component</span>
             <span>Draw a diagram</span>
-          </TextLoop>
+          </TextLoop> */}
+          <Typewriter prompts={prompts} />
         </div>
       </div>
     </div>
