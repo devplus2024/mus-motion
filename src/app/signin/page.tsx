@@ -4,6 +4,7 @@ import { LoginForm } from "./components/login-form";
 import Image from "next/image";
 import { TextLoop } from "@/components/ui/text-loop";
 import { Typewriter } from "@/components/type-writer";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 const prompts = [
   "Chat with your data.",
@@ -46,7 +47,18 @@ export default function LoginPage() {
             <span>Create a component</span>
             <span>Draw a diagram</span>
           </TextLoop> */}
-          <Typewriter prompts={prompts} />
+          {/* <Typewriter prompts={prompts} /> */}
+          <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+            <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+              Interactive Grid Pattern
+            </p>
+            <InteractiveGridPattern
+              className={cn(
+                "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+                "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+              )}
+            />
+          </div>
         </div>
       </div>
     </div>

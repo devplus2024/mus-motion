@@ -854,7 +854,7 @@ export default function Individual() {
             className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
           >
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-t-lg border-b bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-t-lg bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
             >
               <CardTitle className="text-2xl">
                 <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
@@ -869,15 +869,15 @@ export default function Individual() {
                   </div>
                 )}
               </CardTitle>
-              <CardDescription>{tier.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow pt-[2rem]">
               <div className="mb-4 text-3xl font-bold">
                 {tier.price}
                 <span className="text-lg font-normal text-muted-foreground">
                   /month
                 </span>
               </div>
+              <CardDescription>{tier.description}</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow pt-[2rem]">
               <ul className="space-y-2">
                 {tier.features.map((feature) => (
                   <li key={feature.name} className="flex items-center gap-2">
@@ -890,7 +890,7 @@ export default function Individual() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="justify-center rounded-none border-t px-6 py-[1rem]">
+            <CardFooter className="justify-center rounded-none px-6 py-[1rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
