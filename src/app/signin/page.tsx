@@ -51,7 +51,7 @@ export default function LoginPage() {
           {/* <Typewriter prompts={prompts} /> */}
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden border-l bg-background md:shadow-xl">
             <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
-              Welcome Bacl
+              Welcome Back
             </p>
             <InteractiveGridPattern
               className={cn(
