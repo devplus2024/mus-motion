@@ -854,7 +854,7 @@ export default function Individual() {
             className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
           >
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] rounded-t-lg bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} sticky top-[55px] space-y-4 rounded-t-lg bg-[#00000099] p-[0.8rem] backdrop-blur-[8px]`}
             >
               <CardTitle className="text-2xl">
                 <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
@@ -877,8 +877,8 @@ export default function Individual() {
               </div>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow pt-[2rem]">
-              <ul className="space-y-2">
+            <CardContent className="flex-grow pt-[1rem]">
+              <ul className="space-y-2 first:border-t">
                 {tier.features.map((feature) => (
                   <li key={feature.name} className="flex items-center gap-2">
                     <div className="rounded-md p-[4px]">
