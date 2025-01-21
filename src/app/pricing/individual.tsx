@@ -854,9 +854,9 @@ export default function Individual() {
             className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
           >
             <CardHeader
-              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} space-y-4 rounded-t-lg bg-[#00000099] p-[0.8rem]`}
+              className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-[1.5rem]`}
             >
-              <CardTitle className="text-2xl">
+              <CardTitle className="text-2xl text-[#a1a1a1]">
                 <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
                   {tier.title}
                 </p>
@@ -880,7 +880,10 @@ export default function Individual() {
             <CardContent className="flex-grow pt-[1rem]">
               <ul className="space-y-2 first:border-t first:pt-[1rem]">
                 {tier.features.map((feature) => (
-                  <li key={feature.name} className="flex items-center gap-2">
+                  <li
+                    key={feature.name}
+                    className="flex items-center gap-2 text-[#a1a1a1]"
+                  >
                     <div className="rounded-md p-[4px]">
                       {feature.icon}
                       {/* <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" /> */}
@@ -1019,9 +1022,7 @@ export default function Individual() {
                   </AlertDialog>
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
-                      <Button className="w-full" variant={"outline"}>
-                        Contact Sale
-                      </Button>
+                      <Button className="w-full">Contact Sale</Button>
                     </AlertDialogTrigger>
                     <AlertDialogContent>
                       <AlertDialogHeader>
