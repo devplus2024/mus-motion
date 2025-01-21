@@ -879,8 +879,11 @@ export default function Individual() {
                 )}
               </CardTitle>
               <div className="mb-4 text-3xl font-bold">
-                ${isYearly ? (tier.price * 12 * 2).toFixed(2) : tier.price}/
-                {isYearly ? "year" : "month"}
+                $
+                {isYearly
+                  ? parseFloat((tier.price * 12 * 2).toFixed(2))
+                  : tier.price}
+                /{isYearly ? "year" : "month"}
               </div>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
