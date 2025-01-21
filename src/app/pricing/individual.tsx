@@ -98,7 +98,7 @@ const pricingData = {
   individual: [
     {
       title: "Free",
-      price: "$0",
+      price: 0,
       description: "For entry-level users and trial",
       features: [
         {
@@ -263,7 +263,7 @@ const pricingData = {
     },
     {
       title: "Basic",
-      price: "$9.99",
+      price: 9.99,
       description: "For hobbyists and beginners",
       features: [
         {
@@ -428,7 +428,7 @@ const pricingData = {
     },
     {
       title: "Pro",
-      price: "$24.99",
+      price: 24.99,
       description: "For serious musicians and producers",
       features: [
         {
@@ -593,7 +593,7 @@ const pricingData = {
     },
     {
       title: "Ultimate",
-      price: "$39.99",
+      price: 39.99,
       description: "For professional studios and artists",
       features: [
         {
@@ -847,6 +847,15 @@ export default function Individual() {
   };
   return (
     <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[6rem]">
+      <div className="mb-4 flex items-center justify-end space-x-2">
+        <span className="text-sm">Monthly</span>
+        <Switch
+          checked={isYearly}
+          onCheckedChange={setIsYearly}
+          id="billing-toggle"
+        />
+        <span className="text-sm">Yearly (10% off)</span>
+      </div>
       <div className="grid gap-[2rem] md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card
@@ -870,6 +879,8 @@ export default function Individual() {
                 )}
               </CardTitle>
               <div className="mb-4 text-3xl font-bold">
+                ${isYearly ? (tier.price * 12 * 0.9).toFixed(2) : tier.price}/
+                {isYearly ? "year" : "month"}
                 {tier.price}
                 <span className="text-lg font-normal text-muted-foreground">
                   /month
