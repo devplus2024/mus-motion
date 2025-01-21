@@ -151,6 +151,7 @@ import { TextScramble } from "@/components/ui/text-scramble";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
+  const { close, setCLose } = useState(false);
   const [position, setPosition] = React.useState("benoit");
   const listLogo = [
     {
@@ -213,10 +214,13 @@ export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
       {/* <TailwindcssButton /> */}
-      <Alert className="absolute left-[2rem] top-[29rem] z-[2] flex w-[480px] flex-col gap-4">
+      <Alert
+        className={`${close ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
+      >
         <AlertTitle className="flex items-center justify-between">
-          <p>Cookies Settings</p>
+          <p className="text-[1.1.rem]">Cookies Settings</p>
           <svg
+            onClick={setCLose(true)}
             xmlns="http://www.w3.org/2000/svg"
             width={16}
             height={16}
