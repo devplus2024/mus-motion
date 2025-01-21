@@ -213,16 +213,34 @@ export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
       {/* <TailwindcssButton /> */}
-      <Alert className="absolute bottom-[2rem] left-[2rem]">
+      <Alert className="absolute left-[2rem] top-[29rem] flex w-[480px] flex-col gap-4">
         <AlertTitle>Cookies Settings</AlertTitle>
         <AlertDescription>
           We use cookies and similar technologies to help personalise content,
           tailor and measure ads, and provide a better expe- rience. By clicking
           accept, you agree to this, as outlined in our Cookie Policy.
         </AlertDescription>
-        <div className="flex gap-[3rem]">
-          <Button>Accept</Button>
-          <Button variant={"outline"}>Decline</Button>
+        <div className="flex justify-between gap-[3rem]">
+          <Button className="w-full">Accept</Button>
+          <Button className="w-full" variant={"outline"}>
+            Decline
+          </Button>
+        </div>
+        <div className="relative right-[1rem] top-[2rem]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={16}
+            height={16}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1={18} y1={6} x2={6} y2={18} />
+            <line x1={6} y1={6} x2={18} y2={18} />
+          </svg>
         </div>
       </Alert>
       <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
