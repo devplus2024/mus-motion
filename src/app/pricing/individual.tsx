@@ -847,7 +847,7 @@ export default function Individual() {
   };
   return (
     <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[6rem]">
-      <div className="mb-[3rem] mt-4 flex items-center justify-end space-x-2">
+      <div className="mb-[3rem] mt-4 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
         <Switch
           checked={isYearly}
