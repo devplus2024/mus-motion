@@ -263,7 +263,7 @@ const pricingData = {
     },
     {
       title: "Basic",
-      price: 9.99,
+      price: 12,
       description: "For hobbyists and beginners",
       features: [
         {
@@ -428,7 +428,7 @@ const pricingData = {
     },
     {
       title: "Pro",
-      price: 24.99,
+      price: 26,
       description: "For serious musicians and producers",
       features: [
         {
@@ -593,7 +593,7 @@ const pricingData = {
     },
     {
       title: "Ultimate",
-      price: 39.99,
+      price: 42,
       description: "For professional studios and artists",
       features: [
         {
