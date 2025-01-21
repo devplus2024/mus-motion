@@ -151,7 +151,7 @@ import { TextScramble } from "@/components/ui/text-scramble";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
-  const { close, setCLose } = useState(false);
+  const [close, setCLose] = useState(false);
   const [position, setPosition] = React.useState("benoit");
   const listLogo = [
     {
@@ -220,7 +220,7 @@ export default function Home() {
         <AlertTitle className="flex items-center justify-between">
           <p className="text-[1.1.rem]">Cookies Settings</p>
           <svg
-            onClick={setCLose(true)}
+            onClick={() => setCLose(true)}
             xmlns="http://www.w3.org/2000/svg"
             width={16}
             height={16}
