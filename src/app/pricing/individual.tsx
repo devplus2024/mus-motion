@@ -847,7 +847,7 @@ export default function Individual() {
   };
   return (
     <div className="max-[1467px]:px-[11rem] min-[1350px]:px-[6rem]">
-      <div className="mb-4 flex items-center justify-end space-x-2">
+      <div className="mb-[3rem] mt-4 flex items-center justify-end space-x-2">
         <span className="text-sm">Monthly</span>
         <Switch
           checked={isYearly}
@@ -881,10 +881,6 @@ export default function Individual() {
               <div className="mb-4 text-3xl font-bold">
                 ${isYearly ? (tier.price * 12 * 0.9).toFixed(2) : tier.price}/
                 {isYearly ? "year" : "month"}
-                {tier.price}
-                <span className="text-lg font-normal text-muted-foreground">
-                  /month
-                </span>
               </div>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
