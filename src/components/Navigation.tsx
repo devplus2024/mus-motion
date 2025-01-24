@@ -187,6 +187,7 @@ export const Navigation = (): JSX.Element => {
   const isGuides = pathname === "/guides";
   const isSignIn = pathname === "/signin";
   const isCreative = pathname === "/creative";
+  const isGeneration = pathname === "/generation";
   const theme = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
@@ -224,7 +225,7 @@ export const Navigation = (): JSX.Element => {
     >
       <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : ""} ${isDocsPath || isCreative ? "border-b bg-[#0c0c0c]" : ""} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]`}
+          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : ""} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : ""} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]`}
         >
           <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
             <div className="flex items-center gap-4">
@@ -384,10 +385,10 @@ export const Navigation = (): JSX.Element => {
                   </Link>
                 </NavigationMenuItem> */}
                 <NavigationMenuItem>
-                  <Link href="/support" legacyBehavior passHref>
+                  <Link href="/generation" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/support"
+                        pathname === "/generation"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
                       } ${
@@ -400,7 +401,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       <TextHoverEnter
                         className={`${
-                          pathname === "/support"
+                          pathname === "/generation"
                             ? "dark:text-white"
                             : "dark:text-[#9b9b9b]"
                         }`}
