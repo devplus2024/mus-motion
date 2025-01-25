@@ -149,27 +149,29 @@ import AccordionFAQ from "./components/faq";
 import { TextEffect } from "@/components/ui/text-effect";
 import { TextScramble } from "@/components/ui/text-scramble";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-function useLocalStorage<T>(key: string, initialValue: T) {
-  const [value, setValue] = useState<T>(() => {
-    if (typeof window === "undefined") return initialValue; // Chạy trên server
-    const saved = localStorage.getItem(key);
-    return saved ? (JSON.parse(saved) as T) : initialValue;
-  });
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
-  }, [key, value]);
-
-  return [value, setValue] as const;
-}
 
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
-  const [close, setClose] = useLocalStorage<boolean>("close", false);
 
   const [position, setPosition] = React.useState("benoit");
+  // State quản lý giá trị "close"
+  const [close, setClose] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Lấy giá trị "close" từ localStorage khi component mount
+    const storedClose = localStorage.getItem("close");
+    if (storedClose !== null) {
+      // Chuyển giá trị từ chuỗi sang boolean
+      setClose(storedClose === "true");
+    }
+  }, []);
+
+  const handleToggle = () => {
+    // Đảo giá trị "close" và lưu vào localStorage
+    const newCloseValue = !close;
+    setClose(newCloseValue);
+    localStorage.setItem("close", newCloseValue.toString()); // Lưu giá trị boolean dưới dạng chuỗi
+  };
   const listLogo = [
     {
       id: "1",
@@ -232,12 +234,12 @@ export default function Home() {
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
       {/* <TailwindcssButton /> */}
       <Alert
-        className={`${(close ?? false) ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
+        className={`${close ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
       >
         <AlertTitle className="flex items-center justify-between">
           <p className="text-[1.1.rem]">Cookies Settings</p>
           <svg
-            onClick={() => setClose(true)}
+            onClick={handleToggle}
             xmlns="http://www.w3.org/2000/svg"
             width={16}
             height={16}
