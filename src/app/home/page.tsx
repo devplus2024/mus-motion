@@ -261,224 +261,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
         animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="w-ful mx-[5rem] mt-[1rem] flex items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
+        className="mx-[5rem] mt-[1rem] flex w-full items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
       >
-        {/* <div className="flex flex-col gap-[2.5rem] min-[375px]:items-center min-[645px]:items-center xl:items-start">
-            <div className="flex items-center gap-[1rem]">
-              <div className="flex items-center gap-[2rem]">
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <a
-                      href="https://x.com/DeveloperPlus24"
-                      className="flex items-center gap-[0.5rem]"
-                    >
-                      <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#434343] bg-gradient-to-tr from-black/50 to-[#121212]">
-                        <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#434343] bg-[#141414] p-[0.6rem]">
-                          <svg
-                            data-testid="geist-icon"
-                            height={20}
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width={20}
-                            style={{ color: "currentcolor" }}
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M1.60022 2H5.80022L8.78759 6.16842L12.4002 2H14.0002L9.5118 7.17895L14.4002 14H10.2002L7.21285 9.83158L3.60022 14H2.00022L6.48864 8.82105L1.60022 2ZM10.8166 12.8L3.93657 3.2H5.18387L12.0639 12.8H10.8166Z"
-                              fill="#ffffff"
-                            />
-                          </svg>
-                        </span>
-                        <p className="text-xs font-medium text-white">Twitter</p>
-                      </div>
-                    </a>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-[16rem]" side="top">
-                    <div className="flex justify-between space-x-4">
-                      <Avatar>
-                        <AvatarImage
-                          className="rounded-[0px] dark:invert-[1]"
-                          src="/x.svg"
-                        />
-                        <AvatarFallback>IG</AvatarFallback>
-                      </Avatar>
-                      <div className="space-y-1">
-                        <h4 className="text-sm font-semibold">@x</h4>
-                        <p className="text-sm">Pham Quang Truong An</p>
-                        <div className="flex items-center pt-2">
-                          <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
-                          <span className="text-xs text-muted-foreground">
-                            Joined Jun 2024
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <a href="" className="flex items-center gap-[0.5rem]">
-                      <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#434343] bg-gradient-to-tr from-black/50 to-[#121212]">
-                        <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#434343] bg-[#141414] p-[0.6rem]">
-                          <svg
-                            data-testid="geist-icon"
-                            height={20}
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width={20}
-                            style={{ color: "currentcolor" }}
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M1.60022 2H5.80022L8.78759 6.16842L12.4002 2H14.0002L9.5118 7.17895L14.4002 14H10.2002L7.21285 9.83158L3.60022 14H2.00022L6.48864 8.82105L1.60022 2ZM10.8166 12.8L3.93657 3.2H5.18387L12.0639 12.8H10.8166Z"
-                              fill="#ffffff"
-                            />
-                          </svg>
-                        </span>
-                        <p className="text-xs font-medium text-white">Twitter</p>
-                      </div>
-                    </a>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-[16rem]" side="top">
-                    <div className="flex justify-between space-x-4">
-                      <Avatar>
-                        <AvatarImage
-                          className="rounded-[0px] dark:invert-[1]"
-                          src="/instagram.svg"
-                        />
-                        <AvatarFallback>IG</AvatarFallback>
-                      </Avatar>
-                      <div className="space-y-1">
-                        <h4 className="text-sm font-semibold">@instagram</h4>
-                        <p className="text-sm">Pham Quang Truong An</p>
-                        <div className="flex items-center pt-2">
-                          <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
-                          <span className="text-xs text-muted-foreground">
-                            Joined August 2024
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <a
-                      href="https://www.facebook.com/phamquangtruongan"
-                      className="flex items-center gap-[0.5rem]"
-                    >
-                      <div className="relative flex h-[30px] w-[120px] items-center justify-center rounded-full border border-[#434343] bg-gradient-to-tr from-black/50 to-[#121212]">
-                        <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#434343] bg-[#141414] p-[0.6rem]">
-                          <svg
-                            data-testid="geist-icon"
-                            height={20}
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width={20}
-                            style={{ color: "currentcolor" }}
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M1.60022 2H5.80022L8.78759 6.16842L12.4002 2H14.0002L9.5118 7.17895L14.4002 14H10.2002L7.21285 9.83158L3.60022 14H2.00022L6.48864 8.82105L1.60022 2ZM10.8166 12.8L3.93657 3.2H5.18387L12.0639 12.8H10.8166Z"
-                              fill="#ffffff"
-                            />
-                          </svg>
-                        </span>
-                        <p className="text-xs font-medium text-white">Twitter</p>
-                      </div>
-                    </a>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-[16rem]" side="top">
-                    <div className="flex justify-between space-x-4">
-                      <Avatar>
-                        <AvatarImage
-                          className="rounded-[0px] dark:invert-[1]"
-                          src="/facebook.svg"
-                        />
-                        <AvatarFallback>FB</AvatarFallback>
-                      </Avatar>
-                      <div className="space-y-1">
-                        <h4 className="text-sm font-semibold">@facebook</h4>
-                        <p className="text-sm">Pham Quang Truong An</p>
-                        <div className="flex items-center pt-2">
-                          <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
-                          <span className="text-xs text-muted-foreground">
-                            Joined December 2023
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              </div>
-            </div>
-            <h1 className="font-bold leading-[3.2rem] min-[375px]:text-center min-[375px]:text-[1.9rem] min-[645px]:text-center min-[645px]:text-[2rem] xl:text-start xl:text-[2.3rem]">
-              Experience the Ultimate Music Journey with Our{" "}
-              <span className="mx-2 bg-white px-2 text-black">
-                Innovative Software
-              </span>
-            </h1>
-            <p className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]">
-              Dive into a seamless music experience with our cutting-edge
-              software. Unleash your creativity, manage your playlists, and
-              explore a universe of sounds.
-            </p>
-            <TextShimmer
-              className="font-medium min-[375px]:w-[24rem] min-[375px]:text-center min-[375px]:text-[0.885rem] min-[645px]:text-center min-[645px]:text-[0.9rem] xl:w-[30rem] xl:text-start xl:text-[1rem]"
-              duration={3}
-            >
-              Dive into a seamless music experience with our cutting-edge
-              software. Unleash your creativity, manage your playlists, and
-              explore a universe of sounds.
-            </TextShimmer>
-            <div className="flex gap-[2rem] min-[375px]:w-[22rem] min-[375px]:flex-col xl:flex-row">
-              <DownloadButton />
-              <Link href="/webapp">
-                <Button
-                  variant={"outline"}
-                  className="hover:bg-accent dark:hover:bg-[#1a1a1a] min-[375px]:w-full"
-                >
-                  <Globe className="mr-2 h-4 w-4" />
-                  Try On The Web
-                </Button>
-              </Link>
-            </div>
-            <div className="min-[375px]:text-xs xl:text-sm">
-              <p>
-                By using Stroma, you agree to its{" "}
-                <Link href="/license" className="underline">
-                  license
-                </Link>{" "}
-                and{" "}
-                <Link className="underline" href="/privacy">
-                  privacy
-                </Link>{" "}
-                statement.
-              </p>
-            </div>
-          </div> */}
-        {/* <div className="px-[1rem]">
-            <Carousel />
-            <div className="relative rounded-lg">
-
-
-
-
-              <BorderBeam
-                colorFrom="#06b6d4"
-                colorTo="#3b82f6"
-                size={150}
-                duration={6}
-                delay={0}
-                borderWidth={1.8}
-              />
-            </div>
-          </div> */}
         <div className="flex flex-col items-center justify-center gap-[2rem]">
-          <TextEffect
+          {/* <TextEffect
             className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]"
             per="char"
             delay={0.5}
@@ -512,7 +298,29 @@ export default function Home() {
             }}
           >
             The next generation of audio collaboration.
-          </TextEffect>
+          </TextEffect> */}
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div className="relative h-[5rem] w-[800px] overflow-hidden text-center text-[4rem] font-bold leading-[4rem]">
+              <motion.h1
+                initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
+                animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                className="absolute bottom-0"
+              >
+                The next generation of
+              </motion.h1>
+            </div>
+            <div className="relative h-[4rem] w-[800px] overflow-y-hidden text-[4rem] font-bold leading-[4rem]">
+              <motion.h1
+                initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
+                animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                className="absolute bottom-0 pl-[2rem]"
+              >
+                audio collaboration.
+              </motion.h1>
+            </div>
+          </div>
           {/* <TextScramble
             className="w-[800px] text-center font-mono text-[4rem] font-bold leading-[4rem]"
             duration={1.2}
