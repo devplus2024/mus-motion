@@ -149,9 +149,23 @@ import AccordionFAQ from "./components/faq";
 import { TextEffect } from "@/components/ui/text-effect";
 import { TextScramble } from "@/components/ui/text-scramble";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+function useLocalStorage<T>(key: string, initialValue: T) {
+  const [value, setValue] = useState<T>(() => {
+    const saved = localStorage.getItem(key);
+    return saved ? JSON.parse(saved) : initialValue;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue] as const;
+}
+
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
-  const [close, setCLose] = useState(false);
+  const [close, setClose] = useLocalStorage<boolean>("close", false);
+
   const [position, setPosition] = React.useState("benoit");
   const listLogo = [
     {
@@ -300,7 +314,7 @@ export default function Home() {
             The next generation of audio collaboration.
           </TextEffect> */}
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="relative h-[5rem] flex items-center justify-center w-[800px] overflow-hidden text-center text-[4rem] font-bold leading-[4rem]">
+            <div className="relative flex h-[5rem] w-[800px] items-center justify-center overflow-hidden text-center text-[4rem] font-bold">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -310,7 +324,7 @@ export default function Home() {
                 The next generation of
               </motion.h1>
             </div>
-            <div className="relative h-[4rem] flex items-center justify-center w-[800px] overflow-y-hidden text-[4rem] font-bold leading-[4rem]">
+            <div className="relative flex h-[4rem] w-[800px] items-center justify-center overflow-y-hidden text-[4rem] font-bold leading-[4rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
