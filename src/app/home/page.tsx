@@ -232,7 +232,7 @@ export default function Home() {
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[3.8rem] dark:bg-black dark:[color-scheme:dark]">
       {/* <TailwindcssButton /> */}
       <Alert
-        className={`${close ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
+        className={`${(close ?? false) ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
       >
         <AlertTitle className="flex items-center justify-between">
           <p className="text-[1.1.rem]">Cookies Settings</p>
