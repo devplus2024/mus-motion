@@ -234,7 +234,7 @@ export default function Home() {
         <AlertTitle className="flex items-center justify-between">
           <p className="text-[1.1.rem]">Cookies Settings</p>
           <svg
-            onClick={() => setCLose(true)}
+            onClick={() => setClose(true)}
             xmlns="http://www.w3.org/2000/svg"
             width={16}
             height={16}
