@@ -316,13 +316,13 @@ export default function Home() {
           >
             The next generation of audio collaboration.
           </TextEffect> */}
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center">
             <div className="relative flex h-[5rem] w-[800px] items-center justify-center overflow-hidden text-center text-[4rem] font-bold">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="absolute bottom-0"
+                className="absolute bottom-0 leading-[5rem]"
               >
                 The next generation of
               </motion.h1>
@@ -332,7 +332,7 @@ export default function Home() {
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="absolute bottom-0 pl-[2rem]"
+                className="absolute bottom-0"
               >
                 audio collaboration.
               </motion.h1>
