@@ -300,7 +300,7 @@ export default function Home() {
             The next generation of audio collaboration.
           </TextEffect> */}
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="relative h-[5rem] w-[800px] overflow-hidden text-center text-[4rem] font-bold leading-[4rem]">
+            <div className="relative h-[5rem] flex items-center justify-center w-[800px] overflow-hidden text-center text-[4rem] font-bold leading-[4rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -310,7 +310,7 @@ export default function Home() {
                 The next generation of
               </motion.h1>
             </div>
-            <div className="relative h-[4rem] w-[800px] overflow-y-hidden text-[4rem] font-bold leading-[4rem]">
+            <div className="relative h-[4rem] flex items-center justify-center w-[800px] overflow-y-hidden text-[4rem] font-bold leading-[4rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
