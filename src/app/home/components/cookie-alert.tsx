@@ -7,22 +7,32 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useEffect, useState } from "react";
+const getCookie = (name: string): string | null => {
+  const match = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(name + "="));
+  return match ? match.split("=")[1] : null;
+};
+
+const setCookie = (name: string, value: string, days: number): void => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/`;
+};
+
 export default function CookieAlert() {
   const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
-    const accepted = localStorage.getItem("cookieAccepted");
-    if (accepted === "true") {
-      setIsAccepted(true);
-    }
+    setIsAccepted(getCookie("cookieAccepted") === "true");
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("cookieAccepted", "true");
+    setCookie("cookieAccepted", "true", 365);
     setIsAccepted(true);
   };
 
-  if (isAccepted) return null;
+  if (document.cookie.includes("true")) return null;
   return (
     <Alert
       className={`absolute left-[2rem] top-[29rem] z-[2] flex w-[480px] flex-col gap-4`}

@@ -1,6 +1,6 @@
 {
-  "name": "Stroma",
-  "version": "2.5.3",
+  "name": "stroma-vf",
+  "version": "10.9.5",
   "private": true,
   "main": "main.js",
   "build": {
