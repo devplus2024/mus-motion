@@ -7,7 +7,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useEffect, useState } from "react";
-export default function Component() {
+export default function CookieAlert() {
   const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
