@@ -32,7 +32,8 @@ export default function CookieAlert() {
     setIsAccepted(true);
   };
 
-  if (document.cookie.includes("true")) return null;
+  if (typeof document !== "undefined" && document.cookie.includes("true"))
+    return null;
   return (
     <Alert
       className={`absolute left-[2rem] top-[29rem] z-[2] flex w-[480px] flex-col gap-4`}
