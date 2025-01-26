@@ -233,13 +233,13 @@ export const Navigation = (): JSX.Element => {
                 href="/"
                 className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                Stroma
+                Stroma VF
               </Link>
               <Link
                 href="/"
                 className="rounded-full border px-4 py-1 text-xs font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                v2.6.5
+                v10.9.5
               </Link>
             </div>
             <NavigationMenu>

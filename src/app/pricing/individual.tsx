@@ -866,25 +866,40 @@ export default function Individual() {
               className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-[1.5rem]`}
             >
               <CardTitle className="text-[1.04rem] text-[#a1a1a1]">
-                <p className={`${tier.title === "Pro" ? "hidden" : ""}`}>
+                <p
+                  className={`${tier.title === "Pro" || tier.title === "Basic" ? "hidden" : ""}`}
+                >
                   {tier.title}
                 </p>
                 {tier.title === "Pro" && (
                   <div className="flex justify-between">
                     <p>Pro</p>
-                    <Button className="h-fit px-3 py-1" variant={"outline"}>
+                    <Badge className="h-fit px-3 py-1" variant={"outline"}>
                       Popular
-                    </Button>
+                    </Badge>
+                  </div>
+                )}
+                {tier.title === "Basic" && (
+                  <div className="flex justify-between">
+                    <p>Basic</p>
+                    <Badge className="h-fit px-3 py-1" variant={"outline"}>
+                      Best Value
+                    </Badge>
                   </div>
                 )}
               </CardTitle>
-              <div className="mb-4 text-3xl font-bold">
+              <motion.div
+                transition={{ duration: 20 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="mb-4 text-3xl font-bold"
+              >
                 $
                 {isYearly
                   ? parseFloat((tier.price * 12 * 2).toFixed(2))
                   : tier.price}
                 /{isYearly ? "year" : "month"}
-              </div>
+              </motion.div>
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow pt-[1rem]">

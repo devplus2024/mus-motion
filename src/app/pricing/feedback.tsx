@@ -1,53 +1,32 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
-import AlertToast from "./alert-toast";
 
-export default function FeedBack() {
+export default function Component() {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <AlertToast />
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Send us feedback</DialogTitle>
-          <DialogDescription>
-            Watch{" "}
-            <a className="text-foreground hover:underline" href="#">
-              tutorials
-            </a>
-            , read Origin UI&lsquo;s{" "}
-            <a className="text-foreground hover:underline" href="#">
-              documentation
-            </a>
-            , or join our{" "}
-            <a className="text-foreground hover:underline" href="#">
-              Discord
-            </a>{" "}
-            for community help.
-          </DialogDescription>
-        </DialogHeader>
-        <form className="space-y-5">
-          <Textarea
-            id="feedback"
-            placeholder="How can we improve Origin UI?"
-            aria-label="Send feedback"
-          />
-          <div className="flex flex-col sm:flex-row sm:justify-end">
-            <Button type="button">Send feedback</Button>
-          </div>
-        </form>
-      </DialogContent>
-    </Dialog>
+    <div className="mt-[3rem] flex flex-col gap-4">
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline">Feedback</Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-72">
+          <h2 className="mb-2 text-sm font-semibold">Send us feedback</h2>
+          <form className="space-y-3">
+            <Textarea
+              id="feedback"
+              placeholder="How can we improve Stroma VF?"
+              aria-label="Send feedback"
+            />
+            <div className="flex flex-col sm:flex-row sm:justify-end">
+              <Button size="sm">Send feedback</Button>
+            </div>
+          </form>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
