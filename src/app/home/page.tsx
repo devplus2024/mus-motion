@@ -284,40 +284,7 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-      <Alert
-        className={`${close ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
-      >
-        <AlertTitle className="flex items-center justify-between">
-          <p className="text-[1.1.rem]">Cookies Settings</p>
-          <svg
-            onClick={handleToggle}
-            xmlns="http://www.w3.org/2000/svg"
-            width={16}
-            height={16}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1={18} y1={6} x2={6} y2={18} />
-            <line x1={6} y1={6} x2={18} y2={18} />
-          </svg>
-        </AlertTitle>
-        <AlertDescription>
-          We use cookies and similar technologies to help personalise content,
-          tailor and measure ads, and provide a better expe- rience. By clicking
-          accept, you agree to this, as outlined in our Cookie Policy.
-        </AlertDescription>
-        <div className="flex justify-between gap-[3rem]">
-          <Button className="w-full">Accept</Button>
-          <Button className="w-full" variant={"outline"}>
-            Decline
-          </Button>
-        </div>
-        <div className="relative right-[1rem] top-[2rem]"></div>
-      </Alert>
+
       <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
         <span>
           <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
