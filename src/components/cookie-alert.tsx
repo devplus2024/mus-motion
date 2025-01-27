@@ -1,14 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+
 const getCookie = (name: string): string | null => {
   const match = document.cookie
     .split("; ")
@@ -22,30 +17,57 @@ const setCookie = (name: string, value: string, days: number): void => {
   document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/`;
 };
 
-export default function CookieAlert() {
+const ParentComponentCookieAlert = () => {
+  const [showComponent, setShowComponent] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
     setIsAccepted(getCookie("cookieAccepted") === "true");
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowComponent(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div>
+      {showComponent && !isAccepted ? (
+        <CookieAlert isAccepted={isAccepted} setIsAccepted={setIsAccepted} />
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
+
+export default ParentComponentCookieAlert;
+
+const CookieAlert = ({
+  isAccepted,
+  setIsAccepted,
+}: {
+  isAccepted: boolean;
+  setIsAccepted: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const handleAccept = () => {
     setCookie("cookieAccepted", "true", 365);
     setIsAccepted(true);
   };
-  // if (isAccepted) return null;
+
   return (
     <motion.div
-      transition={{ duration: 0.5, damping: 20, delay: 2 }}
-      initial={{ y: 20 }}
+      transition={{ duration: 0.5, damping: 20 }}
+      initial={{ y: 0 }}
       animate={isAccepted ? { opacity: 0 } : { opacity: 1, y: 0 }}
       exit={{ x: -20 }}
     >
-      <Alert
-        className={`fixed left-[2rem] top-[32rem] z-[2] flex w-[480px] flex-col gap-4`}
-      >
+      <Alert className="fixed left-[2rem] top-[32rem] z-[2] flex w-[480px] flex-col gap-4">
         <AlertTitle className="flex items-center justify-between">
-          <p className="text-[1.1.rem]">Cookies Settings</p>
+          <p className="text-[1.1rem]">Cookies Settings</p>
           <svg
             onClick={() => setIsAccepted(true)}
             className="cursor-pointer"
@@ -64,8 +86,8 @@ export default function CookieAlert() {
           </svg>
         </AlertTitle>
         <AlertDescription>
-          We use cookies and similar technologies to help personalise content,
-          tailor and measure ads, and provide a better expe- rience. By clicking
+          We use cookies and similar technologies to help personalize content,
+          tailor and measure ads, and provide a better experience. By clicking
           accept, you agree to this, as outlined in our Cookie Policy.
         </AlertDescription>
         <div className="flex justify-between gap-[3rem]">
@@ -76,8 +98,7 @@ export default function CookieAlert() {
             Decline
           </Button>
         </div>
-        <div className="relative right-[1rem] top-[2rem]"></div>
       </Alert>
     </motion.div>
   );
-}
+};
