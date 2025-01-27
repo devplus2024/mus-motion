@@ -12,6 +12,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 import { ToasterSonner } from "../components/ui/sonner";
+import CookieAlert from "@/components/cookie-alert";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stroma: A Useful Platform For Musicians",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <head />
         <body className="relative overflow-x-hidden antialiased">
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+            <CookieAlert />
             <Navigation />
             <DocsNavigation />
             <Toaster />
