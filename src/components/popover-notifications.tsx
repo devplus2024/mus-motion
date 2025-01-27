@@ -28,7 +28,7 @@ const initialNotifications = [
     action: "requested review on",
     target: "PR #42: Feature implementation",
     timestamp: "15 minutes ago",
-    unread: true,
+    unread: false,
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const initialNotifications = [
     action: "shared",
     target: "New component library",
     timestamp: "45 minutes ago",
-    unread: true,
+    unread: false,
   },
   {
     id: 3,

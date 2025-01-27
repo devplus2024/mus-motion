@@ -137,6 +137,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import PopoverNotifications from "./popover-notifications";
 import TextHoverEnter from "./TextHoverEnter";
+import FeedBack from "./feedback";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -567,7 +568,8 @@ export const Navigation = (): JSX.Element => {
               </DropdownMenu>
               <PopoverNotifications />
               <ThemeToggle />
-              <CommandMenu />
+              {/* <CommandMenu /> */}
+              <FeedBack />
             </motion.div>
             <div className="flex items-center gap-[1rem]">
               <Link
