@@ -33,12 +33,12 @@ export default function CookieAlert() {
     setCookie("cookieAccepted", "true", 365);
     setIsAccepted(true);
   };
-
+  // if (isAccepted) return null;
   return (
     <motion.div
       transition={{ duration: 0.5, damping: 20 }}
       initial={{ y: 20 }}
-      animate={isAccepted ? { y: -20 } : { y: 0 }}
+      animate={isAccepted ? { opacity: 0 } : { opacity: 1, y: 0 }}
       exit={{ x: -20 }}
     >
       <Alert

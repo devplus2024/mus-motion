@@ -33,8 +33,8 @@ export default function RootLayout({
       >
         <head />
         <body className="relative overflow-x-hidden antialiased">
+          <CookieAlert />
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
-            <CookieAlert />
             <Navigation />
             <DocsNavigation />
             <Toaster />
