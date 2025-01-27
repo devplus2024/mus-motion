@@ -34,16 +34,15 @@ export default function CookieAlert() {
     setIsAccepted(true);
   };
 
-  if (typeof document !== "undefined" && document.cookie.includes("true"))
-    return null;
   return (
     <motion.div
-      transition={{ duration: 0.25, delay: 2 }}
-      animate={{ visibility: "initial" }}
-      initial={{ visibility: "hidden" }}
+      transition={{ duration: 0.5, damping: 20 }}
+      initial={{ y: 20 }}
+      animate={isAccepted ? { y: -20 } : { y: 0 }}
+      exit={{ x: -20 }}
     >
       <Alert
-        className={`${isAccepted ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
+        className={`fixed left-[2rem] top-[32rem] z-[2] flex w-[480px] flex-col gap-4`}
       >
         <AlertTitle className="flex items-center justify-between">
           <p className="text-[1.1.rem]">Cookies Settings</p>
