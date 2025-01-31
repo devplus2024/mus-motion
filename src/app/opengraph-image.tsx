@@ -30,7 +30,7 @@ export default async function Image() {
   } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
-    imagePreview = "The next generation of audio collaboration.";
+    imagePreview = "Người Yêu Của Trung Đây Nhé ❤️";
   }
 
   const geistLight = fetch(
