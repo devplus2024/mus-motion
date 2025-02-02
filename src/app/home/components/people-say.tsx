@@ -126,9 +126,9 @@ const items = [
 
 export function PeopleSay() {
   return (
-    <Masonry.Root columnCount={3} gap={12}>
+    <Masonry.Root columnCount={3} gap={20} className="mx-[5rem]">
       {items.map((item) => (
-        <Masonry.Item key={item.id} asChild>
+        <Masonry.Item className="w-[200px]" key={item.id} asChild>
           <div className="flex flex-col gap-1 rounded-md border bg-card p-4 text-card-foreground shadow-sm">
             <div className="text-sm font-medium leading-tight sm:text-base">
               {item.title}
