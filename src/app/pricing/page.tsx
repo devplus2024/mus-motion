@@ -18,6 +18,7 @@ import { BackgroundLines } from "@/components/ui/background-lines";
 import { MarqueeUI } from "./marquee-ui";
 import FeedBack from "./feedback";
 import { Button } from "@/components/ui/button";
+import AnimatedBar from "@/components/animation-bar";
 
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
@@ -37,6 +38,7 @@ function PricingPage() {
 
   return (
     <main className="pb-[6rem]">
+      <AnimatedBar />
       <div className="relative flex h-[350px] flex-col items-center justify-center gap-[1rem] text-center">
         <Button variant="outline" className="h-[30px]">
           Pricing and Buy

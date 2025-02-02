@@ -92,6 +92,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BadgeCheck, HelpCircleIcon } from "lucide-react";
+import NumberFlow from "@number-flow/react";
 import { CheckCircledIcon } from "@radix-ui/react-icons";
 
 const pricingData = {
@@ -888,18 +889,23 @@ export default function Individual() {
                   </div>
                 )}
               </CardTitle>
-              <motion.div
-                transition={{ duration: 20 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+              <NumberFlow
                 className="mb-4 text-3xl font-bold"
-              >
-                $
-                {isYearly
-                  ? parseFloat((tier.price * 12 * 2).toFixed(2))
-                  : tier.price}
-                /{isYearly ? "year" : "month"}
-              </motion.div>
+                value={
+                  isYearly
+                    ? parseFloat((tier.price * 12 * 2).toFixed(2))
+                    : tier.price
+                }
+                locales="en-US"
+                // format={{ style: "currency", currency: "USD" }}
+                format={{
+                  style: "currency",
+                  currency: "USD",
+                  trailingZeroDisplay: "stripIfInteger",
+                }}
+                suffix={`/${isYearly ? "year" : "month"}`}
+              />
+
               <CardDescription>{tier.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow pt-[1rem]">
