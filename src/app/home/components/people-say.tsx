@@ -4,38 +4,123 @@ import * as React from "react";
 const items = [
   {
     id: "1",
-    title: "The 900",
-    description: "The 900 is a trick where you spin 900 degrees in the air.",
+    title: "Smooth Interface",
+    description:
+      "The music player has a smooth and user-friendly interface, making it easy to navigate.",
   },
   {
     id: "2",
-    title: "Indy Backflip",
+    title: "High-Quality Sound",
     description:
-      "The Indy Backflip is a trick where you backflip in the air while grabbing the board with your back hand.",
+      "The audio quality is top-notch, delivering crystal-clear sound with deep bass.",
   },
   {
     id: "3",
-    title: "Pizza Guy",
+    title: "Fast Performance",
     description:
-      "The Pizza Guy is a trick where you flip the board like a pizza.",
+      "The app loads songs instantly and plays without any lag, even with large playlists.",
   },
   {
     id: "4",
-    title: "Rocket Air",
+    title: "Customization Options",
     description:
-      "The Rocket Air is a trick where you grab the nose of your board and point it straight up to the sky.",
+      "It offers a lot of customization, from themes to equalizer settings, giving users full control.",
   },
   {
     id: "5",
-    title: "Kickflip Backflip",
+    title: "Offline Mode",
     description:
-      "The Kickflip Backflip is a trick where you perform a kickflip while doing a backflip simultaneously.",
+      "Being able to listen to music offline is a great feature, especially when traveling.",
   },
   {
     id: "6",
-    title: "FS 540",
+    title: "Playlist Creation",
     description:
-      "The FS 540 is a trick where you spin frontside 540 degrees in the air.",
+      "You can easily create and manage your own playlists, making it perfect for personalizing your listening experience.",
+  },
+  {
+    id: "7",
+    title: "Smart Recommendations",
+    description:
+      "The app suggests songs based on your listening habits, which is great for discovering new music.",
+  },
+  {
+    id: "8",
+    title: "Seamless Syncing",
+    description:
+      "It synchronizes seamlessly across all devices, so you can pick up where you left off.",
+  },
+  {
+    id: "9",
+    title: "High Compatibility",
+    description:
+      "The music player supports a wide range of file formats, making it versatile for different audio types.",
+  },
+  {
+    id: "10",
+    title: "Sound Quality Customization",
+    description:
+      "With advanced equalizer settings, you can adjust the sound to your preferences, whether it's for bass or treble.",
+  },
+  {
+    id: "11",
+    title: "Battery Friendly",
+    description:
+      "The app is optimized for battery usage, making it ideal for long listening sessions without draining your battery quickly.",
+  },
+  {
+    id: "12",
+    title: "Cloud Integration",
+    description:
+      "Integration with cloud storage allows easy access to your music library anywhere.",
+  },
+  {
+    id: "13",
+    title: "Dark Mode",
+    description:
+      "Dark mode is perfect for night listening, reducing eye strain while enhancing the experience.",
+  },
+  {
+    id: "14",
+    title: "High-Resolution Audio Support",
+    description:
+      "For audiophiles, the app supports high-resolution audio files, offering an unparalleled listening experience.",
+  },
+  {
+    id: "15",
+    title: "Gesture Controls",
+    description:
+      "The app includes gesture controls, allowing users to skip tracks or adjust volume with a simple swipe.",
+  },
+  {
+    id: "16",
+    title: "Radio Feature",
+    description:
+      "It offers an integrated radio feature with customizable stations, providing a new way to explore music.",
+  },
+  {
+    id: "17",
+    title: "Podcast Support",
+    description:
+      "The app also supports podcasts, allowing you to enjoy both music and podcasts in one place.",
+  },
+  {
+    id: "18",
+    title: "Integrated Lyrics",
+    description:
+      "Integrated lyrics display allows you to sing along with your favorite tracks.",
+  },
+  {
+    id: "19",
+    title: "Fast Updates",
+    description:
+      "The app is frequently updated with new features and bug fixes, ensuring a smooth user experience.",
+  },
+  {
+    id: "20",
+    title: "User Community",
+    description:
+      "The app has an active user community where you can share playlists, recommend songs, and discover new artists.",
   },
 ];
 
