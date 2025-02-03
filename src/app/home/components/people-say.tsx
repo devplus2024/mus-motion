@@ -7,19 +7,19 @@ import * as React from "react";
 const items = [
   {
     name: "Alice",
-    username: "@alice",
+    username: "Senior Software Engineer, Frontend",
     body: "I have tried many music apps before, but this one truly amazed me. The interface is smooth, easy to navigate, and the overall experience is fantastic. I can quickly find my favorite songs and create playlists effortlessly, making my music experience seamless and enjoyable.",
     img: "https://avatar.vercel.sh/alice",
   },
   {
     name: "Bob",
-    username: "@bob",
+    username: "Charlton Roberts, Product Engineering",
     body: "The audio quality in this app is outstanding. Every note is crystal clear, from the deep bass to the sharp highs. If you're a true music lover, you will appreciate the sound precision and richness this app offers.",
     img: "https://avatar.vercel.sh/bob",
   },
   {
     name: "Charlie",
-    username: "@charlie",
+    username: "Daniel Lopes, Frontend Developer",
     body: "One of the best things about this app is its speed. Songs load almost instantly, and there's no lag at all. Even when I have a large playlist, the app handles it effortlessly, making it a top choice for music streaming.",
     img: "https://avatar.vercel.sh/charlie",
   },
@@ -145,7 +145,7 @@ export function PeopleSay() {
 <div className=" flex items-start flex-col gap-1 text-sm leading-tight sm:text-base">
   <div className="w-full flex justify-between">
     
-    <p className="text-xl ">{item.name}</p>
+    <p className="text-md ">{item.name}</p>
     <svg
   data-testid="geist-icon"
   height={16}
