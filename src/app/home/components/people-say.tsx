@@ -165,7 +165,7 @@ export function PeopleSay() {
     </div>
   <p className="text-sm text-[#a1a1a1]">{item.username}</p>
   </div>
-  <span className="text-white text-md">{item.body}</span>
+  <span className="text-white text-md">"{item.body}"</span>
         </div>
       ))}
     </div>
