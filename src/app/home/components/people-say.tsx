@@ -147,7 +147,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-[200px] w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative h-[200px] w-[300px] cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
         "border bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -171,26 +171,26 @@ const ReviewCard = ({
 export function MarqueeDemoVertical() {
   return (
     <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
+      <div className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
+      </div>
+      <div  className="[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
-      </Marquee>
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
+      </div>
+      <div  className="[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
+      </div>
+      <div  className="[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
-      </Marquee>
+      </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white dark:from-background"></div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white dark:from-background"></div>
     </div>

@@ -603,7 +603,7 @@ export const Navigation = (): JSX.Element => {
                   animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <Button  className="h-fit gap-1 px-3 py-1">
+                  <Button  className="h-fit [&_svg]:size-2 gap-1 px-3 py-1">
                   Sign Up
                   <svg
   data-testid="geist-icon"
