@@ -252,7 +252,7 @@ const Masonry = React.forwardRef<HTMLDivElement, MasonryProps>(
           position: "",
           top: "",
           left: "",
-          width: `calc(${100 / currentColumnCount}% - ${(currentGap * (currentColumnCount - 1)) / currentColumnCount}px)`,
+          // width: `calc(${100 / currentColumnCount}% - ${(currentGap * (currentColumnCount - 1)) / currentColumnCount}px)`,
           margin: `${currentGap / 2}px`,
         };
         Object.assign(item.style, styles);
