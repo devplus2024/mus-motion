@@ -135,20 +135,20 @@ const items = [
  
 export function PeopleSay() {
   return (
-    <Masonry.Root  linear columnCount={3} gap={12}>
+    <div   className="grid grid-cols-3 justify-items-center gap-[2rem] ">
       {items.map((item) => (
-        <Masonry.Item className="w-[200px]" key={item.name} asChild>
-          <div  className="flex flex-col gap-1 rounded-md border bg-card p-4 text-card-foreground shadow-sm">
-            <div className=" flex items-start flex-col gap-1 text-sm leading-tight sm:text-base">
-              <p className="text-sm ">{item.name}</p>
-              <p className="text-xs text-[#a1a1a1]">{item.username}</p>
-            </div>
-            <span className="text-muted-foreground text-sm">
-              {item.body}
-            </span>
-          </div>
-        </Masonry.Item>
+        <div key={item.name} className="flex flex-cols gap w-[200px] flex flex-col gap-1  border bg-card p-4 text-card-foreground shadow-sm">
+           <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
+              <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>
+              <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-r border-t"></div>
+              <div className="absolute -bottom-[10px] -right-[10px] h-[10px] w-[10px] border-l border-t"></div>
+<div className=" flex items-start flex-col gap-1 text-sm leading-tight sm:text-base">
+  <p className="text-sm ">{item.name}</p>
+  <p className="text-xs text-[#a1a1a1]">{item.username}</p>
+  </div>
+  <span className="text-muted-foreground text-sm">{item.body}</span>
+        </div>
       ))}
-    </Masonry.Root>
+    </div>
   );
 }
