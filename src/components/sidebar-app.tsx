@@ -94,7 +94,7 @@ export function SidebarApp({ ...props }: ComponentProps<typeof Sidebar>) {
 						<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
 							<MessageCircle className="h-5 w-5 text-primary-foreground" />
 						</div>
-						<span className="text-lg font-semibold">simple-ai</span>
+						<span className="text-lg font-semibold">VF R1 AI</span>
 					</div>
 					{/* New Chat Button */}
 					<TooltipProvider>
