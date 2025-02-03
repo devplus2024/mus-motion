@@ -351,7 +351,7 @@ const Masonry = React.forwardRef<HTMLDivElement, MasonryProps>(
         ...initialGridStyle,
         height: mounted && maxColumnHeight ? `${maxColumnHeight}px` : "auto",
         minHeight: "0px",
-        width: mounted ? `calc(100% - ${currentGap}px)` : "100%",
+        // width: mounted ? `calc(100% - ${currentGap}px)` : "100%",
         marginLeft: mounted ? `${currentGap / 2}px` : undefined,
         marginRight: mounted ? `${currentGap / 2}px` : undefined,
       }),
