@@ -150,7 +150,7 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { TextScramble } from "@/components/ui/text-scramble";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import CookieAlert from "./components/cookie-alert";
-import { MarqueeDemoVertical } from "./components/people-say";
+import {  PeopleSay } from "./components/people-say";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
 
@@ -446,7 +446,7 @@ export default function Home() {
       </div>
       <div className="mx-auto my-[2rem] w-[700px] border-t"></div>
 
-      <MarqueeDemoVertical />
+      <PeopleSay />
       <div className="mx-auto my-[2rem] w-[700px] border-t"></div>
 
       {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
