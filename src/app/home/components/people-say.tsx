@@ -135,7 +135,7 @@ const items = [
  
 export function PeopleSay() {
   return (
-    <div className="flex gap-[2rem]">
+    <div className="flex flex-col gap-[2rem]">
       <div className="text-4xl font-bold text-center tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
         <p>What People Say ?</p>
       </div>
