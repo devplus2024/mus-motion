@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 export default function WatchDemo (){
     const [view, setView] = useState(false);
+    useEffect(() => {
+        if (view) {
+            document.body.setAttribute("data-scroll-locked=","1" );
+        }
+        else{
+            document.body.setAttribute("data-scroll-locked=","0" ); 
+        }
+        
+      }, [view]);
     return(
         
 

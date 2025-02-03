@@ -135,7 +135,11 @@ const items = [
  
 export function PeopleSay() {
   return (
-    <div   className="grid grid-cols-3 justify-items-center gap-[2rem] ">
+    <div className="flex gap-[2rem]">
+      <div className="text-4xl font-bold text-center tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
+        <p>What People Say ?</p>
+      </div>
+      <div   className="grid grid-cols-3 justify-items-center gap-[2rem] ">
       {items.map((item) => (
         <div key={item.name} className="flex flex-cols gap relative w-[400px] flex flex-col gap-1  border bg-card p-4 text-card-foreground shadow-sm">
            <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
@@ -168,6 +172,7 @@ export function PeopleSay() {
   <span className="text-white text-md">&quot;{item.body}&quot;</span>
         </div>
       ))}
+    </div>
     </div>
   );
 }
