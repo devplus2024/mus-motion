@@ -603,13 +603,14 @@ export const Navigation = (): JSX.Element => {
                   animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <Button  className="h-fit px-3 py-1">
+                  <Button  className="h-fit gap-1 px-3 py-1">
+                  Sign Up
                   <svg
   data-testid="geist-icon"
-  height={16}
+  height={12}
   strokeLinejoin="round"
   viewBox="0 0 16 16"
-  width={16}
+  width={12}
   style={{ color: "currentcolor" }}
 >
   <path
@@ -622,7 +623,7 @@ export const Navigation = (): JSX.Element => {
 
                     {/* <Sparkles />
                     Ask Ai */}
-                    Sign Up
+                   
                   </Button>
                 </motion.div>
               </Link>
