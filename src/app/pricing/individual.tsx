@@ -907,21 +907,7 @@ export default function Individual() {
               />
 
               <CardDescription>{tier.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow pt-[1rem]">
-              <ul className="space-y-2 first:border-t first:pt-[1rem]">
-                {tier.features.map((feature) => (
-                  <li key={feature.name} className="flex items-center gap-2">
-                    <div className="rounded-md p-[4px]">
-                      {feature.icon}
-                      {/* <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" /> */}
-                    </div>
-                    <p className="text-sm text-[#a1a1a1]">{feature.name}</p>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <CardFooter className="justify-center rounded-none px-6 py-[1rem]">
+              <div className="mt-[1.5rem]">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
@@ -1112,6 +1098,23 @@ export default function Individual() {
                   </svg>
                 </Button>
               )}
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow pt-[1rem]">
+              <ul className="space-y-2 first:border-t first:pt-[1rem]">
+                {tier.features.map((feature) => (
+                  <li key={feature.name} className="flex items-center gap-2">
+                    <div className="rounded-md p-[4px]">
+                      {feature.icon}
+                      {/* <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" /> */}
+                    </div>
+                    <p className="text-sm text-[#a1a1a1]">{feature.name}</p>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter className="justify-center rounded-none px-6 py-[1rem]">
+             
             </CardFooter>
           </Card>
         ))}

@@ -59,7 +59,7 @@ const [mounted, setMounted] = useState(false);
                   : { width: 0, height: 0, opacity: 0 }
               }
               exit={{width: 0, height: 0, opacity: 0 }}
-              transition={{ damping: 0, duration: 0.5 }}
+              transition={{ damping: 10, duration: 0.5 }}
               className="absolute z-[60] left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 flex flex-col items-center justify-between rounded-lg border bg-[#0c0c0c] p-4 opacity-0"
             >
               <div className="flex h-[20px] w-full justify-end">
