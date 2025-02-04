@@ -866,7 +866,7 @@ export default function Individual() {
             <CardHeader
               className={`${tier.title === "Free" ? "to-[#121212]" : tier.title === "Basic" ? "to-[#121212]" : tier.title === "Pro" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-[1.5rem]`}
             >
-              <CardTitle className="text-[1.04rem] text-[#a1a1a1]">
+              <CardTitle className="text-[1.04rem] font-medium text-[#a1a1a1]">
                 <p
                   className={`${tier.title === "Pro" || tier.title === "Basic" ? "hidden" : ""}`}
                 >
@@ -907,7 +907,7 @@ export default function Individual() {
               />
 
               <CardDescription>{tier.description}</CardDescription>
-              <div className="mt-[1.5rem]">
+              <div className="pt-[1rem] ">
               {tier.title === "Ultimate" && (
                 <div className="flex items-center justify-center gap-4">
                   {" "}
