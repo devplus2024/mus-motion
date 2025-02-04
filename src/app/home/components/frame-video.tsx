@@ -18,7 +18,8 @@ const FrameVideo = ({
 
   if (!mounted) return null; // Chỉ render khi client-side đã mount
   return ReactDOM.createPortal(
-    <motion.div
+    <div className="top-0 h-screen fixed w-full">
+        <motion.div
         animate={
           isView
             ? { width: "50rem", height: "35rem", opacity: 1 }
@@ -68,7 +69,8 @@ const FrameVideo = ({
             </svg>
           </div>
         </div>
-      </motion.div>,
+      </motion.div>
+    </div>,
     document.body
   );
 };
