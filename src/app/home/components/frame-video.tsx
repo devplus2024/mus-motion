@@ -36,7 +36,7 @@ const FrameVideo = ({
         <div className="flex h-[20px] w-full justify-end">
           <div className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
             <svg
-              onClick={() =>{ setView(!isView) , console.log("FG")}}
+              onClick={() => setView((pre) => !pre ) }
               className=""
               data-testid="geist-icon"
               height={16}
