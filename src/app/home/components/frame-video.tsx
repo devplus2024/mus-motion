@@ -19,14 +19,14 @@ const FrameVideo = ({
     console.log("isView:", isView);
   }, [isView]);
   
-
+  const [active,setActive] = useState(false)
   if (!mounted) return null; // Chỉ render khi client-side đã mount
   return ReactDOM.createPortal(
     <div className={`${isView ? "block" : "hidden"} top-0 z-20 h-screen fixed w-screen`}>
         <motion.div
         layout
         animate={
-          isView
+          isView || active
             ? { width: "50rem", height: "35rem", opacity: 1 }
             : { width: 0, height: 0, opacity: 0 }
         }
@@ -36,7 +36,7 @@ const FrameVideo = ({
         <div className="flex h-[20px] w-full justify-end">
           <div className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
             <svg
-              onClick={() => setView((pre) => !pre ) }
+              onClick={() => {setView((pre) => !pre ); setActive(true)} }
               className=""
               data-testid="geist-icon"
               height={16}
