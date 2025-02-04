@@ -13,6 +13,7 @@ import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 import { ToasterSonner } from "../components/ui/sonner";
 import CookieAlert from "@/components/cookie-alert";
+import FrameVideo from "./home/components/frame-video";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stroma: A Useful Platform For Musicians",

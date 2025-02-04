@@ -1,34 +1,40 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
+import { createPortal } from "react-dom";
 
-const FrameVideo = ({
-    isView = false,
-    setView,
-  }: {
-    isView: boolean;
-    setView: React.Dispatch<React.SetStateAction<boolean>>;
-  }) => {
-    const [mounted, setMounted] = useState(false);
+interface FrameVideoProps {
+  isView: boolean;
+  setView: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function FrameVideo({ isView, setView }: FrameVideoProps) {
+  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, []); 
-  const [active,setActive] = useState(false)
+  }, []);
+
   useEffect(() => {
-    console.log("isView:", isView);
-    console.log("active",setActive)
-  }, [isView,active]);
-  
- 
-  // if (!mounted) return null; // Chỉ render khi client-side đã mount
-  return ReactDOM.createPortal(
-    <div className={`${isView ? "block" : "hidden"} top-0 z-20 h-screen fixed w-screen`}>
-        <motion.div
-        layout
+    if (isView) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [isView]);
+
+  if (!mounted) return null; // Chỉ render khi client-side đã mount
+
+  return createPortal(
+    <div
+      className={`${
+        active || isView ? "opacity-1" : "hidden"
+      } top-0 z-20 h-screen fixed w-screen`}
+    >
+      <motion.div
         animate={
-          isView || active
+          active || isView
             ? { width: "50rem", height: "35rem", opacity: 1 }
             : { width: 0, height: 0, opacity: 0 }
         }
@@ -38,7 +44,10 @@ const FrameVideo = ({
         <div className="flex h-[20px] w-full justify-end">
           <div className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
             <svg
-              onClick={() => {setView((pre) => !pre ); setActive(true)} }
+              onClick={() => {
+                setView(false);
+                setActive(false);
+              }}
               className=""
               data-testid="geist-icon"
               height={16}
@@ -58,7 +67,6 @@ const FrameVideo = ({
         </div>
         <div className="flex h-full w-full items-center justify-center">
           <div className="flex h-[6rem] w-[6rem] items-center justify-center rounded-full">
-            {" "}
             <svg
               data-testid="geist-icon"
               height={50}
@@ -80,6 +88,4 @@ const FrameVideo = ({
     </div>,
     document.body
   );
-};
-
-export default FrameVideo;
+}

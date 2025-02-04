@@ -152,6 +152,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import CookieAlert from "./components/cookie-alert";
 import {  PeopleSay } from "./components/people-say";
 import  WatchDemo  from "./components/watch-demo";
+import VideoModal from "./components/modal-video";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
 
@@ -331,8 +332,8 @@ export default function Home() {
         </div>
         <div className="flex gap-[2rem]">
           <DownloadButton />
-          <WatchDemo/>
-          
+          {/* <WatchDemo/> */}
+          <VideoModal/>
         </div>
       </motion.div>
       {/* <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">
