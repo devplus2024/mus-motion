@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import {motion } from "framer-motion";
 
@@ -9,7 +10,13 @@ const FrameVideo = ({
     isView: boolean;
     setView: React.Dispatch<React.SetStateAction<boolean>>;
   }) => {
-    
+    const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // Chỉ render khi client-side đã mount
   return ReactDOM.createPortal(
     <motion.div
         animate={
