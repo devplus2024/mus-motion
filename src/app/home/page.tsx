@@ -289,7 +289,7 @@ export default function Home() {
             The next generation of audio collaboration.
           </TextEffect> */}
           <div className="flex flex-col items-center justify-center">
-            <div className="relative flex h-[5rem] w-[800px] items-center justify-center overflow-hidden text-center text-[4rem] font-bold">
+            <div className="relative flex h-[5rem] w-[900px] items-center justify-center overflow-hidden text-center text-[5rem] font-bold">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -300,12 +300,12 @@ export default function Home() {
                   damping: 80,
                   yoyo: true,
                 }}
-                className="absolute bottom-0 leading-[5rem]"
+                className="absolute bottom-0 leading-[6rem]"
               >
                 The next generation of
               </motion.h1>
             </div>
-            <div className="relative flex h-[4rem] w-[800px] items-center justify-center overflow-y-hidden text-[4rem] font-bold leading-[4rem]">
+            <div className="relative flex h-[rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -323,7 +323,7 @@ export default function Home() {
           >
             The next generation of audio collaboration.
           </TextScramble> */}
-          <h1 className="w-[420px] text-center">
+          <h1 className="w-[520px] text-xl text-center">
             Dive into a seamless music experience with our cutting-edge
             software. Unleash your creativity, manage your playlists, and
             explore a universe of sounds.
