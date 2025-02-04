@@ -6,7 +6,9 @@ export default function WatchDemo()  {
   const [isView,setView] = useState(false);
 return(
   <div onClick={() => setView(true)} className="cursor-pointer">
-              <FrameVideo isView={isView} setView={setView}/>
+             {isView && 
+             ( <FrameVideo isView={isView} setView={setView}/>)
+             }
               <Button className="">
                 <svg
                   className="mr-2 h-4 w-4"
