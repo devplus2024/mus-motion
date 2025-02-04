@@ -15,11 +15,16 @@ const FrameVideo = ({
   useEffect(() => {
     setMounted(true);
   }, []);
+  useEffect(() => {
+    console.log("isView:", isView);
+  }, [isView]);
+  
 
   if (!mounted) return null; // Chỉ render khi client-side đã mount
   return ReactDOM.createPortal(
     <div className={`${isView ? "block" : "hidden"} top-0 z-20 h-screen fixed w-screen`}>
         <motion.div
+        layout
         animate={
           isView
             ? { width: "50rem", height: "35rem", opacity: 1 }
