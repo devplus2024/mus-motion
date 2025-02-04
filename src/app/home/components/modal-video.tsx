@@ -48,7 +48,7 @@ const [mounted, setMounted] = useState(false);
       {
         ReactDOM.createPortal(
           <div
-            className={`${isView ? "z-20" : "z-0" }
+            className={`${isView ? "z-20" : "-z-20" }
             
          top-0 h-screen  fixed w-screen`}
           >
