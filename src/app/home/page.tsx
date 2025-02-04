@@ -151,7 +151,7 @@ import { TextScramble } from "@/components/ui/text-scramble";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import CookieAlert from "./components/cookie-alert";
 import {  PeopleSay } from "./components/people-say";
-import WatchDemo from "./components/watch-demo";
+import  WatchDemo  from "./components/watch-demo";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
 
