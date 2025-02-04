@@ -305,7 +305,7 @@ export default function Home() {
                 The next generation of
               </motion.h1>
             </div>
-            <div className="relative flex h-[rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
+            <div className="relative flex h-[5.3rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
