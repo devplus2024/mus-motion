@@ -5,7 +5,7 @@ import FrameVideo from "./frame-video";
 export default function WatchDemo()  {
   const [isView,setView] = useState(false);
 return(
-  <div onClick={() => setView(true)}>
+  <div onClick={() => setView(true)} className="cursor-pointer">
               <FrameVideo isView={isView} setView={setView}/>
               <Button className="">
                 <svg

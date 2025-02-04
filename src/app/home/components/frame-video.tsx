@@ -5,7 +5,7 @@ import {motion } from "framer-motion";
 
 const FrameVideo = ({
     isView,
-    setView
+    setView,
   }: {
     isView: boolean;
     setView: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,7 +18,7 @@ const FrameVideo = ({
 
   if (!mounted) return null; // Chỉ render khi client-side đã mount
   return ReactDOM.createPortal(
-    <div className="top-0 h-screen fixed w-screen">
+    <div className="top-0 z-20 h-screen fixed w-screen">
         <motion.div
         animate={
           isView
