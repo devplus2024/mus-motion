@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -8,7 +8,11 @@ const VideoModal = () => {
   const [isView, setView] = useState(false);
   const [active, setActive] = useState(false);
   const [show, setShow] = useState(false);
-
+const [mounted, setMounted] = useState(false);
+ useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null; 
   const openModal = () => setView(true);
   const closeModal = () => {
     setView(false);
@@ -44,9 +48,9 @@ const VideoModal = () => {
       {
         ReactDOM.createPortal(
           <div
-            className={`${isView ? "h-screen" : "h-0" }
+            className={`${isView ? "z-20" : "z-0" }
             
-         top-0 z-20  fixed w-screen`}
+         top-0 h-screen  fixed w-screen`}
           >
             <motion.div
               animate={
@@ -54,7 +58,7 @@ const VideoModal = () => {
                   ? { width: '50rem', height: '35rem', opacity: 1 }
                   : { width: 0, height: 0, opacity: 0 }
               }
-              // exit={{width: 0, height: 0, opacity: 0 }}
+              exit={{width: 0, height: 0, opacity: 0 }}
               transition={{ damping: 0, duration: 0.5 }}
               className="absolute z-[60] left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 flex flex-col items-center justify-between rounded-lg border bg-[#0c0c0c] p-4 opacity-0"
             >
