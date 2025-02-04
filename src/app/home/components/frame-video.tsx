@@ -25,7 +25,7 @@ const FrameVideo = ({
             : { width: 0, height: 0, opacity: 0 }
         }
         transition={{ damping: 10, duration: 0.4 }}
-        className="absolute z-[60] flex flex-col items-center justify-between rounded-lg border bg-[#0c0c0c] p-4 opacity-0"
+        className="absolute z-[60] left-1/2 -translate-x-1/2 top-[4rem] flex flex-col items-center justify-between rounded-lg border bg-[#0c0c0c] p-4 opacity-0"
       >
         <div className="flex h-[20px] w-full justify-end">
           <div className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
