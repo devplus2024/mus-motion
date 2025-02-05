@@ -44,32 +44,33 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           onClick={onClose}
         >
           <motion.div
-           style={{
-            transformStyle: "preserve-3d",
-            perspective: 500, // Tạo chiều sâu 3D
-          }}
-          initial={{
-            opacity: 0,
-            rotateY: -15, // Nghiêng về sau bên trái
-            x: -50,
-            translateZ: -200, // Đẩy modal ra xa lúc mới xuất hiện
-            scale: 0.9,
-          }}
-          animate={{
-            opacity: 1,
-            rotateY: 0, // Trở lại trạng thái bình thường
-            x: 0,
-            translateZ: 0, // Kéo modal về gần
-            scale: 1,
-          }}
-          exit={{
-            opacity: 0,
-            rotateY: -15, // Khi đóng modal, nghiêng về sau bên trái
-            x: -50,
-            translateZ: -200, // Đẩy modal ra xa dần khi đóng
-            scale: 0.9,
-          }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="bg-black w-[50rem] h-[35rem] border rounded-lg pt-4 z-10"
+            style={{
+              transformStyle: "preserve-3d",
+              perspective: 500, // Tạo chiều sâu 3D
+            }}
+            initial={{
+              opacity: 0,
+              rotateY: -15, // Nghiêng về sau bên trái
+              x: -50,
+              translateZ: -200, // Đẩy modal ra xa lúc mới xuất hiện
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              rotateY: 0, // Trở lại trạng thái bình thường
+              x: 0,
+              translateZ: 0, // Kéo modal về gần
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              rotateY: -15, // Khi đóng modal, nghiêng về sau bên trái
+              x: -50,
+              translateZ: -200, // Đẩy modal ra xa dần khi đóng
+              scale: 0.9,
+            }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             onClick={(e) => e.stopPropagation()}
           >
            <div className="flex h-[20px] px-3 w-full justify-end">
