@@ -98,7 +98,7 @@ import { CheckCircledIcon } from "@radix-ui/react-icons";
 const pricingData = {
   individual: [
     {
-      title: "Free",
+      title: "Stater",
       price: 0,
       description: "For entry-level users and trial",
       features: [
