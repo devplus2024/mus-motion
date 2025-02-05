@@ -32,10 +32,10 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
         >
           <motion.div
             className="bg-black w-[50rem] h-[35rem] border rounded-lg pt-4 z-10"
-            style={{ transformStyle: "preserve-3d", perspective: 500 }}
-            initial={{ opacity: 0, rotateZ: 10, scale: 0.8 }}
-            animate={{ opacity: 1, rotateZ: 0, scale: 1 , rotateX:20 }}
-            exit={{ opacity: 0, rotateZ: -10, scale: 0.8 }}
+            style={{ transformStyle: "preserve-3d", perspective: 1200 }}
+            initial={{ opacity: 0, rotateY: -15, x: -50, scale: 0.9 }}
+            animate={{ opacity: 1, rotateY: 0, x: 0, scale: 1 }}
+            exit={{ opacity: 0, rotateY: -15, x: -50, scale: 0.9 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             onClick={(e) => e.stopPropagation()}
           >
