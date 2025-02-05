@@ -29,7 +29,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
     }
 
     return () => {
-      document.body.style.overflow = "auto"; // Đảm bảo luôn khôi phục scroll khi unmount
+      document.body.style.overflowY = "auto"; // Đảm bảo luôn khôi phục scroll khi unmount
     };
   }, [isOpen]);
 
