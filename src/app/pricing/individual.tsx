@@ -910,7 +910,7 @@ export default function Individual() {
                 )}
               </CardTitle>
               <NumberFlow
-                className="mb-4 text-3xl font-bold"
+                className="mb-4 flex items-center text-3xl font-bold"
                 value={
                   isYearly
                     ? parseFloat((tier.price * 12 * 2).toFixed(2))
@@ -923,7 +923,7 @@ export default function Individual() {
                   currency: "USD",
                   trailingZeroDisplay: "stripIfInteger",
                 }}
-                suffix={`/${isYearly ? "year" : "month"}`}
+                suffix={`per user / ${isYearly ? "year" : "month"}`}
               />
 
               <CardDescription>{tier.description}</CardDescription>

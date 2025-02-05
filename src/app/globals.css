@@ -513,3 +513,9 @@ li::marker {
 media-error-dialog {
   background-color: #000000;
 }
+number-flow-react::part(suffix) {
+	padding-left: 8px;
+	font-weight: normal;
+	font-size: 1rem;
+	color: var(--muted);
+}
