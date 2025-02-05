@@ -23,9 +23,9 @@ interface ModalProps {
 export default function Modal({ isOpen, onClose }: ModalProps) {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"; // Tắt scroll
+      document.body.style.overflowY = "hidden"; // Tắt scroll
     } else {
-      document.body.style.overflow = "auto"; // Bật lại scroll
+      document.body.style.overflowY = "auto"; // Bật lại scroll
     }
 
     return () => {
