@@ -1100,10 +1100,10 @@ export default function Individual() {
               )}
               </div>
             </CardHeader>
-            <CardContent className="flex-grow pt-[1rem]">
+            <CardContent className="flex-grow pt-[8px]">
               <ul className="space-y-2 first:border-t first:pt-[1rem]">
                 {tier.features.map((feature) => (
-                  <li key={feature.name} className="flex items-center gap-2">
+                  <li key={feature.name} className="flex pb-2 border-b items-center gap-2">
                     <div className="rounded-md p-[4px]">
                       {feature.icon}
                       {/* <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" /> */}
