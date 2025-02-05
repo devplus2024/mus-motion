@@ -14,12 +14,25 @@ import {
     MediaSeekForwardButton,
     MediaMuteButton,
   } from 'media-chrome/react';
+import { useEffect } from "react";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 export default function Modal({ isOpen, onClose }: ModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; // Tắt scroll
+    } else {
+      document.body.style.overflow = "auto"; // Bật lại scroll
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"; // Đảm bảo luôn khôi phục scroll khi unmount
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -31,12 +44,32 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           onClick={onClose}
         >
           <motion.div
-            className="bg-black w-[50rem] h-[35rem] border rounded-lg pt-4 z-10"
-            style={{ transformStyle: "preserve-3d", perspective: 1200 }}
-            initial={{ opacity: 0, rotateY: -15, x: -50, scale: 0.9 }}
-            animate={{ opacity: 1, rotateY: 0, x: 0, scale: 1 }}
-            exit={{ opacity: 0, rotateY: -15, x: -50, scale: 0.9 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+           style={{
+            transformStyle: "preserve-3d",
+            perspective: 500, // Tạo chiều sâu 3D
+          }}
+          initial={{
+            opacity: 0,
+            rotateY: -15, // Nghiêng về sau bên trái
+            x: -50,
+            translateZ: -200, // Đẩy modal ra xa lúc mới xuất hiện
+            scale: 0.9,
+          }}
+          animate={{
+            opacity: 1,
+            rotateY: 0, // Trở lại trạng thái bình thường
+            x: 0,
+            translateZ: 0, // Kéo modal về gần
+            scale: 1,
+          }}
+          exit={{
+            opacity: 0,
+            rotateY: -15, // Khi đóng modal, nghiêng về sau bên trái
+            x: -50,
+            translateZ: -200, // Đẩy modal ra xa dần khi đóng
+            scale: 0.9,
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
             onClick={(e) => e.stopPropagation()}
           >
            <div className="flex h-[20px] px-3 w-full justify-end">
