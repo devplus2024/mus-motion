@@ -51,7 +51,7 @@ import { Radio } from "lucide-react";
 import { ListMusic } from "lucide-react";
 import { Clock } from "lucide-react";
 import { Guitar } from "lucide-react";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, use } from "react";
 import { PanelGroup, Panel } from "react-resizable-panels";
 import { Music2 } from "lucide-react";
 import { ThumbsUp } from "lucide-react";
@@ -153,9 +153,10 @@ import CookieAlert from "./components/cookie-alert";
 import {  PeopleSay } from "./components/people-say";
 import  WatchDemo  from "./components/watch-demo";
 import VideoModal from "./components/modal-video";
+import Modal from "./components/Modal";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
-
+ const [open ,setOpen] = useState(false)
   const [position, setPosition] = React.useState("benoit");
   // State quản lý giá trị "close"
   const [close, setClose] = useState<boolean>(false);
@@ -332,8 +333,29 @@ export default function Home() {
         </div>
         <div className="flex gap-[2rem]">
           <DownloadButton />
+          <Modal isOpen={open} onClose={ () => setOpen(false)}/>
           {/* <WatchDemo/> */}
-          <VideoModal/>
+          <Button onClick={() => setOpen(true)}>
+                  <svg
+                    className="mr-2 h-4 w-4"
+                    data-testid="geist-icon"
+                    height={16}
+                    strokeLinejoin="round"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    style={{ color: "currentcolor" }}
+                  >
+                    <path
+                      fill="#666"
+                      fillRule="evenodd"
+                      d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6 11l5.5-3L6 5v6Z"
+                      clipRule="evenodd"
+                      style={{ fill: "currentColor" }}
+                    />
+                  </svg>
+                  Watch Demo Now
+                </Button>
+          {/* <VideoModal/> */}
         </div>
       </motion.div>
       {/* <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">

@@ -507,3 +507,9 @@ li::marker {
   );
   inset: 0% 0% 0% auto;
 }
+:host{
+  background-color: #000000;
+}
+media-error-dialog {
+  background-color: #000000;
+}

@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.1.9",
+    "@diceui/checkbox-group": "^0.5.0",
     "@geist-ui/core": "^2.3.8",
     "@geist-ui/react": "^2.2.5",
     "@hookform/resolvers": "^3.8.0",
@@ -104,12 +105,14 @@
     "lucide-react": "^0.400.0",
     "markdown-to-jsx": "^7.5.0",
     "marked": "^15.0.6",
+    "media-chrome": "^4.4.0",
     "motion": "^11.18.0",
-    "next": "^14.2.4",
+    "next": "^14.2.23",
     "next-auth": "^4.24.10",
     "next-contentlayer2": "^0.5.0",
     "next-nprogress-bar": "^2.3.13",
     "next-themes": "^0.3.0",
+    "next-video": "^2.0.4",
     "nextjs-progressbar": "^0.0.16",
     "openai": "^4.82.0",
     "path": "^0.12.7",
