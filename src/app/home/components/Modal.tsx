@@ -54,7 +54,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               opacity: 0,
               rotateY: 15, // Nghiêng về sau bên trái
               x: -50,
-              translateZ: -200, // Đẩy modal ra xa lúc mới xuất hiện
+              translateZ: -800, // Đẩy modal ra xa lúc mới xuất hiện
               scale: 0.9,
             }}
             animate={{
@@ -69,7 +69,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               opacity: 0,
               rotateY: 15, // Khi đóng modal, nghiêng về sau bên trái
               x: -50,
-              translateZ: -200, // Đẩy modal ra xa dần khi đóng
+              translateZ: -800, // Đẩy modal ra xa dần khi đóng
               scale: 0.9,
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
