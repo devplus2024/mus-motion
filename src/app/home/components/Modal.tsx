@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Video from 'next-video';
-  import getStarted from '/videos/vercel-ship.mp4';
+  import getStarted from '/videos/get-started.mp4';
 import {
     MediaController,
     MediaControlBar,
