@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Video from 'next-video';
-  import getStarted from 'https://github.com/developerplus2025/mus-motion/releases/download/2.6.5/Vercel.Ship.2024.Keynote.-.Vercel.720p.h264.mp4';
+  import getStarted from '/videos/get-started.mp4';
 import {
     MediaController,
     MediaControlBar,
