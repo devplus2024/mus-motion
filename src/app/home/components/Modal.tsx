@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Video from 'next-video';
-  import awesomeVideo from '/videos/vercel-ship.mp4';
+import getStarted from '/videos/get-started.mp4';
 import {
     MediaController,
     MediaControlBar,
@@ -98,7 +98,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               </div>
             </div>
           <div className="flex h-full w-full items-center justify-center">
-            <Video  aria-errormessage=""  aria-hidden="false" className="host  rounded-lg" src={awesomeVideo} />
+            <Video  aria-errormessage=""  aria-hidden="false" className="host  rounded-lg" src={getStarted} />
           </div>
          </motion.div>
         </motion.div>
